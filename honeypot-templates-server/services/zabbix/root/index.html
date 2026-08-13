@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="Author" content="Zabbix SIA">
+	<title>ops center: Zabbix</title>
+	<link rel="icon" href="favicon.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="assets/img/apple-touch-icon-76x76-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="assets/img/apple-touch-icon-120x120-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="assets/img/apple-touch-icon-152x152-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="180x180" href="assets/img/apple-touch-icon-180x180-precomposed.png">
+	<link rel="icon" sizes="192x192" href="assets/img/touch-icon-192x192.png">
+	<meta name="csrf-token" content>
+	<meta name="msapplication-TileImage" content="assets/img/ms-tile-144x144.png">
+	<meta name="msapplication-TileColor" content="#d40000">
+	<meta name="msapplication-config" content="none">
+	<link rel="stylesheet" type="text/css" href="assets/styles/blue-theme_1593431348.css">
+	<style type="text/css">
+		.na-bg,
+		.na-bg input[type="radio"]:checked+label,
+		.na-bg:before,
+		.flh-na-bg,
+		.status-na-bg {
+			background-color: #97AAB3
+		}
+
+		.info-bg,
+		.info-bg input[type="radio"]:checked+label,
+		.info-bg:before,
+		.flh-info-bg,
+		.status-info-bg {
+			background-color: #7499FF
+		}
+
+		.warning-bg,
+		.warning-bg input[type="radio"]:checked+label,
+		.warning-bg:before,
+		.flh-warning-bg,
+		.status-warning-bg {
+			background-color: #FFC859
+		}
+
+		.average-bg,
+		.average-bg input[type="radio"]:checked+label,
+		.average-bg:before,
+		.flh-average-bg,
+		.status-average-bg {
+			background-color: #FFA059
+		}
+
+		.high-bg,
+		.high-bg input[type="radio"]:checked+label,
+		.high-bg:before,
+		.flh-high-bg,
+		.status-high-bg {
+			background-color: #E97659
+		}
+
+		.disaster-bg,
+		.disaster-bg input[type="radio"]:checked+label,
+		.disaster-bg:before,
+		.flh-disaster-bg,
+		.status-disaster-bg {
+			background-color: #E45959
+		}
+	</style>
+	<script>var PHP_TZ_OFFSET = -21600, PHP_ZBX_FULL_DATE_TIME = "Y-m-d H:i:s";</script>
+	<script src="js/browsers.js"></script>
+</head>
+
+<body lang="en">
+	<output class="msg-global-footer msg-warning" id="msg-global-footer"></output>
+	<main>
+		<div class="server-name">ops center</div>
+		<div class="signin-container">
+			<div class="signin-logo"></div>
+			<form method="post" action="/login" accept-charset="utf-8" aria-label="Sign in">
+				<ul>
+					<li><label for="name">Username</label><input type="text" id="name" name="username" value maxlength="255"
+							autofocus="autofocus"></li>
+					<li><label for="password">Password</label><input type="password" id="password" name="password" value
+							maxlength="255"></li>
+					<li><input type="checkbox" value="1" class="checkbox-radio" checked="checked"><label
+							for="autologin"><span></span>Remember me for 30 days</label></li>
+					<li><button type="submit" value="Sign in">Sign in</button></li>
+				</ul>
+			</form>
+		</div>
+		<div class="signin-links"><a target="_blank" class="grey link-alt"
+				href="https://www.zabbix.com/documentation/4.4/">Help</a>&nbsp;&nbsp;•&nbsp;&nbsp;<a target="_blank"
+				class="grey link-alt" href="https://www.zabbix.com/support">Support</a></div>
+	</main>
+	<footer role="contentinfo">&copy; 2001&ndash;2020, <a class="grey link-alt" target="_blank"
+			href="https://www.zabbix.com/">Zabbix SIA</a></footer>
+</body>
+
+</html>

@@ -1,0 +1,503 @@
+{
+  "router-aruba": {
+    "addr": "0.0.0.0:9101",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "bait": {
+    "addr": "0.0.0.0:7878"
+  },
+  "confluence": {
+    "addr": "0.0.0.0:9293",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "coremail": {
+    "addr": "0.0.0.0:9094",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "custom": {
+    "addr": "0.0.0.0:8989",
+    "https": "true",
+    "apikey": "50332a65fe5cbe6f2a42d3ba11bc3cb6"
+  },
+  "es": {
+    "addr": "0.0.0.0:9200",
+    "https": "true"
+  },
+  "esxi": {
+    "addr": "0.0.0.0:9190",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "exchange": {
+    "addr": "0.0.0.0:9095",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "ftp": {
+    "addr": "0.0.0.0:21"
+  },
+  "gitlab": {
+    "addr": "0.0.0.0:9093",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "router-h3c": {
+    "addr": "0.0.0.0:9092",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "highssh": {
+    "addr": "0.0.0.0:22"
+  },
+  "hightelnet": {
+    "addr": "0.0.0.0:23"
+  },
+  "highmysql": {
+    "addr": "0.0.0.0:3306"
+  },
+  "http": {
+    "addr": "0.0.0.0:8080",
+    "https": "false"
+  },
+  "iis": {
+    "addr": "0.0.0.0:9199",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "iot-hikcam": {
+    "addr": "0.0.0.0:9082",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "jira": {
+    "addr": "0.0.0.0:9292",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "local": {
+    "addr": "0.0.0.0:7879"
+  },
+  "memcache": {
+    "addr": "0.0.0.0:11211"
+  },
+  "mysql": {
+    "addr": "0.0.0.0:3306",
+    "files": "/etc/passwd,/etc/group"
+  },
+  "mssql": {
+    "addr": "0.0.0.0:1433",
+    "username": "root",
+    "password": "root"
+  },
+  "nagios": {
+    "addr": "0.0.0.0:9191",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "nginx": {
+    "addr": "0.0.0.0:9291",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "oa": {
+    "addr": "0.0.0.0:9096",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "oa-gov": {
+    "addr": "0.0.0.0:9098",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "oa-tongda": {
+    "addr": "0.0.0.0:9099",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "postgresql": {
+    "addr": "0.0.0.0:5432",
+    "username": "root",
+    "password": "root"
+  },
+  "qzsec": {
+    "addr": "0.0.0.0:9193",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "redis": {
+    "addr": "0.0.0.0:6379"
+  },
+  "router-ruijie": {
+    "addr": "0.0.0.0:9196",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "scan": {
+  },
+  "ssh": {
+    "addr": "0.0.0.0:22",
+    "hostname": "[root@web_server ~]#",
+    "username": "root",
+    "password": "root"
+  },
+  "synology-nas": {
+    "addr": "0.0.0.0:9194",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "tcp": {
+    "addr": "0.0.0.0:135,0.0.0.0:139,0.0.0.0:445,0.0.0.0:3389"
+  },
+  "udp": {
+    "addr": "0.0.0.0:53,0.0.0.0:69,0.0.0.0:139,0.0.0.0:161,0.0.0.0:445,0.0.0.0:500"
+  },
+  "telnet": {
+    "addr": "0.0.0.0:23"
+  },
+  "tftp": {
+    "addr": "0.0.0.0:69"
+  },
+  "tomcat": {
+    "addr": "0.0.0.0:9198",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "router-tplink": {
+    "addr": "0.0.0.0:9197",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "vnc": {
+    "addr": "0.0.0.0:5900"
+  },
+  "ldap": {
+    "addr": "0.0.0.0:389"
+  },
+  "websphere": {
+    "addr": "0.0.0.0:9080",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "wordpress": {
+    "addr": "0.0.0.0:9000",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "zabbix": {
+    "addr": "0.0.0.0:9192",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "jenkins": {
+    "addr": "0.0.0.0:8080",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "joomla": {
+    "addr": "0.0.0.0:8080",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "jspspy": {
+    "addr": "0.0.0.0:9294",
+    "https": "true",
+    "index": "index.jsp",
+    "root": "root"
+  },
+  "weblogic": {
+    "addr": "0.0.0.0:7001",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "webmin": {
+    "addr": "0.0.0.0:10000",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "cisco-vpn": {
+    "addr": "0.0.0.0:9299",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "huorong-zd": {
+    "addr": "0.0.0.0:9295",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "kelai-qll": {
+    "addr": "0.0.0.0:9296",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "zhongke-kongzhi": {
+    "addr": "0.0.0.0:9297",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "sangfor-fcg": {
+    "addr": "0.0.0.0:9298",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "routos": {
+    "addr": "0.0.0.0:8291",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "phpadmin": {
+    "addr": "0.0.0.0:9301",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "isport": {
+    "addr": "0.0.0.0:9302",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "electric": {
+    "addr": "0.0.0.0:9303",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "jumpserver": {
+    "addr": "0.0.0.0:9304",
+    "https": "true",
+    "index": "core/auth/login/index.html",
+    "root": "root"
+  },
+  "intel-am": {
+    "addr": "0.0.0.0:9085",
+    "https": "true",
+    "index": "index.htm",
+    "root": "root"
+  },
+  "printer-dell": {
+    "addr": "0.0.0.0:9084",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "fw-nsfocus": {
+    "addr": "0.0.0.0:9084",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "fw-topsec": {
+    "addr": "0.0.0.0:9081",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "sangfor-vpn": {
+    "addr": "0.0.0.0:9091",
+    "https": "true",
+    "index": "index.html",
+    "root": "root",
+    "exe_ip": "",
+    "exe_port": ""
+  },
+  "javarmi": {
+    "addr": "0.0.0.0:1099"
+  },
+  "dnsproxy": {
+    "addr": "0.0.0.0:53",
+    "dns_book": "{}",
+    "proxy": "8.8.8.8"
+  },
+  "modbus": {
+    "addr": "0.0.0.0:502"
+  },
+  "thinkphp": {
+    "addr": "0.0.0.0:9226",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "uniaccess-lr": {
+    "addr": "0.0.0.0:9225",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "baota": {
+    "addr": "0.0.0.0:9224",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "edr-sangfor": {
+    "addr": "0.0.0.0:9223",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "ac-sangfor": {
+    "addr": "0.0.0.0:9222",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "kibana": {
+    "addr": "0.0.0.0:9221",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "cpanel": {
+    "addr": "0.0.0.0:9220",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "canal": {
+    "addr": "0.0.0.0:9219",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "fw-360": {
+    "addr": "0.0.0.0:9218",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "fw-haofeng": {
+    "addr": "0.0.0.0:9217",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "router-cmcc": {
+    "addr": "0.0.0.0:9216",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "oa-yy": {
+    "addr": "0.0.0.0:9215",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "fw-zkww": {
+    "addr": "0.0.0.0:9214",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "ruoyi": {
+    "addr": "0.0.0.0:9213",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "nas-qnap": {
+    "addr": "0.0.0.0:9211",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "zimbra": {
+    "addr": "0.0.0.0:9210",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "tdp": {
+    "addr": "0.0.0.0:9209",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "poste": {
+    "addr": "0.0.0.0:9208",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "portainer": {
+    "addr": "0.0.0.0:9207",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "mailu": {
+    "addr": "0.0.0.0:9206",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "gophish": {
+    "addr": "0.0.0.0:9205",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "filebrowser": {
+    "addr": "0.0.0.0:9204",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "cloudreve": {
+    "addr": "0.0.0.0:9203",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "router-ikuai": {
+    "addr": "0.0.0.0:9202",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "router-openwrt": {
+    "addr": "0.0.0.0:9201",
+    "https": "true",
+    "index": "index.html",
+    "root": "root"
+  },
+  "ntp": {
+    "addr": "0.0.0.0:123"
+  }
+}

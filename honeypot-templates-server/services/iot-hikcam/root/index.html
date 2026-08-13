@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://www.musickid.org/doc/page/login.asp?_1614596164589 -->
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@charset "UTF-8";
+
+		[ng\:cloak],
+		[ng-cloak],
+		[data-ng-cloak],
+		[x-ng-cloak],
+		.ng-cloak,
+		.x-ng-cloak,
+		.ng-hide {
+			display: none !important;
+		}
+
+		ng\:form {
+			display: block;
+		}
+	</style>
+	<title>Login</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+	<meta http-equiv="Expires" content="0">
+	<link rel="icon" href="data:image/ico;base64,aWNv">
+	<script>
+		document.write("<link type='text/css' href='../ui/css/ui.css' rel='stylesheet' />");
+	</script>
+	<link type="text/css" href="./Login_files/ui.css" rel="stylesheet">
+</head>
+
+<body ng-keypress="docPress($event)" ng-controller="loginController" class="login-body ng-scope">
+	<div class="aui_state_focus" style="position: absolute; left: -9999em; top: 246px; width: auto; z-index: 1987;">
+		<div class="aui_outer">
+			<table class="aui_border">
+				<tbody>
+					<tr>
+						<td class="aui_nw"></td>
+						<td class="aui_n"></td>
+						<td class="aui_ne"></td>
+					</tr>
+					<tr>
+						<td class="aui_w"></td>
+						<td class="aui_c">
+							<div class="aui_inner">
+								<table class="aui_dialog">
+									<tbody>
+										<tr>
+											<td colspan="2" class="aui_header">
+												<div class="aui_titleBar">
+													<div class="aui_title" style="cursor: move;">消息</div><a class="aui_close"
+														href="javascript:/*artDialog*/;">×</a>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="aui_icon" style="display: none;">
+												<div class="aui_iconBg" style="background: none;"></div>
+											</td>
+											<td class="aui_main" style="width: auto; height: auto;">
+												<div class="aui_content" style="padding: 5px;">
+													<div class="aui_loading"><span>loading..</span></div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2" class="aui_footer">
+												<div class="aui_buttons" style="display: none;"></div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+						<td class="aui_e"></td>
+					</tr>
+					<tr>
+						<td class="aui_sw"></td>
+						<td class="aui_s"></td>
+						<td class="aui_se" style="cursor: se-resize;"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div><iframe src="./Login_files/saved_resource.html" frameborder="0"
+			style="position: absolute; z-index: -1; left: 0px; top: 0px; border: 0px; width: 110px; height: 84px;"></iframe>
+	</div>
+	<div class="login" id="login">
+		<div class="top">
+			<div class="logo"></div>
+			<div class="language" style="display: none;">
+				<div class="language-show" ng-click="showLanguageList($event)"><span class="current-language"
+						id="current_language" title="English">English</span></div>
+				<div class="language-list" id="language_list" ng-click="changeLanguage($event)" style="display: none;">
+					<div class="out" onmouseover="this.className=&quot;over&quot;" onmouseout="this.className=&quot;out&quot;"
+						id="zh_TW" title="繁體中文">繁體中文</div>
+					<div class="out" onmouseover="this.className=&quot;over&quot;" onmouseout="this.className=&quot;out&quot;"
+						id="en" title="English">English</div>
+					<div class="out" onmouseover="this.className=&quot;over&quot;" onmouseout="this.className=&quot;out&quot;"
+						id="ja" title="日本語">日本語</div>
+					<div class="out" onmouseover="this.className=&quot;over&quot;" onmouseout="this.className=&quot;out&quot;"
+						id="ko" title="한국어">한국어</div>
+					<div class="out" onmouseover="this.className=&quot;over&quot;" onmouseout="this.className=&quot;out&quot;"
+						id="th" title="ภาษาไทย">ภาษาไทย</div>
+					<div class="out" onmouseover="this.className=&quot;over&quot;" onmouseout="this.className=&quot;out&quot;"
+						id="vi" title="Tiếng Việt">Tiếng Việt</div>
+				</div>
+			</div>
+		</div>
+		<table cellspacing="0" cellpadding="0" border="0" class="middle">
+			<tbody>
+				<tr>
+					<td class="login-l">&nbsp;</td>
+					<td class="login-m">
+						<div class="login-part">
+							<form action="/login" method="post">
+								<div class="line"></div>
+								<div class="login-error">
+									<div class="inputValidTip ng-hide" ng-show="szErrorTip!=&#39;&#39;"><i class="error"></i><label
+											class="ng-binding"></label></div>
+								</div>
+								<div class="login-user">
+									<input type="text" class="login-input ng-pristine ng-valid" id="username" ng-model="username"
+										name="username" maxlength="32" autocomplete="off" placeholder="User Name">
+									<i class="icon-user"></i>
+								</div>
+								<div class="login-item">
+									<input type="password" class="login-input ng-pristine ng-valid" id="password" ng-model="password"
+										name="password" maxlength="16" placeholder="Password">
+									<i class="icon-pass"></i>
+								</div>
+								<div class="login-item bottom">
+									<span class="pwd-link ng-binding ng-hide" ng-show="oCap.bSptGuidImport || oCap.bSptQAReset"
+										ng-bind="oLan.forgetPwd" ng-click="forgetPwd()">Forget password?</span>
+									<button type="submit" class="btn btn-primary login-btn" ng-click="login()"><label ng-bind="oLan.login"
+											class="ng-binding">Login</label></button>
+								</div>
+							</form>
+
+							<!--<div class="login-item anonymous" ng-show="anonymous">
+						<span ng-bind="oLan.anonymous" ng-click="login('anonymous')"></span>
+					</div>-->
+						</div>
+					</td>
+					<td class="login-r">&nbsp;</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="footer" id="footer">©2016 Hikvision Digital Technology Co., Ltd. All Rights Reserved.</div>
+	</div>
+	<div id="active" class="msg-content-wrap">
+		<div class="msg-content">
+			<div class="password">
+				<span class="desc"><label ng-bind="oLan.username" class="ng-binding">User Name</label></span>
+				<span><label ng-bind="activeUsername" class="ng-binding">admin</label></span>
+			</div>
+			<div password="" lan="oLan" o-password="oActivePwd" user-name="activeUsername" spec-char="true" ps-length="16"
+				ps-strength="true" hide-default="true">
+				<!-- ngIf: showOldpwd -->
+				<div class="item"><span class="first ng-binding" ng-bind="szPagePwdName">Password</span><span><input
+							ng-disabled="psDisabled" ng-model="oPassword.szPassword" ng-keydown="keydown($event, 0)"
+							ng-keyup="keyup()" type="password" class="text ng-pristine ng-valid" input-valid="oParamsValid.oPassword"
+							maxlength="16"></span></div><!-- ngIf: psStrength -->
+				<div strength="" class="passwordstrength ng-isolate-scope ng-scope" lan="lan" o-password="oPassword.szPassword"
+					o-username="userName" ng-if="psStrength">
+					<div class="validate"><span><span class="userstrength"></span><span class="userstrength"></span><span
+								class="userstrength"></span><span ng-bind="lan.pswstrength" class="ng-binding"></span></span></div>
+					<div class="clear"></div>
+					<div><label ng-bind="lan.passwordValidTips" class="ng-binding">Valid password range [8-16]. You can use a
+							combination of numbers, lowercase, uppercase and special character for your password with at least two
+							kinds of them contained.</label></div>
+				</div>
+				<div class="item"><span class="first ng-binding" ng-bind="lan.confirm">Confirm</span><span><input
+							ng-disabled="psDisabled" ng-model="oPassword.szPasswordConfirm" ng-keydown="keydown($event, 1)"
+							type="password" class="text ng-pristine ng-valid" input-valid="oParamsValid.oPasswordConfirm"
+							maxlength="16"></span></div>
+			</div>
+		</div>
+	</div>
+	<div id="main_plugin" class="no-window" style="display: none;">
+		<table width="100%" height="100%">
+			<tbody>
+				<tr>
+					<td class="txtTip"><label class="pluginLink" style="cursor: default; text-decoration: none;">No plug-in
+							detected.</label></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!--
+<script id="seajsnode" src="./Login_files/sea-2.1.1.min.js"></script>
+<script>
+	document.write("<script src='./script/lib/seajs/config/sea-config.js' ></scr" + "ipt>");
+</script><script src="./Login_files/sea-config.js"></script>
+-->
+</body>
+
+</html>

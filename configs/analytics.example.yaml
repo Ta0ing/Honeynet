@@ -1,0 +1,12 @@
+# Honeynet 安全数据分析引擎配置。MySQL 仍是业务数据库，不会被替换。
+analytics:
+  enabled: false
+  # 默认 Docker 部署使用 native 协议 9000；安装器会生成含随机密码的实际配置。
+  dsn: "clickhouse://honeynet_app:replace-with-a-strong-password@127.0.0.1:9000/honeynet_analytics"
+  database: "honeynet_analytics"
+  table: "security_events"
+  max_open_conns: 10
+  max_idle_conns: 5
+  conn_max_lifetime: "1h"
+  dial_timeout: "5s"
+  read_timeout: "30s"

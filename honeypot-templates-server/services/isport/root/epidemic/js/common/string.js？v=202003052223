@@ -1,0 +1,151 @@
+/**
+* @Description: 判断js字符串以什么开头
+* @Author: Liudc
+*/
+String.prototype.startWith=function(s){
+  if(s==null||s==""||this.length==0||s.length>this.length)
+   return false;
+  if(this.substr(0,s.length)==s)
+     return true;
+  else
+     return false;
+  return true;
+ }
+
+/**
+ * @Description: 判断js字符串以什么结尾
+ * @Author: Liudc
+ */
+String.prototype.endWith = function(str) {
+	if (str == null || str == "" || this.length == 0
+			|| str.length > this.length)
+		return false;
+	if (this.substring(this.length - str.length) == str)
+		return true;
+	else
+		return false;
+	return true;
+}
+
+/**
+ * @Description: 取出字符串左右空格
+ * @Author: Liudc
+ */
+String.prototype.trim=function(){
+	return this.replace(/(^\s*)|(\s*$)/g, "");
+}
+
+/**
+ * @Description: 返回上一页
+ * @Author: Liudc
+ */
+function back() {
+    history.back(-1);
+};
+/**
+ * @Description: 获取当前时间格式，返回格式 yyyy-MM-dd HH:mm:ss
+ * @Author: Liudc
+ */
+function getNowFormatDate() {
+    var date = new Date();
+    var seperator1 = "-";
+    var seperator2 = ":";
+    var month = date.getMonth() + 1;
+    var strDate = date.getDate();
+    if (month >= 1 && month <= 9) {
+        month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+    }
+    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate +
+        " " + date.getHours() + seperator2 + date.getMinutes() +
+        seperator2 + date.getSeconds();
+    return currentdate;
+}
+
+/**
+ * @Description: 判断js字符串是否有效
+ * @Author: Liudc
+ */
+function isNullOrBlank(obj){
+	if(typeof(obj) != "undefined" && obj!=undefined && obj!=null && obj.trim()!=""){
+		return false;
+	}else{
+		return true;
+	}
+}
+
+function isNullOrBlankNumber(obj){
+	if(typeof(obj) != "undefined" && obj!=undefined && obj!=null){
+		return false;
+	}else{
+		return true;
+	}
+}
+
+function dellNull(obj){
+    if(isNullOrBlank(obj)){
+        return "";
+    }else{
+        return obj.trim();
+    }
+}
+
+/**
+* @Description: 输入Unixtimestamp 返回正常的日期格式
+* @Author: Liudc
+*/
+function formatUnixtimestamp(inputTime) {  
+    var date = new Date(inputTime);
+    var y = date.getFullYear();  
+    var m = date.getMonth() + 1;  
+    m = m < 10 ? ('0' + m) : m;  
+    var d = date.getDate();  
+    d = d < 10 ? ('0' + d) : d;  
+    var h = date.getHours();
+    h = h < 10 ? ('0' + h) : h;
+    var minute = date.getMinutes();
+    var second = date.getSeconds();
+    minute = minute < 10 ? ('0' + minute) : minute;  
+    second = second < 10 ? ('0' + second) : second; 
+    return y + '-' + m + '-' + d+' '+h+':'+minute+':'+second;  
+};
+
+
+function unhtml (str, reg) {
+    return str ? str.replace(reg || /[&<">'()](?:(amp|lt|quot|gt|#39|nbsp|#40|#41);)?/g, function (a, b) {
+        if (b) {
+            return a;
+        } else {
+            return {
+                '<':'&lt;',
+                '&':'&amp;',
+                '"':'&quot;',
+                '>':'&gt;',
+                "'":'&#39;',
+                "(":'&#40;',
+                ")":'&#41;'
+            }[a]
+        }
+
+    }) : '';
+}
+/**
+ * 将str中的转义字符还原成html字符
+ * @name html
+ * @grammar UM.utils.html(str)  => String   //详细参见<code><a href = '#unhtml'>unhtml</a></code>
+ */
+function html(str) {
+    return str ? str.replace(/&((g|l|quo)t|amp|#39|#40|#41);/g, function (m) {
+        return {
+            '&lt;':'<',
+            '&amp;':'&',
+            '&quot;':'"',
+            '&gt;':'>',
+            '&#39;':"'",
+            '&#40;':"(",
+            '&#41;':")"
+        }[m]
+    }) : '';
+}

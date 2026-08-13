@@ -1,0 +1,169 @@
+.body-main{
+	background:url(../images/login/loginBg.jpg);
+	margin:0;
+	padding:0;
+	height: 100%;
+}
+
+#loginMain{
+	margin: 0 auto;
+	background:url(../images/login/login_bg.jpg) no-repeat;
+	width:905px;
+	height:580px;
+	position: relative;
+	top:10%;
+}
+
+#loginBox{
+	width: 347px;
+	height: 366px;
+	position: absolute;
+	top: 425px;
+	left: 581px;
+	border: 0 solid red;
+}
+#logo{
+	width: 270px;
+	height: 48px;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	cursor: pointer;
+}
+#systemname{
+	width: 270px;
+	height: 48px;
+	position: absolute;
+	top: 40px;
+	left: 220px;
+	cursor: pointer;
+	font-family:黑体;
+	font-weight:bold;
+	color:#252525;
+	font-size:18pt;
+}
+#messageDiv{
+	position:absolute;
+	top:-30px;
+	left:-60px;
+	width:370px;
+	height:22px;
+	line-height:22px;
+	padding:0;
+	color:red;
+	font-family:Segoe UI;
+	font-size:13px;
+	font-weight:bold;
+}
+
+#loginBox_uname{
+	position: absolute;
+}
+#uname{
+	width: 147px;
+	height: 21px;
+	border:0;
+	padding:2px;
+}
+#loginBox_j_password{
+	position: absolute;
+	top: 39px;
+	width: 147px;
+}
+#j_password{
+	width: 147px;
+	height: 21px;
+	border:0;
+	padding:2px;
+}
+
+#loginBox_btnSubmit{
+	position: absolute;
+	top: 80px;
+}
+#loginBox_btnSubmit button{
+	width:82px;
+	height:33px;
+	font-size:15px;
+	font-weight:bold;
+	cursor: pointer;
+	color:#fff;
+	background-color: #F44336;
+	border: 1px solid;
+	border-radius: 5px;
+}
+#loginBox_btnSubmit button:hover {
+	color:#ddd;
+	background-color: #FF5722;
+}
+
+#loginBox_btnSubmit a {
+	color: #36c;
+	text-decoration: none;
+	font-size: 15px;
+}
+
+#loginBox_btnSubmit a:nth-child(3) {
+	color: #6894cc;
+	font-style: italic;
+}
+
+#loginBox_btnSubmit a:hover {
+	color: indianred;
+}
+
+#loginBox_language{
+	position: absolute;	
+	top: 267px;
+	left: 200px;
+	width: 110px;
+}
+
+.slideDivContinar {
+	padding: 0;
+	margin: 0;
+	width: 870px;
+	height: 290px;
+	overflow: hidden;
+
+}
+.slideDiv {
+	cursor: pointer;
+	padding: 0;
+	margin: 0;
+	width: 870px;
+	height: 290px;
+	left: 0;
+	top:100px;
+}
+
+#nav {
+	position: relative;
+	top: 60px;
+	text-align: center;
+}
+
+/*企业微信二维码*/
+.wxCode {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	width: 400px;
+	height: 430px;
+	position: absolute;
+	top: 10%;
+	left: 40%;
+	background-color: #fff;
+	z-index: 100;
+	border: 1px solid #dedede;
+	box-shadow: 0 0 15px #888;
+	opacity: 0;
+	transition: .5s opacity;
+	-webkit-transition:.5s opacity;
+}
+.wxCode-close {
+	position: absolute;
+	top: 2px;
+	right: 5px;
+	cursor: pointer;
+}

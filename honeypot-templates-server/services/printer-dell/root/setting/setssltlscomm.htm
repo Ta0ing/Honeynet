@@ -1,0 +1,91 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style TYPE="text/css"><!--
+body { font-family: Arial, Helvetica, sans-serif, Verdana; margin-left:0; margin-right:0; margin-top:0; margin-bottom:0; }
+--></style>
+<link rel="stylesheet" href="../common_dell.css" type="text/css">
+<title>Dell C2660dn Color Laser</title>
+</head>
+<body bgcolor="#ffffff" link="#0033CC" alink="#0033CC" vlink="#0033CC">
+<table>
+<tr><td>
+<table border="0" cellpadding="0" cellspacing="0" width="800"><tr><td>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top" bgcolor="#cdcdcd"><div style="background-image: url(../images/leftoff.gif ); border-bottom: 1px solid rgb(0, 0, 0);  width:9px; height:36px;"></div></td>
+<td align="center" valign="middle" bgcolor="#cdcdcd" height="36" nowrap style="white-space: nowrap; border-bottom: 1px solid rgb(0, 0, 0); background-image: url(../images/topoff.gif); background-repeat: repeat-x"><b><font size="-1" color="blue"><a href="/setting/rptsvr.htm" target="_self">Print Server Reports</a></font></b></td>
+<td valign="top" bgcolor="#cdcdcd"><div style="background-image: url(../images/bothoff.gif ); border-bottom: 1px solid rgb(0, 0, 0);  width:9px; height:36px;"></div></td>
+<td align="center" valign="middle" bgcolor="#cdcdcd" height="36" nowrap style="white-space: nowrap; border-bottom: 1px solid rgb(0, 0, 0); background-image: url(../images/topoff.gif); background-repeat: repeat-x"><b><font size="-1" color="blue"><a href="/setting/setsys.htm" target="_self">Print Server Settings</a></font></b></td>
+<td valign="top" bgcolor="#cdcdcd"><div style="background-image: url(../images/loffron.gif ); border-bottom: 1px solid rgb(255, 255, 255);  width:9px; height:36px;"></div></td>
+<td align="center" valign="middle" bgcolor="#ffffff" height="36" nowrap style="white-space: nowrap; border-bottom: 1px solid rgb(255, 255, 255); background-image: url(../images/topon.gif); background-repeat: repeat-x"><b><font size="-1" color="blue">Security</font></b></td>
+<td valign="top" bgcolor="#cdcdcd"><div style="background-image: url(../images/righton.gif ); border-bottom: 1px solid rgb(255, 255, 255);  width:9px; height:36px;"></div></td>
+<td bgcolor="#ffffff" valign="bottom" style="empty-cells:show; border-bottom: 1px solid rgb(0, 0, 0); width: 800; ">&nbsp;</td></tr>
+<tr>
+<td valign="bottom" bgcolor="#ffffff" width="9" height="2"></td><td valign="bottom" bgcolor="#ffffff" width="120" height="2"></td><td valign="bottom" bgcolor="#ffffff" width="9" height="2"></td><td valign="bottom" bgcolor="#ffffff" width="120" height="2"></td><td valign="bottom" bgcolor="#ffffff" width="9" height="2"></td><td valign="bottom" bgcolor="#ffffff" width="120" height="2"></td><td valign="bottom" bgcolor="#ffffff" width="9" height="2"></td><td bgcolor="#ffffff" valign="bottom" height="2"></td></tr>
+</table>
+</td></tr></table>
+<table border="0" cellpadding="2" cellspacing="0"><tr><td>
+<table border="0" cellpadding="2" cellspacing="0"><tr>
+<td nowrap align="left"><b><font size="-1"><a href="/setting/setews.htm" target="_self">Set Password</a></font></b>
+<b><font size="-1"> | <a href="setssltlscomm.htm" target="_self">SSL/TLS</a></font></b>
+<b><font size="-1"> | <a href="setipsec.htm" target="_self">IPsec</a></font></b>
+<b><font size="-1"> | <a href="set8021x.htm" target="_self">802.1x</a></font></b>
+<b><font size="-1"> | <a href="setipfilt.htm" target="_self">IP Filter (IPv4)</a></font></b>
+</td></tr></table>
+</td></tr></table>
+<hr>
+<table><tr><td><font size="+2"><b>SSL/TLS - </b></font>
+<script language="JavaScript">
+<!--
+document.write("<input type='button' onClick=window.location='/setting/setssltlscomm.htm' value='Refresh'  class=refreshBtn>")
+//-->
+</script>
+<noscript>
+<font size="-1"><a href="setssltlscomm.htm" target="_self">Refresh</a></font>
+</noscript>
+</td></tr></table><br><form method="post" action="setssltlscomm.htm"><span class="tblcap">SSL/TLS</span>
+<table border="1" cellspacing="0" class="std_1">
+<tr><td><table border="0" class="std_2">
+<tr><td class="std_1">HTTP - SSL/TLS Communication</td><td class="std_2">Disable</td></tr>
+<tr><td class="std_1">HTTP - SSL/TLS Communication Port Number</td><td class="std_2"><input name="102504" type="text" value="443" size="6" maxlength="4"> (443, 8000 ~ 9999) </td></tr>
+<tr><td class="std_1">SMTP - SSL/TLS Communication</td><td class="std_2"><select name="102506"><option value="0" selected>*Disable</option><option value="2"> STARTTLS (if Available)</option><option value="3"> STARTTLS</option><option value="1"> SSL/TLS</option></select></td></tr>
+</table>
+</td></tr></table>
+<br><span class="tblcap">Machine Digital Certificate</span>
+<table border="1" cellspacing="0" class="std_1">
+<tr><td><table border="0" class="std_2">
+<tr><td class="std_1">Generate Self-Signed Certificate</td><td class="std_2">
+<script language="JavaScript">
+<!--
+document.write("<input type='button' onClick=window.location='setcertgenslf.htm' value='Generate Self-Signed Certificate'>")
+//-->
+</script>
+
+<noscript>
+<font size="-1"><a href="setcertgenslf.htm" target="_self">Generate Self-Signed Certificate</a></font>
+</noscript>
+</td></tr>
+<tr><td class="std_1">Upload Signed Certificate</td><td class="std_2"><input type="reset" value="Upload Signed Certificate" style="color:#808080"></td></tr>
+<tr><td class="std_1">Certificate Management</td><td class="std_2"><input type="reset" value="Certificate Management" style="color:#808080"></td></tr>
+<tr><td class="std_1">Delete All Certificates</td><td class="std_2">
+<script language="JavaScript">
+<!--
+document.write("<input type='button' onClick=window.location='setcertdeleteall.htm' value='Delete All Certificates'>")
+//-->
+</script>
+
+<noscript>
+<font size="-1"><a href="setcertdeleteall.htm" target="_self">Delete All Certificates</a></font>
+</noscript>
+</td></tr>
+</table>
+</td></tr></table>
+<br><table border="0" align="center" class="btn">
+<tr><td class="btn_oside_1"><input type="submit" value="Apply New Settings"></td><td class="btn_oside_1"><input type="reset" value="Restore Settings"></td></tr>
+</table>
+</form>
+</td></tr></table>
+</body>
+</html>

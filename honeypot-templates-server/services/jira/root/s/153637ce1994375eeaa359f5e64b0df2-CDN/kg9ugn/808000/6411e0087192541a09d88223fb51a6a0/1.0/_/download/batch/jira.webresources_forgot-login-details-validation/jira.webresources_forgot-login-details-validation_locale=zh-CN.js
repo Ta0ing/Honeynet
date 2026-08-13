@@ -1,0 +1,6 @@
+WRMCB=function(e){var c=console;if(c&&c.log&&c.error){c.log('Error running batched script.');c.error(e);}}
+;
+try {
+/* module-key = 'jira.webresources:forgot-login-details-validation', location = '/includes/forgotLoginDetailsValidation.js' */
+require(["jira/util/init-on-dcl","jira/util/formatter"],function(e,r){"use strict";e(function(){function e(e){var i=t.querySelector(".field-group:not(.hidden)");if(i){var n=i.querySelector("input");if(n){e.preventDefault();var o=i.querySelector(".error");if(""===n.value){if(!o){var u=n.getAttribute("name"),a='<div class="error">'+function(e){switch(e){case"username":return "\u8f93\u5165\u60a8\u7684\u7528\u6237\u540d";case"email":return "\u8f93\u5165\u60a8\u7684\u7535\u5b50\u90ae\u7bb1\u3002";default:return "\u8f93\u5165\u60a8\u7684\u7528\u6237\u540d\u6216\u7535\u5b50\u90ae\u7bb1\u3002"}}(u)+"</div>";i.insertAdjacentHTML("beforeend",a)}}else o&&i.removeChild(o),t.submit()}}}var t=document.querySelector("#forgot-login");t.addEventListener("submit",e)})});
+}catch(e){WRMCB(e)};

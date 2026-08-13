@@ -1,0 +1,101 @@
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*this file contains layout style adjustments for dojo widgets*/
+/*companion file to dojoTheme.css*/
+/*they override/add to the styles in dijit.css*/
+/******************************/
+/*** D O J O   S T Y L E S ****/
+/******************************/
+
+/*** A C T I O N   M E N U S    A N D   T Y P E   A H E A D ***/
+/*this is the dojo version of our action menus*/
+.dijitMenu{border-width:1px !important;border-style:solid !important;/*need !important because dijitReset comes after dijitMenu in the list of classes*/}
+.dijitMenuTable{background-position:left top;background-repeat:repeat-y;}
+.dijitMenuItem td{white-space:nowrap;padding:2px 0;}
+.dijitMenuItemIcon{width:25px;height:16px;background-position:center center}
+.dijitMenuItemLabel{padding-left:5px !important;padding-right:5px !important;}
+.dijitMenuSeparatorTop{margin-top:0;border-bottom-width:1px;border-bottom-style:solid}
+.dijitMenuSeparatorBottom{margin-bottom:0;border:0;}
+/***********************************************************/
+
+/*** C A L E N D A R / D A T E   P I C K E R ***/
+.dijitCalendarContainer{border-collapse:collapse;border-width:1px;border-style:solid;width:160px;font-size:1em}
+.dijitCalendarContainer thead tr th{text-align:center;padding:1px}
+.dijitCalendarContainer tbody tr td{text-align:center;border-width:0;width:12%;}
+.dijitCalendarContainer tfoot tr td{text-align:center}
+.dijitCalendarContainer .dijitCalendarMonth{font-weight:bold;text-align:center}
+.dijitCalendarSelectedDate .dijitCalendarDateLabel{font-weight:bold;}
+.dijitCalendarBodyContainer .dayFlagPersonalTask,
+.dijitCalendarBodyContainer .dayFlagTeamTask,
+.dijitCalendarBodyContainer .dayFlagOverdueTask,
+.dijitCalendarBodyContainer .dayFlagTodayTask{border-bottom-width:1px;border-bottom-style:solid;border-right-width:1px;border-right-style:solid;cursor:pointer;cursor:hand;}
+.dijitCalendarYearLabel .dijitCalendarPreviousYear, 
+.dijitCalendarYearLabel .dijitCalendarSelectedYear,
+.dijitCalendarYearLabel .dijitCalendarNextYear{margin-right:4px;margin-left:4px;}
+.dijitCalendarYearLabel .dijitCalendarSelectedYear{cursor:default;}
+.dijitCalendarContainer .dijitCalendarIncrementControl{width:15px;height:15px;font-size:16px;margin:0 3px;}
+.dijitCalendarContainer .dijitCalendarIncrease, .dijitCalendarContainer .dijitCalendarDecrease{cursor:pointer;cursor:hand;display:inline;}
+.dijitCalendarContainer .dijitCalendarIncrease{padding-right:16px;background-repeat:no-repeat;background-position:right 3px;}
+.dijitCalendarContainer .dijitCalendarDecrease{padding-left:16px;background-repeat:no-repeat;background-position:left 3px;}
+.dijitCalendarIncrease .dijitCalendarIncreaseInner, .dijitCalendarDecrease .dijitCalendarDecreaseInner{display:none;}
+.dijitCalendarYearContainer h3.dijitCalendarYearLabel{margin-bottom:0;}
+.dijit_a11y .dijitCalendarIncrease, .dijit_a11y .dijitCalendarDecrease{border-width:1px;border-style:solid}/*for an outline, when images are turned off*/
+/***********************************************************/
+
+/*** D I A L O G ***/
+/*see dialog component for additional classes. The dojo dialog is just used as a wrapper for our lotusDialog, which can be used independently of dojo*/
+.dijitContentPane{overflow:visible}
+/***********************************************************/
+
+/*** D I S A B L E D   E L E M E N T S ***/
+.dijitSliderDisabled *, .dijitDisabledClickableRegion, .dijitSpinnerDisabled *, .dijitButtonDisabled *, .dijitDropDownButtonDisabled *, .dijitComboButtonDisabled *, .dijitComboBoxDisabled * {
+cursor:not-allowed !important;
+}
+/***********************************************************/
+
+/*** R I C H   T E X T   E D I T O R ***/
+.dijitIEFixedToolbar{position:absolute;top: expression(eval((document.documentElement||document.body).scrollTop));}
+.RichTextEditable .dijitEditorIcon{background-repeat:no-repeat;width:18px;height:18px;text-align:center;}
+.RichTextEditable .dijitButton,
+.RichTextEditable .dijitDropDownButton,
+.RichTextEditable .dijitComboButton{margin:0;}
+.RichTextEditable .dijitButtonNode{border:0;margin:0;padding:.1em;line-height:normal;cursor:pointer;cursor:hand;vertical-align:middle;text-align:center;}
+.RichTextEditable .dijitToolbar{background-position:left center;background-repeat:repeat-x;border-bottom-width:1px;border-bottom-style:solid;}
+.RichTextEditable{border-width:1px;border-style:solid;}
+.RichTextEditable .dijitButtonNode .dijitArrowButtonInner{width:10px;}
+/*to support hover and checked states*/
+/*keeps UI from shifting as buttons are rolled over in LTR mode.  Not needed for RTL mode.*/
+.RichTextEditable .dijitToolbar .dijitButton,
+.RichTextEditable .dijitToolbar .dijitToggleButton, 
+.RichTextEditable .dijitToolbar .dijitDropDownButton { margin: 1px; padding: 0px; border:1px solid transparent; }
+.RichTextEditable .dijitToolbar .dijitButtonChecked, 
+.RichTextEditable .dijitToolbar .dijitToggleButtonChecked {margin:1px !important;padding:0 !important;}
+.dj_ie6 .RichTextEditable .dijitToolbar .dijitButton,
+.dj_ie6 .RichTextEditable .dijitToolbar .dijitToggleButton, 
+.dj_ie6 .RichTextEditable .dijitToolbar .dijitDropDownButton 
+{border:0;margin:2px;padding:0px 2px;}
+
+.dj_ie6 .RichTextEditable .dijitToolbar .dijitButtonChecked, 
+.dj_ie6 .RichTextEditable .dijitToolbar .dijitToggleButtonChecked{border:1px;margin:1px !important;padding:0px 2px !important;}
+
+.dj_ie6 .RichTextEditable .dijitToolbar .dijitButtonHover,
+.dj_ie6 .RichTextEditable .dijitToolbar .dijitToggleButtonHover,
+.dj_ie6 .RichTextEditable .dijitToolbar .dijitDropDownButtonHover{margin:1px !important;padding:0px 2px !important;border:1px;}
+/***********************************************************/
+
+/*** S L I D E R ***/
+.dijitSlider .dijitSliderImageHandle{border:0;background-position:left bottom;background-repeat:no-repeat;width:10px;height:11px;}
+.dijitSlider .dijitSliderImageHandleH{top:-3px;}
+.dj_ie6 .dijitSlider .dijitSliderImageHandleH{top:-8px}
+.dijitSlider .dijitSliderBar{border-style:none;}
+.dijitSlider .dijitSliderBumperH{width:2px;}
+.dijitSlider .dijitButtonNode{display:none;}
+/***********************************************************/
+
+/*** T O O L T I P ***/
+.lotusui .dijitTooltipContainer{border-width:1px;border-style:solid;background-position:left top;background-repeat:repeat-x;}
+/***********************************************************/
+
+/*** T Y P E   A H E A D ***/
+.dijitPopup ul.dijitMenu{margin:0}/*fixes alignment of typeahead*/
+/***********************************************************/

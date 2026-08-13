@@ -1,0 +1,69 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,th,td{margin:0;padding:0;}
+body{color:#333;background:#fff;font-family: PingFang SC,Microsoft YaHei,arial,helvetica,sans-serif;font-size: 14px;line-height: 1.5;}
+body,html{height:100%; min-height:500px;min-width: 1220px;}
+body, button, input, select, textarea{font-family: PingFang SC,Microsoft YaHei,arial,helvetica,sans-serif;font-size: 14px;}
+h1,h2,h3,h4,h5,h6{font-size:100%; font-weight:normal;}
+ol,ul,dl{list-style-type:none;list-style-image: none;}
+fieldset,img,a img,iframe{ border:0;}
+table{border-collapse:collapse; border-spacing:0;}
+select,input,img{vertical-align:middle;}
+a {text-decoration:none;outline: 0;color: #333;}
+a:hover{color: #fff;outline:0;}
+a:active{color: #fff;outline:0;}
+:focus{outline:0}
+i,em{font-style:normal;font-weight:normal;}
+input,select,textarea{resize:none;}
+.g-left{float:left!important;}
+.g-right{float:right!important;}
+.g-center{margin:auto;}
+.g-clear{clear:both;}
+.g-ohide{overflow:hidden;}
+.g-clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+.g-clearfloat{zoom:1}
+.g-inblock{display: inline-block;}
+.m-warp{position:relative;width:100%;height: 100%; min-width:1220px;background: #090e21;}
+.m-bg02{background: url("../images/bg_bg05.jpg") no-repeat;background-size: cover;}
+.m-login{position: absolute;top: 50%;margin-top: -200px;left: 0;width: 100%;}
+.m-login>p{font-size: 14px;color: #5b90f9;text-align: left;margin-top: 50px;padding-left: 25%}
+.m-login .login-box{overflow: hidden;height: 354px;}
+.m-login .login-left{float: left;width: 37.5%;height: 100%;
+    background: url("../images/bg_login01.png") no-repeat center right;
+}
+/*width: 62.5%*/
+.m-login .login-right{float: left;padding-left:20%;width: 100%;height: 100%;background: url("../images/bg_login02.png") no-repeat center left;}
+.m-login .login-right>h2{font-size: 34px;line-height: 40px;letter-spacing:2px;padding: 70px 0 40px 60px;
+    background-image:-webkit-linear-gradient(top,#fff,#f4f4f4,#9a9a9a); -webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.m-loginform{overflow: hidden;padding-left: 60px;}
+.m-loginform>li{float: left;margin-right: 20px;}
+.m-loginform .form-title{color: #fff;display: block;font-size: 14px;line-height: 16px;margin-bottom: 14px;font-weight: bold;}
+.m-loginform .form-box{height: 46px;position: relative;}
+.m-loginform .form-box>em{display: block;float: left; width: 10px;height: 100%;background: url("../images/bg_login06.png") no-repeat center left;}
+.m-loginform .form-box>i{display: block;width: 20px;height: 100%;position: absolute;top: 0;left: 25px;}
+.m-loginform .form-text{width: 200px;height: 100%;float: left;border: none;border-right: 1px solid #00d2ff;background: url("../images/bg_login07.png") repeat-x;
+    padding-left: 52px;color: #fff;}
+.m-loginform .form-text:focus{opacity: 0.8;}
+.m-loginform .form-box>i.form-name{background: url("../images/bg_login04.png") no-repeat center left;}
+.m-loginform .form-box>i.form-password{background: url("../images/bg_login05.png") no-repeat center left;}
+.m-loginform .form-text::placeholder{color: #00deff;font-size: 14px;}
+.m-loginform .form-button{display: block;width: 118px;height: 46px;background: url("../images/bg_login03.png");font-size: 16px;font-weight: bold;margin-top: 30px;
+    line-height: 46px;color: #fff;text-align: center;letter-spacing: 2px;}
+.m-loginform .form-button:hover{color: #fff;opacity: 0.9;}
+.m-check{overflow: hidden;color: #04c1e9;font-size: 12px;line-height: 14px;margin-top: 15px;}
+.m-check>a{color: #04c1e9;font-size: 12px;line-height: 14px;display: block;}
+.m-check input[type=checkbox] {margin-right: 5px;cursor: pointer;font-size: 14px;width: 14px;height: 14px;position: relative;}
+.m-check input[type=checkbox]:after {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 0;
+    content: " ";
+    background-color: #0a408e;
+    color: #04c1e9;
+    display: block;
+    visibility: visible;
+    padding: 0;
+    border-radius: 0;
+    border: 1px solid #04c1e9;
+    text-align:center;
+}
+.m-check input[type=checkbox]:checked:after {content: "✓";font-size: 12px;line-height: 12px;}

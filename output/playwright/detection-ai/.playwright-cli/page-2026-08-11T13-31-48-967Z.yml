@@ -1,0 +1,500 @@
+- generic [ref=f3e3]:
+  - complementary [ref=f3e4]:
+    - generic [ref=f3e5]:
+      - generic [ref=f3e13]:
+        - strong [ref=f3e14]: Honeynet
+        - generic [ref=f3e15]: 威胁捕捉与诱骗系统
+      - menu [ref=f3e17]:
+        - generic [ref=f3e18]:
+          - menuitem "首页" [ref=f3e19] [cursor=pointer]
+          - menuitem "大屏" [ref=f3e23] [cursor=pointer]
+          - generic [ref=f3e26]:
+            - generic [ref=f3e27] [cursor=pointer]: 威胁感知
+            - generic [ref=f3e34]:
+              - menuitem "攻击列表" [ref=f3e35] [cursor=pointer]
+              - menuitem "扫描感知" [ref=f3e38] [cursor=pointer]
+              - menuitem "失陷感知" [ref=f3e41] [cursor=pointer]
+              - menuitem "检测规则" [ref=f3e44] [cursor=pointer]
+              - menuitem "AI 分析" [ref=f3e47] [cursor=pointer]
+          - generic [ref=f3e53]:
+            - generic [ref=f3e54] [cursor=pointer]: 威胁实体
+            - generic [ref=f3e61]:
+              - menuitem "攻击来源" [ref=f3e62] [cursor=pointer]
+              - menuitem "账号资源" [ref=f3e65] [cursor=pointer]
+              - menuitem "资产画像" [ref=f3e68] [cursor=pointer]
+              - menuitem "告警中心" [ref=f3e71] [cursor=pointer]
+          - generic [ref=f3e74]:
+            - generic [ref=f3e75] [cursor=pointer]: 环境管理
+            - generic [ref=f3e82]:
+              - menuitem "节点管理" [ref=f3e83] [cursor=pointer]
+              - menuitem "模板管理" [ref=f3e86] [cursor=pointer]
+              - menuitem "服务管理" [ref=f3e89] [cursor=pointer]
+              - menuitem "蜜罐实例" [ref=f3e92] [cursor=pointer]
+          - generic [ref=f3e95]:
+            - generic [ref=f3e96] [cursor=pointer]: 平台管理
+            - generic [ref=f3e104]:
+              - menuitem "Agent 发布" [ref=f3e105] [cursor=pointer]
+              - menuitem "系统配置" [ref=f3e108] [cursor=pointer]
+      - generic [ref=f3e111]:
+        - generic [ref=f3e112]: Server 运行中
+        - generic [ref=f3e116]: v0.19.1 · Community
+  - generic [ref=f3e117]:
+    - generic [ref=f3e118]:
+      - list [ref=f3e120]:
+        - listitem [ref=f3e121]: 威胁感知
+        - listitem [ref=f3e125]: 检测规则
+      - generic [ref=f3e126]:
+        - button "切换主题" [ref=f3e128] [cursor=pointer]
+        - generic [ref=f3e132]:
+          - button "告警中心" [ref=f3e133] [cursor=pointer]
+          - generic [ref=f3e136]: 99+
+        - generic [ref=f3e137]: 管理员
+        - button "A 系统管理员" [ref=f3e141] [cursor=pointer]:
+          - generic [ref=f3e142]: A
+          - generic [ref=f3e144]: 系统管理员
+    - main [ref=f3e145]:
+      - generic [ref=f3e146]:
+        - generic [ref=f3e147]:
+          - heading "检测规则" [level=4] [ref=f3e148]
+          - text: 统一管理 Agent 本地匹配与 Server 二次确认规则；修改后实时推送到所有在线节点
+        - generic [ref=f3e149]:
+          - button "刷新" [ref=f3e151] [cursor=pointer]
+          - button "同步内置规则" [ref=f3e155] [cursor=pointer]
+          - button "自定义规则" [ref=f3e159] [cursor=pointer]
+      - alert [ref=f3e162]:
+        - generic [ref=f3e166]: 当前加载 54 条，启用 52 条，待人工审核 2 条。响应模板与检测规则相互隔离，不会作为检测逻辑执行。
+      - generic [ref=f3e168]:
+        - textbox "搜索规则名称、CVE/XVE 或规则标识" [ref=f3e170]
+        - generic [ref=f3e171]: 规则匹配采用受限 contains / RE2 regexp，不执行任意脚本
+      - generic [ref=f3e175]:
+        - table [ref=f3e179]:
+          - rowgroup [ref=f3e188]:
+            - row [ref=f3e189]:
+              - columnheader "规则" [ref=f3e190]
+              - columnheader "级别" [ref=f3e192]
+              - columnheader "来源" [ref=f3e194]
+              - columnheader "特征" [ref=f3e196]
+              - columnheader "规则状态" [ref=f3e198]
+              - columnheader "总开关" [ref=f3e200]
+              - columnheader "操作" [ref=f3e202]
+          - rowgroup [ref=f3e204]:
+            - row [ref=f3e205]:
+              - cell "Jinja2 代码注入漏洞(CVE-2019-8341) builtin:CVE_2019_8341_Attack" [ref=f3e206]:
+                - generic [ref=f3e209]:
+                  - generic [ref=f3e210]: Jinja2 代码注入漏洞(CVE-2019-8341)
+                  - text: builtin:CVE_2019_8341_Attack
+              - cell "MEDIUM" [ref=f3e211]
+              - cell "内置规则 100000010" [ref=f3e216]:
+                - generic [ref=f3e219]:
+                  - generic [ref=f3e220]: 内置规则
+                  - generic [ref=f3e222]: "100000010"
+              - cell "10 项" [ref=f3e223]
+              - cell "待审核" [ref=f3e225]
+              - cell [ref=f3e230]:
+                - switch [disabled] [ref=f3e233]
+              - cell [ref=f3e235]:
+                - generic [ref=f3e238]:
+                  - button [ref=f3e240] [cursor=pointer]
+                  - button [ref=f3e244] [cursor=pointer]
+            - row [ref=f3e247]:
+              - cell "Django SQL注入(CVE-2021-35042) builtin:CVE_2021_35042_Attack" [ref=f3e248]:
+                - generic [ref=f3e251]:
+                  - generic [ref=f3e252]: Django SQL注入(CVE-2021-35042)
+                  - text: builtin:CVE_2021_35042_Attack
+              - cell "MEDIUM" [ref=f3e253]
+              - cell "内置规则 100000000" [ref=f3e258]:
+                - generic [ref=f3e261]:
+                  - generic [ref=f3e262]: 内置规则
+                  - generic [ref=f3e264]: "100000000"
+              - cell "5 项" [ref=f3e265]
+              - cell "待审核" [ref=f3e267]
+              - cell [ref=f3e272]:
+                - switch [disabled] [ref=f3e275]
+              - cell [ref=f3e277]:
+                - generic [ref=f3e280]:
+                  - button [ref=f3e282] [cursor=pointer]
+                  - button [ref=f3e286] [cursor=pointer]
+            - row [ref=f3e289]:
+              - cell "Apache Solr远程命令执行(CVE-2017-12629) builtin:CVE_2017_12629_Attack" [ref=f3e290]:
+                - generic [ref=f3e293]:
+                  - generic [ref=f3e294]: Apache Solr远程命令执行(CVE-2017-12629)
+                  - text: builtin:CVE_2017_12629_Attack
+              - cell "MEDIUM" [ref=f3e295]
+              - cell "内置规则 100000007" [ref=f3e300]:
+                - generic [ref=f3e303]:
+                  - generic [ref=f3e304]: 内置规则
+                  - generic [ref=f3e306]: "100000007"
+              - cell "8 项" [ref=f3e307]
+              - cell "Agent 启用 Server 启用" [ref=f3e309]:
+                - generic [ref=f3e312]:
+                  - generic [ref=f3e313]: Agent 启用
+                  - generic [ref=f3e316]: Server 启用
+              - cell [ref=f3e319]:
+                - switch [checked] [ref=f3e322] [cursor=pointer]
+              - cell [ref=f3e324]:
+                - generic [ref=f3e327]:
+                  - button [ref=f3e329] [cursor=pointer]
+                  - button [ref=f3e333] [cursor=pointer]
+            - row [ref=f3e336]:
+              - cell "ZyXEL P660HN-T1A 操作系统命令注入漏洞(CVE-2017-18368) builtin:CVE_2017_18368_Attack" [ref=f3e337]:
+                - generic [ref=f3e340]:
+                  - generic [ref=f3e341]: ZyXEL P660HN-T1A 操作系统命令注入漏洞(CVE-2017-18368)
+                  - text: builtin:CVE_2017_18368_Attack
+              - cell "MEDIUM" [ref=f3e342]
+              - cell "内置规则 100000036" [ref=f3e347]:
+                - generic [ref=f3e350]:
+                  - generic [ref=f3e351]: 内置规则
+                  - generic [ref=f3e353]: "100000036"
+              - cell "7 项" [ref=f3e354]
+              - cell "Agent 启用 Server 启用" [ref=f3e356]:
+                - generic [ref=f3e359]:
+                  - generic [ref=f3e360]: Agent 启用
+                  - generic [ref=f3e363]: Server 启用
+              - cell [ref=f3e366]:
+                - switch [checked] [ref=f3e369] [cursor=pointer]
+              - cell [ref=f3e371]:
+                - generic [ref=f3e374]:
+                  - button [ref=f3e376] [cursor=pointer]
+                  - button [ref=f3e380] [cursor=pointer]
+            - row [ref=f3e383]:
+              - cell "ZyXEL P660HN-T1A 操作系统命令注入漏洞(CVE-2017-18370) builtin:CVE_2017_18370_Attack" [ref=f3e384]:
+                - generic [ref=f3e387]:
+                  - generic [ref=f3e388]: ZyXEL P660HN-T1A 操作系统命令注入漏洞(CVE-2017-18370)
+                  - text: builtin:CVE_2017_18370_Attack
+              - cell "MEDIUM" [ref=f3e389]
+              - cell "内置规则 100000037" [ref=f3e394]:
+                - generic [ref=f3e397]:
+                  - generic [ref=f3e398]: 内置规则
+                  - generic [ref=f3e400]: "100000037"
+              - cell "7 项" [ref=f3e401]
+              - cell "Agent 启用 Server 启用" [ref=f3e403]:
+                - generic [ref=f3e406]:
+                  - generic [ref=f3e407]: Agent 启用
+                  - generic [ref=f3e410]: Server 启用
+              - cell [ref=f3e413]:
+                - switch [checked] [ref=f3e416] [cursor=pointer]
+              - cell [ref=f3e418]:
+                - generic [ref=f3e421]:
+                  - button [ref=f3e423] [cursor=pointer]
+                  - button [ref=f3e427] [cursor=pointer]
+            - row [ref=f3e430]:
+              - cell "CloudBees Jenkins远程代码执行漏洞(CVE-2018-1000861) builtin:CVE_2018_1000861_Attack" [ref=f3e431]:
+                - generic [ref=f3e434]:
+                  - generic [ref=f3e435]: CloudBees Jenkins远程代码执行漏洞(CVE-2018-1000861)
+                  - text: builtin:CVE_2018_1000861_Attack
+              - cell "MEDIUM" [ref=f3e436]
+              - cell "内置规则 100000012" [ref=f3e441]:
+                - generic [ref=f3e444]:
+                  - generic [ref=f3e445]: 内置规则
+                  - generic [ref=f3e447]: "100000012"
+              - cell "7 项" [ref=f3e448]
+              - cell "Agent 启用 Server 启用" [ref=f3e450]:
+                - generic [ref=f3e453]:
+                  - generic [ref=f3e454]: Agent 启用
+                  - generic [ref=f3e457]: Server 启用
+              - cell [ref=f3e460]:
+                - switch [checked] [ref=f3e463] [cursor=pointer]
+              - cell [ref=f3e465]:
+                - generic [ref=f3e468]:
+                  - button [ref=f3e470] [cursor=pointer]
+                  - button [ref=f3e474] [cursor=pointer]
+            - row [ref=f3e477]:
+              - cell "Dasan GPON家庭路由器命令注入漏洞(CVE-2018-10562) builtin:CVE_2018_10562_Attack" [ref=f3e478]:
+                - generic [ref=f3e481]:
+                  - generic [ref=f3e482]: Dasan GPON家庭路由器命令注入漏洞(CVE-2018-10562)
+                  - text: builtin:CVE_2018_10562_Attack
+              - cell "MEDIUM" [ref=f3e483]
+              - cell "内置规则 100000042" [ref=f3e488]:
+                - generic [ref=f3e491]:
+                  - generic [ref=f3e492]: 内置规则
+                  - generic [ref=f3e494]: "100000042"
+              - cell "6 项" [ref=f3e495]
+              - cell "Agent 启用 Server 启用" [ref=f3e497]:
+                - generic [ref=f3e500]:
+                  - generic [ref=f3e501]: Agent 启用
+                  - generic [ref=f3e504]: Server 启用
+              - cell [ref=f3e507]:
+                - switch [checked] [ref=f3e510] [cursor=pointer]
+              - cell [ref=f3e512]:
+                - generic [ref=f3e515]:
+                  - button [ref=f3e517] [cursor=pointer]
+                  - button [ref=f3e521] [cursor=pointer]
+            - row [ref=f3e524]:
+              - cell "Webmin远程代码执行漏洞(CVE-2019-15107) builtin:CVE_2019_15107_Attack" [ref=f3e525]:
+                - generic [ref=f3e528]:
+                  - generic [ref=f3e529]: Webmin远程代码执行漏洞(CVE-2019-15107)
+                  - text: builtin:CVE_2019_15107_Attack
+              - cell "MEDIUM" [ref=f3e530]
+              - cell "内置规则 100000011" [ref=f3e535]:
+                - generic [ref=f3e538]:
+                  - generic [ref=f3e539]: 内置规则
+                  - generic [ref=f3e541]: "100000011"
+              - cell "7 项" [ref=f3e542]
+              - cell "Agent 启用 Server 启用" [ref=f3e544]:
+                - generic [ref=f3e547]:
+                  - generic [ref=f3e548]: Agent 启用
+                  - generic [ref=f3e551]: Server 启用
+              - cell [ref=f3e554]:
+                - switch [checked] [ref=f3e557] [cursor=pointer]
+              - cell [ref=f3e559]:
+                - generic [ref=f3e562]:
+                  - button [ref=f3e564] [cursor=pointer]
+                  - button [ref=f3e568] [cursor=pointer]
+            - row [ref=f3e571]:
+              - cell "D-Link产品操作系统命令注入漏洞(CVE-2019-16920) builtin:CVE_2019_16920_Attack" [ref=f3e572]:
+                - generic [ref=f3e575]:
+                  - generic [ref=f3e576]: D-Link产品操作系统命令注入漏洞(CVE-2019-16920)
+                  - text: builtin:CVE_2019_16920_Attack
+              - cell "MEDIUM" [ref=f3e577]
+              - cell "内置规则 100000038" [ref=f3e582]:
+                - generic [ref=f3e585]:
+                  - generic [ref=f3e586]: 内置规则
+                  - generic [ref=f3e588]: "100000038"
+              - cell "6 项" [ref=f3e589]
+              - cell "Agent 启用 Server 启用" [ref=f3e591]:
+                - generic [ref=f3e594]:
+                  - generic [ref=f3e595]: Agent 启用
+                  - generic [ref=f3e598]: Server 启用
+              - cell [ref=f3e601]:
+                - switch [checked] [ref=f3e604] [cursor=pointer]
+              - cell [ref=f3e606]:
+                - generic [ref=f3e609]:
+                  - button [ref=f3e611] [cursor=pointer]
+                  - button [ref=f3e615] [cursor=pointer]
+            - row [ref=f3e618]:
+              - cell "Aapche Dubbo Java反序列化漏洞(CVE-2019-17564) builtin:CVE_2019_17564_Attack" [ref=f3e619]:
+                - generic [ref=f3e622]:
+                  - generic [ref=f3e623]: Aapche Dubbo Java反序列化漏洞(CVE-2019-17564)
+                  - text: builtin:CVE_2019_17564_Attack
+              - cell "MEDIUM" [ref=f3e624]
+              - cell "内置规则 100000008" [ref=f3e629]:
+                - generic [ref=f3e632]:
+                  - generic [ref=f3e633]: 内置规则
+                  - generic [ref=f3e635]: "100000008"
+              - cell "7 项" [ref=f3e636]
+              - cell "Agent 启用 Server 启用" [ref=f3e638]:
+                - generic [ref=f3e641]:
+                  - generic [ref=f3e642]: Agent 启用
+                  - generic [ref=f3e645]: Server 启用
+              - cell [ref=f3e648]:
+                - switch [checked] [ref=f3e651] [cursor=pointer]
+              - cell [ref=f3e653]:
+                - generic [ref=f3e656]:
+                  - button [ref=f3e658] [cursor=pointer]
+                  - button [ref=f3e662] [cursor=pointer]
+            - row [ref=f3e665]:
+              - cell "亿赛通电子文档安全管理系统任意文件下载(CVE-2019-9632) builtin:CVE_2019_9632_Attack" [ref=f3e666]:
+                - generic [ref=f3e669]:
+                  - generic [ref=f3e670]: 亿赛通电子文档安全管理系统任意文件下载(CVE-2019-9632)
+                  - text: builtin:CVE_2019_9632_Attack
+              - cell "MEDIUM" [ref=f3e671]
+              - cell "内置规则 100000041" [ref=f3e676]:
+                - generic [ref=f3e679]:
+                  - generic [ref=f3e680]: 内置规则
+                  - generic [ref=f3e682]: "100000041"
+              - cell "6 项" [ref=f3e683]
+              - cell "Agent 启用 Server 启用" [ref=f3e685]:
+                - generic [ref=f3e688]:
+                  - generic [ref=f3e689]: Agent 启用
+                  - generic [ref=f3e692]: Server 启用
+              - cell [ref=f3e695]:
+                - switch [checked] [ref=f3e698] [cursor=pointer]
+              - cell [ref=f3e700]:
+                - generic [ref=f3e703]:
+                  - button [ref=f3e705] [cursor=pointer]
+                  - button [ref=f3e709] [cursor=pointer]
+            - row [ref=f3e712]:
+              - cell "Grafana 路径遍历漏洞(CVE-2021-43798) builtin:CVE_2021_43798_Attack" [ref=f3e713]:
+                - generic [ref=f3e716]:
+                  - generic [ref=f3e717]: Grafana 路径遍历漏洞(CVE-2021-43798)
+                  - text: builtin:CVE_2021_43798_Attack
+              - cell "MEDIUM" [ref=f3e718]
+              - cell "内置规则 100000039" [ref=f3e723]:
+                - generic [ref=f3e726]:
+                  - generic [ref=f3e727]: 内置规则
+                  - generic [ref=f3e729]: "100000039"
+              - cell "3 项" [ref=f3e730]
+              - cell "Agent 启用 Server 启用" [ref=f3e732]:
+                - generic [ref=f3e735]:
+                  - generic [ref=f3e736]: Agent 启用
+                  - generic [ref=f3e739]: Server 启用
+              - cell [ref=f3e742]:
+                - switch [checked] [ref=f3e745] [cursor=pointer]
+              - cell [ref=f3e747]:
+                - generic [ref=f3e750]:
+                  - button [ref=f3e752] [cursor=pointer]
+                  - button [ref=f3e756] [cursor=pointer]
+            - row [ref=f3e759]:
+              - cell "Atlassian Confluence 远程代码执行漏洞(CVE-2023-22518) builtin:CVE_2023_22518_Attack" [ref=f3e760]:
+                - generic [ref=f3e763]:
+                  - generic [ref=f3e764]: Atlassian Confluence 远程代码执行漏洞(CVE-2023-22518)
+                  - text: builtin:CVE_2023_22518_Attack
+              - cell "MEDIUM" [ref=f3e765]
+              - cell "内置规则 100000043" [ref=f3e770]:
+                - generic [ref=f3e773]:
+                  - generic [ref=f3e774]: 内置规则
+                  - generic [ref=f3e776]: "100000043"
+              - cell "5 项" [ref=f3e777]
+              - cell "Agent 启用 Server 启用" [ref=f3e779]:
+                - generic [ref=f3e782]:
+                  - generic [ref=f3e783]: Agent 启用
+                  - generic [ref=f3e786]: Server 启用
+              - cell [ref=f3e789]:
+                - switch [checked] [ref=f3e792] [cursor=pointer]
+              - cell [ref=f3e794]:
+                - generic [ref=f3e797]:
+                  - button [ref=f3e799] [cursor=pointer]
+                  - button [ref=f3e803] [cursor=pointer]
+            - row [ref=f3e806]:
+              - cell "大华智慧园区综合管理平台存在命令执行漏洞 builtin:CVE_2023_33318_Attack" [ref=f3e807]:
+                - generic [ref=f3e810]:
+                  - generic [ref=f3e811]: 大华智慧园区综合管理平台存在命令执行漏洞
+                  - text: builtin:CVE_2023_33318_Attack
+              - cell "MEDIUM" [ref=f3e812]
+              - cell "内置规则 100000044" [ref=f3e817]:
+                - generic [ref=f3e820]:
+                  - generic [ref=f3e821]: 内置规则
+                  - generic [ref=f3e823]: "100000044"
+              - cell "3 项" [ref=f3e824]
+              - cell "Agent 启用 Server 启用" [ref=f3e826]:
+                - generic [ref=f3e829]:
+                  - generic [ref=f3e830]: Agent 启用
+                  - generic [ref=f3e833]: Server 启用
+              - cell [ref=f3e836]:
+                - switch [checked] [ref=f3e839] [cursor=pointer]
+              - cell [ref=f3e841]:
+                - generic [ref=f3e844]:
+                  - button [ref=f3e846] [cursor=pointer]
+                  - button [ref=f3e850] [cursor=pointer]
+            - row [ref=f3e853]:
+              - cell "D-Link DNS-320 操作系统命令注入漏洞(CVE-2019-16057) builtin:XVE_2019_18764_Attack" [ref=f3e854]:
+                - generic [ref=f3e857]:
+                  - generic [ref=f3e858]: D-Link DNS-320 操作系统命令注入漏洞(CVE-2019-16057)
+                  - text: builtin:XVE_2019_18764_Attack
+              - cell "MEDIUM" [ref=f3e859]
+              - cell "内置规则 100000019" [ref=f3e864]:
+                - generic [ref=f3e867]:
+                  - generic [ref=f3e868]: 内置规则
+                  - generic [ref=f3e870]: "100000019"
+              - cell "4 项" [ref=f3e871]
+              - cell "Agent 启用 Server 启用" [ref=f3e873]:
+                - generic [ref=f3e876]:
+                  - generic [ref=f3e877]: Agent 启用
+                  - generic [ref=f3e880]: Server 启用
+              - cell [ref=f3e883]:
+                - switch [checked] [ref=f3e886] [cursor=pointer]
+              - cell [ref=f3e888]:
+                - generic [ref=f3e891]:
+                  - button [ref=f3e893] [cursor=pointer]
+                  - button [ref=f3e897] [cursor=pointer]
+            - row [ref=f3e900]:
+              - cell "Liferay Portal 反序列化漏洞(CVE-2019-16891) builtin:XVE_2019_19298_Attack" [ref=f3e901]:
+                - generic [ref=f3e904]:
+                  - generic [ref=f3e905]: Liferay Portal 反序列化漏洞(CVE-2019-16891)
+                  - text: builtin:XVE_2019_19298_Attack
+              - cell "MEDIUM" [ref=f3e906]
+              - cell "内置规则 100000025" [ref=f3e911]:
+                - generic [ref=f3e914]:
+                  - generic [ref=f3e915]: 内置规则
+                  - generic [ref=f3e917]: "100000025"
+              - cell "7 项" [ref=f3e918]
+              - cell "Agent 启用 Server 启用" [ref=f3e920]:
+                - generic [ref=f3e923]:
+                  - generic [ref=f3e924]: Agent 启用
+                  - generic [ref=f3e927]: Server 启用
+              - cell [ref=f3e930]:
+                - switch [checked] [ref=f3e933] [cursor=pointer]
+              - cell [ref=f3e935]:
+                - generic [ref=f3e938]:
+                  - button [ref=f3e940] [cursor=pointer]
+                  - button [ref=f3e944] [cursor=pointer]
+            - row [ref=f3e947]:
+              - cell "Atlassian Jira 敏感信息泄漏漏洞(CVE-2020-14179) builtin:XVE_2020_20302_Attack" [ref=f3e948]:
+                - generic [ref=f3e951]:
+                  - generic [ref=f3e952]: Atlassian Jira 敏感信息泄漏漏洞(CVE-2020-14179)
+                  - text: builtin:XVE_2020_20302_Attack
+              - cell "MEDIUM" [ref=f3e953]
+              - cell "内置规则 100000033" [ref=f3e958]:
+                - generic [ref=f3e961]:
+                  - generic [ref=f3e962]: 内置规则
+                  - generic [ref=f3e964]: "100000033"
+              - cell "2 项" [ref=f3e965]
+              - cell "Agent 启用 Server 启用" [ref=f3e967]:
+                - generic [ref=f3e970]:
+                  - generic [ref=f3e971]: Agent 启用
+                  - generic [ref=f3e974]: Server 启用
+              - cell [ref=f3e977]:
+                - switch [checked] [ref=f3e980] [cursor=pointer]
+              - cell [ref=f3e982]:
+                - generic [ref=f3e985]:
+                  - button [ref=f3e987] [cursor=pointer]
+                  - button [ref=f3e991] [cursor=pointer]
+            - row [ref=f3e994]:
+              - cell "畅捷通T+ 逻辑缺陷漏洞(CNVD-2021-05497) builtin:XVE_2021_0666_Attack" [ref=f3e995]:
+                - generic [ref=f3e998]:
+                  - generic [ref=f3e999]: 畅捷通T+ 逻辑缺陷漏洞(CNVD-2021-05497)
+                  - text: builtin:XVE_2021_0666_Attack
+              - cell "MEDIUM" [ref=f3e1000]
+              - cell "内置规则 100000040" [ref=f3e1005]:
+                - generic [ref=f3e1008]:
+                  - generic [ref=f3e1009]: 内置规则
+                  - generic [ref=f3e1011]: "100000040"
+              - cell "6 项" [ref=f3e1012]
+              - cell "Agent 启用 Server 启用" [ref=f3e1014]:
+                - generic [ref=f3e1017]:
+                  - generic [ref=f3e1018]: Agent 启用
+                  - generic [ref=f3e1021]: Server 启用
+              - cell [ref=f3e1024]:
+                - switch [checked] [ref=f3e1027] [cursor=pointer]
+              - cell [ref=f3e1029]:
+                - generic [ref=f3e1032]:
+                  - button [ref=f3e1034] [cursor=pointer]
+                  - button [ref=f3e1038] [cursor=pointer]
+            - row [ref=f3e1041]:
+              - cell "Apache Druid 远程命令执行漏洞(CVE-2021-25646) builtin:XVE_2021_12262_Attack" [ref=f3e1042]:
+                - generic [ref=f3e1045]:
+                  - generic [ref=f3e1046]: Apache Druid 远程命令执行漏洞(CVE-2021-25646)
+                  - text: builtin:XVE_2021_12262_Attack
+              - cell "MEDIUM" [ref=f3e1047]
+              - cell "内置规则 100000034" [ref=f3e1052]:
+                - generic [ref=f3e1055]:
+                  - generic [ref=f3e1056]: 内置规则
+                  - generic [ref=f3e1058]: "100000034"
+              - cell "6 项" [ref=f3e1059]
+              - cell "Agent 启用 Server 启用" [ref=f3e1061]:
+                - generic [ref=f3e1064]:
+                  - generic [ref=f3e1065]: Agent 启用
+                  - generic [ref=f3e1068]: Server 启用
+              - cell [ref=f3e1071]:
+                - switch [checked] [ref=f3e1074] [cursor=pointer]
+              - cell [ref=f3e1076]:
+                - generic [ref=f3e1079]:
+                  - button [ref=f3e1081] [cursor=pointer]
+                  - button [ref=f3e1085] [cursor=pointer]
+            - row [ref=f3e1088]:
+              - cell "海康威视 视频接入网关系统 downFile.php 任意文件下载(CNVD-2021-45937) builtin:XVE_2021_7468_Attack" [ref=f3e1089]:
+                - generic [ref=f3e1092]:
+                  - generic [ref=f3e1093]: 海康威视 视频接入网关系统 downFile.php 任意文件下载(CNVD-2021-45937)
+                  - text: builtin:XVE_2021_7468_Attack
+              - cell "MEDIUM" [ref=f3e1094]
+              - cell "内置规则 100000020" [ref=f3e1099]:
+                - generic [ref=f3e1102]:
+                  - generic [ref=f3e1103]: 内置规则
+                  - generic [ref=f3e1105]: "100000020"
+              - cell "3 项" [ref=f3e1106]
+              - cell "Agent 启用 Server 启用" [ref=f3e1108]:
+                - generic [ref=f3e1111]:
+                  - generic [ref=f3e1112]: Agent 启用
+                  - generic [ref=f3e1115]: Server 启用
+              - cell [ref=f3e1118]:
+                - switch [checked] [ref=f3e1121] [cursor=pointer]
+              - cell [ref=f3e1123]:
+                - generic [ref=f3e1126]:
+                  - button [ref=f3e1128] [cursor=pointer]
+                  - button [ref=f3e1132] [cursor=pointer]
+        - list [ref=f3e1137]:
+          - listitem "上一页" [ref=f3e1138]: .
+          - listitem "第 1 页" [ref=f3e1141] [cursor=pointer]: "1"
+          - listitem "第 2 页" [ref=f3e1142] [cursor=pointer]: "2"
+          - listitem "第 3 页" [ref=f3e1143] [cursor=pointer]: "3"
+          - listitem "下一页" [ref=f3e1144] [cursor=pointer]: .

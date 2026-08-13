@@ -1,0 +1,216 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:33:43 GMT">
+    <!-- <link type="text/css" href="./css/reset.css" rel="stylesheet" /> -->
+    <link type="text/css" href="./css/widget.css" rel="stylesheet">
+
+    <link type="text/css" href="./themes/dark/css/widget.css" rel="stylesheet">
+    <link type="text/css" href="./themes/dark/css/style.css" rel="stylesheet">
+    <link rel="icon" href="data:;base64,=">
+    <title>Login</title>
+</head>
+
+<body id="login-body">
+
+    <div class="top" id="top-wrapper">
+        <!--<div class="top-header">
+    	<div class="top-header-wrap">
+        	<h1 id="product-tag">
+            	<span class="icon"></span>
+                <span class="separate"></span>
+                <span class="text">TL-EAP220</span>
+            </h1>
+        </div>
+    </div>-->
+
+        <div class="top-main">
+            <div class="top-main-wrap">
+                <div class="top-content">
+                    <div class="top-header">
+                        <div class="top-header-wrap">
+                            <h1 id="product-tag">
+                                <span class="icon"></span>
+                                <span class="separate"></span>
+                                <span class="text" id="devname"></span>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="top-content-wrap" id="top-content">
+                        <form id="form-login" method="post" action="/login">
+                            <div class="login-field">
+                                <label id="login-username-label">
+                                    <span class="icon"></span>
+                                    <span class="text"></span>
+                                </label>
+                                <input id="login-username" name="username" type="text">
+                            </div>
+                            <div class="login-field">
+                                <label id="login-password-label">
+                                    <span class="icon"></span>
+                                    <span class="text"></span>
+                                </label>
+                                <input id="login-password" name="password" type="password">
+                                <a class="link" href="javascript:void(0);" id="btn_forget_password"></a>
+                            </div>
+                            <!--<div>
+                            <input id="show-characters" />
+                        </div>-->
+                            <button id="login-btn" type="button"></button>
+                        </form>
+
+                    </div>
+                </div>
+
+                <!--<div class="top-footer">
+                <div class="top-footer-wrap">
+                    <span class="help-faq">
+                        <a class="btn-faq" href="javascript:void(0);">support</a>
+                    </span>
+                </div>
+            </div>-->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <button id="test">test</button> -->
+
+    <script type="text/javascript" src="./js/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/libs/md5.js"></script>
+    <!--<script type="text/javascript" src="./js/libs/encrypt.js"></script>-->
+
+    <script id="lan-js" type="text/javascript" src="./locale/en_US/lan.js"></script>
+    <link id="lan-css" type="text/css" rel="stylesheet" href="./locale/en_US/lan.css">
+
+    <script type="text/javascript" src="./js/su/su.js"></script>
+
+    <!-- <script type="text/javascript" src="./js/su/data/proxy.js"></script> -->
+
+    <script type="text/javascript" src="./js/su/widget/widget.js"></script>
+
+    <!-- <script type="text/javascript" src="./js/su/widget/form/form.js"></script> -->
+    <script type="text/javascript" src="./js/su/widget/form/textbox.js"></script>
+    <script type="text/javascript" src="./js/su/widget/form/password.js"></script>
+    <script type="text/javascript" src="./js/su/widget/form/checkbox.js"></script>
+    <script type="text/javascript" src="./js/su/widget/form/button.js"></script>
+
+
+    <script type="text/javascript">
+
+        //<![CDATA[
+        $(document).ready(function (e) {
+
+            // $.ajax({
+            // 	url: "./data/login.json",
+            // 	type: 'POST',
+            // 	data: { "operation":"read" },
+            // 	dataType: 'json',
+            // 	cache:false,
+            // 	error: function(){return false;},
+            // 	success: function(result){	
+            // 		$("span#devname").html(result.dutMode);
+
+            // 		$("input#login-username").focus();
+
+            // 		if ("1" == result.error)
+            // 		{
+            // 			$("input#login-username").textbox("setError", $.su.CHAR.LOGIN.LOGIN_ERR_FAIL);
+            // 		}
+            // 		else if ("2" == result.error)
+            // 		{
+            // 			$("input#login-username").textbox("setError", $.su.CHAR.LOGIN.LOGIN_ERR_TIMEOUT);
+            // 		}
+            // 		else if ("4" == result.error)
+            // 		{
+            // 			$("input#login-username").textbox("setError", $.su.CHAR.LOGIN.LOGIN_ERR_INIT);
+            // 		}
+            // 	}
+            // });
+
+            $("input#login-username").textbox({
+                hint: $.su.CHAR.LOGIN.USERNAME,
+                fieldLabel: null,
+                cls: "inline-block login-text",
+                allowBlank: false
+            });
+
+            $("input#login-password").password({
+                showLevel: false,
+                hint: $.su.CHAR.LOGIN.PASSWORD,
+                _maxLength: 64,
+                fieldLabel: null,
+                vtype: "string_visible_allow_blank",
+                allowBlank: false,
+                allowVisible: true,
+                cls: "inline-block login-text"
+            }).on("ev_change", function (e, value, key, keyCode) {
+                if (key == "Enter" || keyCode == 13) {
+                    return doLogin();
+                };
+            });
+
+            /*$("input#show-characters").checkbox({
+                items: [
+                    {boxlabel: "Show Characters", inputValue: "show-characters-check", id: "show-characters-check"}
+                ],
+                cls: "login-show-characters"
+            });*/
+
+            $("button#login-btn").button({
+                text: $.su.CHAR.LOGIN.LOGIN,
+                handler: function (e) {
+                    return doLogin();
+                },
+                cls: "submit login-btn inline-block"
+            });
+
+            var doLogin = function () {
+                $("button#login-btn").focus();
+
+                if (0 == $("input#login-username").textbox("getValue").length) {
+                    $("input#login-username").textbox("setError", $.su.CHAR.PORTAL.ERR_USERNAME_EMPTY);
+                    return false;
+                }
+
+                if (0 == $("input#login-password").textbox("getValue").length) {
+                    $("input#login-password").textbox("setError", $.su.CHAR.PORTAL.ERR_PWD_EMPTY);
+                    return false;
+                }
+
+
+                $("form#form-login").submit();
+                return true;
+            };
+
+
+            $("a#btn_forget_password").html($.su.CHAR.LOGIN.FORGET_PASSWORD).on("click", function (e) {
+
+            });
+
+            /*$("button#test").click(function(e){
+                $.ajax({
+                    url: "./data/internet.json",
+                    type: "POST",
+                    data: {
+                        "name" : "name",
+                        "id": "id"
+                    },
+                    success: function(data, status, xhr){
+                        console.log(data);
+                    }  
+                });
+            });*/
+
+        });
+//]]>
+    </script>
+
+</body>
+
+</html>

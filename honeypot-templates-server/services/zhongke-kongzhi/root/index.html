@@ -1,0 +1,240 @@
+<!doctype html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-store">
+    <meta http-equiv="Cache-Control" content="must-revalidate">
+    <meta http-equiv="Expires" content="-1">
+
+    <title>anysec</title>
+    <link rel="shortcut icon" href="#" />
+    <link type="text/css" href="css/css.css" rel="stylesheet">
+
+    <style>
+        body,
+        html {
+            text-align: center;
+            margin: 0 auto;
+            background: url(images/bg.gif);
+            font-family: "微软雅黑";
+            font-size: 18px;
+            color: #FFFFFF;
+        }
+
+        ul {
+            margin: 0px;
+            padding: 0px;
+            list-style-type: none;
+        }
+
+        #container {
+            width: 1000px;
+            height: 580px;
+            background: url(images/bg1.gif) no-repeat;
+            text-align: left;
+            margin: 0 auto;
+        }
+
+        #con_L {
+            width: 587px;
+            height: 116px;
+            float: left;
+        }
+
+        #con_L_T {
+            width: 300px;
+            height: 94px;
+            margin-top: 24px;
+            margin-left: 30px;
+        }
+
+        #con_L_B {
+            width: 587px;
+            height: 116px;
+            margin-top: 375px;
+        }
+
+        #con_R {
+            width: 380px;
+            height: 245px;
+            float: right;
+        }
+
+        #con_R_T {
+            width: 380px;
+            height: 79px;
+            margin-top: 320px;
+        }
+
+        #con_R_B {
+            width: 230px;
+            height: 180px;
+            margin-left: 120px;
+            margin-top: -12px;
+            position: relative;
+            z-index: 500;
+        }
+
+        #con_R_B li {
+            width: 230px;
+            height: 35px;
+            *height: 30px;
+        }
+
+        .con_R_B_L {
+            width: 75px;
+            float: left;
+        }
+
+        .con_R_B_L span {
+            letter-spacing: 18px;
+        }
+
+        .con_R_B_R {
+            width: 155px;
+            float: right;
+        }
+
+        .txt {
+            width: 140px;
+            height: 26px;
+            background: url(images/txt.gif) no-repeat;
+            border: 0;
+            padding-left: 6px;
+            font-size: 14px;
+            color: #818080;
+            font-family: "微软雅黑";
+        }
+
+        .sub_exit {
+            width: 64px;
+            height: 24px;
+            border: 0;
+            background-color: transparent;
+            background: url(images/exit.gif) no-repeat;
+            cursor: pointer;
+        }
+
+        .sub_login {
+            width: 64px;
+            height: 24px;
+            border: 0;
+            background-color: transparent;
+            background: url(images/login.gif) no-repeat;
+            cursor: pointer;
+        }
+
+        /* CSS Document */
+
+        select {
+            width: 143px;
+            height: 22px;
+        }
+
+        .btn_bg {
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            line-height: 22px;
+            height: 24px;
+            width: 64px;
+            /* background: url(/images/btn_login.gif) left top no-repeat; */
+            font-size: 14px;
+            color: #000000;
+            border: none;
+            font-family: "微软雅黑";
+            font-weight: bold;
+        }
+    </style>
+    <script type="text/javascript" src="js/prototype.js"></script>
+
+
+
+
+    <script type="text/javascript">
+        function showVersion() {
+            window.open('version.php', 'version', 'height=300,width=400,top=200,left=300,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no');
+        }
+
+        function setLanguage() {
+
+            window.location.href = 'language_set.php?lan=' + document.getElementById('lang').value;
+        }
+
+        function dkeyCheck() {
+            if (!!window.ActiveXObject || "ActiveXObject" in window) {
+                if (document.getElementById("dkey_login").checked) {
+                    document.getElementById("activespan").innerHTML =
+                        '<object classid="clsid:A57F0E7A-15B5-46D1-AA88-51B81AFCA732" id="active" width="0" height="0" codebase="rcweb.cab#Version=1,4,4,0"></object>';
+                }
+
+            } else {
+                alert('仅能在IE浏览器上进行Dkey登录');
+                document.getElementById("dkey_login").checked = false;
+            }
+        }
+
+        function clearValue() {
+            document.getElementById('user_name').value = '';
+            document.getElementById('password').value = '';
+        }
+    </script>
+</head>
+
+<body onload="document.getElementById('user_name').focus();">
+    <form id="form1" name="form1" method="post" action="/login">
+        <input type="hidden" name="token" value="cdeca3d8bf2073f9ac125c7d3630b2b0">
+        <div id="container">
+            <div id="warningBox">
+                <br>系统升级有效期已到, 请联系供应商及时更新授权文件!<br>应用特征库已过期, 请联系供应商及时更新授权文件!<br>URL 库文件已过期, 请联系供应商及时更新授权文件!
+            </div>
+            <div id="con_L">
+                <div id="con_L_T"><img src="images/logo1.gif"></div>
+                <div id="con_L_B"><img src="images/logo2.gif"></div>
+            </div>
+            <div id="con_R">
+                <div id="con_R_T"><img src="images/title.gif"></div>
+                <div id="con_R_B">
+                    <ul>
+                        <li>
+                            <div class="con_R_B_L">语言:</div>
+                            <div class="con_R_B_R">
+                                <select name="lang" id="lang" onchange="setLanguage()" class="select">
+                                    <!-- <option value="en_US">English</option> -->
+                                    <option value="zh_CN" selected="">简体中文</option>
+
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="con_R_B_L">用户名:</div>
+                            <div class="con_R_B_R"><input type="text" class="txt" name="username" id="user_name"></div>
+                        </li>
+                        <li>
+                            <div class="con_R_B_L">密码:</div>
+                            <div class="con_R_B_R"> <input type="password" id="password" class="txt" name="password"
+                                    autocomplete="off"></div>
+                        </li>
+                        <li>
+                            <div class="con_R_B_L"></div>
+                            <div class="con_R_B_R"> <input class="btn_bg" type="submit" id="login"
+                                    value="登录&nbsp;&nbsp;&nbsp;&nbsp;">&nbsp;&nbsp;&nbsp;<input class="btn_bg"
+                                    onclick="clearValue()" type="button" value="清空&nbsp;&nbsp;&nbsp;&nbsp;"></div>
+                        </li>
+                        <li style="font-size:16px; letter-spacing:1px; margin-top:12px;">深圳市中科网威科技有限公司</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <span id="activespan"></span>
+
+
+</body>
+
+</html>

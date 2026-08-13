@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="bookmark" type="image/x-icon" href="/images/favicon.ico">
+	<link rel="icon" href="data:;base64,=">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">
+	<title>锐捷网络-EWEB网管系统</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="product.js"></script>
+	<script type="text/javascript" src="pub/util/sea.js"></script>
+	<script type="text/javascript" src="common/js/config/common.sea.config.js"></script>
+	<style type="text/css">
+		.rui-validator-tip {
+			width: 100%;
+			left: 415px;
+			top: 0
+		}
+
+		.lg-form .rui-validator-tip-right {
+			top: 16px
+		}
+
+		.lg-form .rui-validator-tip-txt {
+			max-width: none;
+			border-radius: 5px;
+			padding: 12px 16px;
+			background-position: 10px -150px
+		}
+
+		@media screen and (max-width:520px) {
+			.rui-validator-tip {
+				left: 315px
+			}
+		}
+
+		@media screen and (max-width:320px) {
+			.rui-validator-tip {
+				left: 275px
+			}
+		}
+	</style>
+	<link charset="utf-8" rel="stylesheet" href="pub/ui/rui-min.css">
+	<link charset="utf-8" rel="stylesheet" href="pub/ui/iconfont/iconfont.css">
+	<link charset="utf-8" rel="stylesheet" href="switch/css/style.css">
+</head>
+
+<body id="body_index" class="body-index" style="visibility: visible;">
+	<div id="rui_msg_container_top" class="rui_msg_container_top">
+		<table cellspacing="0" cellpadding="0" border="0" class="rui-loader rui-loader-msg">
+			<tbody>
+				<tr>
+					<td valign="middle">
+						<div class="loader-logo"><span class="rui-loader-icon riconfont ricon-load-a"></span></div>
+					</td>
+					<td valign="middle"><span class="rui-loader-text"></span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="lg-wrap">
+		<div class="lg-top" style="background: #33c6ba center bottom no-repeat;">
+			<div class="lg-top-info clearfix">
+				<div class="f-left lg-logo"></div>
+
+			</div>
+			<div class="lg-font lg-head">RG交换机</div>
+			<div class="lg-font lg-subhead">极简网络，新一代交换机</div>
+		</div>
+		<div class="lg-middle">
+			<div class="g-none">
+				<!-- 表单自动填充问题规避处理：诱骗浏览器自动填充到隐藏的输入框里(浏览器更新后可能失效) -->
+				<input name="username">
+				<input name="password" type="password"><!-- 自动填写诱骗 -->
+			</div>
+			<form action="/login" method="POST">
+				<div class="lg-form lg-margin-b " style="width: 100%;">
+					<span class="iconfont icon-username"></span>
+					<input id="username" type="text" name="username" value placeholder="请输入管理员账户..." autocomplete="off">
+
+					<div class="rui-validator-tip g-none">
+						<span class="rui-validator-tip-arrow rui-validator-tip-right"></span>
+						<span class="rui-validator-tip-txt rui-validator-tip-txt-right">
+							<!--请输入管理员账号-->
+						</span>
+					</div>
+				</div>
+				<div class="lg-form lg-margin-b" style="width: 100%;">
+					<span class="iconfont icon-password"></span>
+					<input id="password" type="password" name="password" placeholder="请输入管理员密码..." autocomplete="off">
+					<div class="rui-validator-tip g-none">
+						<span class="rui-validator-tip-arrow rui-validator-tip-right"></span>
+						<span class="rui-validator-tip-txt rui-validator-tip-txt-right">
+							<!--请输入管理员密码-->
+						</span>
+					</div>
+				</div>
+
+				<div class="lg-form-btn">
+					<button class="resource lg-font lg-btn-submit" type="submit" id="login" mark="login.loginText">登录</button>
+					<div class="lg-auth-tip" id="lg_auth_tip"></div>
+				</div>
+			</form>
+		</div>
+		<div class="footer-index-wrap">
+			<div class="footer footer-index footer-pc">
+				<div class="footer-logo"></div><a id class="border-r " data-href="http://bbs.ruijie.com.cn/forum.php"
+					href="http://bbs.ruijie.com.cn/forum.php" title target="_blank" rel="noopener noreferrer">锐捷社区</a><a
+					id="service_skype_overseas" class="border-r " data-href="http://mall.ruijie.com.cn/index.php?com=com_shop"
+					href="http://mall.ruijie.com.cn/index.php?com=com_shop" title target="_blank"
+					rel="noopener noreferrer">官方商城</a><a id class="border-r " data-href="http://www.ruijie.com.cn/fw/wt/"
+					href="http://www.ruijie.com.cn/fw/wt/" title target="_blank" rel="noopener noreferrer">常见问题</a><a id
+					class="border-r " data-href="http://www.ruijie.com.cn/fw/wd/" href="http://www.ruijie.com.cn/fw/wd/" title
+					target="_blank" rel="noopener noreferrer">实施一本通</a><a id class="border-r no-border"
+					data-href="http://www.ruijie.com.cn/fw/rj/" href="http://www.ruijie.com.cn/fw/rj/" title target="_blank"
+					rel="noopener noreferrer">软件版本下载</a><label><span style="display:inline-block;">客服：4008 111
+						000</span></label><br>
+				<div style="margin-top: 5px; display: inline-block"><span>支持IE9-IE11，谷歌，360浏览器</span>&nbsp;<span>©2000-2021
+						锐捷网络</span></div>
+			</div>
+			<div class="footer footer-index footer-mobile">
+				<div class="footer-logo"></div><span>©2000-2021 锐捷网络</span>
+			</div>
+		</div>
+	</div>
+	<div id="redirect" class="g-none">
+		<div class="memo">
+			<div>
+				<strong class="resource" mark="pub.note">说明：</strong>
+				<span class="resource" mark="login.httpNote">当前HTTP访问存在安全隐患，建议使用HTTPS安全访问。登录后可以在基本配置里面配置HTTP自动重定向</span>
+			</div>
+			<div id="nat_notice" class="none">
+				<strong class="resource" mark="pub.notice">注意：</strong>
+				<span class="resource" mark="login.natNotice">检测到您当前的访问可能经过NAT，请输入正确的地址和HTTPS端口</span>
+			</div>
+
+		</div>
+		<div class="form-norm">
+			<div class="form-group">
+				<div class="form-label resource" mark="login.httpAccess">HTTPS访问：</div>
+				<div class="form-controls">
+					<label><input type="checkbox" class id="toHttps" checked> <span class="resource"
+							mark="login.httpJump">跳转</span></label>
+				</div>
+			</div>
+			<div class="form-group" id="nat_config">
+				<div class="form-label resource" mark="login.jumpTo">跳转到：</div>
+				<div class="form-controls">
+					<label><input id="httpsIp" type="text" class="input-txt"><span> : </span><input id="httpsPort" type="text"
+							class="input-txt" style="width: 100px"></label>
+				</div>
+			</div>
+			<div class="form-group none" id="remember_config">
+				<div class="form-label resource" mark="login.reminder">下次提醒：</div>
+				<div class="form-controls">
+					<label><input type="checkbox" class id="remember" checked> <span class="resource"
+							mark="login.unminder">不提醒</span></label>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="rui-dialog rui-dialog-win rui-dialog-small" id="Rui_Dialog_1629878390734_250"
+		ruiid="DragRui_Dialog_1629878390734_250" style="left: 225px; top: 207.5px; display: none; z-index: 10009;">
+		<table class="rui-dialog-table" cellpadding="0" cellspacing="0" border="0">
+			<tbody>
+				<tr>
+					<td class="rui-dialog-tl"></td>
+					<td class="rui-dialog-tc">
+						<div class="rui-dialog-tc-inner">
+							<div class="rui-dialog-icon"></div>
+							<div class="rui-dialog-title" style="cursor: move;">提示信息!</div>
+							<div class="rui-dialog-winbtns" style="width: 36px;">
+								<div class="rui-dialog-winbtn riconfont ricon-ios-close-empty"></div>
+							</div>
+						</div>
+					</td>
+					<td class="rui-dialog-tr"></td>
+				</tr>
+				<tr>
+					<td class="rui-dialog-cl"></td>
+					<td class="rui-dialog-cc">
+						<div class="rui-dialog-body" style="width: 350px;">
+							<div class="rui-dialog-content rui-dialog-content-noimage">
+								<div class="rui-dialog-alert">
+									<div class="rui-dialog-alert-left"><span
+											class="rui-dialog-alert-img riconfont ricon-alert-circled"></span></div>
+									<div class="rui-dialog-alert-content"></div>
+								</div>
+							</div>
+							<div class="rui-dialog-buttons">
+								<div class="rui-dialog-buttons-inner rui-dialog-buttons-center"><button
+										class="rui-dialog-right-btn rui-dialog-center-btn rui-btn rui-btn-oper" type="button">确定</button>
+									<div class="rui-dialog-clear"></div>
+								</div>
+							</div>
+						</div>
+					</td>
+					<td class="rui-dialog-cr"></td>
+				</tr>
+				<tr>
+					<td class="rui-dialog-bl"></td>
+					<td class="rui-dialog-bc"></td>
+					<td class="rui-dialog-br"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="rui-dialog-mask" style="display: none; height: 600px; z-index: 10008;"></div>
+
+</body>
+
+</html>

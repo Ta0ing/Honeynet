@@ -1,0 +1,115 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/static/img/facio.ico" type="image/x-icon">
+    <title>忘记密码</title>
+
+    
+
+<!-- css file -->
+<link href="../../../../static/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../../../static/css/font-awesome.min.css" rel="stylesheet">
+<link href="../../../../static/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+<link href="../../../../static/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+<link href="../../../../static/css/style.css" rel="stylesheet">
+<link href="../../../../static/css/plugins/vaildator/jquery.validator.css" rel="stylesheet">
+<link href="../../../../static/css/plugins/datatables/datatables.min.css" rel="stylesheet">
+<!-- scripts -->
+<script src="../../../../static/js/jquery-3.1.1.min.js"></script>
+<script src="../../../../static/js/plugins/sweetalert/sweetalert.min.js"></script>
+<script src="../../../../static/js/bootstrap.min.js"></script>
+<script src="../../../../static/js/plugins/datatables/datatables.min.js"></script>
+<script src="../../../jsi18n"></script>
+<link href="../../../../static/css/plugins/select2/select2.min.css" rel="stylesheet">
+
+
+
+    <link href="../../../../static/css/jumpserver.css" rel="stylesheet">
+    <script src="../../../../static/js/jumpserver.js"></script>
+    <style>
+        .passwordBox {
+            max-width: 560px;
+            margin: 0 auto;
+            padding: 100px 20px 20px 20px;
+        }
+    </style>
+    
+    <style>
+        .captcha {
+            float: right;
+        }
+        #id_captcha_1 {
+            width: 50%;
+        }
+    </style>
+
+</head>
+
+<body class="gray-bg">
+    <div class="passwordBox animated fadeInDown">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="ibox-content">
+                    <img src="../../../../static/img/logo.png" style="margin: auto" width="50" height="50">
+                    <h2 class="font-bold" style="display: inline"> 忘记密码?</h2>
+                    <h1></h1>
+                    
+    
+    <p>
+        输入您的邮箱, 将会发一封重置邮件到您的邮箱中
+    </p>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <form role="form" class="form-horizontal" action method="post">
+                <input type="hidden" name="csrfmiddlewaretoken" value="fk4mRwo3DrKcBHr16Sr3jdAqPH0FLQJyGI26miGIWG6rUNcZQRZoccLcnZJGDmtI">
+                <div class="form-group required"><label class="col-md-2 control-label" for="id_email">邮件</label><div class="col-md-9"><input type="email" name="email" class="form-control" title required id="id_email"></div></div>
+                <div class="form-group required"><label class="col-md-2 control-label" for="id_captcha_1">验证码</label><div class="col-md-9"><img src="../../captcha/image/9f13804f9e2b85625c9ab2f03c461397d07b0496" alt="captcha" class="captcha">
+<input type="hidden" name="captcha_0" value="9f13804f9e2b85625c9ab2f03c461397d07b0496" class="form-control" title required id="id_captcha_0"><input type="text" name="captcha_1" class="form-control" title required id="id_captcha_1" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false"></div></div>
+                <button type="submit" class="btn btn-primary block full-width m-b">提交</button>
+            </form>
+        </div>
+    </div>
+
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                 
+
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<!-- Mainly scripts -->
+<script src="../../../../static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="../../../../static/js/plugins/toastr/toastr.min.js"></script>
+<script src="../../../../static/js/inspinia.js"></script>
+<script src="../../../../static/js/jumpserver_v%3D8.js"></script>
+<script src="../../../../static/js/plugins/select2/select2.full.min.js"></script>
+<script src="../../../../static/js/plugins/select2/i18n/zh-CN.js"></script>
+<script>
+activeNav("");
+$(document).ready(function(){
+    setAjaxCSRFToken();
+    $('textarea').attr('rows', 5);
+    if ($('.tooltip')[0]) {
+        $('.tooltip').tooltip();
+    }
+    $.fn.select2.defaults.set('language', getUserLang())
+});
+</script>
+
+ 
+</html>

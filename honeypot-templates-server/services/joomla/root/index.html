@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	<meta name="generator" content="Joomla! - Open Source Content Management">
+	<title>管理后台</title>
+	<link href="/administrator/templates/isis/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+	<link href="../media/jui/css/chosen_ed17cacaa0440f1cfd653fa1555bba2b.css" rel="stylesheet">
+	<link href="templates/isis/css/template_ed17cacaa0440f1cfd653fa1555bba2b.css" rel="stylesheet">
+	<style>
+		@media (max-width: 480px) {
+			.view-login .container {
+				margin-top: -170px;
+			}
+
+			.btn {
+				font-size: 13px;
+				padding: 4px 10px 4px;
+			}
+		}
+	</style>
+	<script type="application/json"
+		class="joomla-script-options new">{"system.paths":{"root":"","base":"\/administrator"},"system.keepalive":{"interval":840000,"uri":"\/administrator\/index.php"}}</script>
+	<script src="../media/system/js/core_ed17cacaa0440f1cfd653fa1555bba2b.js"></script>
+	<!--[if lt IE 9]><script src="/media/system/js/polyfill.event.js?ed17cacaa0440f1cfd653fa1555bba2b"></script><![endif]-->
+	<script src="../media/system/js/keepalive_ed17cacaa0440f1cfd653fa1555bba2b.js"></script>
+	<script src="../media/jui/js/jquery.min_ed17cacaa0440f1cfd653fa1555bba2b.js"></script>
+	<script src="../media/jui/js/jquery-noconflict_ed17cacaa0440f1cfd653fa1555bba2b.js"></script>
+	<script src="../media/jui/js/jquery-migrate.min_ed17cacaa0440f1cfd653fa1555bba2b.js"></script>
+	<script src="../media/jui/js/bootstrap.min_ed17cacaa0440f1cfd653fa1555bba2b.js"></script>
+	<script src="../media/jui/js/chosen.jquery.min_ed17cacaa0440f1cfd653fa1555bba2b.js"></script>
+	<!--[if lt IE 9]><script src="/media/jui/js/html5.js?ed17cacaa0440f1cfd653fa1555bba2b"></script><![endif]-->
+	<script>
+		jQuery(function ($) { initTooltips(); $("body").on("subform-row-add", initTooltips); function initTooltips(event, container) { container = container || document; $(container).find(".hasTooltip").tooltip({ "html": true, "container": "body" }); } });
+		jQuery(function ($) {
+			initChosen();
+			$("body").on("subform-row-add", initChosen);
+
+			function initChosen(event, container) {
+				container = container || document;
+				$(container).find(".advancedSelect").chosen({ "disable_search_threshold": 10, "search_contains": true, "allow_single_deselect": true, "placeholder_text_multiple": "\u8f93\u5165\u6216\u9009\u62e9\u4e00\u4e9b\u9009\u9879", "placeholder_text_single": "\u8bf7\u9009\u62e9", "no_results_text": "\u672a\u627e\u5230\u5339\u914d\u7684\u5185\u5bb9" });
+			}
+		});
+
+	</script>
+
+</head>
+
+<body class="site com_login view-login layout-default task- itemid- ">
+	<!-- Container -->
+	<div class="container">
+		<div id="content">
+			<!-- Begin Content -->
+			<div id="element-box" class="login well">
+				<img src="templates/isis/images/joomla.png" alt="siheyuan.net">
+				<hr>
+				<div id="system-message-container">
+				</div>
+
+				<form action="login" method="post" id="form-login" class="form-inline">
+					<fieldset class="loginform">
+						<div class="control-group">
+							<div class="controls">
+								<div class="input-prepend input-append">
+									<span class="add-on">
+										<span class="icon-user hasTooltip" title="用户名"></span>
+										<label for="mod-login-username" class="element-invisible">
+											用户名 </label>
+									</span>
+									<input name="username" tabindex="1" id="mod-login-username" type="text"
+										class="input-medium" placeholder="用户名" size="15" autofocus="true">
+									<a href="../index.html" class="btn width-auto hasTooltip" title="找回用户名">
+										<span class="icon-help"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="control-group">
+							<div class="controls">
+								<div class="input-prepend input-append">
+									<span class="add-on">
+										<span class="icon-lock hasTooltip" title="密码"></span>
+										<label for="mod-login-password" class="element-invisible">
+											密码 </label>
+									</span>
+									<input name="password" tabindex="2" id="mod-login-password" type="password"
+										class="input-medium" placeholder="密码" size="15">
+									<a href="../index.html" class="btn width-auto hasTooltip" title="找回密码">
+										<span class="icon-help"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="control-group">
+							<div class="controls">
+								<div class="input-prepend">
+									<span class="add-on">
+										<span class="icon-comment hasTooltip" title="语言"></span>
+										<label for="lang" class="element-invisible">
+											语言 </label>
+									</span>
+									<select id="lang" name="lang" class="advancedSelect" tabindex="4">
+										<option value selected="selected">语言 - 网站默认语言</option>
+										<option value="en-GB">English (United Kingdom)</option>
+										<option value="zh-CN">简体中文(中国)</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="control-group">
+							<div class="controls">
+								<div class="btn-group">
+									<button tabindex="5" class="btn btn-primary btn-block btn-large login-button">
+										<span class="icon-lock icon-white"></span> 登录 </button>
+								</div>
+							</div>
+						</div>
+						<input type="hidden" name="option" value="com_login">
+						<input type="hidden" name="task" value="login">
+						<input type="hidden" name="return" value="aW5kZXgucGhw">
+						<input type="hidden" name="77e3c330efab5aa0b838eb5bab269447" value="1">
+					</fieldset>
+				</form>
+
+			</div>
+			<noscript>
+				警告! 在管理后台正确操作必须启用 JavaScript. </noscript>
+			<!-- End Content -->
+		</div>
+	</div>
+	<div class="navbar navbar-fixed-bottom hidden-phone">
+		<p class="pull-right">
+			&copy; 2021 www.joomla.org </p>
+		<a class="login-joomla hasTooltip" href="https://www.joomla.org" target="_blank" rel="noopener noreferrer"
+			title="Joomla! 是遵循自由软件基金会(GNU)通用公共许可(General Public License)协议的自由软件(free software)。"><span
+				class="icon-joomla"></span></a>
+		<a href="../index.html" target="_blank" class="pull-left">
+			<span class="icon-out-2"></span>
+			访问网站首页 </a>
+	</div>
+
+</body>
+
+</html>

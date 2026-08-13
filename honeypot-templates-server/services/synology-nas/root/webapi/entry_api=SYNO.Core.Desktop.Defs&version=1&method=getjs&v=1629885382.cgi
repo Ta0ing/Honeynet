@@ -1,0 +1,1 @@
+_SYNOINFODEF={"manager":"Synology VirtualDSM",}; function _D(s, d) {if (s in _SYNOINFODEF) {	return _SYNOINFODEF[s];}else if (typeof d == 'string'){	return d;}return '';}

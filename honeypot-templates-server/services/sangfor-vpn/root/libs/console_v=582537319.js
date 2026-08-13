@@ -1,0 +1,1 @@
+function assert(o,n){if(!o){if(n=n||"Assertion failed","undefined"!=typeof Error)throw new Error(n);throw n}}!function(){"undefined"==typeof console&&(window.console={});["error","debug","info","warn","log","group","groupEnd","assert"].forEach(function(o){"undefined"==typeof console[o]&&(console[o]=new Function)})}();

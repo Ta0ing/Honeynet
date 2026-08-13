@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html class="dark-mode js mozilla layout-large" lang="zh"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>poste.io :: 欢迎使用 poste.io</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1.0"><meta name="theme-color" content="#f4f4f4"><meta name="msapplication-navbutton-color" content="#f4f4f4">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="poste_files/bootstrap.css">
+	
+		<link rel="stylesheet" href="poste_files/styles.css">
+		
+	
+	
+		<script>
+		try {
+			if (document.cookie.indexOf('colorMode=dark') > -1
+				|| (document.cookie.indexOf('colorMode=light') === -1 && window.matchMedia('(prefers-color-scheme: dark)').matches)
+			) {
+				document.documentElement.className += ' dark-mode';
+			}
+		} catch (e) { }
+		</script>
+	
+<link rel="stylesheet" type="text/css" href="poste_files/jquery-ui.css"><script src="poste_files/jquery_002.js"></script><script src="poste_files/common.js"></script><script src="poste_files/app.js"></script><script src="poste_files/jstz.js"></script><script>
+/*
+        @licstart  The following is the entire license notice for the 
+        JavaScript code in this page.
+
+        Copyright (C) The Roundcube Dev Team
+
+        The JavaScript code in this page is free software: you can redistribute
+        it and/or modify it under the terms of the GNU General Public License
+        as published by the Free Software Foundation, either version 3 of
+        the License, or (at your option) any later version.
+
+        The code is distributed WITHOUT ANY WARRANTY; without even the implied
+        warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+        See the GNU GPL for more details.
+
+        @licend  The above is the entire license notice
+        for the JavaScript code in this page.
+*/
+var rcmail = new rcube_webmail();
+rcmail.set_env({"task":"login","standard_windows":false,"locale":"zh_CN","devel_mode":null,"rcversion":10501,"cookie_domain":"","cookie_path":"/","cookie_secure":true,"dark_mode_support":true,"skin":"elastic","blankpage":"skins/elastic/watermark.html","refresh_interval":60,"session_lifetime":18000,"action":"","comm_path":"./?_task=login","compose_extwin":false,"date_format":"yy-mm-dd","date_format_localized":"YYYY-MM-DD","request_token":"ukQCZ9Ntf5KTNDjNa465lqt7zS9VbbGk"});
+rcmail.add_label({"loading":"正在载入...","servererror":"服务器错误！","connerror":"连接错误(连接服务器失败)！","requesttimedout":"请求超时","refreshing":"正在刷新...","windowopenerror":"弹出窗口被屏蔽！","uploadingmany":"正在上传文件...","uploading":"正在上传文件...","close":"关闭","save":"保存","cancel":"取消","alerttitle":"注意","confirmationtitle":"您确定……","delete":"删除","continue":"继续","ok":"确定","back":"返回","errortitle":"发生错误！","options":"个人选项","plaintoggle":"纯文本","htmltoggle":"HTML","previous":"前一","next":"后一","select":"选择","browse":"Browse","choosefile":"Choose file...","choosefiles":"Choose files..."});
+rcmail.gui_container("loginfooter","login-footer");rcmail.gui_object('loginform', 'login-form');
+rcmail.gui_object('message', 'messagestack');
+</script>
+
+<script src="poste_files/jquery-ui.js"></script><script src="poste_files/jquery.js"></script>
+</head>
+<body class="task-login action-none">
+	
+		<div id="layout">
+	
+
+
+<h1 class="voice">poste.io 登录</h1>
+
+<div id="layout-content" class="selected no-navbar" role="main">
+	<img src="logo.svg" id="logo" alt="Logo">
+	<form id="login-form" name="login-form" method="post" class="propform" action="/login">
+
+		<table>
+			<tbody>
+				<tr>
+					<td class="title" style="display: none;">
+						<label for="rcmloginuser">用户名</label>
+					</td>
+					<td>
+						<input  name="username" id="rcmloginuser" required="" size="40" class="form-control" autocapitalize="none" autocomplete="off" type="text" placeholder="用户名">
+					</td>
+				</tr>
+				<tr>
+					<td class="title" style="display: none;">
+						<label for="rcmloginpwd">密码</label>
+					</td>
+				<td>
+					<input name="password" id="rcmloginpwd" required="" size="40" class="form-control" autocapitalize="none" autocomplete="off" type="password" placeholder="密码">
+				</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<p class="formbuttons">
+		<input type="submit" id="rcmloginsubmit" class="button mainaction submit btn btn-primary btn-lg text-uppercase w-100" value="登录"></p>
+		<div id="login-footer" role="contentinfo">
+			poste.io			
+				&nbsp;•&nbsp; <a href="https://mail.poste.io/admin/install/instructions" target="_blank" class="support-link">支持</a>
+			
+&nbsp;•&nbsp; <a href="index.html">Administration</a>
+			
+		</div>
+	</form>
+</div>
+
+<noscript>
+	<p class="noscriptwarning">警告：本程序需要 Javascript 支持！请在浏览器设置中启用 Javascript。</p>
+</noscript>
+
+
+</div>
+
+<a href="https://mail.poste.io/admin/install/instructions" target="_blank" id="supportlink" class="hidden">支持</a>
+
+
+
+<div id="messagestack"></div>
+<script>
+$(function() {
+rcmail.init();
+});
+</script>
+
+
+
+<script src="poste_files/bootstrap.js"></script>
+<script src="poste_files/ui.js"></script>
+
+
+</body></html>

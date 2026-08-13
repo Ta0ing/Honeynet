@@ -1,0 +1,199 @@
+<!doctype html>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>火绒终端安全控制中心</title>
+    <meta name="viewport" content="width=1080, initial-scale=0.9">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="Content-Type" content="application/json;charset=UTF-8">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/json3.js"></script>
+    <script type="text/javascript" src="js/sha1.js"></script>
+
+    <link rel="stylesheet" href="css/portal.css" type="text/css">
+    <link rel="stylesheet" media="screen and (max-width:1440px) and (max-height:768px)" href="css/portalS.css" type="text/css">
+    <link rel="shortcut icon" href="#" />
+    <!--[if lt IE 9]>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <div class="top">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png"><span> 火绒终端安全管理系统</span>
+            </div>
+            <div class="clear"></div>
+
+        </div>
+    </div>
+    <img src="images/lineUp.png" class="lineUp">
+    <img src="images/lineDown.png" class="lineDown">
+    <div class="downloadBlock">
+
+        <div class="floatL">
+            <img src="images/login1.png">
+        </div>
+        <div class="floatL">
+            <p class="bigtitle">火绒为终端安全护航</p>
+            <p class="smalltitle">全网部署火绒通知</p>
+            <p class="appe">各位同事:</p>
+            <p class="mainbody textIndent">
+                为了更好的保障内网安全，决定从即日起全面安装部署火绒终端安全管理系统。您可以通过下面的按钮进行下载并安装，安装后无需任何设置可以立即使用
+            </p>
+            <a class="downloadButton cursor" href="/deploy/installer.exe">下载Windows版本</a>
+            <a class="downloadButton cursor" href="/tools/linux-inst.sh" style="margin-left:20px;">下载Linux版本</a>
+        </div>
+        <div class="clear">
+        </div>
+        <p id="lowie"><img src="images/df.png" class="verticalTop">&nbsp;&nbsp;&nbsp;<span class="verticalMiddle">您正在使用的浏览器版本过低，将不能正常浏览和使用管理中心</span></p>
+    </div>
+    <div class="loginBlock">
+        <div class="bgContainer">
+            <p class="describeW floatL relative paddingLR30">
+                <span class="login2bg verticalTop"></span><input type="text" name="username" value="" class="verticalTop">
+            </p>
+            <p class="relative describeW floatL">
+                <span class="login3bg verticalTop"></span><input type="password" name="password" class="placeholderInput verticalTop" autocomplete="off">
+                <span class="placeholder"></span>
+                <span class="absolute errorTips">
+                    <img src="images/unusualw.png" class="verticalMiddle">
+                    <font class="verticalMiddle"> 账户名或密码错误</font>
+                </span>
+            </p>
+            <a class="loginButton floatL marginLR30">登录</a>
+            <div class="clear"></div>
+        </div>
+        <p class="describeW describeWW floatR">
+            <span class="floatL" onclick="forgetPWPop()">忘记密码？</span>
+            <span class="floatR">下次自动登录</span>
+            <input type="checkbox" name="remeber" class="floatR">
+        </p>
+        <div class="clear"></div>
+        <p></p>
+
+    </div>
+    <div class="bottom">
+        <div class="container">
+            <a href="http://www.huorong.cn/" target="_blank">Copyright 2017-2021 北京火绒网络科技有限公司</a>
+        </div>
+    </div>
+    <div class="delayHide">
+        <p class="p1"><img src="images/unusualw.png">请选择终端!</p>
+        <!-- <p class="p2">(<font>3秒后</font>本窗口消失，任务将在后台继续完成下发)</p> -->
+    </div>
+    <!-- 忘记密码 -->
+    <div class="forgetPWPop pop">
+        <div class="title">找回密码<span class="closeW"></span></div>
+        <div class="left"><img src="images/fpw.png"></div>
+        <div class="right">
+            <p class="stitle">忘记admin账号密码</p>
+            <p class="describe">请运行配置工具（开始菜单-所有程序-火绒终</p>
+            <p class="describe">端安全管理系统-火绒终端安全控制中心设置），不</p>
+            <p class="describe">改变IP和端口，重新设置密码即可。</p>
+
+            <p class="stitle">忘记其他非admin账号密码</p>
+            <p class="describe">请联系火绒终端安全管理系统admin账号管理员,请</p>
+            <p class="describe">管理员在【账号管理】中为您重新设置密码。</p>
+        </div>
+        <div class="clear"></div>
+        <div class="buttons"><a onclick="sureFPWButton(this)">确定</a>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!-- 账户锁定提示 -->
+    <div class="aLockHintPop pop">
+        <div class="title">账号锁定<span class="closeW"></span></div>
+        <div class="left"><img src="images/alw.png" width="78"></div>
+        <div class="right">
+            <p class="stitle">该账号已被锁定</p>
+            <p class="describe">由于密码错误次数过多,请于15分钟后重试</p>
+        </div>
+        <div class="clear"></div>
+        <div class="buttons"><a onclick="sureFPWButton(this)">好的</a>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="modifyPwPop pop">
+        <div class="title">修改密码<span class="closeW"></span></div>
+        <div class="mainBlock">
+            <p><span>管理员账号:</span>
+                <font class="adminName">普通管理员</font>
+            </p>
+            <p><span>原始密码:</span><input type="password" name="originalP"></p>
+            <p><span>新密码:</span><input type="password" name="newP"></p>
+            <p><span>确认密码:</span><input type="password" name="sureP"></p>
+        </div>
+
+
+        <div class="buttons">
+            <a class="hideButton">取消</a>
+            <a onclick="sureMPButton(this)">确定</a>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!-- 动态验证弹窗 -->
+    <div class="totpPop pop" data-page="login">
+        <div class="title">动态口令认证<span class="closeW"></span></div>
+        <div class="mainBlock">
+            <div class="codeWrap">
+                <p><span>动态口令:</span><input type="text" name="code"></p>
+                <p class="errorTips">动态口令为6位数</p>
+            </div>
+            <p>如需获取动态口令二维码请联系超级管理员或账号管理员。</p>
+            <p><a href="guide.html" target="_blank" class="greenfont totpGuide">动态口令操作指南</a></p>
+            <p>服务器当前时间：<span class="localTime"></span></p>
+        </div>
+        <div class="buttons">
+            <a class="srueBtn">确定</a>
+        </div>
+    </div>
+    <!-- 管理员默认密码需要重置(本机登录) -->
+    <div class="pop resetPwdPop">
+        <div class="title">初始密码修改<span class="closeW"></span></div>
+        <div class="mainBody">
+            <p class="resetMsg">为了保证您的账号安全，请修改初始登录密码</p>
+            <p class="relative">
+                <label>新密码&nbsp;:&nbsp;</label>
+                &nbsp;<input class="placeholderInput verticalMiddle noSpaceInp" type="password" name="newPwd" value="" onfocus="fadeOut(this)" onblur="fadeIn(this)">
+                <span class="placeholder" onclick="spanFocus(this)">8-32位大小写字母、数字、特殊字符组成</span>
+                <font class="absolute tips">输入新密码</font>
+            </p>
+            <p class="relative">
+                <label>确认新密码&nbsp;:&nbsp;</label>&nbsp;
+                <input class="placeholderInput verticalMiddle noSpaceInp" type="password" name="pwdVerify" value="">
+                <span class="placeholder" onclick="spanFocus(this)">请再次输入新密码</span>
+                <font class="absolute tips">两次密码不一致</font>
+            </p>
+        </div>
+        <div class="buttons">
+            <a class="hideButton">取消</a>
+            <a class="eventBtn" data-event="resetPwd">确定</a>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!-- 管理员默认密码需要重置(非本机登录) -->
+    <div class="pop notResetPwdPop">
+        <div class="title">初始密码修改<span class="closeW"></span></div>
+        <div class="mainBody">
+            <p style="position:relative;">超级管理员首次登录需修改初始密码</p>
+            <p>请在安装火绒控制中心的机器上访问控制中心，并对超级管理员的初始密码进行修改！</p>
+        </div>
+        <div class="buttons">
+            <a class="hideButton">关闭</a>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="shade"></div>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/portal.js"></script>
+
+</body>
+
+</html>

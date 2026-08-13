@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>修改密码</title>
+        <link rel="shortcut icon" href="../../../css/skins/skin1/images/logo_eweaver.gif" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- iview -->
+    <link rel="stylesheet" type="text/css" href="../../../js/iView/styles/iview.css">
+    <!-- layx -->
+    <link rel="stylesheet" type="text/css" href="../../../js/layx/layx.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../resources/base/password/css/password.css">
+    <script type="text/javascript" src="../../../js/babel-polyfill/dist/polyfill.min.js"></script>
+    <script type="text/javascript" src="../../../js/vue/vue.min.js"></script>
+    <script type="text/javascript" src="../../../js/iView/iview.min.js"></script>
+    <script type="text/javascript" src="../../../js/axios/axios.min.js"></script>
+    <script type="text/javascript" src="../../../js/layx/layx.min.js"></script>
+</head>
+
+<body>
+<input type="hidden" name="humresId" value>
+<input type="hidden" name="workNo" value>
+<input type="hidden" name="isManager" value="false">
+<input type="hidden" name="isClosed" value="1">
+<input type="hidden" name="msg" value>
+<div id="app">
+    <div class="password_div">
+        <i-form name="workNo">
+            <input type="password" hidden autoComplete="new-password">
+            <div>
+                <row class="form_row">
+                    <i-col class="row_name" span="6">工号</i-col>
+                    <i-col span="18">
+                        <div>
+                            <i-input size="small" v-model="passModify.workNo" placeholder="请输入工号" :readonly="passModify.readonly"></i-input>
+                        </div>
+                    </i-col>
+                </row>
+                <row v-if="passModify.isManager!='true'" class="form_row">
+                    <i-col class="row_name" span="6">手机号</i-col>
+                    <i-col span="18">
+                        <div>
+                            <i-input size="small" v-model="passModify.tel" placeholder="请输入手机号"></i-input>
+                        </div>
+                        <div class="row_button">
+                            <i-button size="small" type="primary" @click="handleGetCode" :disabled="disabled">{{ btnText }}</i-button>
+                        </div>
+                    </i-col>
+                </row>
+                <row v-if="passModify.isManager!='true'" class="form_row">
+                    <i-col class="row_name" span="6">验证码</i-col>
+                    <i-col span="18">
+                        <div>
+                            <i-input size="small" v-model="passModify.verifyCode" placeholder="请输入验证码"></i-input>
+                        </div>
+                    </i-col>
+                </row>
+                <row class="form_row">
+                    <i-col class="row_name" span="6">新密码</i-col>
+                    <i-col span="18">
+                        <div>
+                            <i-input size="small" type="password" v-model="passModify.passWord" placeholder="请输入新密码,密码长度8-20字符,包含大小写字母+数字" @blur.native.capture="check()"></i-input>
+                        </div>
+                    </i-col>
+                </row>
+                <row class="form_row">
+                    <i-col class="row_name" span="6">密码确认</i-col>
+                    <i-col span="18">
+                        <div id="passwordConfirm">
+                            <i-input size="small" v-model="passModify.newPassWord" type="password" placeholder="请再输入一次新密码,密码长度8-20字符,包含大小写字母+数字"></i-input>
+                        </div>
+                        <div v-if="passModify.passWord!==passModify.newPassWord&&passModify.newPassWord!==''"><p style="color: red">密码不一致</p></div>
+                    </i-col>
+                </row>
+                <row v-if="passModify.isManager=='true'" class="form_row">
+                    <i-col class="row_name" span="6">账号状态</i-col>
+                    <i-col span="18">
+                        <i-switch v-model="passModify.accountStatus" @on-change="handleChange()">
+                            <span slot="open">on</span>
+                            <span slot="close">off</span>
+                        </i-switch>
+                    </i-col>
+                </row>
+                <row class="form_row" v-if="passModify.humresId==''">
+                    <i-col class="row_name" span="6">提示</i-col>
+                    <i-col span="18">
+                        <p style="color: red;">安全级别大于等于30的经理岗忘记密码请联系人力资源部 吴玲[JH032978] 修改密码！</p>
+                    </i-col>
+                </row>
+                <row class="form_row" v-if="passModify.msg=='1'">
+                    <i-col class="row_name" span="6">提示</i-col>
+                    <i-col span="18">
+                        <p style="color: red;">您的密码已三个月未修改,请重新修改密码!</p>
+                    </i-col>
+                </row>
+                <row class="form_row" v-if="passModify.msg=='2'">
+                    <i-col class="row_name" span="6">提示</i-col>
+                    <i-col span="18">
+                        <p style="color: red;">距您首次登录已超过三天，请修改初始密码</p>
+                    </i-col>
+                </row>
+            </div>
+            <div class="form_submit_buttons">
+                <i-button type="success" @click="handleSubmit()">提交</i-button>
+                <a v-if="passModify.humresId==''" href="/main/login.jsp">返回登录页面</a>
+            </div>
+        </i-form>
+
+        <div class="code_div">
+            <div>
+                <img style="width: 150px; height: 150px" src="../../../../jhwx.bestlink.com.cn/oldweixin/images/qrcodeJH.jpg">
+            </div>
+            <div class="code_remark">
+                <p>1、请扫描二维码关注公司企业号;</p>
+                <p>2、验证码推送到企业号“企业小助手”应用中，请勿停用该应用;</p>
+                <p>3、人事卡片的“联系电话”已与公司企业号绑定，手机号有误请及时修改，否则无法收到验证码。</p>
+            </div>
+        </div>
+    </div>
+
+    <modal v-model="passModify.isShowData" title="提示" @on-ok="toLogin" :mask-closable="false" width="20">
+        <p>密码修改成功，点击确定跳转到登录页面</p>
+    </modal>
+</div>
+</body>
+</html>
+<script type="text/babel">
+
+    var passModify;
+    window.onload = function () {
+        passModify = new Vue({
+            el: '#app',
+            data: {
+                passModify: {
+                    msg: document.getElementsByName('msg')[0].value,
+                    humresId: document.getElementsByName('humresId')[0].value,
+                    isManager: document.getElementsByName('isManager')[0].value,
+                    workNo: document.getElementsByName('workNo')[0].value,
+                    tel: '',
+                    verifyCode: '',
+                    passWord: '',
+                    newPassWord: '',
+                    readonly: document.getElementsByName('workNo')[0].value !== '',
+                    //账号状态：0--打开 1--关闭
+                    accountStatus: document.getElementsByName('isClosed')[0].value === '0',
+                    isShowData: false
+                },
+                baseUrl: '/baseAction/login',
+                totalCount: 0,
+                disabled: false,
+                interval: null,
+            },
+
+            computed: {
+                btnText() {
+                    return this.totalCount !== 0 ? this.totalCount+'秒后再次获取' : "获取验证码"
+                },
+            },
+
+            methods: {
+                //密码强度校验
+                check() {
+                    if (this.passModify.passWord && this.passModify.passWord.length < 8) {
+                        this.$Message.error("密码长度不能低于8位！");
+                    }
+                    //密码至少包含1个大写字母，1个小写字母和1个数字
+                    const pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{8,}$/;
+                    if(!pattern.test(this.passModify.passWord)){
+                        this.$Message.error("密码应包含大小写字母+数字！");
+                    }
+                },
+                //表单数据确认
+                confirm() {
+                    if (!this.passModify.passWord) {
+                        return '密码不能为空!'
+                    }
+                    if (this.passModify.isManager!=='true'&&!this.passModify.verifyCode) {
+                        return '请输入验证码!'
+                    }
+                    if (this.passModify.passWord.length < 8) {
+                        return '密码长度不能低于8位!'
+                    }
+                    if (this.passModify.passWord !== this.passModify.newPassWord) {
+                        return '2次密码不一致！'
+                    }
+                    //密码至少1个大写字母，1个小写字母和1个数字
+                    const pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{8,}$/;
+                    if(!pattern.test(this.passModify.passWord)){
+                        return '密码应包含大小写字母+数字！';
+                    }
+                },
+                //获取验证码
+                handleGetCode() {
+                    axios.request({
+                        url: this.baseUrl + '/getCode',
+                        params: {
+                            workNo: this.passModify.workNo,
+                            telNo: this.passModify.tel
+                        },
+                        method: 'get'
+                    }).then(response => {
+                        if (response.data.ok && response.data.data !== "ERROR") {
+                            //60s获取一次验证码
+                            this.disabled = true;
+                            this.totalCount = 60;
+                            this.interval = setInterval(() => {
+                                this.totalCount--;
+                                if (this.totalCount === 0) {
+                                    clearInterval(this.interval)
+                                    this.disabled = false
+                                }
+                            }, 1000);
+                            this.$Notice.success({
+                                title: '提示',
+                                desc: "获取验证码成功！请在企业微信查收"
+                            })
+                        } else {
+                            this.$Notice.error({
+                                title: '错误提示',
+                                desc: response.data.msg
+                            })
+                        }
+                    }).catch(data => {
+                        this.$Notice.error({
+                            title: '错误提示',
+                            desc: data
+                        })
+                    })
+                },
+
+                //打开/关闭账号
+                handleChange() {
+                    let msg = this.passModify.accountStatus ? "账号打开成功！" : "账号关闭成功！";
+                    axios.post(this.baseUrl + '/operate', {
+                        "humresId": this.passModify.humresId,
+                    })
+                            .then(response => {
+                                if (response.data.ok) {
+                                    this.$Notice.success({
+                                        title: '提示',
+                                        desc: msg
+                                    })
+                                } else {
+                                    this.$Notice.error({
+                                        title: '错误提示',
+                                        desc: response.data.msg
+                                    })
+                                }
+                            }).catch(data => {
+                        this.$Notice.error({
+                            title: '错误提示',
+                            desc: data
+                        })
+                    })
+                },
+
+                //修改密码
+                handleSubmit() {
+                    let msg = this.confirm();
+                    if (msg) {
+                        this.$Message.error(msg);
+                    } else {
+                        axios.post(this.baseUrl + '/modify', {
+                            "workNo": this.passModify.workNo,
+                            'code': this.passModify.verifyCode,
+                            'passWord': this.passModify.passWord,
+                        })
+                                .then(response => {
+                                    if (response.data.ok) {
+                                        this.$Notice.success({
+                                            title: '提示',
+                                            desc: "密码修改成功"
+                                        })
+                                        if(this.passModify.isManager!=='true'){
+                                            this.passModify.isShowData = true;
+                                        }
+                                    } else {
+                                        this.$Notice.error({
+                                            title: '错误提示',
+                                            desc: response.data.msg
+                                        })
+                                    }
+                                }).catch(data => {
+                            this.$Notice.error({
+                                title: '错误提示',
+                                desc: data
+                            })
+                        })
+                    }
+                },
+
+                //返回登录界面
+                toLogin(){
+                    window.open('/main/login.jsp', "_top");
+                }
+            }
+
+        })
+    };
+</script>
+
+<!--babel编译上面的ES6语法，必须放在最后-->
+<script type="text/javascript" src="../../../js/babel-core/browser.min.js"></script>

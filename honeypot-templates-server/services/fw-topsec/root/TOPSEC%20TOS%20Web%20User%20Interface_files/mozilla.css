@@ -1,0 +1,526 @@
+body {
+	MARGIN: 0px; font-size: 12px; FONT-FAMILY: "宋体","sans-serif";
+	color:            #333333;
+	BACKGROUND-COLOR: #efefff;
+}
+body.index {
+	BACKGROUND-COLOR: #ffffff;
+}
+
+/*TABLE css begin*/
+.comment
+{ 
+	font-size:        12px;
+	font-weight:      500;
+	text-Decoration:	none ;
+	color:		#e51827;
+}
+tr, td, .TRbasic{
+	font-size: 12px; 
+	FONT-FAMILY: "宋体","sans-serif";
+}
+IMG.imgLink{
+	cursor:		pointer;
+}
+/*************function.c begin***********************/
+/*set position of whole page*/
+table {
+	empty-cells : show;
+}
+table.container {
+	BORDER: 0;  
+	border-left: 3px ridge #9ba0a4;
+	width: 100%; 
+	height: 100%; 
+	empty-cells : show;
+	padding-left:10px;
+	padding-top:15px;
+}
+table.container td.containerTd{
+	white-space : nowrap ; vertical-align : top; 
+}
+
+/*content frame*/
+table.main {
+	BORDER: 0px; 
+	/*background of content*/
+	border-left: 0px double #cccccc;
+	border-top: 0px double #cccccc;
+	width: 100%; 
+	height: 100%; 
+	empty-cells : show;
+}
+table.main td.mainTd{
+	vertical-align : top; padding-left: 10px; padding-top: 20px; width: 100%; 
+}
+table.multiTabPage {
+	BORDER: 0px; border-bottom:2px solid #CCCCCC;
+}
+
+/*--*/
+td.TABa
+{
+	vertical-align :	 middle;
+	white-space : 	nowrap; 
+	font-weight:      600;
+	font-size: 		12px;
+	font-style:       Normal;
+	text-indent:      0px;
+	padding-left:		5px;
+	height:			20px;
+}
+a.arrowA { 
+	font-size:        12px;
+	color:            #DF0001;
+	text-Decoration:	none ;
+}
+/*end*/
+/*************function.c end***********************/
+
+/*basic information*/
+.basicInfoPage {
+	padding-left:		50px;
+}
+table.basicInfoTopic {
+	BORDER: 1px solid #dbe0e4;
+}
+td.basicInfoTDtopic
+{
+	vertical-align :	 middle;
+	white-space : 	nowrap ; 
+	font-weight:      600;
+	font-size: 		12px;
+	font-style:       Normal;
+	text-indent:      0px;
+	padding-left:		12px;
+	height:			20px;
+	background-Color: #D0D6CD;
+	text-align : center; 
+}
+table.basicInfoCnt {
+	BORDER: 1px solid #dbe0e4;
+	border-top:0;
+}
+
+/*log style*/
+table.logListTab {
+	border:1px solid #dbe0e4;
+	empty-cells : show;
+	border-collapse :collapse;
+	background-Color: 	#f3f4f6; 
+}
+table.logListTab td{
+	white-space : normal ; 	
+	border:0;
+	border-top:1px solid #dbe0e4;
+	border-bottom:1px solid #dbe0e4;
+	vertical-align : middle ;
+	height :		20px;
+}
+
+/*mutil-section topic style*/
+table.topic {
+	BORDER: 0px solid #dbe0e4;
+	width: 98%;
+}
+td.TDtopic
+{
+	vertical-align :	 middle;
+	white-space : 	nowrap ; 
+	font-weight:      600;
+	font-size: 		12px;
+	font-style:       Normal;
+	text-indent:      0px;
+	padding-left:		12px;
+	width:			30%;
+	height:			20px;
+	color:	#222250;
+	text-align : left; 
+}
+table.topicCnt {
+	BORDER: 0px solid #dbe0e4;
+	border-top:0;
+	width: 98%;
+}
+
+td.TABname
+{
+	vertical-align :	 middle;
+	white-space : 	nowrap; 
+	font-weight:      500;
+	font-size: 		12px;
+	font-style:       Normal;
+	text-indent:      0px;
+	padding-left:		5px;
+	width:			95px;
+	height:			20px;
+	background-Color: #E0E6DD;
+}
+td.arrowOn  
+{
+	vertical-align :	 middle;
+	white-space : 	nowrap; 
+	font-weight:      500;
+	font-size: 		12px;
+	font-style:       Normal;
+	text-indent:      0px;
+	padding-left:		5px;
+	width:			95px;
+	height:			20px;
+	background-Color: #E0E6DD;
+	color:			#DF0001;
+}
+td.arrowOn img{
+	border:0;
+}
+td.break img{
+	width:10px;
+	height:18px;
+}
+td.TABname a { 
+	font-size:        12px;
+	font-weight:      500;
+	color:            #000000;
+	text-Decoration:	none ;
+}
+td.TABname a:hover, td.TABname a:active { 
+	font-size:        12px;
+	font-weight:      500;
+	color:            #DF0001;
+	text-Decoration:	none ;
+}
+td.arrowOn a { 
+	font-size:        12px;
+	font-weight:      500;
+	color:            #DF0001;
+	text-Decoration:	none ;
+}
+
+td.arrowOn a:hover, td.arrowOn a:active { 
+	font-size:        12px;
+	font-weight:      500;
+	color:            #DF0001;
+	text-Decoration:	none ;
+}
+
+a { 
+	font-size:      12px;
+	font-weight:    500;
+	cursor:			pointer;
+	color:          #222250;
+	text-Decoration:	none ;
+}
+a:hover, a:active { 
+	color:            #e51827;
+}
+.treebody {
+	font-size:		12px; 
+	text-decoration:none; 
+	margin-top:		0;
+	margin-left:	0;
+	background-color: #e2e1dd;
+}
+.treebody a{
+	cursor:		pointer;
+	color:            #000000;
+}
+a.delete
+{ 
+	background:url("/site/image/trash.gif") no-repeat left top;
+}
+a.edit
+{ 
+	background:url("/site/image/trash.gif") no-repeat left top;
+}
+table.paragraph {
+	BORDER: 0px; width: 98%;
+}
+/*black line before section*/
+td.divideLine {
+	width:				50%;
+	height:				1px;
+	background-Color: 	#cccccc; 
+}
+/*section content*/
+td.content {
+	vertical-align : middle; 
+	white-space : nowrap ; 
+	padding-top:10px;padding-bottom:10px;padding-left:10px;
+	width:				100%;
+}
+
+td.infoName{
+	/*white-space : nowrap;*/
+	text-align : right;
+	font-weight:		600; 
+}
+td.infoCnt{
+	/*white-space : nowrap;*/
+	padding-left:15px;
+	text-align : left;
+	font-weight:		500; 
+}
+
+/*list style*/
+table.listCnt {
+	BORDER: 0px solid #dbe0e4;
+}
+table.listTabName td{
+	font-weight:      600;
+	font-size:       12px;
+	font-style:       normal;
+	height:			20px;
+	text-align : center; 
+}
+table.listTab {
+	border:1px solid #dbe0e4;
+	empty-cells : show;
+	border-collapse :collapse;
+}
+tr.listTitle, .TRShowTitle {
+	height:				23px;
+	font-weight:		500; 
+	background-Color:	#D0D6CD;
+}
+.TRShowContent
+{	
+  font-size:        12px;
+  height:			20px;
+}
+tr.listContent1, .TDShowContentRow1{
+	height:				20px;
+	background-Color: #f3f4f6;
+}
+tr.listContent2, .TDShowContentRow2{
+	height:			19px;
+	background-Color: #f3f4f6;
+}
+table.listTab td{
+	white-space : normal ; 	
+	border:1px solid #dbe0e4;
+	vertical-align : middle ;
+	text-align : left; 
+	height :		20px;
+}
+table.listTab td.listContentCol1 {
+	background-Color: #dbe0e4;
+}
+
+/*--*/
+table.infoTab {
+	BORDER: 0px; width: 60%; padding: 1px;
+}
+table.infoTab td{
+	white-space : nowrap ; text-align : left; vertical-align : middle ;
+}
+table.infoTab td.infoName{
+	white-space : nowrap ; font-weight: 600; text-align : left; vertical-align : middle ;
+}
+/*TABLE css end*/
+
+/*TAB page style begin*/
+    .tablink {
+      float:left;
+      width:100%;
+      FONT-FAMILY: "宋体","sans-serif";
+	  line-height:normal;
+      }
+    .tablink ul {
+	  margin:0;
+	  padding:0 0 0 0;
+	  list-style:none;
+      }
+    .tablink li {
+      display:inline;
+      margin:0;
+      padding:0;
+      }
+    .tablink a {
+      float:left;
+      background:url("/site/image/tableft2.gif") no-repeat left top;
+      margin:0;
+      padding:0 0 0 4px;
+      width:14% ;
+	  cursor:	pointer;
+      text-align : center; 
+      text-decoration:none;
+      font-family: "宋体", "Arial", "sans-serif";
+	    }
+    .tablink a span {
+      float:left;
+      display:block;
+      background:url("/site/image/tabright2.gif") no-repeat right top;
+      padding:5px 15px 4px 6px;
+      color:#333333;
+      }
+    /* Commented Backslash Hack hides rule from IE5-Mac \*/
+    .tablink a span {float:none;}
+    /* End IE5-Mac hack */
+    .tablink a:hover span {
+      color:#333333;
+      }
+    .tablink a:hover {
+      background-position:0% -42px;
+      }
+    .tablink a:hover span {
+      background-position:100% -42px;
+      }
+
+        .tablink a.Active {
+         background-position:0% -42px;
+         }
+        .tablink a.Active span {
+         background-position:100% -42px;
+         }
+table.pg_tabCnt {
+	border:1px solid #CCCCCC;
+	background-Color: #F4F4F4;
+	padding-top:15px;
+	padding-left:15px; 
+}
+/*TAB page style end*/
+
+.BUTTONFACE
+{
+	background: buttonface;
+	margin: 0px; 
+	border: 0px;
+}
+.headspace
+{
+	width:182;
+}
+.headtext 
+{
+	font-size: 12px;
+	font-weight: bold;
+	color: #DF0000;
+}
+.tdleft_pd15
+{
+	padding-left:15px;
+ }
+.tdleft_pd25
+{
+	padding-left:25px;
+ }
+ .paddingtop_10
+ {
+	padding-left:10px;
+ }
+.handle
+{
+  BORDER-BOTTOM: buttonshadow 1px solid;
+  BORDER-LEFT: buttonhighlight 1px solid;
+  BORDER-RIGHT: buttonshadow 1px solid;
+  BORDER-TOP: buttonhighlight 1px solid;
+  HEIGHT: 10;
+  MARGIN-LEFT: 1px;
+  MARGIN-RIGHT: 3px;
+  WIDTH: 3px
+ }
+INPUT.text {
+	FONT-SIZE: 12px;
+	FONT-FAMILY: "宋体","sans-serif";
+	border:1px solid #BBBBBB;
+}
+INPUT.file {
+	FONT-SIZE: 12px;
+	BORDER-RIGHT: buttonface 1px ridge;
+	BORDER-TOP: buttonface 1px ridge;
+	BORDER-LEFT: buttonface 1px ridge;
+	BORDER-BOTTOM: buttonface 1px ridge;
+	HEIGHT: 18px;
+}
+TEXTEARA.textarea {
+	FONT-SIZE: 12px;
+	FONT-FAMILY: "宋体","sans-serif";
+	background-color: #fffffd; 
+	border:1px solid #BBBBBB;
+}
+
+INPUT.button, INPUT.confirm, INPUT.cancel {
+	FONT-SIZE: 12px;
+	BORDER-RIGHT: buttonface 1px ridge;
+	BORDER-TOP: buttonface 1px ridge;
+	BORDER-LEFT: buttonface 1px ridge;
+	BORDER-BOTTOM: buttonface 1px ridge;
+	HEIGHT: 18px;
+	BACKGROUND-COLOR: buttonface;
+}
+
+INPUT.IndexPut {
+	FONT-SIZE: 12px;
+	BORDER-RIGHT: #B72026 1px ridge;
+	BORDER-TOP: #B72026 1px ridge;
+	BORDER-LEFT: #B72026 1px ridge;
+	BORDER-BOTTOM: #B72026 1px ridge;
+	color:		#ffffff;
+	width:	45px;
+	HEIGHT: 18px;
+	BACKGROUND-COLOR: #B72026;
+}
+INPUT.IndexPutHuadun {
+	FONT-SIZE: 12px;
+	BORDER-RIGHT: #0c0143 1px ridge;
+	BORDER-TOP: #0c0143 1px ridge;
+	BORDER-LEFT: #0c0143 1px ridge;
+	BORDER-BOTTOM: #0c0143 1px ridge;
+	width:	45px;
+	HEIGHT: 18px;
+	BACKGROUND-COLOR:  #0c0143;
+	color:		#ffffff;
+}
+
+INPUT.week {
+	FONT-SIZE: 12px;
+	BORDER-RIGHT: buttonface 1px ridge;
+	BORDER-TOP: buttonface 1px ridge;
+	BORDER-LEFT: buttonface 1px ridge;
+	BORDER-BOTTOM: buttonface 1px ridge;
+	HEIGHT: 18px;
+	BACKGROUND-COLOR: buttonface;
+}
+SELECT.select{
+	FONT-SIZE: 12px;
+	FONT-FAMILY: "宋体","sans-serif";
+}
+INPUT.checkbox, INPUT.radio {
+}
+
+/*Home Page css*/
+.special /*Home Page title*/
+{
+	font-style: italic; font-family: arial black;
+	font-size: 15px;  cursor: pointer;
+	color:		#fffffd;
+} 
+.TDHelp
+{ 
+  font-size:        12px;
+  font-weight:      normal;
+  font-style:       Normal;
+  color:            #000000;
+  text-indent:      0px;
+  height:			470;
+  background-Color: #fffffd;
+}
+
+.TRHidden
+{
+	font-size:        12px;
+	FONT-FAMILY: "宋体","sans-serif";
+	background-Color: #fffffd;
+}
+.TRHelper
+{
+	font-size:        12px;
+	line-height:	  19px;
+	FONT-FAMILY: "宋体","sans-serif";
+}
+.TRShowContentGray
+{	
+  font-size:        12px;
+  height:			20px;
+  background-Color: #DFDFDF;
+}

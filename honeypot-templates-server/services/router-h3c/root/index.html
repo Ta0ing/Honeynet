@@ -1,0 +1,412 @@
+<html>
+
+<head>
+	<meta NAME="Copyright" CONTENT="Copyright (c) 2007 H3C Corporation. All Rights Reserved.">
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+	<script language="javascript" src="./icg_helpScript.js"></script>
+	<title>ER3108G系统管理</title>
+	<link href="./globe.css" type="text/css" rel="stylesheet">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="windows-target" contect="_top">
+	<link href="./index.css" type="text/css" rel="stylesheet">
+	<link rel="shortcut icon" href="#" />
+
+	<script language="javascript">
+
+		var messages = ""
+			;
+		var sessionid = "ABCDEFGH";
+		;
+		var initid = "ABCDEFGH";
+		;
+
+		var over_time = "120";
+		;
+		var expire_flag = 0;
+
+		var vld_disable_flag = "0";
+
+		var sys_passwd_prompt = "888";
+
+		var vld_display_user = "0"
+
+		var time_id = 0;
+
+		function addCookie(name, value, expireHours) {
+			var cookieString = name + "=" + value;
+			//ÅÐ¶ÏÊÇ·ñÉèÖÃ¹ýÆÚÊ±¼ä
+
+			if (expireHours > 0) {
+				var date = new Date();
+				date.setTime(date.getTime + expireHours * 3600 * 1000);
+				cookieString = cookieString + "; expires=" + date.toGMTString();
+			}
+			document.cookie = cookieString;
+
+			return 0;
+		}
+
+		function deleteCookie(name) {
+			var cookie = getCookie(name);
+			if (cookie != "") {
+				document.cookie = cookie + "=AAAAAAAA; expires=Fri, 02-Jan-1970 00:00:00 GMT";
+			}
+			return 0;
+		}
+
+		function getCookie(name) {
+			var strCookie = document.cookie;
+			var arrCookie = strCookie.split("; ");
+
+			//alert(strCookie);
+			for (var i = 0; i < arrCookie.length; i++) {
+				//alert(arrCookie);
+				var arr = arrCookie[i].split("=");
+				if (arr[0] == name) {
+					return arr[0];
+				}
+			}
+
+			return "";
+		}
+
+		function onBodyLoad() {
+			/* »ñÈ¡µ½ÉÏ´Î·ÃÎÊµÄÒ³Ãæ */
+			var f = document.longin;
+			/*
+			var old_page = location.href.split("cur_page=");
+			var home_page = "";
+			if (2 == old_page.length)
+			{
+				var page = old_page[1].split(".asp");
+				if (2 == page.length)
+				{
+					home_page = "home.asp?cur_page=" + old_page[1];
+				}
+				else
+				{
+					home_page = "home.asp";
+				}
+			}
+			else
+			{
+				home_page = "home.asp";
+			}
+			*/
+
+			if (sessionid != initid) {
+				var home_page = "";
+				home_page = "home.asp";
+
+				//document.getElementById("messages").innerHTML = "系统登录中...";
+				/*提交登录页面数据后返回的值，此时需要保存cookie以及加载home页面 */
+				addCookie("JSESSIONID", sessionid, 0);
+				location.replace(home_page);
+			}
+			else {
+				if ("用户名/密码错误，请重新输入！" == messages && sys_passwd_prompt != "") {
+					document.getElementById("messages_pwd_prompt").innerHTML = "密码提示:" + sys_passwd_prompt;
+				}
+				else {
+					document.getElementById("messages_pwd_prompt").innerHTML = "";
+				}
+
+				if ("" != messages) {
+					document.getElementById("messages").innerHTML = messages;
+				}
+
+
+
+				document.forms[0].username.focus();
+				if (vld_display_user == 1 && vld_disable_flag == 0) {
+					document.getElementById("vldimp").src = "/vld.bmp?" + Math.random() + "";
+				}
+				if (undefined != window.dialogArguments) {
+					window.returnValue = true;
+					window.close();
+				}
+				if ((this.name != '') && (this.name != 'main_screen') && (parent == this)) {
+					/* Begin Deleted by zhangzhenhui, 2017-7-17 of 201707030003 */
+					//window.close();
+					/* End   Deleted by zhangzhenhui, 2017-7-17 of 201707030003 */
+					opener.location.reload();
+				}
+				if (parent.location != location.href) {
+					parent.location = location.href;
+				}
+			}
+		}
+
+		function trim(str) {
+			str = str.replace(/^\s*/, "");
+			str = str.replace(/\s*$/, "");
+			return str;
+		}
+
+		function mySubmit(oForm) {
+			var sUserName = trim(oForm.username.value);
+			var sUserPass = trim(oForm.password.value);
+			var vldcode = trim(oForm.vldcode.value);
+
+			oForm.username.value = sUserName;
+			oForm.vldcode.value = vldcode;
+
+			if (sUserName == "") {
+				document.getElementById("messages_pwd_prompt").innerHTML = "   ";
+				document.getElementById("messages").innerHTML = "ÇëÊäÈëÓÃ»§Ãû!";
+				//alert("ÇëÊäÈëÓÃ»§Ãû");
+				oForm.username.focus();
+				//document.getElementById("forgetpw").style.display="none";
+				return false;
+			}
+
+			if (oForm.password.value.length == 0) {
+				document.getElementById("messages_pwd_prompt").innerHTML = "   ";
+				document.getElementById("messages").innerHTML = "ÇëÊäÈëÃÜÂë!";
+				//alert(sUserPass);
+				//document.getElementById("forgetpw").style.display="none";
+				oForm.password.focus();
+				return false;
+			}
+
+
+
+			if (vld_display_user == 1 && vld_disable_flag == 0) {
+				if (vldcode == "") {
+					document.getElementById("messages_pwd_prompt").innerHTML = "   ";
+					document.getElementById("messages").innerHTML = "ÇëÊäÈëÑéÖ¤Âë!";
+					//alert("ÇëÊäÈëÑéÖ¤Âë");
+					//document.getElementById("forgetpw").style.display="none";
+					oForm.vldcode.focus();
+					return false;
+				}
+				if (expire_flag == 1) {
+					document.getElementById("messages_pwd_prompt").innerHTML = "   ";
+					document.getElementById("messages").innerHTML = "ÑéÖ¤Âë³¬Ê±£¬ÇëÖØÐÂÊäÈë!";
+					document.getElementById("vldimp").src = "/vld.bmp?" + Math.random() + "";
+					//document.getElementById("forgetpw").style.display="none";
+					oForm.vldcode.focus();
+					oForm.vldcode.value = "";
+					expire_flag = 0;
+					time_id = setTimeout("expire_time()", over_time * 1000);
+					return false;
+				}
+
+			}
+
+			deleteCookie("JSESSIONID");
+
+			try {
+				// save the language to cookie, and no expiress 
+				//document.cookie = "lang=" + oForm.lang.value + ";path=/";
+			}
+			catch (e) {
+				// ²»Ö§³Öcookie, ²»×ö´¦Àí
+			}
+
+			return true;
+		}
+
+		function expire_time() {
+			expire_flag = 1;
+		}
+		time_id = setTimeout("expire_time()", over_time * 1000);
+
+		function get_vldbmp() {
+			document.getElementById("vldimp").src = "/vld.bmp?" + Math.random() + "";
+			clearTimeout(time_id);
+			expire_flag = 0;
+			time_id = setTimeout("expire_time()", over_time * 1000);
+		}
+
+		function on_mouse_over(f) {
+			document.getElementById("longin_button").style.color = 'blue';
+		}
+		function on_mouse_out(f) {
+			document.getElementById("longin_button").style.color = '';
+		}
+
+		function dis_login() {
+			if (sessionid != initid) {
+				document.write("<DIV class=da_width>" +
+					"<DIV style='BACKGROUND: url(back_login.jpg); HEIGHT: 214px' id=dl_margin>" +
+					"<DIV class=lclear></DIV></DIV></DIV>" +
+					"<DIV class=lclear></DIV></DIV>");
+			}
+			else {
+				var msg = '';
+				if (vld_display_user == 1 && vld_disable_flag == 0) {
+
+
+
+					if (navigator.userAgent.toLowerCase().indexOf('msie') >= 1) {
+						msg = "<DIV class=da_width>" +
+							// "<DIV style='BACKGROUND: url(back.jpg); HEIGHT: 255px' id=dl_margin>" +
+							"<DIV style='MARGIN-TOP: 83px; FLOAT: left; WIDTH: 250px' align=right><IMG src='china_logo.jpg'>&nbsp;</DIV>" +
+							"<DIV style='MARGIN-TOP: 17px; HEIGHT: 60px;WIDTH: 480px'></DIV>" +
+							"<DIV align=left>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户名 <INPUT style='BORDER-RIGHT: #87a6c3 1px solid; BORDER-TOP: #87a6c3 1px solid; BACKGROUND: #edeced; BORDER-LEFT: #87a6c3 1px solid; WIDTH: 115px; BORDER-BOTTOM: #87a6c3 1px solid; HEIGHT: 19px' name=username></DIV>" +
+							"<DIV align=left>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密　码 <INPUT style='BORDER-RIGHT: #87a6c3 1px solid; BORDER-TOP: #87a6c3 1px solid; BACKGROUND: #edeced; BORDER-LEFT: #87a6c3 1px solid; WIDTH: 115px; BORDER-BOTTOM: #87a6c3 1px solid; HEIGHT: 19px' type=password name=password>&nbsp;" +
+							"<A target=main_screen class=map title='点击查看如何找回密码' onclick=popRestoreHelp('restore.htm')>忘记密码？</A></DIV>" +
+							"<DIV align=left>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;验证码 <INPUT style='BORDER-RIGHT: #87a6c3 1px solid; BORDER-TOP: #87a6c3 1px solid; BACKGROUND: #edeced; BORDER-LEFT: #87a6c3 1px solid; WIDTH: 115px; BORDER-BOTTOM: #87a6c3 1px solid; HEIGHT: 19px' type='text' name='vldcode' maxlength='4'/>&nbsp;" +
+							"<img id=vldimp src='/vld.bmp' alt='刷新验证码'" +
+							"onclick=get_vldbmp() style='cursor:hand'/></DIV>" +
+							"<span name='messages' id=messages style='line-height: 9pt;  height: 8pt; MARGIN-TOP: 1px; color: red; MARGIN-LEFT: 70px; FLOAT: center; WIDTH: 250px; PADDING-TOP: 1px'></span>" +
+							"<br style='line-height: 9pt;'><span name='messages_pwd_prompt' id=messages_pwd_prompt style='line-height: 9pt; height: 8pt;  MARGIN-TOP: 4px; color: red; MARGIN-LEFT: 70px; FLOAT: center; WIDTH: 250px; PADDING-TOP: 1px'></span>" +
+							"<br><br>" +
+							"<span style='WIDTH: 50px MARGIN-TOP: 10px; FLOAT: center; PADDING-TOP: 6px'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='submit' name='btnSubmit' id=longin_button value=' 登录 ' onclick='' onmouseover=on_mouse_over() onmouseout=on_mouse_out() class=button></span>" +
+							"<DIV align=left>&nbsp;</DIV>" +
+							"<DIV align=center style='MARGIN-TOP: 5px;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;推荐分辨率1024*768</DIV>" +
+							"<DIV class=lclear></DIV></DIV></DIV>" +
+							"<DIV class=lclear></DIV></DIV>";
+					}
+					else if (navigator.userAgent.toLowerCase().indexOf('firefox') >= 1) {
+						msg = "<DIV class=da_width>" +
+							// "<DIV style='BACKGROUND: url(back.jpg); HEIGHT: 255px' id=dl_margin>" +
+							"<DIV style='MARGIN-TOP: 83px; FLOAT: left; WIDTH: 250px' align=right><IMG src='china_logo.jpg'>&nbsp;</DIV>" +
+							"<DIV style='MARGIN-TOP: 20px; HEIGHT: 80px;WIDTH: 480px'></DIV>" +
+							"<DIV align=left>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户名 <INPUT style='BORDER-RIGHT: #87a6c3 1px solid; BORDER-TOP: #87a6c3 1px solid; BACKGROUND: #edeced; BORDER-LEFT: #87a6c3 1px solid; WIDTH: 115px; BORDER-BOTTOM: #87a6c3 1px solid; HEIGHT: 19px' name=username></DIV>" +
+							"<DIV align=left>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密　码 <INPUT style='BORDER-RIGHT: #87a6c3 1px solid; BORDER-TOP: #87a6c3 1px solid; BACKGROUND: #edeced; BORDER-LEFT: #87a6c3 1px solid; WIDTH: 115px; BORDER-BOTTOM: #87a6c3 1px solid; HEIGHT: 19px' type=password name=password>&nbsp;" +
+							"<A target=main_screen class=map title='点击查看如何找回密码' onclick=popRestoreHelp('restore.htm')>忘记密码？</A></DIV>" +
+							"<DIV align=left>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;验证码 <INPUT style='BORDER-RIGHT: #87a6c3 1px solid; BORDER-TOP: #87a6c3 1px solid; BACKGROUND: #edeced; BORDER-LEFT: #87a6c3 1px solid; WIDTH: 115px; BORDER-BOTTOM: #87a6c3 1px solid; HEIGHT: 19px' type='text' name='vldcode' maxlength='4'/>&nbsp;" +
+							"<img id=vldimp src='/vld.bmp' alt='刷新验证码'" +
+							"onclick=get_vldbmp() style='cursor:hand'/></DIV>" +
+							"<span name='messages' id=messages style='line-height: 11pt;  height: 11pt; MARGIN-TOP: 10px; color: red; MARGIN-LEFT: 70px; FLOAT: center; WIDTH: 250px; PADDING-TOP: 1px'></span>" +
+							"<br style='line-height: 11pt;'><span name='messages_pwd_prompt' id=messages_pwd_prompt style='line-height: 11pt; height: 11pt;  MARGIN-TOP: 4px; color: red; MARGIN-LEFT: 70px; FLOAT: center; WIDTH: 250px; PADDING-TOP: 1px'></span>" +
+							"<br><br>" +
+							"<span style='WIDTH: 50px MARGIN-TOP: 10px; FLOAT: center; PADDING-TOP: 6px'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='submit' name='btnSubmit' id=longin_button value=' 登录 ' onclick='' onmouseover=on_mouse_over() onmouseout=on_mouse_out() class=button></span>" +
+							"<DIV align=left>&nbsp;</DIV>" +
+							"<DIV align=center style='MARGIN-TOP: 5px;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;推荐分辨率1024*768</DIV>" +
+							"<DIV class=lclear></DIV></DIV></DIV>" +
+							"<DIV class=lclear></DIV></DIV>";
+					}
+					else {
+						//alert("this is a chrome expor"+navigator.userAgent.toLowerCase().indexOf('chrome'));
+						//alert("this is a opera expor"+navigator.userAgent.toLowerCase().indexOf('opera'));
+						msg = "<DIV class=da_width>" +
+							// "<DIV style='BACKGROUND: url(back.jpg); HEIGHT: 255px' id=dl_margin>" +
+							"<DIV style='MARGIN-TOP: 83px; FLOAT: left; WIDTH: 250px' align=right><IMG src='china_logo.jpg'>&nbsp;</DIV>" +
+							"<DIV style='MARGIN-TOP: 17px; HEIGHT: 60px;WIDTH: 480px'></DIV>" +
+							"<DIV align=left>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户名 <INPUT style='BORDER-RIGHT: #87a6c3 1px solid; BORDER-TOP: #87a6c3 1px solid; BACKGROUND: #edeced; BORDER-LEFT: #87a6c3 1px solid; WIDTH: 115px; BORDER-BOTTOM: #87a6c3 1px solid; HEIGHT: 19px' name=username></DIV>" +
+							"<DIV align=left>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密　码 <INPUT style='BORDER-RIGHT: #87a6c3 1px solid; BORDER-TOP: #87a6c3 1px solid; BACKGROUND: #edeced; BORDER-LEFT: #87a6c3 1px solid; WIDTH: 115px; BORDER-BOTTOM: #87a6c3 1px solid; HEIGHT: 19px' type=password name=password>&nbsp;" +
+							"<A target=main_screen class=map title='点击查看如何找回密码' onclick=popRestoreHelp('restore.htm')>忘记密码？</A></DIV>" +
+							"<DIV align=left>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;验证码 <INPUT style='BORDER-RIGHT: #87a6c3 1px solid; BORDER-TOP: #87a6c3 1px solid; BACKGROUND: #edeced; BORDER-LEFT: #87a6c3 1px solid; WIDTH: 115px; BORDER-BOTTOM: #87a6c3 1px solid; HEIGHT: 19px' type='text' name='vldcode' maxlength='4'/>&nbsp;" +
+							"<img id=vldimp src='/vld.bmp' alt='刷新验证码'" +
+							"onclick=get_vldbmp() style='cursor:hand'/></DIV>" +
+							"<span name='messages' id=messages style='line-height: 9pt;  height: 8pt; MARGIN-TOP: 1px; color: red; MARGIN-LEFT: 70px; FLOAT: center; WIDTH: 250px; PADDING-TOP: 1px'></span>" +
+							"<br style='line-height: 9pt;'><span name='messages_pwd_prompt' id=messages_pwd_prompt style='line-height: 9pt; height: 8pt;  MARGIN-TOP: 4px; color: red; MARGIN-LEFT: 70px; FLOAT: center; WIDTH: 250px; PADDING-TOP: 1px'></span>" +
+							"<br><br>" +
+							"<span style='WIDTH: 50px MARGIN-TOP: 10px; FLOAT: center; PADDING-TOP: 6px'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='submit' name='btnSubmit' id=longin_button value=' 登录 ' onclick='' onmouseover=on_mouse_over() onmouseout=on_mouse_out() class=button></span>" +
+							"<DIV align=left>&nbsp;</DIV>" +
+							"<DIV align=center style='MARGIN-TOP: 5px;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;推荐分辨率1024*768</DIV>" +
+							"<DIV class=lclear></DIV></DIV></DIV>" +
+							"<DIV class=lclear></DIV></DIV>";
+					}
+
+
+				}
+				else {
+
+					if (navigator.userAgent.toLowerCase().indexOf('msie') >= 1) {
+						msg = "<DIV class=da_width>" +
+							// "<DIV style='BACKGROUND: url(back.jpg); HEIGHT: 255px' id=dl_margin>" +
+							"<DIV style='MARGIN-TOP: 83px; FLOAT: left; WIDTH: 250px' align=right><IMG src='china_logo.jpg'>&nbsp;</DIV>" +
+							"<DIV style='MARGIN-TOP: 17px; HEIGHT: 60px;WIDTH: 480px'></DIV>" +
+							"<DIV align=left>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       <INPUT type='hidden' style='BORDER-RIGHT: #87a6c3 1px solid; BORDER-TOP: #87a6c3 1px solid; BACKGROUND: #edeced; BORDER-LEFT: #87a6c3 1px solid; WIDTH: 115px; BORDER-BOTTOM: #87a6c3 1px solid; HEIGHT: 19px' type='text' name='vldcode' maxlength='4'/></DIV>" +
+							"<DIV align=left>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户名 <INPUT style='BORDER-RIGHT: #87a6c3 1px solid; BORDER-TOP: #87a6c3 1px solid; BACKGROUND: #edeced; BORDER-LEFT: #87a6c3 1px solid; WIDTH: 115px; BORDER-BOTTOM: #87a6c3 1px solid; HEIGHT: 19px' name=username></DIV>" +
+							"<DIV align=left>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密　码 <INPUT style='BORDER-RIGHT: #87a6c3 1px solid; BORDER-TOP: #87a6c3 1px solid; BACKGROUND: #edeced; BORDER-LEFT: #87a6c3 1px solid; WIDTH: 115px; BORDER-BOTTOM: #87a6c3 1px solid; HEIGHT: 19px' type=password name=password>&nbsp;" +
+							"<A target=main_screen class=map title='点击查看如何找回密码' onclick=popRestoreHelp('restore.htm')>忘记密码？</A></DIV>" +
+							"<span name='messages' id=messages style='line-height: 9pt;  height: 8pt; MARGIN-TOP: 1px; color: red; MARGIN-LEFT: 65px; FLOAT: center; WIDTH: 250px; PADDING-TOP: 1px'></span>" +
+							"<br style='line-height: 9pt;'><span name='messages_pwd_prompt' id=messages_pwd_prompt style='line-height: 9pt; height: 8pt;  MARGIN-TOP: 4px; color: red; MARGIN-LEFT: 70px; FLOAT: center; WIDTH: 250px; PADDING-TOP: 1px'></span>" +
+							"<br><br>" +
+							"<span style='WIDTH: 50px MARGIN-TOP: 10px; FLOAT: center; PADDING-TOP: 6px'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='submit' name='btnSubmit' id=longin_button value=' 登录 ' onclick='' onmouseover=on_mouse_over() onmouseout=on_mouse_out() class=button></span>" +
+							"<DIV align=left>&nbsp;</DIV>" +
+							"<DIV align=center style='MARGIN-TOP: 5px;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;推荐分辨率1024*768</DIV>" +
+							"<DIV class=lclear></DIV></DIV></DIV>" +
+							"<DIV class=lclear></DIV></DIV>";
+					}
+					else if (navigator.userAgent.toLowerCase().indexOf('firefox') >= 1) {
+						msg = "<DIV class=da_width>" +
+							// "<DIV style='BACKGROUND: url(back.jpg); HEIGHT: 255px' id=dl_margin>" +
+							"<DIV style='MARGIN-TOP: 83px; FLOAT: left; WIDTH: 250px' align=right><IMG src='china_logo.jpg'>&nbsp;</DIV>" +
+							"<DIV style='MARGIN-TOP: 14px; HEIGHT: 70px;WIDTH: 480px'></DIV>" +
+							"<DIV align=left>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       <INPUT type='hidden' style='BORDER-RIGHT: #87a6c3 1px solid; BORDER-TOP: #87a6c3 1px solid; BACKGROUND: #edeced; BORDER-LEFT: #87a6c3 1px solid; WIDTH: 115px; BORDER-BOTTOM: #87a6c3 1px solid; HEIGHT: 19px' type='text' name='vldcode' maxlength='4'/></DIV>" +
+							"<DIV align=left>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户名 <INPUT style='BORDER-RIGHT: #87a6c3 1px solid; BORDER-TOP: #87a6c3 1px solid; BACKGROUND: #edeced; BORDER-LEFT: #87a6c3 1px solid; WIDTH: 115px; BORDER-BOTTOM: #87a6c3 1px solid; HEIGHT: 19px' name=username></DIV>" +
+							"<DIV align=left>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密　码 <INPUT style='BORDER-RIGHT: #87a6c3 1px solid; BORDER-TOP: #87a6c3 1px solid; BACKGROUND: #edeced; BORDER-LEFT: #87a6c3 1px solid; WIDTH: 115px; BORDER-BOTTOM: #87a6c3 1px solid; HEIGHT: 19px' type=password name=password>&nbsp;" +
+							"<A target=main_screen class=map title='点击查看如何找回密码' onclick=popRestoreHelp('restore.htm')>忘记密码？</A></DIV>" +
+							"<span name='messages' id=messages style='line-height: 10pt;  height: 11pt; MARGIN-TOP: 1px; color: red; MARGIN-LEFT: 70px; FLOAT: center; WIDTH: 250px; PADDING-TOP: 1px'></span>" +
+							"<br style='line-height: 11pt;'><span name='messages_pwd_prompt' id=messages_pwd_prompt style='line-height: 11pt; height: 11pt;  MARGIN-TOP: 4px; color: red; MARGIN-LEFT: 50px; FLOAT: center; WIDTH: 250px; PADDING-TOP: 1px'></span>" +
+							"<br><br>" +
+							"<span style='WIDTH: 50px MARGIN-TOP: 11px; FLOAT: center; PADDING-TOP: 6px'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='submit' name='btnSubmit' id=longin_button value=' 登录 ' onclick='' onmouseover=on_mouse_over() onmouseout=on_mouse_out() class=button></span>" +
+							"<DIV align=left>&nbsp;</DIV>" +
+							"<DIV align=center style='MARGIN-TOP: 5px;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;推荐分辨率1024*768</DIV>" +
+							"<DIV class=lclear></DIV></DIV></DIV>" +
+							"<DIV class=lclear></DIV></DIV>";
+					}
+					else {
+						msg = "<DIV class=da_width>" +
+							// "<DIV style='BACKGROUND: url(back.jpg); HEIGHT: 255px' id=dl_margin>" +
+							"<DIV style='MARGIN-TOP: 83px; FLOAT: left; WIDTH: 250px' align=right><IMG src='china_logo.jpg'>&nbsp;</DIV>" +
+							"<DIV style='MARGIN-TOP: 10px; HEIGHT: 60px;WIDTH: 480px'></DIV>" +
+							"<DIV align=left>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       <INPUT type='hidden' style='BORDER-RIGHT: #87a6c3 1px solid; BORDER-TOP: #87a6c3 1px solid; BACKGROUND: #edeced; BORDER-LEFT: #87a6c3 1px solid; WIDTH: 115px; BORDER-BOTTOM: #87a6c3 1px solid; HEIGHT: 19px' type='text' name='vldcode' maxlength='4'/></DIV>" +
+							"<DIV align=left>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户名 <INPUT style='BORDER-RIGHT: #87a6c3 1px solid; BORDER-TOP: #87a6c3 1px solid; BACKGROUND: #edeced; BORDER-LEFT: #87a6c3 1px solid; WIDTH: 115px; BORDER-BOTTOM: #87a6c3 1px solid; HEIGHT: 19px' name=username></DIV>" +
+							"<DIV align=left>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密　码 <INPUT style='BORDER-RIGHT: #87a6c3 1px solid; BORDER-TOP: #87a6c3 1px solid; BACKGROUND: #edeced; BORDER-LEFT: #87a6c3 1px solid; WIDTH: 115px; BORDER-BOTTOM: #87a6c3 1px solid; HEIGHT: 19px' type=password name=password>&nbsp;" +
+							"<A target=main_screen class=map title='点击查看如何找回密码' onclick=popRestoreHelp('restore.htm')>忘记密码？</A></DIV>" +
+							"<span name='messages' id=messages style='line-height: 9pt;  height: 8pt; MARGIN-TOP: 1px; color: red; MARGIN-LEFT: 65px; FLOAT: center; WIDTH: 250px; PADDING-TOP: 1px'></span>" +
+							"<br style='line-height: 9pt;'><span name='messages_pwd_prompt' id=messages_pwd_prompt style='line-height: 9pt; height: 8pt;  MARGIN-TOP: 4px; color: red; MARGIN-LEFT: 70px; FLOAT: center; WIDTH: 250px; PADDING-TOP: 1px'></span>" +
+							"<br><br>" +
+							"<span style='WIDTH: 50px MARGIN-TOP: 10px; FLOAT: center; PADDING-TOP: 6px'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='submit' name='btnSubmit' id=longin_button value=' 登录 ' onclick='' onmouseover=on_mouse_over() onmouseout=on_mouse_out() class=button></span>" +
+							"<DIV align=left>&nbsp;</DIV>" +
+							"<DIV align=center style='MARGIN-TOP: 5px;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;推荐分辨率1024*768</DIV>" +
+							"<DIV class=lclear></DIV></DIV></DIV>" +
+							"<DIV class=lclear></DIV></DIV>";
+					}
+
+
+
+
+				}
+				document.write(msg);
+			}
+		}
+	</script>
+
+	<style>
+		.map {
+			text-decoration: underline;
+			color: blue;
+			cursor: pointer;
+		}
+
+		A.map:hover {
+			text-decoration: underline;
+			color: blue
+		}
+	</style>
+
+	<meta content="MSHTML 6.00.2800.1625" name="GENERATOR">
+</head>
+
+<body>
+	<form name="longin" action="/login" method="post" target="_parent">
+		<input type="hidden" name="save2Cookie" value>
+		<script language="javascript">
+			dis_login();
+		</script>
+
+		<DIV align=middle style="margin-left:17pt;margin-bottom:5pt">
+			<BR><BR><BR><BR><BR>
+			客服邮箱：&nbsp;<A href="mailto:service@h3c.com" target=_blank class=map
+				style="color:blue;text-decoration:underline;">service@h3c.com</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</DIV>
+		<DIV align=middle>
+			技术论坛：&nbsp;<A href="http://forum.h3c.com/" target=_blank class=map title="点击进入H3C技术论坛"
+				style="color:blue;text-decoration:underline;">http://forum.h3c.com</A>
+		</DIV>
+	</form>
+
+</body>
+
+</html>

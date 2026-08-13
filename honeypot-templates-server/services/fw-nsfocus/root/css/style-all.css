@@ -1,0 +1,28 @@
+.max-width{max-width: 800px;}
+.container-narrow{margin: 0 auto;max-width: 700px;}
+.header{border-bottom: 1px solid #E5E5E5;margin-bottom: 30px;padding-bottom:2px;}
+.footer {text-align: left;border-top: 1px solid #E5E5E5;color: #777777;padding-top: 30px;margin-top: 80px;}
+.modal {overflow-y: auto;}
+.dropdown-toggle {}
+.jumbotron {text-align: center;color: inherit;font-size: 18px;line-height: 2.14286;margin-bottom: 40px;}
+/*用户许可页面*/
+.about p,dd {text-indent: 29px;}
+/*验证码图片手型*/
+#divCaptcha img{cursor:pointer;}
+/*警告框里的图片和文字居中*/
+.alert-normal{background: url("/img/tip_big.gif") no-repeat; padding:8px 20px 20px 50px; width:250px;margin: 0 auto;}
+.center{text-align:center;}
+.dropdown-menu{max-width:300px; white-space:normal; word-break: break-all}
+.table td{max-width:300px; white-space:normal; word-break: break-all}
+.btn-auth-domain{width:auto !important; width:200px; max-width:400px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;height:44px;}
+.dropdown-toggle{height:44px;}
+.add-on{max-width:100px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+/*IE6下如果不指定图片大小有问题*/
+#data img{height:16px;width:16px;}
+/*IE6下不指定图片大小有问题*/
+#divCaptcha img{height:22px;width:50px;}
+/*在对话框中的表单左边距很大，这里缩小一些，如果后续需要在表单背面加图片，这里可以去掉*/
+.modal .form-horizontal{margin-left:-70px;}
+.alert .ico{vertical-align: top;width:20px;padding-top:1px;}
+/*修复firefox中box-shadow显示存在问题*/
+* {box-shadow: none !important;}

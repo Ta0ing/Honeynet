@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class lang="en">
+<head prefix="og: http://ogp.me/ns#">
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="object" property="og:type">
+<meta content="GitLab" property="og:site_name">
+<meta content="Readme · Ci · Help" property="og:title">
+<meta content="GitLab Community Edition" property="og:description">
+<meta content="../../../assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png" property="og:image">
+<meta content="64" property="og:image:width">
+<meta content="64" property="og:image:height">
+<meta content="https://222.94.174.141:10443/help/ci/README.md" property="og:url">
+<meta content="summary" property="twitter:card">
+<meta content="Readme · Ci · Help" property="twitter:title">
+<meta content="GitLab Community Edition" property="twitter:description">
+<meta content="https://222.94.174.141:10443/assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png" property="twitter:image">
+
+<title>Readme · Ci · Help · GitLab</title>
+<meta content="GitLab Community Edition" name="description">
+<link rel="shortcut icon" type="image/png" href="../../../assets/favicon-7901bd695fb93edb07975966062049829afb56cf11511236e61bcf425070e36e.png" id="favicon" data-original-href="/assets/favicon-7901bd695fb93edb07975966062049829afb56cf11511236e61bcf425070e36e.png">
+<link rel="stylesheet" media="all" href="../../../assets/application-3407a4fd892e9d5024f3096605eb1e25cad75a8bf847d26740a1e6a77e45b087.css">
+<link rel="stylesheet" media="print" href="../../../assets/print-74c3df10dad473d66660c828e3aa54ca3bfeac6d8bb708643331403fe7211e60.css">
+
+
+<link rel="stylesheet" media="all" href="../../../assets/highlight/themes/white-3144068cf4f603d290f553b653926358ddcd02493b9728f62417682657fc58c0.css">
+<script>
+//<![CDATA[
+window.gon={};gon.api_version="v4";gon.default_avatar_url="https://git.odysec.cn:10443/assets/no_avatar-849f9c04a3a0d0cea2424ae97b27447dc64a7dbfae83c036c45b403392f0e8ba.png";gon.max_file_size=10;gon.asset_host=null;gon.webpack_public_path="/assets/webpack/";gon.relative_url_root="";gon.shortcuts_path="/help/shortcuts";gon.user_color_scheme="white";gon.gitlab_url="https://git.odysec.cn:10443";gon.revision="5159b8de4a6";gon.gitlab_logo="/assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png";gon.sprite_icons="/assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg";gon.sprite_file_icons="/assets/file_icons-7262fc6897e02f1ceaf8de43dc33afa5e4f9a2067f4f68ef77dcc87946575e9e.svg";gon.emoji_sprites_css_path="/assets/emoji_sprites-289eccffb1183c188b630297431be837765d9ff4aed6130cf738586fb307c170.css";gon.test_env=false;gon.suggested_label_colors={"#0033CC":"UA blue","#428BCA":"Moderate blue","#44AD8E":"Lime green","#A8D695":"Feijoa","#5CB85C":"Slightly desaturated green","#69D100":"Bright green","#004E00":"Very dark lime green","#34495E":"Very dark desaturated blue","#7F8C8D":"Dark grayish cyan","#A295D6":"Slightly desaturated blue","#5843AD":"Dark moderate blue","#8E44AD":"Dark moderate violet","#FFECDB":"Very pale orange","#AD4363":"Dark moderate pink","#D10069":"Strong pink","#CC0033":"Strong red","#FF0000":"Pure red","#D9534F":"Soft red","#D1D100":"Strong yellow","#F0AD4E":"Soft orange","#AD8D43":"Dark moderate orange"};gon.first_day_of_week=0;gon.ee=false;gon.features={"suppressAjaxNavigationErrors":true,"gfmGrafanaIntegration":false};
+//]]>
+</script>
+
+
+<script src="../../../assets/webpack/runtime.7c7b62b1.bundle.js" defer="defer"></script>
+<script src="../../../assets/webpack/main.b5cfaf04.chunk.js" defer="defer"></script>
+<script src="../../../assets/webpack/pages.help.show.304a14b6.chunk.js" defer="defer"></script>
+
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="IcS5aLxMSdRNjM1NiIm1wXEUByaziA+t5lMtdfJQWFnH5/2D7HAAqmAXVg1al62sRIkoXkHKdBf3dco3QT4n2Q==">
+
+<meta content="origin-when-cross-origin" name="referrer">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+<meta content="#474D57" name="theme-color">
+<link rel="apple-touch-icon" type="image/x-icon" href="../../../assets/touch-icon-iphone-5a9cee0e8a51212e70b90c87c12f382c428870c0ff67d1eb034d884b78d2dae7.png">
+<link rel="apple-touch-icon" type="image/x-icon" href="../../../assets/touch-icon-ipad-a6eec6aeb9da138e507593b464fdac213047e49d3093fc30e90d9a995df83ba3.png" sizes="76x76">
+<link rel="apple-touch-icon" type="image/x-icon" href="../../../assets/touch-icon-iphone-retina-72e2aadf86513a56e050e7f0f2355deaa19cc17ed97bbe5147847f2748e5a3e3.png" sizes="120x120">
+<link rel="apple-touch-icon" type="image/x-icon" href="../../../assets/touch-icon-ipad-retina-8ebe416f5313483d9c1bc772b5bbe03ecad52a54eba443e5215a22caed2a16a2.png" sizes="152x152">
+<link color="rgb(226, 67, 41)" href="../../../assets/logo-d36b5212042cebc89b96df4bf6ac24e43db316143e89926c0db839ff694d2de4.svg" rel="mask-icon">
+<meta content="/assets/msapplication-tile-1196ec67452f618d39cdd85e2e3a542f76574c071051ae7effbfde01710eb17d.png" name="msapplication-TileImage">
+<meta content="#30353E" name="msapplication-TileColor">
+
+
+
+
+</head>
+
+<body class="ui-indigo  gl-browser-generic gl-platform-other" data-group data-page="help:show" data-project>
+
+<script>
+//<![CDATA[
+gl = window.gl || {};
+gl.client = {"isGeneric":true,"isOther":true};
+
+
+//]]>
+</script>
+
+
+<header class="navbar navbar-gitlab navbar-expand-sm js-navbar" data-qa-selector="navbar">
+<a class="sr-only gl-accessibility" href="#content-body" tabindex="1">Skip to content</a>
+<div class="container-fluid">
+<div class="header-content">
+<div class="title-container">
+<h1 class="title">
+<a title="Dashboard" id="logo" href="../../../users/sign_in/index.html"><svg width="24" height="24" class="tanuki-logo" viewBox="0 0 36 36">
+  <path class="tanuki-shape tanuki-left-ear" fill="#e24329" d="M2 14l9.38 9v-9l-4-12.28c-.205-.632-1.176-.632-1.38 0z"/>
+  <path class="tanuki-shape tanuki-right-ear" fill="#e24329" d="M34 14l-9.38 9v-9l4-12.28c.205-.632 1.176-.632 1.38 0z"/>
+  <path class="tanuki-shape tanuki-nose" fill="#e24329" d="M18,34.38 3,14 33,14 Z"/>
+  <path class="tanuki-shape tanuki-left-eye" fill="#fc6d26" d="M18,34.38 11.38,14 2,14 6,25Z"/>
+  <path class="tanuki-shape tanuki-right-eye" fill="#fc6d26" d="M18,34.38 24.62,14 34,14 30,25Z"/>
+  <path class="tanuki-shape tanuki-left-cheek" fill="#fca326" d="M2 14L.1 20.16c-.18.565 0 1.2.5 1.56l17.42 12.66z"/>
+  <path class="tanuki-shape tanuki-right-cheek" fill="#fca326" d="M34 14l1.9 6.16c.18.565 0 1.2-.5 1.56L18 34.38z"/>
+</svg>
+
+<span class="logo-text d-none d-lg-block prepend-left-8">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 617 169"><path d="M315.26 2.97h-21.8l.1 162.5h88.3v-20.1h-66.5l-.1-142.4M465.89 136.95c-5.5 5.7-14.6 11.4-27 11.4-16.6 0-23.3-8.2-23.3-18.9 0-16.1 11.2-23.8 35-23.8 4.5 0 11.7.5 15.4 1.2v30.1h-.1m-22.6-98.5c-17.6 0-33.8 6.2-46.4 16.7l7.7 13.4c8.9-5.2 19.8-10.4 35.5-10.4 17.9 0 25.8 9.2 25.8 24.6v7.9c-3.5-.7-10.7-1.2-15.1-1.2-38.2 0-57.6 13.4-57.6 41.4 0 25.1 15.4 37.7 38.7 37.7 15.7 0 30.8-7.2 36-18.9l4 15.9h15.4v-83.2c-.1-26.3-11.5-43.9-44-43.9M557.63 149.1c-8.2 0-15.4-1-20.8-3.5V70.5c7.4-6.2 16.6-10.7 28.3-10.7 21.1 0 29.2 14.9 29.2 39 0 34.2-13.1 50.3-36.7 50.3m9.2-110.6c-19.5 0-30 13.3-30 13.3v-21l-.1-27.8h-21.3l.1 158.5c10.7 4.5 25.3 6.9 41.2 6.9 40.7 0 60.3-26 60.3-70.9-.1-35.5-18.2-59-50.2-59M77.9 20.6c19.3 0 31.8 6.4 39.9 12.9l9.4-16.3C114.5 6 97.3 0 78.9 0 32.5 0 0 28.3 0 85.4c0 59.8 35.1 83.1 75.2 83.1 20.1 0 37.2-4.7 48.4-9.4l-.5-63.9V75.1H63.6v20.1h38l.5 48.5c-5 2.5-13.6 4.5-25.3 4.5-32.2 0-53.8-20.3-53.8-63-.1-43.5 22.2-64.6 54.9-64.6M231.43 2.95h-21.3l.1 27.3v94.3c0 26.3 11.4 43.9 43.9 43.9 4.5 0 8.9-.4 13.1-1.2v-19.1c-3.1.5-6.4.7-9.9.7-17.9 0-25.8-9.2-25.8-24.6v-65h35.7v-17.8h-35.7l-.1-38.5M155.96 165.47h21.3v-124h-21.3v124M155.96 24.37h21.3V3.07h-21.3v21.3"/></svg>
+
+</span>
+</a></h1>
+<ul class="list-unstyled navbar-sub-nav">
+<li class="home"><a title="Projects" class="dashboard-shortcuts-projects" href="../../../explore/index.html">Projects
+</a></li><li class><a title="Groups" class="dashboard-shortcuts-groups" href="../../../explore/groups/index.html">Groups
+</a></li><li class><a title="Snippets" class="dashboard-shortcuts-snippets" href="../../../explore/snippets/index.html">Snippets
+</a></li><li>
+<a title="About GitLab CE" href="../../index.html">Help</a>
+</li>
+</ul>
+
+</div>
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav">
+<li class="nav-item d-none d-lg-block m-auto">
+<div class="search search-form" data-track-event="activate_form_input" data-track-label="navbar_search" data-track-value>
+<form class="form-inline" action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"><div class="search-input-container">
+<div class="search-input-wrap">
+<div class="dropdown" data-url="/search/autocomplete">
+<input type="search" name="search" id="search" placeholder="Search or jump to…" class="search-input dropdown-menu-toggle no-outline js-search-dashboard-options" spellcheck="false" tabindex="1" autocomplete="off" data-issues-path="/dashboard/issues" data-mr-path="/dashboard/merge_requests" data-qa-selector="search_term_field" aria-label="Search or jump to…">
+<button class="hidden js-dropdown-search-toggle" data-toggle="dropdown" type="button"></button>
+<div class="dropdown-menu dropdown-select js-dashboard-search-options">
+<div class="dropdown-content"><ul>
+<li class="dropdown-menu-empty-item">
+<a>
+Loading...
+</a>
+</li>
+</ul>
+</div><div class="dropdown-loading"><i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin"></i></div>
+</div>
+<svg class="s16 search-icon"><use xlink:href="../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#search"/></svg>
+<svg class="s16 clear-icon js-clear-input"><use xlink:href="../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#close"/></svg>
+</div>
+</div>
+</div>
+<input type="hidden" name="group_id" id="group_id" class="js-search-group-options">
+<input type="hidden" name="project_id" id="search_project_id" value class="js-search-project-options">
+<input type="hidden" name="repository_ref" id="repository_ref">
+<input type="hidden" name="nav_source" id="nav_source" value="navbar">
+<div class="search-autocomplete-opts hide" data-autocomplete-path="/search/autocomplete"></div>
+</form></div>
+
+</li>
+<li class="nav-item d-inline-block d-lg-none">
+<a title="Search" aria-label="Search" data-toggle="tooltip" data-placement="bottom" data-container="body" href="../../../search/index.html"><svg class="s16"><use xlink:href="../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#search"/></svg>
+</a></li>
+<li class="nav-item header-help dropdown d-none d-md-block">
+<a class="header-help-dropdown-toggle" data-toggle="dropdown" href="../../index.html"><svg class="s16"><use xlink:href="../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#question"/></svg>
+<svg class="caret-down"><use xlink:href="../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#angle-down"/></svg>
+</a><div class="dropdown-menu dropdown-menu-right">
+<ul>
+<li>
+<a href="../../index.html">Help</a>
+</li>
+<li>
+<a href="https://about.gitlab.com/getting-help/">Support</a>
+</li>
+
+<li class="divider"></li>
+<li>
+<a href="https://about.gitlab.com/submit-feedback">Submit feedback</a>
+</li>
+<li>
+<a target="_blank" class="text-nowrap" href="https://about.gitlab.com/contributing">Contribute to GitLab
+</a>
+</li>
+
+</ul>
+
+</div>
+</li>
+<li class="nav-item">
+<div>
+<a class="btn btn-sign-in" href="../../../users/sign_in/redirect_to_referer%3Dyes.html">Sign in</a>
+</div>
+</li>
+</ul>
+</div>
+<button class="navbar-toggler d-block d-sm-none" type="button">
+<span class="sr-only">Toggle navigation</span>
+<svg class="s12 more-icon js-navbar-toggle-right"><use xlink:href="../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#ellipsis_h"/></svg>
+<svg class="s12 close-icon js-navbar-toggle-left"><use xlink:href="../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#close"/></svg>
+</button>
+</div>
+</div>
+</header>
+
+<div class="layout-page">
+<div class="content-wrapper">
+
+<div class="mobile-overlay"></div>
+<div class="alert-wrapper">
+
+
+
+
+
+
+<nav class="breadcrumbs container-fluid container-limited limit-container-width" role="navigation">
+<div class="breadcrumbs-container">
+<div class="breadcrumbs-links js-title-container">
+<ul class="list-unstyled breadcrumbs-list js-breadcrumbs-list">
+<li><a href="../../index.html">Help</a><svg class="s8 breadcrumbs-list-angle"><use xlink:href="../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#angle-right"/></svg></li>
+
+<li>
+<h2 class="breadcrumbs-sub-title"><a href="index.html">Help</a></h2>
+</li>
+</ul>
+</div>
+
+</div>
+</nav>
+
+<div class="d-flex"></div>
+</div>
+<div class="container-fluid container-limited limit-container-width">
+<div class="content" id="content-body">
+<div class="flash-container flash-container-page sticky">
+</div>
+
+<div class="documentation md prepend-top-default">
+<h1 data-sourcepos="1:1-1:14" dir="auto">&#x000A;<a id="user-content-gitlab-cicd" class="anchor" href="#gitlab-cicd" aria-hidden="true"></a>GitLab CI/CD</h1>&#x000A;<p data-sourcepos="3:1-4:97" dir="auto">GitLab CI/CD is a tool built into GitLab for software development&#x000A;through the <a href="../introduction/index.md/index.html#introduction-to-cicd-methodologies">continuous methodologies</a>:</p>&#x000A;<ul data-sourcepos="6:1-9:0" dir="auto">&#x000A;<li data-sourcepos="6:1-6:29">Continuous Integration (CI)</li>&#x000A;<li data-sourcepos="7:1-7:26">Continuous Delivery (CD)</li>&#x000A;<li data-sourcepos="8:1-9:0">Continuous Deployment (CD)</li>&#x000A;</ul>&#x000A;<p data-sourcepos="10:1-13:126" dir="auto">NOTE: <strong>Out-of-the-box management systems can decrease hours spent on maintaining toolchains by 10% or more.</strong>&#x000A;Watch our&#x000A;<a href="https://about.gitlab.com/webcast/mastering-ci-cd/" rel="nofollow noreferrer noopener" target="_blank">"Mastering continuous software development"</a>&#x000A;webcast to learn about continuous methods and how GitLab’s built-in CI can help you simplify and scale software development.</p>&#x000A;<h2 data-sourcepos="15:1-15:11" dir="auto">&#x000A;<a id="user-content-overview" class="anchor" href="#overview" aria-hidden="true"></a>Overview</h2>&#x000A;<p data-sourcepos="17:1-20:54" dir="auto">Continuous Integration works by pushing small code chunks to your&#x000A;application's code base hosted in a Git repository, and, to every&#x000A;push, run a pipeline of scripts to build, test, and validate the&#x000A;code changes before merging them into the main branch.</p>&#x000A;<p data-sourcepos="22:1-24:45" dir="auto">Continuous Delivery and Deployment consist of a step further CI,&#x000A;deploying your application to production at every&#x000A;push to the default branch of the repository.</p>&#x000A;<p data-sourcepos="26:1-29:9" dir="auto">These methodologies allow you to catch bugs and errors early in&#x000A;the development cycle, ensuring that all the code deployed to&#x000A;production complies with the code standards you established for&#x000A;your app.</p>&#x000A;<p data-sourcepos="31:1-32:68" dir="auto">For a complete overview of these methodologies and GitLab CI/CD,&#x000A;read the <a href="../introduction/index.md/index.html">Introduction to CI/CD with GitLab</a>.</p>&#x000A;<p data-sourcepos="34:1-35:118" dir="auto"><i aria-hidden="true"></i>&#x000A;For a video demonstration of GitLab CI/CD, see <a href="https://www.youtube.com/watch?v=1iXFbchozdY" rel="nofollow noreferrer noopener" target="_blank">Demo: CI/CD with GitLab</a>.</p>&#x000A;<h2 data-sourcepos="37:1-37:18" dir="auto">&#x000A;<a id="user-content-getting-started" class="anchor" href="#getting-started" aria-hidden="true"></a>Getting started</h2>&#x000A;<p data-sourcepos="39:1-41:56" dir="auto">GitLab CI/CD is configured by a file called <code>.gitlab-ci.yml</code> placed&#x000A;at the repository's root. The scripts set in this file are executed&#x000A;by the <a href="https://docs.gitlab.com/runner/" rel="nofollow noreferrer noopener" target="_blank">GitLab Runner</a>.</p>&#x000A;<p data-sourcepos="43:1-44:24" dir="auto">To get started with GitLab CI/CD, we recommend you read through&#x000A;the following documents:</p>&#x000A;<ul data-sourcepos="46:1-49:0" dir="auto">&#x000A;<li data-sourcepos="46:1-46:72">&#x000A;<a href="../introduction/index.md/index.html#how-gitlab-cicd-works">How GitLab CI/CD works</a>.</li>&#x000A;<li data-sourcepos="47:1-47:75">&#x000A;<a href="../introduction/index.md/index.html#basic-cicd-workflow">GitLab CI/CD basic workflow</a>.</li>&#x000A;<li data-sourcepos="48:1-49:0">&#x000A;<a href="../../user/project/pages/getting_started_part_four.md/index.html">Step-by-step guide for writing <code>.gitlab-ci.yml</code> for the first time</a>.</li>&#x000A;</ul>&#x000A;<p data-sourcepos="50:1-51:30" dir="auto">If you're coming over from Jenkins, you can also check out our handy <a href="../jenkins/index.md/index.html">reference</a>&#x000A;for converting your pipelines.</p>&#x000A;<p data-sourcepos="53:1-57:14" dir="auto">You can also get started by using one of the&#x000A;<a href="https://gitlab.com/gitlab-org/gitlab-foss/tree/master/lib/gitlab/ci/templates" rel="nofollow noreferrer noopener" target="_blank"><code>.gitlab-ci.yml</code> templates</a>&#x000A;available through the UI. You can use them by creating a new file,&#x000A;choosing a template that suits your application, and adjusting it&#x000A;to your needs:</p>&#x000A;<p data-sourcepos="59:1-59:65" dir="auto"><a class="no-attachment-icon" href="../img/add_file_template_11_10.png" target="_blank" rel="noopener noreferrer"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Use a .gitlab-ci.yml template" class="lazy" data-src="img/add_file_template_11_10.png"></a></p>&#x000A;<p data-sourcepos="61:1-61:85" dir="auto">For a broader overview, see the <a href="../quick_start/README.md/index.html">CI/CD getting started</a> guide.</p>&#x000A;<p data-sourcepos="63:1-65:43" dir="auto">Once you're familiar with how GitLab CI/CD works, see the&#x000A;<a href="../yaml/README.md/index.html"><code>.gitlab-ci.yml</code> full reference</a>&#x000A;for all the attributes you can set and use.</p>&#x000A;<p data-sourcepos="67:1-68:231" dir="auto">NOTE: <strong>Note:</strong>&#x000A;GitLab CI/CD and <a href="../runners/README.md/index.html#shared-specific-and-group-runners">shared runners</a> are enabled in GitLab.com and available for all users, limited only to the <a href="../../user/gitlab_com/index.md/index.html#shared-runners">user's pipelines quota</a>.</p>&#x000A;<h2 data-sourcepos="70:1-70:16" dir="auto">&#x000A;<a id="user-content-configuration" class="anchor" href="#configuration" aria-hidden="true"></a>Configuration</h2>&#x000A;<p data-sourcepos="72:1-72:53" dir="auto">GitLab CI/CD supports numerous configuration options:</p>&#x000A;<table data-sourcepos="74:1-90:105" dir="auto">&#x000A;<thead>&#x000A;<tr data-sourcepos="74:1-74:32">&#x000A;<th align="left" data-sourcepos="74:2-74:16">Configuration</th>&#x000A;<th align="left" data-sourcepos="74:18-74:31">Description</th>&#x000A;</tr>&#x000A;</thead>&#x000A;<tbody>&#x000A;<tr data-sourcepos="76:1-76:79">&#x000A;<td align="left" data-sourcepos="76:2-76:28"><a href="../pipelines.md/index.html">Pipelines</a></td>&#x000A;<td align="left" data-sourcepos="76:30-76:78">Structure your CI/CD process through pipelines.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="77:1-77:99">&#x000A;<td align="left" data-sourcepos="77:2-77:47"><a href="../variables/README.md/index.html">Environment variables</a></td>&#x000A;<td align="left" data-sourcepos="77:49-77:98">Reuse values based on a variable/value key pair.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="78:1-78:116">&#x000A;<td align="left" data-sourcepos="78:2-78:34"><a href="../environments.md/index.html">Environments</a></td>&#x000A;<td align="left" data-sourcepos="78:36-78:115">Deploy your application to different environments (e.g., staging, production).</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="79:1-79:103">&#x000A;<td align="left" data-sourcepos="79:2-79:62"><a href="../../user/project/pipelines/job_artifacts.md/index.html">Job artifacts</a></td>&#x000A;<td align="left" data-sourcepos="79:64-79:102">Output, use, and reuse job artifacts.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="80:1-80:92">&#x000A;<td align="left" data-sourcepos="80:2-80:41"><a href="../caching/index.md/index.html">Cache dependencies</a></td>&#x000A;<td align="left" data-sourcepos="80:43-80:91">Cache your dependencies for a faster execution.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="81:1-81:114">&#x000A;<td align="left" data-sourcepos="81:2-81:63"><a href="../../user/project/pipelines/schedules.md/index.html">Schedule pipelines</a></td>&#x000A;<td align="left" data-sourcepos="81:65-81:113">Schedule pipelines to run as often as you need.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="82:1-82:163">&#x000A;<td align="left" data-sourcepos="82:2-82:105"><a href="../../user/project/pipelines/settings.md/index.html#custom-ci-configuration-path">Custom path for <code>.gitlab-ci.yml</code></a></td>&#x000A;<td align="left" data-sourcepos="82:107-82:162">Define a custom path for the CI/CD configuration file.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="83:1-83:91">&#x000A;<td align="left" data-sourcepos="83:2-83:48"><a href="../git_submodules.md/index.html">Git submodules for CI/CD</a></td>&#x000A;<td align="left" data-sourcepos="83:50-83:90">Configure jobs for using Git submodules.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="84:1-84:83">&#x000A;<td align="left" data-sourcepos="84:2-84:43"><a href="../ssh_keys/README.md/index.html">SSH keys for CI/CD</a></td>&#x000A;<td align="left" data-sourcepos="84:45-84:82">Using SSH keys in your CI pipelines.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="85:1-85:81">&#x000A;<td align="left" data-sourcepos="85:2-85:43"><a href="../triggers/README.md/index.html">Pipelines triggers</a></td>&#x000A;<td align="left" data-sourcepos="85:45-85:80">Trigger pipelines through the API.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="86:1-86:140">&#x000A;<td align="left" data-sourcepos="86:2-86:67"><a href="../merge_request_pipelines/index.md/index.html">Pipelines for Merge Requests</a></td>&#x000A;<td align="left" data-sourcepos="86:69-86:139">Design a pipeline structure for running a pipeline in merge requests.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="87:1-87:167">&#x000A;<td align="left" data-sourcepos="87:2-87:74"><a href="../../user/project/clusters/index.md/index.html">Integrate with Kubernetes clusters</a></td>&#x000A;<td align="left" data-sourcepos="87:76-87:166">Connect your project to Google Kubernetes Engine (GKE) or an existing Kubernetes cluster.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="88:1-88:113">&#x000A;<td align="left" data-sourcepos="88:2-88:51"><a href="https://docs.gitlab.com/runner/" rel="nofollow noreferrer noopener" target="_blank">GitLab Runner</a></td>&#x000A;<td align="left" data-sourcepos="88:53-88:112">Configure your own GitLab Runners to execute your scripts.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="89:1-89:135">&#x000A;<td align="left" data-sourcepos="89:2-89:83"><a href="../large_repositories/index.md/index.html">Optimize GitLab and Runner for large repositories</a></td>&#x000A;<td align="left" data-sourcepos="89:85-89:134">Recommended strategies for handling large repos.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="90:1-90:105">&#x000A;<td align="left" data-sourcepos="90:2-90:52"><a href="../yaml/README.md/index.html"><code>.gitlab-ci.yml</code> full reference</a></td>&#x000A;<td align="left" data-sourcepos="90:54-90:104">All the attributes you can use with GitLab CI/CD.</td>&#x000A;</tr>&#x000A;</tbody>&#x000A;</table>&#x000A;<p data-sourcepos="92:1-93:117" dir="auto">Note that certain operations can only be performed according to the&#x000A;<a href="../../user/permissions.md/index.html#gitlab-cicd-permissions">user</a> and <a href="../../user/permissions.md/index.html#job-permissions">job</a> permissions.</p>&#x000A;<h2 data-sourcepos="95:1-95:14" dir="auto">&#x000A;<a id="user-content-feature-set" class="anchor" href="#feature-set" aria-hidden="true"></a>Feature set</h2>&#x000A;<p data-sourcepos="97:1-98:72" dir="auto">Use the vast GitLab CI/CD to easily configure it for specific purposes.&#x000A;Its feature set is listed on the table below according to DevOps stages.</p>&#x000A;<table data-sourcepos="100:1-129:142" dir="auto">&#x000A;<thead>&#x000A;<tr data-sourcepos="100:1-100:25">&#x000A;<th align="left" data-sourcepos="100:2-100:10">Feature</th>&#x000A;<th align="left" data-sourcepos="100:12-100:24">Description</th>&#x000A;</tr>&#x000A;</thead>&#x000A;<tbody>&#x000A;<tr data-sourcepos="102:1-102:18">&#x000A;<td align="left" data-sourcepos="102:2-102:16"><strong>Configure</strong></td>&#x000A;<td align="left" data-sourcepos="102:18-102:17"></td>&#x000A;</tr>&#x000A;<tr data-sourcepos="103:1-103:86">&#x000A;<td align="left" data-sourcepos="103:2-103:47"><a href="../../topics/autodevops/index.md/index.html">Auto DevOps</a></td>&#x000A;<td align="left" data-sourcepos="103:49-103:85">Set up your app's entire lifecycle.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="104:1-104:100">&#x000A;<td align="left" data-sourcepos="104:2-104:31"><a href="../chatops/README.md/index.html">ChatOps</a></td>&#x000A;<td align="left" data-sourcepos="104:33-104:99">Trigger CI jobs from chat, with results sent back to the channel.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="105:1-105:9">&#x000A;<td align="left" data-sourcepos="105:2-105:8">---+---</td>&#x000A;<td align="left" data-sourcepos="105:0-105:0"></td>&#x000A;</tr>&#x000A;<tr data-sourcepos="106:1-106:15">&#x000A;<td align="left" data-sourcepos="106:2-106:13"><strong>Verify</strong></td>&#x000A;<td align="left" data-sourcepos="106:15-106:14"></td>&#x000A;</tr>&#x000A;<tr data-sourcepos="107:1-107:164">&#x000A;<td align="left" data-sourcepos="107:2-107:95"><a href="../../user/project/merge_requests/browser_performance_testing.md/index.html">Browser Performance Testing</a></td>&#x000A;<td align="left" data-sourcepos="107:97-107:163">Quickly determine the performance impact of pending code changes.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="108:1-108:83">&#x000A;<td align="left" data-sourcepos="108:2-108:36"><a href="../services/README.md/index.html">CI services</a></td>&#x000A;<td align="left" data-sourcepos="108:38-108:82">Link Docker containers with your base image.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="109:1-109:116">&#x000A;<td align="left" data-sourcepos="109:2-109:79">&#x000A;<a href="../../user/project/merge_requests/code_quality.md/index.html">Code Quality</a> <strong>(STARTER)</strong>&#x000A;</td>&#x000A;<td align="left" data-sourcepos="109:81-109:115">Analyze your source code quality.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="110:1-110:186">&#x000A;<td align="left" data-sourcepos="110:2-110:92">&#x000A;<a href="../ci_cd_for_external_repos/index.md/index.html">GitLab CI/CD for external repositories</a> <strong>(PREMIUM)</strong>&#x000A;</td>&#x000A;<td align="left" data-sourcepos="110:94-110:185">Get the benefits of GitLab CI/CD combined with repositories in GitHub and Bitbucket Cloud.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="111:1-111:144">&#x000A;<td align="left" data-sourcepos="111:2-111:81">&#x000A;<a href="../interactive_web_terminal/index.md/index.html">Interactive Web Terminals</a> <strong>(CORE ONLY)</strong>&#x000A;</td>&#x000A;<td align="left" data-sourcepos="111:83-111:143">Open an interactive web terminal to debug the running jobs.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="112:1-112:95">&#x000A;<td align="left" data-sourcepos="112:2-112:39"><a href="../junit_test_reports.md/index.html">JUnit tests</a></td>&#x000A;<td align="left" data-sourcepos="112:41-112:94">Identify script failures directly on merge requests.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="113:1-113:131">&#x000A;<td align="left" data-sourcepos="113:2-113:55"><a href="../docker/using_docker_images.md/index.html">Using Docker images</a></td>&#x000A;<td align="left" data-sourcepos="113:57-113:130">Use GitLab and GitLab Runner with Docker to build and test applications.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="114:1-114:9">&#x000A;<td align="left" data-sourcepos="114:2-114:8">---+---</td>&#x000A;<td align="left" data-sourcepos="114:0-114:0"></td>&#x000A;</tr>&#x000A;<tr data-sourcepos="115:1-115:16">&#x000A;<td align="left" data-sourcepos="115:2-115:14"><strong>Release</strong></td>&#x000A;<td align="left" data-sourcepos="115:16-115:15"></td>&#x000A;</tr>&#x000A;<tr data-sourcepos="116:1-116:139">&#x000A;<td align="left" data-sourcepos="116:2-116:59"><a href="../../topics/autodevops/index.md/index.html#auto-deploy">Auto Deploy</a></td>&#x000A;<td align="left" data-sourcepos="116:61-116:138">Deploy your application to a production environment in a Kubernetes cluster.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="117:1-117:111">&#x000A;<td align="left" data-sourcepos="117:2-117:57"><a href="../docker/using_docker_build.md/index.html">Building Docker images</a></td>&#x000A;<td align="left" data-sourcepos="117:59-117:110">Maintain Docker-based projects using GitLab CI/CD.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="118:1-118:206">&#x000A;<td align="left" data-sourcepos="118:2-118:76">&#x000A;<a href="../../user/project/canary_deployments.md/index.html">Canary Deployments</a> <strong>(PREMIUM)</strong>&#x000A;</td>&#x000A;<td align="left" data-sourcepos="118:78-118:205">Ship features to only a portion of your pods and let a percentage of your user base to visit the temporarily deployed feature.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="119:1-119:154">&#x000A;<td align="left" data-sourcepos="119:2-119:66">&#x000A;<a href="../../user/project/deploy_boards.md/index.html">Deploy Boards</a> <strong>(PREMIUM)</strong>&#x000A;</td>&#x000A;<td align="left" data-sourcepos="119:68-119:153">Check the current health and status of each CI/CD environment running on Kubernetes.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="120:1-120:123">&#x000A;<td align="left" data-sourcepos="120:2-120:77">&#x000A;<a href="../../user/project/operations/feature_flags.md/index.html">Feature Flags</a> <strong>(PREMIUM)</strong>&#x000A;</td>&#x000A;<td align="left" data-sourcepos="120:79-120:122">Deploy your features behind Feature Flags.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="121:1-121:76">&#x000A;<td align="left" data-sourcepos="121:2-121:49"><a href="../../user/project/pages/index.md/index.html">GitLab Pages</a></td>&#x000A;<td align="left" data-sourcepos="121:51-121:75">Deploy static websites.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="122:1-122:89">&#x000A;<td align="left" data-sourcepos="122:2-122:55"><a href="../../user/project/releases/index.md/index.html">GitLab Releases</a></td>&#x000A;<td align="left" data-sourcepos="122:57-122:88">Add release notes to Git tags.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="123:1-123:89">&#x000A;<td align="left" data-sourcepos="123:2-123:38"><a href="../review_apps/index.md/index.html">Review Apps</a></td>&#x000A;<td align="left" data-sourcepos="123:40-123:88">Configure GitLab CI/CD to preview code changes.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="124:1-124:9">&#x000A;<td align="left" data-sourcepos="124:2-124:8">---+---</td>&#x000A;<td align="left" data-sourcepos="124:0-124:0"></td>&#x000A;</tr>&#x000A;<tr data-sourcepos="125:1-125:15">&#x000A;<td align="left" data-sourcepos="125:2-125:13"><strong>Secure</strong></td>&#x000A;<td align="left" data-sourcepos="125:15-125:14"></td>&#x000A;</tr>&#x000A;<tr data-sourcepos="126:1-126:154">&#x000A;<td align="left" data-sourcepos="126:2-126:96">&#x000A;<a href="../../user/application_security/container_scanning/index.md/index.html">Container Scanning</a> <strong>(ULTIMATE)</strong>&#x000A;</td>&#x000A;<td align="left" data-sourcepos="126:98-126:153">Check your Docker containers for known vulnerabilities.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="127:1-127:154">&#x000A;<td align="left" data-sourcepos="127:2-127:98">&#x000A;<a href="../../user/application_security/dependency_scanning/index.md/index.html">Dependency Scanning</a> <strong>(ULTIMATE)</strong>&#x000A;</td>&#x000A;<td align="left" data-sourcepos="127:100-127:153">Analyze your dependencies for known vulnerabilities.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="128:1-128:152">&#x000A;<td align="left" data-sourcepos="128:2-128:96">&#x000A;<a href="../../user/application_security/license_compliance/index.md/index.html">License Compliance</a> <strong>(ULTIMATE)</strong>&#x000A;</td>&#x000A;<td align="left" data-sourcepos="128:98-128:151">Search your project dependencies for their licenses.</td>&#x000A;</tr>&#x000A;<tr data-sourcepos="129:1-129:142">&#x000A;<td align="left" data-sourcepos="129:2-129:108">&#x000A;<a href="../../user/project/merge_requests/index.md/index.html#security-reports-ultimate">Security Test reports</a> <strong>(ULTIMATE)</strong>&#x000A;</td>&#x000A;<td align="left" data-sourcepos="129:110-129:141">Check for app vulnerabilities.</td>&#x000A;</tr>&#x000A;</tbody>&#x000A;</table>&#x000A;<h2 data-sourcepos="131:1-131:11" dir="auto">&#x000A;<a id="user-content-examples" class="anchor" href="#examples" aria-hidden="true"></a>Examples</h2>&#x000A;<p data-sourcepos="133:1-134:46" dir="auto">Find example project code and tutorials for using GitLab CI/CD with a variety of app frameworks, languages, and platforms&#x000A;on the <a href="../examples/README.md/index.html">CI Examples</a> page.</p>&#x000A;<p data-sourcepos="136:1-136:111" dir="auto">GitLab also provides <a href="https://gitlab.com/gitlab-examples" rel="nofollow noreferrer noopener" target="_blank">example projects</a> pre-configured to use GitLab CI/CD.</p>&#x000A;<h2 data-sourcepos="138:1-138:33" dir="auto">&#x000A;<a id="user-content-administration-core-only" class="anchor" href="#administration-core-only" aria-hidden="true"></a>Administration <strong>(CORE ONLY)</strong>&#x000A;</h2>&#x000A;<p data-sourcepos="140:1-141:20" dir="auto">As a GitLab administrator, you can change the default behavior&#x000A;of GitLab CI/CD for:</p>&#x000A;<ul data-sourcepos="143:1-145:0" dir="auto">&#x000A;<li data-sourcepos="143:1-143:85">An <a href="../../user/admin_area/settings/continuous_integration.md/index.html">entire GitLab instance</a>.</li>&#x000A;<li data-sourcepos="144:1-145:0">Specific projects, using <a href="../../user/project/pipelines/settings.md/index.html">pipelines settings</a>.</li>&#x000A;</ul>&#x000A;<p data-sourcepos="146:1-146:9" dir="auto">See also:</p>&#x000A;<ul data-sourcepos="148:1-150:0" dir="auto">&#x000A;<li data-sourcepos="148:1-148:67">&#x000A;<a href="../enable_or_disable_ci.md/index.html">How to enable or disable GitLab CI/CD</a>.</li>&#x000A;<li data-sourcepos="149:1-150:0">Other <a href="../../administration/index.md/index.html#continuous-integration-settings">CI administration settings</a>.</li>&#x000A;</ul>&#x000A;<h2 data-sourcepos="151:1-151:13" dir="auto">&#x000A;<a id="user-content-references" class="anchor" href="#references" aria-hidden="true"></a>References</h2>&#x000A;<h3 data-sourcepos="153:1-153:21" dir="auto">&#x000A;<a id="user-content-why-gitlab-cicd" class="anchor" href="#why-gitlab-cicd" aria-hidden="true"></a>Why GitLab CI/CD?</h3>&#x000A;<p data-sourcepos="155:1-156:30" dir="auto">The following articles explain reasons to use GitLab CI/CD&#x000A;for your CI/CD infrastructure:</p>&#x000A;<ul data-sourcepos="158:1-161:0" dir="auto">&#x000A;<li data-sourcepos="158:1-158:110"><a href="https://about.gitlab.com/blog/2016/10/17/gitlab-ci-oohlala/" rel="nofollow noreferrer noopener" target="_blank">Why we chose GitLab CI for our CI/CD solution</a></li>&#x000A;<li data-sourcepos="159:1-159:114"><a href="https://about.gitlab.com/blog/2016/07/22/building-our-web-app-on-gitlab-ci/" rel="nofollow noreferrer noopener" target="_blank">Building our web-app on GitLab CI</a></li>&#x000A;<li data-sourcepos="160:1-161:0"><a href="https://about.gitlab.com/blog/2019/04/25/5-teams-that-made-the-switch-to-gitlab-ci-cd/" rel="nofollow noreferrer noopener" target="_blank">5 Teams that made the switch to GitLab CI/CD</a></li>&#x000A;</ul>&#x000A;<p data-sourcepos="162:1-162:124" dir="auto">See also the <a href="https://docs.google.com/presentation/d/1OGgk2Tcxbpl7DJaIOzCX4Vqg3dlwfELC3u2jEeCBbDk" rel="nofollow noreferrer noopener" target="_blank">Why CI/CD?</a> presentation.</p>&#x000A;<h3 data-sourcepos="164:1-164:20" dir="auto">&#x000A;<a id="user-content-breaking-changes" class="anchor" href="#breaking-changes" aria-hidden="true"></a>Breaking changes</h3>&#x000A;<p data-sourcepos="166:1-167:26" dir="auto">As GitLab CI/CD has evolved, certain breaking changes have&#x000A;been necessary. These are:</p>&#x000A;<h4 data-sourcepos="169:1-169:9" dir="auto">&#x000A;<a id="user-content-anchor-120" class="anchor" href="#anchor-120" aria-hidden="true"></a>12.0</h4>&#x000A;<ul data-sourcepos="171:1-185:0" dir="auto">&#x000A;<li data-sourcepos="171:1-172:71">&#x000A;<a href="https://gitlab.com/gitlab-org/gitlab-runner/issues/4069" rel="nofollow noreferrer noopener" target="_blank">Use refspec to clone/fetch Git&#x000A;repository</a>.</li>&#x000A;<li data-sourcepos="173:1-174:74">&#x000A;<a href="https://gitlab.com/gitlab-org/gitlab-runner/issues/4070" rel="nofollow noreferrer noopener" target="_blank">Old cache&#x000A;configuration</a>.</li>&#x000A;<li data-sourcepos="175:1-176:74">&#x000A;<a href="https://gitlab.com/gitlab-org/gitlab-runner/issues/4072" rel="nofollow noreferrer noopener" target="_blank">Old metrics server&#x000A;configuration</a>.</li>&#x000A;<li data-sourcepos="177:1-178:97">&#x000A;<a href="https://gitlab.com/gitlab-org/gitlab-runner/issues/4073" rel="nofollow noreferrer noopener" target="_blank">Remove&#x000A;<code>FF_K8S_USE_ENTRYPOINT_OVER_COMMAND</code></a>.</li>&#x000A;<li data-sourcepos="179:1-180:72">&#x000A;<a href="https://gitlab.com/gitlab-org/gitlab-runner/merge_requests/1130" rel="nofollow noreferrer noopener" target="_blank">Remove Linux distributions that reach&#x000A;EOL</a>.</li>&#x000A;<li data-sourcepos="181:1-182:67">&#x000A;<a href="https://gitlab.com/gitlab-org/gitlab-runner/issues/4013" rel="nofollow noreferrer noopener" target="_blank">Update command line API for helper&#x000A;images</a>.</li>&#x000A;<li data-sourcepos="183:1-185:0">&#x000A;<a href="https://gitlab.com/gitlab-org/gitlab-runner/issues/4175" rel="nofollow noreferrer noopener" target="_blank">Remove old <code>git clean</code>&#x000A;flow</a>.</li>&#x000A;</ul>&#x000A;<h4 data-sourcepos="186:1-186:9" dir="auto">&#x000A;<a id="user-content-anchor-110" class="anchor" href="#anchor-110" aria-hidden="true"></a>11.0</h4>&#x000A;<ul data-sourcepos="188:1-189:0" dir="auto">&#x000A;<li data-sourcepos="188:1-189:0">No breaking changes.</li>&#x000A;</ul>&#x000A;<h4 data-sourcepos="190:1-190:9" dir="auto">&#x000A;<a id="user-content-anchor-100" class="anchor" href="#anchor-100" aria-hidden="true"></a>10.0</h4>&#x000A;<ul data-sourcepos="192:1-193:0" dir="auto">&#x000A;<li data-sourcepos="192:1-193:0">No breaking changes.</li>&#x000A;</ul>&#x000A;<h4 data-sourcepos="194:1-194:8" dir="auto">&#x000A;<a id="user-content-anchor-90" class="anchor" href="#anchor-90" aria-hidden="true"></a>9.0</h4>&#x000A;<ul data-sourcepos="196:1-200:74" dir="auto">&#x000A;<li data-sourcepos="196:1-197:66">&#x000A;<a href="../variables/deprecated_variables.md/index.html#gitlab-90-renamed-variables">CI variables renaming for GitLab 9.0</a>. Read about the&#x000A;deprecated CI variables and what you should use for GitLab 9.0+.</li>&#x000A;<li data-sourcepos="198:1-200:74">&#x000A;<a href="../../user/project/new_ci_build_permissions_model.md/index.html">New CI job permissions model</a>.&#x000A;See what changed in GitLab 8.12 and how that affects your jobs.&#x000A;There's a new way to access your Git submodules and LFS objects in jobs.</li>&#x000A;</ul>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+</body>
+</html>
+

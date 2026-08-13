@@ -1,0 +1,500 @@
+- generic [ref=e70]:
+  - complementary [ref=e71]:
+    - generic [ref=e72]:
+      - generic [ref=e80]:
+        - strong [ref=e81]: Honeynet
+        - generic [ref=e82]: 威胁捕捉与诱骗系统
+      - menu [ref=e84]:
+        - generic [ref=e85]:
+          - menuitem "首页" [ref=e86] [cursor=pointer]
+          - menuitem "大屏" [ref=e90] [cursor=pointer]
+          - generic [ref=e93]:
+            - generic [ref=e94] [cursor=pointer]: 威胁感知
+            - generic [ref=e101]:
+              - menuitem "攻击列表" [ref=e102] [cursor=pointer]
+              - menuitem "扫描感知" [ref=e105] [cursor=pointer]
+              - menuitem "失陷感知" [ref=e108] [cursor=pointer]
+              - menuitem "检测规则" [active] [ref=e111] [cursor=pointer]
+              - menuitem "AI 分析" [ref=e114] [cursor=pointer]
+          - generic [ref=e120]:
+            - generic [ref=e121] [cursor=pointer]: 威胁实体
+            - generic [ref=e128]:
+              - menuitem "攻击来源" [ref=e129] [cursor=pointer]
+              - menuitem "账号资源" [ref=e132] [cursor=pointer]
+              - menuitem "资产画像" [ref=e135] [cursor=pointer]
+              - menuitem "告警中心" [ref=e138] [cursor=pointer]
+          - generic [ref=e141]:
+            - generic [ref=e142] [cursor=pointer]: 环境管理
+            - generic [ref=e149]:
+              - menuitem "节点管理" [ref=e150] [cursor=pointer]
+              - menuitem "模板管理" [ref=e153] [cursor=pointer]
+              - menuitem "服务管理" [ref=e156] [cursor=pointer]
+              - menuitem "蜜罐实例" [ref=e159] [cursor=pointer]
+          - generic [ref=e162]:
+            - generic [ref=e163] [cursor=pointer]: 平台管理
+            - generic [ref=e171]:
+              - menuitem "Agent 发布" [ref=e172] [cursor=pointer]
+              - menuitem "系统配置" [ref=e175] [cursor=pointer]
+      - generic [ref=e178]:
+        - generic [ref=e179]: Server 运行中
+        - generic [ref=e183]: v0.19.1 · Community
+  - generic [ref=e184]:
+    - generic [ref=e185]:
+      - list [ref=e187]:
+        - listitem [ref=e188]: 威胁感知
+        - listitem [ref=e192]: 检测规则
+      - generic [ref=e193]:
+        - button "切换主题" [ref=e195] [cursor=pointer]
+        - generic [ref=e199]:
+          - button "告警中心" [ref=e200] [cursor=pointer]
+          - generic [ref=e203]: 99+
+        - generic [ref=e204]: 管理员
+        - button "A 系统管理员" [ref=e208] [cursor=pointer]:
+          - generic [ref=e209]: A
+          - generic [ref=e211]: 系统管理员
+    - main [ref=e212]:
+      - generic [ref=e473]:
+        - generic [ref=e474]:
+          - heading "检测规则" [level=4] [ref=e475]
+          - text: 统一管理 Agent 本地匹配与 Server 二次确认规则；修改后实时推送到所有在线节点
+        - generic [ref=e476]:
+          - button "刷新" [ref=e478] [cursor=pointer]
+          - button "同步 HFish 规则库" [ref=e482] [cursor=pointer]
+          - button "自定义规则" [ref=e486] [cursor=pointer]
+      - alert [ref=e489]:
+        - generic [ref=e493]: 当前加载 54 条，启用 52 条，待人工审核 2 条。HFish Template 响应文件不会作为检测逻辑执行。
+      - generic [ref=e495]:
+        - textbox "搜索规则名称、CVE/XVE 或规则标识" [ref=e497]
+        - generic [ref=e498]: 规则匹配采用受限 contains / RE2 regexp，不执行任意脚本
+      - generic [ref=e502]:
+        - table [ref=e506]:
+          - rowgroup [ref=e515]:
+            - row [ref=e516]:
+              - columnheader "规则" [ref=e517]
+              - columnheader "级别" [ref=e519]
+              - columnheader "来源" [ref=e521]
+              - columnheader "特征" [ref=e523]
+              - columnheader "规则状态" [ref=e525]
+              - columnheader "总开关" [ref=e527]
+              - columnheader "操作" [ref=e529]
+          - rowgroup [ref=e531]:
+            - row [ref=e532]:
+              - cell "Jinja2 代码注入漏洞(CVE-2019-8341) hfish:CVE_2019_8341_Attack" [ref=e533]:
+                - generic [ref=e536]:
+                  - generic [ref=e537]: Jinja2 代码注入漏洞(CVE-2019-8341)
+                  - text: hfish:CVE_2019_8341_Attack
+              - cell "MEDIUM" [ref=e538]
+              - cell "HFish 100000010" [ref=e543]:
+                - generic [ref=e546]:
+                  - generic [ref=e547]: HFish
+                  - generic [ref=e549]: "100000010"
+              - cell "10 项" [ref=e550]
+              - cell "待审核" [ref=e552]
+              - cell [ref=e557]:
+                - switch [disabled] [ref=e560]
+              - cell [ref=e562]:
+                - generic [ref=e565]:
+                  - button [ref=e567] [cursor=pointer]
+                  - button [ref=e571] [cursor=pointer]
+            - row [ref=e574]:
+              - cell "Django SQL注入(CVE-2021-35042) hfish:CVE_2021_35042_Attack" [ref=e575]:
+                - generic [ref=e578]:
+                  - generic [ref=e579]: Django SQL注入(CVE-2021-35042)
+                  - text: hfish:CVE_2021_35042_Attack
+              - cell "MEDIUM" [ref=e580]
+              - cell "HFish 100000000" [ref=e585]:
+                - generic [ref=e588]:
+                  - generic [ref=e589]: HFish
+                  - generic [ref=e591]: "100000000"
+              - cell "5 项" [ref=e592]
+              - cell "待审核" [ref=e594]
+              - cell [ref=e599]:
+                - switch [disabled] [ref=e602]
+              - cell [ref=e604]:
+                - generic [ref=e607]:
+                  - button [ref=e609] [cursor=pointer]
+                  - button [ref=e613] [cursor=pointer]
+            - row [ref=e616]:
+              - cell "Apache Solr远程命令执行(CVE-2017-12629) hfish:CVE_2017_12629_Attack" [ref=e617]:
+                - generic [ref=e620]:
+                  - generic [ref=e621]: Apache Solr远程命令执行(CVE-2017-12629)
+                  - text: hfish:CVE_2017_12629_Attack
+              - cell "MEDIUM" [ref=e622]
+              - cell "HFish 100000007" [ref=e627]:
+                - generic [ref=e630]:
+                  - generic [ref=e631]: HFish
+                  - generic [ref=e633]: "100000007"
+              - cell "8 项" [ref=e634]
+              - cell "Agent 启用 Server 启用" [ref=e636]:
+                - generic [ref=e639]:
+                  - generic [ref=e640]: Agent 启用
+                  - generic [ref=e643]: Server 启用
+              - cell [ref=e646]:
+                - switch [checked] [ref=e649] [cursor=pointer]
+              - cell [ref=e651]:
+                - generic [ref=e654]:
+                  - button [ref=e656] [cursor=pointer]
+                  - button [ref=e660] [cursor=pointer]
+            - row [ref=e663]:
+              - cell "ZyXEL P660HN-T1A 操作系统命令注入漏洞(CVE-2017-18368) hfish:CVE_2017_18368_Attack" [ref=e664]:
+                - generic [ref=e667]:
+                  - generic [ref=e668]: ZyXEL P660HN-T1A 操作系统命令注入漏洞(CVE-2017-18368)
+                  - text: hfish:CVE_2017_18368_Attack
+              - cell "MEDIUM" [ref=e669]
+              - cell "HFish 100000036" [ref=e674]:
+                - generic [ref=e677]:
+                  - generic [ref=e678]: HFish
+                  - generic [ref=e680]: "100000036"
+              - cell "7 项" [ref=e681]
+              - cell "Agent 启用 Server 启用" [ref=e683]:
+                - generic [ref=e686]:
+                  - generic [ref=e687]: Agent 启用
+                  - generic [ref=e690]: Server 启用
+              - cell [ref=e693]:
+                - switch [checked] [ref=e696] [cursor=pointer]
+              - cell [ref=e698]:
+                - generic [ref=e701]:
+                  - button [ref=e703] [cursor=pointer]
+                  - button [ref=e707] [cursor=pointer]
+            - row [ref=e710]:
+              - cell "ZyXEL P660HN-T1A 操作系统命令注入漏洞(CVE-2017-18370) hfish:CVE_2017_18370_Attack" [ref=e711]:
+                - generic [ref=e714]:
+                  - generic [ref=e715]: ZyXEL P660HN-T1A 操作系统命令注入漏洞(CVE-2017-18370)
+                  - text: hfish:CVE_2017_18370_Attack
+              - cell "MEDIUM" [ref=e716]
+              - cell "HFish 100000037" [ref=e721]:
+                - generic [ref=e724]:
+                  - generic [ref=e725]: HFish
+                  - generic [ref=e727]: "100000037"
+              - cell "7 项" [ref=e728]
+              - cell "Agent 启用 Server 启用" [ref=e730]:
+                - generic [ref=e733]:
+                  - generic [ref=e734]: Agent 启用
+                  - generic [ref=e737]: Server 启用
+              - cell [ref=e740]:
+                - switch [checked] [ref=e743] [cursor=pointer]
+              - cell [ref=e745]:
+                - generic [ref=e748]:
+                  - button [ref=e750] [cursor=pointer]
+                  - button [ref=e754] [cursor=pointer]
+            - row [ref=e757]:
+              - cell "CloudBees Jenkins远程代码执行漏洞(CVE-2018-1000861) hfish:CVE_2018_1000861_Attack" [ref=e758]:
+                - generic [ref=e761]:
+                  - generic [ref=e762]: CloudBees Jenkins远程代码执行漏洞(CVE-2018-1000861)
+                  - text: hfish:CVE_2018_1000861_Attack
+              - cell "MEDIUM" [ref=e763]
+              - cell "HFish 100000012" [ref=e768]:
+                - generic [ref=e771]:
+                  - generic [ref=e772]: HFish
+                  - generic [ref=e774]: "100000012"
+              - cell "7 项" [ref=e775]
+              - cell "Agent 启用 Server 启用" [ref=e777]:
+                - generic [ref=e780]:
+                  - generic [ref=e781]: Agent 启用
+                  - generic [ref=e784]: Server 启用
+              - cell [ref=e787]:
+                - switch [checked] [ref=e790] [cursor=pointer]
+              - cell [ref=e792]:
+                - generic [ref=e795]:
+                  - button [ref=e797] [cursor=pointer]
+                  - button [ref=e801] [cursor=pointer]
+            - row [ref=e804]:
+              - cell "Dasan GPON家庭路由器命令注入漏洞(CVE-2018-10562) hfish:CVE_2018_10562_Attack" [ref=e805]:
+                - generic [ref=e808]:
+                  - generic [ref=e809]: Dasan GPON家庭路由器命令注入漏洞(CVE-2018-10562)
+                  - text: hfish:CVE_2018_10562_Attack
+              - cell "MEDIUM" [ref=e810]
+              - cell "HFish 100000042" [ref=e815]:
+                - generic [ref=e818]:
+                  - generic [ref=e819]: HFish
+                  - generic [ref=e821]: "100000042"
+              - cell "6 项" [ref=e822]
+              - cell "Agent 启用 Server 启用" [ref=e824]:
+                - generic [ref=e827]:
+                  - generic [ref=e828]: Agent 启用
+                  - generic [ref=e831]: Server 启用
+              - cell [ref=e834]:
+                - switch [checked] [ref=e837] [cursor=pointer]
+              - cell [ref=e839]:
+                - generic [ref=e842]:
+                  - button [ref=e844] [cursor=pointer]
+                  - button [ref=e848] [cursor=pointer]
+            - row [ref=e851]:
+              - cell "Webmin远程代码执行漏洞(CVE-2019-15107) hfish:CVE_2019_15107_Attack" [ref=e852]:
+                - generic [ref=e855]:
+                  - generic [ref=e856]: Webmin远程代码执行漏洞(CVE-2019-15107)
+                  - text: hfish:CVE_2019_15107_Attack
+              - cell "MEDIUM" [ref=e857]
+              - cell "HFish 100000011" [ref=e862]:
+                - generic [ref=e865]:
+                  - generic [ref=e866]: HFish
+                  - generic [ref=e868]: "100000011"
+              - cell "7 项" [ref=e869]
+              - cell "Agent 启用 Server 启用" [ref=e871]:
+                - generic [ref=e874]:
+                  - generic [ref=e875]: Agent 启用
+                  - generic [ref=e878]: Server 启用
+              - cell [ref=e881]:
+                - switch [checked] [ref=e884] [cursor=pointer]
+              - cell [ref=e886]:
+                - generic [ref=e889]:
+                  - button [ref=e891] [cursor=pointer]
+                  - button [ref=e895] [cursor=pointer]
+            - row [ref=e898]:
+              - cell "D-Link产品操作系统命令注入漏洞(CVE-2019-16920) hfish:CVE_2019_16920_Attack" [ref=e899]:
+                - generic [ref=e902]:
+                  - generic [ref=e903]: D-Link产品操作系统命令注入漏洞(CVE-2019-16920)
+                  - text: hfish:CVE_2019_16920_Attack
+              - cell "MEDIUM" [ref=e904]
+              - cell "HFish 100000038" [ref=e909]:
+                - generic [ref=e912]:
+                  - generic [ref=e913]: HFish
+                  - generic [ref=e915]: "100000038"
+              - cell "6 项" [ref=e916]
+              - cell "Agent 启用 Server 启用" [ref=e918]:
+                - generic [ref=e921]:
+                  - generic [ref=e922]: Agent 启用
+                  - generic [ref=e925]: Server 启用
+              - cell [ref=e928]:
+                - switch [checked] [ref=e931] [cursor=pointer]
+              - cell [ref=e933]:
+                - generic [ref=e936]:
+                  - button [ref=e938] [cursor=pointer]
+                  - button [ref=e942] [cursor=pointer]
+            - row [ref=e945]:
+              - cell "Aapche Dubbo Java反序列化漏洞(CVE-2019-17564) hfish:CVE_2019_17564_Attack" [ref=e946]:
+                - generic [ref=e949]:
+                  - generic [ref=e950]: Aapche Dubbo Java反序列化漏洞(CVE-2019-17564)
+                  - text: hfish:CVE_2019_17564_Attack
+              - cell "MEDIUM" [ref=e951]
+              - cell "HFish 100000008" [ref=e956]:
+                - generic [ref=e959]:
+                  - generic [ref=e960]: HFish
+                  - generic [ref=e962]: "100000008"
+              - cell "7 项" [ref=e963]
+              - cell "Agent 启用 Server 启用" [ref=e965]:
+                - generic [ref=e968]:
+                  - generic [ref=e969]: Agent 启用
+                  - generic [ref=e972]: Server 启用
+              - cell [ref=e975]:
+                - switch [checked] [ref=e978] [cursor=pointer]
+              - cell [ref=e980]:
+                - generic [ref=e983]:
+                  - button [ref=e985] [cursor=pointer]
+                  - button [ref=e989] [cursor=pointer]
+            - row [ref=e992]:
+              - cell "亿赛通电子文档安全管理系统任意文件下载(CVE-2019-9632) hfish:CVE_2019_9632_Attack" [ref=e993]:
+                - generic [ref=e996]:
+                  - generic [ref=e997]: 亿赛通电子文档安全管理系统任意文件下载(CVE-2019-9632)
+                  - text: hfish:CVE_2019_9632_Attack
+              - cell "MEDIUM" [ref=e998]
+              - cell "HFish 100000041" [ref=e1003]:
+                - generic [ref=e1006]:
+                  - generic [ref=e1007]: HFish
+                  - generic [ref=e1009]: "100000041"
+              - cell "6 项" [ref=e1010]
+              - cell "Agent 启用 Server 启用" [ref=e1012]:
+                - generic [ref=e1015]:
+                  - generic [ref=e1016]: Agent 启用
+                  - generic [ref=e1019]: Server 启用
+              - cell [ref=e1022]:
+                - switch [checked] [ref=e1025] [cursor=pointer]
+              - cell [ref=e1027]:
+                - generic [ref=e1030]:
+                  - button [ref=e1032] [cursor=pointer]
+                  - button [ref=e1036] [cursor=pointer]
+            - row [ref=e1039]:
+              - cell "Grafana 路径遍历漏洞(CVE-2021-43798) hfish:CVE_2021_43798_Attack" [ref=e1040]:
+                - generic [ref=e1043]:
+                  - generic [ref=e1044]: Grafana 路径遍历漏洞(CVE-2021-43798)
+                  - text: hfish:CVE_2021_43798_Attack
+              - cell "MEDIUM" [ref=e1045]
+              - cell "HFish 100000039" [ref=e1050]:
+                - generic [ref=e1053]:
+                  - generic [ref=e1054]: HFish
+                  - generic [ref=e1056]: "100000039"
+              - cell "3 项" [ref=e1057]
+              - cell "Agent 启用 Server 启用" [ref=e1059]:
+                - generic [ref=e1062]:
+                  - generic [ref=e1063]: Agent 启用
+                  - generic [ref=e1066]: Server 启用
+              - cell [ref=e1069]:
+                - switch [checked] [ref=e1072] [cursor=pointer]
+              - cell [ref=e1074]:
+                - generic [ref=e1077]:
+                  - button [ref=e1079] [cursor=pointer]
+                  - button [ref=e1083] [cursor=pointer]
+            - row [ref=e1086]:
+              - cell "Atlassian Confluence 远程代码执行漏洞(CVE-2023-22518) hfish:CVE_2023_22518_Attack" [ref=e1087]:
+                - generic [ref=e1090]:
+                  - generic [ref=e1091]: Atlassian Confluence 远程代码执行漏洞(CVE-2023-22518)
+                  - text: hfish:CVE_2023_22518_Attack
+              - cell "MEDIUM" [ref=e1092]
+              - cell "HFish 100000043" [ref=e1097]:
+                - generic [ref=e1100]:
+                  - generic [ref=e1101]: HFish
+                  - generic [ref=e1103]: "100000043"
+              - cell "5 项" [ref=e1104]
+              - cell "Agent 启用 Server 启用" [ref=e1106]:
+                - generic [ref=e1109]:
+                  - generic [ref=e1110]: Agent 启用
+                  - generic [ref=e1113]: Server 启用
+              - cell [ref=e1116]:
+                - switch [checked] [ref=e1119] [cursor=pointer]
+              - cell [ref=e1121]:
+                - generic [ref=e1124]:
+                  - button [ref=e1126] [cursor=pointer]
+                  - button [ref=e1130] [cursor=pointer]
+            - row [ref=e1133]:
+              - cell "大华智慧园区综合管理平台存在命令执行漏洞 hfish:CVE_2023_33318_Attack" [ref=e1134]:
+                - generic [ref=e1137]:
+                  - generic [ref=e1138]: 大华智慧园区综合管理平台存在命令执行漏洞
+                  - text: hfish:CVE_2023_33318_Attack
+              - cell "MEDIUM" [ref=e1139]
+              - cell "HFish 100000044" [ref=e1144]:
+                - generic [ref=e1147]:
+                  - generic [ref=e1148]: HFish
+                  - generic [ref=e1150]: "100000044"
+              - cell "3 项" [ref=e1151]
+              - cell "Agent 启用 Server 启用" [ref=e1153]:
+                - generic [ref=e1156]:
+                  - generic [ref=e1157]: Agent 启用
+                  - generic [ref=e1160]: Server 启用
+              - cell [ref=e1163]:
+                - switch [checked] [ref=e1166] [cursor=pointer]
+              - cell [ref=e1168]:
+                - generic [ref=e1171]:
+                  - button [ref=e1173] [cursor=pointer]
+                  - button [ref=e1177] [cursor=pointer]
+            - row [ref=e1180]:
+              - cell "D-Link DNS-320 操作系统命令注入漏洞(CVE-2019-16057) hfish:XVE_2019_18764_Attack" [ref=e1181]:
+                - generic [ref=e1184]:
+                  - generic [ref=e1185]: D-Link DNS-320 操作系统命令注入漏洞(CVE-2019-16057)
+                  - text: hfish:XVE_2019_18764_Attack
+              - cell "MEDIUM" [ref=e1186]
+              - cell "HFish 100000019" [ref=e1191]:
+                - generic [ref=e1194]:
+                  - generic [ref=e1195]: HFish
+                  - generic [ref=e1197]: "100000019"
+              - cell "4 项" [ref=e1198]
+              - cell "Agent 启用 Server 启用" [ref=e1200]:
+                - generic [ref=e1203]:
+                  - generic [ref=e1204]: Agent 启用
+                  - generic [ref=e1207]: Server 启用
+              - cell [ref=e1210]:
+                - switch [checked] [ref=e1213] [cursor=pointer]
+              - cell [ref=e1215]:
+                - generic [ref=e1218]:
+                  - button [ref=e1220] [cursor=pointer]
+                  - button [ref=e1224] [cursor=pointer]
+            - row [ref=e1227]:
+              - cell "Liferay Portal 反序列化漏洞(CVE-2019-16891) hfish:XVE_2019_19298_Attack" [ref=e1228]:
+                - generic [ref=e1231]:
+                  - generic [ref=e1232]: Liferay Portal 反序列化漏洞(CVE-2019-16891)
+                  - text: hfish:XVE_2019_19298_Attack
+              - cell "MEDIUM" [ref=e1233]
+              - cell "HFish 100000025" [ref=e1238]:
+                - generic [ref=e1241]:
+                  - generic [ref=e1242]: HFish
+                  - generic [ref=e1244]: "100000025"
+              - cell "7 项" [ref=e1245]
+              - cell "Agent 启用 Server 启用" [ref=e1247]:
+                - generic [ref=e1250]:
+                  - generic [ref=e1251]: Agent 启用
+                  - generic [ref=e1254]: Server 启用
+              - cell [ref=e1257]:
+                - switch [checked] [ref=e1260] [cursor=pointer]
+              - cell [ref=e1262]:
+                - generic [ref=e1265]:
+                  - button [ref=e1267] [cursor=pointer]
+                  - button [ref=e1271] [cursor=pointer]
+            - row [ref=e1274]:
+              - cell "Atlassian Jira 敏感信息泄漏漏洞(CVE-2020-14179) hfish:XVE_2020_20302_Attack" [ref=e1275]:
+                - generic [ref=e1278]:
+                  - generic [ref=e1279]: Atlassian Jira 敏感信息泄漏漏洞(CVE-2020-14179)
+                  - text: hfish:XVE_2020_20302_Attack
+              - cell "MEDIUM" [ref=e1280]
+              - cell "HFish 100000033" [ref=e1285]:
+                - generic [ref=e1288]:
+                  - generic [ref=e1289]: HFish
+                  - generic [ref=e1291]: "100000033"
+              - cell "2 项" [ref=e1292]
+              - cell "Agent 启用 Server 启用" [ref=e1294]:
+                - generic [ref=e1297]:
+                  - generic [ref=e1298]: Agent 启用
+                  - generic [ref=e1301]: Server 启用
+              - cell [ref=e1304]:
+                - switch [checked] [ref=e1307] [cursor=pointer]
+              - cell [ref=e1309]:
+                - generic [ref=e1312]:
+                  - button [ref=e1314] [cursor=pointer]
+                  - button [ref=e1318] [cursor=pointer]
+            - row [ref=e1321]:
+              - cell "畅捷通T+ 逻辑缺陷漏洞(CNVD-2021-05497) hfish:XVE_2021_0666_Attack" [ref=e1322]:
+                - generic [ref=e1325]:
+                  - generic [ref=e1326]: 畅捷通T+ 逻辑缺陷漏洞(CNVD-2021-05497)
+                  - text: hfish:XVE_2021_0666_Attack
+              - cell "MEDIUM" [ref=e1327]
+              - cell "HFish 100000040" [ref=e1332]:
+                - generic [ref=e1335]:
+                  - generic [ref=e1336]: HFish
+                  - generic [ref=e1338]: "100000040"
+              - cell "6 项" [ref=e1339]
+              - cell "Agent 启用 Server 启用" [ref=e1341]:
+                - generic [ref=e1344]:
+                  - generic [ref=e1345]: Agent 启用
+                  - generic [ref=e1348]: Server 启用
+              - cell [ref=e1351]:
+                - switch [checked] [ref=e1354] [cursor=pointer]
+              - cell [ref=e1356]:
+                - generic [ref=e1359]:
+                  - button [ref=e1361] [cursor=pointer]
+                  - button [ref=e1365] [cursor=pointer]
+            - row [ref=e1368]:
+              - cell "Apache Druid 远程命令执行漏洞(CVE-2021-25646) hfish:XVE_2021_12262_Attack" [ref=e1369]:
+                - generic [ref=e1372]:
+                  - generic [ref=e1373]: Apache Druid 远程命令执行漏洞(CVE-2021-25646)
+                  - text: hfish:XVE_2021_12262_Attack
+              - cell "MEDIUM" [ref=e1374]
+              - cell "HFish 100000034" [ref=e1379]:
+                - generic [ref=e1382]:
+                  - generic [ref=e1383]: HFish
+                  - generic [ref=e1385]: "100000034"
+              - cell "6 项" [ref=e1386]
+              - cell "Agent 启用 Server 启用" [ref=e1388]:
+                - generic [ref=e1391]:
+                  - generic [ref=e1392]: Agent 启用
+                  - generic [ref=e1395]: Server 启用
+              - cell [ref=e1398]:
+                - switch [checked] [ref=e1401] [cursor=pointer]
+              - cell [ref=e1403]:
+                - generic [ref=e1406]:
+                  - button [ref=e1408] [cursor=pointer]
+                  - button [ref=e1412] [cursor=pointer]
+            - row [ref=e1415]:
+              - cell "海康威视 视频接入网关系统 downFile.php 任意文件下载(CNVD-2021-45937) hfish:XVE_2021_7468_Attack" [ref=e1416]:
+                - generic [ref=e1419]:
+                  - generic [ref=e1420]: 海康威视 视频接入网关系统 downFile.php 任意文件下载(CNVD-2021-45937)
+                  - text: hfish:XVE_2021_7468_Attack
+              - cell "MEDIUM" [ref=e1421]
+              - cell "HFish 100000020" [ref=e1426]:
+                - generic [ref=e1429]:
+                  - generic [ref=e1430]: HFish
+                  - generic [ref=e1432]: "100000020"
+              - cell "3 项" [ref=e1433]
+              - cell "Agent 启用 Server 启用" [ref=e1435]:
+                - generic [ref=e1438]:
+                  - generic [ref=e1439]: Agent 启用
+                  - generic [ref=e1442]: Server 启用
+              - cell [ref=e1445]:
+                - switch [checked] [ref=e1448] [cursor=pointer]
+              - cell [ref=e1450]:
+                - generic [ref=e1453]:
+                  - button [ref=e1455] [cursor=pointer]
+                  - button [ref=e1459] [cursor=pointer]
+        - list [ref=e1464]:
+          - listitem "上一页" [ref=e1465]: .
+          - listitem "第 1 页" [ref=e1468] [cursor=pointer]: "1"
+          - listitem "第 2 页" [ref=e1469] [cursor=pointer]: "2"
+          - listitem "第 3 页" [ref=e1470] [cursor=pointer]: "3"
+          - listitem "下一页" [ref=e1471] [cursor=pointer]: .

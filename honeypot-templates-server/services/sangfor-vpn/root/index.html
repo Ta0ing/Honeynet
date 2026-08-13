@@ -1,0 +1,1157 @@
+<html
+    class=" js no-mobile desktop no-ie chrome chrome88 portal-section w-1438 gt-240 gt-320 gt-480 gt-640 gt-768 gt-800 gt-1024 gt-1280 lt-1440 lt-1680 lt-1920 no-portrait landscape"
+    id="index-page">
+
+<head>
+    <link rel="shortcut icon" href="#">
+    <avalon ms-skip="1" class="avalonHide">X<style id="avalonStyle">
+            .avalonHide {
+                display: none !important
+            }
+        </style>
+        <i class="iconfont" ms-if="$isNoRadiusStyle"></i>
+        <div class="dialog-close" title="Close">
+            <i class="iconfont"></i>
+            <!--ms-if-->
+
+        </div>
+        <div ms-if="$isClient" class="no-drag" ms-widget="actionbar" data-actionbar-back="true"
+            data-actionbar-ctr="login" data-actionbar-ctr-back-disabled="loginLoading" data-actionbar-minimize="true"
+            data-actionbar-exit="true"></div>
+        <div class="login-head__switch clearfix" ms-if="isInitLogin">
+            <div class="login-head__switch__language no-drag" ms-on-mouseover="showLanguageItem"
+                ms-on-mouseleave="closeLanguageItem" ms-if="isShowSwitch">
+                <div class="login-head__language__type login-head__language__com"
+                    ms-class-1="login-head__language__line:!isLanguageItem">
+                    <a href="javascript:void(0);" class="login-head__com__text" draggable="false">en_US</a>
+                    <span>
+                        <i ms-visible="isLanguageItem" class="login-head__language__iconfont"
+                            ms-class-1="login-head__language__line:!isLanguageItem"></i>
+                        <i ms-visible="!isLanguageItem" class="login-head__language__iconfont"
+                            ms-class-1="login-head__language__line:!isLanguageItem"></i>
+                    </span>
+                </div>
+                <div class="login-head__language" ms-visible="!isLanguageItem">
+                    <ul>
+                        <li class="login-head__language__item no-drag"
+                            ms-class-1="theme-font-color:languageType == language.zh_CN"
+                            ms-on-click="switchLang('zh_CN')">zh_CN</li>
+                        <li class="login-head__language__item no-drag"
+                            ms-class-1="theme-font-color:languageType == language.en_US"
+                            ms-on-click="switchLang('en_US')">en_US</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="login-head__switch__language login-head__language__com no-drag"
+                ms-if="isShowSwitch &amp;&amp; $isWin">
+                <span class="login-head__switch__line">|</span>
+            </div>
+            <div class="login-head__switch__language login-head__language__com login-head__help no-drag" ms-if="$isWin">
+                <a href="javascript:void(0);" class="login-head__com__text" ms-on-click="openHelp" ms-widget="i18n"
+                    data-i18n-key="诊断工具" draggable="false"></a>
+            </div>
+        </div>
+        <div class="login-panel__wechat wechat_img" ms-if="wechatStatus" ms-on-click="goWechatLogin()">
+            <span ms-widget="i18n" data-i18n-key="微信扫码登录"></span>
+        </div><span ms-widget="i18n" data-i18n-key="匿名登录" ms-if="isAnonymousLogin"></span>
+        <div ms-if="resetPassWord" class="password__plugin__item">
+            <a href="javascript:void(0);" class="password__plugin__item__forget-pwd theme-hover-color"
+                ms-click="resetPwd" ms-widget="i18n" data-i18n-key="忘记密码？" draggable="false"></a>
+        </div>
+        <div ms-if="resetPassWord &amp;&amp; softKey" class="password__plugin__line" ms-class-1="hide:$isMobile">|</div>
+        <i ms-if="softKey" class="iconfont password__plugin__item theme-hover-color auto-click-keyboard"
+            ms-class-1="theme-disabled-item:loading" ms-class-2="color-bbb:!loading" ms-class-3="pointer:!loading"
+            ms-class-4="hide:$isMobile" ms-on-click="showKeyboard"></i>
+        <div ms-if="enableRandCode || maxEnableRandCode" ms-widget="input" data-input-len="4" data-input-ctr="password"
+            data-input-ctr-type="text" data-input-label="验证码" data-input-ctr-value="randCode"
+            class="auto-input-randCode" data-input-ctr-disabled="isDisabled" data-input-tabindex="3">
+            <div class="password__code__box">
+                <img class="password__code__image" ms-class-1="pointer:!loading" ms-on-click="initImage(true)"
+                    ms-src="image" draggable="false">
+            </div>
+        </div>
+        <div class="include-box__checkbox clearfix password__checkbox" ms-if="$isClient">
+            <div ms-if="enableSavePwd" ms-widget="checkbox" data-checkbox-ctr="password" data-checkbox-label="记住密码"
+                data-checkbox-style="small" data-checkbox-ctr-checked="savePwd"
+                data-checkbox-on-change="onSavePwdChange" data-checkbox-ctr-disabled="isDisabled"
+                class="auto-click-enableSavePwd"></div>
+            <div ms-if="enableAutoLogin" ms-widget="checkbox" data-checkbox-ctr="password"
+                data-checkbox-ctr-disabled="isDisabled" data-checkbox-label="自动登录" data-checkbox-style="small"
+                data-checkbox-ctr-checked="autoLogin" data-checkbox-on-change="onAutoLoginChange"
+                class="auto-click-enableAutoLogin"></div>
+        </div>
+        <!-- <img class="button__loading" src="images/btn_loading.gif">
+        <i ms-if="_checked" class="iconfont"></i>
+        <i
+            class="iconfont" ms-if="$isNoRadiusStyle"></i><img ms-if="_loading"
+            ms-attr-src="$localPath + 'images/btn_loading.gif'" class="button__loading">
+            <img ms-if="_loading"
+            ms-attr-src="$localPath + 'images/btn_loading.gif'" class="button__loading"> -->
+        <div class="dialog-close" title="Close">
+            <i class="iconfont"></i>
+            <!--ms-if-->
+
+        </div>
+    </avalon>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta http-equiv="Cache-Control" content="no-store,no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="renderer" content="webkit">
+    <title>Welcome</title>
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0,minimal-ui">
+    <link href="./index_v=582537319.css" type="text/css" rel="stylesheet">
+    <link href="./theme/theme_v=582537319&amp;__theme_rnd=582537319.css" type="text/css" rel="stylesheet">
+    <link href="./plugin_v=582537319.css" type="text/css" rel="stylesheet">
+    <link href="./theme/theme_skin_v=582537319&amp;__theme_rnd=582537319.css" type="text/css" rel="stylesheet">
+
+    <!--[if gte IE 9 | !IE ]><!-->
+    <!-- <script type="text/javascript" src="./libs/clipboard.min.js?v=582537319"></script> -->
+    <!--[endif]---->
+
+    <script>
+        // 处理网络错误
+        setTimeout(function () {
+            var fromURL,
+                url;
+
+            if (
+                // 本地文件不探测
+                (location.protocol === 'file:') ||
+                (
+                    // common_message 加载成功后, 由它来接管加载失败的提示
+                    (typeof (avalon) !== 'undefined') &&
+                    avalon.vmodels &&
+                    avalon.vmodels.common_message
+                )
+            ) {
+                return;
+            }
+
+            fromURL = encodeURIComponent(location.href);
+            url = '/local/connect_notfound/connect_notfound.html?from=' + fromURL;
+
+            try {
+                window.ecRedirect(0, url);
+            } catch (e) { }
+
+        }, 60000);
+
+    </script>
+
+    <!--[if IE]><script type="text/javascript" src="./excanvas.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="./libs/respond.js?v=582537319"></script><![endif]-->
+    <!-- <script type="text/javascript" src="./jssdk/common/errcode.js?v=582537319"></script>
+    <script type="text/javascript" src="./common/map.js?v=582537319"></script>
+    <script type="text/javascript" src="./libs/base64.js?v=582537319"></script>
+    <script type="text/javascript" src="./libs/rsa.js?v=582537319"></script>
+    <script type="text/javascript" src="./libs/head.core.js?v=582537319"></script>
+    <script type="text/javascript" src="./libs/store.legacy.min.js?v=582537319"></script>
+    <script type="text/javascript" src="./libs/placeholders.js?v=582537319"></script>
+    <script type="text/javascript" src="./libs/promise_polyfill.js?v=582537319"></script>
+    <script type="text/javascript" src="./libs/avalon.js?v=582537319"></script>
+    <script type="text/javascript" src="./libs/array.generics.js?v=582537319"></script>
+    <script type="text/javascript" src="./libs/is.js?v=582537319"></script>
+    <script type="text/javascript" src="./libs/console.js?v=582537319"></script>
+    <script type="text/javascript" src="./i18n/language.js?v=582537319"></script>
+    <script type="text/javascript" src="./libs/url-parse.js?v=582537319"></script>
+    <script type="text/javascript" src="./libs/xmltojson.min.js?v=582537319"></script>
+    <script type="text/javascript" src="./libs/md5.js?v=582537319"></script>
+    <script type="text/javascript" src="./libs/keyboard.js?v=582537319"></script>
+    <script type="text/javascript" src="./libs/emoji.js?v=582537319"></script>
+    <script type="text/javascript" src="./libs/qrcode.js?v=582537319"></script>
+    <script type="text/javascript" src="./libs/clipboardAdapter.js?v=582537319"></script> -->
+
+
+    <!-- mock 代码 start -->
+    <!--
+    <script type="text/javascript" src="./test/ui_mock/mock-min.js?v=582537319"></script>
+-->
+    <!--    <script type="text/javascript" src="./test/ui_mock/server.js?v=582537319"></script>
+    <script type="text/javascript" src="./test/ui_mock/server_config.js?v=582537319"></script>-->
+
+
+    <!-- mock 代码 end -->
+
+    <!-- <script type="text/javascript" src="./jssdk/index.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/common/request.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/common/config.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/common/logger.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/common/filter.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/common/common.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/api/container.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/common/dto.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/common/filter.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/common/custom.js?v=582537319"></script>
+
+    <script type="text/javascript" src="./jssdk/api/common.js?v=582537319"></script>
+
+
+    <script type="text/javascript" src="./jssdk/api/init.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/api/auth.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/api/auth_psw.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/api/auth_cert.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/api/auth_hid.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/api/auth_key.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/api/auth_sms.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/api/auth_wechat.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/api/auth_totp.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/api/auth_hid.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/api/res.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/api/person_setting.js?v=582537319"></script>
+
+    <script type="text/javascript" src="./jssdk/business/setting.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/business/session.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/business/ec_config.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/business/vpn_info.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/business/popup_manage.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/business/window_managerr.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/business/init.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/business/auth.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/business/auth_key_cert.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/business/logout.js?v=582537319"></script>
+
+    <script type="text/javascript" src="./jssdk/business/res_utils.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/business/res_store.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/business/res_sso.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/business/res_opener.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/business/res_core.js?v=582537319"></script>
+
+    <script type="text/javascript" src="./jssdk/business/common.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/business/runtime.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/business/sys_setting.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/api/menu_others.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/api/person_setting.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/api/system_setting.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/business/user_settings.js?v=582537319"></script>
+    <script type="text/javascript" src="./jssdk/business/menu_others.js?v=582537319"></script> -->
+<!-- 
+    <script type="text/javascript" src="../por/jsdata.csp"></script> -->
+    <!-- mock 代码 -->
+
+    <script>
+        !(function () {
+            var IE6 = 6,
+                IE7 = 7;
+            if (window.location.hash.indexOf('#!') === -1) {
+                if (SFCommon.isWeb() && (is.IE(IE6) || is.IE(IE7, true))) {
+                    window.location.href = window.location.href + '#!/vpn_refuse_login';
+                } else {
+
+                    window.location.href = window.location.href + '#!/login';
+                }
+            }
+        })();
+    </script>
+    <!--主题配置文件，勿动-->
+    <!-- <script src="theme/manifest_map_config.js?v=582537319&amp;__theme_rnd=582537319"></script> -->
+    <script type="text/javascript">
+
+        // 因为 electron 与 Require.js 的暴露的全部变量冲突
+        // 所以在 electron 环境中释放 require 变量
+        if (window.require) {
+            window.nodeRequire = window.require;
+            delete window.require;
+        }
+    </script>
+    <!-- <script data-main="index" src="./libs/require.js?v=582537319"></script> -->
+    <script>
+        !(function () {
+            require.config({
+                urlArgs: 'v=582537319&__theme_rnd=582537319',
+                waitSeconds: 30,
+                enforceDefine: false
+            });
+        })();
+        //to do
+        //getlang request lang
+        //
+
+    </script>
+    <!-- <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="index"
+        src="./index.js?v=582537319&amp;__theme_rnd=582537319"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_"
+        data-requiremodule="views/common_message/common_message.js"
+        src="views/common_message/common_message.js?v=582537319&amp;__theme_rnd=582537319"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_"
+        data-requiremodule="views/login/login"
+        src="./views/login/login.js?v=582537319&amp;__theme_rnd=582537319"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_"
+        data-requiremodule="/portal/i18n/language.en_US.js?cache=1614061884352"
+        src="/portal/i18n/language.en_US.js?cache=1614061884352&amp;v=582537319&amp;__theme_rnd=582537319"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_"
+        data-requiremodule="views/password/password.js"
+        src="views/password/password.js?v=582537319&amp;__theme_rnd=582537319"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_"
+        data-requiremodule="/portal/i18n/language.en_US.js?cache=1614061885562"
+        src="/portal/i18n/language.en_US.js?cache=1614061885562&amp;v=582537319&amp;__theme_rnd=582537319"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_"
+        data-requiremodule="views/down_client/down_client.js"
+        src="views/down_client/down_client.js?v=582537319&amp;__theme_rnd=582537319"></script> -->
+</head>
+
+<!--
+    body内overflow为配合dialog组件设置的min-height使用，目前影响到的是资源页面，低于最小高度出现双滚动条
+-->
+
+<body x-ms-format-detection="none" class="sangfor-body" style="min-height: 311px;">
+    <!--解决浏览器保存密码后自动填充-->
+    <div class="hidden-box">
+        <input type="text">
+        <input type="password">
+        <input type="password">
+        <input type="text">
+    </div>
+    <div id="app" avalonctrl="app">
+        <!--ms-view:main-->
+        <div class="sangfor-main" ui-view="main" data-current-cache="false">
+            <div class="login" avalonctrl="login">
+                <!--ms-if-->
+                <div class="login-head">
+                    <div class="login-head__content clearfix rel">
+                        <div class="login-head__logo clearfix overflow">
+                            <img class="login-head__img" draggable="false" src="theme/images/logo_r=00000000.png">
+                            <span class="login-head__title ie-inline-block"></span>
+                        </div>
+                        <!--ms-if-->
+                    </div>
+                </div>
+                <div class="login-head__bottom"></div>
+                <div class="login-body" style="height: calc(100% - 60px)">
+                    <div class="login-content clearfix" style="top: 50%; transform: translateY(-50%);">
+                        <div class="login-notice rel">
+                            <div class="login-notice__title">
+                                <i class="iconfont login-notice__icon"></i>
+                                <span data-i18n-key="温馨提示" avalonctrl="i18n070161087617" style="">Tips</span>
+                            </div>
+                            <div class="login-notice__content enable-choose">Welcome to Sangfor SSL VPN to Gain Secure
+                                Access</div>
+                            <div class="login-notice-bg"></div>
+                        </div>
+                        <div class="login-panel">
+                            <!--ms-if-->
+                            <div class="login-panel__body">
+                                <div ms-skip="" id="sangfor_main_auth_container">
+                                    <div id="sangfor_main_auth_container_password">
+                                        <div data-loaderhook-controller="password" avalonctrl="loaderhook090955527242">
+                                        </div>
+                                        <div avalonctrl="password" class="switch-login-slide">
+                                            <div class="include-box__title box-title">
+                                                <span data-i18n-key="账号登录" avalonctrl="i18n682579926301" style="">Use
+                                                    Account</span>
+                                                <!--ms-if-->
+                                            </div>
+                                            <form id="Calc" action="/login" method="post">
+                                                <div class="pt20">
+                                                    <div data-input-ctr="password"
+                                                        data-input-on-keydown="filterInputInfo"
+                                                        data-input-ctr-auto-focus="autoFocus"
+                                                        data-input-on-keyup="filterInputInfo" data-input-ctr-type="text"
+                                                        data-input-len="49" data-input-label="用户名"
+                                                        data-input-ctr-value="username" class="auto-input-usr"
+                                                        data-input-ctr-disabled="isDisabled" data-input-tabindex="1"
+                                                        avalonctrl="input747899288186" style="">
+                                                        <div class="form-line rel input-login-style">
+                                                            <div class="input-box rel" style="padding-right: 8px;">
+                                                                <input type="text" class="input-txt" autocomplete="off"
+                                                                    tabindex="1" name="username" placeholder="Username">
+                                                                <span class="input-linellae"></span>
+                                                                <div class="input-right-info"></div>
+                                                            </div>
+                                                            <div class="error-content" style="display: none;">
+                                                                <div class="triangle_border_up"></div>
+                                                                <div class="error-box"><span></span></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="rel">
+                                                        <div data-input-ctr="password"
+                                                            data-input-on-keydown="filterInputInfo"
+                                                            data-input-on-keyup="filterInputInfo"
+                                                            data-input-ctr-type="password" data-input-len="48"
+                                                            data-input-label="密码" data-input-ctr-value="password"
+                                                            data-input-id="loginPwd" class="auto-input-pwd"
+                                                            data-input-ctr-disabled="isDisabled" data-input-tabindex="2"
+                                                            avalonctrl="input480656656143" style="">
+                                                            <div class="form-line rel input-login-style">
+                                                                <div class="input-box rel" style="padding-right: 10px;">
+                                                                    <input type="password" class="input-txt"
+                                                                        autocomplete="off" tabindex="2" id="loginPwd"
+                                                                        placeholder="Password" name="password">
+                                                                    <span class="input-linellae"></span>
+                                                                    <div class="input-right-info">
+                                                                        <div class="password__plugin clearfix">
+                                                                            <!--ms-if-->
+                                                                            <!--ms-if-->
+                                                                            <!--ms-if-->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="error-content" style="display: none;">
+                                                                    <div class="triangle_border_up"></div>
+                                                                    <div class="error-box"><span></span></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div id="softkeyboard" class="login-keyboard hide"
+                                                            style="display: none;">
+                                                            <style>
+                                                                .aaa {
+                                                                    color: #333333;
+                                                                    background-color: #E1E1E1;
+                                                                    padding: 2px;
+                                                                    height: 22px;
+                                                                    width: 26px;
+                                                                    border: 2px outset #CCCCCC;
+                                                                    cursor: hand;
+                                                                    list-style-type: circle;
+                                                                    font-family: Arial;
+                                                                    font-size: 11px;
+                                                                    font-weight: bold;
+                                                                    font-variant: normal;
+                                                                    background-position: center center;
+                                                                    line-height: normal;
+                                                                    text-align: center;
+                                                                    vertical-align: middle;
+                                                                    display: inline-table;
+                                                                }
+
+                                                                .bb1 {
+                                                                    font-weight: bold;
+                                                                    background-color: #E1E1E1;
+                                                                    padding: 2px;
+                                                                    color: #000000;
+                                                                    height: 25px;
+                                                                    width: 88px;
+                                                                }
+
+                                                                .del {
+                                                                    font-weight: bold;
+                                                                    color: #000000;
+                                                                    background-color: #E1E1E1;
+                                                                    padding: 2px;
+                                                                    height: 44px;
+                                                                    width: 52px;
+                                                                }
+
+                                                                .ent {
+                                                                    font-weight: bold;
+                                                                    font-size: 16px;
+                                                                    color: #000000;
+                                                                    padding: 2px;
+                                                                    height: 44px;
+                                                                    width: 78px;
+                                                                    background-color: #E1E1E1;
+                                                                }
+
+                                                                .shift {
+                                                                    font-weight: bold;
+                                                                    color: #000000;
+                                                                    padding: 2px;
+                                                                    height: 22px;
+                                                                    width: 52px;
+                                                                    background-color: #D3D8DB;
+                                                                }
+
+                                                                .style1 {
+                                                                    font-weight: bold;
+                                                                    font-size: 16px;
+                                                                    font-style: normal;
+                                                                    color: #01228F;
+                                                                }
+
+                                                                .btn_2k3 {
+                                                                    height: 19px;
+                                                                    padding: 0;
+                                                                    font-size: 12px;
+                                                                    margin: 1px 0 0 3px;
+                                                                    color: #4e4e4e;
+                                                                    font-family: "Tahoma";
+                                                                    width: 64px;
+                                                                    background: #fff;
+                                                                    float: right;
+                                                                    border: 1px solid #e0e0e0;
+                                                                }
+
+                                                                .btn2 {
+                                                                    color: #464646;
+                                                                    font: "10px Tahoma";
+                                                                    width: 22px;
+                                                                    height: 22px;
+                                                                    padding: 0;
+                                                                    font-size: 14px;
+                                                                    line-height: 18px;
+                                                                    text-align: center;
+                                                                    margin: 0;
+                                                                    background: #fff;
+                                                                    margin-left: 3px;
+                                                                    padding: 0;
+                                                                    margin-bottom: 5px;
+                                                                    border-radius: 3px;
+                                                                    border: 1px solid #e0e0e0;
+                                                                }
+
+                                                                .btn3 {
+                                                                    color: #545454;
+                                                                    font: "12px Tahoma";
+                                                                    line-height: 18px;
+                                                                    width: 67px;
+                                                                    margin-left: 0px;
+                                                                    padding: 0;
+                                                                    height: 22px;
+                                                                    background: #ffffff;
+                                                                    border: 1px solid #e0e0e0;
+                                                                    margin-bottom: 5px;
+                                                                }
+
+                                                                .btn2:active,
+                                                                .btn3:active,
+                                                                .btn_2k3:active {
+                                                                    border-color: #ccc;
+                                                                    box-shadow: 1px 1px 1px #eee;
+                                                                }
+
+                                                                .btn-higher {
+                                                                    height: 48px;
+                                                                }
+
+                                                                div#keyborad {
+                                                                    width: 360px;
+                                                                }
+
+                                                                div#softkeyboard {
+                                                                    background-repeat: repeat;
+                                                                }
+
+                                                                td.last-td {
+                                                                    text-align: right;
+                                                                }
+
+                                                                #keyboardTable {
+                                                                    border-collapse: collapse;
+                                                                    margin-top: 5px;
+                                                                }
+
+                                                                .inp {
+                                                                    font-size: 12px;
+                                                                    float: left;
+                                                                    margin-top: 1px;
+                                                                    width: 127px;
+                                                                    height: 15px;
+                                                                    border: 1px solid #dcdcdc;
+                                                                    background: #fff;
+                                                                    padding: 0px 5px;
+                                                                }
+
+                                                                .btn2:hover,
+                                                                .btn3:hover,
+                                                                .btn_2k3:hover {
+                                                                    color: #000;
+                                                                }
+                                                            </style>
+                                                            <div align="center">
+                                                                <div id="Calc" name="Calc" action="" method="post"
+                                                                    autocomplete="off" style="margin:0px">
+                                                                    <table id="CalcTable" width="348" height="130"
+                                                                        name="CalcTable" align="center" cellpadding="0"
+                                                                        cellspacing="0"> <input type="hidden" value="ok"
+                                                                            name="action2">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td align="right" height="20"
+                                                                                    style="padding:0 1px;"><input
+                                                                                        class="inp" readonly=""
+                                                                                        type="password" value=""
+                                                                                        name="password"
+                                                                                        onkeypress="javascript:if(event.keyCode==13)OverInput();"><input
+                                                                                        class="btn_2k3" name="useKey"
+                                                                                        id="useKey" type="button"
+                                                                                        value="Close"
+                                                                                        onclick="ifneedopen=false;password1.readOnly=0;closekeyboard();password1.focus();"><input
+                                                                                        class="btn_2k3" type="button"
+                                                                                        onclick="clearInputVal();"
+                                                                                        value="Clear"
+                                                                                        name="Submit23"><input
+                                                                                        class="btn_2k3" type="button"
+                                                                                        value="Enter" style="width:70px"
+                                                                                        name="Submit3"
+                                                                                        onclick="OverInput();"></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="center">
+                                                                                    <table align="center"
+                                                                                        id="keyboardTable" width="100%"
+                                                                                        border="0" cellspacing="0"
+                                                                                        cellpadding="0">
+                                                                                        <tbody>
+                                                                                            <tr align="left"
+                                                                                                valign="middle">
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_number1"
+                                                                                                        onclick="addValue('1');"
+                                                                                                        value=" 1 ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_number2"
+                                                                                                        onclick="addValue('2');"
+                                                                                                        value=" 2 ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_number3"
+                                                                                                        onclick="addValue('3');"
+                                                                                                        value=" 3 ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_number4"
+                                                                                                        onclick="addValue('4');"
+                                                                                                        value=" 4 ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_number5"
+                                                                                                        onclick="addValue('5');"
+                                                                                                        value=" 5 ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_number6"
+                                                                                                        onclick="addValue('6');"
+                                                                                                        value=" 6 ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_number7"
+                                                                                                        onclick="addValue('7');"
+                                                                                                        value=" 7 ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_number8"
+                                                                                                        onclick="addValue('8');"
+                                                                                                        value=" 8 ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_number9"
+                                                                                                        onclick="addValue('9');"
+                                                                                                        value=" 9 ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_number0"
+                                                                                                        onclick="addValue('0');"
+                                                                                                        value=" 0 ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char0"
+                                                                                                        onclick="addValue('-');"
+                                                                                                        value=" - ">
+                                                                                                </td>
+                                                                                                <td colspan="3"
+                                                                                                    class="last-td">
+                                                                                                    <input
+                                                                                                        name="button10"
+                                                                                                        type="button"
+                                                                                                        class="btn3 btn-font-bigger"
+                                                                                                        value="Backspace"
+                                                                                                        onclick="setpassvalue();">
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr align="left"
+                                                                                                valign="middle">
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char1"
+                                                                                                        onclick="addValue('q');"
+                                                                                                        value="q"></td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char2"
+                                                                                                        onclick="addValue('w');"
+                                                                                                        value="w"></td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char3"
+                                                                                                        onclick="addValue('e');"
+                                                                                                        value="e"></td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char4"
+                                                                                                        onclick="addValue('r');"
+                                                                                                        value="r"></td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char5"
+                                                                                                        onclick="addValue('t');"
+                                                                                                        value="t"></td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char6"
+                                                                                                        onclick="addValue('y');"
+                                                                                                        value="y"></td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char7"
+                                                                                                        onclick="addValue('u');"
+                                                                                                        value="u"></td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char8"
+                                                                                                        onclick="addValue('i');"
+                                                                                                        value="i"></td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char9"
+                                                                                                        onclick="addValue('o');"
+                                                                                                        value="o"></td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char10"
+                                                                                                        onclick="addValue('p');"
+                                                                                                        value="p"></td>
+                                                                                                <td> <input
+                                                                                                        name="button6"
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char11"
+                                                                                                        onclick="addValue(':');"
+                                                                                                        value=" : ">
+                                                                                                </td>
+                                                                                                <td colspan="3"
+                                                                                                    class="last-td">
+                                                                                                    <input
+                                                                                                        name="button9"
+                                                                                                        type="button"
+                                                                                                        class="btn3"
+                                                                                                        onclick="setCapsLock(this);"
+                                                                                                        value="Caps Lock">
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr align="left"
+                                                                                                valign="middle">
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char12"
+                                                                                                        onclick="addValue('a');"
+                                                                                                        value="a"></td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char13"
+                                                                                                        onclick="addValue('s');"
+                                                                                                        value="s"></td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char14"
+                                                                                                        onclick="addValue('d');"
+                                                                                                        value="d"></td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char15"
+                                                                                                        onclick="addValue('f');"
+                                                                                                        value="f"></td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char16"
+                                                                                                        onclick="addValue('g');"
+                                                                                                        value="g"></td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char17"
+                                                                                                        onclick="addValue('h');"
+                                                                                                        value="h"></td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char18"
+                                                                                                        onclick="addValue('j');"
+                                                                                                        value="j"></td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char19"
+                                                                                                        onclick="addValue('k');"
+                                                                                                        value="k"></td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char20"
+                                                                                                        onclick="addValue('l');"
+                                                                                                        value="l"></td>
+                                                                                                <td> <input
+                                                                                                        name="button8"
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char21"
+                                                                                                        onclick="addValue('[');"
+                                                                                                        value=" [ ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        name="button9"
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char22"
+                                                                                                        onclick="addValue(']');"
+                                                                                                        value=" ] ">
+                                                                                                </td>
+                                                                                                <td colspan="3"
+                                                                                                    rowspan="2"
+                                                                                                    class="last-td">
+                                                                                                    <input
+                                                                                                        name="button12"
+                                                                                                        type="button"
+                                                                                                        class="btn3 btn-higher"
+                                                                                                        onclick="OverInput();"
+                                                                                                        value="Enter">
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr align="left"
+                                                                                                valign="middle">
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char23"
+                                                                                                        onclick="addValue('z');"
+                                                                                                        value="z"></td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char24"
+                                                                                                        onclick="addValue('x');"
+                                                                                                        value="x"></td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char25"
+                                                                                                        onclick="addValue('c');"
+                                                                                                        value="c"></td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char26"
+                                                                                                        onclick="addValue('v');"
+                                                                                                        value="v"></td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char27"
+                                                                                                        onclick="addValue('b');"
+                                                                                                        value="b"></td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char28"
+                                                                                                        onclick="addValue('n');"
+                                                                                                        value="n"></td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char29"
+                                                                                                        onclick="addValue('m');"
+                                                                                                        value="m"></td>
+                                                                                                <td> <input
+                                                                                                        name="button3"
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char30"
+                                                                                                        onclick="addValue('<');"
+                                                                                                        value=" < ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        name="button4"
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char31"
+                                                                                                        onclick="addValue('>');"
+                                                                                                        value=" > ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        name="button5"
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char32"
+                                                                                                        onclick="addValue('(');"
+                                                                                                        value=" ( ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        name="button7"
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char33"
+                                                                                                        onclick="addValue(')');"
+                                                                                                        value=" ) ">
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr align="left"
+                                                                                                valign="middle">
+                                                                                                <td> <input
+                                                                                                        name="button2"
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char34"
+                                                                                                        onclick="addValue(',');"
+                                                                                                        value=" , ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char35"
+                                                                                                        onclick="addValue('~');"
+                                                                                                        value=" ~ ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char36"
+                                                                                                        onclick="addValue('!');"
+                                                                                                        value=" ! ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char37"
+                                                                                                        onclick="addValue('@');"
+                                                                                                        value=" @ ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char38"
+                                                                                                        onclick="addValue('#');"
+                                                                                                        value=" # ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char39"
+                                                                                                        onclick="addValue('$');"
+                                                                                                        value=" $ ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char40"
+                                                                                                        onclick="addValue('%');"
+                                                                                                        value=" % ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char41"
+                                                                                                        onclick="addValue('^');"
+                                                                                                        value=" ^ ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char42"
+                                                                                                        onclick="addValue('*');"
+                                                                                                        value=" * ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char43"
+                                                                                                        onclick="addValue('|');"
+                                                                                                        value=" | ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char44"
+                                                                                                        onclick="addValue('?');"
+                                                                                                        value=" ? ">
+                                                                                                </td>
+                                                                                                <td class="last-td">
+                                                                                                    <input name="button"
+                                                                                                        type="button"
+                                                                                                        class="btn3"
+                                                                                                        onclick="addValue('=');"
+                                                                                                        value="="></td>
+                                                                                            </tr>
+                                                                                            <tr align="left"
+                                                                                                valign="middle">
+                                                                                                <td> <input
+                                                                                                        name="button2"
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char45"
+                                                                                                        onclick="addValue('&amp;');"
+                                                                                                        value=" &amp; ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char46"
+                                                                                                        onclick="addValue('{');"
+                                                                                                        value=" { ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char47"
+                                                                                                        onclick="addValue('}');"
+                                                                                                        value=" } ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char48"
+                                                                                                        onclick="addValue('/');"
+                                                                                                        value=" / ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char49"
+                                                                                                        onclick="addValue('&quot;');"
+                                                                                                        value=" &quot; ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char50"
+                                                                                                        onclick="addValue('\\');"
+                                                                                                        value=" \ ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char51"
+                                                                                                        onclick="addValue('+');"
+                                                                                                        value=" + ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char52"
+                                                                                                        onclick="addValue('_');"
+                                                                                                        value=" _ ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char53"
+                                                                                                        onclick="addValue('.');"
+                                                                                                        value=" . ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char54"
+                                                                                                        onclick="addValue(';');"
+                                                                                                        value=" ; ">
+                                                                                                </td>
+                                                                                                <td> <input
+                                                                                                        type="button"
+                                                                                                        class="btn2"
+                                                                                                        id="button_char55"
+                                                                                                        onclick="addValue('`');"
+                                                                                                        value=" ` ">
+                                                                                                </td>
+                                                                                                <td class="last-td">
+                                                                                                    <input name="button"
+                                                                                                        type="button"
+                                                                                                        class="btn3"
+                                                                                                        onclick="addValue('\'');"
+                                                                                                        value=" ' ">
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--ms-if-->
+                                                </div>
+                                                <div class="include-box__tip auto-label-pwdtip">
+                                                    <div class="enable-choose"></div>
+                                                </div>
+
+                                                <!--ms-if-->
+                                                <div data-button-ctr="password" data-button-on-click="login"
+                                                    data-button-ctr-text="buttonText" data-button-type="submit"
+                                                    data-button-ctr-disabled="isDisabled"
+                                                    class="auto-click-login include-box__button"
+                                                    data-button-ctr-loading="loading" avalonctrl="button954710816003"
+                                                    style=""><button type="submit" class="button button--normal">
+                                                        <!--ms-if-->
+                                                        <span class="button__text" data-text-el="">Log In</span>
+                                                    </button></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="login-panel__other clearfix login-panel__aligning">
+                            </div>
+                            <div class="login-panel__footer">
+                                <div class="login-panel__dowload">
+                                    <!--repeat398179816852--><a href="/download"
+                                        class="login-panel__link ie-inline-block theme-hover-color"
+                                        draggable="false">Download Client</a>
+                                    <!--repeat398179816852-->
+                                    <!--repeat398179816852:end-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div>
+        <div data-loaderhook-controller="common_message" avalonctrl="loaderhook05484366953"></div>
+        <div avalonctrl="common_message">
+
+        </div>
+
+    </div>
+    </div>
+
+</body>
+
+</html>

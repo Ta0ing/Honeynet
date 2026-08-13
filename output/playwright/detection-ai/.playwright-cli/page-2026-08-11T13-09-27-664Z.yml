@@ -1,0 +1,348 @@
+- generic [ref=e1]:
+  - generic [ref=e70]:
+    - complementary [ref=e71]:
+      - generic [ref=e72]:
+        - generic [ref=e80]:
+          - strong [ref=e81]: Honeynet
+          - generic [ref=e82]: 威胁捕捉与诱骗系统
+        - menu [ref=e84]:
+          - generic [ref=e85]:
+            - menuitem "首页" [ref=e86] [cursor=pointer]
+            - menuitem "大屏" [ref=e90] [cursor=pointer]
+            - generic [ref=e93]:
+              - generic [ref=e94] [cursor=pointer]: 威胁感知
+              - generic [ref=e101]:
+                - menuitem "攻击列表" [ref=e102] [cursor=pointer]
+                - menuitem "扫描感知" [ref=e105] [cursor=pointer]
+                - menuitem "失陷感知" [ref=e108] [cursor=pointer]
+                - menuitem "检测规则" [ref=e111] [cursor=pointer]
+                - menuitem "AI 分析" [ref=e114] [cursor=pointer]
+            - generic [ref=e120]:
+              - generic [ref=e121] [cursor=pointer]: 威胁实体
+              - generic [ref=e128]:
+                - menuitem "攻击来源" [ref=e129] [cursor=pointer]
+                - menuitem "账号资源" [ref=e132] [cursor=pointer]
+                - menuitem "资产画像" [ref=e135] [cursor=pointer]
+                - menuitem "告警中心" [ref=e138] [cursor=pointer]
+            - generic [ref=e141]:
+              - generic [ref=e142] [cursor=pointer]: 环境管理
+              - generic [ref=e149]:
+                - menuitem "节点管理" [ref=e150] [cursor=pointer]
+                - menuitem "模板管理" [ref=e153] [cursor=pointer]
+                - menuitem "服务管理" [ref=e156] [cursor=pointer]
+                - menuitem "蜜罐实例" [ref=e159] [cursor=pointer]
+            - generic [ref=e162]:
+              - generic [ref=e163] [cursor=pointer]: 平台管理
+              - generic [ref=e171]:
+                - menuitem "Agent 发布" [ref=e172] [cursor=pointer]
+                - menuitem "系统配置" [ref=e175] [cursor=pointer]
+        - generic [ref=e178]:
+          - generic [ref=e179]: Server 运行中
+          - generic [ref=e183]: v0.19.1 · Community
+    - generic [ref=e184]:
+      - generic [ref=e185]:
+        - list [ref=e187]:
+          - listitem [ref=e188]: 威胁感知
+          - listitem [ref=e192]: 攻击列表
+        - generic [ref=e193]:
+          - button "切换主题" [ref=e195] [cursor=pointer]
+          - generic [ref=e199]:
+            - button "告警中心" [ref=e200] [cursor=pointer]
+            - generic [ref=e203]: 99+
+          - generic [ref=e204]: 管理员
+          - button "A 系统管理员" [ref=e208] [cursor=pointer]:
+            - generic [ref=e209]: A
+            - generic [ref=e211]: 系统管理员
+      - main [ref=e212]:
+        - generic [ref=e1558]:
+          - generic [ref=e1559]:
+            - heading "攻击列表" [level=4] [ref=e1560]
+            - text: 按蜜罐服务与攻击来源聚合攻击行为，可展开查看每一次原始请求和协议载荷
+          - generic [ref=e1561]:
+            - button "导出" [ref=e1563] [cursor=pointer]
+            - button "刷新" [ref=e1567] [cursor=pointer]
+        - generic [ref=e1570]:
+          - generic [ref=e1571]:
+            - textbox "攻击者 IP" [ref=e1579]
+            - combobox [ref=e1581]:
+              - generic [ref=e1583]:
+                - textbox "蜜罐服务" [ref=e1584]
+                - generic [ref=e1585]: 蜜罐服务
+            - combobox [ref=e1591] [cursor=pointer]:
+              - generic [ref=e1593]:
+                - textbox "攻击行为"
+                - generic [ref=e1594]: 攻击行为
+            - button "重置" [ref=e1600] [cursor=pointer]
+          - generic [ref=e1601]: 共 1463 条事件 · 10 个攻击会话
+        - generic [ref=e1606]:
+          - tab "聚合视图" [selected] [ref=e1607] [cursor=pointer]
+          - tab "原始事件" [ref=e1609] [cursor=pointer]
+        - generic [ref=e1615]:
+          - table [ref=e1619]:
+            - rowgroup [ref=e1628]:
+              - row [ref=e1629]:
+                - columnheader [ref=e1630]
+                - columnheader "蜜罐服务" [ref=e1631]
+                - columnheader "被攻击数量" [ref=e1633]
+                - columnheader "被攻击节点" [ref=e1635]
+                - columnheader "攻击来源" [ref=e1637]
+                - columnheader "攻击行为" [ref=e1639]
+                - columnheader "最近一次被攻击时间" [ref=e1641]
+            - rowgroup [ref=e1643]:
+              - row [ref=e1644]:
+                - cell [ref=e1645]:
+                  - button [ref=e1646] [cursor=pointer]
+                - cell "http 实例 232aa91b" [ref=e1649]:
+                  - generic [ref=e1652]:
+                    - generic [ref=e1653]: http
+                    - text: 实例 232aa91b
+                - cell "1" [ref=e1654]
+                - cell [ref=e1659]:
+                  - code [ref=e1663]: 2e563e70
+                - cell [ref=e1664]:
+                  - generic [ref=e1667]:
+                    - code [ref=e1669]: 127.0.0.1
+                    - text: 内网地址
+                - cell "Webmin远程代码执行漏洞(CVE-2019-15107)" [ref=e1670]
+                - cell "2026/8/11 21:03:44" [ref=e1677]
+              - row [ref=e2005]:
+                - cell "全部 1 web.request 时间 请求类型 请求详情 / 行为 数据长度 攻击详情 2026/8/11 21:03:44 web.request POST /password_change.cgi 75 字节 查看" [ref=e2006]:
+                  - generic [ref=e2007]:
+                    - generic [ref=e2008]:
+                      - generic [ref=e2009]: 全部 1
+                      - generic [ref=e2011]: web.request
+                    - table [ref=e2019]:
+                      - rowgroup [ref=e2026]:
+                        - row [ref=e2027]:
+                          - columnheader "时间" [ref=e2028]
+                          - columnheader "请求类型" [ref=e2030]
+                          - columnheader "请求详情 / 行为" [ref=e2032]
+                          - columnheader "数据长度" [ref=e2034]
+                          - columnheader "攻击详情" [ref=e2036]
+                      - rowgroup [ref=e2038]:
+                        - row [ref=e2039]:
+                          - cell "2026/8/11 21:03:44" [ref=e2040]
+                          - cell "web.request" [ref=e2042]
+                          - cell "POST /password_change.cgi" [ref=e2047]
+                          - cell "75 字节" [ref=e2049]
+                          - cell [ref=e2051]:
+                            - button "查看" [ref=e2054] [cursor=pointer]
+              - row [ref=e1679]:
+                - cell [ref=e1680]:
+                  - button [ref=e1681] [cursor=pointer]
+                - cell "iot-hikcam 实例 1880af9d" [ref=e1684]:
+                  - generic [ref=e1687]:
+                    - generic [ref=e1688]: iot-hikcam
+                    - text: 实例 1880af9d
+                - cell "7" [ref=e1689]
+                - cell [ref=e1694]:
+                  - code [ref=e1698]: "00000000"
+                - cell [ref=e1699]:
+                  - generic [ref=e1702]:
+                    - code [ref=e1704]: ::1
+                    - text: 内网地址
+                - cell "web.request" [ref=e1705]
+                - cell "2026/8/11 17:23:02" [ref=e1712]
+              - row [ref=e1714]:
+                - cell [ref=e1715]:
+                  - button [ref=e1716] [cursor=pointer]
+                - cell "huorong-zd 实例 77ad0e7f" [ref=e1719]:
+                  - generic [ref=e1722]:
+                    - generic [ref=e1723]: huorong-zd
+                    - text: 实例 77ad0e7f
+                - cell "22" [ref=e1724]
+                - cell [ref=e1729]:
+                  - code [ref=e1733]: "00000000"
+                - cell [ref=e1734]:
+                  - generic [ref=e1737]:
+                    - code [ref=e1739]: ::1
+                    - text: 内网地址
+                - cell "web.request" [ref=e1740]
+                - cell "2026/8/11 17:19:46" [ref=e1747]
+              - row [ref=e1749]:
+                - cell [ref=e1750]:
+                  - button [ref=e1751] [cursor=pointer]
+                - cell "ac-sangfor 实例 d4246c0f" [ref=e1754]:
+                  - generic [ref=e1757]:
+                    - generic [ref=e1758]: ac-sangfor
+                    - text: 实例 d4246c0f
+                - cell "17" [ref=e1759]
+                - cell [ref=e1764]:
+                  - code [ref=e1768]: "00000000"
+                - cell [ref=e1769]:
+                  - generic [ref=e1772]:
+                    - code [ref=e1774]: ::1
+                    - text: 内网地址
+                - cell "web.request" [ref=e1775]
+                - cell "2026/8/11 17:19:24" [ref=e1782]
+              - row [ref=e1784]:
+                - cell [ref=e1785]:
+                  - button [ref=e1786] [cursor=pointer]
+                - cell "oa-gov 实例 7fb005df" [ref=e1789]:
+                  - generic [ref=e1792]:
+                    - generic [ref=e1793]: oa-gov
+                    - text: 实例 7fb005df
+                - cell "30" [ref=e1794]
+                - cell [ref=e1799]:
+                  - code [ref=e1803]: "00000000"
+                - cell [ref=e1804]:
+                  - generic [ref=e1807]:
+                    - code [ref=e1809]: ::1
+                    - text: 内网地址
+                - cell "web.request" [ref=e1810]
+                - cell "2026/8/11 17:14:59" [ref=e1817]
+              - row [ref=e1819]:
+                - cell [ref=e1820]:
+                  - button [ref=e1821] [cursor=pointer]
+                - cell "ruoyi 实例 4c3949bc" [ref=e1824]:
+                  - generic [ref=e1827]:
+                    - generic [ref=e1828]: ruoyi
+                    - text: 实例 4c3949bc
+                - cell "19" [ref=e1829]
+                - cell [ref=e1834]:
+                  - code [ref=e1838]: "00000000"
+                - cell [ref=e1839]:
+                  - generic [ref=e1842]:
+                    - code [ref=e1844]: ::1
+                    - text: 内网地址
+                - cell "web.request" [ref=e1845]
+                - cell "2026/8/11 17:14:40" [ref=e1852]
+              - row [ref=e1854]:
+                - cell [ref=e1855]:
+                  - button [ref=e1856] [cursor=pointer]
+                - cell "oa-yy 实例 79e47a84" [ref=e1859]:
+                  - generic [ref=e1862]:
+                    - generic [ref=e1863]: oa-yy
+                    - text: 实例 79e47a84
+                - cell "1" [ref=e1864]
+                - cell [ref=e1869]:
+                  - code [ref=e1873]: "00000000"
+                - cell [ref=e1874]:
+                  - generic [ref=e1877]:
+                    - code [ref=e1879]: 127.0.0.1
+                    - text: 内网地址
+                - cell "web.request" [ref=e1880]
+                - cell "2026/8/11 16:50:56" [ref=e1887]
+              - row [ref=e1889]:
+                - cell [ref=e1890]:
+                  - button [ref=e1891] [cursor=pointer]
+                - cell "router-openwrt 实例 bb82821f" [ref=e1894]:
+                  - generic [ref=e1897]:
+                    - generic [ref=e1898]: router-openwrt
+                    - text: 实例 bb82821f
+                - cell "1" [ref=e1899]
+                - cell [ref=e1904]:
+                  - code [ref=e1908]: "00000000"
+                - cell [ref=e1909]:
+                  - generic [ref=e1912]:
+                    - code [ref=e1914]: 127.0.0.1
+                    - text: 内网地址
+                - cell "web.request" [ref=e1915]
+                - cell "2026/8/11 16:50:36" [ref=e1922]
+              - row [ref=e1924]:
+                - cell [ref=e1925]:
+                  - button [ref=e1926] [cursor=pointer]
+                - cell "fw-nsfocus 实例 818177a9" [ref=e1929]:
+                  - generic [ref=e1932]:
+                    - generic [ref=e1933]: fw-nsfocus
+                    - text: 实例 818177a9
+                - cell "1" [ref=e1934]
+                - cell [ref=e1939]:
+                  - code [ref=e1943]: "00000000"
+                - cell [ref=e1944]:
+                  - generic [ref=e1947]:
+                    - code [ref=e1949]: 127.0.0.1
+                    - text: 内网地址
+                - cell "web.request" [ref=e1950]
+                - cell "2026/8/11 16:50:36" [ref=e1957]
+              - row [ref=e1959]:
+                - cell [ref=e1960]:
+                  - button [ref=e1961] [cursor=pointer]
+                - cell "coremail 实例 cfb0c547" [ref=e1964]:
+                  - generic [ref=e1967]:
+                    - generic [ref=e1968]: coremail
+                    - text: 实例 cfb0c547
+                - cell "1" [ref=e1969]
+                - cell [ref=e1974]:
+                  - code [ref=e1978]: "00000000"
+                - cell [ref=e1979]:
+                  - generic [ref=e1982]:
+                    - code [ref=e1984]: 127.0.0.1
+                    - text: 内网地址
+                - cell "web.request" [ref=e1985]
+                - cell "2026/8/11 16:50:36" [ref=e1992]
+          - list [ref=e1996]:
+            - listitem "上一页" [ref=e1997]: .
+            - listitem "第 1 页" [ref=e2000] [cursor=pointer]: "1"
+            - listitem "下一页" [ref=e2001]: .
+  - generic [ref=e2063]:
+    - generic [ref=e2064]: 攻击事件详情
+    - generic [ref=e2066] [cursor=pointer]
+    - generic [ref=e2070]:
+      - generic [ref=e2071]:
+        - generic [ref=e2072]: 事件 ID
+        - generic [ref=e2073]:
+          - text: e9c124f1-e1a4-46f0-94b4-555c91b52ee8
+          - button "复制" [active] [ref=e2074] [cursor=pointer]
+      - generic [ref=e2077]:
+        - generic [ref=e2078]: 时间
+        - generic [ref=e2079]:
+          - text: 2026/8/11 21:03:44
+          - button "复制" [ref=e2080] [cursor=pointer]
+      - generic [ref=e2083]:
+        - generic [ref=e2084]: 来源
+        - generic [ref=e2085]:
+          - text: 127.0.0.1:51789
+          - button "复制" [ref=e2086] [cursor=pointer]
+      - generic [ref=e2089]:
+        - generic [ref=e2090]: 目标
+        - generic [ref=e2091]:
+          - text: 127.0.0.1:18081
+          - button "复制" [ref=e2092] [cursor=pointer]
+      - generic [ref=e2095]:
+        - generic [ref=e2096]: 类型 / 服务
+        - generic [ref=e2097]:
+          - text: web.request / http
+          - button "复制" [ref=e2098] [cursor=pointer]
+      - generic [ref=e2101]:
+        - heading "检测结论" [level=6] [ref=e2102]
+        - generic [ref=e2103]:
+          - generic [ref=e2104]:
+            - generic [ref=e2105]: MEDIUM
+            - generic [ref=e2107]: Webmin远程代码执行漏洞(CVE-2019-15107)
+          - generic [ref=e2108]: 检测到对CVE-2019-15107远程命令执行漏洞的利用行为
+          - generic [ref=e2109]:
+            - generic [ref=e2110]: HFish
+            - generic [ref=e2113]: Agent + Server 双重确认
+            - generic [ref=e2116]: "100000011"
+      - heading "原始请求包" [level=6] [ref=e2119]
+      - generic [ref=e2120]: "POST /password_change.cgi HTTP/1.1 Host: 127.0.0.1:18081 Accept: */* Content-Length: 75 Content-Type: application/x-www-form-urlencoded Referer: session_login.cgi User-Agent: curl/8.7.1 redirect=1; testing=1; sid=x; sessiontest=1&old=abc |id &new=next&user=root"
+      - heading "归一化字段" [level=6] [ref=e2121]
+      - generic [ref=e2122]:
+        - generic [ref=e2123]:
+          - generic [ref=e2124]: 请求正文
+          - generic [ref=e2125]: redirect=1; testing=1; sid=x; sessiontest=1&old=abc |id &new=next&user=root
+        - generic [ref=e2126]:
+          - generic [ref=e2127]: Host
+          - generic [ref=e2128]: 127.0.0.1:18081
+        - generic [ref=e2129]:
+          - generic [ref=e2130]: 请求路径
+          - generic [ref=e2131]: /password_change.cgi
+        - generic [ref=e2132]:
+          - generic [ref=e2133]: 请求方法
+          - generic [ref=e2134]: POST
+        - generic [ref=e2135]:
+          - generic [ref=e2136]: 协议
+          - generic [ref=e2137]: http
+        - generic [ref=e2138]:
+          - generic [ref=e2139]: 请求头
+          - generic [ref=e2140]: "Accept: */* Referer: session_login.cgi User-Agent: curl/8.7.1 Content-Type: application/x-www-form-urlencoded Content-Length: 75"
+        - generic [ref=e2141]:
+          - generic [ref=e2142]: User-Agent
+          - generic [ref=e2143]: curl/8.7.1
+      - heading "标签" [level=6] [ref=e2144]
+      - generic [ref=e2145]:
+        - generic [ref=e2146]: http
+        - generic [ref=e2149]: detected
+        - generic [ref=e2152]: agent-matched
+        - generic [ref=e2155]: server-reviewed

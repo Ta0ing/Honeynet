@@ -1,0 +1,105 @@
+.globtable {
+	BORDER-RIGHT: 0px; BACKGROUND: #e1e9f4;BORDER-TOP: 0px; BORDER-LEFT: 0px; WIDTH: 650px; BORDER-BOTTOM: 0px
+}
+.settable {
+	BORDER-RIGHT: 0px; BACKGROUND: #e1e9f4;BORDER-TOP: 0px; BORDER-LEFT: 0px; WIDTH: 500px; BORDER-BOTTOM: 0px
+}
+BODY {
+	border-left:#666666 1px solid; background-color:#e1e9f4;z-index:1
+}
+.bigtable {
+	BORDER-RIGHT: 0px; BACKGROUND: #e1e9f4;BORDER-TOP: 0px; BORDER-LEFT: 0px; WIDTH: 800px; BORDER-BOTTOM: 0px
+}
+.textCell {
+	FONT-SIZE: 12px; BACKGROUND: #e1e9f4; COLOR: #000000; FONT-FAMILY: verdana,arial,sans-serif; TEXT-ALIGN: left
+}
+.textCellC {
+	FONT-SIZE: 12px; BACKGROUND: #e1e9f4; COLOR: #000000; FONT-FAMILY: verdana,arial,sans-serif; TEXT-ALIGN: center
+}
+.nameTextCell {
+	FONT-SIZE: 13px; BACKGROUND: #e1e9f4; COLOR: #000000; FONT-FAMILY: verdana,arial,sans-serif; TEXT-ALIGN: right
+}
+.subTitleCell {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; BACKGROUND: #e1e9f4; COLOR: #000000; FONT-FAMILY: verdana,arial,sans-serif; TEXT-ALIGN: left
+}
+.noteCell {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: verdana,arial,sans-serif; TEXT-ALIGN: left
+}
+.titleCell {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; MARGIN-BOTTOM: 10px; VERTICAL-ALIGN: middle; COLOR: #e1e9f4; FONT-FAMILY: verdana,arial,sans-serif; HEIGHT: 18px; BACKGROUND-COLOR: #7094c0; TEXT-ALIGN: left
+}
+.spaceLine {
+	HEIGHT: 4px 
+}
+.spaceLargeLine {
+	HEIGHT: 10px
+}
+.warning {
+	COLOR: #ff0000
+}
+.smalltabletitle {
+	MARGIN-TOP: 10px; FONT-WEIGHT: bold; FONT-SIZE: 12px; MARGIN-BOTTOM: 5px; HEIGHT: 20px; VERTICAL-ALIGN: center; COLOR: #ffffff; FONT-FAMILY: Verdana,Arial; BACKGROUND-COLOR: #7094c0; TEXT-ALIGN: center;
+}
+.smalltable {
+	FONT-WEIGHT: 400; FONT-SIZE: 8pt; COLOR: #003399; FONT-FAMILY: Verdana,Arial; BACKGROUND-COLOR: #eeeeee; TEXT-ALIGN: center
+}
+.subtitle {
+	FONT-WEIGHT: 900; FONT-SIZE: 17pt; COLOR: #aaa0e0; FONT-FAMILY: Verdana, Arial, sans-serif; TEXT-ALIGN: left
+}
+.button {
+	FONT-WEIGHT: 300; FONT-SIZE: 8pt; TEXT-TRANSFORM: uppercase; WIDTH: 50px; COLOR: #0066ff; FONT-FAMILY: Verdana,Arial; HEIGHT: 20px
+}
+.button_action {
+	FONT-WEIGHT: 300; FONT-SIZE: 8pt; TEXT-TRANSFORM: uppercase; WIDTH: 100px; COLOR: #0066ff; FONT-FAMILY: Verdana,Arial; HEIGHT: 20px
+}
+.middlebutton {
+	FONT-WEIGHT: 300; FONT-SIZE: 8pt; TEXT-TRANSFORM: uppercase; WIDTH: 60px; COLOR: #0066ff; FONT-FAMILY: Verdana,Arial; HEIGHT: 20px
+}
+.longbutton {
+	FONT-WEIGHT: 300; FONT-SIZE: 8pt; TEXT-TRANSFORM: uppercase; WIDTH: 100px; COLOR: #0066ff; FONT-FAMILY: Verdana,Arial; HEIGHT: 20px
+}
+.longlongbutton {
+	FONT-WEIGHT: 300; FONT-SIZE: 8pt; TEXT-TRANSFORM: uppercase; WIDTH: 150px; COLOR: #0066ff; FONT-FAMILY: Verdana,Arial; HEIGHT: 20px
+}
+.smallbutton {
+	FONT-WEIGHT: 400; FONT-SIZE: 8pt; TEXT-TRANSFORM: uppercase; WIDTH: 40px; COLOR: #003399; FONT-FAMILY: Verdana,Arial
+}
+.actButton {
+	FONT-WEIGHT: 600; FONT-SIZE: 9pt; WIDTH: 64px; FONT-FAMILY: Verdana,Courier; HEIGHT: 25px
+}
+.actButton1 {
+	FONT-WEIGHT: 600; FONT-SIZE: 9pt; WIDTH: 64px; FONT-FAMILY: Verdana,Courier; HEIGHT: 25px
+}
+A.unselect {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #FFFFFF; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+A.select {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #006699; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.navigator {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-TOP: 3px; BORDER-BOTTOM: none ; BORDER-RIGHT: #666666 1px solid; background: url(userLogin.asp/index.html); TEXT-ALIGN: center
+}
+.navigatorActive {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-WEIGHT: bold; PADDING-TOP: 3px; BORDER-BOTTOM: none; BORDER-RIGHT: #666666 1px solid; background: url(userLogin.asp/index.html); TEXT-ALIGN: center
+}
+.navigatorNormal {
+	VERTICAL-ALIGN: top; BORDER-BOTTOM:none; FONT-WEIGHT: normal
+}
+.tableOddCell {
+	FONT-SIZE: 12px; VERTICAL-ALIGN: middle; COLOR: #000000; FONT-FAMILY: verdana,arial,sans-serif; HEIGHT: 20px; BACKGROUND-COLOR: #eeeeee; TEXT-ALIGN: left
+}
+.tableEvevCell {
+	FONT-SIZE: 12px; VERTICAL-ALIGN: middle; COLOR: #000000; FONT-FAMILY: verdana,arial,sans-serif; HEIGHT: 20px; BACKGROUND-COLOR: #cccccc; TEXT-ALIGN: left
+}
+.deviceText {
+	font-family: "Arial", "sans-serif";
+	font-size: 15pt;
+	font-weight: normal;
+	text-align: left;
+	text-decoration: none;
+	color:#000000;
+}
+.up{background:#7094c0 url(userLogin.asp/index.html) no-repeat right 5px;}
+.down{background:#7094c0 url(userLogin.asp/index.html) no-repeat right 5px;}
+
+

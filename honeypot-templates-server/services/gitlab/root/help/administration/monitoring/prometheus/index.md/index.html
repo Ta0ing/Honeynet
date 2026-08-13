@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class lang="en">
+<head prefix="og: http://ogp.me/ns#">
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="object" property="og:type">
+<meta content="GitLab" property="og:site_name">
+<meta content="Index · Prometheus · Monitoring · Administration · Help" property="og:title">
+<meta content="GitLab Community Edition" property="og:description">
+<meta content="../../../../../assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png" property="og:image">
+<meta content="64" property="og:image:width">
+<meta content="64" property="og:image:height">
+<meta content="https://222.94.174.141:10443/help/administration/monitoring/prometheus/index.md" property="og:url">
+<meta content="summary" property="twitter:card">
+<meta content="Index · Prometheus · Monitoring · Administration · Help" property="twitter:title">
+<meta content="GitLab Community Edition" property="twitter:description">
+<meta content="https://222.94.174.141:10443/assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png" property="twitter:image">
+
+<title>Index · Prometheus · Monitoring · Administration · Help · GitLab</title>
+<meta content="GitLab Community Edition" name="description">
+<link rel="shortcut icon" type="image/png" href="../../../../../assets/favicon-7901bd695fb93edb07975966062049829afb56cf11511236e61bcf425070e36e.png" id="favicon" data-original-href="/assets/favicon-7901bd695fb93edb07975966062049829afb56cf11511236e61bcf425070e36e.png">
+<link rel="stylesheet" media="all" href="../../../../../assets/application-3407a4fd892e9d5024f3096605eb1e25cad75a8bf847d26740a1e6a77e45b087.css">
+<link rel="stylesheet" media="print" href="../../../../../assets/print-74c3df10dad473d66660c828e3aa54ca3bfeac6d8bb708643331403fe7211e60.css">
+
+
+<link rel="stylesheet" media="all" href="../../../../../assets/highlight/themes/white-3144068cf4f603d290f553b653926358ddcd02493b9728f62417682657fc58c0.css">
+<script>
+//<![CDATA[
+window.gon={};gon.api_version="v4";gon.default_avatar_url="https://git.odysec.cn:10443/assets/no_avatar-849f9c04a3a0d0cea2424ae97b27447dc64a7dbfae83c036c45b403392f0e8ba.png";gon.max_file_size=10;gon.asset_host=null;gon.webpack_public_path="/assets/webpack/";gon.relative_url_root="";gon.shortcuts_path="/help/shortcuts";gon.user_color_scheme="white";gon.gitlab_url="https://git.odysec.cn:10443";gon.revision="5159b8de4a6";gon.gitlab_logo="/assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png";gon.sprite_icons="/assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg";gon.sprite_file_icons="/assets/file_icons-7262fc6897e02f1ceaf8de43dc33afa5e4f9a2067f4f68ef77dcc87946575e9e.svg";gon.emoji_sprites_css_path="/assets/emoji_sprites-289eccffb1183c188b630297431be837765d9ff4aed6130cf738586fb307c170.css";gon.test_env=false;gon.suggested_label_colors={"#0033CC":"UA blue","#428BCA":"Moderate blue","#44AD8E":"Lime green","#A8D695":"Feijoa","#5CB85C":"Slightly desaturated green","#69D100":"Bright green","#004E00":"Very dark lime green","#34495E":"Very dark desaturated blue","#7F8C8D":"Dark grayish cyan","#A295D6":"Slightly desaturated blue","#5843AD":"Dark moderate blue","#8E44AD":"Dark moderate violet","#FFECDB":"Very pale orange","#AD4363":"Dark moderate pink","#D10069":"Strong pink","#CC0033":"Strong red","#FF0000":"Pure red","#D9534F":"Soft red","#D1D100":"Strong yellow","#F0AD4E":"Soft orange","#AD8D43":"Dark moderate orange"};gon.first_day_of_week=0;gon.ee=false;gon.features={"suppressAjaxNavigationErrors":true,"gfmGrafanaIntegration":false};
+//]]>
+</script>
+
+
+<script src="../../../../../assets/webpack/runtime.7c7b62b1.bundle.js" defer="defer"></script>
+<script src="../../../../../assets/webpack/main.b5cfaf04.chunk.js" defer="defer"></script>
+<script src="../../../../../assets/webpack/pages.help.show.304a14b6.chunk.js" defer="defer"></script>
+
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="4Ok3x+Y5iK7xOiaWEWy2t4EPltRBLIpDX1iJbie+uX4GynMstgXB0NyhvdbDcq7atJK5rLNu8flOfm4slNDG/g==">
+
+<meta content="origin-when-cross-origin" name="referrer">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+<meta content="#474D57" name="theme-color">
+<link rel="apple-touch-icon" type="image/x-icon" href="../../../../../assets/touch-icon-iphone-5a9cee0e8a51212e70b90c87c12f382c428870c0ff67d1eb034d884b78d2dae7.png">
+<link rel="apple-touch-icon" type="image/x-icon" href="../../../../../assets/touch-icon-ipad-a6eec6aeb9da138e507593b464fdac213047e49d3093fc30e90d9a995df83ba3.png" sizes="76x76">
+<link rel="apple-touch-icon" type="image/x-icon" href="../../../../../assets/touch-icon-iphone-retina-72e2aadf86513a56e050e7f0f2355deaa19cc17ed97bbe5147847f2748e5a3e3.png" sizes="120x120">
+<link rel="apple-touch-icon" type="image/x-icon" href="../../../../../assets/touch-icon-ipad-retina-8ebe416f5313483d9c1bc772b5bbe03ecad52a54eba443e5215a22caed2a16a2.png" sizes="152x152">
+<link color="rgb(226, 67, 41)" href="../../../../../assets/logo-d36b5212042cebc89b96df4bf6ac24e43db316143e89926c0db839ff694d2de4.svg" rel="mask-icon">
+<meta content="/assets/msapplication-tile-1196ec67452f618d39cdd85e2e3a542f76574c071051ae7effbfde01710eb17d.png" name="msapplication-TileImage">
+<meta content="#30353E" name="msapplication-TileColor">
+
+
+
+
+</head>
+
+<body class="ui-indigo  gl-browser-generic gl-platform-other" data-group data-page="help:show" data-project>
+
+<script>
+//<![CDATA[
+gl = window.gl || {};
+gl.client = {"isGeneric":true,"isOther":true};
+
+
+//]]>
+</script>
+
+
+<header class="navbar navbar-gitlab navbar-expand-sm js-navbar" data-qa-selector="navbar">
+<a class="sr-only gl-accessibility" href="#content-body" tabindex="1">Skip to content</a>
+<div class="container-fluid">
+<div class="header-content">
+<div class="title-container">
+<h1 class="title">
+<a title="Dashboard" id="logo" href="../../../../../users/sign_in/index.html"><svg width="24" height="24" class="tanuki-logo" viewBox="0 0 36 36">
+  <path class="tanuki-shape tanuki-left-ear" fill="#e24329" d="M2 14l9.38 9v-9l-4-12.28c-.205-.632-1.176-.632-1.38 0z"/>
+  <path class="tanuki-shape tanuki-right-ear" fill="#e24329" d="M34 14l-9.38 9v-9l4-12.28c.205-.632 1.176-.632 1.38 0z"/>
+  <path class="tanuki-shape tanuki-nose" fill="#e24329" d="M18,34.38 3,14 33,14 Z"/>
+  <path class="tanuki-shape tanuki-left-eye" fill="#fc6d26" d="M18,34.38 11.38,14 2,14 6,25Z"/>
+  <path class="tanuki-shape tanuki-right-eye" fill="#fc6d26" d="M18,34.38 24.62,14 34,14 30,25Z"/>
+  <path class="tanuki-shape tanuki-left-cheek" fill="#fca326" d="M2 14L.1 20.16c-.18.565 0 1.2.5 1.56l17.42 12.66z"/>
+  <path class="tanuki-shape tanuki-right-cheek" fill="#fca326" d="M34 14l1.9 6.16c.18.565 0 1.2-.5 1.56L18 34.38z"/>
+</svg>
+
+<span class="logo-text d-none d-lg-block prepend-left-8">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 617 169"><path d="M315.26 2.97h-21.8l.1 162.5h88.3v-20.1h-66.5l-.1-142.4M465.89 136.95c-5.5 5.7-14.6 11.4-27 11.4-16.6 0-23.3-8.2-23.3-18.9 0-16.1 11.2-23.8 35-23.8 4.5 0 11.7.5 15.4 1.2v30.1h-.1m-22.6-98.5c-17.6 0-33.8 6.2-46.4 16.7l7.7 13.4c8.9-5.2 19.8-10.4 35.5-10.4 17.9 0 25.8 9.2 25.8 24.6v7.9c-3.5-.7-10.7-1.2-15.1-1.2-38.2 0-57.6 13.4-57.6 41.4 0 25.1 15.4 37.7 38.7 37.7 15.7 0 30.8-7.2 36-18.9l4 15.9h15.4v-83.2c-.1-26.3-11.5-43.9-44-43.9M557.63 149.1c-8.2 0-15.4-1-20.8-3.5V70.5c7.4-6.2 16.6-10.7 28.3-10.7 21.1 0 29.2 14.9 29.2 39 0 34.2-13.1 50.3-36.7 50.3m9.2-110.6c-19.5 0-30 13.3-30 13.3v-21l-.1-27.8h-21.3l.1 158.5c10.7 4.5 25.3 6.9 41.2 6.9 40.7 0 60.3-26 60.3-70.9-.1-35.5-18.2-59-50.2-59M77.9 20.6c19.3 0 31.8 6.4 39.9 12.9l9.4-16.3C114.5 6 97.3 0 78.9 0 32.5 0 0 28.3 0 85.4c0 59.8 35.1 83.1 75.2 83.1 20.1 0 37.2-4.7 48.4-9.4l-.5-63.9V75.1H63.6v20.1h38l.5 48.5c-5 2.5-13.6 4.5-25.3 4.5-32.2 0-53.8-20.3-53.8-63-.1-43.5 22.2-64.6 54.9-64.6M231.43 2.95h-21.3l.1 27.3v94.3c0 26.3 11.4 43.9 43.9 43.9 4.5 0 8.9-.4 13.1-1.2v-19.1c-3.1.5-6.4.7-9.9.7-17.9 0-25.8-9.2-25.8-24.6v-65h35.7v-17.8h-35.7l-.1-38.5M155.96 165.47h21.3v-124h-21.3v124M155.96 24.37h21.3V3.07h-21.3v21.3"/></svg>
+
+</span>
+</a></h1>
+<ul class="list-unstyled navbar-sub-nav">
+<li class="home"><a title="Projects" class="dashboard-shortcuts-projects" href="../../../../../explore/index.html">Projects
+</a></li><li class><a title="Groups" class="dashboard-shortcuts-groups" href="../../../../../explore/groups/index.html">Groups
+</a></li><li class><a title="Snippets" class="dashboard-shortcuts-snippets" href="../../../../../explore/snippets/index.html">Snippets
+</a></li><li>
+<a title="About GitLab CE" href="../../../../index.html">Help</a>
+</li>
+</ul>
+
+</div>
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav">
+<li class="nav-item d-none d-lg-block m-auto">
+<div class="search search-form" data-track-event="activate_form_input" data-track-label="navbar_search" data-track-value>
+<form class="form-inline" action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"><div class="search-input-container">
+<div class="search-input-wrap">
+<div class="dropdown" data-url="/search/autocomplete">
+<input type="search" name="search" id="search" placeholder="Search or jump to…" class="search-input dropdown-menu-toggle no-outline js-search-dashboard-options" spellcheck="false" tabindex="1" autocomplete="off" data-issues-path="/dashboard/issues" data-mr-path="/dashboard/merge_requests" data-qa-selector="search_term_field" aria-label="Search or jump to…">
+<button class="hidden js-dropdown-search-toggle" data-toggle="dropdown" type="button"></button>
+<div class="dropdown-menu dropdown-select js-dashboard-search-options">
+<div class="dropdown-content"><ul>
+<li class="dropdown-menu-empty-item">
+<a>
+Loading...
+</a>
+</li>
+</ul>
+</div><div class="dropdown-loading"><i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin"></i></div>
+</div>
+<svg class="s16 search-icon"><use xlink:href="../../../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#search"/></svg>
+<svg class="s16 clear-icon js-clear-input"><use xlink:href="../../../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#close"/></svg>
+</div>
+</div>
+</div>
+<input type="hidden" name="group_id" id="group_id" class="js-search-group-options">
+<input type="hidden" name="project_id" id="search_project_id" value class="js-search-project-options">
+<input type="hidden" name="repository_ref" id="repository_ref">
+<input type="hidden" name="nav_source" id="nav_source" value="navbar">
+<div class="search-autocomplete-opts hide" data-autocomplete-path="/search/autocomplete"></div>
+</form></div>
+
+</li>
+<li class="nav-item d-inline-block d-lg-none">
+<a title="Search" aria-label="Search" data-toggle="tooltip" data-placement="bottom" data-container="body" href="../../../../../search/index.html"><svg class="s16"><use xlink:href="../../../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#search"/></svg>
+</a></li>
+<li class="nav-item header-help dropdown d-none d-md-block">
+<a class="header-help-dropdown-toggle" data-toggle="dropdown" href="../../../../index.html"><svg class="s16"><use xlink:href="../../../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#question"/></svg>
+<svg class="caret-down"><use xlink:href="../../../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#angle-down"/></svg>
+</a><div class="dropdown-menu dropdown-menu-right">
+<ul>
+<li>
+<a href="../../../../index.html">Help</a>
+</li>
+<li>
+<a href="https://about.gitlab.com/getting-help/">Support</a>
+</li>
+
+<li class="divider"></li>
+<li>
+<a href="https://about.gitlab.com/submit-feedback">Submit feedback</a>
+</li>
+<li>
+<a target="_blank" class="text-nowrap" href="https://about.gitlab.com/contributing">Contribute to GitLab
+</a>
+</li>
+
+</ul>
+
+</div>
+</li>
+<li class="nav-item">
+<div>
+<a class="btn btn-sign-in" href="../../../../../users/sign_in/redirect_to_referer%3Dyes.html">Sign in</a>
+</div>
+</li>
+</ul>
+</div>
+<button class="navbar-toggler d-block d-sm-none" type="button">
+<span class="sr-only">Toggle navigation</span>
+<svg class="s12 more-icon js-navbar-toggle-right"><use xlink:href="../../../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#ellipsis_h"/></svg>
+<svg class="s12 close-icon js-navbar-toggle-left"><use xlink:href="../../../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#close"/></svg>
+</button>
+</div>
+</div>
+</header>
+
+<div class="layout-page">
+<div class="content-wrapper">
+
+<div class="mobile-overlay"></div>
+<div class="alert-wrapper">
+
+
+
+
+
+
+<nav class="breadcrumbs container-fluid container-limited limit-container-width" role="navigation">
+<div class="breadcrumbs-container">
+<div class="breadcrumbs-links js-title-container">
+<ul class="list-unstyled breadcrumbs-list js-breadcrumbs-list">
+<li><a href="../../../../index.html">Help</a><svg class="s8 breadcrumbs-list-angle"><use xlink:href="../../../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#angle-right"/></svg></li>
+
+<li>
+<h2 class="breadcrumbs-sub-title"><a href="index.html">Help</a></h2>
+</li>
+</ul>
+</div>
+
+</div>
+</nav>
+
+<div class="d-flex"></div>
+</div>
+<div class="container-fluid container-limited limit-container-width">
+<div class="content" id="content-body">
+<div class="flash-container flash-container-page sticky">
+</div>
+
+<div class="documentation md prepend-top-default">
+<h1 data-sourcepos="1:1-1:35" dir="auto">&#x000A;<a id="user-content-monitoring-gitlab-with-prometheus" class="anchor" href="#monitoring-gitlab-with-prometheus" aria-hidden="true"></a>Monitoring GitLab with Prometheus</h1>&#x000A;<blockquote data-sourcepos="3:1-11:33" dir="auto">&#x000A;<p data-sourcepos="3:3-3:12"><strong>Notes:</strong></p>&#x000A;<ul data-sourcepos="5:3-11:33">&#x000A;<li data-sourcepos="5:3-8:82">Prometheus and the various exporters listed in this page are bundled in the&#x000A;Omnibus GitLab package. Check each exporter's documentation for the timeline&#x000A;they got added. For installations from source you will have to install them&#x000A;yourself. Over subsequent releases additional GitLab metrics will be captured.</li>&#x000A;<li data-sourcepos="9:3-9:58">Prometheus services are on by default with GitLab 9.0.</li>&#x000A;<li data-sourcepos="10:3-11:33">Prometheus and its exporters do not authenticate users, and will be available&#x000A;to anyone who can access them.</li>&#x000A;</ul>&#x000A;</blockquote>&#x000A;<p data-sourcepos="13:1-16:65" dir="auto"><a href="https://prometheus.io" rel="nofollow noreferrer noopener" target="_blank">Prometheus</a> is a powerful time-series monitoring service, providing a flexible&#x000A;platform for monitoring GitLab and other software products.&#x000A;GitLab provides out of the box monitoring with Prometheus, providing easy&#x000A;access to high quality time-series monitoring of GitLab services.</p>&#x000A;<h2 data-sourcepos="18:1-18:11" dir="auto">&#x000A;<a id="user-content-overview" class="anchor" href="#overview" aria-hidden="true"></a>Overview</h2>&#x000A;<p data-sourcepos="20:1-24:51" dir="auto">Prometheus works by periodically connecting to data sources and collecting their&#x000A;performance metrics via the <a href="#bundled-software-metrics">various exporters</a>. To view&#x000A;and work with the monitoring data, you can either&#x000A;<a href="#viewing-performance-metrics">connect directly to Prometheus</a> or utilize a&#x000A;dashboard tool like <a href="https://grafana.com" rel="nofollow noreferrer noopener" target="_blank">Grafana</a>.</p>&#x000A;<h2 data-sourcepos="26:1-26:25" dir="auto">&#x000A;<a id="user-content-configuring-prometheus" class="anchor" href="#configuring-prometheus" aria-hidden="true"></a>Configuring Prometheus</h2>&#x000A;<p data-sourcepos="28:1-29:79" dir="auto">NOTE: <strong>Note:</strong>&#x000A;For installations from source you'll have to install and configure it yourself.</p>&#x000A;<p data-sourcepos="31:1-35:63" dir="auto">Prometheus and its exporters are on by default, starting with GitLab 9.0.&#x000A;Prometheus will run as the <code>gitlab-prometheus</code> user and listen on&#x000A;<code>http://localhost:9090</code>. By default Prometheus is only accessible from the GitLab server itself.&#x000A;Each exporter will be automatically set up as a&#x000A;monitoring target for Prometheus, unless individually disabled.</p>&#x000A;<p data-sourcepos="37:1-37:83" dir="auto">To disable Prometheus and all of its exporters, as well as any added in the future:</p>&#x000A;<ol data-sourcepos="39:1-48:0" dir="auto">&#x000A;<li data-sourcepos="39:1-39:31">&#x000A;<p data-sourcepos="39:4-39:31">Edit <code>/etc/gitlab/gitlab.rb</code></p>&#x000A;</li>&#x000A;<li data-sourcepos="40:1-45:0">&#x000A;<p data-sourcepos="40:4-40:81">Add or find and uncomment the following line, making sure it's set to <code>false</code>:</p>&#x000A;<pre class="code highlight js-syntax-highlight ruby" lang="ruby" v-pre="true"><code><span id="LC1" class="line" lang="ruby"><span class="n">prometheus_monitoring</span><span class="p">[</span><span class="s1">'enable'</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span></span></code></pre>&#x000A;</li>&#x000A;<li data-sourcepos="46:1-48:0">&#x000A;<p data-sourcepos="46:4-47:15">Save the file and <a href="../../../restart_gitlab.md/index.html#omnibus-gitlab-reconfigure">reconfigure GitLab</a> for the changes to&#x000A;take effect.</p>&#x000A;</li>&#x000A;</ol>&#x000A;<h3 data-sourcepos="49:1-49:55" dir="auto">&#x000A;<a id="user-content-changing-the-port-and-address-prometheus-listens-on" class="anchor" href="#changing-the-port-and-address-prometheus-listens-on" aria-hidden="true"></a>Changing the port and address Prometheus listens on</h3>&#x000A;<p data-sourcepos="51:1-55:33" dir="auto">NOTE: <strong>Note:</strong>&#x000A;The following change was added in <a href="https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/1261" rel="nofollow noreferrer noopener" target="_blank">GitLab Omnibus 8.17</a>. Although possible,&#x000A;it's not recommended to change the port Prometheus listens&#x000A;on as this might affect or conflict with other services running on the GitLab&#x000A;server. Proceed at your own risk.</p>&#x000A;<p data-sourcepos="57:1-59:54" dir="auto">In order to access Prometheus from outside the GitLab server you will need to&#x000A;set a FQDN or IP in <code>prometheus['listen_address']</code>.&#x000A;To change the address/port that Prometheus listens on:</p>&#x000A;<ol data-sourcepos="61:1-80:0" dir="auto">&#x000A;<li data-sourcepos="61:1-61:31">&#x000A;<p data-sourcepos="61:4-61:31">Edit <code>/etc/gitlab/gitlab.rb</code></p>&#x000A;</li>&#x000A;<li data-sourcepos="62:1-77:0">&#x000A;<p data-sourcepos="62:4-62:48">Add or find and uncomment the following line:</p>&#x000A;<pre class="code highlight js-syntax-highlight ruby" lang="ruby" v-pre="true"><code><span id="LC1" class="line" lang="ruby"><span class="n">prometheus</span><span class="p">[</span><span class="s1">'listen_address'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'localhost:9090'</span></span></code></pre>&#x000A;<p data-sourcepos="68:4-70:81">Replace <code>localhost:9090</code> with the address/port you want Prometheus to&#x000A;listen on. If you would like to allow access to Prometheus to hosts other&#x000A;than <code>localhost</code>, leave out the host, or use <code>0.0.0.0</code> to allow public access:</p>&#x000A;<pre class="code highlight js-syntax-highlight ruby" lang="ruby" v-pre="true"><code><span id="LC1" class="line" lang="ruby"><span class="n">prometheus</span><span class="p">[</span><span class="s1">'listen_address'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">':9090'</span></span>&#x000A;<span id="LC2" class="line" lang="ruby"><span class="c1"># or</span></span>&#x000A;<span id="LC3" class="line" lang="ruby"><span class="n">prometheus</span><span class="p">[</span><span class="s1">'listen_address'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'0.0.0.0:9090'</span></span></code></pre>&#x000A;</li>&#x000A;<li data-sourcepos="78:1-80:0">&#x000A;<p data-sourcepos="78:4-79:14">Save the file and <a href="../../../restart_gitlab.md/index.html#omnibus-gitlab-reconfigure">reconfigure GitLab</a> for the changes to&#x000A;take effect</p>&#x000A;</li>&#x000A;</ol>&#x000A;<h3 data-sourcepos="81:1-81:39" dir="auto">&#x000A;<a id="user-content-using-an-external-prometheus-server" class="anchor" href="#using-an-external-prometheus-server" aria-hidden="true"></a>Using an external Prometheus server</h3>&#x000A;<p data-sourcepos="83:1-84:121" dir="auto">NOTE: <strong>Note:</strong>&#x000A;Prometheus and most exporters do not support authentication. We do not recommend exposing them outside the local network.</p>&#x000A;<p data-sourcepos="86:1-86:203" dir="auto">A few configuration changes are required to allow GitLab to be monitored by an external Prometheus server. External servers are recommended for highly available deployments of GitLab with multiple nodes.</p>&#x000A;<p data-sourcepos="88:1-88:37" dir="auto">To use an external Prometheus server:</p>&#x000A;<ol data-sourcepos="90:1-188:0" dir="auto">&#x000A;<li data-sourcepos="90:1-90:32">&#x000A;<p data-sourcepos="90:4-90:32">Edit <code>/etc/gitlab/gitlab.rb</code>.</p>&#x000A;</li>&#x000A;<li data-sourcepos="91:1-96:0">&#x000A;<p data-sourcepos="91:4-91:34">Disable the bundled Prometheus:</p>&#x000A;<pre class="code highlight js-syntax-highlight ruby" lang="ruby" v-pre="true"><code><span id="LC1" class="line" lang="ruby"><span class="n">prometheus</span><span class="p">[</span><span class="s1">'enable'</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span></span></code></pre>&#x000A;</li>&#x000A;<li data-sourcepos="97:1-109:0">&#x000A;<p data-sourcepos="97:4-97:112">Set each bundled service's <a href="#bundled-software-metrics">exporter</a> to listen on a network address, for example:</p>&#x000A;<pre class="code highlight js-syntax-highlight ruby" lang="ruby" v-pre="true"><code><span id="LC1" class="line" lang="ruby"><span class="n">gitlab_exporter</span><span class="p">[</span><span class="s1">'listen_address'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'0.0.0.0'</span></span>&#x000A;<span id="LC2" class="line" lang="ruby"><span class="n">sidekiq</span><span class="p">[</span><span class="s1">'listen_address'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'0.0.0.0'</span></span>&#x000A;<span id="LC3" class="line" lang="ruby"><span class="n">gitlab_exporter</span><span class="p">[</span><span class="s1">'listen_port'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'9168'</span></span>&#x000A;<span id="LC4" class="line" lang="ruby"><span class="n">node_exporter</span><span class="p">[</span><span class="s1">'listen_address'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'0.0.0.0:9100'</span></span>&#x000A;<span id="LC5" class="line" lang="ruby"><span class="n">redis_exporter</span><span class="p">[</span><span class="s1">'listen_address'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'0.0.0.0:9121'</span></span>&#x000A;<span id="LC6" class="line" lang="ruby"><span class="n">postgres_exporter</span><span class="p">[</span><span class="s1">'listen_address'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'0.0.0.0:9187'</span></span>&#x000A;<span id="LC7" class="line" lang="ruby"><span class="n">gitaly</span><span class="p">[</span><span class="s1">'prometheus_listen_addr'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"0.0.0.0:9236"</span></span>&#x000A;<span id="LC8" class="line" lang="ruby"><span class="n">gitlab_workhorse</span><span class="p">[</span><span class="s1">'prometheus_listen_addr'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"0.0.0.0:9229"</span></span></code></pre>&#x000A;</li>&#x000A;<li data-sourcepos="110:1-110:176">&#x000A;<p data-sourcepos="110:4-110:176">Install and set up a dedicated Prometheus instance, if necessary, using the <a href="https://prometheus.io/docs/prometheus/latest/installation/" rel="nofollow noreferrer noopener" target="_blank">official installation instructions</a>.</p>&#x000A;</li>&#x000A;<li data-sourcepos="111:1-116:0">&#x000A;<p data-sourcepos="111:4-111:108">Add the Prometheus server IP address to the <a href="../../ip_whitelist.html">monitoring IP whitelist</a>. For example:</p>&#x000A;<pre class="code highlight js-syntax-highlight ruby" lang="ruby" v-pre="true"><code><span id="LC1" class="line" lang="ruby"><span class="n">gitlab_rails</span><span class="p">[</span><span class="s1">'monitoring_whitelist'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'127.0.0.0/8'</span><span class="p">,</span> <span class="s1">'192.168.0.1'</span><span class="p">]</span></span></code></pre>&#x000A;</li>&#x000A;<li data-sourcepos="117:1-128:0">&#x000A;<p data-sourcepos="117:4-118:19">To scrape NGINX metrics, you'll also need to configure NGINX to allow the Prometheus server&#x000A;IP. For example:</p>&#x000A;<pre class="code highlight js-syntax-highlight ruby" lang="ruby" v-pre="true"><code><span id="LC1" class="line" lang="ruby"><span class="n">nginx</span><span class="p">[</span><span class="s1">'status'</span><span class="p">][</span><span class="s1">'options'</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span></span>&#x000A;<span id="LC2" class="line" lang="ruby">      <span class="s2">"server_tokens"</span> <span class="o">=&gt;</span> <span class="s2">"off"</span><span class="p">,</span></span>&#x000A;<span id="LC3" class="line" lang="ruby">      <span class="s2">"access_log"</span> <span class="o">=&gt;</span> <span class="s2">"off"</span><span class="p">,</span></span>&#x000A;<span id="LC4" class="line" lang="ruby">      <span class="s2">"allow"</span> <span class="o">=&gt;</span> <span class="s2">"192.168.0.1"</span><span class="p">,</span></span>&#x000A;<span id="LC5" class="line" lang="ruby">      <span class="s2">"deny"</span> <span class="o">=&gt;</span> <span class="s2">"all"</span><span class="p">,</span></span>&#x000A;<span id="LC6" class="line" lang="ruby"><span class="p">}</span></span></code></pre>&#x000A;</li>&#x000A;<li data-sourcepos="129:1-129:57">&#x000A;<p data-sourcepos="129:4-129:57"><a href="../../../restart_gitlab.md/index.html#omnibus-gitlab-reconfigure">Reconfigure GitLab</a> to apply the changes</p>&#x000A;</li>&#x000A;<li data-sourcepos="130:1-130:51">&#x000A;<p data-sourcepos="130:4-130:51">Edit the Prometheus server's configuration file.</p>&#x000A;</li>&#x000A;<li data-sourcepos="131:1-186:0">&#x000A;<p data-sourcepos="131:4-133:56">Add each node's exporters to the Prometheus server's&#x000A;<a href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/#%3Cscrape_config%3E" rel="nofollow noreferrer noopener" target="_blank">scrape target configuration</a>.&#x000A;For example, a sample snippet using <code>static_configs</code>:</p>&#x000A;<pre class="code highlight js-syntax-highlight yaml" lang="yaml" v-pre="true"><code><span id="LC1" class="line" lang="yaml"><span class="na">scrape_configs</span><span class="pi">:</span></span>&#x000A;<span id="LC2" class="line" lang="yaml"><span class="pi">-</span> <span class="na">job_name</span><span class="pi">:</span> <span class="s">nginx</span></span>&#x000A;<span id="LC3" class="line" lang="yaml">  <span class="na">static_configs</span><span class="pi">:</span></span>&#x000A;<span id="LC4" class="line" lang="yaml">  <span class="pi">-</span> <span class="na">targets</span><span class="pi">:</span></span>&#x000A;<span id="LC5" class="line" lang="yaml">    <span class="pi">-</span> <span class="s">1.1.1.1:8060</span></span>&#x000A;<span id="LC6" class="line" lang="yaml"><span class="pi">-</span> <span class="na">job_name</span><span class="pi">:</span> <span class="s">redis</span></span>&#x000A;<span id="LC7" class="line" lang="yaml">  <span class="na">static_configs</span><span class="pi">:</span></span>&#x000A;<span id="LC8" class="line" lang="yaml">  <span class="pi">-</span> <span class="na">targets</span><span class="pi">:</span></span>&#x000A;<span id="LC9" class="line" lang="yaml">    <span class="pi">-</span> <span class="s">1.1.1.1:9121</span></span>&#x000A;<span id="LC10" class="line" lang="yaml"><span class="pi">-</span> <span class="na">job_name</span><span class="pi">:</span> <span class="s">postgres</span></span>&#x000A;<span id="LC11" class="line" lang="yaml">  <span class="na">static_configs</span><span class="pi">:</span></span>&#x000A;<span id="LC12" class="line" lang="yaml">  <span class="pi">-</span> <span class="na">targets</span><span class="pi">:</span></span>&#x000A;<span id="LC13" class="line" lang="yaml">    <span class="pi">-</span> <span class="s">1.1.1.1:9187</span></span>&#x000A;<span id="LC14" class="line" lang="yaml"><span class="pi">-</span> <span class="na">job_name</span><span class="pi">:</span> <span class="s">node</span></span>&#x000A;<span id="LC15" class="line" lang="yaml">  <span class="na">static_configs</span><span class="pi">:</span></span>&#x000A;<span id="LC16" class="line" lang="yaml">  <span class="pi">-</span> <span class="na">targets</span><span class="pi">:</span></span>&#x000A;<span id="LC17" class="line" lang="yaml">    <span class="pi">-</span> <span class="s">1.1.1.1:9100</span></span>&#x000A;<span id="LC18" class="line" lang="yaml"><span class="pi">-</span> <span class="na">job_name</span><span class="pi">:</span> <span class="s">gitlab-workhorse</span></span>&#x000A;<span id="LC19" class="line" lang="yaml">  <span class="na">static_configs</span><span class="pi">:</span></span>&#x000A;<span id="LC20" class="line" lang="yaml">  <span class="pi">-</span> <span class="na">targets</span><span class="pi">:</span></span>&#x000A;<span id="LC21" class="line" lang="yaml">    <span class="pi">-</span> <span class="s">1.1.1.1:9229</span></span>&#x000A;<span id="LC22" class="line" lang="yaml"><span class="pi">-</span> <span class="na">job_name</span><span class="pi">:</span> <span class="s">gitlab-rails</span></span>&#x000A;<span id="LC23" class="line" lang="yaml">  <span class="na">metrics_path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/-/metrics"</span></span>&#x000A;<span id="LC24" class="line" lang="yaml">  <span class="na">static_configs</span><span class="pi">:</span></span>&#x000A;<span id="LC25" class="line" lang="yaml">  <span class="pi">-</span> <span class="na">targets</span><span class="pi">:</span></span>&#x000A;<span id="LC26" class="line" lang="yaml">    <span class="pi">-</span> <span class="s">1.1.1.1:8080</span></span>&#x000A;<span id="LC27" class="line" lang="yaml"><span class="pi">-</span> <span class="na">job_name</span><span class="pi">:</span> <span class="s">gitlab-sidekiq</span></span>&#x000A;<span id="LC28" class="line" lang="yaml">  <span class="na">static_configs</span><span class="pi">:</span></span>&#x000A;<span id="LC29" class="line" lang="yaml">  <span class="pi">-</span> <span class="na">targets</span><span class="pi">:</span></span>&#x000A;<span id="LC30" class="line" lang="yaml">    <span class="pi">-</span> <span class="s">1.1.1.1:8082</span></span>&#x000A;<span id="LC31" class="line" lang="yaml"><span class="pi">-</span> <span class="na">job_name</span><span class="pi">:</span> <span class="s">gitlab_exporter_database</span></span>&#x000A;<span id="LC32" class="line" lang="yaml">  <span class="na">metrics_path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/database"</span></span>&#x000A;<span id="LC33" class="line" lang="yaml">  <span class="na">static_configs</span><span class="pi">:</span></span>&#x000A;<span id="LC34" class="line" lang="yaml">  <span class="pi">-</span> <span class="na">targets</span><span class="pi">:</span></span>&#x000A;<span id="LC35" class="line" lang="yaml">    <span class="pi">-</span> <span class="s">1.1.1.1:9168</span></span>&#x000A;<span id="LC36" class="line" lang="yaml"><span class="pi">-</span> <span class="na">job_name</span><span class="pi">:</span> <span class="s">gitlab_exporter_sidekiq</span></span>&#x000A;<span id="LC37" class="line" lang="yaml">  <span class="na">metrics_path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/sidekiq"</span></span>&#x000A;<span id="LC38" class="line" lang="yaml">  <span class="na">static_configs</span><span class="pi">:</span></span>&#x000A;<span id="LC39" class="line" lang="yaml">  <span class="pi">-</span> <span class="na">targets</span><span class="pi">:</span></span>&#x000A;<span id="LC40" class="line" lang="yaml">    <span class="pi">-</span> <span class="s">1.1.1.1:9168</span></span>&#x000A;<span id="LC41" class="line" lang="yaml"><span class="pi">-</span> <span class="na">job_name</span><span class="pi">:</span> <span class="s">gitlab_exporter_process</span></span>&#x000A;<span id="LC42" class="line" lang="yaml">  <span class="na">metrics_path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/process"</span></span>&#x000A;<span id="LC43" class="line" lang="yaml">  <span class="na">static_configs</span><span class="pi">:</span></span>&#x000A;<span id="LC44" class="line" lang="yaml">  <span class="pi">-</span> <span class="na">targets</span><span class="pi">:</span></span>&#x000A;<span id="LC45" class="line" lang="yaml">    <span class="pi">-</span> <span class="s">1.1.1.1:9168</span></span>&#x000A;<span id="LC46" class="line" lang="yaml"><span class="pi">-</span> <span class="na">job_name</span><span class="pi">:</span> <span class="s">gitaly</span></span>&#x000A;<span id="LC47" class="line" lang="yaml">  <span class="na">static_configs</span><span class="pi">:</span></span>&#x000A;<span id="LC48" class="line" lang="yaml">  <span class="pi">-</span> <span class="na">targets</span><span class="pi">:</span></span>&#x000A;<span id="LC49" class="line" lang="yaml">    <span class="pi">-</span> <span class="s">1.1.1.1:9236</span></span></code></pre>&#x000A;</li>&#x000A;<li data-sourcepos="187:1-188:0">&#x000A;<p data-sourcepos="187:4-187:32">Reload the Prometheus server.</p>&#x000A;</li>&#x000A;</ol>&#x000A;<h2 data-sourcepos="189:1-189:30" dir="auto">&#x000A;<a id="user-content-viewing-performance-metrics" class="anchor" href="#viewing-performance-metrics" aria-hidden="true"></a>Viewing performance metrics</h2>&#x000A;<p data-sourcepos="191:1-191:90" dir="auto">You can visit <code>http://localhost:9090</code> for the dashboard that Prometheus offers by default.</p>&#x000A;<blockquote data-sourcepos="193:1-198:45" dir="auto">&#x000A;<p data-sourcepos="193:2-198:45"><strong>Note:</strong>&#x000A;If SSL has been enabled on your GitLab instance, you may not be able to access&#x000A;Prometheus on the same browser as GitLab if using the same FQDN due to <a href="https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security" rel="nofollow noreferrer noopener" target="_blank">HSTS</a>. We plan to&#x000A;<a href="https://gitlab.com/gitlab-org/multi-user-prometheus" rel="nofollow noreferrer noopener" target="_blank">provide access via GitLab</a>, but in the interim there are&#x000A;some workarounds: using a separate FQDN, using server IP, using a separate browser for Prometheus, resetting HSTS, or&#x000A;having <a href="https://docs.gitlab.com/omnibus/settings/nginx.html#inserting-custom-nginx-settings-into-the-gitlab-server-block" rel="nofollow noreferrer noopener" target="_blank">NGINX proxy it</a>.</p>&#x000A;</blockquote>&#x000A;<p data-sourcepos="200:1-205:48" dir="auto">The performance data collected by Prometheus can be viewed directly in the&#x000A;Prometheus console or through a compatible dashboard tool.&#x000A;The Prometheus interface provides a <a href="https://prometheus.io/docs/prometheus/latest/querying/basics/" rel="nofollow noreferrer noopener" target="_blank">flexible query language</a>&#x000A;to work with the collected data where you can visualize their output.&#x000A;For a more fully featured dashboard, Grafana can be used and has&#x000A;<a href="https://prometheus.io/docs/visualization/grafana/" rel="nofollow noreferrer noopener" target="_blank">official support for Prometheus</a>.</p>&#x000A;<p data-sourcepos="207:1-207:26" dir="auto">Sample Prometheus queries:</p>&#x000A;<ul data-sourcepos="209:1-213:0" dir="auto">&#x000A;<li data-sourcepos="209:1-209:214">&#x000A;<strong>% Memory available:</strong> <code>((node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes) or ((node_memory_MemFree_bytes + node_memory_Buffers_bytes + node_memory_Cached_bytes) / node_memory_MemTotal_bytes)) * 100</code>&#x000A;</li>&#x000A;<li data-sourcepos="210:1-210:101">&#x000A;<strong>% CPU utilization:</strong> <code>1 - avg without (mode,cpu) (rate(node_cpu_seconds_total{mode="idle"}[5m]))</code>&#x000A;</li>&#x000A;<li data-sourcepos="211:1-211:83">&#x000A;<strong>Data transmitted:</strong> <code>rate(node_network_transmit_bytes_total{device!="lo"}[5m])</code>&#x000A;</li>&#x000A;<li data-sourcepos="212:1-213:0">&#x000A;<strong>Data received:</strong> <code>rate(node_network_receive_bytes_total{device!="lo"}[5m])</code>&#x000A;</li>&#x000A;</ul>&#x000A;<h2 data-sourcepos="214:1-214:38" dir="auto">&#x000A;<a id="user-content-prometheus-as-a-grafana-data-source" class="anchor" href="#prometheus-as-a-grafana-data-source" aria-hidden="true"></a>Prometheus as a Grafana data source</h2>&#x000A;<p data-sourcepos="216:1-217:84" dir="auto">Grafana allows you to import Prometheus performance metrics as a data source&#x000A;and render the metrics as graphs and dashboards which is helpful with visualisation.</p>&#x000A;<p data-sourcepos="219:1-219:63" dir="auto">To add a Prometheus dashboard for a single server GitLab setup:</p>&#x000A;<ol data-sourcepos="221:1-227:0" dir="auto">&#x000A;<li data-sourcepos="221:1-221:39">Create a new data source in Grafana.</li>&#x000A;<li data-sourcepos="222:1-222:36">Name your data source i.e GitLab.</li>&#x000A;<li data-sourcepos="223:1-223:45">Select <code>Prometheus</code> in the type drop down.</li>&#x000A;<li data-sourcepos="224:1-224:77">Add your Prometheus listen address as the URL and set access to <code>Browser</code>.</li>&#x000A;<li data-sourcepos="225:1-225:32">Set the HTTP method to <code>GET</code>.</li>&#x000A;<li data-sourcepos="226:1-227:0">Save &amp; Test your configuration to verify that it works.</li>&#x000A;</ol>&#x000A;<h2 data-sourcepos="228:1-228:17" dir="auto">&#x000A;<a id="user-content-gitlab-metrics" class="anchor" href="#gitlab-metrics" aria-hidden="true"></a>GitLab metrics</h2>&#x000A;<blockquote data-sourcepos="230:1-230:27" dir="auto">&#x000A;<p data-sourcepos="230:3-230:27">Introduced in GitLab 9.3.</p>&#x000A;</blockquote>&#x000A;<p data-sourcepos="232:1-232:227" dir="auto">GitLab monitors its own internal service metrics, and makes them available at the <code>/-/metrics</code> endpoint. Unlike other exporters, this endpoint requires authentication as it is available on the same URL and port as user traffic.</p>&#x000A;<p data-sourcepos="234:1-234:60" dir="auto"><a href="../gitlab_metrics.md/index.html">➔ Read more about the GitLab Metrics.</a></p>&#x000A;<h2 data-sourcepos="236:1-236:27" dir="auto">&#x000A;<a id="user-content-bundled-software-metrics" class="anchor" href="#bundled-software-metrics" aria-hidden="true"></a>Bundled software metrics</h2>&#x000A;<p data-sourcepos="238:1-239:26" dir="auto">Many of the GitLab dependencies bundled in Omnibus GitLab are preconfigured to&#x000A;export Prometheus metrics.</p>&#x000A;<h3 data-sourcepos="241:1-241:17" dir="auto">&#x000A;<a id="user-content-node-exporter" class="anchor" href="#node-exporter" aria-hidden="true"></a>Node exporter</h3>&#x000A;<p data-sourcepos="243:1-244:33" dir="auto">The node exporter allows you to measure various machine resources such as&#x000A;memory, disk and CPU utilization.</p>&#x000A;<p data-sourcepos="246:1-246:58" dir="auto"><a href="../node_exporter.md/index.html">➔ Read more about the node exporter.</a></p>&#x000A;<h3 data-sourcepos="248:1-248:18" dir="auto">&#x000A;<a id="user-content-redis-exporter" class="anchor" href="#redis-exporter" aria-hidden="true"></a>Redis exporter</h3>&#x000A;<p data-sourcepos="250:1-250:63" dir="auto">The Redis exporter allows you to measure various Redis metrics.</p>&#x000A;<p data-sourcepos="252:1-252:60" dir="auto"><a href="../redis_exporter.md/index.html">➔ Read more about the Redis exporter.</a></p>&#x000A;<h3 data-sourcepos="254:1-254:21" dir="auto">&#x000A;<a id="user-content-postgres-exporter" class="anchor" href="#postgres-exporter" aria-hidden="true"></a>Postgres exporter</h3>&#x000A;<p data-sourcepos="256:1-256:71" dir="auto">The Postgres exporter allows you to measure various PostgreSQL metrics.</p>&#x000A;<p data-sourcepos="258:1-258:66" dir="auto"><a href="../postgres_exporter.md/index.html">➔ Read more about the Postgres exporter.</a></p>&#x000A;<h3 data-sourcepos="260:1-260:22" dir="auto">&#x000A;<a id="user-content-pgbouncer-exporter" class="anchor" href="#pgbouncer-exporter" aria-hidden="true"></a>PgBouncer exporter</h3>&#x000A;<p data-sourcepos="262:1-262:71" dir="auto">The PgBouncer exporter allows you to measure various PgBouncer metrics.</p>&#x000A;<p data-sourcepos="264:1-264:68" dir="auto"><a href="../pgbouncer_exporter.md/index.html">➔ Read more about the PgBouncer exporter.</a></p>&#x000A;<h3 data-sourcepos="266:1-266:19" dir="auto">&#x000A;<a id="user-content-gitlab-exporter" class="anchor" href="#gitlab-exporter" aria-hidden="true"></a>GitLab exporter</h3>&#x000A;<p data-sourcepos="268:1-268:101" dir="auto">The GitLab exporter allows you to measure various GitLab metrics, pulled from Redis and the database.</p>&#x000A;<p data-sourcepos="270:1-270:62" dir="auto"><a href="../gitlab_exporter.md/index.html">➔ Read more about the GitLab exporter.</a></p>&#x000A;<h2 data-sourcepos="272:1-272:47" dir="auto">&#x000A;<a id="user-content-configuring-prometheus-to-monitor-kubernetes" class="anchor" href="#configuring-prometheus-to-monitor-kubernetes" aria-hidden="true"></a>Configuring Prometheus to monitor Kubernetes</h2>&#x000A;<blockquote data-sourcepos="274:1-275:42" dir="auto">&#x000A;<p data-sourcepos="274:3-275:42">Introduced in GitLab 9.0.&#x000A;Pod monitoring introduced in GitLab 9.4.</p>&#x000A;</blockquote>&#x000A;<p data-sourcepos="277:1-277:451" dir="auto">If your GitLab server is running within Kubernetes, Prometheus will collect metrics from the Nodes and <a href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config" rel="nofollow noreferrer noopener" target="_blank">annotated Pods</a> in the cluster, including performance data on each container. This is particularly helpful if your CI/CD environments run in the same cluster, as you can use the <a href="../../../../user/project/integrations/prometheus.md/index.html">Prometheus project integration</a> to monitor them.</p>&#x000A;<p data-sourcepos="279:1-279:40" dir="auto">To disable the monitoring of Kubernetes:</p>&#x000A;<ol data-sourcepos="281:1-290:0" dir="auto">&#x000A;<li data-sourcepos="281:1-281:32">&#x000A;<p data-sourcepos="281:4-281:32">Edit <code>/etc/gitlab/gitlab.rb</code>.</p>&#x000A;</li>&#x000A;<li data-sourcepos="282:1-287:0">&#x000A;<p data-sourcepos="282:4-282:70">Add or find and uncomment the following line and set it to <code>false</code>:</p>&#x000A;<pre class="code highlight js-syntax-highlight ruby" lang="ruby" v-pre="true"><code><span id="LC1" class="line" lang="ruby"><span class="n">prometheus</span><span class="p">[</span><span class="s1">'monitor_kubernetes'</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span></span></code></pre>&#x000A;</li>&#x000A;<li data-sourcepos="288:1-290:0">&#x000A;<p data-sourcepos="288:4-289:15">Save the file and <a href="../../../restart_gitlab.md/index.html#omnibus-gitlab-reconfigure">reconfigure GitLab</a> for the changes to&#x000A;take effect.</p>&#x000A;</li>&#x000A;</ol>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+</body>
+</html>
+

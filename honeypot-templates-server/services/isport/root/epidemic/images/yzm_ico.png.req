@@ -1,0 +1,11 @@
+{
+    "Accept": "image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7",
+    "Cache-Control": "no-cache",
+    "Connection": "keep-alive",
+    "Cookie": "pmaCookieVer=5; pma_lang=zh_CN; pma_collation_connection=utf8mb4_unicode_ci; JSESSIONID=c45724a6-6ee4-411e-a1e5-30c1e32e9abb; phpMyAdmin=bosls0eqqll87tcql0ftkgr64dp6of60; session=112fb124e72d4b0386927242ded1afd4; MOHIST_CCM_APP_USER_SESSION=83af72b2-8518-410d-9a3a-2c6f0b76d4d6",
+    "Pragma": "no-cache",
+    "Referer": "http://192.168.1.114:8002/epidemic/css/index.css",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47"
+}

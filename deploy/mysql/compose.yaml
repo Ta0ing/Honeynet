@@ -1,0 +1,24 @@
+name: honeynet
+
+services:
+  mysql:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: honeynet
+      MYSQL_USER: honeynet
+      MYSQL_PASSWORD: ${HONEYPOT_MYSQL_PASSWORD:-honeynet}
+      MYSQL_ROOT_PASSWORD: ${HONEYPOT_MYSQL_ROOT_PASSWORD:-change-this-root-password}
+    ports:
+      - "127.0.0.1:3306:3306"
+    volumes:
+      - honeynet_mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+volumes:
+  honeynet_mysql:

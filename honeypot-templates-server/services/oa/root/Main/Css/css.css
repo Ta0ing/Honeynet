@@ -1,0 +1,72 @@
+BODY {
+	FONT-SIZE: 12px;
+FONT-FAMILY:  宋体;SCROLLBAR-FACE-COLOR: #F2F6FF; FONT-SIZE: 12px; MARGIN: 0px; SCROLLBAR-HIGHLIGHT-COLOR: #f5f5f5; SCROLLBAR-SHADOW-COLOR: #959595; SCROLLBAR-3DLIGHT-COLOR: #f5f5f5; SCROLLBAR-ARROW-COLOR: #959595; SCROLLBAR-TRACK-COLOR: #f5f5f5; SCROLLBAR-DARKSHADOW-COLOR: #f5f5f5; BACKGROUND-COLOR: #F9FAFD
+}
+TEXTAREA
+{
+    FONT-SIZE: 12px
+}
+td { 	FONT-SIZE: 12px; COLOR: #444444;	
+		word-break:break-all;
+	}
+A {
+	FONT-SIZE: 12px; COLOR: #444444; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+A:hover {
+	FONT-SIZE: 12px; COLOR: #ff6633; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.unnamed1 {
+	border: 1px solid #4180C6;
+	background-image: url(../images/ny/bg.gif);
+    FONT-SIZE: 12px
+}
+.tab {
+	border: 1px solid 4180C6;
+    FONT-SIZE: 12px
+}
+.input {
+	border: 1px solid #999999;
+    FONT-SIZE: 12px
+}
+.fstyle {
+	border: 1px solid #999999;
+    FONT-SIZE: 12px
+}
+.bor {
+	background-image: url(../images/bor.gif/index.html);
+	height: 17px;
+	width: 68px;
+	border: none;
+	vertical-align: bottom;
+	background-position: bottom;
+	cursor:hand;
+    FONT-SIZE: 12px
+}
+input{    FONT-SIZE: 12px}
+
+.select{ 
+border: 0px solid #444444;
+background-color:#F6F9FF;
+FONT-SIZE: 12px
+}
+TD.CopyRight{FONT-SIZE: 12px;line-height=150%}
+.content
+{
+    BORDER-RIGHT: 0px;
+    BORDER-TOP: 0px;
+    OVERFLOW-Y: visible;
+    FONT-SIZE: 12px;
+    OVERFLOW: visible;
+    BORDER-LEFT: 0px;
+    LINE-HEIGHT: 150%;
+    BORDER-BOTTOM: 0px;
+    FONT-FAMILY: 宋体 Fixedsys;
+    BACKGROUND-COLOR: transparent
+}.bright {
+	cursor: default;
+	filter: Gray;
+	font-size: 20px;
+	font-weight: bold;
+	color: #4180C6;
+
+}

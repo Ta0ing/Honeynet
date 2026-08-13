@@ -1,0 +1,197 @@
+@charset "iso-8859-1";
+body {
+margin:0; 
+font-size:14px; 
+line-height:1.6; 
+background:#FFF; 
+color:#333;
+background-image: url( images/bg.gif );
+background-repeat: repeat-y;
+font-family: tahoma,verdana,sans-serif;
+}
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, table, th, td, embed, object {padding:0; margin:0;}
+ul,li {list-style:none;}
+h1, h2, h3, h4, h5, h6 {font-size: 1.0em;}
+img {border:none;}
+.caution {
+color: #FF0000;
+font-weight: bold;
+}
+a,a:link {
+color:#1a5e9e;
+text-decoration:none;
+}
+a:hover {
+text-decoration:underline;
+}
+.header {
+height:58px;
+border-bottom:5px solid #1da0d2;
+overflow:hidden;
+background:#FFF;
+}
+.logo {
+float:left;
+background: #fff;
+}
+.topLinks {
+float:right;
+font-size:12px;
+color:#AAC1DE;
+margin-top:28px;
+padding-right:20px;
+}
+.mainContent {
+width:935px;
+margin:5px 10px;
+position:relative;
+}
+.mainContentL {
+float:left;
+width:192px;
+z-index:10;
+}
+.mainContent .catalog {position:absolute; top:0; left:0; width:180px;}
+.mainContent .catalog ul {font-size:12px; padding:12px 20px 0 16px;}
+.mainContent .catalog ul li {list-style:disc outside; line-height:25px; }
+.mainContent .catalog ul li.spl { list-style:none;height:1px; line-height:0; padding:0; overflow:hidden; background:#C8DADD; margin:5px 0;}
+.mainContent .catalog ul li.active{background:#085b7b; color:#FFF; margin:2px 0;}
+.mainContent .catalog ul li.active a{color:#FFF;}
+.mainContentR {
+margin-left:190px;
+margin-right:10px;
+overflow:hidden;
+width:730px;
+}
+.mainContent {margin:5px 10px; position:relative;}
+.mainContent .content {width:700px;margin-left:20px; margin-right:10px; padding:10px 0 0; zoom:1; overflow:hidden;}
+.mainContent .content h2 {font-size:16px; color:#000; font-weight:bold; margin:0 0 5px;}
+.mainContent .content h3 {font-size:14px; font-weight:bold; }
+.mainContent .content h4 {font-weight:bold;margin-top: 10px; }
+.mainContent .content .qList {margin:0 0 0 5px;}
+.mainContent .content .qList li {line-height:27px; padding:0 20px 0 0;}
+.mainContent .content .indexCol {}
+.mainContent .content .answer {line-height:27px; margin:80px 0 0 0;}
+.mainContent .content .back {float:right;font-size:12px;margin-top:15px;}
+.mainContent .content .back .ico {float:left;width:15px;height:15px;margin:5px 5px 0 0;}
+.mainContent .content .back .main {float:left;}
+.mainContent .content p {margin:10px 0;}
+.mainContent .content .return {margin:0 0 20px;}
+.mainContent .content .wel {
+margin-top:10px;
+}
+.mainContent .content .std {
+margin:0;
+}
+.mainContent .content .std table {
+width:500px;
+border-collapse: collapse;
+margin:10px 1px;
+}
+.mainContent .content .std table td {
+text-align: left;
+padding: .3em;
+border: 1px solid #d0d0d0;
+vertical-align: top;
+}
+.mainContent .content .RMstd {
+margin:0;
+}
+.mainContent .content .RMstd table {
+width:630px;
+border-collapse: collapse;
+margin:10px 1px;
+}
+.mainContent .content .RMstd table thead td {
+text-align: center;
+padding: .3em;
+border: 1px solid #d0d0d0;
+vertical-align: top;
+background:#e5e5e5;
+}
+.mainContent .content .RMstd table td {
+text-align: left;
+padding: .3em;
+border: 1px solid #d0d0d0;
+vertical-align: top;
+}
+.copyright {
+color:#9C9C9C;
+font-family:Arial;
+font-size:12px;
+margin:40px 0 0 200px;
+padding:8px;
+position:absolute;
+text-align:center;
+width:700px;
+}
+.mobileImg {
+margin:0 0 20px 10px;
+}
+table.std{
+border-collapse:collapse;
+}
+table.std th{
+background-color:#E5EFF4;
+}
+table.std th,table.std td{
+padding:3px;
+border:1px solid #999;
+}
+table .line {
+background-color:#E5E5E5;
+}
+.item {
+margin-bottom: 5px;
+}
+.item .title {
+background: url("images/blt_faq.gif") no-repeat scroll 0 0 #F6F6F6;
+color: #1A5E9E;
+cursor: pointer;
+font-size: 14px;
+line-height: 37px;
+padding:0 10px 0 37px;
+text-align: left;
+}
+.item .on {
+background: url("images/blt_faq_on.gif") no-repeat scroll 0 0 #429eca;
+color: #FFFFFF;
+}
+.item .main {
+font-size: 12px;
+background-color: #FFFFFF;
+padding: 10px 10px 10px 37px;
+}
+.item .main p {
+line-height: 27px;
+margin: 0;
+}
+.item .main ul, .item .main li {
+list-style: none outside none;
+line-height: 27px;
+}
+.item .close {
+background-color: #F6F6F6;
+color: #1A5E9E;
+cursor: pointer;
+font-size: 12px;
+width: 32px;
+height: 24px;
+line-height: 22px;
+margin-top: 20px;
+padding: 0 8px;
+text-align: center;
+}
+#toTop{
+background: url("images/toTop.gif");
+height: 32px;
+width: 38px;
+left:950px;
+position: absolute;
+display: none;
+}
+#toTop a{
+display: block;
+height: 32px;
+width: 38px;
+}

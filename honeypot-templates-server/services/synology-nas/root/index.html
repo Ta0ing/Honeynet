@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html class="  ext-strict">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=11">
+    <meta name="msapplication-TileImage" content="resources/images/icon_tile.png?v=4398">
+    <meta name="application-name" content="DSM-Host&nbsp;-&nbsp;Synology&nbsp;VirtualDSM">
+    <meta name="msapplication-TileColor" content="#246BB3">
+    <meta name="description" content="VirtualDSM 提供功能完整的网络存储 (NAS) 解决方案，可让您轻松管理及备份数据，并在 Windows、Mac 及 Linux 计算机之间分享数据。">
+    <meta name="keywords" content="多任务处理,网页应用程序,个人云端">
+
+    <link rel="apple-touch-icon" href="webman/resources/images/icon_dsm_96.png?v=4398">
+    <link rel="mask-icon" href="webman/safari_pin_icon.svg" color="#0086E5">
+    <link rel="shortcut icon" href="webman/favicon.ico?v=4399">
+    <title>DSM&nbsp;6.2&nbsp;-&nbsp;Synology&nbsp;VirtualDSM</title>
+    <link rel="stylesheet" type="text/css" href="scripts/ext-3/resources/css/ext-all_v%3D1614856779.css">
+    <link rel="stylesheet" type="text/css" href="scripts/ext-3/resources/css/xtheme-gray_v%3D1614856779.css">
+    <link rel="stylesheet" type="text/css" href="scripts/ext-3/ux/ux-all_v%3D1629888321.css">
+    <link rel="stylesheet" type="text/css" href="synoSDSjslib/sds.css?v=1629888321">
+    <link rel="stylesheet" type="text/css" href="webman/resources/css/desktop_v%3D1629888321.css">
+
+</head>
+
+<body role="application" class=" ext-webkit ext-chrome ext-mac" id="ext-gen3">
+    <div id="sds-wallpaper"></div>
+
+
+    <div id="sds-apply-preview-form" style="position: absolute; top: -10000px; left: -10000px; display: none;">
+        <form id="preview-form" class="x-plain-body" method="POST" action="webman/modules/ControlPanel/modules/dsm.cgi"
+            target="preview_iframe"><input type="submit" id="preview_submit"
+                style="position: absolute; top: -10000px; left: -10000px;" tabindex="-1"></form><iframe
+            id="preview_iframe" name="preview_iframe" width="0" height="0" frameborder="0"
+            style="display: none;"></iframe>
+    </div>
+    <script type="text/javascript"
+        src="webapi/entry_api%3DSYNO.Core.Desktop.SessionData%26version%3D1%26method%3Dgetjs%26SynoToken%3D%26v%3D1614856931.cgi"></script>
+    <script type="text/javascript"
+        src="webapi/entry_api%3DSYNO.Core.Desktop.Defs%26version%3D1%26method%3Dgetjs%26v%3D1629885382.cgi"></script>
+    <script type="text/javascript"
+        src="webapi/entry_api%3DSYNO.Core.Desktop.JSUIString%26version%3D1%26method%3Dgetjs%26lang%3Dchs%26v%3D1619483803.cgi"></script>
+    <script type="text/javascript"
+        src="webapi/entry_api%3DSYNO.Core.Desktop.UIString%26version%3D1%26method%3Dgetjs%26lang%3Dchs%26v%3D1619483806.cgi"></script>
+    <!-- <script type="text/javascript" src="scripts/prototype-1.7.2/prototype_v%3D1614856779.js"></script>
+    <script type="text/javascript" src="scripts/ext-3/adapter/ext/ext-base_v%3D1614856779.js"></script> -->
+    <!-- <script type="text/javascript" src="scripts/ext-3/ext-all_v%3D1614856779.js"></script>
+    <script type="text/javascript" src="scripts/ext-3/ux/ux-all_v%3D1614856779.js"></script>
+    <script type="text/javascript" src="scripts/scrollbar/flexcroll_v%3D1614856779.js"></script> -->
+    <style type="text/css">
+        .flexcroll-hide-default {
+            overflow: hidden !important;
+        }
+    </style>
+    <style type="text/css">
+        .flexcroll-hide-default {
+            overflow: hidden !important;
+        }
+    </style>
+    <script type="text/javascript" src="synoSDSjslib/sds_v%3D1614856785.js"></script>
+    <script type="text/javascript" src="webman/desktop_v%3D1614856938.js"></script>
+
+    <script type="text/javascript" src="webman/security.cgi"></script>
+    <div class="pre-load-x-window-br"></div>
+
+    <noscript>
+        <div class="syno-no-script">
+            <div class="title align-center">此页面无法显示</div>
+            <div class="desc align-center">请让您的浏览器运行 JavaScript。</div>
+            <div class="icon align-center"></div>
+        </div>
+    </noscript>
+
+    <div id="ext-comp-1012" class=" x-tip-invalid" aria-disabled="false"
+        style="position: absolute; z-index: 11000; visibility: hidden; display: none;">
+        <div class="x-tip-invalid-tl">
+            <div class="x-tip-invalid-tr">
+                <div class="x-tip-invalid-tc">
+                    <div class="x-tip-invalid-header" id="ext-gen4"><span class="x-tip-invalid-header-text"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="x-tip-invalid-bwrap" id="ext-gen5">
+            <div class="x-tip-invalid-ml">
+                <div class="x-tip-invalid-mr">
+                    <div class="x-tip-invalid-mc" id="ext-gen8">
+                        <div class="x-tip-invalid-body" id="ext-gen6" style="height: auto;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="x-tip-invalid-bl x-panel-nofooter" id="ext-gen7">
+                <div class="x-tip-invalid-br">
+                    <div class="x-tip-invalid-bc"></div>
+                </div>
+            </div>
+        </div>
+        <div class="x-tip-anchor x-tip-anchor-top" id="ext-gen9" style="z-index: 11001;"></div>
+    </div>
+    <div id="ext-comp-1013" class=" x-tip-white" aria-disabled="false"
+        style="position: absolute; z-index: 11000; visibility: hidden; display: none;">
+        <div class="x-tip-white-tl">
+            <div class="x-tip-white-tr">
+                <div class="x-tip-white-tc">
+                    <div class="x-tip-white-header" id="ext-gen11"><span class="x-tip-white-header-text"></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="x-tip-white-bwrap" id="ext-gen12">
+            <div class="x-tip-white-ml">
+                <div class="x-tip-white-mr">
+                    <div class="x-tip-white-mc" id="ext-gen15">
+                        <div class="x-tip-white-body" id="ext-gen13" style="height: auto;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="x-tip-white-bl x-panel-nofooter" id="ext-gen14">
+                <div class="x-tip-white-br">
+                    <div class="x-tip-white-bc"></div>
+                </div>
+            </div>
+        </div>
+        <div class="x-tip-anchor x-tip-anchor-top" id="ext-gen16" style="z-index: 11001;"></div>
+    </div>
+    <div id="ext-comp-1014" class=" x-tip" aria-disabled="false"
+        style="position: absolute; z-index: 20002; visibility: hidden; display: none;">
+        <div class="x-tip-tl">
+            <div class="x-tip-tr">
+                <div class="x-tip-tc">
+                    <div class="x-tip-header" id="ext-gen18"><span class="x-tip-header-text"></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="x-tip-bwrap" id="ext-gen19">
+            <div class="x-tip-ml">
+                <div class="x-tip-mr">
+                    <div class="x-tip-mc" id="ext-gen22">
+                        <div class="x-tip-body" id="ext-gen20" style="height: auto;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="x-tip-bl x-panel-nofooter" id="ext-gen21">
+                <div class="x-tip-br">
+                    <div class="x-tip-bc"></div>
+                </div>
+            </div>
+        </div>
+        <div class="x-tip-anchor x-tip-anchor-top" id="ext-gen23" style="z-index: 20003;"></div>
+    </div>
+    <div id="ext-comp-1012" class=" x-tip-invalid" aria-disabled="false"
+        style="position: absolute; z-index: 2147483647; visibility: hidden; display: none;">
+        <div class="x-tip-invalid-tl">
+            <div class="x-tip-invalid-tr">
+                <div class="x-tip-invalid-tc">
+                    <div class="x-tip-invalid-header" id="ext-gen3"><span class="x-tip-invalid-header-text"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="x-tip-invalid-bwrap" id="ext-gen4">
+            <div class="x-tip-invalid-ml">
+                <div class="x-tip-invalid-mr">
+                    <div class="x-tip-invalid-mc" id="ext-gen7">
+                        <div class="x-tip-invalid-body" id="ext-gen5" style="height: auto;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="x-tip-invalid-bl x-panel-nofooter" id="ext-gen6">
+                <div class="x-tip-invalid-br">
+                    <div class="x-tip-invalid-bc"></div>
+                </div>
+            </div>
+        </div>
+        <div class="x-tip-anchor x-tip-anchor-top" id="ext-gen8" style="z-index: 2147483647;"></div>
+    </div>
+    <div id="ext-comp-1013" class=" x-tip-white" aria-disabled="false"
+        style="position: absolute; z-index: 11000; visibility: hidden; display: none;">
+        <div class="x-tip-white-tl">
+            <div class="x-tip-white-tr">
+                <div class="x-tip-white-tc">
+                    <div class="x-tip-white-header" id="ext-gen10"><span class="x-tip-white-header-text"></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="x-tip-white-bwrap" id="ext-gen11">
+            <div class="x-tip-white-ml">
+                <div class="x-tip-white-mr">
+                    <div class="x-tip-white-mc" id="ext-gen14">
+                        <div class="x-tip-white-body" id="ext-gen12" style="height: auto;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="x-tip-white-bl x-panel-nofooter" id="ext-gen13">
+                <div class="x-tip-white-br">
+                    <div class="x-tip-white-bc"></div>
+                </div>
+            </div>
+        </div>
+        <div class="x-tip-anchor x-tip-anchor-top" id="ext-gen15" style="z-index: 11001;"></div>
+    </div>
+    <div id="ext-comp-1014" class="x-tip" aria-disabled="false"
+        style="position: absolute; z-index: 20002; visibility: hidden; width: 81px; left: 500px; top: 211px; opacity: 1; display: none;">
+        <div class="x-tip-tl">
+            <div class="x-tip-tr">
+                <div class="x-tip-tc">
+                    <div class="x-tip-header" id="ext-gen17"><span class="x-tip-header-text" id="ext-gen56"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="x-tip-bwrap" id="ext-gen18">
+            <div class="x-tip-ml">
+                <div class="x-tip-mr">
+                    <div class="x-tip-mc" id="ext-gen21">
+                        <div class="x-tip-body" id="ext-gen19" style="height: auto; width: 61px;">DSM-Host</div>
+                    </div>
+                </div>
+            </div>
+            <div class="x-tip-bl x-panel-nofooter" id="ext-gen20">
+                <div class="x-tip-br">
+                    <div class="x-tip-bc"></div>
+                </div>
+            </div>
+        </div>
+        <div class="x-tip-anchor x-tip-anchor-top" id="ext-gen22" style="z-index: 20003; display: none;"></div>
+    </div>
+    <div id="sds-login" class=" sds-login-light " style="background: url(webman/resources/images/default/1x/default_login_background/dsm6_01.jpg?v=1629885559);background-size: 100% 100%;">
+        <div id="sds-login-dialog" style="height: auto; left: 50%; top: 50%; margin-left: -180px;margin-top: -200px;">
+            <div ext:qtip="DSM-Host" id="sds-login-dialog-title">DSM-Host</div>
+            <div id="sds-login-dialog-form"
+                class=" x-plain extra-padding x-plain-noborder x-form-label-left syno-ux-formpanel syno-ux-formpanel-no-fbar syno-ux-formpanel-no-tbar"
+                role="log" aria-live="assertive" style="width: 320px;"><iframe id="login_iframe" name="login_iframe"
+                    width="0" height="0" frameborder="0" style="display: none;"></iframe>
+                <div class="x-plain-bwrap" id="ext-gen32">
+                    <form id="login-form" class="x-plain-body x-plain-body-noheader x-plain-body-noborder x-form"
+                        method="POST" action="/login" target="login_iframe" style="width: 320px;">
+                        <div id="login-inner-panel" class=" x-panel login-inner-panel syno-ux-panel x-panel-noborder"
+                            style="width: 320px;">
+                            <div class="x-panel-bwrap" id="ext-gen34">
+                                <div class="x-panel-body x-panel-body-noheader x-panel-body-noborder" id="ext-gen35"
+                                    style="width: 320px;">
+                                    <div id="ext-comp-1018" class=" sds-icon-text-field ">
+                                        <div id="ext-comp-1016" class=" icon user-icon"></div><input type="text"
+                                            class="x-form-text x-form-field textfield" id="login_username"
+                                            name="username" maxlength="256" aria-describedby="ext-gen50"
+                                            aria-label="用户帐号" aria-readonly="false" aria-required="false"
+                                            aria-disabled="false" aria-invalid="false">
+                                        <div role="presentation" class="x-form-hidden-error-msg" id="ext-gen50"></div>
+                                    </div>
+                                    <div id="ext-comp-1021" class=" sds-icon-text-field ">
+                                        <div id="ext-comp-1019" class=" icon passwd-icon"></div><input type="password"
+                                            class="x-form-text x-form-field textfield" id="login_passwd" name="password"
+                                            maxlength="256" autocomplete="off" aria-describedby="ext-gen51"
+                                            aria-label="密码" aria-readonly="false" aria-required="false"
+                                            aria-disabled="false" aria-invalid="false">
+                                        <div role="presentation" class="x-form-hidden-error-msg" id="ext-gen51"></div>
+                                    </div>
+                                    <div id="ext-comp-1024" class=" sds-icon-text-field  x-hide-display">
+                                        <div id="ext-comp-1022" class=" icon otp-icon"></div><input
+                                            class="x-form-text x-form-field textfield x-form-empty-field" type="text"
+                                            id="login_otp" maxlength="8" autocomplete="off" aria-describedby="ext-gen52"
+                                            aria-label="输入 6 位数代码" aria-readonly="false" aria-required="false"
+                                            aria-disabled="false" placeholder="输入 6 位数代码">
+                                        <div role="presentation" class="x-form-hidden-error-msg" id="ext-gen52"></div>
+                                    </div>
+                                    <div class="x-form-check-wrap syno-ux-form-check-wrap" id="ext-gen44"
+                                        style="margin-left: 0px; width: 278px;"><input type="checkbox" role="checkbox"
+                                            autocomplete="off"
+                                            class="syno-ux-checkbox-icon x-form-checkbox x-form-field"
+                                            id="login_rememberme" name="rememberme" aria-describedby="ext-gen43"
+                                            aria-label="保持登录" aria-readonly="false" aria-required="false"
+                                            aria-disabled="false" aria-level="1" aria-checked="false"
+                                            aria-invalid="false" aria-labelledby="login_rememberme-label-el">
+                                        <div class="syno-ux-checkbox-icon" id="login_rememberme-icon-el"></div><label
+                                            for="login_rememberme" class="syno-ux-checkbox-label"
+                                            id="login_rememberme-label-el">保持登录</label>
+                                        <div role="presentation" class="x-form-hidden-error-msg" id="ext-gen43"></div>
+                                    </div>
+                                    <div class="x-form-check-wrap syno-ux-form-check-wrap x-hide-display" id="ext-gen46"
+                                        style="margin-left: 0px; width: 278px;"><input type="checkbox" role="checkbox"
+                                            autocomplete="off"
+                                            class="syno-ux-checkbox-icon x-form-checkbox x-form-field"
+                                            id="login_trudtdevice" name="trustdevice" aria-describedby="ext-gen45"
+                                            aria-label="记住本设备" aria-readonly="false" aria-required="false"
+                                            aria-disabled="false" aria-level="1" aria-checked="false"
+                                            aria-invalid="false" aria-labelledby="login_trudtdevice-label-el">
+                                        <div class="syno-ux-checkbox-icon" id="login_trudtdevice-icon-el"></div><label
+                                            for="login_trudtdevice" class="syno-ux-checkbox-label"
+                                            id="login_trudtdevice-label-el">记住本设备</label>
+                                        <div role="presentation" class="x-form-hidden-error-msg" id="ext-gen45"></div>
+                                    </div><span id="login-btn" cellspacing="0"
+                                        class="x-btn syno-ux-button syno-ux-button-blue x-btn-noicon"
+                                        style="margin-left: 0px; width: 278px; height: 38px;"><em
+                                            class=" x-unselectable" unselectable="on">
+                                            <button type="button" onclick="form.submit();" id="ext-gen47"
+                                                aria-label="登录" class=" x-btn-text" aria-level="1"
+                                                aria-disabled="false">登录</button>
+                                        </em></span><span id="forget_pass" cellspacing="0"
+                                        class="x-btn link syno-ux-button syno-ux-button-default x-btn-noicon x-hide-display"
+                                        style="width: auto; margin-left: 0px;"><em class=" x-unselectable"
+                                            unselectable="on"><button type="button" id="ext-gen48" aria-label="忘了密码？"
+                                                class=" x-btn-text" aria-level="1"
+                                                aria-disabled="false">忘了密码？</button></em></span><span id="lost_phone"
+                                        cellspacing="0"
+                                        class="x-btn link syno-ux-button syno-ux-button-default x-btn-noicon x-hide-display"
+                                        style="width: auto; margin-left: 0px;"><em class=" x-unselectable"
+                                            unselectable="on"><button type="button" id="ext-gen49" aria-label="遗失手机？"
+                                                class=" x-btn-text" aria-level="1">遗失手机？</button></em></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="x-form-item x-hide-label x-hide-display" tabindex="-1" id="ext-gen36"><label
+                                for="sds-login-dialog-status" style="width:180px;" class="x-form-item-label"
+                                id="ext-gen37"></label>
+                            <div class="x-form-element" id="x-form-el-sds-login-dialog-status"
+                                style="padding-left:185px">
+                                <div id="sds-login-dialog-status" name="sds-login-dialog-status"
+                                    class="x-form-display-field x-hide-display" aria-describedby="ext-gen38"
+                                    aria-readonly="false" aria-required="false" aria-disabled="false"></div>
+                                <div role="presentation" class="x-form-hidden-error-msg" id="ext-gen38"></div>
+                            </div>
+                            <div class="x-form-clear-left"></div>
+                        </div><input type="hidden" size="20" autocomplete="off" id="ext-comp-1026" name="__cIpHeRtExT"
+                            class=" x-form-hidden x-form-field" aria-describedby="ext-gen39" aria-readonly="false"
+                            aria-required="false" aria-disabled="false" value=""><input type="hidden" size="20"
+                            autocomplete="off" id="ext-comp-1027" name="isIframeLogin"
+                            class=" x-form-hidden x-form-field" aria-describedby="ext-gen40" aria-readonly="false"
+                            aria-required="false" aria-disabled="false" value="yes"><input type="hidden" size="20"
+                            autocomplete="off" id="ext-comp-1028" name="enable_device_token"
+                            class=" x-form-hidden x-form-field" aria-describedby="ext-gen41" aria-readonly="false"
+                            aria-required="false" aria-disabled="false" value="no"><input type="hidden" size="20"
+                            autocomplete="off" id="ext-comp-1029" name="token" class=" x-form-hidden x-form-field"
+                            aria-describedby="ext-gen42" aria-readonly="false" aria-required="false"
+                            aria-disabled="false"><input type="submit" id="login_submit"
+                            style="position: absolute; top: -10000px; left: -10000px;" tabindex="-1">
+                        <div role="presentation" class="x-form-hidden-error-msg" id="ext-gen39"></div>
+                        <div role="presentation" class="x-form-hidden-error-msg" id="ext-gen40"></div>
+                        <div role="presentation" class="x-form-hidden-error-msg" id="ext-gen41"></div>
+                        <div role="presentation" class="x-form-hidden-error-msg" id="ext-gen42"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ext-gen57"
+        style="position: absolute; left: -1000px; top: -1000px; visibility: hidden; font-size: 12px; font-style: normal; font-weight: 400; font-family: verdana, arial, tahoma, helvetica, sans-serif; line-height: 14px; text-transform: none; letter-spacing: normal; overflow-wrap: break-word; width: auto;">
+    </div>
+    <script>
+        document.getElementById("login_rememberme-icon-el").onclick = function() {
+            if (this.className.indexOf('syno-ux-cb-checked') === -1 ) {
+                this.classList.add('syno-ux-cb-checked')
+            } else {
+                this.classList.remove('syno-ux-cb-checked')
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,596 @@
+@charset "utf-8";
+/*公共部分*/
+html {
+	background-color: #fff;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	height: 100%;
+	width: 100%
+}
+
+header, footer, nav {
+	margin: 0;
+	padding: 0
+}
+
+header, footer, nav {
+	display: block
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	font: 14px \5fae\8f6f\96c5\9ed1, arial, sans-serif;
+	background-color: #fff; /*-webkit-user-select: none;-moz-user-select: none;-khtml-user-select: none;user-select: none;*/
+	text-decoration: none;
+}
+
+img {
+	border: 0;
+}
+
+input {
+	font: 14px \5fae\8f6f\96c5\9ed1, arial, sans-serif;
+	outline: none;
+}
+/*input:-webkit-autofill {-webkit-box-shadow: 0 0 0 1000px white inset;}*/
+.clearfix {
+	zoom: 1;
+}
+
+.clearfix:after {
+	display: block;
+	clear: both;
+	height: 0;
+	content: ' ';
+	visibility: hidden;
+}
+
+* html .clearfix {
+	zoom: 1;
+} /* IE6 */
+*:first-child+html .clearfix {
+	zoom: 1;
+} /* IE7 */
+.f_left {
+	float: left;
+}
+
+.f_right {
+	float: right;
+	_padding-top: 16px; +
+	padding-top: 16px;
+}
+
+::-webkit-input-placeholder {
+	color: #cacbcc;
+} /* WebKit browsers */
+:-moz-placeholder {
+	color: #cacbcc;
+} /* Mozilla Firefox 4 to 18 */
+::-moz-placeholder {
+	color: #cacbcc;
+} /* Mozilla Firefox 19+ */
+:-ms-input-placeholder {
+	color: #cacbcc;
+} /* Internet Explorer 10+ */
+@font-face {
+	font-family: "iconfont";
+	src: url('./font/iconfont.eot?t=1495784586141'); /* IE9*/
+	src: url('./font/iconfont.eot?t=1495784586141#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./font/iconfont.woff?t=1495784586141') format('woff'), /* chrome, firefox */
+  url('./font/iconfont.ttf?t=1495784586141') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('./font/iconfont.svg?t=1495784586141#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+	font-family: "iconfont" !important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-login-usr:before {
+	content: "\e655";
+}
+
+.icon-login-pw:before {
+	content: "\e629";
+}
+
+/*head部分*/
+/* @media screen and (max-width: 1366px) {
+    body {
+        background: url("./resources/image/bg_1366_768.png") no-repeat fixed top;
+    }
+}
+@media screen and (min-width: 1367px) {
+    body {
+        background: url("./resources/image/bg_1920_1080.png") no-repeat fixed top;
+    }
+} */
+body {
+	width: 100%;
+	height: 100%;
+	min-height: 650px;
+	overflow: hidden;
+	background: #2b2b2b url('./image/bg_1920_1080.png') no-repeat fixed 0 0/cover;
+}
+
+.hd {
+	width: 100%;
+	height: 65px;
+	background-color: rgba(36, 42, 49, 0.5);
+	/*opacity: 0.5;*/
+}
+
+.hd_content {
+	height: 65px;
+	width: 1006px;
+	margin: 0 auto;
+}
+
+.logo {
+	height: 40px;
+	width: 206px;
+	margin-top: 12px;
+	background: url("./image/logo1.png") 0 0 no-repeat;
+	background-size: cover;
+}
+
+.help {
+	height: 40px;
+	margin-top: 12px;
+	color: #cacbcc;
+}
+
+.help span {
+	line-height: 40px;
+	cursor: pointer;
+}
+/*language*/
+.language_text {
+	line-height: 40px;
+	cursor: pointer;
+}
+
+.language_text {
+	text-align: right;
+	height: 50px;
+	display: block;
+}
+
+.language_list_text {
+	background-color: rgb(26, 26, 29);
+	position: relative;
+	z-index: 1000;
+	overflow: auto;
+	left: 0px;
+	top: -5px;
+	clear: both;
+	text-align: left;
+	display: none;
+}
+
+.language_list_text span {
+	display: block;
+	line-height: 30px;
+	border-left: 3px solid rgb(26, 26, 29);
+}
+
+.language_list_text span:hover {
+	display: block;
+	line-height: 30px;
+	background-color: rgb(31, 31, 34);
+	border-left: 3px solid rgb(82, 195, 152);
+}
+
+.language_list_text span a {
+	display: block;
+	width: 135px;
+	height: 30px;
+	line-height: 30px;
+	text-decoration: none;
+	cursor: pointer;
+	color: rgb(174, 181, 187);
+	margin-left: 10px;
+}
+
+.language_list_text span a:hover {
+	color: rgb(82, 195, 152);
+}
+/*mid部分*/
+@media screen and (max-width: 1006px) {
+	.mid_content {
+		width: 100%;
+		height: 540px;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+	}
+	.login {
+		margin-top: 100px;
+		width: 340px;
+		height: 430px;
+		background-color: #242a31;
+		opacity: 0.85;
+		border-bottom: 1px solid #00c696;
+	}
+}
+
+@media screen and (min-width: 1007px) {
+	.mid_content {
+		position: relative;
+		margin: 0 auto;
+		width: 1006px;
+		height: 540px;
+		overflow: hidden;
+	}
+	.login {
+		position: absolute;
+		top: 100px;
+		right: 0px;
+		width: 340px;
+		height: 430px;
+		background-color: #242a31;
+		opacity: 0.85;
+		border-bottom: 1px solid #00c696;
+	}
+}
+
+.login .login_banner {
+	height: 69px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.login .login_banner .login_banner_bg {
+	width: 186px;
+	height: 56px;
+	margin: 0 auto;
+	margin-top: 7px;
+	background: url("./image/logo2.png") 0 0 no-repeat;
+	background-size: cover;
+}
+
+.login .login_form {
+	margin-top: 29px;
+}
+
+.login .login_form .input_div {
+	width: 278px;
+	height: 38px;
+	margin: 0 auto;
+	border: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.login .login_form .input_div_user {
+	margin-bottom: 10px;
+}
+
+.login .login_form .login_warning {
+	width: 273px;
+	height: 24px;
+	margin: 0 auto;
+	padding-left: 5px;
+	color: red;
+	line-height: 24px;
+	font-size: 12px;
+}
+
+.login .login_form .input_div span {
+	position: absolute;
+	width: 38px;
+	height: 38px;
+	text-align: center;
+}
+
+.login .login_form .input_div i {
+	font-size: 16px;
+	line-height: 38px;
+	color: #cacbcc;
+}
+
+.login .login_form .input_div {
+	color: #fff;
+}
+
+.login .login_form .input_div .input_content {
+	border: none;
+	padding: 0px;
+	padding-left: 40px;
+	background-color: #242a31;
+	width: 238px;
+	height: 38px;
+	color: #cacbcc;
+}
+
+.login .login_form .input_div_b {
+	width: 278px;
+	height: 38px;
+	margin: 0 auto;
+}
+
+.login .login_form .input_div_b .acode {
+	border: 1px solid rgba(255, 255, 255, 0.24);
+	padding: 0px 0px 0px 10px;
+	background-color: #242a31;
+	width: 109px;
+	height: 34px;
+	color: #cacbcc;
+	display: inline-block;
+}
+
+#captcha_img_id {
+	width: 120px;
+	height: 35px;
+	margin-left: 10px;
+	display: inline-block;
+	vertical-align: top;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.login .login_form .input_div_btn {
+	width: 278px;
+	height: 45px;
+	margin: 0 auto;
+}
+
+.login .login_form .input_div_btn .login_btn {
+	width: 100%;
+	height: 45px;
+	background-color: #00c497;
+	padding: 0px;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+}
+
+.login .login_form .input_div_btn .btn_hover:hover {
+	background-color: #0dd6a8;
+}
+
+.login .login_form .input_div_checkbox {
+	width: 275px;
+	height: 12px;
+	margin: 0 auto;
+	padding-left: 5px;
+	margin-top: 15px;
+	vertical-align: top;
+	position: relative;
+}
+
+.i-check {
+	width: 12px;
+	height: 12px;
+	position: relative;
+	display: inline-block;
+	margin-left: 10px;
+	vertical-align: top;
+}
+
+.i-check label {
+	width: 10px;
+	height: 10px;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 1px solid #cacbcc;
+}
+
+.i-check  label:after {
+	content: '';
+	width: 9px;
+	height: 5px;
+	position: absolute;
+	border: 1px solid #fff;
+	border-top: none;
+	border-right: none;
+	background: transparent;
+	opacity: 0;
+	transform: rotate(-45deg);
+}
+
+.i-check input[type=checkbox]:checked+label:after {
+	opacity: 1;
+}
+
+.i-check input[type=checkbox] {
+	opacity: 0;
+	position: absolute;
+	z-index: 2;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+.login .login_form .input_div_checkbox a {
+	color: #00c497;
+	display: inline-block;
+	font-size: 12px;
+	line-height: 12px;
+	vertical-align: top;
+	margin-left: 5px;
+	text-decoration: none;
+}
+/*modal部分*/
+.modal {
+	position: fixed;
+	margin: auto;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	height: 476px;
+	width: 736px;
+	background-color: rgba(255, 255, 255, 1);
+	box-shadow: 0 0 10px #333;
+	border-radius: 4px;
+	display: none;
+	z-index: 100;
+}
+
+.modal .modal_close, .modal .modal_title, .modal .modal_body {
+	padding: 0px 10px;
+}
+
+.modal .modal_close {
+	height: 30px;
+	right: 0px;
+	top: 0px;
+	font-size: 24px;
+	line-height: 30px;
+	text-align: right;
+	vertical-align: bottom;
+	cursor: pointer;
+	padding-right: 10px;
+}
+
+.modal .modal_close:hover {
+	color: #F13838;
+}
+
+.modal .modal_title {
+	font-size: 24px;
+	padding-left: 20px;
+}
+
+.modal .modal_body {
+	height: 323px;
+	overflow-y: auto;
+	margin-bottom: 50px;
+	padding: 5px 20px;
+}
+/*遮罩层*/
+.mask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0);
+	z-index: 99;
+	display: none;
+}
+/* modal内部文本样式 */
+.version_declaration h4 {
+	text-align: left;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.version_declaration h6 {
+	margin-bottom: 5px;
+	margin-top: 5px;
+	font-weight: normal;
+	font-size: 12px;
+}
+
+.version_declaration p, .version_declaration li {
+	font-size: 12px;
+	line-height: 20px;
+	text-indent: 24px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+.version_declaration .text_paragraph {
+	text-indent: 0px;
+}
+
+.version_declaration ul {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.version_declaration li {
+	list-style: none;
+	font-size: 12px;
+	line-height: 20px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	margin-left: -20px;
+}
+
+.version_declaration p a {
+	text-decoration: none;
+}
+/* modal底部样式 */
+.modal .modal_footer {
+	position: absolute;
+	padding: 0px;
+	bottom: 0px;
+	height: 76px;
+	width: 100%;
+	font-size: 24px;
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+	text-align: center;
+}
+
+.modal .modal_footer .modal_footer_btn {
+	width: 112px;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+
+.modal .modal_footer .modal_footer_btn input[type='button'] {
+	width: 100%;
+	height: 35px;
+	background-color: #00c497;
+	padding: 0px;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.modal .modal_footer .btn_hover input[type='button']:hover {
+	background-color: #0dd6a8;
+}
+/* tooltip样式 */
+.tooltip {
+	width: 150px;
+	margin: 0 auto;
+	margin-top: -5px;
+	display: none;
+}
+
+.tooltip .tooltip_tip .tooltip_trangle {
+	width: 0px;
+	height: 0px;
+	margin: 0 auto;
+	border: 10px solid;
+	border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(255, 255, 255, 1) rgba(0, 0, 0, 0);
+}
+
+.tooltip .tooltip_content {
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: 2px;
+	font-size: 12px;
+	line-height: 20px;
+	text-align: center;
+}
+/*foot部分*/
+.ft {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	color: #cacbcc;
+	text-align: center;
+	font-size: 13px;
+}
+
+@media screen and (min-height:650px) {
+	.ft {
+		height: 50px;
+		line-height: 50px;
+		position: absolute;
+		bottom: 10px;
+	}
+}

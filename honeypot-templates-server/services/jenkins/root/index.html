@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head resURL="/static/2a8f0b60" data-rooturl data-resurl="/static/2a8f0b60" data-imagesurl="/static/2a8f0b60/images">
+  <title>Sign in [Jenkins]</title>
+  <meta name="ROBOTS" content="NOFOLLOW">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./static/2a8f0b60/css/simple-page.css" type="text/css">
+  <link rel="stylesheet" href="./static/2a8f0b60/css/simple-page.theme.css" type="text/css">
+  <link rel="stylesheet" href="./static/2a8f0b60/css/simple-page-forms.css" type="text/css">
+</head>
+
+<body>
+  <div class="simple-page" role="main">
+    <div class="modal login">
+      <div id="loginIntroDefault">
+        <div class="logo"></div>
+        <h1>Welcome to Jenkins!</h1>
+      </div>
+      <form method="post" name="login" action="login">
+        <div class="formRow"><input autocorrect="off" autocomplete="off" name="username" id="j_username"
+            placeholder="Username" type="text" class="normal" autocapitalize="off" aria-label="Username"></div>
+        <div class="formRow"><input name="password" placeholder="Password" type="password" class="normal"
+            aria-label="Password"></div><input name="from" type="hidden">
+        <div class="submit formRow"><input name="Submit" type="submit" value="Sign in" class="submit-button primary ">
+        </div>
+        <script type="text/javascript">
+          document.getElementById('j_username').focus();
+          var checkBoxClick = function (event) {
+            document.getElementById('remember_me').click();
+          }
+        </script>
+        <div class="Checkbox Checkbox-medium"><label class="Checkbox-wrapper"><input type="checkbox" id="remember_me"
+              name="remember_me">
+            <div class="Checkbox-indicator"><svg xmlns="http://www.w3.org/2000/svg" height="25" class="svg-icon check"
+                focusable="false" viewBox="0 0 24 24" width="25">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+              </svg></div>
+            <div class="Checkbox-text">Keep me signed in</div>
+          </label></div>
+      </form>
+      <div class="footer"></div>
+    </div>
+  </div>
+
+</body>
+
+</html>

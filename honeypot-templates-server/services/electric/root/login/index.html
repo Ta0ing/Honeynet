@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>电站智慧监控运维管理云平台-登录</title>
+    <meta name="description" content="电站智慧监控运维管理云平台-登录">
+    <link href="../css/login.min.css" rel="stylesheet"/>
+    <!-- 360浏览器急速模式 -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <style type="text/css">
+        label.error { position:inherit;  }
+    </style>
+    <script>
+        if(window.top!==window.self){alert('未登录或登录超时。请重新登录');window.top.location=window.location};
+    </script>
+</head>
+<body>
+<div class="m-warp m-bg02" id="app">
+    <div class="m-login">
+        <div class="login-box">
+            <!--<div class="login-left"></div>-->
+            <div class="login-right">
+                <h2>
+                    <img src="../images/logo.png" />
+                    电站智慧监控运维管理云平台</h2>
+                <ul class="m-loginform">
+                    <li>
+                        <label class="form-title">用户名</label>
+                        <div class="form-box">
+                            <em></em>
+                            <i class="form-name"></i>
+                            <input type="text" value="" placeholder="请输入用户名" class="form-text" name="username" autocomplete="off"  />
+                        </div>
+                    </li>
+                    <li>
+                        <label class="form-title">密码</label>
+                        <div class="form-box">
+                            <em></em>
+                            <i class="form-password"></i>
+                            <input type="password" placeholder="请输入密码" value="" class="form-text" name="password" autocomplete="off" />
+                        </div>
+                        <div class="m-check">
+                           <!-- <a href="#" class="g-left">用户注册</a>-->
+                            <strong>还没有账号？ <a href="/register">立即注册&raquo;</a></strong>
+<!--                            <a href="#" class="g-right">游客登录</a>-->
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" id="btnSubmit" data-loading="正在验证登录，请稍后..." class="form-button" onclick="login()">登录</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p>Copyright ©2020-2021 重庆市同扬电气设备有限公司 All Right Reserved.</p>
+    </div>
+</div>
+<script> var ctx = "\/"; var captchaType = "math"; </script>
+<!--[if lte IE 8]><script>window.location.href=ctx+'html/ie.html';</script><![endif]-->
+<!-- 全局js -->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<!-- 验证插件 -->
+<script src="/ajax/libs/validate/jquery.validate.min.js"></script>
+<script src="/ajax/libs/validate/messages_zh.min.js"></script>
+<script src="/ajax/libs/layer/layer.min.js"></script>
+<script src="/ajax/libs/blockUI/jquery.blockUI.js"></script>
+<script src="/mframe/js/main-ui.js?v=4.6.1"></script>
+<script src="/mframe/login.js"></script>
+
+</body>
+</html>

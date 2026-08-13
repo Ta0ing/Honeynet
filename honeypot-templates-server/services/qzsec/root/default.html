@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<link rel="shortcut icon" href="logo-icon-ico72.png">
+        <title></title>
+         <link type="text/css" href="resources/themes/css/index-purple_time%3D2021-03-31.css" rel="stylesheet">
+            <!--[if IE]>
+        <style style="text/css">
+        .bottom{bottom:24px;}
+        </style>
+        <![endif]-->
+	  <style type="text/css">
+    .tip{
+      position: absolute;
+      top: 240px;
+      left: 125px;
+      width: 200px;
+      max-height: 50px;
+      overflow-y: auto;
+      font-family: Microsoft YaHei;
+      color: #777;
+    }
+  </style>
+	<script type="text/javascript" src="resources/jquery/jquery.min_js_ver%3D2021-03-31.js"></script>
+	<script type="text/javascript" src="resources/jquery/rc4_js_ver%3D2021-03-31.js"></script>
+	<script type="text/javascript" src="resources/jquery/base64_js_ver%3D2021-03-31.js"></script> <script type="text/javascript">
+	$(function(){
+		if (!showFP() && $("#fpimg")) $("#fpimg").hide();
+		document.getElementById("userName").focus();
+		var l = $("select#target option").size();
+		if(l>0){
+			$("table").css("margin-top","0");
+			$(".fpdiv").css("top","228px").css("_top","234");
+			$("#target").parent().parent().show();
+		}
+	});
+	function init(strAgentInfo, strEnrollFingers) {
+		var form = document.getElementById("form1");
+		var login = document.getElementById("userName").value;
+		var VerifyX = document.getElementById("VerifyX");
+		VerifyX.SetAgentInfo(strAgentInfo);
+		strTemplateData = form.VerifyX.AuthenDlgExport(login, strEnrollFingers, 2);
+		if (strTemplateData != "") {
+			form.action = "login"//xfpverifyExec.jsp;
+			form.TemplateData.value = strTemplateData;
+		} else {
+			//alert("GetTemplateData Error!");
+			form.action = "index.php";
+		}
+		form.submit();
+		return(true);
+	}
+	//检测指纹驱动是否安装
+	function DLLRegistered(strID){
+		var o=null;
+		try{
+			o = new ActiveXObject(strID);
+		}
+		catch(e){
+			return false;
+		}
+		if(o!=null){
+			o = null;
+			return true;
+		}
+		else return false;
+	}
+	//判断浏览器，只有IE显示指纹验证入口
+	function showFP() {
+		var ua = navigator.userAgent.toLowerCase();
+		if (window.ActiveXObject) {
+			if (ua.match(/msie ([\d.]+)/)[1]) return true;
+		}
+		return false;
+	}
+	function fpOpen() {
+		var login = document.getElementById("userName").value;
+		var password = document.getElementById("password").value;
+		var VerifyX = document.getElementById("VerifyX");
+
+		try {
+			var driver = DLLRegistered("XECtrl13.XFPAuthenExportX");
+		}catch(e) {
+			window.location = "fp_download.php";
+			return false;
+		}
+		if (!driver) {
+			window.location = "fp_download.php";
+			return false;
+		}
+		var a = $.ajax({
+			async : true,
+			url : "xfpverify.php",
+			type : "get",
+			timeout : 5000,
+			data : {login:login, password:password},
+			success : function(html) {
+					if (html.length == 0) {
+						alert("没有该用户");
+						return false;
+					} else {
+						eval('var res = ' + html + ';');
+						var strAgentInfo = res["getAgentInfo"];
+						var strEnrollFingers = res["fpInfo"];
+						$("#VerifyX").hide();
+						init(strAgentInfo, strEnrollFingers);
+					}
+			},
+			error : function (xmlHttpRequest, error) {
+				//alert(xmlHttpRequest);
+				if (error == "timeout") alert("连接超时, 请重试");
+				else alert("获取指纹信息失败, 请重试");
+			}
+		});
+	}
+	function encrypt_passwd(){
+    /*
+				var passwd = $("#password").val(),key=''+Math.round(Math.random()*10000);
+		if(passwd.length){
+			var mi = toHex(rc4(key,passwd));
+			$("#password").val(mi);
+			$("#enc_key").val(Base64.encode(key));
+		}
+    */
+			}
+	function forgot_pwd(){
+		var userName = document.getElementById('userName').value;
+		if(userName=='' || userName.length == 0){
+			alert("请先填写账号");
+			document.getElementById('userName').focus();
+			return false;
+		}
+		location.href='passwd_forgot.php?login='+userName+'&locale='+'';
+	}
+	/*
+	function ssl_login(){
+		document.getElementById('login_type').value = 'ssl';
+		document.getElementById('form1').submit();
+	}
+	*/
+	</script>
+</head>
+<body onload="document.form1.userName.focus();">
+<form name="form1" id="form1" action="login" method="post">
+<input type="hidden" id="login_type" name="login_type">
+<input type="hidden" id="enc_key" name="enc_key">
+<input type="hidden" name="rsfc_token" value="e3139907-1b73-832c-ed82">
+<div class="container">
+	<div class="logo"></div>
+        <div class="center">
+                <table>
+                        <tr><th nowrap align="right"><span class="thleft">帐</span><span>号</span>:</th><td><input tabindex="1" maxlength="20" name="username" id="userName" type="text" value></td></tr>
+                        <tr><th nowrap align="right"><span class="thleft">密</span><span>码</span>:</th><td><input tabindex="2" name="pwd" id="pwd" type="password" onfocus="this.select();" onkeydown="keydown(event)"></td></tr>
+                        <tr style="display:none"><th nowrap align="right"><span class="thleft">密</span><span>码</span>:</th><td><input name="password" id="password" type="text"></td></tr>
+                                                    <tr><th nowrap align="right"><span class="thleft">语</span><span>言</span>:</th><td><select NAME="locale">
+<option VALUE="cn" TITLE="中文">中文</option>
+<option VALUE="en" TITLE="English">English</option>
+<option VALUE="default" SELECTED TITLE="默 认">默 认</option>
+</select>
+</td></tr>
+                                                <tr class="hide"><th nowrap align="right"><span class="thleft">站</span><span>点</span>:</th><td><select tabindex="4" name="target" id="target">
+	                			</select></td></tr>
+						<tr><th>&nbsp;</th><td nowrap><input class="loginbtn fl" type="button" id="btn_log" value=" 登 录  " onclick="pwd_fn();encrypt_passwd();form.submit();"><!-- input class="loginbtn" type="button" id="ssl_login_id" value="" onclick="ssl_login();"-->			<span class="forget_pwd hide" href="#" onclick="forgot_pwd();">忘记密码？</span></td></tr>
+                </table>
+            	</div>
+        <div class="bottom"></div>
+                         <div class="tip"></div>
+</div>
+</form>
+<div class="diskfull"></div><script type="text/javascript">
+$(function(){
+	$("#pwd").val("");
+	$("#password").val("");
+});
+function pwd_fn(){
+	var v = $("#pwd").val();
+	$("#pwd").val('');
+	$("#password").val(v);
+}
+function keydown(event){
+	var e = event || window.event;
+	if(e.keyCode == 13){
+		$("#btn_log").click();
+	}
+}
+function change_locale(){
+	var l = $('select[name=locale]').val();
+  if (l === 'en' || l === 'default') {
+    location.href=location.origin + '/' + l + '.html';
+  } else {
+    location.href=location.origin;
+  }
+}
+$("select[name=locale]").bind("change",function(){
+	change_locale();
+})
+
+$(".forget_pwd").click(function() {
+	var userName = document.getElementById('userName').value;
+	if(userName=='' || userName.length == 0){
+		alert("请先填写账号");
+		document.getElementById('userName').focus();
+		return false;
+	}
+
+	$("#form1").attr("action", "passwd_forgot.php");
+	$("#form1").submit();
+});
+
+</script>
+</body>
+</html>

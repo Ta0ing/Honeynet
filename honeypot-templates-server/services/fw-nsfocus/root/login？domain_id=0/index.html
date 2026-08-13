@@ -1,0 +1,39 @@
+<form class="form-horizontal" method="post" role="form" action="#" onsubmit="check_login_form();return false;" >
+  <div class="control-group" id="divUsername">
+    <label for="inputUsername" class="control-label">用户</label>
+      <div class="controls">
+      <div class="input-append">
+        <input type="text" class="span3" autocomplete="off" id="inputUsername" placeholder="输入用户名">
+        <span class="add-on"><em>@Default</em></span>
+        <input type="hidden" id="inputDomainId" value="0"/>
+      </div>
+      </div>
+  </div>
+  <div class="control-group" id="divPassword">
+    <label for="inputPassword" class="control-label">密码</label>
+    <div class="controls">
+      <input type="password" class="span3" autocomplete="off" id="inputPassword" placeholder="输入密码">
+    </div>
+  </div>
+  <div class="control-group hide" id="divCaptcha">
+    <label for="inputCaptcha" class="control-label">验证码</label>
+    <div class="controls">
+      <input type="text" class="form-control span2" autocomplete="off" id="inputCaptcha" placeholder="输入验证码">
+      <span>
+      <img src="" />
+      <a href="javascript:void(0)"><small>换一张</small></a>
+      </span>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <button id="btnSubmit" type="submit" class="btn btn-primary" data-loading-text="认证中..." onclick="this.blur();">认证</button>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls span3">
+      <div id="errorMsg" class="alert alert-danger hide"><table><tr><td class="ico"><img src="/img/error.gif"/></td><td><span></span></td></tr></table></div>
+      <div id="successMsg" class="alert alert-success hide"><table><tr><td class="ico"><img src="/img/success.gif"/></td><td><span>认证成功</span></td></tr></table></div>
+    </div>
+  </div>
+</form>

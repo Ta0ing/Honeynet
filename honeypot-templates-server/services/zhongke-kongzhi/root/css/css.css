@@ -1,0 +1,123 @@
+body,
+html {
+    text-align: center;
+    margin: 0 auto;
+    background: url(../images/bg.gif);
+    font-family: "Î¢ÈíÑÅºÚ";
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+#container {
+    width: 1000px;
+    height: 580px;
+    background: url(../images/bg1.gif) no-repeat;
+    text-align: left;
+    margin: 0 auto;
+}
+
+#con_L {
+    width: 587px;
+    height: 116px;
+    float: left;
+}
+
+#con_L_T {
+    width: 300px;
+    height: 94px;
+    margin-top: 24px;
+    margin-left: 30px;
+}
+
+#con_L_B {
+    width: 587px;
+    height: 116px;
+    margin-top: 375px;
+}
+
+#con_R {
+    width: 380px;
+    height: 245px;
+    float: right;
+}
+
+#con_R_T {
+    width: 380px;
+    height: 79px;
+    margin-top: 320px;
+}
+
+#con_R_B {
+    width: 230px;
+    height: 180px;
+    margin-left: 120px;
+    margin-top: -12px;
+    position: relative;
+    z-index: 500;
+}
+
+#con_R_B li {
+    width: 245px;
+    height: 35px;
+    *height: 22px;
+}
+
+.con_R_B_L {
+    width: 85px;
+    float: left;
+}
+
+.con_R_B_L span {
+    /*letter-spacing:18px;*/
+    letter-spacing: 0px;
+}
+
+.con_R_B_R {
+    width: 155px;
+    float: right;
+}
+
+.txt {
+    width: 140px;
+    height: 26px;
+    background: url(../images/txt.gif) no-repeat;
+    border: 0;
+    padding-left: 6px;
+    font-size: 12px;
+    color: #818080;
+    font-family: "Î¢ÈíÑÅºÚ";
+}
+
+.select {
+    width: 140px;
+    border: 0;
+    font-size: 14px;
+    color: #818080;
+    font-family: "Î¢ÈíÑÅºÚ";
+}
+
+.sub_exit {
+    width: 64px;
+    height: 24px;
+    border: 0;
+    background-color: transparent;
+    background: url(/images/exit.gif) no-repeat;
+    cursor: pointer;
+}
+
+.sub_login {
+    width: 64px;
+    height: 24px;
+    border: 0;
+    background-color: transparent;
+    background: url(/images/login.gif) no-repeat;
+    cursor: pointer;
+}
+
+/* CSS Document */

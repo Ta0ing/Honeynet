@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" >
+<html><head><link rel="stylesheet" href="styles.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Intel&reg; Active Management Technology</title></head>
+
+<body>
+<table class="header">
+<tr>
+         <td valign="top" nowrap="nowrap">
+<p class="top1">Intel<font class="r"><sup>&reg;</sup></font> Active Management Technology</p>
+<p class="top2"><b>Computer:</b> BK014089</p>
+         </td>
+<td valign="top"><img src="logo.gif" align="right" alt="Intel">
+         </td>
+</tr>
+   </table>
+
+<table class="spread" cellspacing="0">
+<tr>
+<td class="navbar">
+<br>
+<p class="nav1"><a href="index.htm">System Status</a></p>
+ 
+<p class="nav1">Hardware Information</p>
+<p class="nav2">
+<a href="hw-sys.htm">System</a>
+<br><a href="hw-proc.htm">Processor</a>
+<br><a href="hw-mem.htm">Memory</a>
+<br><a href="hw-disk.htm">Disk</a>
+</p><p class="nav1"><a href="events.htm">Event Log</a></p>
+<p class="nav1"><a href="remote.htm">Remote Control</a></p>
+<p class="nav1"><a href="power.htm">Power Policies</a></p>
+<p class="nav1"><a href="ip.htm">Network Settings</a></p>
+</td>
+<td class="maincell">
+
+<h1>Remote Control</h1>
+<h2 class="warn"></h2>
+<p></p>
+<div class="control-panel">
+  <div class="control-title-zone">
+    *Caution: These commands may cause user application data loss.
+  </div>
+  <div class="shell-zone">
+    Intel@ Active Management Technology Remote Control Interface
+    Copyright 2005-2013Intel Corporation. All Rights Reserved.
+    Intel@ Active Management Technology firmware version: 9.0.20-build 1447
+    <br/>
+    <br/>
+    <pre class="shell-output">#</pre>
+  </div>
+  <div class="command-zone">
+    <div class="build-in-wrapper">
+    <div class="build-in-command">
+      build-in Command
+    </div>
+    <ul class="option-list">
+      <li>uname -a</li>
+      <li>df -h</li>
+      <li>ipconfig</li>
+      <li>wget</li>
+    </ul>
+    </div>
+    <input type="text" class="command-txt" />
+    <input type="button" value="Send" onclick="javascript:confirm_com()"/>
+  </div>
+</div>
+<script language="javascript" type="text/JavaScript">
+  const result = {
+    "df -h": "文件系统    容量    已用    可用    已用%    挂载点</br>/dev/sda1    23G    4.2G    18G    18%    /",
+    "uname -a": "Linux localhost.localdomain 3.10.0-1160.11.1.el7.x86_64 #1 " + new Date().toUTCString() + " x86_64 x86_64 x86_64 GNU/Linux",
+    "ipconfig": `enp1s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+       inet 192.168.2.2  netmask 255.255.252.0  broadcast 192.168.2.255
+       inet6 fe80::216:31ff:fedc:2188  prefixlen 64  scopeid 0x20<link>
+       ether 00:16:31:dc:21:88  txqueuelen 1000  (Ethernet)
+       RX packets 266432227  bytes 146277125867 (136.2 GiB)
+       RX errors 0  dropped 255  overruns 0  frame 0
+       TX packets 85078821  bytes 25356668015 (23.6 GiB)
+       TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+       device memory 0xdf500000-df57ffff`,
+    "wget": "-bash wget:未找到的命令"
+  };
+function bootSpecial() {
+  /*
+dis=0;
+for (i=0; i < remoteForm.amt_html_rc_radio_group.length; i++) {
+if (( remoteForm.amt_html_rc_radio_group[i].value == 1   || remoteForm.amt_html_rc_radio_group[i].value == 2   || remoteForm.amt_html_rc_radio_group[i].value == 5 )&& (remoteForm.amt_html_rc_radio_group[i].checked)) {
+dis = 1; 
+}
+}
+	if(dis==1) {
+		remoteForm.amt_html_rc_boot_special.disabled=true;
+		remoteForm.amt_html_rc_boot_special.style.backgroundColor="#e0e0e0";
+	} else {
+		remoteForm.amt_html_rc_boot_special.disabled=false;
+		remoteForm.amt_html_rc_boot_special.style.backgroundColor="#FFFFFF";
+
+	}
+  */
+  const ndInput = document.querySelector('.command-txt');
+  const ndList = document.querySelector('.option-list');
+  ndList.addEventListener('click', function(e) {
+    ndInput.value = e.target.outerText;
+    ndList.style.display = 'none';
+    setTimeout(function() {
+      ndList.style = {};
+    }, 100);
+
+    ndInput.focus();
+  })
+}
+function confirm_com() {
+  const command = document.querySelector('.command-txt').value;
+  if (command.trim() === "") {
+    return;
+  }
+  if (Object.keys(result).filter(i => command.indexOf(i) !== -1).length === 0) {
+    alert("Only support build-in command");
+  } else {
+    var ans = confirm("Send the command to this computer?")
+    if (ans) { 
+      if (command.indexOf('wget') !== -1 && command.replace("wget", "").trim() !== "") {
+        sendCommand(command.replace('wget', ''));
+      }
+      document.querySelector(".shell-output").innerHTML = result[command] || '-bash: ' + command +":未找到命令";
+    }
+  }
+}
+function sendCommand(command) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("POST", "/report", true);
+  xhttp.setRequestHeader('content-type', 'application/json')
+  xhttp.send(JSON.stringify({info: command, type: 'wget'}));
+}
+bootSpecial();
+</script>
+</td>
+		</tr>
+	</table>
+</body></html>

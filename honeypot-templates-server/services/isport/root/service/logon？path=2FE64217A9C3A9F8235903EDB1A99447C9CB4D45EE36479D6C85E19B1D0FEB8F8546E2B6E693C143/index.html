@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html class="cu_login_html">
+<head>
+    <meta charset="utf-8">
+    <title>登录--北京市疫情跟踪数据报送系统</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="/plugins/layext/custorm/css/public.css" media="all"/>
+    <link rel="stylesheet" href="/epidemic/css/index.css">
+
+    <script type="text/javascript" src="/plugins/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/plugins/layui/layui.js"></script>
+    <script type="text/javascript" src="/plugins/layext/custorm/js/lte_box.js"></script>
+    <script type="text/javascript" src="/sdp2/plugins/jquery/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="/sdp2/js/login.js"></script>
+    <script src="/epidemic/js/common/string.js?v=202003052223"></script>
+    <script src="/epidemic/js/AES.js?v=202003052223"></script>
+    <script src="/plugins/common/custom_layui.js"></script>
+    <style>
+        /*html{*/
+        /*    -webkit-filter: grayscale(100%);*/
+        /*     -moz-filter: grayscale(100%);*/
+        /*     -ms-filter: grayscale(100%);*/
+        /*     -o-filter: grayscale(100%);*/
+        /*    filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);*/
+        /*    _filter:none;*/
+        /*}*/
+        /*.login-body{*/
+        /*    background-color: #8D8D8D;*/
+        /*}*/
+        .layer-title{
+        	background: #E0E0E0;
+        	padding: 2% 5%;
+        	font-size:15px;
+        	font-weight:bold;
+        }
+        .layer-p{
+		    color: red;
+		    font-size: 12px;
+		    font-weight: bold;
+		    margin-left: 5%;
+		    margin-bottom: 25px;
+        }
+        #changePassword .layui-input{
+        	font-size:12px;
+        }
+    </style>
+
+</head>
+<body class="login-body">
+<form class="layui-form" autocomplete="off">
+    <div class="login-position">
+        <div class="login-main">
+            <div class="login-left">
+                <h1 class="login-h1">北京市疫情跟踪数据报送系统</h1>
+                <div class="login-logo"><img src="/epidemic/images/login-img.png" width="65%"/></div>
+            </div>
+            <div class="login-right">
+                        <div class="right-padding">
+                            <h2 class="login-h2">欢迎登录</h2>
+                            <form class="layui-form login-form" lay-filter="component-form-group">
+                                <div class="login-input-div">
+                                    <input type="tel" class="login-input phone_input" id="txtUsername"
+                                           placeholder="请输入用户名/企业统一社会信用代码" maxlength="18" lay-verify="username">
+                                </div>
+                                <div class="login-input-div">
+                                    <input type="password" id="txtPassword" class="login-input password_input"
+                                           placeholder="请输入登录密码" maxlength="18" lay-verify="pass">
+                                </div>
+                                <div class="login-input-div clear-after">
+                                    <input type="text" id="verifyCode" class="login-input yzm_input" maxlength="6" placeholder="请输入验证码" autocomplete="off" lay-verify="yzm">&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <img id="authImage" alt="点击更换" width="120" height="60" src="/images/loading.gif">
+                                </div>
+                                <div class="password-a-box"><a href="javascript:void(0)" onclick="resetPassword()">找回密码</a></div>
+                                <input type="button" lay-submit="" value="登 录" class="submit_input btn_login">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+        <input type="hidden" id="custormPath" name="custormPath" value="2FE64217A9C3A9F8235903EDB1A99447C9CB4D45EE36479D6C85E19B1D0FEB8F8546E2B6E693C143"/>
+</body>
+<script type="text/javascript">
+    // 验证码
+    var authCode = "";
+
+    //当发现logon不在顶层页面时自动刷新主页面
+    function initial() {
+        var winParent = window;
+        while (winParent != null && winParent != winParent.parent) {
+            winParent = winParent.parent;
+            if (winParent == winParent.parent) {
+                break;
+            }
+        }
+        if (winParent != window) {
+            window.top.location = "/service/index";
+        }
+    }
+
+    function showErr(msg) {
+        $.unblockUI();
+        //LG.showError(msg);
+    }
+
+    function showErr2(msg) {
+        $.unblockUI();
+        LG.showError(msg);
+    }
+
+	function setAuthImage(){
+        $.ajax({
+            type: 'post',
+            cache: false,
+            dataType: 'json',
+            url: '/service/generateVerifyCode',
+            success: function (data) {
+                if (data.msg == "ok") {
+                    $("#authImage").attr('src', 'data:image/gif;base64,' + data.image);
+                    authCode = data.random;
+                } else {
+                    showErr("获取验证码失败");
+                }
+            },
+            error: function () {
+                alert('发生系统错误,请与系统管理员联系!');
+            }
+        });
+    }
+
+    $(function () {
+
+        initial();
+        setAuthImage();
+        $(document).bind("keydown.userLogon", function (e) {
+            if (e.keyCode == 13) {
+                dologin();
+            }
+        });
+
+        $("#authImage").click(function () {
+            setAuthImage();
+        });
+
+        $(".btn_login").click(function () {
+            dologin();
+        });
+
+        function dologin() {
+            var username = $("#txtUsername").val();
+            var password = $("#txtPassword").val();
+			var verifyCode = $("#verifyCode").val();
+			console.log(verifyCode);
+			console.log(authCode);
+            console.log(username);
+			console.log(layerObj.encrypt(verifyCode.toUpperCase()));
+            if (username == "") {
+                showErr("账号不能为空！");
+                $("#txtUsername").focus();
+                return;
+            }
+            if (password == "") {
+                showErr("密码不能为空！");
+                $("#txtPassword").focus();
+                return;
+            }
+
+            if (verifyCode == "") {
+                showErr("验证码不能为空！");
+                $("#verifyCode").focus();
+                return;
+            } else {
+                // if (layerObj.encrypt(verifyCode.toUpperCase()) != authCode) {
+                //     layerObj.failMsg("请输入正确的验证码");
+                // 	setAuthImage();
+                // 	$("#verifyCode").focus();
+                //     return;
+                // }
+            }
+            var remeberMeChecked = document.getElementById("rememberMe");
+            $.ajax({
+                type: 'post', cache: false, dataType: 'json',
+                url: '/login',
+                data: {
+                    username:username,
+                    password:password
+                },
+                // data: [
+                    // {name: 'username', value: layerObj.encrypt($.trim(username))},
+                    // {name: 'password', value: layerObj.encrypt($.trim(password))},
+                    // {name: 'verifyCode', value: verifyCode}
+//            	    {name: 'securityType', value: "default" },
+//            	    {name: 'rememberMe', value: remeberMeChecked.checked }
+//                 ],
+                success: function (data) {
+                    alert("用户名或密码错误")
+                    // if(data.result != "successful"){
+                    //     setAuthImage();
+                    //     showErr2(data.result);
+                    //     return;
+                    // }else {
+                    //     $.ajax({
+                    //         url: '/service/login/checkFlag',
+                    //         data: {userName: layerObj.encrypt($.trim(username))},
+                    //         success: function (childRes) {
+                    //                 if(childRes.flag==0 ){
+                    //                     changePassword3();
+                    //                     setAuthImage();
+                    //                     showErr(data.result);
+                    //                     return;
+                    //                 }else {
+                    //                     // 跳转首页
+                    //                     var directPath = "/service/index?dialog=1";
+                    //                     window.setTimeout(function () {
+                    //                         location.href = decodeURIComponent(directPath);
+                    //                     }, 1000);
+                    //                 }
+                    //         }
+                    //     });
+                    // }
+                    /*if( data.result != "successful" ){
+                                // 修改密码弹框
+                                if(data.result == "Reset password"){
+                                    changePassword3();
+                                    setAuthImage();
+                                    showErr(data.result);
+                                    return;
+                                }
+                                setAuthImage();
+                                showErr2(data.result);
+                                return;
+                            } else {
+                                // 跳转首页
+                                //var custormAddr = $("#custormPath").val();
+                                var directPath = "/service/index?dialog=1";
+                            window.setTimeout(function () {
+                                location.href = decodeURIComponent(directPath);
+                            }, 1000);
+                        }*/
+                },
+                error: function () {
+                    alert("用户名或密码错误")
+                },
+                // beforeSend: function () {
+                //     $(".tixing").html("");
+                //     $.blockUI({
+                //         message: "<h1 id=\"waitTip\" style=\"font-size:12px\">正在验证用户身份，请稍后。。。</h1>",
+                //         css: {
+                //             border: 'none',
+                //             padding: '15px',
+                //             width: "300px",
+                //             cursor: 'default',
+                //             opacity: 0.5,
+                //             "z-index": '99999999999',
+                //             background: 'black',
+                //             color: '#fff'
+                //         },
+                //         overlayCSS: {
+                //             cursor: 'default'
+                //         }
+                //     });
+                //     $("#btnLogin").attr("disabled", true);
+                // },
+                // complete: function () {
+                //     $("#btnLogin").attr("disabled", false);
+                // }
+            });
+        }
+    });
+
+    function resetPassword(){
+    	layui.use(['layer'],function(){
+    		var layer = layui.layer
+    		layer.msg('请联系上级单位重置密码', {time: 2000,icon: 4});
+    	})
+
+    }
+
+    /**
+     * 修改密码  -->首次登录页面强制修改密码  弹框
+     */
+    function changePassword3(){
+    	layui.use(['form', 'layedit', 'laydate', 'layer'], function () {
+    	    var form = layui.form
+    	        , layer = layui.layer
+    	        , layedit = layui.layedit
+    	        , laydate = layui.laydate;
+    	    layer.open({
+    	        type: 1,
+    	        offset: 'c'
+    	        , title: false //不显示标题栏
+    	        , closeBtn: false
+    	        , area: ["40%", "40%"]
+    	        , shade: 0.8
+    	        , id: 'LAY_layuipro' //设定一个id，防止重复弹出
+    	        // , btn: ['确定', '取消']
+    	        , btnAlign: 'c'
+    	        , moveType: 1 //拖拽模式，0或者1
+    	        , content: '<div id="changePassword" style=""><div class="layer-title">修改密码</div><form style="padding:10px 20px 0 20px;" class="layui-form" action="">'+
+    	            '<p class="layer-p">提示：为保障数据安全，按照全市护网行动要求，请修改登录密码。</p><div class="layui-form-item">'+
+    	        '<label class="layui-form-label">输入新密码</label>'+
+    	        '<div class="layui-input-block">'+
+    	            '<input type="password" name="newPassword" id="newPassword" autocomplete="off" placeholder="8-20位字符，必须包含字母大写、小写、数字、特殊字符中至少3种格式。" class="layui-input">'+
+    	        '</div>'+
+    	    '</div>'+
+    	    '<div class="layui-form-item">'+
+    	        '<label class="layui-form-label">确认密码</label>'+
+    	        '<div class="layui-input-block">'+
+    	            '<input type="password" name="checkNewPassword" id="checkNewPassword" autocomplete="off" placeholder="必须与上面密码一致" class="layui-input">'+
+    	        '</div>'+
+    	    '</div><div>'+
+    	    '</div>'+
+    	'</form><div style="text-align:center;"><button type="tutton" onclick="submitPassword3();" class="layui-btn">提 交</button></div></div>'
+    	        , success: function (layero) {
+    	            $("#newPassword").focus();
+    	        }
+    	    });
+    	});
+    }
+
+     /**
+      * 修改密码  -->首次登录页面强制修改密码  弹框
+      */
+     function submitPassword3(){
+    	  var loginName = $("#txtUsername").val();
+     	var newPassword=$("#newPassword").val();
+     	var checkNewPassword=$("#checkNewPassword").val();
+     	var regExp=/^(?![a-zA-Z]+$)(?![A-Z0-9]+$)(?![A-Z\W_]+$)(?![a-z0-9]+$)(?![a-z\W_]+$)(?![0-9\W_]+$)[a-zA-Z0-9\W_]{8,20}$/;
+     	if(!regExp.test(newPassword)){
+             layui.use(['layer'], function () {
+                 var layer = layui.layer;
+                 layer.msg('8-20位字符，必须包含字母大写、小写、数字、特殊字符中至少3种格式。', {
+                     time: 2000
+                 });
+             });
+             $("#mima1").focus();
+             return;
+        }
+         if(newPassword == $("#txtPassword").val()){
+             layui.use(['layer'],function(){
+                 var layer = layui.layer
+                 layer.msg('对不起，为了您的账户安全，不能设置为当前登录密码！', {time: 2000,icon: 5});
+             })
+             return;
+         }
+     	if(newPassword==checkNewPassword){
+            $.ajax({
+                type:"post",
+                url: '/service/staffInfo/updatePassword',
+                data:{'newPassword':newPassword},
+                 data: [
+                    {name: 'newPassword', value: newPassword},
+                    {name: 'loginName', value: loginName},
+                ],
+                datatype:"json",
+                success:function(data){
+                    var msg=data.msg;
+                    if(msg){
+                        layui.use(['layer'],function(){
+                            var layer = layui.layer
+                            layer.msg('密码修改成功，请重新登录。', {time: 2000,icon: 6});
+                        })
+                        window.setTimeout(function () {layui.layer.closeAll();}, 2000);
+                    }else{
+                        layer.msg('密码修改失败，请联系管理员 ', {
+                            time: 2000
+                        });
+                    }
+                }
+            })
+     	 }else{
+     	     layer.msg('两次输入的密码不一致 ', {
+     	     time: 2000
+     	 });
+       }
+
+     }
+</script>
+<script src="/epidemic/js/common/string.js?v=202003052223"></script>
+<script src="/epidemic/js/AES.js?v=202003052223"></script>
+</html>

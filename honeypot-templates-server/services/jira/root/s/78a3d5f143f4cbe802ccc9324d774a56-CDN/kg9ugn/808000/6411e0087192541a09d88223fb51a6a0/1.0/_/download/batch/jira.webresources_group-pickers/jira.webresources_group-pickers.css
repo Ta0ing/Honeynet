@@ -1,0 +1,2 @@
+/* module-key = 'jira.webresources:group-pickers', location = '/includes/jira/field/groupPickerUtil.less' */
+.group-suggestion-item{display:table;width:100%}.group-suggestion-item__name{display:table-cell;white-space:normal;word-break:break-all}.group-suggestion-item__labels{display:table-cell;text-align:right;overflow:hidden;white-space:normal}

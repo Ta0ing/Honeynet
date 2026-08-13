@@ -1,0 +1,102 @@
+<!doctype html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>科来网络全流量安全分析系统 - 服务器</title>
+
+    <link rel="shortcut icon" href="lang/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="lang/stylesheet/login.css">
+    <link rel="stylesheet" type="text/css" href="lang/stylesheet/sample.css">
+
+    <!--[if lt IE 7]>
+        <script type="text/javascript" src="/libs/unitpngfix/unitpngfix.js"></script>
+	<![endif]-->
+    <script type="text/javascript" src="javascripts/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="javascripts/common.js"></script>
+</head>
+
+<body>
+    <div class="login-box">
+        <form id="loginForm" action="/login" method="post">
+            <div class="login-box-top" sample="main.web.sample.value"></div>
+            <div class="login-box-body">
+                <!--input-->
+                <div class="login-input">
+                    <table width="400" cellspacing="0" cellpadding="0" align="center">
+                        <tbody>
+                            <tr>
+                                <td width="26%" height="45" align="right" valign="middle">登录名：</td>
+                                <td width="74%" align="left" valign="middle">
+                                    <input name="username" type="text" value="" size="30" style="width:224px;" validator="username">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="26%" height="45" align="right" valign="middle">密&nbsp;&nbsp;&nbsp;码：</td>
+                                <td width="74%" align="left" valign="middle">
+                                    <input name="password" type="password" value="" size="30" style="width:224px;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td width="26%" height="20" align="left" valign="middle">
+                                    <font color="red" id="login_error"></font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="26%" height="45" align="right" valign="middle">&nbsp;　</td>
+                                <td width="74%" align="left" valign="middle">
+                                    <button name="do-login" value="submit" class="button"></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--input-->
+            </div>
+        </form>
+    </div>
+    <div class="login-box-foot"></div>
+
+    <div class="foottext">
+        <div class="copytext">(c) 2011 - 2019 科来 版权所有 保留所有权利</div>
+    </div>
+    <script>
+        $(document).keydown(function(event) {
+                if (event.which == 13) {
+                    $("[name='do-login']").trigger("click");
+                }
+            })
+            .ready(function() {
+                if ($(".login-box-top").attr("sample") == "true") {
+                    $(".login-box-top").addClass("login-box-top-sample");
+                }
+
+                $("[name='do-login']").bind("click", function() {
+                    if ($("input[name='username']").val() == "") {
+                        $("#login_error").text("请输入您的用户名！");
+                        return false;
+                    } else {
+                        //var pattern = /^[a-zA-Z][a-zA-Z0-9_@\-\.]{1,20}$/
+                        //if(!pattern.test($("input[name='username']").val())){
+                        if (!username($("input[name='username']"))) {
+                            $("#login_error").text("无效用户名!" + "数字，英文字母和以下4个符号‘_’、‘@’、‘.’、‘-’组成，长度不能超过20个字符。");
+                            return false;
+                        }
+                        var redirect = getUrlParams("redirect");
+                        if (redirect) {
+                            $('#loginForm').attr("action", "index.html?redirect=" + redirect);
+                        }
+                        $('#loginForm').submit();
+                        return true;
+                    }
+                    return true;
+                });
+            });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+[Unit]
+Description=Honeynet Built-in Agent
+After=network-online.target honeynet-server.service
+Wants=network-online.target
+Requires=honeynet-server.service
+
+[Service]
+Type=simple
+ExecStart=/opt/honeynet/agent/libexec/honeynet-agent-guard /opt/honeynet/agent/bin/honeynet-agent --config /etc/honeynet/builtin-agent.json --state-dir /var/lib/honeynet-agent
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/etc/honeynet /var/lib/honeynet-agent /opt/honeynet/agent/bin
+ReadOnlyPaths=-/opt/honeynet/templates/web
+
+[Install]
+WantedBy=multi-user.target

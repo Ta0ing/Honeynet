@@ -1,0 +1,351 @@
+<!doctype html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="robots" content="noindex">
+    <!--限制索引首页信息-->
+    <meta name="robots" content="nofollow">
+    <!--限制索引首页信息-->
+    <meta name="robots" content="noarchive">
+    <!--限制建立网页快照-->
+    <title>防火墙WEB防篡改管理系统</title>
+    <link href="tamper/style/main.css" rel="stylesheet" type="text/css">
+    <link href="tamper/style/SimSun.css" rel="stylesheet" type="text/css">
+    <link href="tamper/style/control.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="#" />
+    <script type="text/javascript" src="tamper/js/jquery-1.6.4.js"></script>
+    <script type="text/javascript" src="tamper/js/TipPanel.js"></script>
+    <script type="text/javascript" src="tamper/js/jquery-patch.js"></script>
+    <script type="text/javascript" src="tamper/js/main.js"></script>
+    <script type="text/javascript" src="js/sf-cookie.js"></script>
+</head>
+
+<body>
+    <div class="banners">
+        <ul>
+            <li>
+
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="title title-login">登录防火墙WEB防篡改管理系统</div>
+        <div class="title title-sms" style="display:none;">短信认证</div>
+        <div id="form">
+            <dl class="input_text">
+                <dt>用户名：</dt>
+                <dd><span style="width:240px;">
+                        <input id="user" name="user" value="" type="text">
+                    </span></dd>
+            </dl>
+            <dl class="input_text">
+                <dt>密<span style="padding:0 6px"></span>码：</dt>
+                <dd class="keyboard"><span style="width:240px;">
+                        <input name="pwd" value="" type="password" id="pwd" style=" font-family:Verdana">
+                    </span>
+                    <div class="shiftKey">大写锁定已打开</div>
+                </dd>
+            </dl>
+            <dl class="input_text valid_code" style="display:none">
+                <dt>验证码：</dt>
+                <dd><span style="width:185px;">
+                        <input id="validate" name="validate" value="" type="text">
+                    </span></dd>
+                <!-- <dd><img src="php/tamper/autocode.php" alt="看不清楚请点击重新刷新"></dd> -->
+            </dl>
+            <dl class="input_text sms-tip" style="display:none">
+                <dt>短信验证码已发送到手机：<span id="sms-phone"></span></dt>
+            </dl>
+            <dl class="input_text sms" style="display:none">
+                <dt>验证码：</dt>
+                <dd>
+                    <span style="width:240px;">
+                        <input id="sms" name="sms" value="" type="text">
+                    </span>
+                </dd>
+            </dl>
+
+            <dl id="tip_err" style="display:none">
+                <dt></dt>
+                <dd class="tip_error">请输入你的用户名!</dd>
+            </dl>
+            <dl class="buttons">
+                <dt></dt>
+                <dd><a id="submit" class="button_normal" href="#"></a></dd>
+                <dd><a style="display:none;" id="submit-sms" class="button-submit-sms" href="#"><span class="sure">确定</span></a></dd>
+                <dd><a style="display:none;" id="send-sms" class="button-send-sms" href="#"><span class="send-again">重发</span></a></dd>
+            </dl>
+        </div>
+        <div style="height:30px"></div>
+        <div class="title"></div>
+        <ul>
+            <li style="color:#999999;margin-left:6px;list-style:circle inside;">如忘记密码，请与防火墙管理员联系</li>
+        </ul>
+    </div>
+    <!--TIP内容-->
+    <div id="tip" style="display:none">
+    </div>
+    <script type="text/javascript">
+        window.errCnt = 0;
+
+        function encodeString(s) {
+            var m = {
+                "\b": '\\b',
+                "\t": '\\t',
+                "\n": '\\n',
+                "\f": '\\f',
+                "\r": '\\r',
+                '"': '\\"',
+                "\\": '\\\\'
+            };
+            if (/["\\\x00-\x1f]/.test(s)) {
+                return '"' + s.replace(/([\x00-\x1f\\"])/g, function(a, b) {
+                    var c = m[b];
+                    if (c) {
+                        return c;
+                    }
+                    c = b.charCodeAt();
+                    return "\\u00" +
+                        Math.floor(c / 16).toString(16) +
+                        (c % 16).toString(16);
+                }) + '"';
+            }
+            return '"' + s + '"';
+        }
+        $(document).ready(function() {
+            function load() {
+                var csrf = SF.cookie('sangfor_session_tamper_id');
+                var data;
+                if (csrf) {
+                    data = '{opr:"check",csrf:' + encodeString(csrf) + ',flag:true}';
+                } else {
+                    data = '{opr:"check",flag:true}';
+                }
+                // $.ajax({
+                //     url: "/cgi-bin/tamper_admin.cgi",
+                //     type: 'POST',
+                //     dataType: 'json',
+                //     timeout: 5000,
+                //     contentType: 'application/json; charset=UTF-8',
+                //     cache: false,
+                //     data: data,
+                //     success: function(jsonData) {
+                //         if (jsonData.success) {
+                //             if (jsonData.showvalidate) {
+                //                 window.errCnt = 3;
+                //                 $('.valid_code').show();
+                //             }
+                //         } else {
+                //             window.errCnt = 0;
+                //             $('.valid_code').hide();
+                //         }
+                //     },
+                //     error: function(jsonData) {
+                //         window.errCnt = 0;
+                //         $('.valid_code').hide();
+                //     }
+                // });
+            }
+            load();
+
+
+            if ($("#user").val() == '') {
+                $('#user').focus();
+            }
+            //SF.cookie('sangfor_session_id', null);
+            //设定LOGO，方便用户自定义，高度由CSS控制。
+            $(".banners ul").css("background", "url(tamper/img/logo.png)");
+            //设置表单标签宽度
+            var w = $(".content dl dt").width();
+            $(".content dl dt").width(w);
+            //TIP组件
+            var tip = $("#tip").html();
+            $(".other_info .drive a").TipPanel({
+                gravity: 'r',
+                autoGravity: false,
+                css: {
+                    width: 220,
+                    height: 65
+                },
+                tpl: (tip)
+            });
+
+            /*检测大写锁定*/
+            function detectCapsLock(ae) {
+                ae = ae || event;
+                var uO = ae.keyCode || ae.charCode,
+                    Uc = ae.shiftKey;
+
+                if ((uO >= 65 && uO <= 90 && !Uc) || (uO >= 97 && uO <= 122 && Uc)) {
+                    $(".shiftKey").show();
+                } else if ((uO >= 97 && uO <= 122 && !Uc) || (uO >= 65 && uO <= 90 && Uc)) {
+                    $(".shiftKey").hide();
+                } else {
+                    $(".shiftKey").hide();
+                }
+            }
+            document.getElementById('pwd').onkeypress = detectCapsLock;
+            $('.valid_code img').click(function() {
+                this.src = this.src + '?';
+            });
+
+            function showErr(msg) {
+                $('.tip_error')[0].innerHTML = msg;
+                $('#tip_err').show();
+                clearTimeout(window.errid);
+                window.errid = setTimeout(function() {
+                    $('#tip_err').hide();
+                }, 5000);
+            }
+
+            function gotoSms() {
+                $('.title-login').hide();
+                $('.title-sms').show();
+                $('.input_text').hide();
+                $('.sms-tip').show();
+                $('.sms').show();
+                $('.button_normal').hide();
+                $('.button-submit-sms').show();
+                $('.button-send-sms').show();
+                $('#tip_err').hide();
+            }
+
+            function clockStart() {
+                var send_sms = $('.send-again')[0];
+                var time = 60;
+                var changeFn = function() {
+                    if (time > 0) {
+                        send_sms.innerHTML = '重发(' + time + ')';
+                        setTimeout(changeFn, 1000);
+                        time -= 1;
+                    } else if (time == 0) {
+                        send_sms.innerHTML = '重发';
+                    }
+                };
+                changeFn();
+            }
+
+            function doLogin() {
+                var user = $('#user');
+                var pwd = $('#pwd');
+                if (user[0].value === '') {
+                    showErr('请输入你的用户名');
+                    return false;
+                }
+                if (pwd[0].value === '') {
+                    showErr('请输入你的密码');
+                    return false;
+                }
+                $("#error_msg").html("正在验证帐号信息，请稍候…");
+
+                var login_fn = function() {
+                    var csrf = SF.cookie('sangfor_session_tamper_id');
+                    var data;
+                    if (csrf) {
+                        data = '{"opr":"login","type":"login","username":' + encodeString($('#user').val()) + ',"password":' + encodeString($('#pwd').val()) + ',"validator":' + encodeString($('#validate').val()) + ',"csrf":' + encodeString(csrf) + ',"flag":true}';
+                    } else {
+                        data = '{"opr":"login","type":"login","username":' + encodeString($('#user').val()) + ',"password":' + encodeString($('#pwd').val()) + ',"validator":' + encodeString($('#validate').val()) + ',"flag":true}';
+                    }
+                    $.ajax({
+                        url: "/login",
+                        type: 'POST',
+                        dataType: 'json',
+                        timeout: 5000,
+                        contentType: 'application/json; charset=UTF-8',
+                        cache: false,
+                        data: data,
+                        success: function(jsonData) {
+                            alert("用户名或密码错误");
+                            // if (jsonData.success) {
+                            //     if (!jsonData.need_sms) {
+                            //         //SF.cookie('sangfor_session_id', null);
+                            //         window.location.href = "/";
+                            //     } else {
+                            //         $('#sms-phone')[0].innerHTML = jsonData.sms.slice(0, 3) + '****' + jsonData.sms.slice(7, 11);
+                            //         //$('#sms-phone')[0].innerHTML = jsonData.sms;
+                            //         gotoSms();
+                            //         clockStart();
+                            //     }
+                            // } else {
+                            //     window.errCnt += 1;
+                            //     if (window.errCnt >= 3) {
+                            //         //-连续输入三次错误的时候
+                            //         $('.valid_code').show();
+                            //     }
+                            //     showErr(jsonData.msg || '用户名或密码错误');
+                            //     $('.valid_code img').click();
+                            // }
+                        },
+                        error: function(jsonData) {
+                            alert("用户名或密码错误");
+                            // showErr('网络错误');
+                            // $('.valid_code img').click();
+                        }
+                    });
+                };
+                if (window.errCnt >= 3) {
+                    if ($('#validate').val() === '') {
+                        $('.tip_error')[0].innerHTML = '请输入验证码';
+                        $('#tip_err').show();
+                        return false;
+                    }
+                    /*$.ajax({
+                    	url: "/php/tamper/checkautocode.php",
+                    	type: 'POST',
+                    	dataType: 'json',
+                    	timeout: 5000,
+                    	contentType: 'application/json; charset=UTF-8',
+                    	cache:false,
+                    	data: '{"vdcode":"' + $('#validate').val() + '"}',
+                    	success: function (jsonData) {
+                    		if (jsonData.success) {
+                    			login_fn();
+                    		} else {
+                    			showErr('验证码错误');
+                    			$('.valid_code img').click();
+                    		}
+                    	},
+                    	error: function (jsonData) {
+                    		showErr('网络错误');
+                    		$('.valid_code img').click();
+                    	}
+                    });*/
+                    login_fn();
+                } else {
+                    login_fn();
+                }
+            }
+            $('.buttons .button_normal').click(function() {
+                doLogin();
+            });
+
+            document.getElementById('pwd').onkeyup = function(e) {
+                e = e || event;
+                if (e.keyCode === 13 || e.charCode === 13) {
+                    doLogin();
+                }
+            };
+            document.getElementById('validate').onkeyup = function(e) {
+                e = e || event;
+                if (e.keyCode === 13 || e.charCode === 13) {
+                    doLogin();
+                }
+            };
+
+        });
+    </script>
+    <!--[if IE 6]>
+<script src="tamper/js/DD_belatedPNG.js"></script>
+<script>
+  //IE6 PNG 透明度	
+  DD_belatedPNG.fix('.button_normal,.button_anonymity,.button_two,.button_one,.input_button ');
+</script>
+<![endif]-->
+
+
+</body>
+
+</html>

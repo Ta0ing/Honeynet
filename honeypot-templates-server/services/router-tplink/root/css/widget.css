@@ -1,0 +1,960 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*reset YUI3*/
+html{
+	color: #000000;
+	background: transparent;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{
+	margin: 0;
+	padding: 0;
+}
+table{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+fieldset,img{
+	border: 0;
+}
+address,caption,cite,code,dfn,em,strong,th,var{
+	font-style: normal;
+	font-weight: normal;
+}
+ol,ul{
+	list-style: none;
+}
+caption,th, td{
+	text-align: center;
+}
+h1,h2,h3,h4,h5,h6{
+	font-size: 100%;
+	font-weight: normal;
+}
+q:before,q:after{
+	content: ''
+}
+abbr,acronym{
+	border: 0;
+	font-variant: normal;
+}
+sup{
+	vertical-align: text-top;
+}
+sub{
+	vertical-align: text-bottom;
+}
+input,textarea,select{
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	
+	outline: none;
+}
+input,textarea,select{
+	*font-size: 100%;
+}
+/*legend{
+	color: #000;
+}*/
+
+
+/*****add by cx*****/
+a{
+	text-decoration: none;
+}
+textarea{
+	resize: none;
+	outline: none;
+}
+button{
+	outline: none;
+}
+
+/*widget normal*/
+body{
+	/*overflow: hidden;*/
+	position: relative;
+}
+button{
+	border: 0px none;
+	background-color: transparent;
+
+	cursor: pointer;
+
+
+	/*这部分考虑是否全局定义？*/
+}
+.inline-block{
+	display: inline-block;
+}
+.inline{
+	display: inline;
+}
+.hidden{
+	display: none;
+	/*position: absolute;
+	left: -9999px;
+	top: -9999px;*/
+}
+input.hidden,
+input[type=hidden]{
+	display: none;
+}
+/*widget*/
+div.mask{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/*width: 9999px;
+	height: 9999px;*/
+
+	background-color: #efefef;
+	opacity: 0.7;
+
+	z-index: 998;
+	display: none;
+}
+/*fieldset.widget-container,
+div.widget-container{
+	margin: 12px;
+}*/
+div.widget-container{
+	/*position: relative;*/
+}
+div.widget-container div.widget-wrap-outer{
+	display: inline-block;
+	vertical-align: middle;
+}
+div.widget-container div.widget-wrap{
+	/*border: 1px solid #cccccc;
+	background-color: #ffffff;
+	border-radius: 5px;*/
+	padding: 1px;
+
+	vertical-align: middle;
+
+	display: inline-block;
+}
+/*div.widget-container .widget-wrap:hover{
+	border: 1px solid #999999;
+}*/
+/*div.widget-container.focus .widget-wrap{
+	border: 1px solid #06C;
+}
+div.widget-container.disable .widget-wrap{
+	border: 1px solid #cccccc;
+	background-color: #eeeeee;
+}
+div.widget-container.error .widget-wrap{
+	border: 1px solid #C00;
+}*/
+div.widget-container div.widget-fieldlabel-wrap{
+	display: inline-block;
+}
+div.widget-container label.widget-fieldlabel{
+
+	/*display: inline-block;
+
+	padding: 0 2px 0 8px;
+
+	text-align: right;*/
+}
+/*div.widget-container div.widget-separator{
+	margin: 0 8px 0 2px;
+}*/
+div.widget-container div.widget-tips{
+	/*position: absolute;*/
+	display: inline-block;
+	vertical-align: middle;
+}
+div.widget-container div.widget-tips div.content{
+	/*display: inline-block;*/
+}
+/*div.widget-container.error div.widget-tips{
+	color: #C00;
+}*/
+div.widget-container div.widget-error-tips{
+	/*display: inline-block;*/
+}
+/********
+text textarea
+*********/
+div.text-container,
+div.textarea-container{
+}
+/*div.text-container label,
+div.textarea-container label{
+	padding: 0 8px;
+}
+div.text-container span.text-wrap,
+div.textarea-container span.textarea-wrap{
+	display: inline-block;
+}
+div.text-container.read-only span.text-wrap{
+	border: 1px none;
+}*/
+div.text-container input.text-hint,
+div.text-container input.text-text,
+div.textarea-container textarea.textarea-text{
+	/*border: 1px solid #cccccc;*/
+	border: 0px none;
+	/*min-width: 153px;*/
+	/*width: 152px;*/
+	text-indent: 4px;
+	vertical-align: middle;
+}
+div.text-container input.text-hint,
+div.text-container input.text-text{
+	height: 22px;
+	line-height: 22px;
+}
+/*div.text-container textarea.textarea-text{
+}
+
+div.text-container span.text-tips,
+div.textarea-container span.textarea-tips{
+	padding: 0 8px;
+}
+
+div.text-container.error span.text-wrap,
+div.textarea-container.error span.textarea-wrap{
+	border: 1px solid #C00;
+}
+div.text-container.error span.text-tips,
+div.textarea-container.error span.textarea-tips{
+	color: #C00;
+}
+div.text-container.focus span.text-wrap,
+div.textarea-container.focus span.textarea-wrap{
+	border: 1px solid #06C;
+}
+div.text-container.focus span.text-tips,
+div.textarea-container.focus span.textarea-tips{
+}*/
+
+/********
+checkbox radio
+*********/
+div.radio-group-container,
+div.checkbox-group-container{
+}
+div.radio-group-container div.radio-group-wrap,
+div.checkbox-group-container div.checkbox-group-wrap{
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+}
+/*div.radio-group-container label.radio-group-label,
+div.checkbox-group-container label.checkbox-group-label{
+	padding: 0 8px;
+	vertical-align: top;
+}*/
+div.radio-group-container ul.radio-group-list-wrap,
+div.checkbox-group-container ul.checkbox-group-list-wrap{
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 2px;
+}
+/*div.radio-group-container ul.radio-group-list-wrap li.radio-list,
+div.checkbox-group-container ul.checkbox-group-list-wrap li.checkbox-list{
+	margin: 2px 0;
+	min-width: 158px;
+}*/
+div.radio-group-container ul.radio-group-list-wrap li.radio-list label.radio-label,
+div.checkbox-group-container ul.checkbox-group-list-wrap li.checkbox-list label.checkbox-label{
+	padding: 2px 8px;
+	display: inline-block;
+
+	height: 22px;
+	line-height: 22px;
+	
+	cursor: pointer;
+	/*min-width: 137px;*/
+}
+div.radio-group-container ul.radio-group-list-wrap li.radio-list label.radio-label input,
+div.checkbox-group-container ul.checkbox-group-list-wrap li.checkbox-list label.checkbox-label input{
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
+/*form*/
+.form-panel{
+	position: relative;
+}
+.form-panel div.form-prompt{
+	position: absolute;
+	display: none;
+	left: 0;
+	top: 0;
+
+	z-index: 20;
+}
+.form-panel div.form-prompt div.bg{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+.form-panel div.form-prompt div.content{
+	position: relative;
+}
+.form-panel div.form-prompt span.icon{
+	display: inline-block;
+}
+.form-panel div.form-prompt span.text{
+
+}
+.form-panel div.form-prompt.successed span.text.text-failed,
+.form-panel div.form-prompt.failed span.text.text-successed{
+	display: none;
+}
+.form-panel div.button-container.form-submit span.loading{
+	display: inline-block;
+	position: absolute;
+	right: 0;
+}
+/*msg*/
+/*定位关系*/
+div.msg-container{
+	position: absolute;
+	left: 0;
+	top: 0;
+
+	/*margin-top: 50%;
+	margin-left: 50%;*/
+}
+/*div.msg-container{
+	border: 1px solid #cccccc;
+	background: #ffffff;
+
+	box-shadow: 0 0 5px #000000;
+}*/
+div.msg-container div.msg-wrap{
+	border: 1px solid #fefefe;
+}
+div.msg-container a.msg-close{
+	display: block;
+
+	width: 18px;
+	height: 18px;
+	float: right;
+}
+/*div.msg-container h3.msg-title{
+	background: #7695B2;
+	color: #ffffff;
+	padding: 4px 10px;
+}*/
+/*div.msg-container div.msg-content-container{
+	margin: 18px 32px;
+}*/
+/*div.msg-container div.msg-btn-container{
+	text-align: center;
+	margin: 8px 36px;
+}*/
+/*div.msg-container div.msg-btn-container button{
+	border: 1px solid #aaa;
+	background: #eee;
+	cursor: pointer;
+	padding: 3px 10px;
+	margin: 0 5px;
+
+
+	min-width: 64px;
+}*/
+
+
+
+/*progressbar*/
+/*div.progressbar-container{
+	margin-bottom: 36px;
+}
+
+div.progressbar-container.progressbar-horizontal span.progressbar-tips,
+div.progressbar-container.progressbar-horizontal label.progressbar-fieldlabel{
+	vertical-align: top;
+	margin: 3px 0;
+}
+*/
+div.progressbar-container div.progressbar-wrap{	/*为了消除widget-wrap的hover效果*/
+	position: relative;
+	/*display: inline-block;*/
+
+	min-width: 100px;
+	vertical-align: middle;
+}
+
+div.progressbar-container div.progressbar-content{
+	/*background-color: #ffffff;
+	position: relative;
+	border: 1px solid #cccccc;
+
+	overflow: hidden;
+	
+	*后来添加，可能要改
+	margin: 0 auto;*/
+	padding: 0;
+	position: relative;
+}
+div.progressbar-container.progressbar-horizontal div.progressbar-content{
+	height: 10px;
+}
+div.progressbar-container.progressbar-vertical div.progressbar-content{
+	width: 20px;
+	/*border-radius: 0px;*/
+	display: inline-block;
+	margin: 0 auto;
+}
+
+div.progressbar-container div.progressbar-value{
+	background-color: #8eb7d3;
+	position: absolute;
+	/*left: 0;*/
+	bottom: 0;
+}
+div.progressbar-container.progressbar-horizontal div.progressbar-value{
+	/*border-radius: 5px;*/
+	height: 100%;
+}
+div.progressbar-container.progressbar-vertical div.progressbar-value{
+	width: 100%;
+}
+div.progressbar-container div.progressbar-text{
+	/*text-align: center;
+	margin: 12px auto;
+
+
+	*后来添加，可能要改
+	position: absolute;
+	bottom: -36px;
+	width: 100%;*/
+}
+div.slider-container div.slider-text span,
+div.progressbar-container div.progressbar-text span{
+	margin: 0 6px;
+}
+
+
+
+/*combobox*/
+div.combobox-container{
+	/*line-height: 24px;*/
+}
+/*div.combobox-container label.combobox-fieldlabel{
+	padding: 0 8px;
+}*/
+div.combobox-container div.combobox-wrap{
+	/*display: inline-block;*/
+
+	position: relative;
+}
+div.combobox-container div.combobox-wrap input.combobox-text{
+	border: 0px none;
+	vertical-align: middle;
+
+	text-indent: 4px;
+	line-height: 22px;
+	height: 22px;
+	/*min-width: 130px;*/
+}
+div.combobox-container div.combobox-wrap a.combobox-switch{
+	display: inline-block;
+
+	height: 20px;
+	width: 22px;
+	vertical-align: middle;
+
+	border: 1px solid #cccccc;
+}
+div.combobox-container div.combobox-wrap div.combobox-list-wrap{
+	position: absolute;
+	top: 32px;
+	left: 0;
+	width: 100%;
+
+	/*box-shadow: 0 0 5px #000000;
+	border-radius: 3px;*/
+	
+
+	
+	background-color: #ffffff;
+	/*opacity: 0.7;
+	filter: alpha(opacity=70);*/
+
+	z-index: 99;
+	display: none;
+
+	
+
+	 
+}
+div.combobox-container div.combobox-wrap div.combobox-list-wrap div.combobox-list-content-wrap{
+	overflow-x: hidden;
+	overflow-y:	auto;
+
+	max-height: 200px;
+
+	border: 1px solid #cccccc;
+}
+div.combobox-container div.combobox-wrap ul.combobox-list{
+	/*opacity: 1;
+	filter: alpha(opacity=100);*/
+	/*border-bottom: 1px solid #fefefe;
+	border: 1px solid #fefefe;*/
+	border-top: 0px none;
+}
+/*div.combobox-container div.combobox-wrap ul.combobox-list li{
+	border-top: 1px solid #fefefe;
+}
+div.combobox-container div.combobox-wrap ul.combobox-list li.selected,
+div.combobox-container div.combobox-wrap ul.combobox-list li:hover{
+	background-color: #343434;
+}*/
+div.combobox-container div.combobox-wrap ul.combobox-list li input.combobox-checkbox{
+	margin-right: 10px;
+	vertical-align: middle;
+}
+div.combobox-container.single div.combobox-wrap ul.combobox-list span.icon,
+div.combobox-container.single div.combobox-wrap ul.combobox-list input.combobox-checkbox{
+	display: none;
+}
+div.combobox-container div.combobox-wrap ul.combobox-list li label.combobox-label{
+	display: block;
+	cursor: pointer;
+}
+/*div.combobox-container div.combobox-wrap ul.combobox-list li.selected label,
+div.combobox-container div.combobox-wrap ul.combobox-list li:hover label{
+	color: #ffffff;
+}*/
+/*div.combobox-container span.combobox-tips{
+	padding: 0 8px;
+}*/
+div.combobox-container select.combobox-value-box{
+	display: none;
+}
+
+
+/*file*/
+div.file-container{
+
+}
+div.file-container div.file-wrap{
+	position: relative;
+
+	/*display: inline-block;*/
+}
+div.file-container div.widget-wrap.file-wrap{
+	border: 0px none;
+	background-color: transparent;
+}
+/*div.file-container div.file-wrap input.file-input,
+div.file-container div.file-wrap input.file-text{
+	border: 0px none;
+	text-indent: 4px;
+}*/
+div.file-container div.file-wrap input.file-text{
+	/*height: 22px;
+	line-height: 22px;
+
+	min-width: 219px;
+	border: 1px solid #cccccc;*/
+}
+div.file-container div.file-button-container{
+	vertical-align: middle;
+}
+/*div.file-container div.file-wrap button.file-button{
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+
+	margin: 0 4px;
+	padding: 0 4px 0 8px;
+
+	width: 60px;
+
+	border: 1px solid #aaaaaa;
+	border: 0px none;
+	border-left: 1px solid #cccccc;
+	background-color: #ffffff;
+}*/
+div.file-container div.file-wrap input.file-input{
+	position: absolute;
+	left: 0;
+	top: 0;
+
+	width: 100%;
+	height: 100%;
+
+	line-height: 24px;
+
+	opacity: 0;
+	filter: alpha(opacity=0);
+
+	cursor: pointer;
+	z-index: 1;
+}
+
+
+/*time*/
+div.time-container{
+
+}
+div.time-container div.time-wrap{
+	/*display: inline-block;*/
+
+	position: relative;
+}
+div.time-container div.time-wrap input.time-text{
+	width: 24px;
+	border: 0px none;
+
+	height: 22px;
+	line-height: 22px;
+
+	min-width: 0;
+	max-height: 36px;
+
+	text-indent: 4px;
+	ime-mode: disabled;
+}
+
+
+div.time-container div.time-wrap a.time-switch{
+	width: 16px;
+}
+div.time-container div.time-wrap div.time-list-wrap ul.time-list li label.time-label{
+	padding: 8px 4px;
+}
+div.time-container span.time-separator{
+	padding: 0 3px;
+}
+
+/*number*/
+div.number-container{
+
+}
+div.number-container span.number-wrap{
+	/*position: relative;*/
+}
+div.number-container span.number-wrap input.number-text{
+	min-width: 100px;
+	width: 105px;
+}
+div.number-container span.number-wrap span.number-switch-container{
+	display: inline-block;
+	/*position: absolute;
+
+	right: 0;
+
+	top: 1px;*/
+}
+div.number-container span.number-wrap .number-switch{
+	display: inline-block;
+
+	width: 23px;
+	height: 22px;
+
+	vertical-align: middle;
+	/*height: 9px;
+
+	border-radius: 5px;
+	margin: 1px;*/
+}
+div.number-container span.number-wrap .number-switch-up{
+	border-left: 1px solid #cccccc;
+	/*border-bottom: 1px solid #cccccc;*/
+}
+div.number-container span.number-wrap .number-switch-down{
+	border-left: 1px solid #cccccc;
+	/*border-top: 1px solid #cccccc;*/
+}
+/*div.number-container span.number-wrap .number-switch:hover{
+	border-left: 1px solid #999999;
+}*/
+
+
+
+
+
+
+
+/*button*/
+/*div.button-container{
+	display: inline;
+}*/
+div.button-container.widget-container div.button-wrap{
+	border: 0px none;
+	padding: 0;
+}
+div.button-container button.button-button{
+	border: 1px solid #aaaaaa;
+	/*border-radius: 5px;*/
+	background-color: #eeeeee;
+
+	min-width: 64px;
+	height: 25px;
+
+	/*margin: 0 5px;
+	padding: 5px 10px;*/
+}
+/*div.button-container button.button-button:hover{
+	border: 1px solid #999999;
+}*/
+div.button-container button.button-button.pressed{
+	border: 1px solid #999999;
+	background-color: #aaaaaa; 
+	color: #ffffff;
+}
+div.button-container button.button-button span.button-icon{
+	display: inline-block;
+
+	width: 16px;
+	height: 16px;
+
+	margin-right: 5px;
+}
+div.button-container button.button-button span.button-text{
+	line-height: 16px;
+}
+
+/*panel*/
+/*div.panel-container{
+	border: 1px solid #cccccc;
+}
+div.panel-container div.panel-wrap{
+	border: 1px solid #fefefe;
+}
+div.panel-container div.panel-wrap h3.panel-title{
+	background-color: #7695B2;
+	padding: 6px 10px;
+	color: #ffffff;
+}*/
+div.panel-container div.panel-wrap div.panel-header-btn-container{
+	/*float: right;*/
+}
+div.panel-container div.panel-wrap div.panel-header-btn-container button{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+
+	color: #ffffff;
+
+	border: 1px solid #cccccc;
+	margin: 0 0 0 5px;
+}
+
+
+
+/*tip*/
+div.tip-container{
+	display: none;
+	position: absolute;
+
+	top: 200px;
+	left: 500px;
+
+	z-index: 997;
+}
+div.tip-container div.tip-wrap{
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+
+	/*padding: 3px 6px;*/
+}
+
+div.tip-container div.tip-wrap h4.tip-title{
+	font-weight: bold;
+}
+
+
+
+/*grid*/
+/*div.grid-container{
+	border: 1px solid #cccccc;
+}*/
+div.grid-container table{
+	width: 100%;
+}
+div.grid-container div.grid-header-container{
+}
+/*div.grid-container div.grid-header-container table tr.grid-header-tr{
+	background-color: #999999;
+}
+div.grid-container div.grid-header-container table th.grid-header{
+	border-right: 1px solid #cccccc;
+}*/
+div.grid-container div.grid-content-container{
+	position: relative;
+}
+div.grid-container div.grid-header-container table,
+div.grid-container div.grid-content-container table{
+	table-layout: fixed;
+}
+div.grid-container div.grid-content-container table.grid-content-bg{
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+}
+div.grid-container div.checkbox-group-container div.widget-wrap{
+	margin-right: 0;
+}
+div.grid-container div.grid-content-container table.grid-content-bg td.grid-content-td,
+div.grid-container div.grid-header-container table th.grid-header span.content,
+div.grid-container div.grid-content-container table td.grid-content-td span.content{
+	height: 24px;
+	line-height: 24px;
+}
+div.grid-container div.grid-content-container{
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+/*div.grid-container div.grid-content-container  table  tr.grid-content-tr:nth-child(even){
+	background-color: #dedede;
+}
+div.grid-container div.grid-content-container  table  tr.grid-content-tr:nth-child(odd){
+}
+div.grid-container div.grid-content-container  table  tr.grid-content-tr:hover{
+	background-color: #e0e0e0;
+}
+div.grid-container div.grid-content-container  table  tr.grid-content-tr{
+}
+div.grid-container div.grid-content-container  table  td.grid-content-td{
+	border-right: 1px solid #cccccc;
+}
+div.grid-container div.grid-content-container  table  td.grid-content-td:last-child{
+	border-right: 0px none;
+}*/
+
+div.grid-panel div.paging-container{
+
+}
+div.grid-panel div.paging-container div.num-buttons-container{
+	display: inline;
+}
+
+/***wizard部分****/
+div.wizard-container{
+
+}
+div.wizard-container div.process-flow-container{
+	margin: 10px auto;
+}
+div.wizard-container div.process-flow{
+	padding: 40px;
+	text-align: center;
+	/*display: inline-block;*/
+}
+div.wizard-container div.process-flow span.bar{
+	/*margin: 10px -5px;*/
+	display: inline-block;
+	text-align: left;
+}
+div.wizard-container div.process-flow span.bar span.bar-inner{
+	height: 100%;
+	display: inline-block;
+}
+div.wizard-container div.process-flow div.process-flow-step{
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+}
+div.wizard-container div.process-flow div.process-flow-step span.icon{
+	display: inline-block;
+	position: absolute;
+	/*cursor: pointer;*/
+}
+div.wizard-container div.process-flow div.process-flow-step span.text{
+	position: absolute;
+	white-space: nowrap;
+}
+
+div.button-group-container div.button-group-wrap{
+	/*display: inline-block;*/
+	border: 0px none;
+}
+div.button-group-container div.button-group-wrap ul.button-group-container li{
+	display: inline-block;
+}
+div.button-group-container div.button-group-wrap button.button-group-button{
+	border-radius: inherit;
+	margin: 0;
+}
+
+
+
+
+/*foldertree*/
+div.foldertree-container{
+
+}
+div.foldertree-container ul.foldertree-wrap{
+	margin-left: 20px;
+}
+div.foldertree-container span.foldertree-icon{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+}
+div.foldertree-container span.foldertree-icon.foldertree-has-branch{
+	cursor: pointer;
+	/*background-color: #ECF4D3;*/
+}
+div.foldertree-container span.foldertree-icon.foldertree-has-branch.opened{
+	/*background-color: #96CC42;*/
+}
+
+
+/*timepicker*/
+div.timepicker-msg-container table.timepicker thead th{
+	height: 32px;
+}
+div.timepicker-msg-container table.timepicker td.fst{
+	border: 0px none;
+}
+div.timepicker-msg-container table.timepicker  div.row-picker,
+div.timepicker-msg-container table.timepicker div.timepicker-picker{
+	display: block;
+	height: 18px;
+	width: 80px;
+}
+div.timepicker-msg-container table.timepicker  div.row-picker{
+	width: 22px;
+}
+div.timepicker-msg-container table.timepicker thead th.week-picker,
+div.timepicker-msg-container table.timepicker  div.row-picker,
+div.timepicker-msg-container table.timepicker div.timepicker-picker{
+	cursor: default;
+}
+div.timepicker-msg-container div.x-axis{
+	position: relative;
+	z-index: -1;
+}
+div.timepicker-msg-container div.x-axis-wrap{
+	position: absolute;
+	top: -465px;
+}
+div.timepicker-msg-container div.x-axis span{
+	display: block;
+	height: 19px;
+}
+
+
+
+
+/*hack部分*/
+/*ff*/
+/*@-moz-document url-prefix(){
+	
+}*/
+
+/*chrome*/
+/*@media screen and (-webkit-min-device-pixel-ratio:0){
+
+}*/
+
+/*opera*/
+/*@media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0){
+}*/

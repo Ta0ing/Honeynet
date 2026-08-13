@@ -1,0 +1,24 @@
+[Unit]
+Description=Honeynet Management Server
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=honeynet
+Group=honeynet
+WorkingDirectory=/opt/honeynet
+Environment=GIN_MODE=release
+EnvironmentFile=-/etc/honeynet/threat-intelligence.env
+ExecStart=/opt/honeynet/bin/honeynet-server --config /etc/honeynet/server.yaml
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/honeynet
+ReadOnlyPaths=-/etc/honeynet/analytics.yaml
+
+[Install]
+WantedBy=multi-user.target

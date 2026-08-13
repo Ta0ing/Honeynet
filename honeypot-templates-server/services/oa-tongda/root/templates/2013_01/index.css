@@ -1,0 +1,79 @@
+*{padding:0px;margin:0px;}
+body{
+	font-size:12px;
+	background-color: #ffffff;
+	background-image: url('bg.png');
+	background-repeat: repeat-x;
+	background-position: left top;
+}
+a{color:#0066cc;}
+.update_tips{position:absolute;left:10px;top:10px;color:#FFFFFF;}
+#logo{
+	position:relative;
+	width:835px;
+	height:409px;
+	background-image:url('center.png');
+	background-repeat: no-repeat;
+	margin-top: 100px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+#logo #form{
+}
+#logo #form .left{
+	float: left;
+}
+#logo #form .left div{
+	text-align:left;
+	position: relative;
+	top: 338px;
+	left: 205px;
+}
+#logo #form .right{
+	width:57px;
+	left: 20px;
+	float: left;
+}
+
+input.text{
+	border: none;
+	height:22px;
+	line-height:22px;
+	padding-top: 0px;
+	padding-right: 3px;
+	padding-bottom: 0px;
+	padding-left: 3px;
+	background-color:transparent;
+	width: 128px;
+}
+select{
+   width:140px;
+   height:22px;
+}
+input.submit{
+   width:57px;
+   height:26px;
+   background:url("btn.png") left top no-repeat;
+   border:0px;
+   cursor:pointer;
+}
+input.submit:hover{
+   background-position:left -26px;;
+}
+.left .user {
+	float: left;
+	width: 204px;
+	display: block;
+	padding-top: 2px;
+}
+.left .pwd {
+	float: left;
+	display: block;
+	width: 175px;
+	padding-top: 2px;
+	padding-left:25px;
+}
+div.msg{
+   line-height:25px;
+}

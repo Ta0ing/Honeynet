@@ -1,0 +1,91 @@
+<!-- saved from url=(0022)https://211.147.134.1/ -->
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+  <meta name="Copyright" content="Topsec Network Security Technology Co.,Ltd">
+
+  <meta name="DESCRIPTION" content="Topsec web UI">
+
+  <meta http-equiv="Cache-Control" content="no-cache">
+
+  <title>TOPSEC TOS Web User Interface</title>
+  <script src="./TOPSEC TOS Web User Interface_files/exploerscss.js"></script>
+  <link rel="stylesheet" href="./TOPSEC TOS Web User Interface_files/mozilla.css" type="text/css">
+  <script src="./TOPSEC TOS Web User Interface_files/menu.js"></script>
+  <script language="javascript">
+
+    function loginCheck() {
+      if (theForm.username.value == "") {
+        alert("请输入管理员名");
+        theForm.username.focus();
+        return false;
+      }
+
+      else if (theForm.passwd.value == "") {
+        alert("请输入口令");
+        theForm.passwd.focus();
+        return false;
+      }
+
+      return true;
+
+    }
+
+  </script>
+
+</head>
+
+<body class="index">
+
+  <table width="768" border="0" cellspacing="0" cellpadding="0">
+
+    <tbody>
+      <tr>
+
+        <td height="225">&nbsp;</td>
+
+      </tr>
+
+      <tr>
+
+        <td>
+
+          <img src="./TOPSEC TOS Web User Interface_files/aaa.png">
+
+        </td>
+
+      </tr>
+
+      <tr>
+
+        <td align="right" class="TRBasic">
+
+          <form name="theForm" method="post" action="/login">
+
+            用户名：
+
+            <input class="text" type="text" name="username">
+
+            口令：
+
+            <input class="text" type="password" name="password">
+
+            <input type="submit" class="IndexPut" name="loginSubmitIpt" value="登录" onclick="return loginCheck()">
+
+          </form>
+
+        </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+
+
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+.DS_Store
+.cache/
+.env
+bin/
+downloads/
+data/
+tmp/
+dist/
+web/node_modules/
+web/dist/
+*.tsbuildinfo
+web/vite.config.js
+web/vite.config.d.ts
+coverage.out
+*.log
+output/backups/

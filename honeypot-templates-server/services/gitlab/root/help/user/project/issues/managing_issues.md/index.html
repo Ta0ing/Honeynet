@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class lang="en">
+<head prefix="og: http://ogp.me/ns#">
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="object" property="og:type">
+<meta content="GitLab" property="og:site_name">
+<meta content="Managing issues · Issues · Project · User · Help" property="og:title">
+<meta content="GitLab Community Edition" property="og:description">
+<meta content="../../../../../assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png" property="og:image">
+<meta content="64" property="og:image:width">
+<meta content="64" property="og:image:height">
+<meta content="https://222.94.174.141:10443/help/user/project/issues/managing_issues.md" property="og:url">
+<meta content="summary" property="twitter:card">
+<meta content="Managing issues · Issues · Project · User · Help" property="twitter:title">
+<meta content="GitLab Community Edition" property="twitter:description">
+<meta content="https://222.94.174.141:10443/assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png" property="twitter:image">
+
+<title>Managing issues · Issues · Project · User · Help · GitLab</title>
+<meta content="GitLab Community Edition" name="description">
+<link rel="shortcut icon" type="image/png" href="../../../../../assets/favicon-7901bd695fb93edb07975966062049829afb56cf11511236e61bcf425070e36e.png" id="favicon" data-original-href="/assets/favicon-7901bd695fb93edb07975966062049829afb56cf11511236e61bcf425070e36e.png">
+<link rel="stylesheet" media="all" href="../../../../../assets/application-3407a4fd892e9d5024f3096605eb1e25cad75a8bf847d26740a1e6a77e45b087.css">
+<link rel="stylesheet" media="print" href="../../../../../assets/print-74c3df10dad473d66660c828e3aa54ca3bfeac6d8bb708643331403fe7211e60.css">
+
+
+<link rel="stylesheet" media="all" href="../../../../../assets/highlight/themes/white-3144068cf4f603d290f553b653926358ddcd02493b9728f62417682657fc58c0.css">
+<script>
+//<![CDATA[
+window.gon={};gon.api_version="v4";gon.default_avatar_url="https://git.odysec.cn:10443/assets/no_avatar-849f9c04a3a0d0cea2424ae97b27447dc64a7dbfae83c036c45b403392f0e8ba.png";gon.max_file_size=10;gon.asset_host=null;gon.webpack_public_path="/assets/webpack/";gon.relative_url_root="";gon.shortcuts_path="/help/shortcuts";gon.user_color_scheme="white";gon.gitlab_url="https://git.odysec.cn:10443";gon.revision="5159b8de4a6";gon.gitlab_logo="/assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png";gon.sprite_icons="/assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg";gon.sprite_file_icons="/assets/file_icons-7262fc6897e02f1ceaf8de43dc33afa5e4f9a2067f4f68ef77dcc87946575e9e.svg";gon.emoji_sprites_css_path="/assets/emoji_sprites-289eccffb1183c188b630297431be837765d9ff4aed6130cf738586fb307c170.css";gon.test_env=false;gon.suggested_label_colors={"#0033CC":"UA blue","#428BCA":"Moderate blue","#44AD8E":"Lime green","#A8D695":"Feijoa","#5CB85C":"Slightly desaturated green","#69D100":"Bright green","#004E00":"Very dark lime green","#34495E":"Very dark desaturated blue","#7F8C8D":"Dark grayish cyan","#A295D6":"Slightly desaturated blue","#5843AD":"Dark moderate blue","#8E44AD":"Dark moderate violet","#FFECDB":"Very pale orange","#AD4363":"Dark moderate pink","#D10069":"Strong pink","#CC0033":"Strong red","#FF0000":"Pure red","#D9534F":"Soft red","#D1D100":"Strong yellow","#F0AD4E":"Soft orange","#AD8D43":"Dark moderate orange"};gon.first_day_of_week=0;gon.ee=false;gon.features={"suppressAjaxNavigationErrors":true,"gfmGrafanaIntegration":false};
+//]]>
+</script>
+
+
+<script src="../../../../../assets/webpack/runtime.7c7b62b1.bundle.js" defer="defer"></script>
+<script src="../../../../../assets/webpack/main.b5cfaf04.chunk.js" defer="defer"></script>
+<script src="../../../../../assets/webpack/pages.help.show.304a14b6.chunk.js" defer="defer"></script>
+
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="AGLMJ05915Oz3C8ZyDhERNqRlJBib23UaIS/ZxAwc1zmQYjMHkGe7Z5HtFkaJlwp7wy76JAtFm55olglo14M3A==">
+
+<meta content="origin-when-cross-origin" name="referrer">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+<meta content="#474D57" name="theme-color">
+<link rel="apple-touch-icon" type="image/x-icon" href="../../../../../assets/touch-icon-iphone-5a9cee0e8a51212e70b90c87c12f382c428870c0ff67d1eb034d884b78d2dae7.png">
+<link rel="apple-touch-icon" type="image/x-icon" href="../../../../../assets/touch-icon-ipad-a6eec6aeb9da138e507593b464fdac213047e49d3093fc30e90d9a995df83ba3.png" sizes="76x76">
+<link rel="apple-touch-icon" type="image/x-icon" href="../../../../../assets/touch-icon-iphone-retina-72e2aadf86513a56e050e7f0f2355deaa19cc17ed97bbe5147847f2748e5a3e3.png" sizes="120x120">
+<link rel="apple-touch-icon" type="image/x-icon" href="../../../../../assets/touch-icon-ipad-retina-8ebe416f5313483d9c1bc772b5bbe03ecad52a54eba443e5215a22caed2a16a2.png" sizes="152x152">
+<link color="rgb(226, 67, 41)" href="../../../../../assets/logo-d36b5212042cebc89b96df4bf6ac24e43db316143e89926c0db839ff694d2de4.svg" rel="mask-icon">
+<meta content="/assets/msapplication-tile-1196ec67452f618d39cdd85e2e3a542f76574c071051ae7effbfde01710eb17d.png" name="msapplication-TileImage">
+<meta content="#30353E" name="msapplication-TileColor">
+
+
+
+
+</head>
+
+<body class="ui-indigo  gl-browser-generic gl-platform-other" data-group data-page="help:show" data-project>
+
+<script>
+//<![CDATA[
+gl = window.gl || {};
+gl.client = {"isGeneric":true,"isOther":true};
+
+
+//]]>
+</script>
+
+
+<header class="navbar navbar-gitlab navbar-expand-sm js-navbar" data-qa-selector="navbar">
+<a class="sr-only gl-accessibility" href="#content-body" tabindex="1">Skip to content</a>
+<div class="container-fluid">
+<div class="header-content">
+<div class="title-container">
+<h1 class="title">
+<a title="Dashboard" id="logo" href="../../../../../users/sign_in/index.html"><svg width="24" height="24" class="tanuki-logo" viewBox="0 0 36 36">
+  <path class="tanuki-shape tanuki-left-ear" fill="#e24329" d="M2 14l9.38 9v-9l-4-12.28c-.205-.632-1.176-.632-1.38 0z"/>
+  <path class="tanuki-shape tanuki-right-ear" fill="#e24329" d="M34 14l-9.38 9v-9l4-12.28c.205-.632 1.176-.632 1.38 0z"/>
+  <path class="tanuki-shape tanuki-nose" fill="#e24329" d="M18,34.38 3,14 33,14 Z"/>
+  <path class="tanuki-shape tanuki-left-eye" fill="#fc6d26" d="M18,34.38 11.38,14 2,14 6,25Z"/>
+  <path class="tanuki-shape tanuki-right-eye" fill="#fc6d26" d="M18,34.38 24.62,14 34,14 30,25Z"/>
+  <path class="tanuki-shape tanuki-left-cheek" fill="#fca326" d="M2 14L.1 20.16c-.18.565 0 1.2.5 1.56l17.42 12.66z"/>
+  <path class="tanuki-shape tanuki-right-cheek" fill="#fca326" d="M34 14l1.9 6.16c.18.565 0 1.2-.5 1.56L18 34.38z"/>
+</svg>
+
+<span class="logo-text d-none d-lg-block prepend-left-8">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 617 169"><path d="M315.26 2.97h-21.8l.1 162.5h88.3v-20.1h-66.5l-.1-142.4M465.89 136.95c-5.5 5.7-14.6 11.4-27 11.4-16.6 0-23.3-8.2-23.3-18.9 0-16.1 11.2-23.8 35-23.8 4.5 0 11.7.5 15.4 1.2v30.1h-.1m-22.6-98.5c-17.6 0-33.8 6.2-46.4 16.7l7.7 13.4c8.9-5.2 19.8-10.4 35.5-10.4 17.9 0 25.8 9.2 25.8 24.6v7.9c-3.5-.7-10.7-1.2-15.1-1.2-38.2 0-57.6 13.4-57.6 41.4 0 25.1 15.4 37.7 38.7 37.7 15.7 0 30.8-7.2 36-18.9l4 15.9h15.4v-83.2c-.1-26.3-11.5-43.9-44-43.9M557.63 149.1c-8.2 0-15.4-1-20.8-3.5V70.5c7.4-6.2 16.6-10.7 28.3-10.7 21.1 0 29.2 14.9 29.2 39 0 34.2-13.1 50.3-36.7 50.3m9.2-110.6c-19.5 0-30 13.3-30 13.3v-21l-.1-27.8h-21.3l.1 158.5c10.7 4.5 25.3 6.9 41.2 6.9 40.7 0 60.3-26 60.3-70.9-.1-35.5-18.2-59-50.2-59M77.9 20.6c19.3 0 31.8 6.4 39.9 12.9l9.4-16.3C114.5 6 97.3 0 78.9 0 32.5 0 0 28.3 0 85.4c0 59.8 35.1 83.1 75.2 83.1 20.1 0 37.2-4.7 48.4-9.4l-.5-63.9V75.1H63.6v20.1h38l.5 48.5c-5 2.5-13.6 4.5-25.3 4.5-32.2 0-53.8-20.3-53.8-63-.1-43.5 22.2-64.6 54.9-64.6M231.43 2.95h-21.3l.1 27.3v94.3c0 26.3 11.4 43.9 43.9 43.9 4.5 0 8.9-.4 13.1-1.2v-19.1c-3.1.5-6.4.7-9.9.7-17.9 0-25.8-9.2-25.8-24.6v-65h35.7v-17.8h-35.7l-.1-38.5M155.96 165.47h21.3v-124h-21.3v124M155.96 24.37h21.3V3.07h-21.3v21.3"/></svg>
+
+</span>
+</a></h1>
+<ul class="list-unstyled navbar-sub-nav">
+<li class="home"><a title="Projects" class="dashboard-shortcuts-projects" href="../../../../../explore/index.html">Projects
+</a></li><li class><a title="Groups" class="dashboard-shortcuts-groups" href="../../../../../explore/groups/index.html">Groups
+</a></li><li class><a title="Snippets" class="dashboard-shortcuts-snippets" href="../../../../../explore/snippets/index.html">Snippets
+</a></li><li>
+<a title="About GitLab CE" href="../../../../index.html">Help</a>
+</li>
+</ul>
+
+</div>
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav">
+<li class="nav-item d-none d-lg-block m-auto">
+<div class="search search-form" data-track-event="activate_form_input" data-track-label="navbar_search" data-track-value>
+<form class="form-inline" action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"><div class="search-input-container">
+<div class="search-input-wrap">
+<div class="dropdown" data-url="/search/autocomplete">
+<input type="search" name="search" id="search" placeholder="Search or jump to…" class="search-input dropdown-menu-toggle no-outline js-search-dashboard-options" spellcheck="false" tabindex="1" autocomplete="off" data-issues-path="/dashboard/issues" data-mr-path="/dashboard/merge_requests" data-qa-selector="search_term_field" aria-label="Search or jump to…">
+<button class="hidden js-dropdown-search-toggle" data-toggle="dropdown" type="button"></button>
+<div class="dropdown-menu dropdown-select js-dashboard-search-options">
+<div class="dropdown-content"><ul>
+<li class="dropdown-menu-empty-item">
+<a>
+Loading...
+</a>
+</li>
+</ul>
+</div><div class="dropdown-loading"><i aria-hidden="true" data-hidden="true" class="fa fa-spinner fa-spin"></i></div>
+</div>
+<svg class="s16 search-icon"><use xlink:href="../../../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#search"/></svg>
+<svg class="s16 clear-icon js-clear-input"><use xlink:href="../../../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#close"/></svg>
+</div>
+</div>
+</div>
+<input type="hidden" name="group_id" id="group_id" class="js-search-group-options">
+<input type="hidden" name="project_id" id="search_project_id" value class="js-search-project-options">
+<input type="hidden" name="repository_ref" id="repository_ref">
+<input type="hidden" name="nav_source" id="nav_source" value="navbar">
+<div class="search-autocomplete-opts hide" data-autocomplete-path="/search/autocomplete"></div>
+</form></div>
+
+</li>
+<li class="nav-item d-inline-block d-lg-none">
+<a title="Search" aria-label="Search" data-toggle="tooltip" data-placement="bottom" data-container="body" href="../../../../../search/index.html"><svg class="s16"><use xlink:href="../../../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#search"/></svg>
+</a></li>
+<li class="nav-item header-help dropdown d-none d-md-block">
+<a class="header-help-dropdown-toggle" data-toggle="dropdown" href="../../../../index.html"><svg class="s16"><use xlink:href="../../../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#question"/></svg>
+<svg class="caret-down"><use xlink:href="../../../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#angle-down"/></svg>
+</a><div class="dropdown-menu dropdown-menu-right">
+<ul>
+<li>
+<a href="../../../../index.html">Help</a>
+</li>
+<li>
+<a href="https://about.gitlab.com/getting-help/">Support</a>
+</li>
+
+<li class="divider"></li>
+<li>
+<a href="https://about.gitlab.com/submit-feedback">Submit feedback</a>
+</li>
+<li>
+<a target="_blank" class="text-nowrap" href="https://about.gitlab.com/contributing">Contribute to GitLab
+</a>
+</li>
+
+</ul>
+
+</div>
+</li>
+<li class="nav-item">
+<div>
+<a class="btn btn-sign-in" href="../../../../../users/sign_in/redirect_to_referer%3Dyes.html">Sign in</a>
+</div>
+</li>
+</ul>
+</div>
+<button class="navbar-toggler d-block d-sm-none" type="button">
+<span class="sr-only">Toggle navigation</span>
+<svg class="s12 more-icon js-navbar-toggle-right"><use xlink:href="../../../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#ellipsis_h"/></svg>
+<svg class="s12 close-icon js-navbar-toggle-left"><use xlink:href="../../../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#close"/></svg>
+</button>
+</div>
+</div>
+</header>
+
+<div class="layout-page">
+<div class="content-wrapper">
+
+<div class="mobile-overlay"></div>
+<div class="alert-wrapper">
+
+
+
+
+
+
+<nav class="breadcrumbs container-fluid container-limited limit-container-width" role="navigation">
+<div class="breadcrumbs-container">
+<div class="breadcrumbs-links js-title-container">
+<ul class="list-unstyled breadcrumbs-list js-breadcrumbs-list">
+<li><a href="../../../../index.html">Help</a><svg class="s8 breadcrumbs-list-angle"><use xlink:href="../../../../../assets/icons-0049ce48cb63125d77ce72ebf500b3d7dfc2d2806c05510c08d92c677c53d361.svg#angle-right"/></svg></li>
+
+<li>
+<h2 class="breadcrumbs-sub-title"><a href="index.html">Help</a></h2>
+</li>
+</ul>
+</div>
+
+</div>
+</nav>
+
+<div class="d-flex"></div>
+</div>
+<div class="container-fluid container-limited limit-container-width">
+<div class="content" id="content-body">
+<div class="flash-container flash-container-page sticky">
+</div>
+
+<div class="documentation md prepend-top-default">
+<h1 data-sourcepos="1:1-1:17" dir="auto">&#x000A;<a id="user-content-managing-issues" class="anchor" href="#managing-issues" aria-hidden="true"></a>Managing Issues</h1>&#x000A;<p data-sourcepos="3:1-6:23" dir="auto"><a href="../index.md/index.html">GitLab Issues</a> are the fundamental medium for collaborating on ideas and&#x000A;planning work in GitLab. <a href="#create-a-new-issue">Creating</a>, <a href="#moving-issues">moving</a>,&#x000A;<a href="#closing-issues">closing</a>, and <a href="#deleting-issues">deleting</a> are key actions that&#x000A;you can do with issues.</p>&#x000A;<h2 data-sourcepos="8:1-8:21" dir="auto">&#x000A;<a id="user-content-create-a-new-issue" class="anchor" href="#create-a-new-issue" aria-hidden="true"></a>Create a new Issue</h2>&#x000A;<p data-sourcepos="10:1-12:62" dir="auto">When you create a new issue, you'll be prompted to fill in the <a href="../issue_data_and_actions.md/index.html#parts-of-an-issue">data and fields of the issue</a>, as illustrated below. If you know&#x000A;the values you want to assign to an issue, you can use the <a href="../../quick_actions.md/index.html">Quick actions</a>&#x000A;feature to input values, instead of selecting them from lists.</p>&#x000A;<p data-sourcepos="14:1-14:52" dir="auto"><a class="no-attachment-icon" href="../img/new_issue.png" target="_blank" rel="noopener noreferrer"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="New issue from the issues list" class="lazy" data-src="img/new_issue.png"></a></p>&#x000A;<h3 data-sourcepos="16:1-16:32" dir="auto">&#x000A;<a id="user-content-accessing-the-new-issue-form" class="anchor" href="#accessing-the-new-issue-form" aria-hidden="true"></a>Accessing the new Issue form</h3>&#x000A;<p data-sourcepos="18:1-18:71" dir="auto">There are many ways to get to the new Issue form from within a project:</p>&#x000A;<ul data-sourcepos="20:1-38:0" dir="auto">&#x000A;<li data-sourcepos="20:1-23:0">&#x000A;<p data-sourcepos="20:3-20:72">Navigate to your <strong>Project's Dashboard</strong> &gt; <strong>Issues</strong> &gt; <strong>New Issue</strong>:</p>&#x000A;<p data-sourcepos="22:3-22:76"><a class="no-attachment-icon" href="../img/new_issue_from_tracker_list.png" target="_blank" rel="noopener noreferrer"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="New issue from the issue list view" class="lazy" data-src="img/new_issue_from_tracker_list.png"></a></p>&#x000A;</li>&#x000A;<li data-sourcepos="24:1-28:0">&#x000A;<p data-sourcepos="24:3-25:28">From an <strong>opened issue</strong> in your project, click <strong>New Issue</strong> to create a new&#x000A;issue in the same project:</p>&#x000A;<p data-sourcepos="27:3-27:68"><a class="no-attachment-icon" href="../img/new_issue_from_open_issue.png" target="_blank" rel="noopener noreferrer"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="New issue from an open issue" class="lazy" data-src="img/new_issue_from_open_issue.png"></a></p>&#x000A;</li>&#x000A;<li data-sourcepos="29:1-33:0">&#x000A;<p data-sourcepos="29:3-30:83">From your <strong>Project's Dashboard</strong>, click the plus sign (<strong>+</strong>) to open a dropdown&#x000A;menu with a few options. Select <strong>New Issue</strong> to create an issue in that project:</p>&#x000A;<p data-sourcepos="32:3-32:84"><a class="no-attachment-icon" href="../img/new_issue_from_projects_dashboard.png" target="_blank" rel="noopener noreferrer"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="New issue from a project's dashboard" class="lazy" data-src="img/new_issue_from_projects_dashboard.png"></a></p>&#x000A;</li>&#x000A;<li data-sourcepos="34:1-38:0">&#x000A;<p data-sourcepos="34:3-35:78">From an <strong>Issue Board</strong>, create a new issue by clicking on the plus sign (<strong>+</strong>) at the top of a list.&#x000A;It opens a new issue for that project, pre-labeled with its respective list.</p>&#x000A;<p data-sourcepos="37:3-37:61"><a class="no-attachment-icon" href="../img/new_issue_from_issue_board.png" target="_blank" rel="noopener noreferrer"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="From the issue board" class="lazy" data-src="img/new_issue_from_issue_board.png"></a></p>&#x000A;</li>&#x000A;</ul>&#x000A;<h3 data-sourcepos="39:1-39:48" dir="auto">&#x000A;<a id="user-content-new-issue-from-the-group-level-issue-tracker" class="anchor" href="#new-issue-from-the-group-level-issue-tracker" aria-hidden="true"></a>New issue from the group-level Issue Tracker</h3>&#x000A;<p data-sourcepos="41:1-43:55" dir="auto">Go to the Group dashboard and click "Issues" in the sidebar to visit the Issue Tracker&#x000A;for all projects in your Group. Select the project you'd like to add an issue for&#x000A;using the dropdown button at the top-right of the page.</p>&#x000A;<p data-sourcepos="45:1-45:88" dir="auto"><a class="no-attachment-icon" href="../img/select_project_from_group_level_issue_tracker.png" target="_blank" rel="noopener noreferrer"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Select project to create issue" class="lazy" data-src="img/select_project_from_group_level_issue_tracker.png"></a></p>&#x000A;<p data-sourcepos="47:1-49:35" dir="auto">We'll keep track of the project you selected most recently, and use it as the default&#x000A;for your next visit. This should save you a lot of time and clicks, if you mostly&#x000A;create issues for the same project.</p>&#x000A;<p data-sourcepos="51:1-51:99" dir="auto"><a class="no-attachment-icon" href="../img/create_issue_from_group_level_issue_tracker.png" target="_blank" rel="noopener noreferrer"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Create issue from group-level issue tracker" class="lazy" data-src="img/create_issue_from_group_level_issue_tracker.png"></a></p>&#x000A;<h3 data-sourcepos="53:1-53:44" dir="auto">&#x000A;<a id="user-content-new-issue-via-service-desk-premium" class="anchor" href="#new-issue-via-service-desk-premium" aria-hidden="true"></a>New issue via Service Desk <strong>(PREMIUM)</strong>&#x000A;</h3>&#x000A;<p data-sourcepos="55:1-57:51" dir="auto">Enable <a href="../../service_desk.md/index.html">Service Desk</a> for your project and offer email support.&#x000A;By doing so, when your customer sends a new email, a new issue can be created in&#x000A;the appropriate project and followed up from there.</p>&#x000A;<h3 data-sourcepos="59:1-59:23" dir="auto">&#x000A;<a id="user-content-new-issue-via-email" class="anchor" href="#new-issue-via-email" aria-hidden="true"></a>New issue via email</h3>&#x000A;<p data-sourcepos="61:1-63:11" dir="auto">A link to <strong>Email a new issue to this project</strong> is displayed at the bottom of a project's&#x000A;<strong>Issues List</strong> page, if your GitLab instance has <a href="../../../../administration/incoming_email.md/index.html">incoming email</a>&#x000A;configured.</p>&#x000A;<p data-sourcepos="65:1-65:64" dir="auto"><a class="no-attachment-icon" href="../img/new_issue_from_email.png" target="_blank" rel="noopener noreferrer"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Bottom of a project issues page" class="lazy" data-src="img/new_issue_from_email.png"></a></p>&#x000A;<p data-sourcepos="67:1-69:46" dir="auto">When you click this link, an email address is generated and displayed, which should be used&#x000A;by <strong>you only</strong>, to create issues in this project. You can save this address as a&#x000A;contact in your email client for easy acceess.</p>&#x000A;<p data-sourcepos="71:1-75:87" dir="auto">CAUTION: <strong>Caution:</strong>&#x000A;This is a private email address, generated just for you. <strong>Keep it to yourself</strong>,&#x000A;as anyone who knows it can create issues or merge requests as if they&#x000A;were you. If the address is compromised, or you'd like it to be regenerated for&#x000A;any reason, click <strong>Email a new issue to this project</strong> again and click the reset link.</p>&#x000A;<p data-sourcepos="77:1-78:20" dir="auto">Sending an email to this address will create a new issue in your name for&#x000A;this project, where:</p>&#x000A;<ul data-sourcepos="80:1-83:0" dir="auto">&#x000A;<li data-sourcepos="80:1-80:44">The email subject becomes the issue title.</li>&#x000A;<li data-sourcepos="81:1-81:47">The email body becomes the issue description.</li>&#x000A;<li data-sourcepos="82:1-83:0">&#x000A;<a href="../../../markdown.md/index.html">Markdown</a> and <a href="../../quick_actions.md/index.html">quick actions</a> are supported.</li>&#x000A;</ul>&#x000A;<p data-sourcepos="84:1-86:91" dir="auto">NOTE: <strong>Note:</strong>&#x000A;In GitLab 11.7, we updated the format of the generated email address. However the&#x000A;older format is still supported, allowing existing aliases or contacts to continue working.</p>&#x000A;<h3 data-sourcepos="88:1-88:43" dir="auto">&#x000A;<a id="user-content-new-issue-via-url-with-prefilled-fields" class="anchor" href="#new-issue-via-url-with-prefilled-fields" aria-hidden="true"></a>New issue via URL with prefilled fields</h3>&#x000A;<p data-sourcepos="90:1-93:46" dir="auto">You can link directly to the new issue page for a given project, with prefilled&#x000A;field values using query string parameters in a URL. This is useful for embedding&#x000A;a URL in an external HTML page, and also certain scenarios where you want the user to&#x000A;create an issue with certain fields prefilled.</p>&#x000A;<p data-sourcepos="95:1-97:84" dir="auto">The title, description, and description template fields can be prefilled using&#x000A;this method. You cannot pre-fill both the description and description template fields&#x000A;in the same URL (since a description template also populates the description field).</p>&#x000A;<p data-sourcepos="99:1-99:71" dir="auto">Follow these examples to form your new issue URL with prefilled fields.</p>&#x000A;<ul data-sourcepos="101:1-105:0" dir="auto">&#x000A;<li data-sourcepos="101:1-102:176">For a new issue in the GitLab Community Edition project with a pre-filled title&#x000A;and a pre-filled description, the URL would be <code>https://gitlab.com/gitlab-org/gitlab-foss/issues/new?issue[title]=Validate%20new%20concept&amp;issue[description]=Research%20idea</code>&#x000A;</li>&#x000A;<li data-sourcepos="103:1-105:0">For a new issue in the GitLab Community Edition project with a pre-filled title&#x000A;and a pre-filled description template, the URL would be <code>https://gitlab.com/gitlab-org/gitlab-foss/issues/new?issue[title]=Validate%20new%20concept&amp;issuable_template=Research%20proposal</code>&#x000A;</li>&#x000A;</ul>&#x000A;<h2 data-sourcepos="106:1-106:16" dir="auto">&#x000A;<a id="user-content-moving-issues" class="anchor" href="#moving-issues" aria-hidden="true"></a>Moving Issues</h2>&#x000A;<p data-sourcepos="108:1-110:42" dir="auto">Moving an issue will copy it to a new location (project), and close it in the old project,&#x000A;but it will not be deleted. There will also be a system note added to both issues&#x000A;indicating where it came from and went to.</p>&#x000A;<p data-sourcepos="112:1-112:85" dir="auto">The "Move issue" button is at the bottom of the right-sidebar when viewing the issue.</p>&#x000A;<p data-sourcepos="114:1-114:50" dir="auto"><a class="no-attachment-icon" href="../img/sidebar_move_issue.png" target="_blank" rel="noopener noreferrer"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="move issue - button" class="lazy" data-src="img/sidebar_move_issue.png"></a></p>&#x000A;<h3 data-sourcepos="116:1-116:25" dir="auto">&#x000A;<a id="user-content-moving-issues-in-bulk" class="anchor" href="#moving-issues-in-bulk" aria-hidden="true"></a>Moving Issues in Bulk</h3>&#x000A;<p data-sourcepos="118:1-118:230" dir="auto">If you have advanced technical skills you can also bulk move all the issues from one project to another in the rails console. The below script will move all the issues from one project to another that are not in status <strong>closed</strong>.</p>&#x000A;<p data-sourcepos="120:1-120:358" dir="auto">To access rails console run <code>sudo gitlab-rails console</code> on the GitLab server and run the below script. Please be sure to change <strong>project</strong>, <strong>admin_user</strong> and <strong>target_project</strong> to your values. We do also recommend <a href="../../../../raketasks/backup_restore.md/index.html#creating-a-backup-of-the-gitlab-system">creating a backup</a> before attempting any changes in the console.</p>&#x000A;<pre class="code highlight js-syntax-highlight ruby" lang="ruby" v-pre="true"><code><span id="LC1" class="line" lang="ruby"><span class="n">project</span> <span class="o">=</span> <span class="no">Project</span><span class="p">.</span><span class="nf">find_by_full_path</span><span class="p">(</span><span class="s1">'full path of the project where issues are moved from'</span><span class="p">)</span></span>&#x000A;<span id="LC2" class="line" lang="ruby"><span class="n">issues</span> <span class="o">=</span> <span class="n">project</span><span class="p">.</span><span class="nf">issues</span></span>&#x000A;<span id="LC3" class="line" lang="ruby"><span class="n">admin_user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">find_by_username</span><span class="p">(</span><span class="s1">'username of admin user'</span><span class="p">)</span> <span class="c1"># make sure user has permissions to move the issues</span></span>&#x000A;<span id="LC4" class="line" lang="ruby"><span class="n">target_project</span> <span class="o">=</span> <span class="no">Project</span><span class="p">.</span><span class="nf">find_by_full_path</span><span class="p">(</span><span class="s1">'full path of target project where issues moved to'</span><span class="p">)</span></span>&#x000A;<span id="LC5" class="line" lang="ruby"></span>&#x000A;<span id="LC6" class="line" lang="ruby"><span class="n">issues</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">issue</span><span class="o">|</span></span>&#x000A;<span id="LC7" class="line" lang="ruby">   <span class="k">if</span> <span class="n">issue</span><span class="p">.</span><span class="nf">state</span> <span class="o">!=</span> <span class="s2">"closed"</span> <span class="o">&amp;&amp;</span> <span class="n">issue</span><span class="p">.</span><span class="nf">moved_to</span><span class="p">.</span><span class="nf">nil?</span></span>&#x000A;<span id="LC8" class="line" lang="ruby">      <span class="no">Issues</span><span class="o">::</span><span class="no">MoveService</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="n">admin_user</span><span class="p">).</span><span class="nf">execute</span><span class="p">(</span><span class="n">issue</span><span class="p">,</span> <span class="n">target_project</span><span class="p">)</span></span>&#x000A;<span id="LC9" class="line" lang="ruby">   <span class="k">else</span></span>&#x000A;<span id="LC10" class="line" lang="ruby">      <span class="nb">puts</span> <span class="s2">"issue with id: </span><span class="si">#{</span><span class="n">issue</span><span class="p">.</span><span class="nf">id</span><span class="si">}</span><span class="s2"> and title: </span><span class="si">#{</span><span class="n">issue</span><span class="p">.</span><span class="nf">title</span><span class="si">}</span><span class="s2"> was not moved"</span></span>&#x000A;<span id="LC11" class="line" lang="ruby">   <span class="k">end</span></span>&#x000A;<span id="LC12" class="line" lang="ruby"><span class="k">end</span><span class="p">;</span> <span class="kp">nil</span></span></code></pre>&#x000A;<h2 data-sourcepos="137:1-137:17" dir="auto">&#x000A;<a id="user-content-closing-issues" class="anchor" href="#closing-issues" aria-hidden="true"></a>Closing Issues</h2>&#x000A;<p data-sourcepos="139:1-140:23" dir="auto">When you decide that an issue is resolved, or no longer needed, you can close the issue&#x000A;using the close button:</p>&#x000A;<p data-sourcepos="142:1-142:51" dir="auto"><a class="no-attachment-icon" href="../img/button_close_issue.png" target="_blank" rel="noopener noreferrer"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="close issue - button" class="lazy" data-src="img/button_close_issue.png"></a></p>&#x000A;<p data-sourcepos="144:1-145:55" dir="auto">You can also close an issue from the <a href="../../issue_board.md/index.html">Issue Boards</a> by dragging an issue card&#x000A;from its list and dropping it into the <strong>Closed</strong> list.</p>&#x000A;<p data-sourcepos="147:1-147:67" dir="auto"><a class="no-attachment-icon" href="../img/close_issue_from_board.gif" target="_blank" rel="noopener noreferrer"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="close issue from the Issue Board" class="lazy" data-src="img/close_issue_from_board.gif"></a></p>&#x000A;<h3 data-sourcepos="149:1-149:32" dir="auto">&#x000A;<a id="user-content-closing-issues-automatically" class="anchor" href="#closing-issues-automatically" aria-hidden="true"></a>Closing issues automatically</h3>&#x000A;<p data-sourcepos="151:1-153:33" dir="auto">NOTE: <strong>Note:</strong>&#x000A;For performance reasons, automatic issue closing is disabled for the very first&#x000A;push from an existing repository.</p>&#x000A;<p data-sourcepos="155:1-157:15" dir="auto">When a commit or merge request resolves one or more issues, it is possible to have&#x000A;these issues closed automatically when the commit or merge request reaches the project's&#x000A;default branch.</p>&#x000A;<p data-sourcepos="159:1-162:52" dir="auto">If a commit message or merge request description contains text matching a <a href="#default-closing-pattern">defined pattern</a>,&#x000A;all issues referenced in the matched text will be closed. This happens when the commit&#x000A;is pushed to a project's <a href="../../repository/branches/index.md/index.html#default-branch"><strong>default</strong> branch</a>,&#x000A;or when a commit or merge request is merged into it.</p>&#x000A;<p data-sourcepos="164:1-167:36" dir="auto">For example, if <code>Closes #4, #6, Related to #5</code> is included in a Merge Request&#x000A;description, issues <code>#4</code> and <code>#6</code> will close automatically when the MR is merged, but not <code>#5</code>.&#x000A;Using <code>Related to</code> flags <code>#5</code> as a <a href="../related_issues.md/index.html">related issue</a>,&#x000A;but it will not close automatically.</p>&#x000A;<p data-sourcepos="169:1-169:78" dir="auto"><a class="no-attachment-icon" href="../img/merge_request_closes_issue.png" target="_blank" rel="noopener noreferrer"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="merge request closing issue when merged" class="lazy" data-src="img/merge_request_closes_issue.png"></a></p>&#x000A;<p data-sourcepos="171:1-171:89" dir="auto">If the issue is in a different repository than the MR, add the full URL for the issue(s):</p>&#x000A;<pre class="code highlight js-syntax-highlight markdown" lang="markdown" v-pre="true"><code><span id="LC1" class="line" lang="markdown">Closes #4, #6, and https://gitlab.com/<span class="nt">&lt;username&gt;</span>/<span class="nt">&lt;projectname&gt;</span>/issues/<span class="nt">&lt;xxx&gt;</span></span></code></pre>&#x000A;<h4 data-sourcepos="177:1-177:28" dir="auto">&#x000A;<a id="user-content-default-closing-pattern" class="anchor" href="#default-closing-pattern" aria-hidden="true"></a>Default closing pattern</h4>&#x000A;<p data-sourcepos="179:1-179:82" dir="auto">When not specified, the default issue closing pattern as shown below will be used:</p>&#x000A;<pre class="code highlight js-syntax-highlight shell" lang="shell" v-pre="true"><code><span id="LC1" class="line" lang="shell"><span class="o">((</span>?:[Cc]los<span class="o">(</span>?:e[sd]?|ing<span class="o">)</span>|[Ff]ix<span class="o">(</span>?:e[sd]|ing<span class="o">)</span>?|[Rr]esolv<span class="o">(</span>?:e[sd]?|ing<span class="o">)</span>|[Ii]mplement<span class="o">(</span>?:s|ed|ing<span class="o">)</span>?<span class="o">)(</span>:?<span class="o">)</span> +<span class="o">(</span>?:<span class="o">(</span>?:issues? +<span class="o">)</span>?%<span class="o">{</span>issue_ref<span class="o">}(</span>?:<span class="o">(</span>?:, <span class="k">*</span>| +and +<span class="o">)</span>?<span class="o">)</span>|<span class="o">([</span>A-Z][A-Z0-9_]+-<span class="se">\d</span>+<span class="o">))</span>+<span class="o">)</span></span></code></pre>&#x000A;<p data-sourcepos="185:1-185:42" dir="auto">This translates to the following keywords:</p>&#x000A;<ul data-sourcepos="187:1-191:0" dir="auto">&#x000A;<li data-sourcepos="187:1-187:64">Close, Closes, Closed, Closing, close, closes, closed, closing</li>&#x000A;<li data-sourcepos="188:1-188:54">Fix, Fixes, Fixed, Fixing, fix, fixes, fixed, fixing</li>&#x000A;<li data-sourcepos="189:1-189:80">Resolve, Resolves, Resolved, Resolving, resolve, resolves, resolved, resolving</li>&#x000A;<li data-sourcepos="190:1-191:0">Implement, Implements, Implemented, Implementing, implement, implements, implemented, implementing</li>&#x000A;</ul>&#x000A;<p data-sourcepos="192:1-193:41" dir="auto">Note that <code>%{issue_ref}</code> is a complex regular expression defined inside GitLab's&#x000A;source code that can match references to:</p>&#x000A;<ul data-sourcepos="195:1-198:0" dir="auto">&#x000A;<li data-sourcepos="195:1-195:25">A local issue (<code>#123<span class="gfm-color_chip"><span style="background-color: #123;"></span></span></code>).</li>&#x000A;<li data-sourcepos="196:1-196:46">A cross-project issue (<code>group/project#123</code>).</li>&#x000A;<li data-sourcepos="197:1-198:0">A link to an issue (<code>https://gitlab.example.com/group/project/issues/123</code>).</li>&#x000A;</ul>&#x000A;<p data-sourcepos="199:1-199:41" dir="auto">For example the following commit message:</p>&#x000A;<pre class="code highlight js-syntax-highlight plaintext" lang="plaintext" v-pre="true"><code><span id="LC1" class="line" lang="plaintext">Awesome commit message</span>&#x000A;<span id="LC2" class="line" lang="plaintext"></span>&#x000A;<span id="LC3" class="line" lang="plaintext">Fix #20, Fixes #21 and Closes group/otherproject#22.</span>&#x000A;<span id="LC4" class="line" lang="plaintext">This commit is also related to #17 and fixes #18, #19</span>&#x000A;<span id="LC5" class="line" lang="plaintext">and https://gitlab.example.com/group/otherproject/issues/23.</span></code></pre>&#x000A;<p data-sourcepos="209:1-212:53" dir="auto">will close <code>#18</code>, <code>#19</code>, <code>#20</code>, and <code>#21</code> in the project this commit is pushed to,&#x000A;as well as <code>#22</code> and <code>#23</code> in group/otherproject. <code>#17</code> won't be closed as it does&#x000A;not match the pattern. It works with multi-line commit messages as well as one-liners&#x000A;when used from the command line with <code>git commit -m</code>.</p>&#x000A;<h4 data-sourcepos="214:1-214:58" dir="auto">&#x000A;<a id="user-content-customizing-the-issue-closing-pattern-core-only" class="anchor" href="#customizing-the-issue-closing-pattern-core-only" aria-hidden="true"></a>Customizing the issue closing pattern <strong>(CORE ONLY)</strong>&#x000A;</h4>&#x000A;<p data-sourcepos="216:1-218:21" dir="auto">In order to change the default issue closing pattern, GitLab administrators must edit the&#x000A;<a href="../../../../administration/issue_closing_pattern.md/index.html"><code>gitlab.rb</code> or <code>gitlab.yml</code> file</a>&#x000A;of your installation.</p>&#x000A;<h2 data-sourcepos="220:1-220:18" dir="auto">&#x000A;<a id="user-content-deleting-issues" class="anchor" href="#deleting-issues" aria-hidden="true"></a>Deleting Issues</h2>&#x000A;<blockquote data-sourcepos="222:1-222:91" dir="auto">&#x000A;<p data-sourcepos="222:3-222:91"><a href="https://gitlab.com/gitlab-org/gitlab-foss/merge_requests/2982" rel="nofollow noreferrer noopener" target="_blank">Introduced</a> in GitLab 8.6</p>&#x000A;</blockquote>&#x000A;<p data-sourcepos="224:1-225:45" dir="auto">Users with <a href="../../../permissions.md/index.html">project owner permission</a> can delete an issue by&#x000A;editing it and clicking on the delete button.</p>&#x000A;<p data-sourcepos="227:1-227:46" dir="auto"><a class="no-attachment-icon" href="../img/delete_issue.png" target="_blank" rel="noopener noreferrer"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="delete issue - button" class="lazy" data-src="img/delete_issue.png"></a></p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+</body>
+</html>
+

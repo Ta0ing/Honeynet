@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="/static/img/facio.ico" type="image/x-icon">
+    <title>
+        JumpServer 开源堡垒机
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- css file -->
+    <link href="../../../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../../static/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="../../../static/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <link href="../../../static/css/style.css" rel="stylesheet">
+    <link href="../../../static/css/plugins/vaildator/jquery.validator.css" rel="stylesheet">
+    <link href="../../../static/css/plugins/datatables/datatables.min.css" rel="stylesheet">
+    <!-- scripts -->
+    <script src="../../../static/js/jquery-3.1.1.min.js"></script>
+    <script src="../../../static/js/plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="../../../static/js/bootstrap.min.js"></script>
+    <script src="../../../static/js/plugins/datatables/datatables.min.js"></script>
+    <script src="../../jsi18n"></script>
+    <link href="../../../static/css/plugins/select2/select2.min.css" rel="stylesheet">
+
+
+
+    <!-- Stylesheets -->
+    <link href="../../../static/css/login-style.css" rel="stylesheet">
+    <link href="../../../static/css/jumpserver.css" rel="stylesheet">
+    <script src="../../../static/js/jumpserver.js"></script>
+
+    <style>
+        .login-content {
+            box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.15), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+        }
+
+        .help-block {
+            margin: 0;
+            text-align: left;
+        }
+
+        form label {
+            color: #737373;
+            font-size: 13px;
+            font-weight: normal;
+        }
+
+        .hr-line-dashed {
+            border-top: 1px dashed #e7eaec;
+            color: #ffffff;
+            background-color: #ffffff;
+            height: 1px;
+            margin: 20px 0;
+        }
+
+        .login-content {
+            height: 490px;
+            width: 1066px;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: calc((100vh - 470px) / 3);
+        }
+
+        body {
+            background-color: #f2f2f2;
+            height: calc(100vh - (100vh - 470px) / 3);
+        }
+
+        .captcha {
+            float: right;
+        }
+
+        .right-image-box {
+            height: 100%;
+            width: 50%;
+            float: right;
+        }
+
+        .left-form-box {
+            text-align: center;
+            background-color: white;
+            height: 100%;
+            width: 50%;
+        }
+
+        .red-fonts {
+            color: red;
+        }
+
+        .form-group.has-error {
+            margin-bottom: 0;
+        }
+
+        .captch-field .has-error .help-block {
+            margin-top: -8px !important;
+        }
+
+        .no-captcha-challenge .form-group {
+            margin-bottom: 20px;
+        }
+
+        .jms-title {
+            padding: 40px 10px 10px;
+        }
+
+        .no-captcha-challenge .jms-title {
+            padding: 60px 10px 10px;
+        }
+
+        .no-captcha-challenge .welcome-message {
+            padding-top: 10px;
+        }
+
+        .more-login-item {
+            border-right: 1px dashed #dedede;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .more-login-item:last-child {
+            border: none;
+        }
+
+        .select-con {
+            width: 35%;
+        }
+
+        .mfa-div {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-content">
+        <div class="right-image-box">
+            <a href="https://github.com/jumpserver/jumpserver">
+                <img src="../../../static/img/login_image.jpg" style="height: 100%; width: 100%">
+            </a>
+        </div>
+        <div class="left-form-box  no-captcha-challenge ">
+            <div style="background-color: white">
+                <div class="jms-title">
+                    <span style="font-size: 21px;font-weight:400;color: #151515;letter-spacing: 0;">JumpServer
+                        开源堡垒机</span>
+                </div>
+                <div class="contact-form col-md-10 col-md-offset-1">
+                    <form id="login-form" action="/login" method="post" role="form" novalidate="novalidate">
+                        <input type="hidden" name="csrfmiddlewaretoken"
+                            value="nh0RKX6JOu9EzvUy8BiWFs8nS72gbIGdOFYBfJoo7JvTSBFwSAQhyrj9qpLh3eqn">
+                        <div style="line-height: 17px;margin-bottom: 20px;color: #999999;">
+
+                            <p class="welcome-message">
+                                欢迎回来，请输入用户名和密码登录
+                            </p>
+
+                        </div>
+
+                        <div class="form-group required"><label class="sr-only control-label"
+                                for="id_username">用户名</label><input type="text" name="username" placeholder="用户名"
+                                autofocus="autofocus" maxlength="100" class="form-control" title required
+                                id="id_username"></div>
+
+                        <div class="form-group ">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="密码"
+                                required>
+                            <!--                        <input id="password-hidden" type="text" style="display:none" name="password">-->
+
+                        </div>
+
+                        <div class="form-group" style="padding-top: 5px; margin-bottom: 10px">
+                            <div class="row">
+                                <div class="col-md-6" style="text-align: left">
+
+                                    <div class>
+                                        <div class="checkbox" style="margin-top: 0;">
+                                            <label for="id_auto_login">
+                                                <input type="checkbox" name="auto_login" class id="id_auto_login">
+                                                <sapn style="line-height: 20px">1 天内自动登录</sapn>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <a id="forgot_password" href="../password/forgot/index.html" style="float: right">
+                                        <small>忘记密码?</small>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style>
+                            <button type="submit" class="btn btn-transparent"
+                                onclick="doLogin();return false;">登录</button>
+                        </div>
+                        <div>
+
+                            <div class="text-center" style="display: inline-block;">
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<!-- Mainly scripts -->
+<script src="../../../static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="../../../static/js/plugins/toastr/toastr.min.js"></script>
+<script src="../../../static/js/inspinia.js"></script>
+<script src="../../../static/js/jumpserver_v%3D8.js"></script>
+<script src="../../../static/js/plugins/select2/select2.full.min.js"></script>
+<script src="../../../static/js/plugins/select2/i18n/zh-CN.js"></script>
+<script>
+    activeNav("");
+    $(document).ready(function () {
+        setAjaxCSRFToken();
+        $('textarea').attr('rows', 5);
+        if ($('.tooltip')[0]) {
+            $('.tooltip').tooltip();
+        }
+        $.fn.select2.defaults.set('language', getUserLang())
+    });
+</script>
+
+<script type="text/javascript" src="../../../static/js/plugins/jsencrypt/jsencrypt.min.js"></script>
+<script>
+    function encryptLoginPassword(password, rsaPublicKey) {
+        if (!password) {
+            return ''
+        }
+        var jsencrypt = new JSEncrypt(); //加密对象
+        jsencrypt.setPublicKey(rsaPublicKey); // 设置密钥
+        return jsencrypt.encrypt(password); //加密
+    }
+
+    function doLogin() {
+        //公钥加密
+        // var rsaPublicKey = "-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC1g6wdu8py2PQoPrpZbzO8jQBD\ngSbv9mGStq9zrzdA0otNSID7HvvMTpqq4dQv+h4CcC3z2i261BOirbHSaOAqYdp2\nB4L/vjgcrGBO9KRbMiDRLG4rDyAk6hlRJe9fluMQsjt1MiWBVN+5+/kMFL9aRMbd\n0NBdWJxtoIWRhvAHVwIDAQAB\n-----END PUBLIC KEY-----"
+        // var password = $('#password').val(); //明文密码
+        // var passwordEncrypted = encryptLoginPassword(password, rsaPublicKey)
+        // $('#password-hidden').val(passwordEncrypted); //返回给密码输入input
+        $('#login-form').submit(); //post提交
+    }
+
+    $(document).ready(function () {
+    })
+</script>
+
+
+</html>

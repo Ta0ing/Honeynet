@@ -1,0 +1,252 @@
+@charset "utf-8";
+
+* {
+	margin: 0;
+	padding: 0
+}
+
+img {
+	border: 0
+}
+
+ul,ol {
+	list-style: none
+}
+
+body {
+	font: 14px arial Microsoft YaHei;
+	background: #e9f1fe;
+	color: #b7eaff
+}
+
+em,i {
+	font-style: normal
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-weight: normal
+}
+
+input,button,select,textarea {
+	border: 0;
+	outline: none
+}
+
+input {
+	-webkit-appearance: none
+}
+
+a {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
+	outline: none;
+	background: none;
+	text-decoration: none;
+	color: #fff;
+	cursor: pointer
+}
+
+button,input[type='submit'],input[type='button'],input[type='reset'] {
+	cursor: pointer
+}
+
+.margin-top1rem {
+	margin-top: 1rem
+}
+
+.red {
+	color: #ff4d5e
+}
+
+.blue {
+	color: #00baff
+}
+
+.blue2 {
+	color: #00ffff
+}
+
+.float-left {
+	float: left
+}
+
+.float-right {
+	float: right
+}
+
+.clear-after:after {
+	clear: both;
+	content: "";
+	display: block;
+	height: 0;
+	overflow: hidden
+}
+
+[v-cloak] {
+	display: none
+}
+
+/* ----index---- */
+html {
+	height: 100%;
+}
+
+.login-body {
+	height: 100%;
+	min-width: 1060px;
+	background: #123786;
+	color: #333;
+}
+.login-position{
+	position:absolute;
+	top:50%;
+	left:0;
+	width:100%;
+}
+.login-main {
+	margin:-280px auto;
+	width: 1060px;
+	height: 560px;
+	border-radius: 5px;
+	background: #fff;
+}
+
+.login-left {
+	float: left;
+	width: 510px;
+	text-align: center;
+	background-color: #0259d0;
+	background-image: linear-gradient(#025cd4, #022c7e);
+	color:#fff;
+	height:560px;
+	border-radius: 5px 0 0 5px;
+}
+
+.login-left .login-logo {
+	padding-top: 60px;
+}
+
+.login-left .login-h1 {
+	padding: 70px 20px 20px;
+	font-size: 26px;
+	line-height: 1.2em;
+}
+
+.login-right {
+	float: right;
+	width: 550px;
+}
+
+.right-padding {
+	padding:35px 45px 0;
+}
+
+.login-h2 {
+	text-align: center;
+	font-size: 26px;
+	line-height: 2.5em;
+}
+.login-form{
+	margin:20px auto 0;
+	width:450px;
+}
+.login-input-div {
+	padding-bottom: 20px;
+}
+
+.login-input {
+	width: 388px;
+	height: 60px;
+	padding-left: 60px;
+	border: 1px solid #DDD;
+	background: no-repeat 15px center;
+	background-size:auto 48%;
+	color: #000;
+	border-radius: 5px;
+	font-size:18px;
+}
+.login-input:focus{
+	border-color:#ff7f00;
+}
+
+.phone_input {
+	background-image: url(../images/phone_ico.png)
+}
+
+.password_input {
+	background-image: url(../images/password_ico.png)
+}
+
+.yzm_input {
+	width: 245px;
+	float: left;
+	background-image: url(../images/yzm_ico.png)
+}
+
+.yzm_pic {
+	float: right;
+	cursor: pointer;
+}
+.password-a-box{
+	text-align: right;
+	margin-bottom:45px;
+}
+.password-a-box a{
+	color:#999;
+}
+.submit_input {
+	display: block;
+	width: 100%;
+	height: 60px;
+	color: #fff;
+	border-radius: 5px;
+	font-size: 20px;
+	line-height: 40px;
+	border: none;
+	cursor: pointer;
+	background-color: #ff7f00;
+}
+.submit_input:hover{
+	background-color: #e77403;
+}
+/*找回密码*/
+.password-body{
+	background: url(../images/password-bg.jpg) no-repeat top center;
+	background-size:auto 57%;
+	color: #333;
+}
+.password-main {
+	margin:-285px auto;
+	width: 560px;
+}
+.password-h1{
+	text-align: center;
+	color:#fff;
+	font-size: 30px;
+	margin-bottom:35px;
+}
+.password-content{
+	padding:20px 0 50px;
+	border-radius: 5px;
+	background: #fff;
+	box-shadow: 0 0 18px rgba(0,0,0,.2);
+}
+.lianxiren-p{
+	line-height: 60px;
+	text-align: right;
+}
+.lianxiren_input {
+	width: 275px;
+	float: left;
+	background-image: url(../images/lianxiren.png);
+	background-position: 22px center;
+}
+.lianxiren-p a{
+	color:#ff7f00;
+}
+.lianxiren-p a:hover{
+	color:#ed7600;
+}
+.tel_input {
+	background-image: url(../images/tel.png);
+}

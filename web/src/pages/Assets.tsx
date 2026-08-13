@@ -1,0 +1,5 @@
+import { Table, Tag, Typography } from '@arco-design/web-react';
+import { useQuery } from '@tanstack/react-query';
+import { api } from '../api';
+import PageHeader from '../components/PageHeader';
+export default function Assets(){const query=useQuery<any[]>({queryKey:['assets'],queryFn:()=>api.get('/assets')});const columns:any[]=[{title:'资产名称',dataIndex:'name',render:(v:string)=><Typography.Text bold>{v}</Typography.Text>},{title:'地址',dataIndex:'ip',render:(v:string)=><Typography.Text code>{v||'等待上报'}</Typography.Text>},{title:'操作系统',render:(_:any,r:any)=>`${r.os||'—'} / ${r.arch||'—'}`},{title:'状态',dataIndex:'status',render:(v:string)=><Tag color={v==='online'?'green':'gray'}>{v}</Tag>},{title:'蜜罐服务数',dataIndex:'pot_count'},{title:'暴露端口',dataIndex:'open_ports',render:(v:string)=><Typography.Text code>{v||'—'}</Typography.Text>},{title:'累计事件',dataIndex:'event_count'}];return <><PageHeader title="资产视图" description="从节点与蜜罐实例聚合观察欺骗资产暴露面"/><div className="table-panel"><Table rowKey="id" loading={query.isLoading} data={query.data||[]} columns={columns} pagination={false}/></div></>}

@@ -1,0 +1,1839 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*reset部分*/
+html{
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	color: #4c4c4c;
+}
+body{
+	-moz-user-select:none;
+	-webkit-user-select:none;
+	
+	overflow: hidden;
+}
+input,
+button{
+	font-family: Verdana, Geneva, sans-serif;
+	color: #4c4c4c;
+}
+label,
+span,
+a{
+	vertical-align: middle;
+}
+
+noscript h2{
+	text-align: center;
+	color: #10abe1;
+	font-size: 14px;
+	font-weight: bold;
+	margin-top: 40px;
+}
+
+/************widget 扩展******************/
+div.widget-container{
+	margin: 5px 0;
+}
+div.widget-container.inline-block{
+	margin: 0;
+}
+/*div.widget-container.inline{
+	display: inline-block;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+div.widget-container.form-inner{
+	margin-left: 27px;
+}*/
+div.widget-container div.widget-wrap{
+	border: 1px solid transparent;
+}
+div.widget-container div.widget-wrap-outer{
+	position: relative;
+}
+div.widget-container.disabled div.widget-fieldlabel-wrap{
+	vertical-align: middle;
+}
+div.widget-container label.widget-fieldlabel {
+	font-weight: bold;
+}
+div.widget-container div.widget-tips{
+	margin-left: 9px;
+	/*height: 90px;
+	margin-top: -30px;*/
+}
+
+div.widget-container div.widget-error-tips{
+	position: absolute;
+	left: -3px;
+	top: 36px;
+
+	
+	z-index: 299;
+	display: none;
+}
+div.widget-container div.widget-error-tips span.widget-error-tips-delta{
+	display: block;
+	background: url(../img/icons-01.png) no-repeat -223px -45px;
+	width: 13px;
+	height: 8px;
+
+	position: absolute;
+	left: 88px;
+	top: -7px;
+}
+div.widget-container div.widget-error-tips div.widget-error-tips-wrap{
+	/*box-shadow: 1px 1px 8px #898989;*/
+	background-color: #ff7a6e;
+	border-radius: 3px;
+	padding: 10px 12px;
+	color:white;
+
+	min-width: 166px;
+	max-width: 350px;
+}
+div.widget-container div.widget-error-tips div.widget-error-tips-wrap div.error-tips-content{
+	white-space: nowrap;
+	width: 100%;
+}
+
+/*div.widget-container.error div.widget-tips{
+	color: #e00000;
+}*/
+/*div.widget-container div.widget-tips div.content{
+	height: 30px;
+	display: table-cell;
+	vertical-align: middle;
+	white-space: normal;
+	width: 100%;
+}*/
+div.widget-container div.widget-wrap input{
+	background: transparent;
+	color: #1a1a1a;
+}
+div.widget-container.page-container{
+	position: static;
+}
+/*panel*/
+div.panel-container{
+	position: relative;
+	margin-bottom: 40px;
+}
+div.panel-container div.panel-header{
+	border-bottom: 1px solid #cccccc;
+}
+div.panel-container div.panel-header h3.panel-title{
+	font-size: 16px;
+	margin-bottom: 8px;
+	font-weight: bold;
+}
+div.panel-container div.panel-content{
+	padding-top: 11px;
+}
+
+/*textbox*/
+div.textbox-container{
+
+}
+div.text-container div.widget-wrap{
+	background-color: #f2f2f2;
+	border: 1px solid #e5e5e5;
+	position: relative;
+}
+div.text-container.read-only div.widget-wrap,
+div.text-container.read-only.valid div.widget-wrap,
+div.text-container.read-only.focus div.widget-wrap,
+div.text-container.read-only div.widget-wrap:hover{
+	background: transparent;
+	border: 1px solid transparent;
+}
+div.text-container.read-only div.widget-wrap input.text-text{
+	border-color: transparent;
+	color: #4d4d4d;
+}
+div.text-container.disabled div.widget-wrap{
+	background-color: #cccccc;
+	border-color: #bfbfbf;
+}
+div.text-container.disabled div.widget-wrap input.text-text{
+	color: #999999;
+}
+div.text-container div.widget-wrap span.text-hint{
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin: 1px;
+}
+div.text-container div.widget-wrap input.text-hint{
+	border: 0px none;
+	color: #b3b3b3;
+}
+div.text-container div.widget-wrap input.text-hint,
+div.text-container div.widget-wrap input.text-text{
+	padding: 2px 8px;
+}
+/*div.text-container div.widget-wrap:hover,*/
+div.text-container.focus div.widget-wrap,
+/*div.combobox-container div.widget-wrap:hover,*/
+div.combobox-container.focus div.widget-wrap{
+	border-color: #10abe1;
+}
+div.text-container.error div.widget-wrap,
+div.combobox-container.error div.widget-wrap{
+	border-color: #f9644e;
+}
+
+/*password*/
+div.password-container div.widget-wrap span.allow-visible-btn{
+	display: inline-block;
+	background: url(../img/icons-01.png) no-repeat 0px -20px;
+	width: 20px;
+	height: 20px;
+
+	cursor: pointer;
+
+	margin-right: 2px;
+}
+div.password-container div.widget-wrap span.allow-visible-btn.visible{
+	background-position: -20px -20px;
+}
+div.text-container.password-container.level{
+	margin-bottom: 22px;
+}
+div.password-container div.password-level{
+	position: absolute;
+	top: 34px;
+	left: -1px;
+}
+div.password-container div.password-level span.level{
+	display: inline-block;
+	width: 61px;
+	height: 13px;
+	line-height: 12px;
+
+	background-color: #c9c9ca;
+	color: #ffffff;
+	font-size: 10px;
+	text-align: center;
+	margin-right: 1px;
+}
+div.password-container div.widget-wrap div.password-level span.level.high{
+	margin-right: 0;
+}
+div.password-container div.widget-wrap div.password-level.level-1 span.level.low{
+	background-color: #f9644e;
+}
+div.password-container div.widget-wrap div.password-level.level-2 span.level.middle{
+	background-color: #f7931f;
+}
+div.password-container div.widget-wrap div.password-level.level-3 span.level.high{
+	background-color: #10abe1;
+}
+
+/*textarea*/
+div.textarea-container{
+
+}
+div.textarea-container div.textarea-wrap{
+	border: 1px dashed #b2b2b2;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+div.textarea-container div.textarea-wrap textarea.textarea-text{
+	text-indent: inherit;
+	padding: 4px 0 4px 8px;
+	line-height: 18px;
+}
+div.textarea-container.read-only div.widget-wrap,
+div.textarea-container.read-only.valid div.widget-wrap,
+div.textarea-container.read-only.focus div.widget-wrap,
+div.textarea-container.read-only div.widget-wrap:hover{
+	background: transparent;
+	border: 1px solid transparent;
+}
+div.textarea-container.read-only div.widget-wrap textarea.textarea-text{
+	background: transparent;
+	color: #4d4d4d;
+	padding-left: 12px;
+
+	word-wrap: break-word;
+}
+
+/*combobox*/
+div.combobox-container div.widget-wrap{
+	background-color: #f2f2f2;
+	border: 1px solid #e5e5e5;
+}
+/*div.combobox-container.selected div.widget-wrap{
+	border-color: #10abe1;
+}*/
+div.combobox-container div.combobox-wrap div.combobox-list-wrap div.combobox-list-content-wrap{
+	max-height: 210px;
+}
+div.combobox-container div.widget-wrap input.combobox-text{
+	padding: 2px 8px;
+}
+div.combobox-container div.combobox-wrap div.combobox-list-wrap{
+	top: 34px;
+	left: -1px;
+	box-shadow: 1px 1px 5px #898989;
+	max-height: 240px;
+	overflow-x: hidden;
+	overflow-y: auto;  
+}
+div.combobox-container div.combobox-wrap ul.combobox-list li label.combobox-label{
+	height: 30px;
+	line-height: 30px;
+	padding-left: 14px;
+	text-align: left;
+}
+
+div.combobox-container div.combobox-wrap ul.combobox-list li:hover label.combobox-label{
+	background-color: #58c4dd;
+	color: #ffffff;
+}
+div.combobox-container div.combobox-wrap ul.combobox-list li.selected label.combobox-label{
+	color: #10abe1;
+}
+div.combobox-container div.combobox-wrap ul.combobox-list li.selected:hover label.combobox-label{
+	background-color: #58c4dd;
+	color: #ffffff;
+}
+div.combobox-container div.combobox-wrap ul.combobox-list li.disabled label.combobox-label{
+	color: #b3b3b3;
+}
+div.combobox-container div.combobox-wrap ul.combobox-list li.disabled:hover label.combobox-label{
+	background-color: transparent;
+	cursor: default;
+}
+div.combobox-container div.widget-wrap a.combobox-switch{
+	width: 26px;
+	height: 26px;
+	border: 0px none;
+}
+div.combobox-container div.widget-wrap a.combobox-switch span.icon{
+	display: block;
+	background: url(../img/icons-01.png) no-repeat -400px -19px;
+	height: 20px;
+	width: 20px;
+	margin: 3px auto;
+}
+
+/*button*/
+div.button-container button.button-button{
+	height: inherit;
+	min-width: 80px;
+	padding: 6px 6px 7px 6px;
+
+	/*border-radius: 3px;*/
+	border: 0px none;
+
+	background-color: #4797F1;
+	color: #ffffff;
+}
+div.button-container button.button-button span.text{
+	font-size: 12px;
+}
+div.button-container.clicked button.button-button,
+div.button-container button.button-button:hover{
+	background-color: #64b0ed;
+}
+div.button-container.field-buttons{
+	margin: 8px 0;
+}
+div.button-container.submit{
+	text-align: right;
+}
+div.button-container.submit.form-submit{
+	margin-top: 26px;
+}
+div.wizard-container div.wizard-btn button.button-button,
+div.msg-btn-container div.button-container button.button-button,
+div.button-container.submit button.button-button{
+	background-color: #1fbba6;
+	padding: 8px 6px 9px 6px;
+	min-width: 90px;
+}
+div.wizard-container div.wizard-btn button.button-button span.text,
+div.msg-btn-container div.button-container button.button-button span.text,
+div.button-container.submit button.button-button span.text{
+	font-size: 14px;
+}
+
+div.wizard-container div.wizard-btn button.button-button:hover,
+div.msg-btn-container div.button-container button.button-button:hover,
+div.button-container.submit button.button-button:hover{
+	background-color: #49C9B1;
+}
+div.wizard-container div.wizard-btn.clicked button.button-button,
+div.msg-btn-container div.button-container.clicked button.button-button,
+div.button-container.submit.clicked button.button-button{
+	background-color: #19a58a;
+}
+
+div.widget-container.button-container.disabled.clicked button.button-button,
+div.widget-container.button-container.disabled button.button-button,
+div.widget-container.button-container.disabled button.button-button:hover{
+	background-color: #b2b2b2;
+	cursor: default;
+}
+div.button-container.gap{
+	margin-right: 10px;
+}
+
+/*button-group*/
+div.button-group-container{
+	height: 30px;
+}
+div.button-group-container div.button-group-wrap{
+	margin-left: -1px;
+}
+div.button-group-container ul.button-group-container li{
+	margin-left: -1px;
+}
+div.button-group-container ul.button-group-container li button.button-group-button{
+	padding: 2px 6px;
+	border: 1px solid #1fbba6;
+	color: #1fbba6;
+}
+div.button-group-container ul.button-group-container li button.button-group-button.fst{
+	border-radius: 5px 0 0 5px;
+}
+div.button-group-container ul.button-group-container li button.button-group-button.lst{
+	border-radius: 0 5px 5px 0;
+}
+div.button-group-container ul.button-group-container li button.button-group-button.selected{
+	background-color: #1fbba6;
+	color: #ffffff;
+}
+div.button-group-container.on-off-container{
+	margin-bottom: 16px;
+}
+div.button-group-container.on-off-container ul.button-group-container li button.button-group-button{
+	width: 45px;
+	text-transform: uppercase;
+}
+div.button-group-container.disabled ul.button-group-container li button.button-group-button{
+	border: 1px solid #cccccc;
+	color: #b2b2b2;
+	cursor: default;
+}
+div.button-group-container.disabled ul.button-group-container li button.button-group-button.selected{
+	background-color: #cccccc;
+	color: #ffffff;
+}
+
+/*checkbox radio*/
+div.radio-group-container,
+div.checkbox-group-container{
+
+}
+/*div.radio-group-container div.widget-fieldlabel-wrap,
+div.checkbox-group-container div.widget-fieldlabel-wrap{
+	vertical-align: top;
+	margin-top: 9px;
+}*/
+div.radio-group-container label.radio-label input.radio-radio,
+div.checkbox-group-container label.checkbox-label input.checkbox-checkbox{
+	display: none;
+}
+div.radio-group-container label.radio-label input.radio-radio + span.icon,
+div.checkbox-group-container label.checkbox-label input.checkbox-checkbox + span.icon{
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	background: url(../img/icons-01.png) no-repeat -163px -3px;
+	margin-right: 8px;
+}
+div.radio-group-container label.radio-label.checked span.text,
+div.radio-group-container label.radio-label:hover span.text,
+div.checkbox-group-container label.checkbox-label.checked span.text,
+div.checkbox-group-container label.checkbox-label:hover span.text{
+	color: #00a384;
+}
+div.radio-group-container label.radio-label input.radio-radio + span.icon{
+	background-position: -44px -4px;
+}
+div.radio-group-container label.radio-label:hover input.radio-radio + span.icon{
+	background-position: -64px -4px;
+}
+div.radio-group-container label.radio-label.checked input.radio-radio + span.icon{
+	background-position: -84px -4px;
+}
+div.radio-group-container label.radio-label.checked:hover input.radio-radio + span.icon{
+	background-position: -104px -4px;
+}
+div.radio-group-container label.radio-label.disabled input.radio-radio + span.icon,
+div.radio-group-container label.radio-label.disabled:hover input.radio-radio + span.icon{
+	background-position: -124px -4px;
+}
+div.radio-group-container label.radio-label.checked.disabled input.radio-radio + span.icon,
+div.radio-group-container label.radio-label.checked.disabled:hover input.radio-radio + span.icon{
+	background-position: -144px -4px;
+}
+div.radio-group-container label.radio-label.disabled span.text,
+div.radio-group-container label.radio-label.disabled:hover span.text,
+div.radio-group-container label.radio-label.disabled.checked span.text,
+div.radio-group-container label.radio-label.disabled.checked:hover span.text,
+div.checkbox-group-container label.checkbox-label.disabled span.text,
+div.checkbox-group-container label.checkbox-label.disabled:hover span.text,
+div.checkbox-group-container label.checkbox-label.disabled.checked span.text,
+div.checkbox-group-container label.checkbox-label.disabled.checked:hover span.text{
+	color: #b3b3b3;
+}
+
+div.checkbox-group-container label.checkbox-label input.checkbox-checkbox + span.icon{
+	width: 16px;
+	height: 16px;
+	margin-right: 6px;
+	background-position: -162px -2px;
+}
+div.checkbox-group-container label.checkbox-label:hover input.checkbox-checkbox + span.icon{
+	background-position: -182px -2px;
+}
+div.checkbox-group-container label.checkbox-label.checked input.checkbox-checkbox + span.icon{
+	background-position: -202px -2px;
+}
+div.checkbox-group-container label.checkbox-label.checked:hover input.checkbox-checkbox + span.icon{
+	background-position: -222px -2px;
+}
+div.checkbox-group-container label.checkbox-label.disabled input.checkbox-checkbox + span.icon,
+div.checkbox-group-container label.checkbox-label.disabled:hover input.checkbox-checkbox + span.icon{
+	background-position: -242px -2px;
+}
+div.checkbox-group-container label.checkbox-label.disabled.checked input.checkbox-checkbox + span.icon,
+div.checkbox-group-container label.checkbox-label.disabled.checked:hover input.checkbox-checkbox + span.icon{
+	background-position: -262px -2px;
+}
+
+/*form*/
+.form-panel{
+	padding-left: 27px;
+}
+td.form-panel,
+.form-panel.no-padding{
+	padding-left: 0;
+}
+.form-panel div.form-prompt{
+}
+.form-panel div.form-prompt div.bg{
+	background-color: #54c7e2;
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+
+	border-radius: 5px;
+}
+.form-panel div.form-prompt div.content{
+	margin: 28px 24px;
+}
+.form-panel div.form-prompt span.icon{
+	background: url(../img/icons-02.png) no-repeat -216px 0;
+	width: 38px;
+	height: 38px;
+	margin-right: 5px;
+}
+.form-panel div.form-prompt.successed span.icon{
+	background-position: -649px -6px;
+}
+.form-panel div.form-prompt.failed span.icon{
+	background-position: -691px -6px;
+}
+.form-panel div.form-prompt span.text{
+	color: #ffffff;
+	font-size: 16px;
+}
+.form-panel div.button-container.form-submit span.loading{
+	background: url(../img/waiting.gif) no-repeat top left;
+	width: 20px;
+	height: 20px;
+	margin: 8px -27px 8px 0;
+	display: none;
+}
+.form-panel span.form-error-tips{
+	color: #e00000;
+	margin-right: 12px;
+}
+
+/*grid*/
+div.grid-panel{
+	padding: 0 27px;
+}
+div.grid-container{
+	/*border-right: 1px solid #d8d8d8;*/
+}
+div.grid-container div.grid-header-container table tr.grid-header-tr{
+	background-color: #f9f9f9;
+	color: #1a1a1a;
+	border-top: 1px solid #d8d8d8;
+	border-bottom: 1px solid #d8d8d8;
+}
+div.grid-container div.grid-header-container table tr.grid-header-tr,
+div.grid-container div.grid-content-container table tr.grid-content-tr{
+	border-left: 1px solid #d8d8d8;
+	border-top: 1px solid #d8d8d8;
+}
+div.grid-container div.grid-content-container table tr.grid-content-tr{
+	background-color: #ffffff;
+}
+div.grid-container div.grid-content-container table tr.grid-content-tr.hover{
+	background-color: #e7f7f3;
+	cursor: pointer;
+}
+div.grid-container div.grid-content-container table tr.grid-content-tr.selected{
+	background-color: #e7f7f3;
+	border: 1px solid #b5e5d5;
+}
+div.grid-container div.grid-content-container table tr.grid-content-tr.selected td.grid-content-td.lst{
+	border-right: 1px solid #b5e5d5;
+}
+div.grid-container div.grid-content-container{
+	border-top: 0px none;
+	border-bottom: 1px solid #d8d8d8;
+	margin-top: -1px;
+}
+
+div.grid-container div.grid-header-container table th.grid-header,
+div.grid-container div.grid-content-container table td.grid-content-td{
+	height: 50px;
+	line-height: inherit;
+	border-right: 1px solid #d8d8d8;
+	word-wrap: break-word;
+}
+div.grid-container div.grid-header-container table th.grid-header{
+	font-weight: bold;
+	color: #323232;
+}
+div.grid-container div.grid-header-container table th.grid-header span.content,
+div.grid-container div.grid-content-container table td.grid-content-td span.content{
+	line-height: 16px;
+	height: inherit;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr.disabled td.grid-content-td{
+	color: #b3b3b3;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr td.grid-content-td-check-column span.content,
+div.grid-container div.grid-content-container tr.grid-content-tr.disabled td.grid-content-td-check-column div.checkbox-group-container{
+	display: none;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr.disabled td.grid-content-td-check-column span.content,
+div.grid-container div.grid-content-container tr.grid-content-tr td.grid-content-td-check-column div.checkbox-group-container{
+	display: inline;
+}
+
+
+/*grid的控件组*/
+div.grid-container td.grid-content-td div.checkbox-group-container ul.checkbox-group-list-wrap li.checkbox-list label.checkbox-label{
+	height: inherit;
+}
+div.grid-container th.grid-header div.checkbox-group-container label.checkbox-label input.checkbox-checkbox + span.icon,
+div.grid-container td.grid-content-td div.checkbox-group-container label.checkbox-label input.checkbox-checkbox + span.icon{
+	margin-right: 0;
+	cursor: pointer;
+}
+/*div.grid-container td.grid-content-td div.grid-header-checkbox.selected label.checkbox-label input.checkbox-checkbox + span.icon,
+div.grid-container td.grid-content-td div.grid-content-container table tr.grid-content-tr.selected label.checkbox-label input.checkbox-checkbox + span.icon{
+	background-position: -182px -489px;
+}*/
+
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btn,
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btnex{
+	margin: 6px;
+	display: inline-block;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr.disabled a.grid-content-btn{
+	cursor: default;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btnex span.text,
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btn span.text{
+	display: none;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btnex span.icon,
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btn span.icon{
+	background: url(../img/icons-01.png) no-repeat -281px -1px;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btn.btn-edit span.icon{
+	background-position: -281px -1px;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btn.btn-edit:hover span.icon{
+	background-position: -81px -41px;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr.disabled a.grid-content-btn.btn-edit span.icon{
+	background-position: -301px -1px;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btn.btn-delete span.icon{
+	background-position: -321px -1px;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btn.btn-delete:hover span.icon{
+	background-position: -101px -41px;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr.disabled a.grid-content-btn.btn-delete span.icon{
+	background-position: -341px -1px;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btn.btn-status span.icon{
+	height: 22px;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btn.btn-status.enabled span.icon{
+	background-position: -468px 1px;
+	width: 16px;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btn.btn-status.enabled:hover span.icon{
+	background-position: -468px -47px;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr.disabled a.grid-content-btn.btn-status.enabled span.icon{
+	background-position: -468px -23px;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btn.btn-status.disabled span.icon{
+	background-position: -486px 1px;
+	width: 20px;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btn.btn-status.disabled:hover span.icon{
+	background-position: -486px -47px;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr.disabled a.grid-content-btn.btn-status.disabled span.icon{
+	background-position: -486px -23px;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btn.btn-reset span.icon{
+	background-position: -162px -36px;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btn.btn-reset:hover span.icon{
+	background-position: -144px -54px;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btn.btn-block span.icon{
+	background-position: -126px -36px;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btn.btn-block:hover span.icon{
+	background-position: -234px -54px;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btn.btn-bind span.icon{
+	background-position: -198px -36px;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btn.btn-bind:hover span.icon{
+	background-position: -162px -54px;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btn.btn-bind.disabled span.icon{
+	background-position: -216px -36px;
+	cursor: default;
+}
+
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btnex.btn-reboot span.icon{
+	background-position: -360px -1px;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr a.grid-content-btnex.btn-reboot:hover span.icon{
+	background-position: -120px -41px;
+}
+div.grid-container div.grid-content-container tr.grid-content-tr.disabled a.grid-content-btnex.btn-reboot span.icon{
+	background-position: -381px -1px;
+}
+
+div.grid-panel div.panel-content{
+	padding: 0;
+}
+div.grid-panel div.operation-container{
+	text-align: right;
+	margin-bottom: 8px;
+	height: 18px;
+	position: relative;
+}
+div.grid-panel div.operation-container div.widget-container{
+	margin: 0;
+}
+div.grid-panel div.operation-container div.widget-wrap{
+	height: inherit;
+	padding: 0;
+}
+div.grid-panel div.operation-container div.widget-container div.widget-fieldlabel-wrap{
+	width: inherit;
+}
+div.grid-panel div.operation-container div.widget-container.left{
+	float: left;
+}
+div.grid-panel div.operation-container div.widget-wrap input{
+	line-height: inherit;
+	height: inherit;
+	padding: 0;
+}
+div.grid-panel div.operation-container a.operation-btn{
+	margin: 0 12px;
+	padding-right: 2px;
+	padding-bottom: 4px;	/*与button对齐*/
+}
+div.grid-panel div.operation-container a.operation-btn.fst{
+	margin-left: 0;
+}
+div.grid-panel div.operation-container a.operation-btn.lst{
+	margin-right: 0;
+}
+div.grid-panel div.operation-container a.operation-btn span.icon{
+	background: url(../img/icons-01.png) no-repeat -141px -21px;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	margin-right: 4px;
+}
+div.grid-panel div.operation-container a.operation-btn.btn-add span.icon{
+	background-position: -141px -21px;
+}
+div.grid-panel div.operation-container a.operation-btn.btn-add:hover span.icon{
+	background-position: -21px -41px;
+}
+div.grid-panel div.operation-container a.operation-btn.btn-delete span.icon,
+div.grid-panel div.operation-container a.operation-btn.btn-delete-all span.icon{
+	background-position: -90px 0px;
+}
+div.grid-panel div.operation-container a.operation-btn.btn-delete:hover span.icon,
+div.grid-panel div.operation-container a.operation-btn.btn-delete-all:hover span.icon{
+	background-position: -18px -54px;
+}
+div.grid-panel div.operation-container a.operation-btn.btn-refresh span.icon{
+	background-position: -121px -21px;
+}
+div.grid-panel div.operation-container a.operation-btn.btn-refresh:hover span.icon{
+	background-position: -1px -41px;
+}
+/*div.grid-panel div.operation-container a.operation-btn.btn-block span.icon{
+	background-position: -144px 0px;
+}
+div.grid-panel div.operation-container a.operation-btn.btn-block:hover span.icon{
+	background-position: -72px -54px;
+}*/
+div.grid-panel div.operation-container a.operation-btn span.text{
+	/*padding-bottom: 2px;*/
+}
+div.grid-panel div.operation-container a.operation-btn span.text,
+div.grid-panel div.operation-container button.button-button span.text{
+	color: #11a58c;
+}
+div.grid-panel div.operation-container a.operation-btn:hover span.text,
+div.grid-panel div.operation-container button.button-button:hover span.text{
+	color: #00a384;
+}
+div.grid-panel div.operation-container a.operation-btn.btn-delete-all span.text,
+div.grid-panel div.operation-container a.operation-btn.btn-delete span.text{
+	color: #f9644e;
+}
+div.grid-panel div.operation-container a.operation-btn.btn-delete-all:hover span.text,
+div.grid-panel div.operation-container a.operation-btn.btn-delete:hover span.text{
+	color: #ff7a6e;
+}
+div.grid-panel div.operation-container button.button-button{
+	min-width: inherit;
+}
+div.grid-panel div.operation-container button.button-button span.icon{
+	background: url(../img/icons-01.png) no-repeat -126px 0px;
+	margin-right: 4px;
+	width: 18px;
+	height: 18px;
+}
+div.grid-panel div.operation-container button.button-button span.icon{
+	background-position: -201px -41px;
+}
+/*div.grid-panel div.operation-container button.button-button span.icon.btn-reset-all{
+	background-position: -126px 0px;
+}
+div.grid-panel div.operation-container button.button-button:hover span.icon.btn-reset-all{
+	background-position: -54px -54px;
+}
+div.grid-panel div.operation-container button.button-button span.icon.btn-block{
+	background-position: -144px 0px;
+}
+div.grid-panel div.operation-container button.button-button:hover span.icon.btn-block{
+	background-position: -72px -54px;
+}*/
+
+div.grid-panel div.operation-container button,
+div.grid-panel div.operation-container button:hover{
+	background-color: transparent;
+	margin: 0;
+	padding: 0;
+	color: #4d4d4d;
+	border-radius: 0;
+}
+div.grid-panel div.operation-container button span.text{
+	font-size: 12px;
+}
+div.grid-panel div.operation-container div.grid-prompt span.icon{
+	background: url(../img/icons-01.png) no-repeat -152px -224px;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-right: 7px;
+}
+div.grid-panel div.operation-container div.grid-prompt.successed span.icon{
+	background-image: none;
+}
+div.grid-panel div.operation-container div.grid-prompt.failed span.icon{
+	background-position: -152px -224px;
+}
+div.grid-panel div.operation-container div.grid-prompt span.text-successed{
+	display: none;
+}
+div.grid-panel div.operation-container div.grid-prompt.failed span.text-successed,
+div.grid-panel div.operation-container div.grid-prompt.successed span.text-failed{
+	display: none;
+}
+div.grid-panel div.operation-container div.gird-prompt-progressbar{
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	width: 100%;
+	display: none;
+}
+/*div.grid-panel div.operation-container div.gird-prompt-progressbar div.progressbar-text{
+	position: absolute;
+	right: 0;
+	margin-right: -30px;
+	color: #595757;
+	bottom: 9px;
+}*/
+div.grid-panel div.operation-container div.gird-prompt-progressbar div.widget-wrap{
+	border: 0px none;
+	width: inherit;
+}
+div.grid-panel div.operation-container div.gird-prompt-progressbar div.progressbar-content{
+	/*border: 1px solid #b2b2b2;*/
+	background-color: #cccccc;
+	height: 4px;
+
+	/*padding: 1px;*/
+	display: block;
+	width: 100%;
+	overflow: hidden;
+}
+div.grid-panel div.operation-container div.gird-prompt-progressbar div.progressbar-value{
+	position: relative;
+	height: inherit;
+	max-width: 672px;
+	left: 0;
+	width: 0px;
+}
+
+div.grid-panel div.paging-container{
+	text-align: right;
+	margin: 10px 0;
+}
+div.grid-panel div.paging-container.disabled{
+	display: none;
+}
+div.grid-panel div.paging-container a.paging-btn{
+	color: #4d4d4d;
+	margin-left: 14px;
+	
+}
+div.grid-panel div.paging-container a.paging-btn:hover,
+div.grid-panel div.paging-container a.paging-btn.current{
+	color: #00af8d;
+}
+div.grid-panel div.paging-container a.paging-btn.disabled{
+	cursor: default;
+}
+div.grid-panel div.paging-container span.dots{
+	display: none;
+	margin-left: 14px;
+}
+div.grid-panel div.paging-container span.dots.more{
+	display: inline-block;
+}
+/*div.grid-panel div.paging-container a.paging-btn.pageing-btn-prev.disabled,
+div.grid-panel div.paging-container a.paging-btn.pageing-btn-next.disabled{
+	display: none;
+}*/
+div.grid-panel div.paging-container a.paging-btn.pageing-btn-prev span.icon,
+div.grid-panel div.paging-container a.paging-btn.pageing-btn-next span.icon{
+	background: url(../img/icons-02.png) no-repeat 0px 0px;
+	display: inline-block;
+	width: 23px;
+	height: 23px;
+}
+div.grid-panel div.paging-container a.paging-btn.pageing-btn-next span.icon{
+	background-position: -48px 0px;
+}
+div.grid-panel div.paging-container a.paging-btn.pageing-btn-prev:hover span.icon{
+	background-position: -48px -24px;
+}
+div.grid-panel div.paging-container a.paging-btn.pageing-btn-next:hover span.icon{
+	background-position: -72px -24px;
+}
+div.grid-panel div.paging-container a.paging-btn.pageing-btn-prev.disabled span.icon{
+	background-position: -24px 0px;
+}
+div.grid-panel div.paging-container a.paging-btn.pageing-btn-next.disabled span.icon{
+	background-position: -72px 0px;
+}
+div.grid-panel div.paging-container a.paging-btn.pageing-btn-prev span.text,
+div.grid-panel div.paging-container a.paging-btn.pageing-btn-next span.text{
+	display: none;
+}
+
+div.grid-container div.grid-content-container table tr.grid-content-tr.disabled{
+	border: 1px solid #D9D9D9;
+}
+div.grid-container div.grid-content-container table tr.grid-content-tr.editing{
+	border-top: 1px solid #1fbba6; 
+	border-left: 1px solid #1fbba6;
+	
+	/*background-color: #e7f7f3;
+	border-bottom: 1px solid #b5e5d5;*/
+}
+div.grid-container div.grid-content-container table tr.grid-content-tr.editing td.grid-content-td.lst{
+	border-right: 1px solid #1fbba6;
+}
+div.grid-container div.grid-content-container table tr.grid-content-tr.error{
+	border-top: 1px solid #f9644e; 
+	border-left: 1px solid #f9644e;
+	/*border-bottom: 1px solid #f9644e;*/
+}
+div.grid-container div.grid-content-container table tr.grid-content-tr.error td.grid-content-td.lst{
+	border-right: 1px solid #f9644e;
+}
+div.grid-container div.grid-content-container table tr.editor-container{ 
+	border-left: 1px solid #1fbba6;
+	border-right: 1px solid #1fbba6;
+	border-bottom: 1px solid #1fbba6;
+}
+div.grid-container div.grid-content-container table tr.editor-container.error{ 
+	border-left: 1px solid #f9644e;
+	border-right: 1px solid #f9644e;
+	border-bottom: 1px solid #f9644e;
+}
+div.grid-panel div.editor-content-container{
+	text-align: left;
+	padding: 22px 0 0 48px;
+}
+div.grid-panel div.editor-buttons-container{
+	text-align: right;
+	margin-bottom: 32px;
+	padding-right: 36px;
+	margin-top: 36px;
+}
+div.grid-panel div.editor-buttons-container div.button-container.submit{
+	display: inline-block;
+	margin: 0 7px
+}
+
+div.warning-msg,
+div.grid-popup-msg div.grid-warning-msg{
+	margin: 32px 12px 32px 0;
+}
+div.warning-msg h4.title span.icon,
+div.grid-popup-msg div.grid-warning-msg span.icon{
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	/*margin-right: 16px;*/
+	background: url(../img/icons-02.png) no-repeat -281px -11px;
+	
+	position: absolute;
+}
+div.warning-msg h4.title span.text{
+	display: inline-block;
+	line-height: 24px;
+    margin: 4px 0 0 48px;
+}
+/*file*/
+div.file-container{
+
+}
+div.file-container div.widget-wrap.file-wrap{
+	border: 0px none;
+	background-color: transparent;
+}
+div.file-container div.file-button-container{
+	margin-left: 13px;
+}
+
+/*msg*/
+div.msg-container{
+	box-shadow: 1px 1px 3px #898989;
+	background-color: #ffffff;
+	border-radius: 5px;
+
+	padding: 9px;
+}
+div.msg-container div.msg-wrap a.msg-close{
+	background: url(../img/icons-01.png) no-repeat -221px -21px;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+
+	cursor: pointer;
+}
+div.msg-container div.msg-wrap a.msg-close:hover{
+	background-position: -181px -21px;
+}
+div.msg-container div.msg-content-wrap{
+	margin: 32px 30px 48px 32px;
+}
+div.msg-container div.msg-content-wrap h3.msg-title{
+	font-size: 14px;
+	color: #1A1A1A;
+	margin-bottom: 10px;
+}
+div.msg-container  div.msg-btn-container{
+	text-align: right;
+	margin-right: 26px;
+	margin-bottom: 19px;
+}
+div.msg-container  div.msg-btn-container div.button-container{
+	margin-left: 6px;
+	margin-right: 6px;
+}
+div.warning h4.title span.text {
+    display: inline-block;
+    line-height: 24px;
+    margin: 3px 0 0 48px;
+}
+
+/*timepicker*/
+div.timepicker-container{
+
+}
+div.timepicker-container div.timepicker-wrap a.timepicker-switch{
+	border-radius: 50%;
+}
+div.timepicker-container div.timepicker-wrap a.timepicker-switch span.icon{
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	background: url(../img/icons-02.png) no-repeat -18px -36px;
+}
+div.timepicker-container div.timepicker-wrap a.timepicker-switch:hover span.icon{
+	background-position: -108px -54px;
+}
+div.timepicker-container div.timepicker-wrap a.timepicker-switch.disabled span.icon{
+	background-position: -36px -36px;
+	cursor: default;
+}
+div.timepicker-container div.timepicker-wrap a.timepicker-switch span.text{
+	display: none;
+}
+div.timepicker-msg-container div.timepicker-msg-container-wrap{
+	position: relative;
+}
+div.timepicker-msg-container div.timepicker-msg-container-wrap div.timepicker-view-only-cover{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+div.timepicker-msg-container table.timepicker td{
+	border: 1px solid #e5e6e6;
+}
+div.timepicker-msg-container table.timepicker div.timepicker-picker{
+	border: 1px solid #ffffff;
+	width: 82px;
+	height: 17px;
+	cursor: pointer;
+}
+div.timepicker-msg-container table.timepicker div.row-picker{
+	height: 17px;
+	width: 42px;
+}
+div.timepicker-msg-container table.timepicker div.timepicker-picker.hover,
+div.timepicker-msg-container table.timepicker div.timepicker-picker:hover{
+	/*background-color: #ECF4D3;*/
+}
+div.timepicker-msg-container table.timepicker div.timepicker-picker.selected{
+	background-color: #a0d468;
+}
+div.timepicker-msg-container div.x-axis-wrap{
+	top: -489px;
+}
+div.timepicker-msg-container div.x-axis span{
+	display: block;
+	height: 20px;
+	font-size: 11px;
+}
+div.timepicker-msg-container div.legend-container{
+	margin-top: 10px;
+    padding-left: 42px;
+}
+div.timepicker-msg-container div.legend-container span.icon{
+	background-color: #a0d468;
+	display: inline-block;
+    height: 16px;
+    margin-right: 8px;
+    width: 16px;
+}
+div.timepicker-msg-container div.msg-btn-container{
+	margin-right: -6px;
+}
+div.timepicker-msg-container div.timepicker-select-wrap{
+	border: 2px dashed #b2b2b2;
+	position: absolute;
+}
+	
+/*foldertree*/
+div.foldertree-container{
+	margin: 10px;
+	max-height: 418px;
+    overflow-y: auto;
+}
+div.foldertree-container div.router{
+	margin-bottom: 4px;
+}
+div.foldertree-container div.router span.icon{
+	background: url(../img/icons-02.png) transparent no-repeat -319px -1px;
+	width: 40px;
+	height: 36px;
+	display: inline-block;
+	vertical-align: bottom;
+	margin-right: 14px;
+}
+div.foldertree-container div.foldertree-root{
+	margin-left: 15px;
+}
+div.foldertree-container a.foldertree-root span.icon{
+
+}
+div.foldertree-container a.foldertree-text{
+	color: #4d4d4d;
+}
+div.foldertree-container a.foldertree-text.selected{
+	color: #599e00;
+}
+div.foldertree-container a.foldertree-text span.icon{
+	background: url(../img/icons-02.png) transparent no-repeat -274px -35px;
+	display: inline-block;
+	height: 18px;
+	width: 20px;
+	margin:0 7px 0 5px;
+}
+div.foldertree-container a.foldertree-text.selected span.icon{
+	background-position: -295px -35px;
+}
+div.foldertree-container a.foldertree-text.foldertree-root{
+	display: inline-block;
+	vertical-align: top;
+	margin: 14px 0 4px 0;
+}
+div.foldertree-container a.foldertree-text.foldertree-root span.icon{
+	background-position: -278px -1px;
+	height: 28px;
+	width: 14px;
+	margin-right: 11px;
+}
+div.foldertree-container div.foldertree-root span.foldertree-root.foldertree-has-branch.opened{
+	background: url(../img/icons-02.png) transparent no-repeat -434px 4px;
+	width: 33px;
+	height: 36px;
+	margin-right: 3px;
+	vertical-align: top;
+	cursor: default;
+}
+div.foldertree-container ul.foldertree-wrap{
+	margin-left: 37px;
+}
+div.foldertree-container ul.foldertree-wrap.foldertree-branch-wrap{
+	background: url(../img/icons-02.png) transparent repeat-y -538px 1px;
+	padding-left: 27px;
+	margin: 0;
+}
+div.foldertree-container li.foldertree-branch.lst ul.foldertree-wrap.foldertree-branch-wrap{
+	background-image: none;
+}
+div.foldertree-container ul.foldertree-wrap li.foldertree-branch{
+	/*height: 24px;*/
+}
+
+div.foldertree-container ul.foldertree-wrap li.foldertree-branch div.foldertree-root{
+	
+}
+
+div.foldertree-container ul.foldertree-wrap li.foldertree-branch span.foldertree-icon{
+	background: url(../img/icons-02.png) transparent no-repeat -361px -1px;
+	height: 24px;
+	width: 24px;
+}
+div.foldertree-container ul.foldertree-wrap li.foldertree-branch span.foldertree-icon.foldertree-has-branch{
+	background-position: -409px -1px;
+}
+div.foldertree-container ul.foldertree-wrap li.foldertree-branch span.foldertree-icon.foldertree-has-branch.opened{
+	background-position: -385px -1px;
+}
+div.foldertree-container ul.foldertree-wrap li.foldertree-branch.lst span.foldertree-icon{
+	background-position: -361px -29px;
+}
+div.foldertree-container ul.foldertree-wrap li.foldertree-branch.lst span.foldertree-icon.foldertree-has-branch{
+	background-position: -409px -29px;
+}
+div.foldertree-container ul.foldertree-wrap li.foldertree-branch.lst span.foldertree-icon.foldertree-has-branch.opened{
+	background-position: -385px -29px;
+}
+
+/*status*/
+div.status-container div.status-wrap span.icon{
+	background: url(../img/icons-01.png) no-repeat -9999px -9999px;
+	display: inline-block;
+	height: 16px;
+	width: 16px;
+	border-radius: 50%;
+	margin: 0 5px 0 6px;
+}
+div.status-container div.status-wrap span.text{
+	line-height: 24px;
+}
+div.status-container div.status-wrap span.text.scan-result{
+	font-size: 14px;
+	color: #0094bc;
+}
+div.status-container.normal div.status-wrap span.icon{
+	background-image: none;
+}
+div.status-container.loading div.status-wrap span.icon{
+	background: url(../img/waiting.gif) no-repeat left top;
+	width: 20px;
+	height: 20px;
+}
+div.status-container.success div.status-wrap span.icon{
+	background-position: -202px -22px;
+}
+
+div.status-container.failed div.status-wrap span.icon{
+	background-position: -182px -22px;
+}
+
+/*wizard*/
+div.wizard-container div.form-buttons-container{
+	text-align: right;
+}
+div.wizard-container div.form-buttons-container div.wizard-btn{
+	display: inline-block;
+	margin-left: 15px;
+}
+div.wizard-container div.process-flow span.bar{
+	height: 3px;
+	width: 132px;
+}
+div.wizard-container div.process-flow div.process-flow-step{
+	height: 12px;
+	height: 12px;
+}
+div.wizard-container div.process-flow div.process-flow-step span.icon{
+	height: 12px;
+	width: 12px;
+	border-radius: 50%;
+	cursor: default;
+}
+div.wizard-container div.process-flow div.process-flow-step span.icon,
+div.wizard-container div.process-flow span.bar{
+	background-color: #cccccc;
+}
+div.wizard-container div.process-flow div.process-flow-step.processed span.icon,
+div.wizard-container div.process-flow span.bar span.bar-inner{
+	background-color: #1fbba6;
+}
+div.wizard-container div.process-flow div.process-flow-step.current span.icon{
+	background: url(../img/icons-01.png) no-repeat -79px -19px;
+	width: 21px;
+	height: 21px;
+	left: -4px;
+	top: -4px;
+}
+div.wizard-container div.process-flow div.process-flow-step.current.lst span.icon{
+	background-position: -99px -19px;
+}
+div.wizard-container div.process-flow div.process-flow-step span.text{
+	color: #b2b2b2;
+}
+div.wizard-container div.process-flow div.process-flow-step span.text.up{
+	margin-top: -32px;
+}
+div.wizard-container div.process-flow div.process-flow-step span.text.down{
+	margin-top: 26px
+}
+div.wizard-container div.process-flow div.process-flow-step.processed span.text,
+div.wizard-container div.process-flow div.process-flow-step.current span.text{
+	color: #00a384;
+}
+div.wizard-container div.form-container{
+	margin: 24px 150px;
+}
+div.wizard-container div.form-container div.form-buttons-container{
+	margin-top: 40px;
+}
+
+/*progressbaar*/
+div.progressbar-container{
+	display: inline-block;
+	padding: 0;
+}
+div.progressbar-container div.progressbar-content{
+	border: 1px solid #1fbba6;
+	height: 100%;
+}
+div.progressbar-container div.progressbar-content div.progressbar-value{
+	background-color: #1fbba6;
+}
+div.progressbar-container div.progressbar-text{
+	display: inline;
+}
+
+/*keyword*/
+div.keyword-container{
+	margin: 20px 0;
+}
+div.keyword-container div.widget-wrap{
+	display: block;
+}
+div.keyword-container div.keyword-btn-container{
+	margin-bottom: 14px;
+}
+div.keyword-container div.keyword-container-div{
+	overflow-y: auto;
+	overflow-x: hidden;
+	/*max-height: 160px;*/
+}
+/*div.keyword-container div.widget-wrap table{
+	width: 100%;
+}*/
+div.keyword-container div.widget-wrap table td{
+	text-align: left;
+	min-width: 224px;
+	vertical-align: middle;
+}
+div.keyword-container div.widget-wrap table td div.widget-container{
+	vertical-align: middle;
+	margin: 5px 0;
+}
+div.keyword-container a.keyword-btn{
+	display: inline-block;
+}
+div.keyword-container a.keyword-btn.disabled{
+	cursor: default;
+}
+div.keyword-container span.keyword-overflow-warning{
+	margin-left: 48px;
+	color: #e00000;
+}
+div.keyword-container a.keyword-btn span.icon{
+	background: url(../img/icons-02.png) no-repeat -72px 0px;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+}
+div.keyword-container a.keyword-btn.keyword-add-btn span.icon{
+	background-position: -72px 0px;
+	margin-right: 6px;
+}
+div.keyword-container a.keyword-btn.keyword-add-btn:hover span.icon{
+	background-position: 0px -54px;
+}
+div.keyword-container a.keyword-btn.keyword-add-btn.disabled span.icon{
+	background-position: -405px -55px;
+}
+div.keyword-container a.keyword-btn.keyword-add-btn span.text{
+	color: #599e00;
+}
+div.keyword-container a.keyword-btn.keyword-add-btn:hover span.text{
+	color: #00a384;
+}
+div.keyword-container a.keyword-btn.keyword-add-btn.disabled span.text{
+	color: #b2b2b2;
+}
+div.keyword-container.empty a.keyword-btn.keyword-add-btn{
+	font-size: 14px;
+	display: block;
+	border: 1px solid #cccccc;
+	height: 80px;
+	width: 100%;
+}
+div.keyword-container.empty a.keyword-btn.keyword-add-btn span.keyword-add-btn-wrap{
+	text-align: center;
+	line-height: 80px;
+	display: block;
+}
+div.keyword-container.empty a.keyword-btn.keyword-add-btn span.icon{
+	background-position: -506px 1px;
+    height: 26px;
+    width: 26px;
+}
+div.keyword-container.empty a.keyword-btn.keyword-add-btn:hover span.icon{
+	background-position: -506px -31px;
+}
+div.keyword-container a.keyword-btn.keyword-remove-btn{
+	display: inline-block;
+}
+div.keyword-container a.keyword-btn.keyword-remove-btn span.icon{
+	background-position: -144px -36px;
+	margin: 0 4px;
+}
+div.keyword-container a.keyword-btn.keyword-remove-btn:hover span.icon{
+	background-position: -90px 0px;
+}
+div.keyword-container a.keyword-btn.keyword-remove-btn span.text{
+	display: none;
+}
+div.widget-container.keyword-container div.widget-tips{
+	margin: 0
+}
+
+/*tips*/
+div.tip-container div.tip-wrap{
+	position: relative;
+	box-shadow: 1px 0 8px #b5b5b5;
+	
+	padding: 5px 10px;
+	border: 0px none;
+}
+div.tip-container div.tip-wrap span.tip-delta{
+	background: url(../img/icons-03.png) no-repeat bottom center;
+	display: block;
+	width: 10px;
+	height: 8px;
+	
+	position: absolute;
+	top: -8px;
+}
+
+/*help*/
+div.help-container{
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+div.help-container div.help-btn-container{
+	position: absolute;
+	right: 6px;
+	top: 24px;
+}
+div.help-container div.help-btn-container a.btn-help{
+	background: url(../img/icons-01.png) no-repeat -148px -40px;
+	display: block;
+	width: 27px;
+	height: 27px;
+}
+div.help-container div.help-btn-container a.btn-help.clicked,
+div.help-container div.help-btn-container a.btn-help:hover{
+	background-position: -184px -40px;
+}
+div.help-container div.help-content-container{
+	background-color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 1px 1px 8px #898989;
+    
+    position: absolute;
+    right: 0px;
+    top: 64px;
+    
+
+    padding: 28px 12px 38px 22px;
+
+    z-index: 399;
+
+    display: none;
+}
+div.help-container div.help-content-container span.help-content-delta{
+	background: url(../img/icons-02.png) no-repeat -383px -55px;
+	display: block;
+	width: 16px;
+	height: 10px;
+
+	position: absolute;
+	right: 11px;
+    top: -10px;
+}
+div.help-container div.help-content-container div.help-content h4.title{
+	font-size: 14px;
+	color: #191919;
+	vertical-align: middle;
+	margin: 18px 0;
+}
+div.help-container div.help-content-container div.help-content > h4.title:first-child{
+	margin-top: 0px;
+}
+div.help-container div.help-content-container div.help-content-container-wrap{
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	width: 384px;
+	height: 400px;
+}
+div.help-container div.help-content-container div.help-content{
+	line-height: 28px;
+	
+}
+div.help-container div.help-content-container div.help-content h5.title{
+	color: #0094bc;
+	display: inline;
+	vertical-align: middle;
+}
+div.help-container div.help-content-container div.help-content div.paragraph-container{
+	margin: 12px 0;
+}
+div.help-container div.help-content-container div.help-content div.sub-container{
+	text-indent: 30px;
+}
+div.help-container div.help-content-container div.help-content div.sub-container div.sub-container{
+	text-indent: 60px;
+}
+div.help-container div.help-content-container div.help-content div.sub-container div.sub-container div.sub-container h5.title,
+div.help-container div.help-content-container div.help-content div.sub-container div.sub-container h5.title{
+	color: #191919;
+}
+div.help-container div.help-content-container div.help-content div.sub-container div.sub-container div.sub-container{
+	text-indent: 90px;
+}
+
+/*控件的size*/
+div.widget-container div.widget-fieldlabel-wrap.xxs{
+	width: 78px;
+}
+div.widget-container div.widget-fieldlabel-wrap.xs{
+	width: 110px;
+}
+div.widget-container div.widget-fieldlabel-wrap.s{
+	width: 144px;
+}
+div.widget-container div.widget-fieldlabel-wrap.m{
+	width: 174px;
+}
+div.widget-container div.widget-fieldlabel-wrap.l{
+	width: 214px;
+}
+div.widget-container div.widget-fieldlabel-wrap.xl{
+	width: 254px;
+}
+
+div.widget-container.read-only div.widget-fieldlabel-wrap.s{
+	width: 130px;
+}
+div.widget-container.read-only div.widget-fieldlabel-wrap.m{
+	width: 160px;
+}
+div.widget-container.read-only div.widget-fieldlabel-wrap.l{
+	width: 200px;
+}
+div.widget-container.read-only div.widget-fieldlabel-wrap.xl{
+	width: 240px;
+}
+
+div.widget-container div.widget-tips.s div.tips-content{
+	max-width: 120px;
+}
+div.widget-container div.widget-tips.m div.tips-content{
+	max-width: 240px;
+}
+div.widget-container div.widget-tips.l div.tips-content{
+	max-width: 280px;
+}
+div.widget-container div.widget-tips.xl div.tips-content{
+	max-width: 336px;
+}
+
+div.text-container input.text-text.xs{
+	width: 35px;
+}
+div.text-container input.text-text.s{
+	width: 68px;
+}
+div.text-container input.text-text.m{
+	width: 108px;
+}
+div.text-container input.text-text.l,
+div.textarea-container textarea.textarea-text.l{
+	width: 164px;
+}
+div.text-container input.text-text.xl{
+	width: 212px;
+}
+div.text-container input.text-text.xxl{
+	width: 268px;
+}
+div.text-container input.text-text.xxxl{
+	width: 328px;
+}
+
+div.password-container div.allow-visible input.password-text.l,
+div.password-container div.allow-visible input.password-hint.l{
+	width: 144px;
+}
+
+div.password-container div.password-level.l{
+	width: 184px;
+}
+div.password-container div.password-level.l span.level{
+	width: 61px;
+}
+div.password-container div.password-level.l span.level.low{
+	width: 60px;
+}
+
+div.textarea-container textarea.textarea-text.xxxl{
+	width: 668px;
+	height: 100px;
+}
+
+div.time-container div.time-wrap input.time-text{
+	width: 24px;
+}
+
+div.combobox-container div.combobox-wrap input.combobox-text.xxs{
+	width: 24px;
+}
+div.combobox-container div.combobox-wrap input.combobox-text.xs{
+	width: 32px;
+}
+div.combobox-container div.combobox-wrap input.combobox-text.s{
+	width: 42px;
+}
+div.combobox-container div.combobox-wrap input.combobox-text.m{
+	width: 82px;
+}
+div.combobox-container div.combobox-wrap input.combobox-text.l{
+	width: 138px;
+}
+div.combobox-container div.combobox-wrap input.combobox-text.xl{
+	width: 186px;
+}
+div.combobox-container div.combobox-wrap input.combobox-text.xxl{
+	width: 289px;
+}
+div.combobox-container div.combobox-wrap input.combobox-text.xxxl{
+	width: 359px;
+}
+
+div.button-container button.button-button.s{
+
+}
+div.button-container button.button-button.m{
+
+}
+div.button-container button.button-button.l{
+	width: 200px;
+}
+
+div.button-group-container div.button-group-wrap button.button-group-button.xs{
+	width: 70px;
+}
+div.button-group-container div.button-group-wrap button.button-group-button.s{
+	width: 80px;
+}
+div.button-group-container div.button-group-wrap button.button-group-button.m{
+	width: 100px;
+}
+div.button-group-container div.button-group-wrap button.button-group-button.l{
+	width: 132px;
+}
+div.button-group-container div.button-group-wrap button.button-group-button.xl{
+	width: 150px;
+}
+div.button-group-container div.button-group-wrap button.button-group-button.xxl{
+	width: 180px;
+}
+
+div.widget-container.checkbox-group-container div.widget-fieldlabel-wrap.xs,
+div.widget-container.radio-group-container div.widget-fieldlabel-wrap.xs{
+	width: 84px;
+}
+div.widget-container.checkbox-group-container div.widget-fieldlabel-wrap.s,
+div.widget-container.radio-group-container div.widget-fieldlabel-wrap.s{
+	width: 134px;
+}
+div.widget-container.checkbox-group-container div.widget-fieldlabel-wrap.m,
+div.widget-container.radio-group-container div.widget-fieldlabel-wrap.m{
+	width: 164px;
+}
+div.widget-container.checkbox-group-container div.widget-fieldlabel-wrap.l,
+div.widget-container.radio-group-container div.widget-fieldlabel-wrap.l{
+	width: 204px;
+}
+div.widget-container.checkbox-group-container div.widget-fieldlabel-wrap.xl,
+div.widget-container.radio-group-container div.widget-fieldlabel-wrap.xl{
+	width: 244px;
+}
+div.msg-container.m{
+	width: 400px;
+}
+div.msg-container.l{
+	width: 524px;
+}
+div.msg-container.xl{
+	width: 715px;
+}
+div.msg-container.xxl{
+	width: 820px;
+}
+
+/**全局样式**/
+div.clear{
+	clear: both;
+}
+.hidden,
+div.hidden{
+	display: none;
+}
+div.inline{
+	display: inline;
+}
+div.inline-block{
+	display: inline-block;
+}
+div.part-separate,
+p.part-separate{
+	margin-top: 20px;
+}
+div.no-margin{
+	margin: 0;
+}
+div.mask{
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+}
+p.note{
+	margin: 20px 0;
+	line-height: 21px;
+}
+p.note.first-line{
+	margin-top: 0;
+}
+p.note strong{
+	color: #0094bc;
+}
+div.steps{
+	margin: 40px 0;
+}
+div.steps h5{
+	font-weight: bold;
+}
+div.steps p{
+	margin: 20px 0;
+	padding-left: 50px;
+	position: relative;
+	line-height: 21px;
+}
+div.steps p span.step{
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: #00a384;
+}
+a.link{
+	display: inline-block;
+	color: #00a384;
+}
+a.choose{
+	color: #00a384;
+}
+div.widget-tips.after-button,
+div.widget-tips.after-checkbox{
+	left: 452px;
+}
+div.note{
+	margin: 25px 0 10px 0;
+}
+div.note h5.title{
+	color: #f9644e;
+	margin-bottom: 14px;
+	font-size: 14px;
+}
+div.note p.content{
+	margin: 6px 0;
+}
+
+

@@ -1,0 +1,146 @@
+*{margin:0;padding: 0}
+body{width: 100%;height: 100%;background: #2f3e4d;background-repeat: repeat;font-family: '微软雅黑';}
+.relative{position: relative;}
+.absolute{position: absolute;}
+.floatL{float: left}
+.clear{clear:both;}
+.cursor{cursor: pointer;}
+.floatR{float:right;}
+.verticalMiddle{vertical-align: middle;}
+.verticalTop{vertical-align: top;vertical-align: middle;}
+.textIndent{text-indent: 2em}
+.top{height:120px;position: fixed;top:0;width:100%;left:0;/* z-index: -1; background: #2f3e4d; */}
+.top .container{height: 120px;width: 1200px;margin: 0 auto;background-position:center;}
+.top .container .logo img{vertical-align: middle;}
+.top .container .logo span{vertical-align: middle;font-size: 20px;}
+.top .container .logo{float:left;font-size: 25px;vertical-align: middle;line-height: 70px;_padding-top:20px;margin-top: 1px;}
+.bottom{height: 60px;position: fixed;bottom:0;width:100%;z-index: 99;left:0;background: #1f2a36;_position:absolute;_margin-bottom:0px;}
+.bottom .container{height: 60px;width: 1217px;margin: 0 auto;line-height: 60px;color: #676a6c;font-size: 12px;text-align: center;}
+.bottom .container a{text-decoration: none;color: #b6b6b6}
+.bottom .container a:hover{color: #ffffff}
+.logo{color:rgb(223,223,223);}
+.lineUp{position: fixed;display: block;left:50%;margin-left: -367px;z-index: -1}
+.lineDown{position: fixed;display: block;left: 50%;margin-left: -600px;bottom: 0;z-index: -1;}
+.downloadBlock{width: 888px;height: 360px;margin: 0 auto;padding-top: 190px;_padding-top:90px;}
+
+.downloadBlock .bigtitle{font-size: 36px;color: #dfdfdf}
+.downloadBlock .smalltitle{font-size: 16px;color: #d7d7d7;margin-top: 70px;}
+.downloadBlock .appe{color: #d7d7d7;font-size: 14px;margin-top: 16px;}
+.downloadBlock .mainbody{color: #d7d7d7;font-size: 14px;height: 140px;line-height: 24px;}
+.downloadBlock .downloadButton{width: 152px;height: 36px;line-height: 36px;display: inline-block;text-align: center;background: rgb(101,197,129);color: #ffffff;font-size: 14px;border-radius: 2px;text-decoration: none;}
+.downloadBlock .downloadButton:hover{background: rgb(71,172,117)}
+.downloadBlock .floatL{width: 402px;padding-left: 30px;}
+.loginBlock{width: 888px;height: 62px;margin-left: -444px;margin: 0 auto;margin-top: 110px;margin-bottom: 100px;}
+.loginBlock .bgContainer{width: 888px;background:rgb(65,79,93);padding: 12px 0;}
+.loginBlock p{width:313px;margin: 0 auto}
+.loginBlock .describeWW{width: 260px;}
+.loginButton{width: 142px;margin: 0 auto;display: block;text-align: center;background: rgb(101,197,129);color: #ffffff;font-size: 14px;border-radius: 2px;line-height: 36px;height:36px;cursor: pointer;}
+.loginButton:hover{background: rgb(71,172,117)}
+h1,h2{text-align: center;color: #dfdfdf;font-weight: normal;}
+h2{margin-top: 50px;margin-bottom: 36px;}
+
+.paddingLR30{padding: 0 30px;}
+.marginLR30{margin: 0 30px;}
+.describeW{font-size: 14px;color: #909090;height: 36px;line-height: 36px;}
+.describeW .placeholder{width: 100px;left:64px;border: 0px;}
+.describeW .login2bg{background: #ffffff url(../images/login2.png);}
+.describeW .login3bg{background: #ffffff url(../images/login3.png);}
+.describeW span{width: 50px;display: inline-block;line-height: 36px;height: 36px;border-right: 1px solid rgb(229,230,231)}
+
+.describeW .floatL{color: #5fc47f;cursor: pointer;}
+.describeWW{font-size: 12px;}
+.describeWW span{width: auto;border: 0px;}
+.describeW .anwserIcon{background: url(../images/anwser.png);width: 16px;height: 16px;display: block;right: 44px;top:10px;border: 0px;}
+.describeW .anwserIcon1{right: 10px;}
+.describeW .anwserIcon:hover{background-position: -16px;}
+.describeW .anwserIcon span{font-size: 12px;left: -53px;bottom:50px;background:url(../images/jian.png);line-height: 34px;padding-right: 10px;border-top-right-radius: 2px;border-bottom-right-radius: 2px;display: none;border:0px;width: 120px;height: 42px;text-align: center;}
+input[type=text],input[type=password]{width: 248px;height: 34px;line-height: 36px;padding-left: 12px;color: #909090;border: 1px solid rgb(231,234,236);outline: none;}
+input[type=checkbox]{vertical-align: middle;margin-right: 10px;display: block;margin-top: 12px}
+.placeholder{position: absolute;display: block;top:1px;left:90px;color: #989898;top:2px;font-size: 12px;}
+.describeW .errorTips{display: block;right: 190px;top:48px;font-size: 12px;color: rgb(254,189,43);display: none;width: 150px;border:0px;}
+
+.delayHide{display: none;z-index: 999;text-align: center;color: #ffbe00;position: fixed;top:40%;left:50%;margin-left:-65px;width:130px;height: 44px;background-color: rgba(255,239,194,0.86);background-color:rgb(255,239,194)\9;border-radius: 5px}
+.delayHide .p1{font-size: 14px;line-height: 44px}
+.delayHide .p2{font-size: 12px;margin-top: 6px;}
+.delayHide .p2 font{color:rgb(101,197,129);}
+.delayHideS{display: none;z-index: 999;text-align: center;color: #5fc47f;position: fixed;top:40%;left:50%;margin-left:-65px;width:130px;height: 44px;background-color: rgba(211,255,211,0.86);background-color:rgb(211,255,211)\9;border-radius: 5px}
+.delayHideS .p1{font-size: 14px;line-height: 44px}
+.delayHideS .p2{font-size: 12px;margin-top: 6px;}
+.delayHideS .p2 font{color:rgb(101,197,129);}
+
+.pop{display: none;width: 482px;height: 324px;position: fixed;top: 50%;left:50%;margin-left: -241px;margin-top: -162px;z-index: 9999;background: #ffffff;}
+.pop .title{position: relative;font-size: 14px;color: #676a6c;padding-left: 20px;border-bottom: 1px solid rgb(231,234,236);line-height: 50px;}
+.pop .title .closeW{cursor: pointer;position: absolute;top:16px;right: 26px;display: block;width: 20px;height: 20px;background: url(../images/closeW.png);*top:2px;}
+.pop .title .closeW:hover{background-position: -20px}
+/* .pop .buttons{padding-right: 20px;margin:0 22px;padding-top: 12px;} */
+.pop .buttons{margin:0 22px;padding-top: 14px;border-top: 1px solid rgb(231,234,236)}
+.pop .buttons a{cursor: pointer;margin-left:4px;display: inline-block;width: 100px;line-height: 22px;background: rgb(101,197,129);color: #ffffff;border-radius: 3px;float: right;text-align: center;font-size: 12px; }
+.pop .buttons a:hover{background: rgb(71,172,117)}
+
+/*忘记密码弹层*/
+.forgetPWPop .left{float: left;padding-left: 34px;padding-top: 24px}
+.forgetPWPop .right{float: right;padding-right: 50px;font-size: 14px;color: #676a6c;padding-bottom: 14px;}
+.forgetPWPop .right .stitle{padding-bottom: 8px;padding-top: 18px;font-size: 14px;}
+.forgetPWPop .right .describe{line-height: 24px;font-size: 12px;}
+.forgetPWPop .right .describe font{display: inline-block;max-width: 150px;text-overflow:ellipsis;overflow: hidden;white-space: nowrap;vertical-align: middle;}
+.forgetPWPop .buttons a{border: 1px solid #63c380 }
+.forgetPWPop .buttons .sure{background: #ffffff;color: #63c380;}
+/*强制修改密码弹层*/
+/*修改密码弹层*/
+.modifyPwPop{width: 500px;height: 334px;margin-left: -255px;margin-top: -166px;}
+.modifyPwPop .right .unusualTxt{font-size: 12px;color: #f37e00;padding-top: 6px;position: absolute;right: 36px;top:104px;display: none;}
+.modifyPwPop .right .unusualTxt img{vertical-align: middle;margin-bottom: 4px;margin-left: 10px}
+.modifyPwPop .mainBlock .adminName{color: #676a6c;font-size: 14px;}
+.modifyPwPop .mainBlock{padding-top: 26px;}
+.modifyPwPop .mainBlock p{margin-bottom: 16px;}
+.modifyPwPop .mainBlock p span{font-size: 14px;color: #676a6c;padding-left: 46px;display: inline-block;width: 76px}
+.modifyPwPop .mainBlock p input{width: 322px;padding-left: 12px;height: 30px;line-height: 30px;border: 1px solid rgb(229,230,231)}
+/*账户锁定提示弹层*/
+.aLockHintPop{height: 224px;margin-top: -112px;}
+.aLockHintPop .title{position: relative;font-size: 14px;color: #676a6c;padding-left: 20px;line-height: 50px;}
+.aLockHintPop .left{float: left;padding-left: 34px;padding-top: 24px}
+.aLockHintPop .right{float: right;padding-right: 106px;font-size: 14px;color: #676a6c;padding-bottom: 34px;}
+.aLockHintPop .right .stitle{padding-bottom: 8px;padding-top: 36px;font-size: 14px;}
+.aLockHintPop .right .describe{line-height: 24px;font-size: 12px;}
+.aLockHintPop .right .describe font{display: inline-block;max-width: 150px;text-overflow:ellipsis;overflow: hidden;white-space: nowrap;vertical-align: middle;}
+.aLockHintPop .buttons{margin:0 22px;padding-top: 14px;border-top: 1px solid rgb(231,234,236)}
+.aLockHintPop .buttons a{border: 1px solid #63c380 }
+.aLockHintPop .buttons .sure{background: #ffffff;color: #63c380}
+
+#lowie{color: rgb(254, 189, 43);text-align: center;display: none;padding-bottom: 20px;padding-top: 20px;font-family: 黑体;font-size: 16px;background: rgb(60,76,92);_margin-top: 40px}
+.shade{display: none;position:fixed;width:100%;height: 100%;background: rgb(60,60,60);opacity: 0.4;filter:alpha(opacity:40);z-index:999;top:0;left:0;}
+
+/* 动态验证弹窗 */
+.totpPop{height: 298px;margin-top: -149px;}
+.totpPop .mainBlock{padding: 26px 0;}
+.totpPop .mainBlock p{color: #676767;font-size: 14px;line-height: 30px;padding-left: 46px;}
+.totpPop .mainBlock .codeWrap{height: 55px;}
+.totpPop .mainBlock p.errorTips{color: red;padding-left: 122px;font-size: 12px;display: none;}
+.totpPop .mainBlock p span{display: inline-block;width: 76px}
+.totpPop .mainBlock p input{width: 300px;padding-left: 12px;height: 30px;line-height: 30px;border: 1px solid rgb(229,230,231)}
+.totpPo .buttons{text-align: right;}
+.totpPo .buttons a{float: none;}
+.totpPop .mainBlock p span.localTime{width: auto;}
+
+.greenfont{color: #63c380}
+.greenfont:hover{color: #77d895}
+.greenfont:active{color: #42aa76}
+
+/*非本机登录密码重置弹层*/
+.resetPwdPop{margin-top: -126px;height:282px;z-index: 9999;}
+.resetPwdPop .mainBody{padding: 10px 30px;line-height: 30px;font-size: 14px;color: #888;}
+.resetPwdPop .mainBody .resetMsg{margin-bottom: 10px;}
+.resetPwdPop .mainBody label{display: inline-block; width: 116px;text-align: right;}
+.resetPwdPop .mainBody  input{width: 230px;padding-left: 12px;line-height: 30px;height: 30px;font-size: 12px;}
+.resetPwdPop .describe{color: #676a6c;font-size: 14px;padding-top: 40px;padding-left: 12px}
+.resetPwdPop .buttons{padding: 10px 0;border-top: 1px solid rgb(221, 221, 221);}
+.resetPwdPop .mainBody p.relative {margin-bottom: 32px;}
+.resetPwdPop .mainBody p span.placeholder{position: absolute;left: 136px;top: 0;width: auto;line-height: 32px;font-size: 12px;color: rgb(161, 161, 161);}
+.resetPwdPop .mainBody p font{display: none;font-size: 12px;color: #f37e00;top: 32px;left: 130px;}
+
+
+/*非本机登录密码重置弹层*/
+.notResetPwdPop{height: 252px;margin-top: -126px;z-index: 9999;}
+.notResetPwdPop .mainBody{padding: 10px 30px 28px 30px;line-height: 40px;font-size: 14px;color: #888;}
+.notResetPwdPop .describe{color: #676a6c;font-size: 14px;padding-top: 40px;padding-left: 12px}
+.notResetPwdPop .buttons{padding: 10px 0;border-top: 1px solid rgb(221, 221, 221);}

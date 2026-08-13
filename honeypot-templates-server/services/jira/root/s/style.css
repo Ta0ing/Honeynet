@@ -1,0 +1,12 @@
+#logo > a {
+  pointer-events: none;
+}
+.aui-header-before {
+  pointer-events: none;
+}
+.aui-nav {
+  display: none;
+}
+.aui-page-header-actions {
+  display: none !important;
+}

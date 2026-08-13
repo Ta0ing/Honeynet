@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="portainer" ng-strict-di="" class="ng-scope" theme="dark" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style><style type="text/css">.uib-time input{width:50px;}</style><style type="text/css">[uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-bottom > .tooltip-arrow,[uib-popover-popup].popover.top-left > .arrow,[uib-popover-popup].popover.top-right > .arrow,[uib-popover-popup].popover.bottom-left > .arrow,[uib-popover-popup].popover.bottom-right > .arrow,[uib-popover-popup].popover.left-top > .arrow,[uib-popover-popup].popover.left-bottom > .arrow,[uib-popover-popup].popover.right-top > .arrow,[uib-popover-popup].popover.right-bottom > .arrow,[uib-popover-html-popup].popover.top-left > .arrow,[uib-popover-html-popup].popover.top-right > .arrow,[uib-popover-html-popup].popover.bottom-left > .arrow,[uib-popover-html-popup].popover.bottom-right > .arrow,[uib-popover-html-popup].popover.left-top > .arrow,[uib-popover-html-popup].popover.left-bottom > .arrow,[uib-popover-html-popup].popover.right-top > .arrow,[uib-popover-html-popup].popover.right-bottom > .arrow,[uib-popover-template-popup].popover.top-left > .arrow,[uib-popover-template-popup].popover.top-right > .arrow,[uib-popover-template-popup].popover.bottom-left > .arrow,[uib-popover-template-popup].popover.bottom-right > .arrow,[uib-popover-template-popup].popover.left-top > .arrow,[uib-popover-template-popup].popover.left-bottom > .arrow,[uib-popover-template-popup].popover.right-top > .arrow,[uib-popover-template-popup].popover.right-bottom > .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-html-popup].popover,[uib-popover-template-popup].popover{display:block !important;}</style><style type="text/css">.uib-datepicker-popup.dropdown-menu{display:block;float:none;margin:0;}.uib-button-bar{padding:10px 9px 2px;}</style><style type="text/css">.uib-position-measure{display:block !important;visibility:hidden !important;position:absolute !important;top:-9999px !important;left:-9999px !important;}.uib-position-scrollbar-measure{position:absolute !important;top:-9999px !important;width:50px !important;height:50px !important;overflow:scroll !important;}.uib-position-body-scrollbar-measure{overflow:scroll !important;}</style><style type="text/css">.uib-datepicker .uib-title{width:100%;}.uib-day button,.uib-month button,.uib-year button{min-width:100%;}.uib-left,.uib-right{width:100%}</style><style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style>@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style><meta charset="utf-8"><title>Portainer</title><meta name="description" content=""><meta name="author" content="Portainer.io"><!-- base href="http://docker.io/" -->
+
+    <![endif]-->
+<link rel="apple-touch-icon" sizes="180x180" href="Portainer_files/63a301f0574f1a696ce6.png"><link rel="icon" type="image/png" sizes="32x32" href="Portainer_files/2dcfc527d067d4ae3424.png"><link rel="icon" type="image/png" sizes="16x16" href="Portainer_files/112a479c093f4729251d.png"><link rel="mask-icon" href="Portainer_files/7ee8aae1b407ce0e809b.svg" color="#5bbad5"><link rel="shortcut icon" href="data:image/vnd.microsoft.icon;base64,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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"><meta name="msapplication-config" content="6d50eaeb9f128c130ed9.xml"><meta name="theme-color" content="#ffffff"><script defer="defer" src="Portainer_files/runtime.js"></script><script defer="defer" src="Portainer_files/vendor.js"></script><script defer="defer" src="Portainer_files/main.js"></script><link href="Portainer_files/vendor.css" rel="stylesheet"><link href="Portainer_files/main.css" rel="stylesheet"><style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style><style>.button{margin-right:3px;padding:2px;min-width:90px}</style><style>.encoding{margin-left:10px}.encoding label{padding:2px;font-size:15px}.encoding select{padding:2px 0}.reldisabled{opacity:.5}</style><style>.header{background-color:#a9a9a9;padding:5px;font-size:13px}</style><style>.canvas{max-height:90%;max-width:100%}</style><style>*{margin:0;padding:0;box-sizing:border-box}.canvas-container{height:100vh;text-align:center;background-color:#fff}</style></head><body ng-controller="MainController" class="ng-scope"><div id="page-wrapper" ng-class="{
+        open: toggle &amp;&amp; ['portainer.auth', 'portainer.init.admin', 'portainer.init.endpoint'].indexOf($state.current.name) === -1,
+        nopadding: ['portainer.auth', 'portainer.init.admin', 'portainer.init.endpoint', 'portainer.logout'].indexOf($state.current.name) &gt; -1 || applicationState.loading
+      }" class="nopadding"><!-- ngIf: !applicationState.loading --><!-- uiView: sidebar --><div id="sideview" ui-view="sidebar" ng-if="!applicationState.loading" class="ng-scope"><!-- uiView: --><ui-view class="ng-scope"><react-ui-view-adapter name="$default" class="ng-scope"><div></div></react-ui-view-adapter></ui-view></div><div id="content-wrapper"><div class="page-content"><!-- ngIf: applicationState.loading --><!-- ngIf: !applicationState.loading --><!-- uiView: content --><div id="view" ui-view="content" ng-if="!applicationState.loading" class="ng-scope"><div class="page-wrapper ng-scope">
+  <!-- login box -->
+  <div class="container simple-box">
+    <div class="col-sm-6 col-sm-offset-3">
+      <!-- login box logo -->
+      <div class="row">
+        <!-- ngIf: !ctrl.logo --><img ng-if="!ctrl.logo" src="Portainer_files/29d4ee6d4a5c786588a7.svg" class="simple-box-logo ng-scope" alt="Portainer"><!-- end ngIf: !ctrl.logo -->
+        <!-- ngIf: ctrl.logo -->
+      </div>
+      <!-- !login box logo -->
+
+      <!-- login panel -->
+      <!-- ngIf: !ctrl.state.loginInProgress --><div class="panel panel-default ng-scope" ng-if="!ctrl.state.loginInProgress">
+        <div class="panel-body">
+          <!-- login form -->
+          <form method="post" action="/login">
+            <div class="form-group">
+              <!-- ngIf: ctrl.state.showOAuthLogin -->
+            </div>
+
+            <!-- divider -->
+            <!-- ngIf: ctrl.state.showOAuthLogin -->
+
+            <!-- use internal auth button -->
+            <!-- ngIf: ctrl.state.showOAuthLogin && !ctrl.state.showStandardLogin -->
+
+
+			<div class="input-group ng-scope" ng-if="ctrl.state.showStandardLogin">
+				<span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+				<input id="username" type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" name="username" ng-model="ctrl.formValues.Username" auto-focus="" data-cy="auth-usernameInput">
+			</div><br><br>
+
+			<div class="input-group ng-scope" ng-if="ctrl.state.showStandardLogin">
+				<span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
+				<input id="password" type="password" class="form-control ng-pristine ng-untouched ng-valid ng-	empty" name="password" ng-model="ctrl.formValues.Password" data-cy="auth-passwordInput">
+			</div>
+
+
+            <!-- ngIf: ctrl.state.showStandardLogin --><div class="form-group ng-scope" ng-if="ctrl.state.showStandardLogin"><br>
+              <!-- login button -->
+              <div class="col-sm-12" style="display: flex; align-items: center; justify-content: center">
+                <input type="submit" value="Login"  type="submit" class="btn btn-primary btn-sm pull-right ng-isolate-scope" ng-click="ctrl.authenticateUser()" button-spinner="ctrl.state.loginInProgress" ng-disabled="ctrl.state.loginInProgress" data-cy="auth-loginButton"><ng-transclude>
+                  <span ng-hide="ctrl.state.loginInProgress" class="ng-scope"></span>
+                  <span ng-show="ctrl.state.loginInProgress" class="ng-scope ng-hide">Login in progress...</span>
+                </ng-transclude><span ng-show="spinning" class="ng-hide"><i class="fa fa-circle-notch fa-spin" style="margin-left: 2px;"></i>&nbsp;</span></button>
+              </div>
+            </div><!-- end ngIf: ctrl.state.showStandardLogin -->
+          </form>
+          <!-- !login form -->
+
+          <!-- error message -->
+          <!-- ngIf: ctrl.state.AuthenticationError -->
+        </div>
+      </div><!-- end ngIf: !ctrl.state.loginInProgress -->
+
+      <!-- !login panel -->
+      <div class="panel panel-default ng-hide" ng-show="ctrl.state.loginInProgress">
+        <div class="panel-body">
+          <div class="form-group text-center">
+            <span class="small text-muted">Authentication in progress... <span button-spinner="true" class="ng-isolate-scope"><ng-transclude></ng-transclude><span ng-show="spinning"><i class="fa fa-circle-notch fa-spin" style="margin-left: 2px;"></i>&nbsp;</span></span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- !login box -->
+</div>
+<script type="text/javascript" async="" src="Portainer_files/matomo.js"></script><script>if (window.origin == 'file://') {
+        // we are loading the app from a local file as in docker extension
+        document.getElementById('base').href = 'http://localhost:9000/';
+
+        window.ddExtension = true;
+      } else {
+        var path = window.location.pathname.replace(/^\/+|\/+$/g, '');
+        var basePath = path ? '/' + path + '/' : '/';
+        document.getElementById('base').href = basePath;
+      }</script><!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+</div><!-- end ngIf: !applicationState.loading --></div></div></div></body></html>

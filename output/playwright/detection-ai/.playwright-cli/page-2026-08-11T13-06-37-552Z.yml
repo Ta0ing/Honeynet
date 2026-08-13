@@ -1,0 +1,182 @@
+- generic [ref=e70]:
+  - complementary [ref=e71]:
+    - generic [ref=e72]:
+      - generic [ref=e80]:
+        - strong [ref=e81]: Honeynet
+        - generic [ref=e82]: 威胁捕捉与诱骗系统
+      - menu [ref=e84]:
+        - generic [ref=e85]:
+          - menuitem "首页" [ref=e86] [cursor=pointer]
+          - menuitem "大屏" [ref=e90] [cursor=pointer]
+          - generic [ref=e93]:
+            - generic [ref=e94] [cursor=pointer]: 威胁感知
+            - generic [ref=e101]:
+              - menuitem "攻击列表" [ref=e102] [cursor=pointer]
+              - menuitem "扫描感知" [ref=e105] [cursor=pointer]
+              - menuitem "失陷感知" [ref=e108] [cursor=pointer]
+              - menuitem "检测规则" [ref=e111] [cursor=pointer]
+              - menuitem "AI 分析" [ref=e114] [cursor=pointer]
+          - generic [ref=e120]:
+            - generic [ref=e121] [cursor=pointer]: 威胁实体
+            - generic [ref=e128]:
+              - menuitem "攻击来源" [ref=e129] [cursor=pointer]
+              - menuitem "账号资源" [ref=e132] [cursor=pointer]
+              - menuitem "资产画像" [ref=e135] [cursor=pointer]
+              - menuitem "告警中心" [ref=e138] [cursor=pointer]
+          - generic [ref=e141]:
+            - generic [ref=e142] [cursor=pointer]: 环境管理
+            - generic [ref=e149]:
+              - menuitem "节点管理" [ref=e150] [cursor=pointer]
+              - menuitem "模板管理" [ref=e153] [cursor=pointer]
+              - menuitem "服务管理" [ref=e156] [cursor=pointer]
+              - menuitem "蜜罐实例" [ref=e159] [cursor=pointer]
+          - generic [ref=e162]:
+            - generic [ref=e163] [cursor=pointer]: 平台管理
+            - generic [ref=e171]:
+              - menuitem "Agent 发布" [ref=e172] [cursor=pointer]
+              - menuitem "系统配置" [ref=e175] [cursor=pointer]
+      - generic [ref=e178]:
+        - generic [ref=e179]: Server 运行中
+        - generic [ref=e183]: v0.19.1 · Community
+  - generic [ref=e184]:
+    - generic [ref=e185]:
+      - list [ref=e187]:
+        - listitem [ref=e188]: 首页
+        - listitem [ref=e192]: 运行总览
+      - generic [ref=e193]:
+        - button "切换主题" [ref=e195] [cursor=pointer]
+        - generic [ref=e199]:
+          - button "告警中心" [ref=e200] [cursor=pointer]
+          - generic [ref=e203]: 99+
+        - generic [ref=e204]: 管理员
+        - button "A 系统管理员" [ref=e208] [cursor=pointer]:
+          - generic [ref=e209]: A
+          - generic [ref=e211]: 系统管理员
+    - main [ref=e212]:
+      - generic [ref=e213]:
+        - generic [ref=e214]:
+          - heading "首页" [level=4] [ref=e215]
+          - text: 节点、蜜罐、攻击链与威胁实体的统一运行视图
+        - generic [ref=e216]:
+          - button "刷新" [ref=e218] [cursor=pointer]
+          - button "进入大屏" [ref=e222] [cursor=pointer]
+      - generic [ref=e227]:
+        - generic [ref=e228]: Honeynet v0.19.1
+        - generic [ref=e231]: Server 运行正常
+        - generic [ref=e234]: 数据库 MySQL
+        - generic [ref=e236]: IP 定位 IPIP 城市库
+        - generic [ref=e238]: 实时通道 WebSocket
+        - generic [ref=e240]: Agent 通信 mTLS 1.3
+      - generic [ref=e242]:
+        - generic [ref=e244]:
+          - generic [ref=e245]: 节点与蜜罐状态
+          - generic [ref=e248]:
+            - generic [ref=e249]:
+              - generic [ref=e250]:
+                - progressbar [ref=e252]
+                - generic: 2/2
+              - generic [ref=e256]: 在线节点
+            - generic [ref=e257]:
+              - generic [ref=e258]:
+                - progressbar [ref=e260]
+                - generic: 12/12
+              - generic [ref=e264]: 在线蜜罐
+        - generic [ref=e266]:
+          - generic [ref=e267]: 攻击链
+          - generic [ref=e270]:
+            - button "攻击 IP 3 威胁实体" [ref=e271] [cursor=pointer]:
+              - generic [ref=e272]: 攻击 IP
+              - generic [ref=e273]: "3"
+              - generic [ref=e274]: 威胁实体
+            - button "扫描 1444 探测行为" [ref=e276] [cursor=pointer]:
+              - generic [ref=e277]: 扫描
+              - generic [ref=e278]: "1444"
+              - generic [ref=e279]: 探测行为
+            - button "攻击 1444 交互事件" [ref=e281] [cursor=pointer]:
+              - generic [ref=e282]: 攻击
+              - generic [ref=e283]: "1444"
+              - generic [ref=e284]: 交互事件
+            - button "告警 177 待处置" [ref=e286] [cursor=pointer]:
+              - generic [ref=e287]: 告警
+              - generic [ref=e288]: "177"
+              - generic [ref=e289]: 待处置
+      - generic [ref=e290]:
+        - generic [ref=e293]:
+          - text: 在线节点
+          - generic [ref=e297]: 2/ 2
+        - generic [ref=e300]:
+          - text: 在线蜜罐
+          - generic [ref=e304]: 12/ 12
+        - generic [ref=e307]:
+          - text: 24h 攻击
+          - generic [ref=e311]: 1444次
+        - generic [ref=e314]:
+          - text: 未确认告警
+          - generic [ref=e318]: 177条
+      - generic [ref=e319]:
+        - generic [ref=e321]:
+          - generic [ref=e322]:
+            - generic [ref=e323]: 攻击趋势
+            - generic [ref=e324]: 最近 7 天
+          - generic [ref=e328]:
+            - generic [ref=e329]:
+              - generic [ref=e330]: "39"
+              - generic [ref=e332]: 08-10
+            - generic [ref=e333]:
+              - generic [ref=e334]: "1424"
+              - generic [ref=e336]: 08-11
+        - generic [ref=e338]:
+          - generic [ref=e339]: 黑客画像
+          - generic [ref=e341]:
+            - generic [ref=e342]:
+              - generic [ref=e345]: "3"
+              - generic [ref=e346]: 近七日活跃攻击来源
+            - generic [ref=e347]:
+              - generic [ref=e348]:
+                - generic [ref=e349]: "1"
+                - code [ref=e351]: 146.75.46.132
+                - generic [ref=e352]: "930"
+              - generic [ref=e354]:
+                - generic [ref=e355]: "2"
+                - code [ref=e357]: 127.0.0.1
+                - generic [ref=e358]: "336"
+              - generic [ref=e360]:
+                - generic [ref=e361]: "3"
+                - code [ref=e363]: ::1
+                - generic [ref=e364]: "183"
+      - generic [ref=e366]:
+        - generic [ref=e367]: TOP 攻击源（近 7 天）
+        - table [ref=e376]:
+          - rowgroup [ref=e384]:
+            - row [ref=e385]:
+              - columnheader "排名" [ref=e386]
+              - columnheader "来源 IP" [ref=e388]
+              - columnheader "归属地" [ref=e390]
+              - columnheader "事件次数" [ref=e392]
+              - columnheader "威胁判定" [ref=e394]
+              - columnheader "最近活动" [ref=e396]
+          - rowgroup [ref=e398]:
+            - row [ref=e399]:
+              - cell "1" [ref=e400]
+              - cell [ref=e404]:
+                - code [ref=e408]: 146.75.46.132
+              - cell "瑞典" [ref=e409]
+              - cell "930" [ref=e411]
+              - cell "待研判" [ref=e416]
+              - cell "2026/8/11 16:32:56" [ref=e421]
+            - row [ref=e423]:
+              - cell "2" [ref=e424]
+              - cell [ref=e428]:
+                - code [ref=e432]: 127.0.0.1
+              - cell "内网地址" [ref=e433]
+              - cell "336" [ref=e435]
+              - cell "待研判" [ref=e440]
+              - cell "2026/8/11 21:03:44" [ref=e445]
+            - row [ref=e447]:
+              - cell "3" [ref=e448]
+              - cell [ref=e452]:
+                - code [ref=e456]: ::1
+              - cell "内网地址" [ref=e457]
+              - cell "183" [ref=e459]
+              - cell "待研判" [ref=e464]
+              - cell "2026/8/11 17:23:02" [ref=e469]

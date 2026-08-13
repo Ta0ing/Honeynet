@@ -1,0 +1,119 @@
+
+
+
+
+
+
+
+
+<html>
+<head>
+    <title>政务外网OA系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="../../css/skins/skin1/images/logo_eweaver.gif" type="image/x-icon">
+    <script src="../../js/jquery/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../../js/login.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/login_v%3D20190713.css">
+    <script type="text/javascript" src="../../js/login/jquery.cycle.all.js"></script>
+    <script type="text/javascript" src="../../js/login/jquery.overlabel.js"></script>
+</head>
+<body class="body-main">
+<div id="loginMain">
+    <form name="form1" method="post" action="/login">
+        <input type="hidden" id="rndData" name="rndData" value="8350804370334">
+        <input type="hidden" id="encData" name="encData" Value>
+        <input type="hidden" id="isdx" name="isdx" Value="1">
+        <input type="hidden" id="j_username" name="j_username" value>
+
+        
+        <div id="systemname"></div>
+        <div id="slideDemo">
+            <img src="../../images/login/image2021-3-1_16-35-4.png" style="margin-left: 12px; border-radius: 8px; margin-top: 72px"/>
+        </div>
+        <div id="loginBox">
+            <div id="messageDiv">
+            </div>
+            <div id="loginBox_uname">
+                <input type="text" id="uname" name="username" tabindex="1" value>
+            </div>
+            <div id="loginBox_j_password">
+                <input type="password" id="j_password" name="password" tabindex="2" value>
+            </div>
+            <div id="loginBox_btnSubmit">
+                <button type="submit" id="btnSubmit" value="登录">登&nbsp;录</button>
+                
+            </div>
+        </div>
+    </form>
+</div>
+<div class="wxCode">
+    <div class="wxCode-close">
+        <img src="../../images/cancel.jpg" onclick="closeCode();">
+    </div>
+    <div id="wx_reg"></div>
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+        $(function () {
+            $("label.overlabel").overlabel();
+
+            var iconImg = "/images/login/graypoint.png";
+            var iconImg_over = "/images/login/redpoint1.png";
+
+            function pagerFactory(idx, slide) {
+                var s = idx > 50 ? ' style="display:none"' : '';
+                return ' <span class="m-t-5  slidnavtitle hand"  style="background:url(' + (idx == 0 ? iconImg_over : iconImg) + ') center center no-repeat;position:relative;height:32px;width:32px;z-index:10;padding:10px">&nbsp;</span>';
+            };
+            $("#login").bind("mouseover", function () {
+                $(this).removeClass("lgsm");
+                $(this).addClass("lgsmMouseOver");
+            });
+            $("#login").bind("mouseout", function () {
+                $(this).removeClass("lgsmMouseOver");
+                $(this).addClass("lgsm");
+            });
+
+            $(".crossNav a").hover(function () {
+                $(this).css("background-position", "0 -29px");
+            }, function () {
+                $(this).css("background-position", "0 0px");
+            });
+
+            setRandomBg();
+            var top = $(document.body).height() - $("#picblessingdiv").height();
+
+            $("#picblessingdiv").css({"top": "" + top + "px"});
+            $("#picblessingdivCloseBtnWrap").bind("click", function () {
+                $("#picblessingdiv").hide();
+            });
+        });
+        //焦点设置
+        $("input[name='uname']").focus();
+    });
+
+
+    function setRandomBg() {
+        const img = [];
+        
+        img.push('/ServiceAction/com.eweaver.document.file.FileDownload?&&loginIamge=1&&attachid=2c908a84773e303d01777f5c89842b65');
+        
+        img.push('/ServiceAction/com.eweaver.document.file.FileDownload?&&loginIamge=1&&attachid=2c908a82773e2c3a01777b53b9747f2b');
+        
+        img.push('/ServiceAction/com.eweaver.document.file.FileDownload?&&loginIamge=1&&attachid=2c908a84746c508b01746d2a69994c64');
+        
+        img.push('/ServiceAction/com.eweaver.document.file.FileDownload?&&loginIamge=1&&attachid=2c908a847530f5ca01756d0d6cf7614f');
+        
+        if (img.length === 0) {
+            img[0] = '/images/login/login_slide1.jpg';
+            img[1] = '/images/login/login_slide2.jpg';
+            img[2] = '/images/login/login_slide3.jpg';
+            img[3] = '/images/login/login_slide4.jpg';
+        }
+        for (let i = 0; i < 4; i++) {
+            $('#disimg' + i).css('background', 'url(\'' + img[i] + '\') no-repeat');
+        }
+    }
+</script>
+
+</html>

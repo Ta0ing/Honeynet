@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>用户认证 - NSFOCUS NF</title>
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen">
+  <link rel="stylesheet" href="/css/style-all.css">
+  <!-- Fix IE6 -->
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap-ie6.css">
+  <link rel="stylesheet" type="text/css" href="/css/ie.css">
+<![endif]-->
+  <script src="/js/jquery-1.10.2.js"></script>
+  <script src="/js/jquery.cookie.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/nsf.js"></script>
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+  <div class="container max-width">
+    <div class="masthead">
+      <h3 class="muted"><img class="nsfocus" title="绿盟科技认证系统" src="/img/login_logo_auth_zh_CN.jpg" /></h3>
+    </div>
+    <hr>
+    <div class="jumbotron">
+      <p>当前IP地址是 <strong><span id="ip"></span></strong><br />如果需要认证，请点击下面按钮</p>
+      <div class="btn-group div-deafult">
+        <div class="btn-group" id="domain_span" data-toggle="tooltip" title="点击这里可选择其他域进行认证">
+          <button class="btn btn-success btn-large btn-auth-domain" id="auth"
+            onclick="show_login($('#auth').attr('domain_id'))" domain_id="0"><i
+              class="icon-user icon-white"></i>&nbsp;&nbsp;从 <span>Default</span> 认证</button>
+          <button id="choose_domains" class="btn btn-success btn-large dropdown-toggle" data-toggle="dropdown"
+            onclick="get_auth_domains()">
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" id="select_domains"></ul>
+        </div>
+      </div>
+    </div>
+
+
+    <h4>当前认证状态 <small class="muted">认证状态每10秒自动更新；访问当前页面 <a id="location" href="/"></a> 可随时查看。</a></small></h4>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th style="width:50px">状态</th>
+            <th style="width:220px">用户（账号@域）</th>
+            <th style="width:220px">最后一次认证时间</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="nodata" class="hide">
+          <tr>
+            <td colspan="4" style="text-align:center;">
+              <div><img src="/img/tip_big.gif" /> 当前没有认证状态，请先认证。</div>
+            </td>
+          </tr>
+        </tbody>
+        <tbody id="data">
+          <tr>
+            <td colspan="4" style="text-align:center;"><img src="/img/loading.gif" /> 载入中...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="redirect_alert" class="alert alert-success fade in hide">
+      <a class="close" href="#" aria-hide="true" data-dismiss="alert">&times;</a>
+      <h4>跳转提示</h4>
+      <p><span></span> 秒后将访问：<a href="javascript:void(0)" onclick="do_redirect()" class="alert-link"></a></p>
+      <p>在新窗口打开页面可能会被浏览器阻止，如果跳转不成功，请点击上面的链接或点击“直接访问”。</p>
+      <p>
+        <button class="btn btn-primary" onclick="do_redirect();this.blur();">直接访问</button>
+        <button class="btn btn-default" onclick="cancel_redirect(this);this.blur();">取消跳转</button>
+      </p>
+    </div>
+    <div id="heartbeat_alert" class="alert alert-info fade in hide">
+      <a class="close" data-dismiss="alert" href="#" aria-hide="true">&times;</a>
+      <img src="/img/heartbeat.png" /> 当前有用户增正在维持连接状态，请不要关闭本页面。
+    </div>
+
+    <div class="footer">
+      <p><a title="绿盟科技" target="_blank" href="http://www.nsfocus.com"><img class="nsfocus" alt="绿盟科技"
+            src="/img/nsfocus.png"></a></p>
+      <p>版权所有 © 2013 绿盟科技 <a onclick="show_about()" href="#">用户许可协议</a></p>
+    </div>
+  </div>
+  <div class="modal hide fade" id="myModal">
+    <div class="modal-header">
+      <a type="button" href="#" class="close" data-dismiss="modal" aria-hidden="true">&times;</a>
+      <h4 id="myModalTitle">Title</h4>
+    </div>
+    <div class="modal-body">
+      <div id="myModalContent" class="dialogContent"></div>
+    </div>
+    <div id="myModalFooter" class="modal-footer">
+      <a href="#" id="myModalCancel" class="btn" data-dismiss="modal">取消</a>
+      <a href="#" id="myModalOk" class="btn btn-primary" data-dismiss="modal">确定</a>
+    </div>
+  </div>
+</body>
+
+</html>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="js/bootstrap-ie.js"></script>
+<![endif]-->
+<script>
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = 'https://pv.sohu.com/cityjson?ie=utf-8';
+  script.onload = function () {
+    console.log(returnCitySN["cip"] + ',' + returnCitySN["cname"])
+    $("#ip").text(returnCitySN["cip"])
+
+  }
+  document.head.appendChild(script);
+</script>

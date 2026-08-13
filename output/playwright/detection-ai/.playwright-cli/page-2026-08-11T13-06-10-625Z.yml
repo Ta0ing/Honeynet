@@ -1,0 +1,39 @@
+- generic [ref=e3]:
+  - button "切换主题" [ref=e4] [cursor=pointer]
+  - generic [ref=e9]:
+    - heading "Honeynet" [level=1] [ref=e13]
+    - heading [level=2] [ref=e15]:
+      - text: 让攻击者走进
+      - emphasis [ref=e16]: 你设计的世界
+    - generic [ref=e17]: 面向企业安全运营的蜜网与欺骗防御平台。低误报、深度检测、持续生产私有威胁情报。
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]: 90+
+        - text: 蜜罐服务
+      - generic [ref=e21]:
+        - generic [ref=e22]: 实时
+        - text: 攻击感知
+      - generic [ref=e23]:
+        - generic [ref=e24]: 全域
+        - text: 节点覆盖
+  - generic [ref=e25]:
+    - heading "登录管理中心" [level=3] [ref=e26]
+    - text: 使用管理员分配的账号继续
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - generic [ref=e30]:
+          - strong [ref=e31]
+          - text: 用户名
+        - textbox "用户名" [ref=e45]:
+          - /placeholder: 请输入用户名
+          - text: admin
+      - generic [ref=e46]:
+        - generic [ref=e48]:
+          - strong [ref=e49]
+          - text: 密码
+        - generic [ref=e58]:
+          - textbox "密码" [ref=e63]:
+            - /placeholder: 请输入密码
+          - generic [ref=e64] [cursor=pointer]
+      - button "进入控制台" [ref=e68] [cursor=pointer]
+    - generic [ref=e69]: 首次启动默认账号由环境变量 HONEYPOT_ADMIN_* 决定

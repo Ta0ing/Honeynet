@@ -1,0 +1,35 @@
+{
+	"oemLoginPage": false,
+	"copyright": "",
+	"hidePages": [],
+	"hideFuncs": [],
+	"hideXXX1": false,
+	"showHelp": true,
+	"showFeedback": true,
+	"registerURL": {
+		"zhCN": "https://yun.ikuai8.com",
+		"enUS": "https://cloud.ikuai8.com",
+		"zhTW": "https://yun.ikuai8.com"
+	},
+	"loginConfig": {
+		"yunUrl": {
+			"show": true,
+			"zhCN": "https://yun.ikuai8.com/login",
+			"enUS": "",
+			"zhTW": "https://yun.ikuai8.com/login"
+		},
+		"wwwUrl": {
+			"show": true,
+			"zhCN": "https://www.ikuai8.com",
+			"enUS": "https://www.ikuai8.com/ENindex.php",
+			"zhTW": "https://www.ikuai8.com"
+		},
+		"bbsUrl": {
+			"show": true,
+			"zhCN": "http://bbs.ikuai8.com",
+			"enUS": "http://forum.ikuai8.com",
+			"zhTW": "http://bbs.ikuai8.com"
+		}
+	},
+	"leftMenuVersion": 1
+}

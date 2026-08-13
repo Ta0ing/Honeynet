@@ -1,0 +1,717 @@
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/******************************************************************************
+defaultTheme.css is created by including content from the following files, which must be in the order specified:
+baseTheme.css
+componentsTheme.css
+sprites.css (contains styles for creating image sprites using background images)
+layoutTheme.css (this is the One UI layout, with overrides to component styles based on where they sit on the page)
+
+companion files are
+base.css
+components.css
+layout.css
+******************************************************************************/
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*this file contains contains namespaced default styles for ONE UI*/
+/*companion file is base.css*/
+/******************************/
+/*** B A S E   S T Y L E S ****/
+/******************************/
+
+/*** R E S E T ***/
+
+/*ONE UI redefinitions*/
+.lotusui a{color:#105cb6}
+.lotusui a:hover, .lotusui a:focus, .lotusui a:active{color:#05386b;}
+.lotusui dt{background-color:#eee;font-weight:bold}/*used in metrics screen*/
+.lotusui h1, .lotusui h2{color:#444}
+/***********************************************************/
+
+/*** S P E C I A L   L I N K S ***/
+a.lotusPerson, a.lotusPerson:visited{color:#578cca;}/*person links pop up a related menu*/
+.lotusTags a:link, .lotusTags a:visited, a.lotusTag:link, a.lotusTag:visited{color:#578cca;}/*tag*/
+.lotusRelatedTags a{background-image:url(images/iconRelatedTag.gif)}
+/*my links indicate bookmarks you have created - add this onto people and tag class links*/
+a.lotusMyLink, a.lotusMyLink:visited, .lotusMyLinks a, .lotusMyLinks a:visited{color:#44a244 !important}
+a.lotusDelete{background-image:url(images/iconDelete.gif);}
+/*link hover styles*/
+.lotusTags a:hover, .lotusTags a:focus, .lotusTags a:active, a.lotusTag:hover, a.lotusTag:focus, a.lotusTag:active, a.lotusPerson:hover, a.lotusPerson:focus, a.lotusPerson:active{border-bottom-color:#05386b;color:#05386b;}
+a.lotusMyLink:hover, a.lotusMyLink:focus, .lotusMyLinks a:hover, .lotusMyLinks a:focus {color:#05386b !important;border-bottom-color:#05386b;}
+/*single and group action links*/
+/*this is to provide a class for overriding link colors in groups of links to indicate that the link is an action link (like the "Tag this" link in a tag group*/
+a.lotusAction, a.lotusAction:visited{color:#105cb6 !important;}
+a.lotusAction:hover, a.lotusAction:focus, a.lotusAction:active, .lotusActions a:hover, .lotusActions a:focus, .lotusActions a:active, .lotusTags a.lotusAction:hover, .lotusTags a.lotusAction:focus, .lotusTags a.lotusAction:active{color:#05386b !important;}
+/*to assign an icon to an action link, you need to assign a unique id to the link and give it a background image.  The rest of the code is in this css declaration*/
+.lotusActions a, .lotusActions a:visited{color:#105cb6;}
+a.lotusDropDown, a.lotusDropDown:visited, a.lotusDropDown:active{background-color:transparent;background-image: url(../../../../../www.pj.gob.pe/doc/404.html)}
+a.lotusDelete:hover, a.lotusDelete:active{background-image:url(images/iconDeleteHover.gif);}
+/*general class for 16 pixel icons created as background images, where a link surrounds blank.gif*/
+/*NOTES: 
+assign the lotusIcon16 class along with one of the following classes to your link tag
+classes match the icon graphic name with a lotus prefix*/
+.lotusIconShow{background-image:url(images/iconShow.gif)}
+.lotusIconHide{background-image:url(images/iconHide.gif)}
+/***********************************************************/
+
+/*** G E N E R A L   S T Y L E S ***/
+.lotusui .lotusLoading{background-image:url(images/loading.gif)}
+.lotusui .lotusRequired{color:#efa229}
+.lotusui .lotusMeta{color:#666}
+.lotusui .lotusHighlighted{color:#f00}/*red*/
+.lotusui .lotusInactive{color:#999}
+/***********************************************************/
+
+/*** I N L I N E   L I S T S ***/ 
+.lotusui .lotusInlinelist li{border-color:#ccc;}
+/***********************************************************/
+
+/*** S P R I T E S ***/
+/*sprites reference one graphic file that contains many individual graphics*/
+/*individual graphics are positioned using CSS*/
+/*coordinates are x,y coordinates of the image placement within the larger image (with minus sign in front)*/
+.lotusArrow{background-image:url(images/arrows.gif);}
+/*drop-down arrows*/
+.lotusDropDownSprite{background-position:-71px -15px}
+.lotusDropDownActionSprite{background-position:-57px -14px}/*for action buttons*/
+/*scrolling arrows*/
+.lotusScrollUp{background-position:-51px -34px}
+.lotusScrollDown{background-position:-67px -37px}
+/***********************************************************/
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/******************************************************************************
+This file contains styles for ONE UI components
+
+componentsTheme.css is created by including content from css files located in the
+components directory.
+
+companion file is components.css
+******************************************************************************/
+/****************************************/
+/*** C O M P O N E N T   S T Y L E S ****/
+/****************************************/
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for drop-down menus*/
+/*companion file is actionMenu.css*/
+/*****************************/
+/*** A C T I O N   M E N U ***/
+/*****************************/
+ul.lotusActionMenu{background-color:#fff;border-color:#919090;background-image:url(images/actionMenuBkgd.gif)}
+ul.lotusActionMenu.lotusPlain{background-image:none}
+.lotusActionMenu li{background-color:transparent}
+.lotusActionMenu li.lotusSelected a{background-image:url(images/checkmark.gif);}
+.lotusActionMenu li.lotusMenuSeparator{border-top-color:#C0C1C1 !important}
+.lotusActionMenu a{color:#000;}
+.lotusActionMenu a:hover, .lotusActionMenu a:focus, .lotusActionMenu a:active{color:#fff !important;background-color:#4271A8;}
+/*any specific icon menu items (you will need to define them separately for the dojo menu*/
+.lotusSendMail a{background-image:url(images/iconSendMail.gif)}
+.lotusIconActivity a{background-image:url(images/iconActivity.gif)}
+.lotusIconBlog a{background-image:url(images/iconBlog.gif)}
+.lotusIconCommunities a{background-image:url(images/iconCommunities.gif)}
+.lotusIconConnections a{background-image:url(images/iconConnections.gif)}
+/***********************************************************/
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for breadcrumbs*/
+/*companion file is breadcrumbs.css*/
+/*** B R E A D C R U M B S ***/
+.lotusBreadcrumbs .lotusDivider{background-image:url(images/bcDropDown.gif)}
+.lotusBreadcrumbs .lotusDivider:hover, .lotusBreadcrumbs .lotusDivider:focus, .lotusBreadcrumbs .lotusDivider:active{background-image:url(images/bcDropDownHover.gif);}
+/***********************************************************/
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for buttons*/
+/*companion file is buttons_bidi.css*/
+/*** B U T T O N S ***/
+/*form buttons are the same style right now as the special buttons*/
+/*action buttons (lotusActionBtn) just use the lotusBtn style now, if you want them to look different you can define a style*/
+/*lotusButton is a set width version of the button that goes in the left column*/
+/*our regular buttons*/
+.lotusBtn, .lotusButton{border-color:#c0c7cd;}/*default button outside border*/
+.lotusBtn a, .lotusBtn a:visited, .lotusButton a, .lotusButton a:visited{border-color:#dedede;}/*span buttons have an inside border*/
+.lotusBtn a, .lotusBtn a:visited, .lotusButton a, .lotusButton a:visited, input.lotusBtn, button.lotusBtn{color:#222;background-color:#dedede;background-image:url(images/btnBkgd.png);}
+
+/*form and other blue buttons*/
+.lotusBtnSpecial, .lotusFormButton{border-color:#2f76b9}
+.lotusBtnSpecial a, .lotusBtnSpecial a:visited{border-color:#6cacf1;}/*span buttons have an inside border*/
+.lotusBtnSpecial a, .lotusBtnSpecial a:visited,
+input.lotusBtnSpecial, button.lotusBtnSpecial, .lotusFormButton{color:#fff;background-color:#2c86eb;background-image:url(images/btnSpecialBkgd.png);}
+
+/*hover states*/
+/*default buttons*/
+.lotusButton:hover, .lotusButton:focus, .lotusBtn:hover, .lotusBtn:focus, .lotusBtn:active{border-color:#8e8e8e;}
+.lotusBtn a:hover, .lotusBtn a:focus, .lotusBtn a:active{color:#222;}
+/*form and blue buttons*/
+.lotusBtnSpecial:hover, .lotusBtnSpecial:focus, .lotusBtnSpecial:active, .lotusFormButton:hover, .lotusFormButton:focus{border-color:#10395f}
+.lotusBtnSpecial a:hover, span.lotusBtnSpecial a:focus, .lotusBtnSpecial a:active{color:#fff}
+
+/*disabled button - styles need to be at the end of all our button styles so they are picked up.  Uses regular button styles and a grayed out text color*/
+.lotusBtnDisabled{border-color:#c0c7cd !important;}/*we don't want disabled button border color to change on hover*/
+.lotusBtnDisabled a, .lotusBtnDisabled a:visited{border-color:#dedede;}/*span buttons have an inside border*/
+.lotusBtnDisabled a, .lotusBtnDisabled a:visited, input.lotusBtnDisabled, button.lotusBtnDisabled{color:#b0b0b0 !important;background-color:#dedede;background-image:url(images/btnBkgd.png);}
+/*miscellaneous*/
+.lotusBtnDivider{border-color:#e0e0e0}/*add this as an additional container class when you need a bottom divider for the buttons*/
+/*not implemented in the prototype yet.  These is the class for iconAdd.gif*/
+.lotusAdd{border-color:#2f76b9}
+.lotusAdd:hover, .lotusAdd:focus, .lotusAdd:active{border-color:#10395f}
+/****************************************************************/
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for captions*/
+/*companion file is caption.css*/
+/*** C A P T I O N ***/
+.lotusCaption{background-color:#f3f3f3;}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for comments*/
+/*companion file is comments.css*/
+/*** C O M M E N T ***/
+/*plain comments*/
+.lotusAddComment{background-color:#E8EDF3;}
+.lotusAddComment a{background-color:#fff;border-color:#BDC7DB;}
+ul.lotusCommentList li{border-top-color:#e3e2e2}
+/*style adjustments for comments on the board/wall*/
+.lotusBoard .lotusPost{border-top-color:#E8EDF3}
+.lotusBoard ul.lotusCommentList li.lotusFirst{background-image:url(images/commentPointBubble.gif);}
+.lotusBoard .lotusCommentList .lotusPost{background-color:#E8EDF3;}
+/*styles for comments in a discussion forum*/
+.lotusForum .lotusPost{background-color:#B4D5FC;}
+.lotusForum .lotusPostAuthorInfo{background-image:url(images/commentPointForum.gif)}
+.lotusForum .lotusPostContent{background-color:#fff}
+.lotusForum ul.lotusCommentList .lotusPost{background-color:#E8EDF3}
+.lotusForum ul.lotusCommentList .lotusChild{background-image: url(images/commentIndent.gif);}
+.lotusForum .lotusPostDetails blockquote{color:#545454;background-color:#EDF3F9;border-color:#DFE4E9;}
+/*simple comment bubble*/
+.lotusCommentBubble{background-image: url(images/commentPointBubble.gif);}
+.lotusCommentBubbleBody{background-color:#E8EDF3;}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for legal*/
+/*companion file is legal.css*/
+/*** C O P Y R I G H T **/
+div.lotusLegal .lotusLicense{background-image: url(images/ibmLogo.gif);}
+.lotusLegal .lotusLicense{color:#666;}
+.lotusLegal .lotusBuild{color:#000}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for dialogs*/
+/*companion file is dialogs.css*/
+/*** D I A L O G ***/
+.lotusDialogBorder{border-color:#aaa;}
+.lotusDialog{background-color:#fff;}
+.lotusDialog h1{border-bottom-color:#d1dfef;background-image:url(images/lightboxHeaderBkgd.gif)}
+.lotusDialog h1 .lotusClose, .lotusDialog h2 .lotusClose{border-color:#2f76b9}
+.lotusDialog h1 .lotusClose:hover, .lotusDialog h1 .lotusClose:focus,
+.lotusDialog h2 .lotusClose:hover, .lotusDialog h2 .lotusClose:focus{border-color:#10395f}
+.lotusDialog .lotusDialogContent{border-bottom-color:#d1dfef;}
+.lotusDialog .lotusDialogFooter{background-color:#e2ebf1;}
+.lotusDialog .lotusFormTable,
+.lotusDialog .lotusFormTable td{background-color:#fff;}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for display controls*/
+/*companion file is views.css*/
+/***************************************/
+/*** D I S P L A Y   C O N T R O L S ***/
+/***************************************/
+.lotusViewControl div{background-color:#fff;background-image:url(images/btnBkgd.png);border-color:#c0c7cd}
+.lotusView{background-image:url(images/views.gif);}/*sprite graphic that contains all the display control images*/
+.lotusDetailsOff {background-position:-2px -52px}
+.lotusDetailsOff:hover, lotusDetailsOff:focus{background-position:-27px -52px}
+.lotusDetailsOn {background-position:-52px -52px}
+.lotusSummaryOff {background-position:-2px -77px}
+.lotusSummaryOff:hover, .lotusSummaryOff:focus {background-position:-27px -77px}
+.lotusSummaryOn {background-position:-52px -77px}
+.lotusTreeOff {background-position: -2px -2px;}
+.lotusTreeOff:hover, .lotusTreeOff:focus {background-position: -27px -2px;}
+.lotusTreeOn {background-position: -52px -2px;}
+.lotusTileOff {background-position: -2px -27px;}
+.lotusTileOff:hover, .lotusTileOff:focus {background-position: -27px -27px;}
+.lotusTileOn {background-position: -52px -27px;}
+.lotusFolderOff {background-position: -2px -102px;}
+.lotusFolderOff:hover, .lotusFolderOff:focus {background-position: -27px -102px;}
+.lotusFolderOn {background-position: -52px -102px;}
+/***********************************************************/
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for feeds*/
+/*companion file is feeds.css*/
+/*** F E E D S **/
+/*the feed links under the content*/
+.lotusFeeds a.lotusFeed{background-image:url(images/IconFeed.gif)}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for forms*/
+/*companion file is forms.css*/
+/*** F O R M S ***/
+.lotusFormTable, .lotusFormTable td{background-color:#F0F4F7}
+.lotusFormPlain .lotusTable, .lotusFormPlain .lotusFormTable td{background-color:#fff;}/*for a form that is always on the page and not inline*/
+.lotusFormError, .lotusFormRequired {color:#FF0000;}
+.lotusFormErrorField, .lotusFormErrorSummary td {background-color:#fffabc;}
+.lotusFormTable .lotusFormFooter {background-color:#E2EBF1;}
+/* form button element styles can be found in the button component */
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for header*/
+/*companion file is header.css*/
+/*** H E A D E R ***/
+.lotusHeader .lotusDetails p{color:#666}
+.lotusFilters a.lotusFilter{background-color:#f4f7fc;border-color:#c4d8f2}
+.lotusFilters a .lotusClose{color:#c4d8f2}
+.lotusFilters a:hover .lotusClose{color:#9eaac5}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for help*/
+/*companion file is help.css*/
+/*** I N F O   B O X ***/ /*this is used for help and tips*/
+.lotusInfoBox, .portlet-msg{background-color:#fef6ab;border-color:#e2c15a;}
+.lotusInfoBox h3, .portlet-msg h3{color:#b47429;}
+.lotusInfoBox h3 img, .portlet-msg h3 img{border-color:#d79846}
+.lotusInfoBox h3 img:hover, .portlet-msg h3 img:hover, .lotusInfoBox h3 img:focus, .portlet-msg h3 img:focus{border-color:#b8711c}
+.lotusHelp{background-color:#e0e0e0}
+.lotusHelp .lotusInfoBox{border-color:#c5c5c5;background-color:#fff;background-image:url(images/helpBkgd.png)}
+.lotusHelp h3{color:#222}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for lists*/
+/*companion file is lists.css*/
+/*** L I S T S ***/ /*use in conjuction with sections if you want a more complex list*/
+ul.lotusList li.lotusSelected{background-color:#cfecff}
+ul.lotusList li.lotusSelected a{color:#000;}
+.lotusList a, ul.lotusList li.lotusSelected a{border-color:transparent}
+/*delete icon for editable list*/
+ul.lotusEditable a.lotusDelete:hover{border-bottom-color:transparent}
+/*IE 6 hack. Need to use tag and person classes here and accommodate gray and white backgrounds*/
+.lotusui_ie6 .lotusList a{border-bottom-color:#f1f5fa}
+.lotusui_ie6 ul.lotusList li.lotusSelected a{border-bottom-color:#cfecff}
+.lotusui_ie6 ul.lotusEditable a.lotusDelete:hover{border-bottom-color:#f1f5fa}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for menu*/
+/*companion file is menu.css*/
+/*** M E N U ***/
+.lotusMenu, .portlet-menu{background-color:#eefee1;border-color:#ccebb5}
+.lotusMenu .lotusMenuSection{border-bottom-color:#ccebb5;}
+.lotusMenu h3{color:#4f9815}
+.lotusMenu h3.selected, .portlet-menu h3.selected{color:#fff;background-color:#73be59;border-color:#73be59;}
+.lotusMenu li.lotusSelected a, .lotusMenu li.lotusSelected a:visited, .lotusMenu li.lotusSelected a:active, .portlet-menu li.lotusSelected a, .portlet-menu li.lotusSelected a:visited, .portlet-menu li.lotusSelected a:active{color:#fff !important;background-color:#73be59;border-color:#73be59;}
+/*menu arrows are created as CSS sprites, using the lotusArrow class found in baseTheme.css*/
+.lotusTwistyOpenMenu{background-position:-11px -34px}/*the twisty stays the same on hover for the open menu item because it is selected*/
+.lotusTwistyClosedMenu{background-position:-22px -34px}
+.lotusTwistyClosedMenu:hover, .lotusTwistyClosedMenu:focus{background-position:-33px -34px}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for messages*/
+/*companion file is messages.css*/
+/*** M E S S A G E S ***/
+.lotusMessage{background-color:#fcc;border-color:#c66;}/*error message*/
+.lotusWarning{background-color:#ffffbc;border-color:#f7c455;}/*use iconWarning.gif*/
+.lotusInfo{background-color:#d8eaff;border-color:#6295d6;}/*use iconInfo.gif*/
+.lotusConfirm{background-color:#dcfcc4;border-color:#80d047;}/*use iconConfirmation.gif*/
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for paging*/
+/*companion file is paging.css*/
+/*** P A G I N G ***/
+.lotusPaging{color:#848484;background-color:#f1f3f5;}
+.lotusPaging ul li, .lotusPaging div{color:#848484;}
+.lotusPaging input{color:#848484;}
+.lotusPaging .lotusInlinelist li{border-color:#8d8d8d;}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for the customization palette*/
+/*companion file is paletteTheme.css*/
+/*** P A L E T T E ***/
+/*this is the palette that opens under the place bar to allow users to customize the UI */
+.lotusPalette{background-color:#333;}
+.lotusPalette .lotusLoading{background-image:url(images/loadingDark.gif)}
+.lotusPaletteHeader{background-color:#4d4d4d;color:#C1C0C0}
+.lotusPaletteHeader a{color:#fff}
+.lotusPaletteHeader .lotusTabs li{border-color:#4d4d4d;border-bottom-color:#4d4d4d;background-color:transparent}
+.lotusPaletteHeader .lotusTabs li a:hover, .lotusPaletteHeader .lotusTabs li a:focus{color:#fff;}
+.lotusPaletteHeader .lotusTabs li.lotusSelected{background-color:#333;border-color:#282828;border-bottom-color:#333;}
+.lotusPaletteHeader .lotusTabs li.lotusSelected a, .lotusPaletteHeader .lotusTabs li.lotusSelected a:visited{color:#fff;}
+.lotusPaletteHeader a, .lotusPaletteHeader a:hover, .lotusPaletteHeader a:focus{color:#fff}
+.lotusPalette .lotusClose, .lotusPalette .lotusSearch .lotusSearchButton, .lotusPaletteNav h3 img{border-color:#161616;color:#fff/*for alt text when images are turned off*/}
+.lotusPalette .lotusClose:hover, .lotusPalette .lotusClose:focus, .lotusPalette .lotusSearch .lotusSearchButton:hover, .lotusPalette .lotusSearch .lotusSearchButton:focus, .lotusPaletteNav h3 img:hover, .lotusPaletteNav h3 img:focus{border-color:#858585}
+.lotusPaletteNav{background-color:transparent}
+.lotusPaletteNav h3{color:#fff}
+.lotusPalette .lotusSearch input.lotusText{background-color:#222;color:#fff;border-color:#181818}
+.lotusPalette .lotusMenu{background-color:#222;}
+.lotusPalette .lotusMenu li a, .lotusPalette .lotusMenu li a:visited, .lotusPalette .lotusMenu li a:hover, .lotusPalette .lotusMenu li a:focus{color:#fff;background-color:transparent;}
+.lotusPalette .lotusMenu li.lotusSelected{background-color:#4d4d4d;}
+.lotusPalette .lotusMenu li.lotusMore a{background-image:url(images/paletteMoreArrow.gif)}
+.lotusPaletteWidget{border-color:#222;background-color:#2f2f2f;color:#C1C0C0}
+.lotusPaletteWidget:hover, .lotusPaletteWidget:focus{border-color:#717070}
+.lotusPaletteWidget a, .lotusPaletteWidget a:hover, .lotusPaletteWidget a:focus{color:#C1C0C0}
+.lotusPaletteWidget a.lotusIcon{background-image:url(images/paletteAdd.gif)}
+.lotusPaletteWidget a.lotusIcon:hover, .lotusPaletteWidget a.lotusIcon:focus{background-image:url(images/paletteAddHover.gif)}
+.lotusPaletteWidget div.lotusIcon span{background-color:#fff;border-color:#1D1D1D}
+.lotusPaletteWidget .lotusRating0{background-image:url(images/paletteRating0.gif)}
+.lotusPaletteWidget .lotusRating1{background-image:url(images/paletteRating1.gif)}
+.lotusPaletteWidget .lotusRating2{background-image:url(images/paletteRating2.gif)}
+.lotusPaletteWidget .lotusRating3{background-image:url(images/paletteRating3.gif)}
+.lotusPaletteWidget .lotusRating4{background-image:url(images/paletteRating4.gif)}
+.lotusPaletteWidget .lotusRating5{background-image:url(images/paletteRating5.gif)}
+.lotusLargeWidgets .lotusPaletteWidget div.lotusIcon span{background-color:transparent}
+.lotusLargeWidgets .lotusPaletteWidget div.lotusIcon img{border-color:#000}
+.lotusPaletteContent .lotusPaging{background-color:transparent}
+.lotusPaletteContent .lotusPaging ul li, .lotusPaletteContent .lotusPaging div{color:#C1C0C0}
+.lotusPalette .lotusPaging input.lotusText{background-color:#222;color:#fff;border-color:#181818}
+.lotusPaletteContent .lotusPaging a, .lotusPaletteContent .lotusPaging a:hover, .lotusPaletteContent .lotusPaging a:focus{color:#fff}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for search*/
+/*companion file is search.css*/
+/*** S E A R C H ***/
+.lotusSearch .lotusSearchButton{border-color:#2f76b9;}
+.lotusSearch .lotusSearchButton:hover, .lotusSearch .lotusSearchButton:focus{border-color:#10395f;}
+.lotusSearch .lotusText, .lotusSearch .dijitTextBox, .lotusSearch select{border-color:#5581b7;background-color:#fff}
+.lotusSearch .lotusScope{color:#000;background-color:#fff;border-color:#5581b7;}
+.lotusSearch .lotusScope:hover, .lotusSearch .lotusScope:focus{color:#fff;background-color:#4271A8;}
+.lotusSearch .lotusScope span{background-image:url(images/btnDropDown.gif);}
+.lotusSearch .lotusScope:hover span, .lotusSearch .lotusScope:focus span{background-image:url(images/btnDropDownAction.gif);}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for search tab*/
+/*companion file is searchTab.css*/
+/*** S E A R C H   T A B ***/
+.lotusSearchTab{background-color:#fff;border-color:#ccc;}
+.lotusSearchTab:hover, .lotusTabExpanded{color:#414546}
+.tabExpanded{border-bottom-color:#fff;}
+.lotusSearchTab a, .lotusSearchTab a:visited{color:#000;background-image:url(images/searchArrowClosed.gif);}
+.lotusSearchTab a:hover{background-image:url(images/searchArrowHover.gif)}
+.lotusTabExpanded{border-bottom-color:#fff}
+.lotusTabExpanded a, .lotusTabExpanded a:visited{background-image:url(images/searchArrowOpen.gif)}
+.lotusTabExpanded a:hover{background-image:url(images/searchArrowOpenHover.gif)}
+#lotusSearchForm, .lotusSearchForm{background-color:#fff;border-color:#ccc;}
+#lotusSearchForm input, .lotusSearchForm input{color:#999}
+#lotusSearchForm option, .lotusSearchForm option{color:black}
+#lotusSearchForm .lotusText, .lotusSearchForm .lotusText{color:#999}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for section*/
+/*companion file is section.css*/
+/*** S E C T I O N ***/
+/*this is the action menu icon*/
+.lotusSection h2 a.lotusActionMenu{background-image:url(images/iconActions.gif)}
+.lotusSection h2 a.lotusActionMenu:hover, .lotusSection h2 a.lotusActionMenu:focus{background-image:url(images/iconActionsHover.gif)}
+/*these twisties use lotusArrow sprite in baseTheme.css*/
+.lotusTwistyOpen{background-position:0 0}
+.lotusTwistyClosed{background-position:-26px 0}
+/*draggable sections*/
+.lotusSection .lotusDragHandle{background-image:url(images/dndHandle.gif);}
+.lotusSection h2.lotusDraggable:hover .lotusDragHandle{visibility:visible}
+/****************************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for sort*/
+/*companion file is sort.css*/
+/*** S O R T ***/
+.lotusSort .lotusAscending{background-image:url(images/sortAscending.gif)}
+.lotusSort .lotusDescending{background-image:url(images/sortDescending.gif)}
+.lotusSort a.lotusMoreSorts{background-image:url(images/btnDropDown.gif);}
+/****************************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for tables*/
+/*companion file is tables.css*/
+/*** T A B L E S ***/
+/*styles for displaying our data*/
+/*includes vertical tables, horizontal tabular display (summary, detail, and grid views) and highlighted information (announcements)*/
+.lotusVertTable th{color:#666;}
+.lotusTable{border-bottom-color:#e5e5e5;}
+.lotusTable td, .lotusTable th.lotusRowHeader, .lotusTable th.lotusSubHeader{border-top-color:#e5e5e5}
+.lotusTable .lotusLast td, .lotusTable .lotusLast th.lotusRowHeader{border-bottom-color:#e5e5e5}
+.lotusTable .lotusAltRow td, .lotusTable .lotusAltRow th.lotusRowHeader{background-color:#f8f8f8;}
+.lotusTable th.lotusAltCell, .lotusTable td.lotusAltCell{background-color:#f5f5f5;border-right-color:#fff;border-bottom-color:#fff}
+.lotusTable h4.lotusComplete, .lotusTable h4.lotusComplete a{color:#666}
+.lotusTable h5{color:#4f9815}
+.lotusTable caption, .portlet-table caption{color:#666;background-color:#f3f3f3;border-color:#e0e0e0;}
+.lotusTable .lotusSS{color:#666;}
+.lotusTable .lotusType{color:#666;}/*indicates entry types*/
+.lotusPrivate{background-image:url(images/iconPrivate.gif)}/*private entry*/
+.lotusSecure{background-image:url(images/iconSecure.gif)}/*secure entry*/
+.lotusModeratedComm{background-image:url(images/iconModeratedComm.gif)}/*moderated community entry*/
+.lotusTable .lotusPaging, .lotusCaption .lotusPaging, .portlet-table .lotusPaging{background-color:#f3f3f3}
+.lotusTable .lotusPaging td, .portlet-table .lotusPaging td{border-color:#e0e0e0;}
+/*announcements*/
+.lotusInfoTable {background-color:#f0f0f0;background-image:url("images/announceBkgd.jpg");border-color:#e3e3e3;}
+.lotusInfoTable h2 {color:#73BE59;}
+.lotusInfoTable .lotusClose{border-color:#b0b0b0}
+.lotusInfoTable .lotusClose:hover, .lotusInfoTable .lotusClose:focus{border-color:#918f8f}
+.lotusCaption .lotusPaging, .lotusCaption .lotusPaging td{background-color:transparent}
+.lotusCaption select{color:#666}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for tabs*/
+/*companion file is tabs.css*/
+/*** T A B S ***/
+.lotusTabContainer{border-bottom-color:#d9d9d9;}
+.lotusTabs li, .portlet-tab li{border-color:#e7e9ea;border-bottom-color:#d9d9d9;background-color:#e7e9ea}
+.lotusTabs li.lotusSelected, .portlet-tab li.lotusSelected{background-color:#fff;border-color:#d9d9d9;border-bottom-color:#fff;}
+.lotusTabs li.lotusSelected a, .lotusTabs li.lotusSelected a:visited, .portlet-tab li.lotusSelected a, .portlet-tab li.lotusSelected a:visited{color:#000;}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for tag cloud*/
+/*companion file is tagCloud.css*/
+/*** T A G   C L O U D ***/
+a.lotusF5, a.lotusF5:visited{color:#1c3052}
+a.lotusF4, a.lotusF4:visited{color:#2b588e}
+a.lotusF3, a.lotusF3:visited{color:#4477bb}
+a.lotusF2, a.lotusF2:visited{color:#649cd8}
+a.lotusF1, a.lotusF1:visited{color:#8bbce8}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for tree*/
+/*companion file is tree.css*/
+/*** T R E E ***/
+/*the second class definition for each type of node accommodates a div version of the org chart*/
+.lotusOrgChart li a, .lotusOrgChartMiddle{background-image:url(images/orgParentNode.gif);}
+.lotusOrgChart a.lotusTop, .lotusOrgChartTop{background-image:url(images/orgTopNode.gif)}
+.lotusOrgChart .lotusBottom, .lotusOrgChartBottom{background-image:url(images/orgBottomNode.gif)}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*styles for the person card, a component sometimes used in a non-One UI application*/
+/****************************************/
+/*** V C A R D (P E R S O N   C A R D)***/
+.lotusVCard{background-color:#e0e0e0}
+.lotusVCard .lotusContainer{border-color:#c5c5c5;background-color:#eff2f5}
+.lotusVCard a:link, .lotusVCard a:visited, .lotusVCard a:hover, .lotusVCard a:focus, a:active{color:#105cb6}
+.lotusVCard .lotusAppLinks td{background-color:#fff;background-image:url(images/placeBar.png);border-color:#c5c5c5;}
+/*the more arrow, for when there is a second row of application links*/
+.lotusVCard .lotusMore{background-image:url(images/iconMoreAppsClosed.gif);}
+.lotusVCard .lotusMoreExpanded{background-image:url(images/iconMoreAppsOpen.gif)}
+/*lotusDetails is the detail area of the card that contains all info for the person*/
+.lotusVCard .lotusDetails{border-top-color:#fff;background-color:#eff2f5}
+.lotusVCard .lotusPhoto{border-color:#bdc4ca;}
+/*lotusVCardActions are actions you can perform on this person, from the person card*/
+.lotusVCard .lotusPersonActions{background-color:#fff;border-top-color:#c5c5c5}
+.lotusVCard .lotusPersonActions .lotusInlinelist li{border-left-color:#105cb6}
+.lotusVCard .lotusActionMenu a, .lotusActionMenu a:visited{color:#000}
+.lotusVCard .lotusActionMenu a:hover, .lotusVCard .lotusActionMenu a:focus, .lotusVCard .lotusActionMenu a:active{color:#fff !important;background-color:#4271A8;}
+/*lotusComments in the person card contains status information for the person*/
+.lotusVCard .lotusDetails .lotusCommentHeader{background-image:url(images/commentPointPersonCard.gif);}
+.lotusVCard .lotusDetails .lotusCommentBody{color:#666;background-color:#fff;border-color:#a0acba;}
+/*adjustments for an inline version of the card*/
+.lotusInlineVCard .lotusEmail{border-color:#c5c5c5;}
+.lotusPivotNavToggle a{background-color:#d8d8e0;background-image:url(images/vCardClosed.gif)}
+.lotusPivotNavOpen .lotusPivotNavToggle a{background-image:url(images/vCardOpen.gif)}
+/***********************************************************/
+
+/*** V C A R D   H O V E R ***/
+.lotusVCardHover{border-color:#aeaeae;background-color:#fff79a;background-image:url(images/iconProfiles.gif)}
+.lotusVCardHover:hover, .lotusVCardHover:focus{text-decoration:none}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for widget*/
+/*companion file is widget.css*/
+/*** W I D G E T ***/
+.lotusWidget{border-color:#E8ECEE;}
+.lotusWidget h2{background-color:#E8ECEE;background-image:url(images/widgetTitleBkgd.jpg);border-color:#E8ECEE;}
+.lotusWidget .lotusWidgetBody h2 {background-image:none}
+.lotusWidget h3{color:#444;border-bottom-color:#e8ecee}
+.lotusWidget .lotusWidgetFooter{border-top-color:#e8ecee}
+.lotusWidget .lotusPaging{background-color:transparent}/*paging controls within a widget*/
+/*action menu icon*/
+.lotusWidget h2 a.lotusActionMenu{background-image:url(images/iconActions.gif)}
+.lotusWidget h2 a.lotusActionMenu:hover, .lotusWidget h2 a.lotusActionMenu:focus{background-image:url(images/iconActionsHover.gif)}
+/*add any additional buttons you need to expose here*/
+/***********************************************************/
+
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/* this file contains layout elements and style overrides for base components */
+/* these styles need to be applied after the component styles */
+/*companion file - layoutTheme.css*/
+/*******************************************/
+/*** P A G E   L A Y O U T   S T Y L E S ***/
+/*******************************************/
+body.lotusui {color:#222;background-color:#CEE1FC}
+.lotusContent{background-color:#fff;}
+.lotusMain, .lotusFooter{background-color:#fff;border-color:#cfcfcf;}
+.lotusMain{border-top-color:#568dd0;}
+.lotusMain .lotusSearch .lotusText, .lotusMain .lotusSearch .dijitTextBox{border-color:#cccbcb}
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for the banner (layout)*/
+/*companion file is banner.css*/
+/*** B A N N E R **/
+/*this is the very top of the UI, that contains the logo, application links, user name, login/logout*/
+.lotusBanner{background-color:transparent;}
+.lotusBanner ul.lotusInlinelist li{color:#000;background-color:transparent;border-color:#639ade}
+.lotusBanner ul li.lotusFirst{background-image:none}
+.lotusBanner ul.lotusLinks li.lotusSelected{background-color:#649De1;}
+.lotusBanner ul.lotusLinks li.lotusSelected a{color:#fff}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for the footer (layout)*/
+/*companion file is footer.css*/
+/*** F O O T E R ***/
+/*this sits at the bottom of the UI and contains a lot of support links, like help and about*/
+.lotusFooter th{color:#666}
+.lotusFooter th, .lotusFooter td{border-color:#e0e0e0}
+/***********************************************************/
+
+
+
+
+/*** N A V I G A T I O N ***/
+/*left column - menu and filters*/
+.lotusColLeft .lotusInlinelist li{border-color:#8d8d8d;} 
+/***********************************************************/
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for the place bar (layout)*/
+/*companion file is placebar.css*/
+/*** P L A C E   B A R ***/
+/*this place bar shows up right below the title bar and tells user what place or community they are in*/
+.lotusPlaceBar{border-color:#c0c7cd;background-image:url(images/placeBar.png);}
+.lotusPlaceBar h2{color:#000;}
+/***********************************************************/
+
+
+
+/*** S I D E B A R ***/
+/*right column - lists*/
+.lotusColRight .lotusInlinelist li{border-color:#8d8d8d;} 
+/***********************************************************/
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for the title bar (layout)*/
+/*companion file is titlebar.css*/
+/*** T I T L E   B A R 	***/
+/*the blue bar under the banner, that contains tabs and search UI*/
+.lotusTitleBar{background-color:#4586d3;border-bottom-color:#6794cb;background-image:url(images/titlebarMid.png);}
+.lotusTitleBar .lotusRightCorner{background-image:url(images/titlebarRight.png)}
+.lotusTitleBar .lotusInner{background-image:url(images/titlebarLeft.png)}
+.lotusTitleBar h2{color:#fff;}
+.lotusTitleBar .lotusTabs li{border-color:#4675AD;border-bottom-color:#6794cb;background-color:#4372A9}
+.lotusTitleBar .lotusTabs a, .lotusTitleBar .lotusTabs a:visited{color:#fff;}
+.lotusTitleBar .lotusTabs li.lotusSelected{border-color:#5581B7;border-bottom-color:#fff;background-color:#fff}
+.lotusTitleBar .lotusTabs li.lotusSelected a, .lotusTitleBar .lotusTabs li.lotusSelected a:visited{color:#000;}
+.lotusTitleBar .lotusTabs li a:hover, .lotusTitleBar .lotusTabs li a:focus, .lotusTitleBar .lotusTabs li a:active{color:#fff !important}
+.lotusTitleBar .lotusTabs li.lotusSelected a:hover, .lotusTitleBar .lotusTabs li.lotusSelected a:focus, .lotusTitleBar .lotusTabs li.lotusSelected a:active{color:#000 !important}
+/*accessibility*/
+.lotusTitleBar .lotusSearchButton{color:#fff}
+/***********************************************************/
+
+
+
+/*************************************/
+/*** S P E C I A L   S C R E E N S ***/
+/*************************************/
+
+/*** A B O U T ***/
+.lotusAbout .lotusMain{background-image:none}
+.lotusAbout .lotusContent h1{color:#fff;}
+.lotusAbout .lotusContent h2{color:#1f70c9}
+.lotusAbout .lotusContent h3{color:#000;}
+.lotusAboutBox{background-color:#ecfee0;background-image:url(images/aboutBkgd.png)}
+/***********************************************************/
+
+/*** E R R O R ***/
+.lotusErrorBox{background-color:#fff;border-color:#cfcfcf;}
+.lotusError h1{color:#274a71;}
+/***********************************************************/
+
+/*** H O M E ***/
+/*a.k.a. dashboard*/
+.lotusDashboard .lotusMain{background:url(images/colBkgd160.gif)}
+.lotusDashboard .lotusColRight h2{background-color:transparent;}
+/***********************************************************/
+
+/*** L O G I N ***/
+/*this can appear on a plain connections page (gradient background only), or launched in a separate window*/
+.lotusLoginBox{background-color:#fff;background-image:url(images/loginBkgd.png);border-color:#a7c0e0;}
+.lotusLogin h1, .lotusLogin h2{color:#274a71;}
+.lotusDescription h2{color:#000}
+.lotusLoginLogo{top:12px;left:22px;height:18px;width:102px;background-image:url(images/logoConnections.png);background-repeat:no-repeat;}/*height, width values are in this file to aid in retheming*/
+/***********************************************************/
+
+/*** W E L C O M E ***/
+.lotusWelcome .lotusBtnAction, .lotusWelcomeBox .lotusClose{border-color:#2f76b9}
+.lotusWelcomeBox{background-color:#e8f0fb;border-color:#d1e0f7}
+.lotusWelcomeBox, .lotusWelcomeBox h2{color:#4275aa;}
+.lotusWelcomeBox .lotusBtnAction:hover, .lotusWelcomeBox .lotusBtnAction:focus, .lotusWelcomeBox .lotusClose:hover, .lotusWelcomeBox .lotusClose:focus{border-color:#10395f}
+/***********************************************************/
+

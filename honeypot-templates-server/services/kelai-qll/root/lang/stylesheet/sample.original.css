@@ -1,0 +1,21 @@
+﻿div.samplecontain{
+	height: 40px;
+}
+
+div.sample{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.samplelabelc{
+	background-color:#3C82BC;border-radius:3px; padding: 6px 10px 6px 10px;
+}
+.sampleimg{
+	height:28px;
+}
+.samplelabel{
+	font-size:24px;color:#FFEA00; font-weight: bolder;
+}
+.sampletip{
+	margin-left: 15px; vertical-align: middle; font-size:14px; color:#FFEA00; font-weight: bolder;
+}

@@ -1,0 +1,108 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit">
+    <link rel="shortcut icon" type="image/ico" href="/web/resources/favicon.ico">
+    <title>360天堤新一代智慧防火墙</title>
+    <link rel="stylesheet" type="text/css" href="/public/resources/login.css?40611051756">
+    <meta id="token" name="__hash__" content="4146ec82a0f0a638db9293a0c2039e6b_8eca12d821d52f83a859b2574d0b3b6d">
+</head>
+<body style="background:#2b2b2b url('/public/resources/image/bg_1920_1080.png') no-repeat 0 0/cover;">
+
+<header class="hd">
+    <div class="hd_content clearfix">
+        <span class="logo f_left"
+              style="background: url('/public/resources/image/logo_header.png') no-repeat 0 0/cover;"></span>
+        <div class="help f_right">
+            <span class="language_text" onmouseover="Login.language_m_over()" onmouseout="Login.language_m_out()">
+                <div class="language_title">中文</div>
+                <div class="language_list_text">
+                    <span><a href="javascript:void(0)" value="zh_cn" onclick="Login.language_tab(this)">中文</a></span>
+                    <span><a href="javascript:void(0)" value="en" onclick="Login.language_tab(this)">English</a></span>
+                </div>
+            </span>
+            <!--<span>帮助中心</span>-->
+            <!--<span>|</span>-->
+            <!--<span>返回官网</span>-->
+        </div>
+    </div>
+</header>
+<div class="mid">
+    <div class="mid_content clearfix">
+        <div class="login">
+            <div class="login_banner">
+                <div class="login_banner_bg"
+                     style="background: url('/public/resources/image/logo_panner.png') no-repeat 0 0/cover;"></div>
+            </div>
+            <div name="loginform" class="login_form">
+                <form action="/login" method="post">
+                    <div class="input_div input_div_user clearfix">
+                        <span class="input_user"><i class="iconfont icon-login-usr"></i></span>
+                        <input type="text" id="name" name="username" placeholder="请输入用户名"
+                               class="input_content user" autocomplete="new-password" tabindex="1">
+                    </div>
+                    <div class="input_div input_div_pw clearfix">
+                        <span class="input_pw"><i class="iconfont icon-login-pw"></i></span>
+                        <input type="password" id="password" name="password" placeholder="请输入密码"
+                               class="input_content pw" autocomplete="new-password" tabindex="2">
+                    </div>
+                    <div class="login_warning">
+                        <span class="tip"></span>
+                    </div>
+                    <div class="input_div_b">
+                        <input type="text" maxlength="4" id="captcha" name="captcha" placeholder="请输入验证码"
+                               class="acode" autocomplete="off" tabindex="3">
+                        <img id="captcha_img_id" name="captcha_img" src="/verify.html" alt="CAPTCHA"
+                             onclick="change_captcha();">
+                    </div>
+                    <div class="login_warning">
+                        <span class="tip"></span>
+                        <input type="hidden" name="open_topbar" value="zh_cn" id="language_select">
+                    </div>
+                    <div class="input_div_btn">
+                        <input type="submit" id="btn_submit" class="login_btn btn_hover" value="立即登录" onclick="">
+                    </div>
+                    <div class="input_div_checkbox">
+                        <div class="i-check">
+                            <input type="checkbox" value="on" id="is_checked" checked="true">
+                            <label></label>
+                        </div>
+                        <a href="#" id="a_text_readUserLicense"
+                           onclick="Login.modal.openModal()">我已经阅读并同意《用户许可协议》</a>
+                    </div>
+                </form>
+                <div class="tooltip">
+                    <div class="tooltip_tip">
+                        <div class="tooltip_trangle"></div>
+                    </div>
+                    <div class="tooltip_content" id="div_readLicense">请阅读用户许可协议</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal">
+    <div class="modal_close" onclick="Login.modal.closeModal()" style="width:20px;float:inline-end;">×</div>
+    <div class="modal_title" id="modal_title" style="padding-top:20px;">用户许可协议</div>
+    <div class="modal_body"></div>
+    <div class="modal_footer">
+        <div class="modal_footer_btn">
+            <input id="btn_text_agree" type="button" name="" value="同 意" onclick="Login.agreeChecked()">
+        </div>
+    </div>
+</div>
+
+<div class="mask"></div>
+<div class="ft" id="copyright">版权所有 ©2012-2018 网神信息技术（北京）股份有限公司 保留所有权利</div>
+<script>
+    var __permission = "360防火墙";
+</script>
+<script src="/public/resources/const.js?40611051756"></script>
+<script src="/public/lang/lang_zh_cn.js?40611051756"></script>
+<script src="/public/resources/jsencrypt.min.js?40611051756"></script>
+<script src="/public/resources/base64.js?40611051756"></script>
+<script src="/public/resources/login.js?40611051756"></script>
+
+
+</body>
+</html>

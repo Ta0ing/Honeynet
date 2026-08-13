@@ -1,0 +1,299 @@
+.dialog-content {
+    font-size: 12px;
+}
+
+.dialog-content ul, li {
+    list-style: none;
+}
+
+.dialog-content img {
+    border: none;
+}
+
+/*fieldset样式修改*/
+.dialog-content fieldset {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #d2d2d2;
+    background-color: transparent;
+}
+
+.dialog-content fieldset legend {
+    background-color: transparent;
+}
+
+.dialog-content fieldset label {
+    float: left;
+    width: 120px;
+    text-align: right;
+    padding: 4px;
+    margin: 1px;
+}
+
+.dialog-content fieldset div {
+    clear: left;
+    margin-bottom: 2px;
+}
+
+.dialog-content input[type="checkbox"] {
+    margin: 3px 3px 3px 4px;
+    margin-top: 1px !important;
+    vertical-align: middle !important;
+    margin-bottom: 4px \9 !important;
+}
+
+.dialog-content input[type="radio"] {
+    margin-top: -1px !important;
+    margin: 3px 3px 0px 5px;
+    vertical-align: middle !important;
+}
+
+/*radio标签右间距*/
+.radio_m_r {
+    margin-right: 20px;
+}
+
+/*td存在radio加上padding-top*/
+.td_radio_pt {
+    padding-top: 3px;
+}
+
+/* 全局样式 end */
+
+/*去除ie10输入框后面自带的小叉*/
+input::-ms-clear {
+    display: none;
+}
+
+.blue {
+    color: blue;
+}
+
+.red {
+    color: red;
+}
+
+/*
+兼容性问题记录
+css属性前面加下划线_，是只对IE6有效，如果是星号*，就是对IE7和IE6有效。
+*/
+.checklabel {
+    *vertical-align: middle;
+    color: #666666;
+}
+
+.requireClass {
+    color: red;
+}
+
+/*请注意这里的单位是em字体大小更换时，请换算（16px=1em）*/
+.textareaclass {
+    padding-left: 0.32em;
+    text-indent: 0px !important;
+    resize: none;
+    overflow: auto;
+    padding: 1px 1px 1px 5px;
+    box-sizing: content-box !important;
+}
+
+.textarea_requireClass {
+    color: red;
+    margin-top: 12px;
+    position: absolute;
+}
+
+
+/* 元素遮罩使用的样式 */
+.HTMLElement-mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ccc;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    display: none;
+    z-index: 999999;
+}
+
+.HTMLElement-mask-white {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    display: none;
+    z-index: 999999;
+}
+
+/*easyui tabs 去掉边框线*/
+.tabs-header {
+    border: 0px solid lightGrey;
+}
+
+.tabs-panels {
+    border: 0px solid lightGrey;
+}
+
+.window-header {
+    padding: 0px !important;
+    height: 37px;
+    border-bottom: 0px solid #04577d !important;
+}
+
+.panel-tool {
+    right: 8px !important;
+    top: 0px !important;
+}
+
+.panel-tool a {
+    width: 32px !important;
+    height: 23px !important;
+}
+
+/*鼠标浮动焦点事件  弹出框头部取消按钮所在a*/
+.panel-tool a:hover {
+    width: 32px !important;
+    height: 31px !important;
+    margin-top: 0px !important;
+}
+
+/*弹出框头部取消按钮的样式*/
+.panel-tool a.panel-tool-close {
+    background: url('../images/panel/panel_close_all.png') no-repeat;
+    background-position-x: 0px;
+    background-position-y: 0px;
+}
+
+/*鼠标浮动焦点事件  弹出框头部取消按钮的样式*/
+.panel-tool a:hover.panel-tool-close {
+    background: url('../images/panel/panel_close_all.png') no-repeat;
+    background-position-x: 0px;
+    background-position-y: -32px;
+}
+
+/*鼠标点击事件  弹出框头部取消按钮的样式*/
+.panel-tool a:active.panel-tool-close {
+    background: url('../images/panel/panel_close_all.png') no-repeat;
+    background-position-x: 0px;
+    background-position-y: -64px;
+}
+
+.panel-tool-close {
+    background: url('../images/panel/panel-tool-close.png') no-repeat;
+}
+
+a:hover.panel-tool-close {
+    background: url('../images/panel/panel-tool-close.png') no-repeat;
+}
+
+/**
+ * window窗口顶部标题的样式
+ */
+.window_header_left {
+    width: 5px;
+    height: 37px;
+    border: 0;
+    background-repeat: no-repeat;
+    background-color: #454A4F;
+}
+
+.window_header_right {
+    width: 5px;
+    height: 37px;
+    border: 0;
+    background-repeat: no-repeat;
+    background-color: #454A4F;
+}
+
+.window_header_center {
+    padding-top: 0px !important;
+    padding-left: 10px !important;
+    height: 37px;
+    border: 0;
+    background-repeat: repeat-x;
+    background-color: #454A4F;
+}
+
+/*对话框头部下方第一个提示*/
+.window_head_tip {
+    backgorund-color: #454A4F;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 10px;
+}
+
+/*对话框头部下方第一个提示的DIV*/
+.window_head_tip_div {
+    background-color: #EEEEEE;
+    padding-top: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/*对话框头部下方第一个提示的DIV的p标签字体样式*/
+.window_head_tip_div_font {
+    margin-top: 0px;
+    font-size: 12px;
+    color: #999;
+    line-height: 18px;
+    padding-bottom: 8px;
+}
+
+/**
+ * window窗口存在底部按钮的样式
+ */
+/*对话框底部左侧样式*/
+.window_button_left {
+    width: 5px;
+    height: 46px;
+    border: 0;
+    background-repeat: no-repeat;
+    background-color: #454A4F;
+}
+
+/*对话框底部右侧样式*/
+.window_button_right {
+    width: 5px;
+    height: 46px;
+    border: 0;
+    background-repeat: no-repeat;
+    background-color: #454A4F;
+}
+
+/*对话框底部中间样式*/
+.window_button_center {
+    height: 40px;
+    border-bottom: 5px solid #454A4F !important;
+    background-repeat: repeat-x;
+    background-color: #eeeeee;
+    text-align: center;
+}
+
+.dialog-content {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    border-left: 5px solid #454A4F !important;
+    border-right: 5px solid #454A4F !important;
+    border-bottom: 5px solid #454A4F !important;
+    border-top: 0px !important;
+    background: #ffffff;
+}
+
+.normal-dialog-content {
+    margin: 20px 20px 5px 20px;
+    padding: 10px;
+    border: 1px solid #d4d4d4;
+    max-height: 85%;
+    overflow-y: auto;
+}
+
+.normal-title {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.normal-botton {
+    bottom: 5px;
+    text-align: right;
+}

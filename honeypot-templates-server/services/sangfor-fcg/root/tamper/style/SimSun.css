@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+    font-size: 12px;
+    font-family: Tahoma, Verdana, "SimSun", Verdana, Geneva, sans-serif;
+    -webkit-text-size-adjust: none;
+    background-color: #F7FAFD;
+}

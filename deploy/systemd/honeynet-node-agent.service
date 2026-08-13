@@ -1,0 +1,22 @@
+[Unit]
+Description=Honeynet Node Agent
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/opt/honeynet-agent/libexec/honeynet-agent-guard /opt/honeynet-agent/bin/honeynet-agent --config /etc/honeynet/agent.json --state-dir /var/lib/honeynet-agent
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+# The signed updater stages an atomic replacement beside the executable. Give
+# it a dedicated writable bin directory instead of weakening /usr/local/bin or
+# the full installation tree.
+ReadWritePaths=/etc/honeynet /var/lib/honeynet-agent /opt/honeynet-agent/bin
+ReadOnlyPaths=-/opt/honeynet-agent/templates/web
+
+[Install]
+WantedBy=multi-user.target

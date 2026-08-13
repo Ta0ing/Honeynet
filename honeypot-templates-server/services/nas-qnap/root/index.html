@@ -1,0 +1,145 @@
+<!DOCTYPE html><html unselectable="on" style="background:#007cef"><head>
+<meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8, chrome=1">
+<meta charset="UTF-8">
+<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+<meta http-equiv="PRAGMA" content="NO-CACHE">
+<meta name="viewport" content="width=1180">
+<title>NAS</title>
+<link rel="icon" type="icon/x-image" href="/cgi-bin/images/mobile/logo_16.ico?1648090673">
+<link rel="shortcut icon" href="/cgi-bin/images/mobile/logo_16.ico?1648090673">
+<link rel="apple-touch-icon" sizes="114x114" href="/cgi-bin/images/mobile/logo_144.png?1648090673">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/cgi-bin/images/mobile/logo_144.png?1648090673">
+
+<link rel="stylesheet" type="text/css" href="/v3_menu/css/qts-font.css?_dc=1648090673">
+<link rel="stylesheet" href="/cgi-bin/loginTheme/theme1/login.css?r=form&amp;1648090673" type="text/css" media="screen">
+<link rel="stylesheet" href="/cgi-bin/css/watermark.css?r=form&amp;1648090673" type="text/css" media="screen">
+<link rel="stylesheet" media="(max-height: 768px)" href="/cgi-bin/loginTheme/theme1/login-max-height-768.css?r=wall&amp;1648090673" type="text/css">
+<script type="text/javascript">
+var QOS_DEFAUTLSETTING={};
+var pageRandom=new Date().getTime();
+var URL_RANDOM_NUM="1648090673";
+var resetKey = "$RESET_KEY$";
+var endtime = "$ENDTIME$";
+var isValidResetPwd = "$IS_VALID_RESET_PWD$";
+var isPreview = false;
+var checkName = "$CHECK_NAME$";
+var _dc = new Date().getTime();
+</script>
+<!-- <script type="text/javascript" src="/cgi-bin/jc.cgi?_dc=1648090673&t=js&f=jquery-1.10.2.min.js&f=login.js"></script> -->
+
+</head>
+<body class="classic loginUI qts-login show" unselectable="on" style="">
+<div class="backgroud-image" style="background-image: url(&quot;/standard_bg.jpg&quot;); background-size: 100% 100%;">
+<div class="desktop-watermark-ct">
+<img class="desktop-watermark" style="pointer-events:none;" src="/cgi-bin/images/desktop/bg/watermark/watermark.svg?1648090673">
+</div>
+</div>
+<div class="header"></div>
+<div class="version"><span class="fw-ver fl" style="margin-right: 0px;"></span></div>
+<div class="qnap-link show">
+<ul class="list">
+<li class="myqnapcloud slice-img icon"><a  class="qStr qTooltip" data-tooltip="前往myQNAPcloud网站" data-qtip="GO_TO_QNAP_CLOUD">&nbsp;</a></li>
+<li class="qnap-tools slice-img"><a class="qStr qTooltip" data-qtip="QNAP_UTILITY" data-tooltip="应用工具">&nbsp;</a>
+<ul class="menu">
+<li class="mobile-tool slice-img-3 qTooltip" data-qtip="QNAP_MOBILE_APP"><a   class="qStr" data-qstrid="QNAP_MOBILE_APP">移动应用</a></li>
+<li class="utility-tool slice-img-3 qTooltip" data-qtip="QNAP_UTILITY"><a  class="qStr" data-qstrid="QNAP_UTILITY">应用工具</a></li>
+</ul>
+</li>
+<li class="qnap-service slice-img">
+<a class="qStr qTooltip" data-qtip="FIRSTPAGE_FEEDBACK" data-tooltip="意见回馈">&nbsp;</a>
+<ul class="menu">
+<li class="wiki slice-img-3 qTooltip" data-qtip="FIRSTPAGE_WIKI"><a class="qStr" data-qstrid="FIRSTPAGE_WIKI">维基百科</a></li>
+<li class="forum slice-img-3 qTooltip" data-qtip="FIRSTPAGE_FORUM"><a class="qStr" data-qstrid="FIRSTPAGE_FORUM">官方论坛</a></li>
+<li class="cums-service slice-img-3 qTooltip" data-qtip="FIRSTPAGE_SERVICE"><a class="qStr" data-qstrid="FIRSTPAGE_SERVICE">客户服务</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="cums-ct">
+<div class="cums-logo" style="background-size: contain; background-position: center center; background-repeat: no-repeat;"></div>
+<div class="cums-msg"></div>
+</div>
+<div class="box-shadow" id="loginForm">
+<div class="form-ct">
+<form method="POST" action="/login">
+<div class="step step_1 step-active ">
+<div class="anim-scale delay-1">
+<div class="host-name ">NAS</div>
+<div class="node-name ">&nbsp;</div>
+</div>
+<div class="anim-scale delay-2">
+<div class="field input-field"><span class="user-icon"></span><textarea class="qStr" data-qstrph="LDAP_SERVER_STR12" id="username" name="username" autocomplete="off" placeholder="用户名"></textarea><span class="reset-icon slice-img show"></span></div>
+<div class="field input-field"><span class="pwd-icon"></span><input class="qStr" data-qstrph="QUICK04_STR09" id="pwd" name="password" type="password" autocomplete="off" placeholder="密码"><span class="unmask-eye" style="display: none;"></span></div>
+</div>
+<div class="anim-scale delay-3">
+<div class="field checkbox-field "><input type="checkbox" id="rememStatus" autocomplete="off"><label class="qStr" data-qstrid="QTS_REMEMBER_ME" for="rememStatus" id="rememLabel">记住我</label></div>
+<div class="field checkbox-field "><input type="checkbox" id="secureStatus" autocomplete="off"><label class="qStr" data-qstrid="QTS_SSL_LOGIN" for="secureStatus" id="secureLabel">安全登录</label></div>
+</div>
+<div class="msg"></div>
+<div class="anim-scale delay-4">
+<div class="center "><button class="login-btn qStr submit" data-qstrid="QNAP_PS_LOGIN" id="submit">登录</button></div>
+</div>
+</div>
+<div class="step step_2">
+<div class="center title block" for="scyCode">
+<span class="lock-icon slice-img-2">&nbsp;</span><span class=" lock-icon--label qStr" data-qstrid="AUTH_2STEP_01">两步验证</span>
+</div>
+<div class="msgCt">
+<span id="scy_msg" class="msg qStr display-hide" data-qstrid="AUTH_2STEP_30">请输入验证码继续登录。</span>
+</div>
+<div class="input-field">
+<span class="pwd-icon"></span><input id="scyCode" type="text" class="login_input" tabindex="1" autocapitalize="off" autocomplete="off">
+</div>
+<div id="scy_msg2" class="result-msg display-hide"></div>
+<div class="center bottom">
+<button class="login-btn qStr submit" data-qstrid="QNAP_PS_LOGIN" id="scySubmit">登录</button>
+</div>
+<span id="lostPhone" class="actionText margin-btm-1 qStr" data-qstrid="AUTH_2STEP_31">使用替代方式验证</span>
+<span class="cancel_login actionText margin-btm-1 qStr" data-qstrid="IEI_NAS_BUTTON_CANCEL">取消</span>
+</div>
+<div class="step step_3">
+<div class="center title block" for="scyCode">
+<span class="lock-icon slice-img-2">&nbsp;</span><span class=" lock-icon--label qStr" data-qstrid="AUTH_2STEP_01">两步验证</span>
+</div>
+<div class="msgCt">
+<span class="msg margin-btm-1 qStr" data-qstrid="AUTH_2STEP_36">请回答以下安全问题：</span>
+<label class="login_input block margin-top-1 question_label fb" for="scyAns"></label>
+</div>
+
+<div class="usermane input-field">
+<span class="pwd-icon"></span><input id="scyAns" type="text" class="login_input" tabindex="1" autocapitalize="off" autocomplete="off">
+</div>
+<div id="qestion_msg" class="result-msg display-hide"></div>
+<div class="center ">
+<button class="login-btn qStr submit" data-qstrid="QNAP_PS_LOGIN" id="scyAnsSubmit">登录</button>
+</div>
+<span id="back_2sv" class="actionText margin-btm-1 qStr" data-qstrid="IEI_NAS_BUTTON_BACK">返回</span>
+<span class="cancel_login actionText margin-btm-1 qStr" data-qstrid="IEI_NAS_BUTTON_CANCEL">取消</span>
+</div>
+</form>
+</div>
+</div>
+<div class="buttom qpkg-ct first-page"><div id="qpkg-list"><div class="slice-img nav-prev nav-arrow"></div><div class="nav-arrow slice-img nav-next"></div><ul></ul></div></div>
+<div class="msg-box-ct msg-box-mask">
+<div id="msg-box" class="msg-box box-shadow">
+<div class="slice-img-close-2 close-btn"></div>
+<div class="box-body">
+<div class="msg-content-ct">
+<div class="msg-icon-ct">
+<div class="msg-icon slice-img-close"></div>
+</div>
+<div class="msg-text-ct"><span>Are you sure you want to email an emergency security code?</span></div>
+</div>
+<div class="box-footer">
+<div class="box-footer__btn-ct">
+<span id="modalCancel" class="btn-ct qStr" data-qstrid="IEI_NAS_BUTTON_CANCEL">取消</span>
+<span id="modalOK" class="btn-ct qStr" data-qstrid="IEI_NAS_BUTTON_OK">确定</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="qts-tooltip"></div>
+
+
+</body></html>

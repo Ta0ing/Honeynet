@@ -1,0 +1,38 @@
+html{overflow:visible;background:#E2E1E3;}
+body{width:98%;font:12px '新宋体'}
+.container{
+	position:relative;
+	width:470px;
+	height:320px;
+	margin:150px auto 0 auto;
+	background:url('../purple/images/loginbg.png') #E2E1E3 no-repeat;
+}
+.center{
+	position:absolute;
+	top:75px;
+	left:50px;
+	width:350px;
+	height:180px;
+}
+.bottom{
+	position:absolute;
+	bottom:24px;
+	height:14px;
+	width:305px;
+	margin-left:70px;
+	vertical-align:middle;
+}
+input{width:150px;border:1px solid #A19DB8;outline:0 none;}
+select{width:153px;border:1px solid #A19DB8;outline:0 none;}
+table{width:200px;margin:15px auto;}
+th,td{padding-bottom:15px;font-weight:normal;}
+.fr{float:right;}
+.fl{float:left;}
+.thleft{margin-right:16px;}
+.loginbtn{width:78px;height:25px;background:url('../purple/images/loginbtn.png') #E2E1E3 no-repeat;border:none;color:#ffffff;cursor:pointer;margin-right:10px;}
+#challenge{margin:5px auto 0 auto;width:360px;text-align:left;height:100px;overflow:auto;}
+.fpdiv{position:absolute;z-index:99;top:203px;_top:209px;left:126px;width:24px;height:33px;}
+.forget_pwd{display:block;text-decoration:underline;margin-top:6px;cursor:pointer;color:#813AAD;}
+.hide{display:none;}
+.logo{background:url('../images/logo-login.png') no-repeat;border:none;position:absolute;width:150px;height:40px;left:5px;top:10px;}
+.diskfull{color:red;margin:auto;width:300px;}

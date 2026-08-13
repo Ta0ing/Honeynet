@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta content="always" name="referrer">
+<meta name="renderer" content="webkit|ie-stand|ie-comp">
+
+<script type="text/javascript">
+var phoneReg ='^\\d{11}$';
+var NAC = {regex: {phone: new RegExp(phoneReg), mail: /.+@.+/}};
+</script>
+<link href="lianruan/easyui.css" rel="stylesheet">
+<script type="text/javascript" src="lianruan/jquery.min.js"></script>
+<script type="text/javascript" src="lianruan/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="lianruan/index.js"></script>
+<script type="text/javascript" src="lianruan/jsencrypt.js"></script>
+<script type="text/javascript" src="lianruan/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="lianruan/webauth-zh_CN.js"></script>
+<script type="text/javascript" src="lianruan/util.js"></script>
+<script type="text/javascript" src="lianruan/validate.js"></script>
+<script type="text/javascript" src="lianruan/pcauth.js"></script>
+<link rel="stylesheet" href="lianruan/cbox_blue.css" type="text/css" media="all">
+<style type="text/css">
+@font-face {
+font-family: 'AlibabaPuHuiTi';
+src: url('/portal/resources/fonts/Alibaba-PuHuiTi-Regular.otf');
+font-weight: normal;
+font-style: normal;
+}
+body{font-family:AlibabaPuHuiTi,arial,tahoma,Verdana,sans-serif;}
+html,body{
+height: 100%;
+width: 100%;
+overflow: hidden;
+*overflow: auto;/*兼容ie6,IE7*/
+}
+body{
+overflow-x:hidden;
+overflow-y:auto;
+*overflow:hidden;/*兼容ie6,IE7*/
+background-color: #F7F6F4;
+}
+body,ul,li,h1,p{
+margin: 0;
+padding: 0;
+list-style: none;
+}
+div,span,p{
+font-weight: normal;
+line-height: 1.0;
+}
+.bigbox{
+background-color: #F7F6F4;
+padding: 0;
+list-style: none;
+font-weight: normal;
+line-height: 1.0;
+*overflow: hidden;
+*height: 0;
+padding-bottom: 20px;
+}
+.bigbox span{
+font-family:AlibabaPuHuiTi;
+}
+.headbar{
+width: 100%;
+height: 80px;
+background-color:#ffffff;
+position: relative;
+}
+.mylogo{
+
+
+
+
+
+
+margin: 0 auto;
+width: 960px;
+height: 80px;
+overflow: hidden;
+}
+.logo_word{
+font-size: 26px;
+font-weight: bold;
+color: #636363;
+width: 940px;
+height: 80px;
+margin: 0 auto;
+padding-left: 20px;
+line-height: 80px;
+}
+.contentbar{
+width: 966px;
+*width: 970px;
+height: 382px;
+margin: 10px auto 0 auto;
+position: relative;
+}
+.downagent{
+margin: 0 auto;
+width: 300px;
+height: 40px;
+line-height: 40px;
+margin-top: 90px;
+text-align: center;
+color: #ffffff;
+cursor: pointer;
+}
+.leftcontent{
+float: left;
+position: relative;
+border: 1px solid #CCCCCC;
+}
+.leftImg{
+border: none;
+margin: 0;
+padding: 0;
+display:block;
+width: 570px;
+height: 380px;
+float: left;
+}
+.rightcontent{
+width: 380px;
+height: 380px;
+*height: 380px;
+border: 1px solid #CCCCCC;
+float: left;
+background-color: #ffffff;
+position: relative;
+}
+.helppic{
+
+width: 570px;
+height: 140px;
+border: 1px solid #CCCCCC;
+}
+.title{
+margin: 20px 0 0 20px;
+font-size: 18px;
+color: #333333;
+}
+.tabmenu{
+margin: 35px 0 0 20px;
+width: 330px;
+height: 25px;
+border-bottom: 2px solid #EEEEEE;
+font-size: 14px;
+color: #999;
+}
+.tab{
+float: left;
+width:24.5%;
+height: 25px;
+text-align: center;
+cursor: pointer;
+}
+.tab_sel{
+
+
+
+border-bottom: 2px solid #3271B4;
+color: #3271B4;
+
+
+font-weight: bold;
+cursor: text;
+}
+.inputclass{
+width: 310px;
+height: 30px;
+font-size: 16px;
+padding: 5px 0 5px 10px;
+
+
+
+margin: 15px 0 0 0;
+
+
+border: 1px solid #CCCCCC;
+line-height: 30px;
+color: #999999;
+}
+.ieplace{
+line-height: 30px;
+font-size: 16px;
+color: #999999;
+position: absolute;
+top: 20px;
+left: 10px;
+}
+.validate_code{
+width: 98px;
+height: 40px;
+margin: 15px 0 0 10px;
+border: 1px solid #CCCCCC;
+display: inline-block;
+cursor: pointer;
+}
+.subbtn{
+width: 320px;
+height: 30px;
+font-size: 16px;
+padding: 5px 1px 5px 1px;
+
+
+
+margin: 20px 0 0 25px;
+
+
+
+
+
+background-color: #3271B4;
+
+
+border: none;
+line-height: 30px;
+text-align: center;
+color: #ffffff;
+font-weight: bold;
+cursor: pointer;
+display: inline-block;
+}
+.highlight{
+filter:alpha(opacity=80);
+-moz-opacity:0.8;
+-khtml-opacity: 0.8;
+opacity: 0.8;
+}
+.otherlogin{
+width: 360px;
+height: 20px;
+*height: 20px;
+background-color: #F5F5F5;
+font-size: 14px;
+padding: 10px 0 10px 20px;
+line-height: 20px;
+vertical-align: middle;
+text-align: left;
+color: #666666;
+position: absolute;
+bottom: 0px;
+left: 0px;
+}
+.iphone{
+
+width: 32px;
+height: 32px;
+float: left;
+}
+.wechatcode{
+
+width: 32px;
+height: 32px;
+float: left;
+}
+.otherlogin a{
+text-decoration: none;
+color: #666666;
+}
+.bottomcontent{
+position: relative;
+width: 958px;
+margin: 0 auto;
+text-align: right;
+font-size: 13px;
+color: #777373;
+line-height: 19px;
+}
+.contentHide{
+display: none;
+}
+.phonecode {
+width: 122px;
+height: 40px;
+
+
+
+margin: 15px 0 0 10px;
+
+
+_margin-left: 10px;
+border: none;
+display: inline-block;
+float: left;
+
+
+
+background-color: #3271B4;
+
+
+line-height: 40px;
+color: #fff;
+text-align: center;
+font-size: 14px;
+cursor: pointer;
+}
+.editshadow{
+width: 100%;
+height: 100%;
+background-color: #CCCCCC;
+filter:alpha(opacity=70); /*IE滤镜，透明度50%*/
+-moz-opacity:0.7; /*Firefox私有，透明度50%*/
+opacity:0.7;/*其他，透明度50%*/
+z-index: 99;
+position: absolute;
+display: none;
+}
+.editbtn{
+width: 50px;
+height: 30px;
+background-color: black;
+font-size: 12px;
+color: #ffffff;
+text-align: center;
+line-height: 30px;
+cursor: pointer;
+position: absolute;
+right: 0px;
+top: 0px;
+}
+.processbar{
+width: 100%;
+height: 100%;
+z-index: 999999;
+background-color: #211D1D;
+filter:alpha(opacity=50);
+-moz-opacity:0.5;
+opacity:0.5;
+position: absolute;
+}
+.processimg{
+margin: 0 auto;
+
+width: 400px;
+height: 300px;
+position: absolute;
+top: 50%;
+left: 50%;
+margin-top:-150px;
+margin-left:-200px;
+}
+.combobox-item-selected{
+background-color: #f5f5f5;
+color: #333;
+}
+.content{
+position: relative;
+width: 960px;
+margin: 0 auto;
+width: 1020px;
+margin: 0 auto;
+background-color: #ffffff;
+padding-top: 40px;
+margin-top: 50px;
+margin-bottom: 50px;
+padding-bottom: 20px;
+}
+.mytabs{
+width: 960px;
+margin: 0 auto;
+border-bottom: 2px solid #EEEEEE;
+height: 35px;
+}
+.mytab{
+width: 320px;
+color: #999;
+float: left;
+font-size: 18px;
+text-align: center;
+height: 35px;
+}
+.selecttab{
+color: #333;
+border-bottom: 2px solid #4f9cff;
+font-weight: bold;
+}
+.box{
+width: 960px;
+margin: 0 auto;
+}
+.content a:link,.content a:visited,.content a:hover{
+color: #1017d2;
+}
+.mytable{
+margin: 0 auto;
+margin: 0 0 0 15px;
+width: 940px;
+height: 100%;
+font-size: 14px;
+}
+.mytable td{
+height: 50px;
+position: relative;
+}
+input[type="radio"] {
+margin-top: -2px;
+vertical-align: middle;
+}
+.mytable label{
+color: #333333;
+}
+.inputTip{
+text-align: right;
+width: 120px;
+
+color: #333333;
+}
+.myinput{
+height: 16px;
+width: 266px;
+line-height: 16px;
+margin: 5px;
+padding: 6px;
+background: #fff;
+border: 1px solid #ccc;
+vertical-align: middle;
+color: #999999;
+}
+input[type=checkbox]
+{
+vertical-align:text-bottom;
+margin-bottom:1px;
+}
+.btn{
+float: left;
+width: 161px;
+height: 35px;
+background-color: #407ecc;
+cursor: pointer;
+font-size: 18px;
+line-height: 35px;
+text-align: center;
+color: #fff;
+-moz-border-radius: 5px;      /* Gecko browsers */
+-webkit-border-radius: 5px;   /* Webkit browsers */
+border-radius:5px;            /* W3C syntax */
+}
+.btn:hover{
+filter:alpha(opacity=50);
+-moz-opacity:0.5;
+-khtml-opacity: 0.5;
+opacity: 0.5;
+}
+.requiredClass{
+color: red;
+}
+.content .validate_code{
+height: 29px;
+width: 75px;
+margin: 5px 0 0 5px;
+border: 1px solid #CCCCCC;
+float: left;
+cursor: pointer;
+}
+.manager_allow{
+display: none;
+}
+#visitorDiv .ieplace{
+line-height: 30px;
+font-size: 14px;
+color: #999999;
+position: absolute;
+top: 10px;
+left: 12px;
+}
+.content .errorTip{
+color: red;
+line-height: 16px;
+padding-left: 40px;
+height: 25px;
+vertical-align: bottom;
+}
+.atag_disable{
+color: #CCCCCC !important;
+}
+.linkcontent{
+margin-top: 50px;
+width: 100%;
+background-color: #717D8C;
+position: relative;
+}
+.leagsoftcopy{
+position: absolute;
+left: 0px;
+bottom: 0px;
+width: 100%;
+margin: 0 auto;
+text-align: center;
+font-size: 13px;
+color: #777373;
+line-height: 19px;
+background-color: #ffffff;
+margin-top: 30px;
+}
+</style>
+<style type="text/css">
+.waitbox{
+width: 960px;
+min-height: 230px;
+margin: 0 auto;
+padding: 20px 25px 35px 33px;
+position: relative;
+color: #333;
+}
+.resultbox{
+width: 960px;
+height: 265px;
+margin: 0 auto;
+padding: 20px 25px 0 100px;
+position: relative;
+color: #333;
+}
+.waitbox .btn{
+margin: 0 auto;
+position: absolute;
+bottom: 0px;
+left: 230px;
+vertical-align: bottom;
+width: 161px;
+height: 35px;
+background-color: #407ecc;
+cursor: pointer;
+font-size: 18px;
+line-height: 35px;
+text-align: center;
+color: #fff;
+-moz-border-radius: 5px;      /* Gecko browsers */
+-webkit-border-radius: 5px;   /* Webkit browsers */
+border-radius:5px;            /* W3C syntax */
+}
+.waitbox p,.resultbox p{
+font-size: 14px;
+line-height: 25px;
+margin: 0;
+padding: 0;
+}
+.waitbox p{
+color: #333;
+}
+.waitbox a,.resultbox a{
+padding: 0;
+margin: 0;
+font-size: 12px;
+line-height: 100%;
+font-family: AlibabaPuHuiTi;
+}
+.waitbox .errorTip,.resultbox .errorTip{
+font-size: 12px;
+line-height: 14px;
+padding-left: 0;
+vertical-align: bottom;
+}
+.notifymode {
+margin: 0 auto;
+padding: 5px;
+}
+.notifymode p {
+color: #333;
+font-size: 14px;
+line-height: 25px;
+margin: 0;
+padding: 0;
+}
+</style>
+<style type="text/css">
+.resultbox .btn{
+float: left;
+width: 100px;
+height: 29px;
+margin: 5px 0 0 5px;
+background-color: #407ecc;
+cursor: pointer;
+font-size: 18px;
+line-height: 30px;
+text-align: center;
+color: #fff;
+-moz-border-radius: 2px;      /* Gecko browsers */
+-webkit-border-radius: 2px;   /* Webkit browsers */
+border-radius:2px;            /* W3C syntax */
+}
+.resultbox .forminput {
+height: 22px;
+width: 252px;
+line-height: 22px;
+margin: 5px;
+padding: 3px;
+background: #fff;
+border: 1px solid #cdcdcd;
+}
+</style>
+<!--[if IE]>
+<style type="text/css">
+input[type=checkbox]
+{
+vertical-align:text-bottom;
+margin-bottom:-2px;
+}
+</style>
+<![endif]-->
+<!--[if lt IE 8]>
+<style type="text/css">
+.bigbox{
+font-family:AlibabaPuHuiTi,\5FAE\8F6F\96C5\9ED1,arial,tahoma,Verdana,sans-serif;
+background-color: #F7F6F4;
+margin: 0;
+padding: 0;
+list-style: none;
+font-weight: normal;
+line-height: 1.0;
+width: 100%;
+height: 100%;
+*overflow: hidden;
+margin-bottom: 20px;
+}
+.leagsoftcopy{
+position: relative;
+width: 100%;
+margin: 0 auto;
+text-align: center;
+font-size: 13px;
+color: #777373;
+line-height: 19px;
+background-color: #ffffff;
+margin-top: 30px;
+}
+.iehide{
+display:none;
+}
+</style>
+<![endif]-->
+<title>联软网络智能准入系统</title></head><body style="overflow:auto;">
+
+<link href="lianruan/easyui_dailog.css" rel="stylesheet">
+<script type="text/javascript" src="lianruan/jquery.qrcode.min.js"></script>
+<script type="text/javascript" src="lianruan/BASE64.js"></script>
+<script type="text/javascript" src="lianruan/md5.min.js"></script>
+<script type="text/javascript" src="lianruan/core.js"></script>
+<script type="text/javascript" src="lianruan/cipher-core.js"></script>
+<script type="text/javascript" src="lianruan/mode-ecb.js"></script>
+<script type="text/javascript" src="lianruan/tripledes.js"></script>
+<style type="text/css">
+.userContant {
+padding-left: 25px;
+padding-top: 10px;
+font-size: 12px;
+color: #666666;
+clear: both;
+}
+#refresh_code {
+position: absolute;
+top: 170px;
+left: 130px;
+height: 40px;
+width: 125px;
+font-size: 14px;
+font-family: SimHei;
+font-weight: bold;
+color: #FFFFFF;
+border: none;
+background-color: #1B6DA8;
+}
+.formCombobox {
+margin-left: 5px;
+height: 40px;
+}
+.combo-text{
+height: 37px;
+font-size: 13px;
+}
+.combo-arrow{
+margin-top: 5px;
+}
+.leagsoftcopy_portal{
+width: 100%;
+margin: 0 auto;
+text-align: center;
+font-size: 13px;
+color: #777373;
+line-height: 19px;
+margin-top: 222px;
+}
+#privacy_agreement div, span, p {
+line-height: 1.5;
+}
+#privacy_agreement .normal-dialog-content {
+white-space: pre-line;
+}
+</style>
+<script type="text/javascript">
+var nas_ip = 'localhost';
+var user_ip = 'localhost';
+var auth_type = 'nacc';
+var webpath = '/portal';
+var hostIP = 'localhost';
+var hostPort = '8099';
+var enablePortAccess = false;
+var pluginauth = false;
+var EnableUserPluginPolicy = '';
+var EnableGuestPluginPolicy = '';
+var msginfo = '';
+var bindFailed = '';
+function getData(data) {
+if (data) {
+return data;
+}
+return '';
+}
+$(function () {
+if(enablePortAccess && !pluginauth) {//非端口准入或已经安装助手不检查
+login.checkHaveAgent({"guestTypes":[{"strguesttype":"访问互联网","uidrecordid":"defaultguesttype","straclname":"UACL_Valid_n_healthy","uidaclid":"UACL_Valid_n_healthy"}],"portalConfig":{"public_key":"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCY45BiT0+ISs04d7x/k7wSjHO4AsoVev0mQBUmqNwOA/O+f5owBudfXfX7W/lddVP/G8yWmIHyvbjwyazAc52dsHG6WlALPmK9V/grvZqVaOT2URp0L0MvD3NwKMIYbbKZ7pgrDkncPWrvTxWpOEWtFGDfIlB7SlvbEjqzCeZqiQIDAQAB","UseCookieMobile":"0","enabledownagent":"1","agreentime":"10","useragenttips":"该型号的手机在认证成功后本页面自动退出！","neednetworkprotocol_visitorContant":"0","user_ip":"10.111.162.252","lock5mincount":"5","WebAuthPC":"1","radiusauthtype":"1","refreshinterval":"10","ForgotPassword":false,"ViolationReminder":"selfDefined","guestform_guestrespondents":"1","isUaa55":true,"EnableGuestDevFingerprint":"1","expect_reauth":"0","userauthname":"我是员工","errorcode-103":"安全规则校验失败，接入终端与账号不匹配！","sendcontent":"您好，您的上网申请已批准，账号：$(guestaccount)，密码：$(guestpassword)","sso_factory":"emm-oauth","userVerifyFail":"账号/密码错误或认证被拒绝！","EnableInnerUserDevFingerprint":"1","guestform_res2":"0","guestform_res1":"0","applymode":"3","guestform_res4":"0","guestform_guestunit":"0","guestform_res3":"0","dynamiccodegreen_d":"0","supportPrefixes":false,"enableGuestGuideLan":false,"downagentlabel":"助手下载","guestform_res6":"0","guestform_res5":"0","sendmode":"4","visitoruseScope":"1","ciscoap":false,"webserverip":"10.111.162.110","changGuestAuth":false,"webscheme":"http","DoubleFactorPC":"0","ios_guide":false,"remberUserPwd":false,"WebAuthUserScope":"0","mobile_userauthname":"内部员工","webserverport":"8099","GuestAllowedUnit":"hour","enablegssologin":"0","loginsuccessmarkinfo":"<p>您好，您已成功接入网络！<br/></p>","guest_applycode_smscontent":"您本次申请访客账号的动态码为 $(dynamiccode)，该动态码 $(ValidityMin) 分钟内有效！","auth_type":"nacc","auditfalsetip":"<p>抱歉，您的申请已被拒绝，如有任何疑问，可电话联系管理员。<br/></p>","enableBlockAndRedirect":false,"apptype":"1","EmployeeAllowedHours":"10","guestform_guestemail":"0","neednetworkprotocol":"2","EnableGuestFingerprintAutoRenewal":"1","EnableInnerUserFingerprintAutoRenewal":"1","guestform_guestrespondents_option":"userorphone","data":"{\"public_key\":\"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCY45BiT0+ISs04d7x/k7wSjHO4AsoVev0mQBUmqNwOA/O+f5owBudfXfX7W/lddVP/G8yWmIHyvbjwyazAc52dsHG6WlALPmK9V/grvZqVaOT2URp0L0MvD3NwKMIYbbKZ7pgrDkncPWrvTxWpOEWtFGDfIlB7SlvbEjqzCeZqiQIDAQAB\",\"needSmsValidateCode\":false,\"UserSeparator\":\"-\",\"WaitAuditCanUseOtherAccountLogin\":false,\"supportPrefixes\":false,\"enableGuestGuideLan\":false,\"enableGuestApplyButtonChange\":false,\"supportNoCheckVisitors\":false,\"safestring\":\"98f7-9e4e692f181b376cf91\",\"ciscoap\":false,\"changGuestAuth\":false,\"agent_url\":\"/uai/?nas_ip=10.111.162.110\",\"ios_guide\":false,\"remberUserPwd\":false,\"neednetworkprotocol_visitorContant\":\"0\",\"enablePortAccess\":false,\"user_ip\":\"10.111.162.252\",\"auth_type\":\"nacc\",\"enableBlockAndRedirect\":false,\"nas_ip\":\"10.111.162.110\",\"ForgotPassword\":false,\"isUaa55\":true,\"pluginauth\":false,\"down_agent\":true,\"EouAuthUseMAC\":\"1\",\"enableVisitorLoginTip\":false}","lock1daycount":"48","supportNoCheckVisitors":false,"downagentlabelbtn":"下载助手安装包","guestaccounttype":"6","guestform_guestvisitreason":"0","safestring":"98f7-9e4e692f181b376cf91","login_href":"1","visitorauthname":"我是访客","agent_url":"/uai/?nas_ip=10.111.162.110","comminterval":"5","errorcode-1":"账号/密码错误或认证被拒绝！","mobile_smsauthdesc":"通过手机获取动态码认证接入","mobile_smsauthname":"动态码","mobile_userauthdesc":"通过账号密码接入","auditsuccesstip":"<p>您好，您的申请已审批通过。<br/></p>","EmployeeAllowedUnit":"hour","loginsuccesstitle":"您好，您已成功接入网络！","guestaccountprefix":"G","DoubleFactorMobile":"0","pluginauth":false,"auditortype":"1","logo_type":"1","down_agent":true,"EouAuthUseMAC":"1","guestform_guestname":"1","enableVisitorLoginTip":false,"dynamiccodegreen_h":"2","dynamiccodeagreentime":"120","enableuserauth":"0","cookervalidityperiod":"0","neednetworkprotocol_dynamicauthContant":"0","needSmsValidateCode":false,"green_d":"0","UserSeparator":"-","dynamiccodecontent":"您本次申请登录的动态码为 $(dynamiccode)","green_h":"10","wechat_first":"0","WaitAuditCanUseOtherAccountLogin":false,"neednetworkprotocol_visitorauthContant":"0","enableGuestApplyButtonChange":false,"networkprotocolcontent":"<p>入网人员服务事项达成如下协议：&nbsp;</p><p><br/></p><p><strong>第一条</strong> 请接入内网的用户和所有使用人员必须严格遵守、执行《中华人民共和国计算机信息网络国际联网管理暂行规定》、《互联网信息服务管理办法》、《互联网电子公告服务管理规定》等国家有关法律法规，遵守本准入控制协议的有关管理规定和制度,对所提供的信息及其造成的影响负全部责任，违反本协议者必须愿意承担相关的违约责任。</p><p><br/></p><p><strong>第二条</strong> 需要上网发布的信息，各部门要设专人负责处理，各部门领导须认真审查信息内容及质量、做好信息发布的登记、备案工作。&nbsp;</p><p><br/></p><p><strong>第三条</strong> 网络管理工作人员和全体用户在内部网络上发现有碍社会治安和影响企业声誉等不良的信息时有义务及时上报运维主管或网络管理人员。&nbsp;</p><p><br/></p><p><strong>第四条</strong> 使用企业网的所有工作人员和用户必须接受并配合国家和所属企业有关部门依法进行的监督检查和采取的必要措施。&nbsp;</p><p><br/></p><p><strong>第五条</strong> 企业网实行统一管理、分级负责制，运维中心对企业网的建设、维护与管理进行统一规划，运维中心是保障企业网的稳定运行及企业网络资源的建设与管理重要部门。网络管理员负责对企业内网及企业网站的安全进行管理；计算机维护人员负责对各计算机系统的维护及病毒的监控查杀；各部门管理人员负责对本部门资源及权限进行管理；接入企业网的用户对自己的资源、安全、保密工作负责。&nbsp;</p><p><br/></p><p><strong>第六条</strong> 严禁任何用户擅自以任何方式接入企业网，或未经许可擅自与其它单位私自联网。入网部门和个人均要签署本安全协议，接入部门或用户确定不再使用企业网时，企业有权把分配给用户的的IP地址和相关权限收回。&nbsp;</p><p><br/></p><p><strong>第七条</strong> 企业网用户对自己享用的资源负有责任，账号、密码等不得泄漏给他人，如有泄漏，应及时修改或请信息处进行处理。请勿将自己与他人的姓名、单位、邮件地址等其它资料随意在网上发布、以免泄露给企业外的陌生人或机构，发生一些难以预料的不良事件。&nbsp;</p><p><br/></p><p><strong>第八条</strong> 不得利用企业网煽动颠覆分裂国家政权、破坏国家统一和民族团结、推翻社会主义制度；煽动抗拒、破坏宪法和国家法律、行政法规的实施；捏造或者歪曲事实,故意散布谣言,扰乱企业和社会的正常秩序；公然侮辱他人或者捏造事实诽谤他人；宣扬封建迷信、淫秽、色情、赌博、暴力、凶杀、恐怖、教唆犯罪；损害国家机关信誉。&nbsp;</p><p><br/></p><p><strong>第九条</strong> 不得破坏和盗用企业网中的信息资源和危害企业网安全活动；不得故意制作、传播计算机病毒等破坏性程序。不得使用企业网和计算机在上班期间进行聊天、游戏、炒股等与企业无关的操作。&nbsp;</p><p><br/></p><p><strong>第十条</strong> 对于违反以上规定的上网用户，网络管理员会对其给予警告，并有权责令其停止联网。若造成不良后果，将追究其个人经济或法律责任。</p>","title":"联软网络智能准入系统","wechat_isopen":"0","waitmessage":"<p>您的申请已提交，管理员审核通过后即可接入网络，请稍候。<br/></p><p>请勿刷新或关闭页面，谢谢！</p><p>3分钟后还未审核通过，请电话联系管理员。</p>","guest_applycode_vaildity":"2","guestform_guestmac":"0","enablePortAccess":false,"guestform_guestphone":"1","logo_word":"入网身份认证","verifysendtype":"4","infovaildity":"30","WebAuthAgent":"1","nas_ip":"10.111.162.110","WebAuthMobile":"1","bottom_info":"<table border=\"0\" style=\"color: rgb(204, 204, 204); height: 140px; width: 751px; margin: 0px auto; text-align: left; padding: 0px 0px 0px 20px;\">\n <tbody>\n  <tr class=\"firstRow\">\n   <td style=\"font-size: 16px; padding-top: 20px; word-break: break-all;\"><span style=\"font-size: 16px;\">常用业务系统</span></td>\n   <td style=\"font-size: 16px;padding-top:20px;\">常用软件</td>\n   <td style=\"font-size: 16px; padding-top: 20px; word-break: break-all;\">常用业务系统</td>\n   <td style=\"font-size: 18px; padding-top: 20px; word-break: break-all;\"><span style=\"font-size: 16px;\">IT人员联系方式</span></td>\n  </tr>\n  <tr>\n   <td><p style=\"margin: 5px 0 0 0;padding: 0;\"><a href=\"https://mail.efort.com.cn/\" target=\"_blank\" title=\"埃夫特企业邮箱\" style=\"color: rgb(0, 176, 240); text-decoration: underline;\"><span style=\"color: rgb(0, 176, 240);\">企业邮箱</span></a></p><p style=\"margin: 5px 0 0 0;padding: 0;\"><a href=\"https://as.efort.com.cn/#/\" target=\"_blank\" title=\"爱数云盘\" style=\"color: rgb(0, 176, 240); text-decoration: underline;\"><span style=\"color: rgb(0, 176, 240);\">爱数云盘</span></a></p><p style=\"margin: 5px 0 0 0;padding: 0;\"><a href=\"https://vpn.efort.com.cn:4434/\" target=\"_blank\" title=\"VPN办公\" style=\"color: rgb(0, 176, 240); text-decoration: underline;\"><span style=\"color: rgb(0, 176, 240);\">VPN办公</span></a></p></td>\n   <td><p style=\"margin: 5px 0 0 0;padding: 0;\"><a href=\"http://10.111.162.110:8099/uai/download/downloadAgent.htm?file=download/uai/lva_setupnet_20220310095038.exe\" target=\"_blank\" title=\"埃夫特安全助手下载\" style=\"text-decoration: underline; color: rgb(0, 176, 240);\"><span style=\"color: rgb(0, 176, 240);\">埃夫特安全助手</span></a></p><p style=\"margin: 5px 0 0 0;padding: 0;\"><a href=\"http://10.111.163.121/deploy/installer.exe?stamp=1646890386\" target=\"_blank\" title=\"火绒杀毒软件下载\" style=\"color: rgb(0, 176, 240); text-decoration: underline;\"><span style=\"color: rgb(0, 176, 240);\">火绒安全终端</span></a></p><p style=\"margin: 5px 0 0 0;padding: 0;\"><a href=\"https://work.weixin.qq.com/wework_admin/commdownload?platform=win&amp;from=newsmeeting\" target=\"_blank\" title=\"企业微信下载\" style=\"text-decoration: underline; color: rgb(0, 176, 240);\"><span style=\"color: rgb(0, 176, 240);\">企业微信下载</span></a></p></td>\n   <td><p style=\"margin: 5px 0 0 0;padding: 0;\"><a href=\"http://10.111.162.251\" target=\"_blank\" title=\"上网认证系统（芜湖）\" style=\"color: rgb(0, 176, 240); text-decoration: underline;\"><span style=\"color: rgb(0, 176, 240);\">上网认证-芜湖</span></a></p><p style=\"margin: 5px 0 0 0;padding: 0;\"><a href=\"http://10.111.180.254\" target=\"_blank\" title=\"上网认证-上海\" style=\"color: rgb(0, 176, 240); text-decoration: underline;\"><span style=\"color: rgb(0, 176, 240);\">上网认证-上海</span></a></p><p style=\"margin: 5px 0 0 0;padding: 0;\"><a href=\"http://oa.efort.com.cn\" target=\"_blank\" title=\"埃夫特OA\" style=\"color: rgb(0, 176, 240); text-decoration: underline;\"><span style=\"color: rgb(0, 176, 240);\">埃夫特OA</span></a></p></td>\n   <td style=\"word-break: break-all;\"><p style=\"font-size: 24px;margin: 10px 0 10px 0;padding: 0;\"><span style=\"font-size: 12px;\"></span></p><p><span style=\"font-size: 12px;\">芜湖地区联系人：谈勤伟，电话：17718282760</span></p><p><span style=\"font-size: 12px;\">上海地区联系人：熊武林，电话：15900706098</span></p><p><span style=\"font-size: 12px;\">江西地区联系人：李兆财，电话：18370719174</span></p><p><span style=\"font-size: 12px;\">佛山地区联系人：李兆财，电话：18370719174</span></p><p style=\"font-size: 18px;margin: 10px 0 10px 0;padding: 0;\"><span style=\"font-size: 16px;\">工作时间：6*8小时</span></p></td>\n  </tr>\n </tbody>\n</table>","UseCookiePC":"0","dynamiccodeagreentimeunit":"minute","enabledynacodeflow":"0","doublefactorsmscontent":"您本次申请登录的动态码为 $(dynamiccode)","enableguestflow":"1","SelfDefinedUrl":"http://10.111.162.110:8099/LimitedAccess.htm","dynamicauthname":"手机动态码","GuestAllowedHours":"10","neednetworkprotocol_userauthContant":"0","mobile_visitorauthdesc":"通过提交访客信息获取接入账号","mobile_visitorauthname":"访客"},"isNotifymode":false}, {"public_key":"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCY45BiT0+ISs04d7x/k7wSjHO4AsoVev0mQBUmqNwOA/O+f5owBudfXfX7W/lddVP/G8yWmIHyvbjwyazAc52dsHG6WlALPmK9V/grvZqVaOT2URp0L0MvD3NwKMIYbbKZ7pgrDkncPWrvTxWpOEWtFGDfIlB7SlvbEjqzCeZqiQIDAQAB","needSmsValidateCode":false,"UserSeparator":"-","WaitAuditCanUseOtherAccountLogin":false,"supportPrefixes":false,"enableGuestGuideLan":false,"enableGuestApplyButtonChange":false,"supportNoCheckVisitors":false,"safestring":"98f7-9e4e692f181b376cf91","ciscoap":false,"changGuestAuth":false,"agent_url":"/uai/?nas_ip=10.111.162.110","ios_guide":false,"remberUserPwd":false,"neednetworkprotocol_visitorContant":"0","enablePortAccess":false,"user_ip":"10.111.162.252","auth_type":"nacc","enableBlockAndRedirect":false,"nas_ip":"10.111.162.110","ForgotPassword":false,"isUaa55":true,"pluginauth":false,"down_agent":true,"EouAuthUseMAC":"1","enableVisitorLoginTip":false}, getData(1));//检查是否安装了助手，来跳转到不同界面
+} else {
+login.initLoginPage({"guestTypes":[{"strguesttype":"访问互联网","uidrecordid":"defaultguesttype","straclname":"UACL_Valid_n_healthy","uidaclid":"UACL_Valid_n_healthy"}],"portalConfig":{"public_key":"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCY45BiT0+ISs04d7x/k7wSjHO4AsoVev0mQBUmqNwOA/O+f5owBudfXfX7W/lddVP/G8yWmIHyvbjwyazAc52dsHG6WlALPmK9V/grvZqVaOT2URp0L0MvD3NwKMIYbbKZ7pgrDkncPWrvTxWpOEWtFGDfIlB7SlvbEjqzCeZqiQIDAQAB","UseCookieMobile":"0","enabledownagent":"1","agreentime":"10","useragenttips":"该型号的手机在认证成功后本页面自动退出！","neednetworkprotocol_visitorContant":"0","user_ip":"10.111.162.252","lock5mincount":"5","WebAuthPC":"1","radiusauthtype":"1","refreshinterval":"10","ForgotPassword":false,"ViolationReminder":"selfDefined","guestform_guestrespondents":"1","isUaa55":true,"EnableGuestDevFingerprint":"1","expect_reauth":"0","userauthname":"我是员工","errorcode-103":"安全规则校验失败，接入终端与账号不匹配！","sendcontent":"您好，您的上网申请已批准，账号：$(guestaccount)，密码：$(guestpassword)","sso_factory":"emm-oauth","userVerifyFail":"账号/密码错误或认证被拒绝！","EnableInnerUserDevFingerprint":"1","guestform_res2":"0","guestform_res1":"0","applymode":"3","guestform_res4":"0","guestform_guestunit":"0","guestform_res3":"0","dynamiccodegreen_d":"0","supportPrefixes":false,"enableGuestGuideLan":false,"downagentlabel":"助手下载","guestform_res6":"0","guestform_res5":"0","sendmode":"4","visitoruseScope":"1","ciscoap":false,"webserverip":"10.111.162.110","changGuestAuth":false,"webscheme":"http","DoubleFactorPC":"0","ios_guide":false,"remberUserPwd":false,"WebAuthUserScope":"0","mobile_userauthname":"内部员工","webserverport":"8099","GuestAllowedUnit":"hour","enablegssologin":"0","loginsuccessmarkinfo":"<p>您好，您已成功接入网络！<br/></p>","guest_applycode_smscontent":"您本次申请访客账号的动态码为 $(dynamiccode)，该动态码 $(ValidityMin) 分钟内有效！","auth_type":"nacc","auditfalsetip":"<p>抱歉，您的申请已被拒绝，如有任何疑问，可电话联系管理员。<br/></p>","enableBlockAndRedirect":false,"apptype":"1","EmployeeAllowedHours":"10","guestform_guestemail":"0","neednetworkprotocol":"2","EnableGuestFingerprintAutoRenewal":"1","EnableInnerUserFingerprintAutoRenewal":"1","guestform_guestrespondents_option":"userorphone","data":"{\"public_key\":\"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCY45BiT0+ISs04d7x/k7wSjHO4AsoVev0mQBUmqNwOA/O+f5owBudfXfX7W/lddVP/G8yWmIHyvbjwyazAc52dsHG6WlALPmK9V/grvZqVaOT2URp0L0MvD3NwKMIYbbKZ7pgrDkncPWrvTxWpOEWtFGDfIlB7SlvbEjqzCeZqiQIDAQAB\",\"needSmsValidateCode\":false,\"UserSeparator\":\"-\",\"WaitAuditCanUseOtherAccountLogin\":false,\"supportPrefixes\":false,\"enableGuestGuideLan\":false,\"enableGuestApplyButtonChange\":false,\"supportNoCheckVisitors\":false,\"safestring\":\"98f7-9e4e692f181b376cf91\",\"ciscoap\":false,\"changGuestAuth\":false,\"agent_url\":\"/uai/?nas_ip=10.111.162.110\",\"ios_guide\":false,\"remberUserPwd\":false,\"neednetworkprotocol_visitorContant\":\"0\",\"enablePortAccess\":false,\"user_ip\":\"10.111.162.252\",\"auth_type\":\"nacc\",\"enableBlockAndRedirect\":false,\"nas_ip\":\"10.111.162.110\",\"ForgotPassword\":false,\"isUaa55\":true,\"pluginauth\":false,\"down_agent\":true,\"EouAuthUseMAC\":\"1\",\"enableVisitorLoginTip\":false}","lock1daycount":"48","supportNoCheckVisitors":false,"downagentlabelbtn":"下载助手安装包","guestaccounttype":"6","guestform_guestvisitreason":"0","safestring":"98f7-9e4e692f181b376cf91","login_href":"1","visitorauthname":"我是访客","agent_url":"/uai/?nas_ip=10.111.162.110","comminterval":"5","errorcode-1":"账号/密码错误或认证被拒绝！","mobile_smsauthdesc":"通过手机获取动态码认证接入","mobile_smsauthname":"动态码","mobile_userauthdesc":"通过账号密码接入","auditsuccesstip":"<p>您好，您的申请已审批通过。<br/></p>","EmployeeAllowedUnit":"hour","loginsuccesstitle":"您好，您已成功接入网络！","guestaccountprefix":"G","DoubleFactorMobile":"0","pluginauth":false,"auditortype":"1","logo_type":"1","down_agent":true,"EouAuthUseMAC":"1","guestform_guestname":"1","enableVisitorLoginTip":false,"dynamiccodegreen_h":"2","dynamiccodeagreentime":"120","enableuserauth":"0","cookervalidityperiod":"0","neednetworkprotocol_dynamicauthContant":"0","needSmsValidateCode":false,"green_d":"0","UserSeparator":"-","dynamiccodecontent":"您本次申请登录的动态码为 $(dynamiccode)","green_h":"10","wechat_first":"0","WaitAuditCanUseOtherAccountLogin":false,"neednetworkprotocol_visitorauthContant":"0","enableGuestApplyButtonChange":false,"networkprotocolcontent":"<p>入网人员服务事项达成如下协议：&nbsp;</p><p><br/></p><p><strong>第一条</strong> 请接入内网的用户和所有使用人员必须严格遵守、执行《中华人民共和国计算机信息网络国际联网管理暂行规定》、《互联网信息服务管理办法》、《互联网电子公告服务管理规定》等国家有关法律法规，遵守本准入控制协议的有关管理规定和制度,对所提供的信息及其造成的影响负全部责任，违反本协议者必须愿意承担相关的违约责任。</p><p><br/></p><p><strong>第二条</strong> 需要上网发布的信息，各部门要设专人负责处理，各部门领导须认真审查信息内容及质量、做好信息发布的登记、备案工作。&nbsp;</p><p><br/></p><p><strong>第三条</strong> 网络管理工作人员和全体用户在内部网络上发现有碍社会治安和影响企业声誉等不良的信息时有义务及时上报运维主管或网络管理人员。&nbsp;</p><p><br/></p><p><strong>第四条</strong> 使用企业网的所有工作人员和用户必须接受并配合国家和所属企业有关部门依法进行的监督检查和采取的必要措施。&nbsp;</p><p><br/></p><p><strong>第五条</strong> 企业网实行统一管理、分级负责制，运维中心对企业网的建设、维护与管理进行统一规划，运维中心是保障企业网的稳定运行及企业网络资源的建设与管理重要部门。网络管理员负责对企业内网及企业网站的安全进行管理；计算机维护人员负责对各计算机系统的维护及病毒的监控查杀；各部门管理人员负责对本部门资源及权限进行管理；接入企业网的用户对自己的资源、安全、保密工作负责。&nbsp;</p><p><br/></p><p><strong>第六条</strong> 严禁任何用户擅自以任何方式接入企业网，或未经许可擅自与其它单位私自联网。入网部门和个人均要签署本安全协议，接入部门或用户确定不再使用企业网时，企业有权把分配给用户的的IP地址和相关权限收回。&nbsp;</p><p><br/></p><p><strong>第七条</strong> 企业网用户对自己享用的资源负有责任，账号、密码等不得泄漏给他人，如有泄漏，应及时修改或请信息处进行处理。请勿将自己与他人的姓名、单位、邮件地址等其它资料随意在网上发布、以免泄露给企业外的陌生人或机构，发生一些难以预料的不良事件。&nbsp;</p><p><br/></p><p><strong>第八条</strong> 不得利用企业网煽动颠覆分裂国家政权、破坏国家统一和民族团结、推翻社会主义制度；煽动抗拒、破坏宪法和国家法律、行政法规的实施；捏造或者歪曲事实,故意散布谣言,扰乱企业和社会的正常秩序；公然侮辱他人或者捏造事实诽谤他人；宣扬封建迷信、淫秽、色情、赌博、暴力、凶杀、恐怖、教唆犯罪；损害国家机关信誉。&nbsp;</p><p><br/></p><p><strong>第九条</strong> 不得破坏和盗用企业网中的信息资源和危害企业网安全活动；不得故意制作、传播计算机病毒等破坏性程序。不得使用企业网和计算机在上班期间进行聊天、游戏、炒股等与企业无关的操作。&nbsp;</p><p><br/></p><p><strong>第十条</strong> 对于违反以上规定的上网用户，网络管理员会对其给予警告，并有权责令其停止联网。若造成不良后果，将追究其个人经济或法律责任。</p>","title":"联软网络智能准入系统","wechat_isopen":"0","waitmessage":"<p>您的申请已提交，管理员审核通过后即可接入网络，请稍候。<br/></p><p>请勿刷新或关闭页面，谢谢！</p><p>3分钟后还未审核通过，请电话联系管理员。</p>","guest_applycode_vaildity":"2","guestform_guestmac":"0","enablePortAccess":false,"guestform_guestphone":"1","logo_word":"入网身份认证","verifysendtype":"4","infovaildity":"30","WebAuthAgent":"1","nas_ip":"10.111.162.110","WebAuthMobile":"1","bottom_info":"<table border=\"0\" style=\"color: rgb(204, 204, 204); height: 140px; width: 751px; margin: 0px auto; text-align: left; padding: 0px 0px 0px 20px;\">\n <tbody>\n  <tr class=\"firstRow\">\n   <td style=\"font-size: 16px; padding-top: 20px; word-break: break-all;\"><span style=\"font-size: 16px;\">常用业务系统</span></td>\n   <td style=\"font-size: 16px;padding-top:20px;\">常用软件</td>\n   <td style=\"font-size: 16px; padding-top: 20px; word-break: break-all;\">常用业务系统</td>\n   <td style=\"font-size: 18px; padding-top: 20px; word-break: break-all;\"><span style=\"font-size: 16px;\">IT人员联系方式</span></td>\n  </tr>\n  <tr>\n   <td><p style=\"margin: 5px 0 0 0;padding: 0;\"><a href=\"https://mail.efort.com.cn/\" target=\"_blank\" title=\"埃夫特企业邮箱\" style=\"color: rgb(0, 176, 240); text-decoration: underline;\"><span style=\"color: rgb(0, 176, 240);\">企业邮箱</span></a></p><p style=\"margin: 5px 0 0 0;padding: 0;\"><a href=\"https://as.efort.com.cn/#/\" target=\"_blank\" title=\"爱数云盘\" style=\"color: rgb(0, 176, 240); text-decoration: underline;\"><span style=\"color: rgb(0, 176, 240);\">爱数云盘</span></a></p><p style=\"margin: 5px 0 0 0;padding: 0;\"><a href=\"https://vpn.efort.com.cn:4434/\" target=\"_blank\" title=\"VPN办公\" style=\"color: rgb(0, 176, 240); text-decoration: underline;\"><span style=\"color: rgb(0, 176, 240);\">VPN办公</span></a></p></td>\n   <td><p style=\"margin: 5px 0 0 0;padding: 0;\"><a href=\"http://10.111.162.110:8099/uai/download/downloadAgent.htm?file=download/uai/lva_setupnet_20220310095038.exe\" target=\"_blank\" title=\"埃夫特安全助手下载\" style=\"text-decoration: underline; color: rgb(0, 176, 240);\"><span style=\"color: rgb(0, 176, 240);\">埃夫特安全助手</span></a></p><p style=\"margin: 5px 0 0 0;padding: 0;\"><a href=\"http://10.111.163.121/deploy/installer.exe?stamp=1646890386\" target=\"_blank\" title=\"火绒杀毒软件下载\" style=\"color: rgb(0, 176, 240); text-decoration: underline;\"><span style=\"color: rgb(0, 176, 240);\">火绒安全终端</span></a></p><p style=\"margin: 5px 0 0 0;padding: 0;\"><a href=\"https://work.weixin.qq.com/wework_admin/commdownload?platform=win&amp;from=newsmeeting\" target=\"_blank\" title=\"企业微信下载\" style=\"text-decoration: underline; color: rgb(0, 176, 240);\"><span style=\"color: rgb(0, 176, 240);\">企业微信下载</span></a></p></td>\n   <td><p style=\"margin: 5px 0 0 0;padding: 0;\"><a href=\"http://10.111.162.251\" target=\"_blank\" title=\"上网认证系统（芜湖）\" style=\"color: rgb(0, 176, 240); text-decoration: underline;\"><span style=\"color: rgb(0, 176, 240);\">上网认证-芜湖</span></a></p><p style=\"margin: 5px 0 0 0;padding: 0;\"><a href=\"http://10.111.180.254\" target=\"_blank\" title=\"上网认证-上海\" style=\"color: rgb(0, 176, 240); text-decoration: underline;\"><span style=\"color: rgb(0, 176, 240);\">上网认证-上海</span></a></p><p style=\"margin: 5px 0 0 0;padding: 0;\"><a href=\"http://oa.efort.com.cn\" target=\"_blank\" title=\"埃夫特OA\" style=\"color: rgb(0, 176, 240); text-decoration: underline;\"><span style=\"color: rgb(0, 176, 240);\">埃夫特OA</span></a></p></td>\n   <td style=\"word-break: break-all;\"><p style=\"font-size: 24px;margin: 10px 0 10px 0;padding: 0;\"><span style=\"font-size: 12px;\"></span></p><p><span style=\"font-size: 12px;\">芜湖地区联系人：谈勤伟，电话：17718282760</span></p><p><span style=\"font-size: 12px;\">上海地区联系人：熊武林，电话：15900706098</span></p><p><span style=\"font-size: 12px;\">江西地区联系人：李兆财，电话：18370719174</span></p><p><span style=\"font-size: 12px;\">佛山地区联系人：李兆财，电话：18370719174</span></p><p style=\"font-size: 18px;margin: 10px 0 10px 0;padding: 0;\"><span style=\"font-size: 16px;\">工作时间：6*8小时</span></p></td>\n  </tr>\n </tbody>\n</table>","UseCookiePC":"0","dynamiccodeagreentimeunit":"minute","enabledynacodeflow":"0","doublefactorsmscontent":"您本次申请登录的动态码为 $(dynamiccode)","enableguestflow":"1","SelfDefinedUrl":"http://10.111.162.110:8099/LimitedAccess.htm","dynamicauthname":"手机动态码","GuestAllowedHours":"10","neednetworkprotocol_userauthContant":"0","mobile_visitorauthdesc":"通过提交访客信息获取接入账号","mobile_visitorauthname":"访客"},"isNotifymode":false}, {"public_key":"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCY45BiT0+ISs04d7x/k7wSjHO4AsoVev0mQBUmqNwOA/O+f5owBudfXfX7W/lddVP/G8yWmIHyvbjwyazAc52dsHG6WlALPmK9V/grvZqVaOT2URp0L0MvD3NwKMIYbbKZ7pgrDkncPWrvTxWpOEWtFGDfIlB7SlvbEjqzCeZqiQIDAQAB","needSmsValidateCode":false,"UserSeparator":"-","WaitAuditCanUseOtherAccountLogin":false,"supportPrefixes":false,"enableGuestGuideLan":false,"enableGuestApplyButtonChange":false,"supportNoCheckVisitors":false,"safestring":"98f7-9e4e692f181b376cf91","ciscoap":false,"changGuestAuth":false,"agent_url":"/uai/?nas_ip=10.111.162.110","ios_guide":false,"remberUserPwd":false,"neednetworkprotocol_visitorContant":"0","enablePortAccess":false,"user_ip":"10.111.162.252","auth_type":"nacc","enableBlockAndRedirect":false,"nas_ip":"10.111.162.110","ForgotPassword":false,"isUaa55":true,"pluginauth":false,"down_agent":true,"EouAuthUseMAC":"1","enableVisitorLoginTip":false}, getData(1));
+}
+if(bindFailed && bindFailed != ''){
+$(".errorTip").show().html(bindFailed);
+}else if(msginfo && msginfo != ''){
+$(".errorTip").show().html(msginfo);
+}
+
+$("#cookieLogin").remove();
+
+if(login.data.supportPrefixes) {
+var str = "+86";
+$("#dynamicPrefixes").combobox({
+valueField: 'id',
+textField: 'text',
+width: 105,
+editable: false,
+panelHeight: 150,
+data: [{
+"id": "+86",
+"text": Lan.prefixes1,/*+86(中国大陆)*/
+select: true
+}, {
+"id": "+852",
+"text": Lan.prefixes2/*"+852(中国香港)"*/
+}, {
+"id": "+886",
+"text": Lan.prefixes3/*"+886(中国台湾)"*/
+}, {
+"id": "+1",
+"text": Lan.prefixes4/*"+1(美国)"*/
+}, {
+"id": "+44",
+"text": Lan.prefixes5/*"+44(英国)"*/
+}, {
+"id": "+81",
+"text": Lan.prefixes6/*"+81(日本)"*/
+}, {
+"id": "+82",
+"text": Lan.prefixes7/*"+82(韩国)"*/
+}, {
+"id": "other",
+"text": Lan.prefixes8/*"其他"*/
+}],
+value: "+86",
+onSelect: function (record) {
+if (record.id && record.id == 'other') {
+$('#dynamicPrefixes').combobox({editable: true});
+$('#dynamicPrefixes').combobox("setValue", record.id);
+$('#phonenumber').val(record.text);
+$('.combo-text ').focus();
+$('.combo-text ').attr("maxlength", "6");
+str = Lan.prefixes8;
+} else {
+$('#dynamicPrefixes').combobox({editable: false});
+$('#dynamicPrefixes').combobox("setValue", record.id);
+$('#phonenumber').val($.trim(record.id));
+str = $('#phonenumber').val();
+}
+},
+onLoadSuccess: function (data) {
+$('#phonenumber').val($.trim("+86"));
+}
+});
+$('#phonenumber').keyup(function () {
+if($('#phonenumber').val().indexOf(str) != 0){
+$('#phonenumber').val($.trim(str));
+}
+});
+$('.combo-text').keyup(function () {
+str =  $('#dynamicPrefixes').combobox("getText");
+$('#phonenumber').val($.trim(str));
+});
+}
+$(".privacyAgreementHref").click(function () {
+parent.Util.checkDialogDiv("privacy_agreement").dialog({
+title: '隐私协议',
+content: '<div class="normal-dialog-content">' +
+'<p class="normal-title"></p>' + $("#privacyAgreementContent").text() + '</div>' +
+'<div class="normal-botton"><a href="' + webpath + '/api/auth.htm?act=downloadPrivacyAgreementPDF&uidagreementid=&strtitle=" style="margin-right: 20px; text-decoration: none;">下载PDF文件</a></div>',
+modal: true,
+width: 800,
+height: 700
+});
+});
+});
+</script>
+
+
+<form id="accessmain" action="" method="post" style="margin:0px;display:inline">
+<input type="hidden" id="accessmain_username" name="username" value="">
+<input type="hidden" id="accessmain_sessionid" name="sessionid" value="">
+<input type="hidden" id="accessmain_authcode" name="authcode" value="">
+</form>
+<input type="hidden" id="applymode" value="3">
+<div class="processbar" id="processbar" style="display: none;">
+<div class="processimg"></div>
+</div>
+<div class="bigbox">
+<div class="headbar">
+
+
+
+<div class="logo_word">
+入网身份认证
+</div>
+
+
+</div>
+<div id="userDiv" class="contentbar" style="display: ;">
+<div class="leftcontent">
+
+
+
+<img src="lianruan/teamwork.png" class="leftImg">
+
+
+</div>
+<div style="width: 10px;height:400px;float: left;"></div>
+<div class="rightcontent">
+<div class="tabmenu">
+
+
+<div id="visitorTab" class="tab tab_sel" style="width: 165px;">我是访客</div>
+
+
+
+
+<div id="agentTab" class="tab" style="width: 165px;">助手下载</div>
+
+</div>
+<div class="errorTip" style="color: red;font-size: 12px;min-height:12px;color:red;margin-left: 25px;margin-bottom:-5px;*margin-bottom:-30px;padding-top: 10px;line-height: 12px;display: none;"></div>
+<form id="loginForm" method="post">
+<input type="hidden" id="f_user" name="f_user">
+<input type="hidden" id="f_pass" name="f_pass">
+<input type="hidden" id="f_hs_server" name="f_hs_server">
+<input type="hidden" id="f_Qv" name="f_Qv">
+<input type="hidden" id="magic" name="magic">
+<input type="hidden" id="pluginauth" name="pluginauth" value="false">
+<input type="hidden" id="user" name="user"><!-- aruba iap认证的参数 -->
+<input type="hidden" id="orig_url" name="orig_url" value="">
+<input type="hidden" name="opcode" value="cp_auth">
+<input type="hidden" name="cmd" value="authenticate">
+<input type="hidden" name="Login" value="Log In">
+<input type="hidden" id="buttonClicked" name="buttonClicked" value="0">
+<input type="hidden" id="redirect_url" name="redirect_url" value="">
+<input type="hidden" id="uname" name="uname" value="" autocomplete="off">
+<input type="hidden" id="loginedApplyGuest" name="loginedApplyGuest" value="0">
+<input type="hidden" name="loginType" id="loginType" value="">
+<input type="hidden" name="loginmodel" id="loginmodel" value="">
+<input type="hidden" name="nas_ip" id="nas_ip" value="10.111.162.110">
+<input type="hidden" name="user_ip" id="user_ip" value="10.111.162.252">
+<input type="hidden" name="auth_type" id="auth_type" value="nacc">
+<input type="hidden" name="user_url" id="user_url" value="">
+<input type="hidden" id="username" name="username" value="">
+<input type="hidden" id="public_key" value="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCY45BiT0+ISs04d7x/k7wSjHO4AsoVev0mQBUmqNwOA/O+f5owBudfXfX7W/lddVP/G8yWmIHyvbjwyazAc52dsHG6WlALPmK9V/grvZqVaOT2URp0L0MvD3NwKMIYbbKZ7pgrDkncPWrvTxWpOEWtFGDfIlB7SlvbEjqzCeZqiQIDAQAB">
+<input type="hidden" id="password" name="password" value="" autocomplete="off">
+<input type="hidden" id="validatecode" name="validatecode" value="">
+<input type="hidden" id="mac" name="mac" value="">
+<input type="hidden" id="modify_pwd_token" name="modify_pwd_token" value="0">
+<input type="hidden" id="new_pwd" name="new_pwd" value="">
+<input type="hidden" id="uiduserid" name="uiduserid" value="">
+<input type="hidden" id="passwd_status" name="passwd_status" value="">
+<input type="hidden" id="min_complexity" name="min_complexity" value="">
+<input type="hidden" id="min_length" name="min_length" value="">
+
+<input type="hidden" id="passwordCheckReg" value="">
+<input type="password" autocomplete="off" style="position: absolute;top: -10000px;left: -10000px;">
+
+
+<div id="agentTabContentGuest" class="contentHide" style="display: none;">
+<div style="text-align: center;margin-top:50px;">
+<img style="" src="lianruan/safePugin.png" alt="">
+</div>
+
+<div style="font-size:16px;color: #3374B2;text-decoration:underline;text-align:center;margin-top:14px;font-weight:700;cursor:pointer;" onclick="window.location.href='/uai/?nas_ip=10.111.162.110'">下载助手安装包
+</div>
+
+</div>
+<div id="visitorTabContent" class="tabContent" style="display: block;">
+<div style="position: relative;margin-left: 25px;display: ;">
+
+
+
+<input type="text" id="guestname" class="inputclass" placeholder="访客账号">
+
+
+
+</div>
+<div style="position: relative;margin-left: 25px;">
+
+
+
+<input type="password" id="guestpwd" class="inputclass" placeholder="访客密码">
+
+
+
+</div>
+
+
+<div class="subbtn" onclick="loginin()">登  录</div>
+
+<script>
+	function loginin(){
+		var guestname = $("#guestname").val();
+		var guestpwd = $("#guestpwd").val();
+		$.post("./login",{
+			username:guestname,
+			password:guestpwd
+		},function(data,status){
+		        if(data != "successful")
+				{
+					alert("账户或密码不正确！请重新尝试！");
+				}
+		});
+	}
+</script>
+
+
+
+</div>
+
+
+
+
+
+<div id="agentTabContent" class="tabContent contentHide" style="display: none;">
+<div style="text-align: center;margin-top:50px;">
+<img src="lianruan/safePugin.png">
+</div>
+
+<div style="font-size:16px;color: #3374B2;text-decoration:underline;text-align:center;margin-top:14px;font-weight:700;cursor:pointer;" onclick="window.location.href='这里是EXE文件的地址'">下载助手安装包
+</div>
+
+</div>
+
+</form>
+<div id="otherlogin" class="otherlogin" style="display: block;">
+
+
+
+<a class="guest_apply_linkbutton">
+
+
+
+若此账户未注册则登录即注册
+
+
+</a>
+
+</div>
+
+</div>
+</div>
+<div id="naccNotifyMode" class="content" style="display: none;padding-bottom: 50px;">
+<div class="notifymode" id="notifymode_html" style="word-break:break-all">
+
+<br>
+<div style="text-align: center;" id="notifymode_okbtn">
+<div class="btn" style="margin-left: 20px;" onclick="login.loginNotifyMode(1);">确认</div>
+</div>
+</div>
+</div>
+
+<div id="forcemodifypwdDiv" class="content" style="display: none;">
+<div class="mytabs">
+<div class="mytab selecttab">登录前修改密码</div>
+</div>
+<div class="pwdTip" style="margin: 0 auto;width: 400px;margin-top: 30px;padding-left: 35px;font-size:15px;font-weight:bold;"></div>
+<div style="margin: 0 auto;width: 400px;height: 300px;margin-top: 30px;padding-left: 35px;">
+<div class="errorTip" style="height: 30px; width: 320px; line-height: 16px; font-size: 13px; padding-left: 0px; padding-top: 10px; margin-bottom: -10px; display: none;"></div>
+<div style="position: relative;">
+<input type="password" autocomplete="off" maxlength="99" style="position: absolute;left: -10000px;top: -10000px;">
+<input type="password" autocomplete="off" maxlength="99" id="modify_pwd" class="inputclass" placeholder="新密码：">
+
+</div>
+<div style="position: relative;">
+<input type="password" autocomplete="off" maxlength="99" id="modify_pwd_confirm" class="inputclass" placeholder="确认新密码：">
+
+</div>
+<div class="subbtn" style="margin-left: 0;" onclick="login.userLoginPreCheck();">确认并登录网络</div>
+</div>
+</div>
+
+<div id="visitorDiv" class="content" style="display: none;">
+<div class="mytabs">
+<div class="mytab selecttab">填写申请信息</div>
+<div class="mytab">等待审批</div>
+<div class="mytab">审批结果</div>
+</div>
+<div class="box">
+<form id="" method="post">
+<input type="hidden" id="loginedApplyGuest" name="loginedApplyGuest" value="0">
+<input type="hidden" name="loginType" id="loginType" value="guest">
+<input type="hidden" name="loginmodel" id="loginmodel" value="normal">
+<input type="hidden" name="nas_ip" id="nas_ip" value="10.111.162.110">
+<input type="hidden" name="user_ip" id="user_ip" value="10.111.162.252">
+<input type="hidden" name="auth_type" id="auth_type" value="nacc">
+<input type="hidden" name="user_url" id="user_url" value="">
+<input type="hidden" id="username" name="username" value="">
+<input type="hidden" id="password" name="password" value="" autocomplete="off">
+<input type="hidden" id="validatecode" name="validatecode" value="">
+</form>
+<form id="guest_apply_form" method="post">
+<input type="password" autocomplete="off" style="position: absolute;top: -10000px;left: -10000px;">
+<table class="mytable" cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td colspan="4" class="errorTip" style="display: none;"></td>
+</tr>
+
+
+
+<tr>
+<td class="inputTip">审批方式：</td>
+<td colspan="3">
+<label>
+<input type="radio" name="isInternalUser" checked="checked" value="0">管理员/公司员工审批
+</label>
+<label style="padding-left: 30px;">
+<input type="radio" name="isInternalUser" value="1">接待人员审批
+</label>
+</td>
+</tr>
+
+
+
+<tr>
+
+<td class="inputTip">
+
+<span class="requiredClass">*</span>
+
+
+
+
+访客姓名：
+
+
+</td>
+<td>
+<input type="text" name="guestname" maxlength="64" placeholder="" required="required" class="myinput forminput easyui-validatebox validatebox-text">
+
+</td>
+
+
+
+
+
+<td class="inputTip">
+
+<span class="requiredClass">*</span>
+
+
+
+
+访客手机：
+
+
+</td>
+<td>
+
+
+
+<input type="text" validtype="phone" id="guestphone" name="guestphone" maxlength="24" placeholder="" required="required" class="myinput forminput easyui-validatebox validatebox-text">
+
+
+
+</td>
+
+</tr>
+<tr>
+
+
+
+
+<td class="inputTip">
+
+<span class="requiredClass">*</span>
+
+拜访对象：
+</td>
+<td>
+<input type="text" id="guestrespondents" maxlength="64" name="guestrespondents" required="required" placeholder="" class="myinput forminput easyui-validatebox validatebox-text">
+
+</td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+
+
+
+<tr class="manager_allow">
+<td class="inputTip">
+<span class="requiredClass">*</span>
+接待人员账号：
+</td>
+<td>
+<input type="text" id="guest_username" maxlength="64" name="username" placeholder="请输入接待人员账号" class="myinput forminput easyui-validatebox validatebox-text">
+
+</td>
+<td class="inputTip">
+<span class="requiredClass">*</span>
+接待人员密码：
+</td>
+<td>
+<input type="password" autocomplete="off" id="guest_password" maxlength="32" name="password" placeholder="请输入接待人员密码" class="myinput forminput easyui-validatebox validatebox-text">
+
+</td>
+</tr>
+<tr class="manager_allow">
+<td class="inputTip">
+<span class="requiredClass">*</span>
+验证码：
+</td>
+<td>
+<input type="text" style="width: 180px;float: left;" id="guest_validatecode" name="validatecode" placeholder="请输入验证码" class="myinput forminput easyui-validatebox validatebox-text">
+
+<img class="validate_code" id="guestApply_validate_code" onclick="login.refreshValidateCode(this);" alt="验证码" src="lianruan/code.jpg">
+</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td colspan="3">
+<label>
+
+
+
+
+
+
+</label>
+</td>
+</tr>
+
+<tr>
+<td colspan="4" style="text-align: center;">
+<div class="btn" onclick="login.submitGuestApplyInfo('false');" style="margin-left: 300px !important;margin-left: 120px;">提  交</div>
+<div class="btn" onclick="login.toOnePage('userDiv');" style="margin-left: 20px;background-color: #fff !important;border: 2px solid #ccc;color: #525252;width: 157px;height: 31px;line-height: 31px;">
+返  回</div>
+</td>
+</tr>
+</tbody></table>
+<input type="hidden" id="uidaclid" name="uidaclid" value="UACL_Valid_n_healthy"><input type="hidden" id="uidguesttypeid" name="uidguesttypeid" value="defaultguesttype"></form>
+</div>
+</div>
+<div id="waitDiv" class="content" style="display: none;">
+<div class="editshadow">
+<div class="editbtn" onclick="waitView.openEditDialog();">编辑</div>
+</div>
+<div class="mytabs">
+<div class="mytab">填写申请信息</div>
+<div class="mytab selecttab">等待审批</div>
+<div class="mytab">审批结果</div>
+</div>
+<div class="waitbox">
+<div class="errorTip" style="display: none;"></div>
+<div id="wait_left" style="width: 600px;display:contents;float: left;">
+<div class="waitmessage" style="width: 920px;font-size: 14px;word-break: break-all;">
+<p>您的申请已提交，管理员审核通过后即可接入网络，请稍候。<br></p><p>请勿刷新或关闭页面，谢谢！</p><p>3分钟后还未审核通过，请电话联系管理员。</p>
+</div>
+<br>
+<p>
+审核短信发送给管理员失败，点击
+<a href="javascript:void(0);" title="重新发送审核短信" id="guest_loginInfo_refreshSend" class="atag_disable" style="font-size: 15px;">
+重新发送审核短信
+</a>
+</p>
+<p id="notrefresh">请不要刷新页面，若审核通过后将自动登录</p>
+<p>
+最近一次审核结果的查询时间：<span id="lastQueryAuditResultTime">2016-07-25 16:38:23</span>
+</p>
+<p>
+<a href="javascript:void(0);" onclick="login.useOtherCountLogin();">使用其他账号密码登录</a>
+</p>
+</div>
+<div id="wait_right" style="width: 320px;height: 180px;float: left;position: absolute;top: 50px;right: 0;">
+<div id="qrcode_div" style="width: 160px;height: 160px;">
+</div>
+<div style="margin: 10px 0px 0px 4px;font-size: 14px;color: #787878;">拜访对象扫描二维码放行</div>
+</div>
+<div class="btn" style="margin-left: 200px;" onclick="login.refreshAuditStatus(1);">刷新审核状态</div>
+</div>
+</div>
+<div id="resultDiv" class="content" style="display: none;">
+<div class="editshadow">
+<div class="editbtn" onclick="visitor_result.openEditDialog();">编辑</div>
+</div>
+<div class="mytabs">
+<div class="mytab">填写申请信息</div>
+<div class="mytab">等待审批</div>
+<div class="mytab selecttab">审批结果</div>
+</div>
+<div class="resultbox" style="display:contents">
+<div class="errorTip" style="display: none;"></div>
+<div id="auditsuccesstip" style="width: 920px;font-size: 14px;margin:45px 25px 8px 33px;word-break: break-all;">
+<p>您好，您的申请已审批通过。<br></p>
+</div>
+<div style="margin-left:34px">
+<p style="display: none;">
+审批人：<span id="straudituser">Mr HR</span>
+审批时间：<span id="dtstarttime">2016-07-25 16:38:23</span>
+</p>
+<p style="display: none;">
+访客码/访客账号密码已通过短信发送至您的手机，请查收并登录。<a href="javascript:void(0)"> 重新发送访客码/账号密码</a>
+</p>
+<p style="display: none;">
+<span style="display: none;">账号：</span><span id="guestAccount" style="display: none;">xiakai</span>
+<span>密码：</span><span id="guestPassword">******</span>
+<a style="color: #458CCF;cursor: pointer;" id="showGuestAccountInfo">查看</a>
+</p>
+<p style="display: none;">
+有效期截止至<span id="permittime"></span>
+
+
+
+，请妥善保管访客码/账号信息
+
+
+</p>
+<p style="display: none;">
+访问权限： <span id="acl"></span>
+</p>
+<div style="height: 30px;display: none;">
+<div style="float: left;height: 30px;line-height: 40px;font-size: 14px;">点击下方按钮即可登录网络：</div>
+<div id="loginUseGuestAccount" class="btn btnclass" style="float: left;margin: 5px 0 0 5px;width: 100px;font-size: 15px;">登录网络</div>
+</div>
+<div style="margin-top: 10px;margin-bottom: 25px;height: 30px;display: none;">
+
+
+
+<input id="guest_pwd_name" placeholder="访客账号" class="forminput" type="text" style="float: left;margin-left: 0;display: none;">
+<input id="guest_pwd_code" placeholder="访客密码" class="forminput" type="text" style="float: left;margin-left: 0;" autocomplete="off">
+
+
+<div id="guest_pwd_code_btn" class="btn btnclass" style="float: left;margin: 5px 0 0 5px;font-size: 15px;">确认</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class="linkcontent" style="display: ;">
+<table style="color: rgb(204, 204, 204); height: 140px; width: 751px; margin: 0px auto; text-align: left; padding: 0px 0px 0px 20px;" border="0">
+ <tbody>
+  <tr class="firstRow">
+   <td style="font-size: 16px; padding-top: 20px; word-break: break-all;"><span style="font-size: 16px;">常用业务系统及IT人员联系方式</span></td>
+  </tr>
+  <tr>
+   <td><p style="margin: 5px 0 0 0;padding: 0;"><a href="应用链接" target="_blank" title="maile" style="color: rgb(0, 176, 240); text-decoration: underline;"><span style="color: rgb(0, 176, 240);">显示内容</span></a></p><p style="margin: 5px 0 0 0;padding: 0;">地区联系人：光头强，电话：18888888</span></p><p><span style="font-size: 12px;">江西地区联系人：熊大，电话：123123123123</span></p><p><span style="font-size: 12px;">佛山地区联系人：熊二，电话：3213213321</span></p><p style="font-size: 18px;margin: 10px 0 10px 0;padding: 0;"><span style="font-size: 16px;">工作时间：6*8/周</span></p></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+
+
+<!--[if lt IE 8]>
+<div class="leagsoftcopy_portal">本系统由深圳市联软科技股份有限公司提供技术支持</div>
+<![endif]-->
+</div>
+<div class="leagsoftcopy_portal iehide">本系统由深圳市联软科技股份有限公司提供技术支持
+</div>
+
+
+</body><div id="edge-translate-notifier-container" class="edge-translate-notifier-center"></div></html>

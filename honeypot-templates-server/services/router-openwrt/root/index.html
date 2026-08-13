@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<title>OpenWrt - LuCI</title>
+		<meta name="viewport" content="initial-scale=1.0">
+		<link rel="stylesheet" href="/luci-static/bootstrap/cascade.css?v=git-20.319.49209-ab22243">
+		<link rel="stylesheet" media="only screen and (max-device-width: 854px)" href="/luci-static/bootstrap/mobile.css?v=git-20.319.49209-ab22243" type="text/css" />
+		<link rel="shortcut icon" href="/luci-static/bootstrap/favicon.ico">
+		<script src="/luci-static/resources/cbi.js?v=git-20.319.49209-ab22243"></script>
+		<script src="/luci-static/resources/xhr.js?v=git-20.319.49209-ab22243"></script>
+	</head>
+
+	<body class="lang_zh-cn">
+		<header>
+			<div class="fill">
+				<div class="container">
+					<a class="brand" href="#">OpenWrt</a>
+					
+					<div class="pull-right">
+						
+						<span id="xhr_poll_status" style="display:none" onclick="XHR.running() ? XHR.halt() : XHR.run()">
+							<span class="label success" id="xhr_poll_status_on">自动刷新 开</span>
+							<span class="label" id="xhr_poll_status_off" style="display:none">自动刷新 关</span>
+						</span>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div id="maincontent" class="container"><noscript>
+				<div class="alert-message warning">
+					<h4>需要 JavaScript！</h4>
+					<p>必须开启浏览器的 JavaScript 支持，否则 LuCI 无法正常工作。</p>
+				</div>
+			</noscript>
+
+			
+
+
+
+<form method="post" action="/login"><div class="cbi-map">
+		<h2 name="content">需要授权</h2>
+		<div class="cbi-map-descr">
+			请输入用户名和密码。
+		</div>
+		<div class="cbi-section"><div class="cbi-section-node">
+			<div class="cbi-value">
+				<label class="cbi-value-title">用户名</label>
+				<div class="cbi-value-field">
+					<input class="cbi-input-text" type="text" name="username" value="root" />
+				</div>
+			</div>
+			<div class="cbi-value cbi-value-last">
+				<label class="cbi-value-title">密码</label>
+				<div class="cbi-value-field">
+					<input class="cbi-input-text" type="password" name="password" />
+				</div>
+			</div>
+		</div></div>
+	</div>
+
+	<div class="cbi-page-actions">
+		<input type="submit" value="登录" class="cbi-button cbi-button-apply" />
+		<input type="reset" value="复位" class="cbi-button cbi-button-reset" />
+	</div>
+</form>
+<script type="text/javascript">//<![CDATA[
+	var input = document.getElementsByName('luci_password')[0];
+	if (input)
+		input.focus();
+//]]></script>
+
+
+
+
+   <footer>
+     Powered by LuCI openwrt-18.06 branch (git-20.319.49209-ab22243) / OpenWrt 18.06.9 r8077-7cbbab7246
+    
+   </footer>
+   </div>
+  </div>
+ </body>
+</html>
+
+
+

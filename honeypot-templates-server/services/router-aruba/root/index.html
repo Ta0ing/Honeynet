@@ -1,0 +1,411 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Login</title>
+    <link rel="icon" href="data:;base64,=">
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif, Tahoma;
+            font-size: 11px;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            border: 0;
+        }
+
+        #login-wrapper {
+            top: 50%;
+            transform: translateY(-50%);
+            position: absolute;
+            width: 100%;
+        }
+
+        .loginbox {
+            background-color: #fff;
+            color: #646569;
+            border: 1px solid #e5e5e5;
+            margin: auto;
+            position: relative;
+        }
+
+        #logincontainer {
+            width: 500px;
+        }
+
+        #vialogincontainer {
+            width: 375px;
+        }
+
+        #logoutcontainer {
+            width: 375px;
+        }
+
+        #aruba-logo {
+            margin: 30px auto;
+        }
+
+        #loading-icon {
+            margin-top: 30px;
+        }
+
+        .loginbox h1 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            padding: 0px 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .loginbox form {
+            text-align: center;
+            padding: 15px 0px 10px;
+            margin-bottom: 0px;
+        }
+
+        #legalcontainer {
+            font-size: 9pt;
+            padding: 10px 0;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .copyrighttxt {
+            text-align: center;
+        }
+
+        .inputctrl {
+            padding-bottom: 12px;
+        }
+
+        .inputctrl input {
+            height: 2em;
+            font-size: 14px;
+            width: 140px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            padding: 0 5px;
+        }
+
+        .inputctrl input:hover {
+            border: 1px solid rgba(0, 0, 0, 1);
+        }
+
+        .inputctrl input:focus {
+            border: 1px solid rgba(204, 105, 0, 1);
+            outline-style: none;
+        }
+
+        #reason {
+            color: #cc2b3a;
+            font-size: 16px;
+            line-height: 30px;
+            text-align: left;
+            background-color: #ffd7db;
+            border-left: 5px solid #ff3649;
+            margin: 0px auto 10px;
+            padding-left: 10px;
+            width: 300px;
+        }
+
+        #reason img {
+            position: relative;
+            top: 2px;
+            height: 16px
+        }
+
+        .msgtxt {
+            height: 2.2em;
+            line-height: 1.1em;
+            overflow: hidden;
+            margin: 0px auto;
+            width: 300px;
+            text-align: justify;
+            font-size: 14pt;
+        }
+
+        .info-msg {
+            color: #cc9642;
+            font-size: 16px;
+            text-align: left;
+            background-color: #fff1dc;
+            border-left: 5px solid #ffbb52;
+            margin: 30px auto 10px;
+            padding-left: 5px;
+            width: 300px;
+        }
+
+        .info-icon-cell {
+            vertical-align: top;
+        }
+
+        .info-icon {
+            top: 5px;
+            height: 20px;
+            position: relative;
+        }
+
+        .info-text {
+            margin: 5px 5px;
+        }
+
+        .error {
+            border: 1px solid #B30303;
+        }
+
+        a.login {
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .button {
+            background-color: #02a7ec;
+            border-radius: 2px 2px 2px 2px;
+            color: #FFFFFF;
+            font-size: 1.5em;
+            font-weight: bold;
+            height: 30px;
+            padding-top: 3px;
+            text-align: center;
+            width: 80px;
+            cursor: pointer;
+            line-height: 27px;
+        }
+
+        .button:hover {
+            background-color: #0286bd;
+        }
+
+        .system-name {
+            margin-bottom: 23px;
+        }
+
+        ::-webkit-input-placeholder {
+            color: #646569;
+            opacity: 0.4;
+            font-style: italic;
+        }
+
+        :-moz-placeholder {
+            /* Firefox 18- */
+            color: #646569;
+            opacity: 0.4;
+            font-style: italic;
+        }
+
+        ::-moz-placeholder {
+            /* Firefox 19+ */
+            color: #646569;
+            opacity: 0.4;
+            font-style: italic;
+        }
+
+        :-ms-input-placeholder {
+            color: #646569;
+            opacity: 0.4;
+            font-style: italic;
+        }
+
+        .styled-select select {
+            background: transparent;
+            width: 140px;
+            padding: 0 5px;
+            font-size: 14px;
+            border: 0;
+            border-radius: 0;
+            height: 2em;
+            -webkit-appearance: none;
+        }
+
+        .styled-select {
+            display: inline-block;
+            width: 140px;
+            font-size: 14px;
+            height: 2em;
+            box-sizing: border-box;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            background: url(/images/arrow_down.png) no-repeat right 5px center #fff;
+            overflow: hidden;
+        }
+
+        .styled-select:hover {
+            border: 1px solid rgba(0, 0, 0, 1);
+        }
+
+        .styled-select select:focus {
+            outline-style: none;
+        }
+
+        .eula {
+            max-height: 300px;
+            overflow-y: auto;
+            padding-left: 1em;
+            padding-right: 1em;
+            text-align: left;
+        }
+    </style>
+    <script>
+        function init_focus() {
+            var f = document.getElementById("login-form");
+            if (!f) return;
+            var x;
+            if ((x = f.elements["uid"])) {
+                x.disabled = false;
+                x.focus();
+            }
+            if ((x = f.elements["password"])) x.disabled = false;
+            if ((x = f.elements["login"])) x.disabled = false;
+            var ua = "", bneedxml = false;
+            if (window && window.navigator) {
+                ua = window.navigator.userAgent.toLowerCase();
+            }
+            if (ua.indexOf("windows") >= 0 && ua.indexOf("mozilla/") >= 0 && ua.indexOf("(compatible; msie") >= 0) {
+                try {
+                    var x = new ActiveXObject("MsXML2.XMLHTTP.4.0");
+                    var y = new ActiveXObject("MsXml2.DOMDocument");
+                    if (x && y) {
+                        bneedxml = false;
+                    }
+                    else {
+                        bneedxml = true;
+                    }
+                }
+                catch (e) {
+                    bneedxml = true;
+                }
+            }
+            if ((x = f.elements["needxml"])) {
+                x.value = bneedxml ? "1" : "0";
+            }
+        }
+        function set_action() {
+            var f = document.getElementById("login-form");
+            if (!f) return;
+            f.action = f.elements["realaction"].value;
+        }
+        function checkError() {
+            var f = document.getElementById("reason");
+            if (!f) return;
+            if ("" != f.innerHTML)
+                f.style.display = "";
+        }
+        function loginValidation() {
+            var LoginForm = document.getElementById("login-form");
+            if ("" == LoginForm.username.value) {
+                alert("Please provide User Name");
+                document.forms[1].username.focus();
+                return;
+            }
+            else if ("" == LoginForm.password.value) {
+                alert("Please provide Password");
+                document.forms[1].password.focus();
+                return;
+            }
+            LoginForm.submit();
+            window.sessionStorage.removeItem('prevSearch');
+        }
+        function convertHTMLTag(s) {
+            return s == null ? "" : s.replace(/\&/g, "&amp;").replace(/\</g, "&lt;").replace(/\>/g, "&gt;").replace(/\"/g, "&quot;").replace(/\'/g, "&#39;");
+        }
+    </script>
+</head>
+
+<body onload="init_focus()">
+    <div id="login-wrapper">
+        <div id="logincontainer" class="loginbox">
+            <img id="aruba-logo" src="images/aruba-hpe-logo.png" width="175" alt="Aruba Networks"
+                title="Aruba Networks">
+            <h1 id="system-name"></h1>
+            <div class="eula">
+
+            </div>
+            <form id="eula-accept" style="display: none">
+                <div>
+                    <a class="login" href="javascript:void(0);" onclick="acceptEula();return false;">
+                        <div class="button">I Accept</div>
+                    </a>
+                </div>
+            </form>
+
+            <form id="login-form" method="post" autocomplete="off" action="/login" style="display: none">
+                <div class="inputctrl">
+                    <input type="text" name="username" class="errornone" placeholder="Username"
+                        onKeyPress="if(event && event.keyCode == 13){loginValidation();return false;}">
+                </div>
+                <div class="inputctrl">
+                    <input type="password" name="password" placeholder="Password"
+                        onKeyPress="if(event && event.keyCode == 13){loginValidation();return false;}">
+                </div>
+                <div>
+                    <a class="login" onclick="loginValidation();return false;">
+                        <div name="login" class="button">Log in</div>
+                    </a>
+                </div>
+            </form>
+            <div id="reason">
+                <img src="images/alert-login-page.png">
+                <span id="failreason"></span>
+            </div>
+            <noscript>
+                <div>
+                    JavaScript is disabled on your browser.<br>
+                    Please try again after enabling JavaScript support.
+                </div>
+            </noscript>
+            <div id="legalcontainer">
+                <div class="copyrighttxt">Copyright &#169; <span id="currentYear">2021</span> Hewlett Packard Enterprise
+                    Development LP.</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var systemName = "Aruba7030";
+        systemName = convertHTMLTag(systemName);
+        document.getElementById("system-name").innerHTML = systemName;
+
+        var reasonDisplay = 'none';
+        if (reasonDisplay === 'none') {
+            document.getElementById("reason").style.display = 'none';
+        }
+
+        var dataFailure = document.getElementById("failreason").innerHTML;
+        if (dataFailure === "Login failed.") {
+            document.getElementById("failreason").innerHTML = "Invalid password or username.";
+        } else if (dataFailure === "Login max failed.") {
+            document.getElementById("failreason").innerHTML = "Maximum number of concurrent sessions reached";
+        } else if (dataFailure === "Session is invalid.") {
+            document.getElementById("reason").style.display = 'none';
+        }
+        try {
+            /* Encapsulate sys-banner-display into a "eval" such that any syntax error gets trapped by the catch */
+            var mustAcceptEula = window.Function("return false")();
+            if (mustAcceptEula) {
+                document.getElementById("eula-accept").style.display = "block";
+            } else {
+                document.getElementById("login-form").style.display = "block";
+            }
+        }
+        catch (error) {
+            document.getElementById("login-form").style.display = "block";
+        }
+
+        function acceptEula() {
+            document.getElementById("eula-accept").style.display = "none";
+            document.getElementsByClassName("eula")[0].style.display = "none";
+            document.getElementById("login-form").style.display = "block";
+            return false;
+        }
+
+    </script>
+
+</body>
+
+</html>

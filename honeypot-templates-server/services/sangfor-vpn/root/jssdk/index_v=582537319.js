@@ -1,0 +1,1 @@
+var SFConfig={},SFCommon={},SFAPI={},SFFilter={},SFRequest={},SFDTO={},SFLOG={},SFCustom={},SF={ecConfig:{},setting:{},windowMgr:{},vpnInfo:{},session:{}};

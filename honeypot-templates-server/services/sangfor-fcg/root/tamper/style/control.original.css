@@ -1,0 +1,89 @@
+@charset "utf-8";
+/* CSS Document */
+dl, dt, dd, ul, li, p, form { list-style:none; padding:0px; margin:0px }
+/*将所有控件高度都定为22PX，表单行高为28PX*/
+#form * { font-size:12px; font-family:Tahoma, Verdana, "SimSun", Geneva, sans-serif }
+#form dl { clear:both; height:30px; line-height:32px; display:block; }
+#form dl dt { float: left; white-space: nowrap; text-align:left; height:28px;}
+#form dl dd { float: left; margin:4px 0 0 5px; line-height:24px;}
+/*
+ *input_text
+ */
+#form .input_text dd span,
+#form .input_text dd span input { background:url(../img/Control.png) no-repeat; display:block; height:24px; line-height:24px }
+#form .input_text dd span { background-position:left -142px; width:230px; padding-left:2px; overflow: hidden; }
+#form .input_text dd span input { background-position:right -142px; width:100%; margin:0px; padding:0px; border: none; float:right; border:0px; }
+#form .input_text .input_text_h, #form .input_text .input_text_b { background-position:left -166px !important; }
+#form .input_text span .input_text_h, #form .input_text span .input_text_b { background-position:right -166px !important; }
+/*辅助*/
+#form .input_text dd p { background:url(../../guard.html) no-repeat;width:20px; height:20px; position:absolute; top:2px; right:2px;}
+#form .input_text .keyboard { position:relative}
+#form .input_text .keyboard p { background-position:0 0; }
+
+/*日期ICO*/
+#form .input_text .sf_datepicker { position:relative}
+#form .input_text .sf_datepicker p { background-position:0 -60px; }
+
+/*
+ *select
+ */
+#form .select dd .CRselectBox{ margin:0 5px 0 0; }
+* html #form .select dd .CRselectBox{ margin:0px}
+* +html #form .select dd .CRselectBox{ margin:0 4px 0 0}
+/**/
+#form .select dd .CRselectBox{ width:227px;}
+#form .select dd .CRselectBoxOptions { width:230px;}
+#form .select dd .CRselectBox,
+#form .select dd .CRselectBox a.CRselectValue { background:url(../img/Control.png) no-repeat; display:block; height:22px; line-height:22px; }
+#form .select dd .CRselectBox { background-position:left -98px;}
+#form .select dd .CRselectBox a.CRselectValue { background-position:right -98px; width:100%; padding-left:3px; margin-left:2px }
+#form .select dd .CRselectBoxHover { background-position:left -120px; position:relative }
+#form .select dd .CRselectBoxHover a.CRselectValue { background-position:right -120px; }
+#form .select dd .CRselectBoxOptions { border: 1px solid #7F9DB9; display: none; background-color:#fff; position:absolute;}
+#form .select dd .CRselectBoxItem { }
+#form .select dd .CRselectBoxOptions a { display:block; height:17px; line-height:17px; padding:0 5px; color:#000; }
+#form .select dd .CRselectBoxOptions a:hover{ background-color:#3399FF; color:#FFF }
+#form .select dd .CRselectBoxOptions a.selected{}
+#form .select dd .CRselectBox a { outline: none; text-decoration:none; color: #000 }
+#form .select dd .CRselectBox a:focus { outline: none; text-decoration:none; }
+/*
+ *input_checkbox
+ *input_radio
+ */
+#form .input_radio dd{ padding-top:1px}
+#form .input_checkbox,
+#form .input_radio{ height:auto; line-height:normal}
+#form .input_checkbox dt,
+#form .input_checkbox dd label,
+#form .input_radio dd label { height:21px; line-height:21px; display:block;}
+#form .input_checkbox,
+#form .input_radio,
+#form .input_checkbox dd p,
+#form .input_radio dd p { clear:both; }
+#form .input_checkbox dd input,
+#form .input_radio dd input,
+#form .input_checkbox dd label,
+#form .input_radio dd label {padding:0px; float:left; }
+#form .input_checkbox dd,
+#form .input_radio dd { *margin:3px 0 0 2px}
+#form .input_checkbox dd label,
+#form .input_radio dd label { margin-right:15px }
+#form .input_checkbox dd input { margin:4px 5px 4px 0; *margin:0 2px 1px 0; }
+#form .input_radio dd input { margin:4px 3px 4px 0; *margin:0 0 1px 0; }
+#form .input_checkbox dt { padding-top:3px }
+#form .input_radio dt { height:28px; line-height:28px; }
+/*
+ *button
+ */
+#form .input_button_max dd { margin:0 0 0 5px; *margin:0 0 0 3px;}
+#form .input_button_max dd input,
+#form .input_button dd input,
+#form .input_button dd span,
+#form .buttons_h { background: url(../img/Control.png) no-repeat; background-color:#FFF; border:none; cursor: pointer;}
+#form .input_button dd span { width:73px; height:22px; background-position: left -54px; display:block}
+#form .input_button dd input { width:73px; height:22px; background-position: right -54px; margin-left:2px}
+#form .input_button_max dd input { width:80px; height:27px;  background-position: 0 0}
+#form .input_button_max .focus input {background-position: -80px 0}
+#form .input_button_max dd .buttons_h { background-position: 0 -27px !important;}
+#form .input_button dd .buttons_h{ background-position: left -76px;}
+#form .input_button dd span .buttons_h{ background-position: right -76px;}

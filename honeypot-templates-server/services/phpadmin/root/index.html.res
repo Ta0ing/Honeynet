@@ -1,0 +1,21 @@
+{
+    "Cache-Control": "no-store, no-cache, must-revalidate,  pre-check=0, post-check=0, max-age=0",
+    "Content-Encoding": "gzip",
+    "Content-Type": "text/html; charset=utf-8",
+    "Date": "Thu, 19 May 2022 15:20:11 GMT",
+    "Expires": "Thu, 19 May 2022 15:20:12 +0000",
+    "Last-Modified": "Thu, 19 May 2022 15:20:12 +0000",
+    "Pragma": "no-cache",
+    "Server": "nginx",
+    "Set-Cookie": "phpMyAdmin=bosls0eqqll87tcql0ftkgr64dp6of60; path=/; HttpOnly",
+    "Vary": "Accept-Encoding",
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "X-Ob_mode": "1",
+    "X-Permitted-Cross-Domain-Policies": "none",
+    "X-Powered-By": "PHP/5.5.38",
+    "X-Robots-Tag": "noindex, nofollow",
+    "X-Webkit-Csp": "default-src 'self' ;script-src 'self'  'unsafe-inline' 'unsafe-eval';referrer no-referrer;style-src 'self' 'unsafe-inline' ;img-src 'self' data:  *.tile.openstreetmap.org;",
+    "X-Xss-Protection": "1; mode=block",
+    "status-code": "200"
+}

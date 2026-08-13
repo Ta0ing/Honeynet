@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>Coremail邮件系统</title>
+<link href="../common/assets/login/forgetpwd1.css" rel="stylesheet" type="text/css" charset="iso-8859-1">
+</head>
+
+<body class="forgetpwd">
+<div class="main-wrapper">
+    <div class="container">
+        <div class="head">
+            <div class="head-top"></div>
+            <div class="head-content">
+                <div><b>欢迎使用邮箱密码找回</b></div>
+            </div>
+            
+            
+            
+            
+            
+            
+            <div class="head-footer ">
+                
+                    <div class="step step1 actived">
+                        
+                            <b>1</b>
+                            <i class="iconfont iconround"></i>
+                        
+                        <div class="line"></div>
+                        
+                            
+                                
+                                
+                                
+                                    
+                                
+                            
+                            <span class="text"><b>输入邮箱账号</b></span>
+                        
+                    </div>
+                
+                    <div class="step step2 ">
+                        
+                            <b>2</b>
+                            <i class="iconfont iconround"></i>
+                        
+                        <div class="line"></div>
+                        
+                            
+                                
+                                
+                                
+                                    
+                                
+                            
+                            <span class="text"><b>通过密保问题找回密码</b></span>
+                        
+                    </div>
+                
+                    <div class="step step3 ">
+                        
+                            <b>3</b>
+                            <i class="iconfont iconround"></i>
+                        
+                        <div class="line"></div>
+                        
+                            
+                                
+                                
+                                
+                                    
+                                
+                            
+                            <span class="text"><b>设置新的密码</b></span>
+                        
+                    </div>
+                
+                    <div class="step step4 ">
+                        
+                        <div class="line"></div>
+                        
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="main">
+                <form name="validateForm" method="post" action="forgetpwd.jsp?sid=BAEHJUSSCLFxjtkmZsSSkIJUFtufSZCd">
+                    <input type="hidden" name="func" value="validate">
+                    <div class="msg">
+                        
+                            
+                        
+                    </div>
+                    <table class="loginTable">
+                        <tbody>
+                        <tr>
+                            <th>邮箱账号:</th>
+                            <td><input type="text" class="input" maxlength="20" name="uid" value></td>
+                        </tr>
+                        <tr>
+                            <th>输入验证:</th>
+                            <td>
+                                <input name="verifyCode" type="text" class="input pwd" maxlength="22">
+                                <img class="verifyCode" id="img" src="../displayVerifyCode_sid%3DBAEHJUSSCLFxjtkmZsSSkIJUFtufSZCd%26category%3Dforgetpassword%26rand%3D-443437304.jsp" alt="CODE">
+                                
+                                <a class="refresh" href="../forgetpwd_sid%3DBAEHJUSSCLFxjtkmZsSSkIJUFtufSZCd%26uid%3D.jsp.html" onclick="
+                                        this.href = 'forgetpwd.jsp?sid=BAEHJUSSCLFxjtkmZsSSkIJUFtufSZCd&uid=' + encodeURIComponent(
+                                        document.getElementsByName('uid')[0].value
+                                        );">
+                                    <i class="iconfont iconrevocation"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <button type="submit" class="Button">
+                                    下一步
+                                </button>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="linkDiv f-fl">
+                <a class="MTLinks" href="../index.jsp/index.html">
+                    首页
+                </a>|
+                <a target="_blank" href="../help/index_zh_CN.jsp/index.html">
+                    帮助
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

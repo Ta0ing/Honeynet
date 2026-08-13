@@ -1,0 +1,57 @@
+@charset "utf-8";
+/*
+	蓝色主题色编辑
+**/
+/*登录按钮*/
+.subbtn,.downagent{
+	background-color: #3374B2 !important;
+}
+.subbtn:hover,.downagent:hover{
+	background-color: #458CCF !important;
+}
+
+.phonecode{
+	background-color: #3374B2 !important;
+}
+.phonecode:hover{
+	background-color: #458CCF !important;
+}
+
+.tab_sel{
+	border-bottom:2px solid #3374B2 !important;
+	color: #3374B2 !important;
+}
+
+.selecttab{
+	border-bottom: 2px solid #3374B2 !important;
+	color: #3374B2 !important;
+}
+
+.linkcontent{
+	background-color: #2D4D6D !important;
+}
+
+.linkcontent table{
+	background-color: #2D4D6D !important;
+}
+
+.btn{
+	background-color: #3374B2 !important;
+}
+.btn:hover{
+	background-color: #458CCF !important;
+}
+
+.sub_btn{
+	background-color: #3374B2 !important;
+}
+.sub_btn:hover{
+	background-color: #458CCF !important;
+}
+.guest_apply_linkbutton{
+	color: #458CCF !important;
+}
+.guest_apply_linkbutton:hover{
+	text-decoration:underline!important;
+}
+ 

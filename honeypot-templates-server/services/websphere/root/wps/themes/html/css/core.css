@@ -1,0 +1,1076 @@
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/******************************************************************************
+core.css is created from the following files, which must be in the order specified:
+base.css
+component.css (some components are their own separate css file, imported into this file)
+layout.css (this is the One UI layout, with overrides to component styles based on where they sit on the page)
+
+companion theme files are
+baseTheme.css
+componentTheme.css
+layoutTheme.css
+******************************************************************************/
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*this file contains contains namespaced default styles for ONE UI*/
+/*companion file is baseTheme.css*/
+/******************************/
+/*** B A S E   S T Y L E S ****/
+/******************************/
+
+/*** R E S E T ***/
+/*reset styles, to get rid of browser-specific styling of elements and to set our own defaults - to pick up these styles, put "lotusui" on a container - either the body tag or a div that contains One UI content (you can have more than one lotusui container on a page).  Note, the font size will inherit the page font size.*/
+.lotusui *{margin:0;padding:0;font-weight:inherit;font-style:inherit;font-size:100%;vertical-align:baseline;}
+/*ONE UI redefinitions*/
+.lotusui :focus{outline:1px dotted;}
+body.lotusui{margin:0;padding:0;font:normal .75em/1.5em Arial, Helvetica, sans-serif;background-position:top left;background-repeat:repeat-x;}
+.lotusui_ie7 body.lotusui{position:relative}/*fix for IE7, to keep relatively positioned children looking okay.*/
+body.lotusJapanese, .lotusui .lotusJapanese *{font-family:"MS UI Gothic","MS PGothic", "Apple Gothic", Arial, Helvetica, sans-serif}
+/*internal link (default link style)*/
+.lotusui a{text-decoration:none;}/*takes care of normal and visited links*/
+.lotusui a:hover, .lotusui a:focus, .lotusui a:active{text-decoration:underline;}
+.lotusui blockquote{margin:5px 20px}
+.lotusui blockquote:before, .lotusui blockquote:after, .lotusui q:before, .lotusui q:after{content:"";}
+.lotusui blockquote, q{quotes:"" "";}
+.lotusui caption, .lotusui th, .lotusui td{text-align:left;font-weight:normal;}
+.lotusui dt{padding:3px 10px;margin:10px 0 0 0;font-size:1.1em}
+.lotusui dd{padding:5px 10px}
+.lotusui em{font-style:italic}
+/*the following headers are used to give heirarchy to the page*/
+/*the sizes of the headers are set to support our visual styles*/
+/*some header styles are also reset within certain components or sections of the page*/
+.lotusui h1{font-size:1.7em;font-weight:normal;line-height:1.2em}/*page header*/
+.lotusui h2{font-size:1.2em;font-weight:bold}/*section headers*/
+.lotusui h3{font-size:1.1em;font-weight:bold}/*subsection headers*/
+.lotusui h4{font-size:1.2em;font-weight:bold}/*entry titles*/	
+.lotusui h5{font-size:1.1em;font-weight:bold}/*entry details sections*/
+.lotusui h6{font-size:1em}
+.lotusui img{border:0;vertical-align:middle}
+.lotusui fieldset, .lotusui th, .lotusui td{border:0}
+.lotusui input, .lotusui select{padding:1px 0;} 
+.lotusui input.lotusCheckbox{margin-right:3px}/*for checkboxes and radio buttons*/
+.lotusui button, .lotusui input, .lotusui select{font-family:Arial, Helvetica, sans-serif}
+.lotusui textarea {font:normal 1em/1.2em Arial, Helvetica, sans-serif;}
+.lotusJapanese button, .lotusJapanese input, .lotusJapanese select{font-family:"MS UI Gothic","MS PGothic", "Apple Gothic", Arial, Helvetica, sans-serif}
+.lotusui textarea{padding:1px 0;margin:1px 0}
+.lotusui select > option {-moz-padding-start:3px;-moz-padding-end:5px;}/*styles pulled from FF's forms.css*/
+.lotusui p{margin:5px 0 0 0}
+.lotusui pre{font-family:"Courier New", Courier, monospace;} /*this helps eliminate discrepencies for how this displays cross-browser*/
+.lotusui strong{font-weight:bold}
+.lotusui ul{list-style-type:disc;margin-left:20px;margin-top:5px;padding-left:0}
+.lotusui ol{list-style-type:decimal;margin-left:20px;margin-top:5px;padding-left:.2em;/*padding keeps the numbers from being cut off*/}
+.lotusui ul li, .lotusui ol li{overflow:visible}
+.lotusui ul ul, .lotusui ol ul{list-style-type:circle;margin-top:0;margin-bottom:0;}
+.lotusui ul ul ul, .lotusui ol ul ul, .lotusui ol ol ul{list-style-type:square;margin-top:0;margin-bottom:0;}
+/***********************************************************/
+
+/*** S P E C I A L   L I N K S ***/
+/*tag*/
+.lotusRelatedTags a{background-position:left center;background-repeat:no-repeat;padding-left:10px;display:inline-block;/*fix for IE*/}
+/*link hover styles*/
+.lotusTags a:hover, .lotusTags a:focus, a.lotusTag:hover, a.lotusTag:focus,  a.lotusPerson:hover, a.lotusPerson:focus{text-decoration:none;border-bottom-width:1px;border-bottom-style:dotted}
+.lotusTagBin {margin-top:10px;}
+a.lotusMyLink:hover, a.lotusMyLink:focus, .lotusMyLinks a:hover, .lotusMyLinks a:focus{text-decoration:none;border-bottom-width:1px;border-bottom-style:dotted;}
+/*single and group action links*/
+/*this is to provide a class for overriding link colors in groups of links to indicate that the link is an action link (like the "Tag this" link in a tag group*/
+a.lotusAction, a.lotusAction:visited{text-decoration:underline !important;border-bottom:0 !important;font-size:.9em}
+.lotusActions{font-size:.9em}/*used on an outer container containing multiple action links (and possibly plain text mixed in, like View: tags | list | all)*/
+.lotusActions .lotusAction, .lotusui .lotusTiny a.lotusAction, .lotusui .lotusTiny.lotusAction, .lotusui .lotusAction.lotusTiny{font-size:1em}/*only want to reduce the size once*/
+a.lotusAction:hover, a.lotusAction:focus, .lotusActions a:hover, .lotusActions a:focus, .lotusTags a.lotusAction:hover, .lotusTags a.lotusAction:focus {text-decoration:underline !important;border-bottom:0 !important;}
+/*to assign an icon to an action link, you need to assign a unique id to the link and give it a background image.  The rest of the code is in this css declaration*/
+.lotusActions a, .lotusActions a:visited{text-decoration:underline;border-bottom:0}
+a.lotusDropDown, a.lotusDropDown:visited, a.lotusDropDown:active{padding-right:14px;background-position:right center ;background-repeat:no-repeat;}
+.lotusIcon a{padding-left:18px;background-position:left center;background-repeat:no-repeat}
+.lotusDelete{background-position:top left;background-repeat:no-repeat;} /*delete icon with rollover state*/
+/*general class for 16 pixel icons created as background images, where a link surrounds blank.gif*/
+/*NOTES: 
+- the image tag of blank.gif contains alt text that will show when images are turned off.  It also needs to set the width and the height
+- any hover text is put on the title text of the link
+- an additional class is used to assign the icon image.  These are defined in baseTheme.css and are named to match the icon graphic name with a lotus prefix
+in the future this can be modified to use an icon sprite graphic*/
+.lotusIcon16{width:16px;height:16px:background-position:center center;background-repeat:no-repeat}
+/***********************************************************/
+
+/*** G E N E R A L   S T Y L E S ***/
+.lotusui .lotusAccess{position:absolute;top:-3000px;width:500px;}
+.lotusui .lotusIndent10{padding-left:10px;}
+.lotusui .lotusIndent15{padding-left:15px;}
+.lotusui .lotusIndent20{padding-left:20px}
+.lotusui .lotusIndent40{padding-left:40px;}
+.lotusui .lotusIndent60{padding-left:60px;}
+.lotusui .lotusLeft{float:left;text-align:left;}
+.lotusui .lotusRight{float:right;text-align:right;}
+.lotusui .lotusCenter{text-align:center;}
+.lotusui .lotusClear{clear:both}
+.lotusui .lotusClearLeft{clear:left}
+.lotusui .lotusClearRight{clear:right}
+.lotusui .lotusDraggable{cursor:move}
+.lotusui .lotusAlignRight{text-align:right;}
+.lotusui .lotusAlignLeft{text-align:left;}
+.lotusui .lotusFixedTable{table-layout:fixed;}/* Fix for forms issues with typeahead. For IE6 and IE7 */
+.lotusui .lotusHidden{display:none} /*hides from visual UI but not from screen readers*/
+.lotusui .lotusHideOverflow{overflow:hidden}/*use in conjunction with a width on your element*/
+.lotusui .lotusLoading{background-repeat:no-repeat;width:16px;height:16px}/*loading animated gif*/
+.lotusui .lotusLTR{direction:ltr}/*allows you to assign an element to always read LTR*/
+.lotusui .lotusRTL{direction:rtl}/*allows you to assign an element to always read RTL*/
+.lotusui .lotusNudge{} /*use this general class name with specific qualifiers when you need to adjust the position of a specific item (see entry class in this stylesheet for an example)*/
+.lotusui .lotusTiny{font-size:.9em}
+.lotusui .lotusNowrap{white-space:nowrap}
+/*the next two lines are for providing alternate text for background images when images are turned off - requires javascript to test for this and assign the lotusImagesOff class to the html tag*/
+.lotusui .lotusAltText{display:none}
+.lotusImagesOff .lotusAltText{display:inline}
+/***********************************************************/
+
+/*** I N L I N E   L I S T S ***/ 
+/*to make a list display horizontally*/
+.lotusui .lotusInlinelist{margin:0;padding:0;list-style-type:none}
+.lotusui .lotusInlinelist li{display:inline;margin:0;padding:0 7px;border-left-width:1px;border-left-style:solid;}
+.lotusui .lotusInlinelist li.lotusFirst, .lotusui .lotusInlinelist li.lotusLast{padding-left:0;border-left-width:0;}
+.lotusui .lotusNoDivider li{border-left-width:0}
+/*the next two lines are needed to fix text zoom for inline lists in IE7 (also fixes RTL display issues)*/
+.lotusui_ie7 .lotusInlinelist li{display:inline-block}
+.lotusui_ie7 .lotusInlinelist li, .lotusui_ie6 .lotusInlinelist li{display:inline}
+/***********************************************************/
+
+/*** S P R I T E S ***/
+/*sprites reference one graphic file that contains many individual graphics*/
+/*individual graphics are positioned using CSS*/
+/*coordinates are x,y coordinates of the image placement within the larger image (with minus sign in front)*/
+.lotusSprite{float:left;display:block;background-repeat:no-repeat;}
+.lotusArrow{margin-right:2px;width:13px;height:18px;}
+/*twisty arrow definitions are found in section and menu components*/
+/*drop-down arrows*/
+.lotusDropDownSprite, .lotusDropDownActionSprite{margin-right:0;padding:1px;display:inline;float:none;text-decoration:none}
+/*scroll arrows (assign as an additional class along with lotusSprite and lotusArrow)*/
+.lotusScrollUp{float:none;line-height:1em;height:13px;margin:0;text-decoration:none !important}
+.lotusScrollDown{float:none;line-height:1em;height:13px;margin:0;text-decoration:none !important}
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/******************************************************************************
+This file contains styles for ONE UI components
+
+components.css is created by including content from css files located in the
+components directory.
+
+companion file is componentsTheme.css
+******************************************************************************/
+
+/****************************************/
+/*** C O M P O N E N T   S T Y L E S ****/
+/****************************************/
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for action bar*/
+/*companion file is actionBarTheme.css*/
+/*** A C T I O N   B A R ***/
+/*this is the area above entry tables, containing action button, view controls, drop-down find-in-table, etc.*/
+.lotusActionBar{margin-bottom:4px !important;/*this number works with the margin-top of the paging control to simulate 8px*/position:relative;float:left;width:100%;height:2.3em/*this height accommodates the searchTab, if it is the only element in the action bar*/}
+.lotusActionBar2{margin-top:-25px;margin-bottom:4px !important;position:relative;float:left;width:100%;height:2.3em} /*use this in place of lotusActionBar when you want to compress the vertical space between the actionbar and the element(s) above it*/
+/***********************************************************/
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for drop-down menus*/
+/*companion file is actionMenuTheme.css*/
+/*****************************/
+/*** A C T I O N   M E N U ***/
+/*****************************/
+ul.lotusActionMenu{margin:0;padding:0;list-style-type:none;display:table;position:absolute;top:-9999px;z-index:900px;border-width:1px;border-style:solid;background-position:top left;background-repeat:repeat-y}
+.lotusui_ie6 .lotusActionMenu{width:15em}
+.lotusActionMenu li{white-space:nowrap;zoom:1}
+.lotusActionMenu li.lotusSelected a{background-position:4px center; background-repeat:no-repeat;}
+.lotusActionMenu li.lotusMenuSeparator{border-top-width:1px;border-top-style:solid !important}
+.lotusActionMenu a{padding:3px 40px 5px 25px;text-decoration:none;display:block;background-position:3px center;background-repeat:no-repeat;zoom:1}
+.lotusActionMenu a:hover, .lotusActionMenu a:active, .lotusActionMenu a:visited{text-decoration:none}
+.lotusActionMenu.lotusPlain a{padding-left:10px}
+/***********************************************************/
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for breadcrumbs*/
+/*companion file is breadcrumbsTheme.css*/
+/*** B R E A D C R U M B S ***/
+/*these sit above the page header (lotusHeader)*/
+/*use lotus divider for an image in between breadcrumbs that when clicked shows a drop-down menu, otherwise, just use &gt; between breadcrumbs*/
+.lotusBreadcrumbs{margin:0 0 5px 0}
+.lotusBreadcrumbs .lotusDivider{padding:0 3px;background-position:left center;background-repeat:no-repeat;text-decoration:none}
+.lotusBreadcrumbs .lotusDivider:hover, .lotusBreadcrumbs .lotusDivider:focus, .lotusBreadcrumbs .lotusDivider:active{text-decoration:none}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for buttons*/
+/*companion file is buttonsTheme.css*/
+/*** B U T T O N S ***/
+/*common button styles*/
+/*all buttons*/
+.lotusButton, .lotusBtn, .lotusFormButton{border-width:1px;border-style:solid;text-align:center !important;}
+.lotusButton a, .lotusBtn a, .lotusFormButton, input.lotusBtn, button.lotusBtn{background-position:left center;background-repeat:repeat-x;font-weight:bold;}
+/*all buttons except lotusButton*/
+.lotusBtn a, input.lotusBtn, button.lotusBtn, .lotusFormButton{font-size:.9em;line-height:1.7em;}
+/*all buttons created using an input or button tag*/
+input.lotusBtn, button.lotusBtn, input.lotusFormButton, button.lotusFormButton{padding:2px 7px 3px 7px;cursor:pointer}
+.lotusui_ie button.lotusBtn, .lotusui_ie input.lotusBtn, .lotusui_ie .lotusFormButton{padding:0 1px 1px 1px}
+/*all buttons created from a link*/
+.lotusButton a, .lotusBtn a{border-width:0 1px 1px 1px;border-style:solid;display:block;text-decoration:none;}
+.lotusButton a:hover, .lotusButton a:focus, span.lotusBtn a:hover, span.lotusBtn a:focus{text-decoration:none;}/*gets rid of underline on button hover*/
+
+/*specific button styles*/
+/*button in left column, set width*/
+.lotusButton{margin-bottom:10px;width:174px;}
+.lotusButton a{padding:7px 0;font-size:1.3em;}
+/*default buttons*/
+/*put the lotusBtn class on either a span around a link or on an input button*/
+span.lotusBtn{margin-right:5px;;display:-moz-inline-box/*for FF2*/;display:inline-block;}
+span.lotusBtn a{padding:1px 10px 2px 10px;white-space:nowrap;}
+input.lotusBtn, button.lotusBtn{margin-right:3px;}
+.lotusui_ie6 span.lotusBtn img{padding:7px 0 8px 0} /*need this for button with drop-down arrow to look okay in IE6*/
+/*form buttons*/
+input.lotusFormButton, button.lotusFormButton{margin-right:15px;}
+.lotusDashboardSearch input.lotusFormButton {margin-top:20px;}
+/*disabled buttons*/
+.lotusBtnDisabled, .lotusBtnDisabled a{cursor:default}
+/*miscellaneous*/
+.lotusBtnContainer{margin-bottom:0;padding-bottom:0;white-space:nowrap;}/*put this around a bunch of "link" buttons*/
+.lotusBtnDivider{border-bottom-width:1px;border-bottom-style:solid;padding-bottom:5px}/*add this as an additional class when you need a bottom divider for the buttons*/
+/***********************************************************/
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for captions*/
+/*companion file is captionTheme.css*/
+/*** C A P T I O N ***/
+/*provides a gray background for a caption above another component*/
+.lotusCaption{margin-top:.2em;padding:2px 5px;height:2em;line-height:2em;clear:both;text-align:center;}
+.lotusCaption .lotusMeta{font-size:.9em}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for comments*/
+/*companion file is commentsTheme.css*/
+/*** C O M M E N T ***/
+.lotusPost{padding:7px 7px 7px 0;overflow:hidden;zoom:1}
+.lotusPost .lotusMeta{margin-bottom:5px;margin-right:15px;font-size:0.9em;}
+.lotusPostContent{padding:0 15px 7px 15px;min-height:26px;position:relative;overflow:hidden;zoom:1;}
+.lotusPostAuthorInfo{display:block;float:left;font-size:0.9em;position:relative;width:50px;background-position:right 10px;background-repeat:no-repeat;}/*the background styles are to allow a comment point on variants of the base comment, but the default comment type has no point*/
+.lotusPost .lotusPostAuthorInfo .lotusMeta{margin:0;font-size:1em}
+.lotusui_ie6 .lotusPostContent{left:-3px}/*to counteract the IE6 3px margin bug*/
+.lotusPostName{padding-top:5px;font-weight:bold;line-height:1.1em;}
+.lotusPostAvatar{padding-top:5px}
+.lotusPost .lotusDelete{display:block;position:absolute;top:7px;right:15px}
+.lotusPost .lotusActions{margin-top:5px;}
+.lotusAddComment{padding:4px;zoom:1;margin-bottom:10px;margin-right:4px;}
+.lotusAddComment a{padding:2px 2px 10px 4px;border-width:1px;border-style:solid;display:block;}
+ul.lotusCommentList{margin:0;padding:0;list-style-type:none}/*assigned to the ul tag containing a list of comments*/
+ul.lotusCommentList li{border-top-width:1px;border-top-style:solid}
+ul.lotusCommentList li.lotusFirst{border-top-width:0}
+.lotusCommentList li.lotusAddComment{margin:0;border-top-width:0;font-size:.9em;}
+.lotusCommentList li.lotusAddComment a{padding-bottom:2px}
+/*style adjustments for comments on the board/wall*/
+.lotusBoard .lotusPost{border-top-width:1px;border-top-style:solid}
+.lotusBoard .lotusPostContent{padding:0 15px 7px 0;}
+.lotusBoard .lotusCommentList{margin:-6px 0 5px 0;padding:0;width:500px;}
+.lotusBoard ul.lotusCommentList li{margin:2px 7px 0 57px;border-top-width:0;}
+.lotusBoard ul.lotusCommentList li.lotusFirst{background-position:15px 0;background-repeat:no-repeat;padding-top:10px;}
+.lotusBoard .lotusCommentList .lotusPost{margin-bottom:1px;}
+.lotusBoard .lotusCommentList .lotusPostAuthorInfo{padding-left:6px;width:45px;}
+.lotusBoard .lotusCommentList .lotusPostAvatar{padding-top:5px}
+.lotusBoard .lotusStatus .lotusDelete{top:0}
+.lotusBoard .lotusStatus .lotusPostAvatar{text-align:right;padding:0 7px;}
+.lotusBoard .lotusCommentList .lotusDelete{top:0;right:10px}
+/*styles for comments in a discussion forum*/
+.lotusForum .lotusPost{margin:7px 0;}
+.lotusForum .lotusPostAuthorInfo{width:100px;text-align:center}
+.lotusForum .lotusPostAvatar{padding-top:0}
+.lotusForum .lotusPostContent{padding:7px 15px;}
+.lotusForum ul.lotusCommentList li{border-width:0}
+.lotusForum ul.lotusCommentList .lotusChild{margin-left:0;padding-left:20px;list-style-type:none;background-position:left top;background-repeat:no-repeat;}
+.lotusForum .lotusPostDetails{padding:5px 0}
+.lotusForum .lotusPostDetails blockquote{margin:4px 0;padding:4px 8px;width:75%;border-style:solid;border-width:1px 1px 1px 3px;}
+/*simple comment bubble*/
+.lotusCommentBubble{padding-top:10px;background-position:15px 0;background-repeat:no-repeat;zoom:1}
+.lotusCommentBubbleBody{padding:5px 10px 5px 15px}
+.lotusCommentBubble .lotusMeta{font-size:.9em}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for dialogs*/
+/*companion file is dialogsTheme.css*/
+/*** D I A L O G ***/
+/*this can be wrapped in a dojo dialog, if desired, which gives you the lightbox behavior for free, else, wrap it in a div assigned the class lotusDialogWrapper*/
+.lotusDialogWrapper{position:absolute;left:0;top:-9999px;}
+.lotusDialogBorder{border-width:4px;border-style:solid;max-width:600px;}
+.lotusui_ie6 .lotusDialogBorder{width:expression(this.offsetWidth > 600 ? "600px" : "auto" );}
+.lotusDialog{opacity:1;height:auto;}
+.lotusDialog h1{font-weight:bold;padding:12px 12px 12px 20px;border-bottom-width:1px;border-bottom-style:solid;background-position:left bottom;background-repeat:repeat-x;}
+.lotusDialog h2{font-weight:bold;padding:12px 12px 12px 20px;margin:0 !important/*so it doesn't pick up the margins from lotusForm*/}
+.lotusDialog h1 .lotusClose, .lotusDialog h2 .lotusClose{border-width:1px;border-style:solid}
+.lotusDialog .lotusText{width:97%}
+.lotusDialog .lotusDialogContent{padding:20px 12px 20px 20px;border-bottom-width:1px;border-bottom-style:solid;max-height:300px;overflow:auto;}
+.lotusui_ie6 .lotusDialog .lotusDialogContent {height:expression(this.scrollHeight > 399 ? "400px" : "auto")}
+.lotusDialog .lotusDialogFooter{padding:12px 12px 12px 20px;}
+.lotusDialog td.lotusFormLabel{vertical-align:top;}
+.lotusDialog ul li{margin-bottom:3px;list-style:none;}
+
+/*for lightbox*/
+.lotusOverlay{display:none;position:absolute;top:0;left:0;width:100%;background-color:black;-moz-opacity:0.3;opacity:.30;filter: alpha(opacity=30);}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for the display controls*/
+/*companion file is viewsTheme.css*/
+/***************************************/
+/*** D I S P L A Y   C O N T R O L S ***/
+/***************************************/
+.lotusViewControl{display:table;}
+.lotusViewControl span{margin:5px 10px 0 0;float:left}/*styles for the text preceeding the control*/
+.lotusViewControl div{padding:1px;border-width:1px;border-style:solid;display:table;background-position:left center;background-repeat:repeat-x;zoom:1}
+.lotusImagesOff .lotusViewControl div{border-width:0}
+.lotusViewControl td{vertical-align:middle;padding:0}
+.lotusViewControl td div{display:block;overflow:hidden}
+.lotusImagesOff .lotusViewControl td div{overflow:visible}
+.lotusViewControl .lotusView{margin:0;padding:0;width:20px;height:20px;}
+.lotusImagesOff .lotusViewControl .lotusView{width:auto;height:auto}
+.lotusImagesOff .lotusViewControl .lotusView span{margin:0 5px}
+/***********************************************************/
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for feeds*/
+/*companion file is feedsTheme.css*/
+/*** F E E D S **/
+/*the feed links under the content*/
+.lotusFeeds{margin:5px 10px;}
+.lotusFeeds a.lotusFeed{padding-left:20px;margin-right:7px;background-position:left center;background-repeat:no-repeat;display:-moz-inline-box;display:inline-block;zoom:1}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for forms*/
+/*companion file is formsTheme.css*/
+/*** F O R M S ***/
+/*these styles are for inline and popup forms*/
+.lotusForm h2 {margin:25px 15px 15px 25px;font-size:1.3em;}
+.lotusForm h2 .lotusMeta{font-size:.8em;font-weight:normal}
+.lotusForm tr.lotusFormFieldRow td, .lotusForm td.lotusFormFieldRow{padding-bottom:10px}
+.lotusTable .lotusForm td, .lotusFormTable td {border-width:0 !important;padding-right:3px;vertical-align:top}
+.lotusForm td.lotusFormLabel {vertical-align:top;text-align:right;padding-right:10px;padding-top:1px}
+.lotusui_ie .lotusForm td.lotusFormLabel{padding-top:2px}
+.lotusForm td label{font-weight:bold;}
+.lotusForm label.lotusCheckbox{font-weight:normal}/*use for radio buttons, too*/
+.lotusForm .lotusText {width:99%;}
+.lotusForm textarea {margin-bottom:7px;}
+.lotusFormErrorSummary div {margin:10px 15px 3px 25px;}
+.lotusFormErrorSummary ul {margin:0 15px 10px 40px;list-style-type:disc;/*list-style-position:inside;*/}
+.lotusFormError, .lotusFormRequired {font-weight:bold;}
+td.lotusFormRequired {padding-bottom: 0 !important;}
+.lotusFormTable {width:100%;}
+.lotusFormSection {padding:5px 0 0 0;}
+.lotusFormTable .lotusFormFooter{padding:10px 25px !important;}
+/* form button element styles can be found in the button component */
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for a mini grid*/
+
+/*** G R I D ***/
+/*for a group of same-sized elements with a div as the outer wrapper*/
+/*for example, a group of people photos*/
+.lotusGrid{zoom:1;margin:5px 10px 0 10px;overflow:hidden;zoom:1}
+.lotusui_ie .lotusGrid{margin-bottom:5px;}
+.lotusGrid div{margin:0 5px 5px 0;float:left}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for header*/
+/*companion file is headerTheme.css*/
+/*** H E A D E R ***/
+/*found at the top of the page, center column*/
+.lotusHeader{margin-bottom:5px;margin-top:-5px;overflow:hidden;position:relative;zoom:1}
+div.lotusHeader{margin-bottom:15px}/*this is for a simple header, not in a table layout, to adjust the bottom margin*/
+.lotusHeader img{margin-right:10px;}
+.lotusHeader .lotusDetails img, .lotusHeader .lotusBtnContainer img{margin-right:0;} /*to set image behavior back to normal, details row*/
+.lotusHeader .lotusDetails{margin-top:5px;position:relative;white-space:break-word;clear:both}
+.lotusHeader .lotusBtnContainer{margin-top:10px;}
+/*filters sit under the header and are interactive (you can remove them)*/
+.lotusFilters{margin-top:5px;line-height:1.8em;font-size:.9em}
+.lotusFilters .lotusAction{font-size:1em !important}/*reset action links, they are already .9em*/
+.lotusFilters a.lotusFilter{padding:1px 3px;border-width:1px;border-style:solid;-moz-border-radius:4px;-webkit-border-radius:4px;text-decoration:none}
+.lotusFilters a.lotusFilter:hover, .lotusFilters a.lotusFilter:focus{text-decoration:none}
+/*to keep them from getting too tall in IE6*/
+.lotusui_ie6 .lotusFilters a{display:inline-block;}
+.lotusui_ie6 .lotusFilters a.lotusFilter{padding:0 5px;line-height:1.6em}
+.lotusFilters .lotusClose{padding:0 4px}
+.lotusFilters .lotusDivider{padding:0 5px}
+.lotusFilters .lotusIcon:hover, .lotusFilters .lotusIcon:focus{text-decoration:none}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for help and tips*/
+/*companion file is helpTheme.css*/
+/*** I N F O   B O X ***/ 
+/*this is used for help and tips*/
+.lotusInfoBox, .portlet-msg{margin:15px 0 5px 0;padding:5px;border-width:1px;border-style:solid;-moz-border-radius:2px;-webkit-border-radius:2px;overflow:hidden;zoom:1}
+.lotusInfoBox.lotusFirst{margin-top:0}/*this style definition (with no spaces) applies to any div with class="lotusInfoBox lotusFirst"*/
+.lotusInfoBox h3, .portlet-msg h3{margin:5px 0 10px 0;padding:0 0 0 5px;overflow:hidden;zoom:1}
+.lotusInfoBox h3 img, .portlet-msg h3 img{margin:3px 5px 0 0;border-width:1px;border-style:solid}
+.lotusSection .lotusInfoBox h3 span.lotusLeft{width:auto}/*h3 tags in a section are set to 90% width - need to reset*/
+.lotusInfoBox h4, .portlet-msg h4{margin:2px 5px;font-weight:bold}
+.lotusInfoBox p, .portlet-msg p{margin:0;padding:5px;}
+.lotusInfoBox ul, .portlet-msg ul{list-style-type:disc;margin-left:20px;margin-top:5px;padding-left:0}
+.lotusInfoBox .lotusInlinelist, .portlet-msg .lotusInlinelist{padding-bottom:5px;padding-left:0;}
+.lotusInfoBox .lotusInlinelist li, .portlet-msg .lotusInlinelist li{padding-bottom:5px;border-left-width:0;}
+/*put lotusHelp as an additional style to lotusInfoBox for help popups*/
+.lotusHelp{position:absolute;width:200px;left:0;top:-9999px;padding:4px;}
+.lotusHelp .lotusInfoBox{margin:0;border-width:1px;border-style:solid;-moz-border-radius:0;-webkit-border-radius:0;background-position:left top;background-repeat:repeat-x;}
+.lotusHelp h3{margin:4px 3px 0 0;float:left}
+.lotusMedium{width:300px}/*you can put this as an additional class to set the width to 300 pixels*/
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for legal*/
+/*companion file is legalTheme.css*/
+/*** L E G A L   S T A T E M E N T ***/
+/*IBM logo and legal statement*/
+/*3 different versions - regular pages, login page, and about page*/
+/*the new format uses a table.  The div styles are legacy styles*/
+div.lotusLegal{margin:15px 25px 10px 25px;min-height:37px}
+div.lotusLegal .lotusLicense{background-position:left center;background-repeat:no-repeat;margin-bottom:10px;min-height:37px}
+div.lotusLegal, table.lotusLegal td{font-size:0.8em;line-height:1.2em}
+div.lotusLegal p{margin:0;padding:0 0 0 110px;}
+table.lotusLegal{margin:5px 25px 10px 25px;}
+table.lotusLegal td{vertical-align:middle;padding:5px;}
+.lotusLogin div.lotusLegal .lotusLicense{background-position:left top}
+.lotusLogin .lotusLegal{margin-left:10px}
+.lotusLogin table.lotusLegal, .lotusAbout table.lotusLegal{margin-top:15px}
+.lotusui_ie6 div.lotusLegal .lotusLicense{height:50px;overflow:visible} /*this is the legacy way of doing the legal stuff, sans table.  Remove at some point*/
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for lists*/
+/*companion file is listsTheme.css*/
+/*** L I S T S ***/ 
+/*use in conjuction with sections if you want a more complex list*/
+ul.lotusList{clear:both;overflow:hidden;margin:0;padding:0;list-style-type:none}
+ul.lotusList li {margin:1px 0;padding:3px 2px;clear:both;zoom:1}
+ul.lotusEditable li{text-align:right;overflow:hidden} /*use this class in combination with list class - allows you to put a delete button on a list item*/
+.lotusList a, ul.lotusList li.lotusSelected a{border-bottom-width:1px;border-bottom-style:dotted}/*to keep links for jumping on hover*/
+ul.lotusList li.lotusSelected a{text-decoration:none;}
+ul.lotusList img.lotusLeft{margin-right:3px}
+ul.lotusList div p{margin-top:3px;margin-bottom:0}/*second line of data*/
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for menu*/
+/*companion file is menuTheme.css*/
+/*** M E N U ***/
+/*this is the green menu found at the top of the left column*/
+/*this menu is set up to allow for rounded corners in all browsers and is a set width*/
+.lotusMenu, .portlet-menu{margin:0 0 15px 0;padding:5px 0;width:178px;border-width:1px;border-style:solid;-moz-border-radius:4px;-webkit-border-radius:4px}
+.lotusMenu .lotusInner, .portlet-menu .lotusInner{overflow:hidden}
+.lotusMenu .lotusMenuSection{overflow:hidden;margin:0 0 3px 0;padding-bottom:5px;border-bottom-width:1px;border-bottom-style:solid;zoom:1}/*creates a section in the menu, with a divider at the bottom*/
+.lotusMenu .lotusMenuSubsection{margin:10px 0 0 20px;}/*allows you to indent a section of the menu*/
+.lotusMenu h2, .portlet-menu h2{margin:0 0 7px 10px;padding:0;font-size:1em}
+.lotusMenu h3, .portlet-menu h3{margin:0 5px 0 5px;padding:2px 0 2px 10px;}/*not sure we are still using this*/
+.lotusMenu .lotusMenuSubsection h3{margin-left:-15px}
+.lotusMenu h3.selected, .portlet-menu h3.selected{border-width:1px;border-style:solid;}
+.lotusMenu h3 a{margin-right:5px}
+/*Use a ul element for menu items. Put an additional lotusIcons class on it if your menu items have icons*/
+.lotusMenu ul, .portlet-menu ul{margin:0;padding:0;list-style-type:none;}
+.lotusMenu li{zoom:1}/*sets hasLayout in IE*/
+.lotusMenu li img, .portlet-menu .lotusMenu li img{margin:0 3px 0 0}
+.lotusMenu li a, .lotusMenu li a:visited, .portlet-menu li a, .portlet-menu li a:visited{padding:5px 0 5px 10px;display:block;text-decoration:none;font-weight:normal;line-height:1.0em}
+.lotusMenu ul.lotusIcons img{vertical-align:text-bottom}
+.lotusMenu ul.lotusIcons a{padding:3px 0 3px 10px}
+.lotusMenu li a:hover, .lotusMenu li a:focus, .portlet-menu li a:hover, .portlet-menu li a:focus{text-decoration:underline}
+.lotusMenu li.lotusSelected a, .lotusMenu li.lotusSelected a:visited, .portlet-menu li.lotusSelected a, .portlet-menu li.lotusSelected a:visited{margin:0 5px;padding-left:6px;border-width:1px;border-style:solid;text-decoration:none;cursor:default;font-weight:bold;}
+.lotusMenu div.lotusChunk, .portlet-menu .lotusMenu div.lotusChunk {margin:5px 5px 0 0;}/*lotusChunk allows you to apply vertical spacing within sections - wrap a div with this class around "chunks" of data*/
+.lotusTwistyOpenMenu, .lotusTwistyClosedMenu{width:11px;height:16px}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for messages*/
+/*companion file is messagesTheme.css*/
+/*** M E S S A G E S ***/
+/*these are the yellow warning/error messages that show up at the top of the content area*/
+.lotusMessage{padding:5px;margin-bottom:12px;border-width:1px;border-style:solid;-moz-border-radius:4px;-webkit-border-radius:4px;overflow:hidden;zoom:1}
+.lotusMessage img {margin:2px 5px 0 0;float:left}
+.lotusMessage span{display:block;margin-left:20px}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for paging*/
+/*companion file is pagingTheme.css*/
+/*** P A G I N G***/
+/*these are the page bars at the top and bottom of a table/list of entries*/
+.lotusPaging{margin-top:2px;padding:2px 5px;height:2em;line-height:2em;clear:both;text-align:center;font-size:.9em;}
+.lotusPaging a, .lotusPaging a:visited{font-weight:bold !important;}
+.lotusPaging input{width:20px;text-align:center;font:inherit}
+.lotusPaging div{padding-left:5px}
+.lotusPaging .lotusInlinelist li{padding:0 6px;}
+.lotusPaging .lotusInlinelist li.lotusLast{padding-left:0}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for the customization palette*/
+/*companion file is paletteTheme.css*/
+/*** P A L E T T E ***/
+/*this is the palette that opens under the place bar to allow users to customize the UI */
+.lotusPalette{overflow:hidden;zoom:1;}
+.lotusPaletteHeader{padding:7px 15px;overflow:hidden;zoom:1;position:relative;line-height:1.9em}
+.lotusPaletteHeader a{text-decoration:none}
+.lotusPaletteHeader .lotusTabs a, .lotusPaletteHeader .lotusTabs a:visited{padding:8px 8px 8px 5px;}
+.lotusPaletteHeader .lotusTabs li.lotusSelected a{font-weight:bold}
+.lotusPaletteHeader .lotusTabs li a:hover, .lotusPaletteHeader .lotusTabs li a:focus{text-decoration:underline}
+.lotusPaletteHeader .lotusTabs li.lotusSelected a:hover, .lotusPaletteHeader .lotusTabs li.lotusSelected a:focus{text-decoration:none}
+.lotusPalette .lotusClose{border-width:1px;border-style:solid;margin-left:20px}
+.lotusPaletteNav{width:205px;float:left;height:18em;}
+.lotusPalette .lotusChunk{margin:10px 0 10px 10px;overflow:hidden}
+.lotusPalette .lotusSearch input.lotusText{width:143px}
+.lotusPaletteNav h3{margin-left:10px;margin-bottom:3px}
+.lotusPaletteNav h3 img{border-width:1px;border-style:solid;vertical-align:bottom}
+.lotusPalette .lotusMenu{margin-left:10px;border-width:0;-moz-border-radius:0;-webkit-border-radius:0;height:11em;overflow:auto}
+.lotusui_ie .lotusPalette .lotusMenu{height:12.8em}/*we want 6 items to show. Adjustment for IE*/
+.lotusPalette .lotusMenu li a, .lotusPalette .lotusMenu li a:visited, .lotusPalette .lotusMenu li a:active{margin-right:2px;}/*to keep horizontal scrollbar from showing on click*/
+.lotusPalette .lotusMenu li.lotusSelected a, .lotusPalette .lotusMenu li.lotusSelected a:visited{border-width:0;}
+.lotusPalette .lotusMenu li.lotusMore a{margin-right:5px;background-position:96% center;background-repeat:no-repeat}
+.lotusPaletteContent{padding:10px 0;zoom:1;height:18em;overflow:auto}
+.lotusui_ie .lotusPaletteContent{height:19.5em}
+.lotusPaletteContent.lotusPlain div.lotusIcon, .lotusui_ie6 .lotusPlain div.lotusIcon{width:1em} /*when there are no icons, add this additional class to lotusPaletteContent and write out the lotusIcon div with an &nbsp;*/
+.lotusPaletteWidget{margin:0 10px .5em 0;padding:.5em 0;width:18em;height:2.6em;float:left;overflow:hidden;line-height:1.4em;border-width:1px;border-style:solid;display:table;}
+.lotusPaletteWidget .lotusInner{display:table-row}
+.lotusPaletteWidget div{font-weight:bold;display:table-cell;vertical-align:middle;}
+.lotusPaletteWidget div.lotusIcon{width:34px;text-align:center}
+.lotusPaletteWidget div.lotusIcon span{display:block;height:16px;width:16px;padding:3px;margin:.5em 5px;border-width:1px;border-style:solid}
+.lotusPaletteWidget div.lotusIcon img{width:16px;height:16px;}/*need to force this size to preserve layout - so widgets will float properly*/
+.lotusPaletteWidget a.lotusIcon{display:table-cell;width:25px;vertical-align:middle;background-position:left center;background-repeat:no-repeat;font-size:2em/*to make alt text larger*/}
+.lotusPaletteWidget a.lotusIcon:hover, .lotusPaletteWidget a.lotusIcon:focus{text-decoration:none}
+.lotusui_ie .lotusPaletteWidget div{float:left;margin-top:.25em;}
+.lotusui_ie .lotusPaletteWidget div.lotusIcon span, .lotusui_ie .lotusPaletteWidget img{margin-top:0}
+.lotusui_ie .lotusPaletteWidget a.lotusIcon{float:right;display:block;}
+.lotusPaletteWidget .lotusTitle h4{display:block;height:1.2em;font-weight:normal}
+.lotusui_ie .lotusPaletteWidget .lotusTitle h4{width:10em;}
+.lotusPaletteWidget .lotusRating0, .lotusPaletteWidget .lotusRating1, .lotusPaletteWidget .lotusRating2, .lotusPaletteWidget .lotusRating3, .lotusPaletteWidget .lotusRating4, .lotusPaletteWidget .lotusRating5{background-position:left bottom;background-repeat:no-repeat;padding:0 0 12px 2px} 
+.lotusLargeWidgets .lotusPaletteWidget{height:5.3em}
+.lotusLargeWidgets .lotusPaletteWidget div.lotusIcon{width:50px}
+.lotusLargeWidgets .lotusPaletteWidget div.lotusIcon span{height:50px;width:50px;margin:0;padding:0 5px;border-width:0}
+.lotusLargeWidgets .lotusPaletteWidget div.lotusIcon img{width:48px;height:48px;border-width:1px;border-style:solid}
+.lotusPaletteContent .lotusPaging{padding:2px 0}
+.lotusPaletteContent .lotusPaging div{padding-left:0;margin-left:0}
+.lotusPaletteContent .lotusPaging .lotusInlinelist{margin-right:10px;}
+.lotusPalette .lotusPaging input.lotusText{border-width:1px;border-style:solid}
+.lotusPalette .lotusPaging a, .lotusPalette .lotusPaging a:visited{text-decoration:none}
+.lotusPalette .lotusPaging a:hover, .lotusPalette .lotusPaging a:focus{text-decoration:underline}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for search*/
+/*companion file is searchTheme.css*/
+/*** S E A R C H ***/
+/*these styles support the search UI in the title bar*/
+.lotusSearch input, .lotusSearch select{vertical-align:middle;}
+.lotusSearch .lotusSearchButton{border-width:1px;border-style:solid;padding:0}
+.lotusSearch .lotusText, .lotusSearch .lotusScope{margin:0 1px;width:11em;border-width:1px;border-style:solid;zoom:1;}
+.lotusSearch .lotusText{padding:2px 5px;height:1.3em;line-height:1.3em;}
+.lotusSearch .lotusScope{display:block;background-position:4px center;background-repeat:no-repeat;text-decoration:none;}
+.lotusSearch .lotusScope:visited, .lotusSearch .lotusScope:hover, .lotusSearch .lotusScope:focus, .lotusSearch .lotusScope:active{text-decoration:none;}
+.lotusSearch .lotusScope span{padding:2px 3px 2px 25px;height:1.3em;line-height:1.3em;display:block;background-position:98% center;background-repeat:no-repeat;}
+.lotusui_ie .lotusSearch .lotusText{height:auto}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for search tab*/
+/*companion file is searchTabTheme.css*/
+/*** S E A R C H   T A B ***/
+/*this is the UI for a search/find control that hides the input fields until the user opens them*/
+/*this must be inside a relatively positioned div - override default positioning in the code, if necessary*/
+div.lotusSearchTab{position:absolute;right:0;bottom:0;padding:.3em 5px;z-index:1;border-width:1px;border-style:solid;-moz-border-radius:4px;-webkit-border-radius:4px;}
+.lotusTabExpanded{-moz-border-radius:4px 4px 0 0;-webkit-border-top-left-radius:4px;-webkit-border-top-right-radius:4px}
+.lotusSearchTab a, .lotusSearchTab a:visited{padding-right:18px;display:block;background-position:center right;background-repeat:no-repeat;text-decoration:none;font-weight:bold}
+.lotusSearchTab a:hover, .lotusSearchTab a:focus{text-decoration:none}
+form.lotusSearchForm{margin:0;padding:12px 10px;position:absolute;top:2.1em;right:0;display:none;z-index:0;border-width:1px;border-style:solid;-moz-border-radius:4px 0 4px 4px;-webkit-border-top-left-radius:4px;-webkit-border-bottom-left-radius:4px;-webkit-border-bottom-right-radius:4px;white-space:nowrap}
+.lotusSearchForm input.lotusText{width:15em}
+.lotusSearchForm input, .lotusSearchForm select{vertical-align:middle;margin-left:3px;}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for section*/
+/*companion file is sectionTheme.css*/
+/*S E C T I O N */
+/*this is used to space out different elements in all three columns*/
+/*a section contains a header*/
+.lotusSection, .portlet-section{margin:0 0 15px -3px;padding:0 0 5px 0;clear:both;zoom:1;position:relative}
+.lotusSectionBody{margin:0 0 0 15px}
+.lotusSection div.lotusSubsection{margin:5px 2px 0 8px;clear:both;}
+.lotusSection div.lotusChunk{margin-top:5px;clear:both;zoom:1}
+.lotusSection h2, .lotusSection h3{zoom:1}/*sets hasLayout in IE*/
+.lotusSection h2{overflow:hidden;padding:4px 3px 4px 0;cursor:pointer !important}/*use important to override move cursor when the lotusDraggable class is assigned to the header*/
+.lotusSection h2 span.lotusLeft, .lotusSection h3 span.lotusLeft{width:80%}/*header text*/
+.lotusSection h2 a.lotusIcon{float:right;width:16px;height:18px;background-position:center center;background-repeat:no-repeat}/*this is the action menu icon*/
+.lotusSection h2.lotusIcons img, .lotusSection h3.lotusIcons img, .portlet-section h2.lotusIcons img, .portlet-section h3.lotusIcons img{margin-left:3px}
+.lotusSection .lotusDragHandle{width:9px;height:17px;position:absolute;left:-7px;top:5px;background-position:center center;background-repeat:no-repeat;zoom:1;cursor:move;visibility:hidden}/*we may want to move this outside of a section and make it a more general class.  It must be positioned within a relative div*/
+.lotusSection div.lotusLast, .portlet-section div.lotusLast{margin-bottom:0}/*gets rid of extra bottom margin on the last "subsection"*/
+.lotusSection .lotusList{margin:0 0 0 -8px} /*allows selection to extend to the left and right of the list items*/
+.lotusSection .lotusList li{padding-left:8px;padding-right:5px}
+.lotusSection .lotusTagCloud{width:100%; overflow:hidden;}
+/*for left alignment in a section*/
+.lotusSection .lotusVertTable, .lotusSection div.lotusChunk .lotusVertTable{margin-left:-2px}/*to offset the 2px padding on the first table cell*/
+.lotusSection ul.lotusTree{margin-left:-10px}
+/****************************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for sort*/
+/*companion file is sortTheme.css*/
+/*** S O R T ***/
+/*these are for the sort controls found at the top of a table/list of entries*/
+.lotusSort{margin:3px 10px;font-size:.9em}
+.lotusSort .lotusInlinelist li{padding:2px 5px}
+.lotusSort .lotusInlinelist li.lotusFirst{padding-left:0}
+.lotusSort a{padding:0;background-position:96% center;background-repeat:no-repeat;text-decoration:underline;display:-moz-inline-box/*for FF2*/;display:inline-block;vertical-align:middle}
+a.lotusMoreSorts{padding:0 12px 0 5px;}
+a.lotusActiveSort{text-decoration:none}
+.lotusSort .lotusAscending, .lotusSort .lotusDescending{padding-right:12px;}
+/****************************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for tables*/
+/*companion file is tablesTheme.css*/
+/*** T A B L E S ***/
+/*layout table*/
+/*note, if you need to use the structure of a relative div containing an absolute div within a layout table, be aware that Safari will only show the portion of your absolute div that is within the table area.  This is by design.*/
+/*there is no cellpadding built into these tables. Used judiciously for complex layouts.*/
+table.lotusLayout td{padding:0;vertical-align:top;text-align:left;} /*default alignment*/
+table.lotusLayout td.lotusvAlignMid{vertical-align:middle}/*allows you to override default alignment*/
+/*used for presenting information in a vertical format*/
+.lotusVertTable th, .lotusVertTable td{padding:2px}
+.lotusVertTable th{padding-right:50px;text-align:left;}
+.lotusVertTable p{margin-top:0}
+/*entry/data table*/
+.lotusTable{width:100%;}
+.lotusTable th, .lotusTable td{padding:5px 2px;vertical-align:top;}
+.lotusTable th.lotusSubHeader{padding-top:15px}/*wrap an h4 tag in a th tag that spans the table columns for a subheader*/
+.lotusTable .lotusFirst th.lotusSubHeader{padding-top:5px}
+.lotusTable .lotusSummary td{padding:5px 2px 0 2px}
+.lotusTable .lotusDetails td, .lotusTable .lotusMore td{padding:0 2px 5px 2px}
+.lotusTable td p:first-child, p.lotusFirst{margin-top:0}/*for IE6, you have to assign the class lotusFirst to the first paragraph*/
+.lotusTable td, .lotusTable th.lotusRowHeader, .lotusTable th.lotusSubHeader{border-top-width:1px;border-top-style:solid}/*use lotusRowHeader as a class on a th tag for a header that is the first cell of a row*/
+.lotusTable .lotusLast td, .lotusTable .lotusLast th.lotusRowHeader{border-bottom-width:1px;border-bottom-style:solid}/*this give the option of a border under the last table row*/
+.lotusTable .lotusDetails td, .lotusTable .lotusFirst td, .lotusTable .lotusMore td, .lotusTable .lotusFirst th.lotusRowHeader, .lotusTable .lotusFirst th.lotusSubHeader{border-top-width:0}
+.lotusTable th.lotusFirstCell, .lotusTable td.lotusFirstCell{padding-left:10px}
+.lotusTable th.lotusLastCell, .lotusTable td.lotusLastCell{padding-right:10px }
+.lotusTable th.lotusAltCell, .lotusTable td.lotusAltCell{border-right-width:1px;border-right-style:solid;border-bottom-width:1px;border-bottom-style:solid}
+.lotusTable div.lotusChunk{margin:7px 0;clear:none}
+.lotusTable .lotusSS{font-size:.9em;white-space:nowrap;width:30px}
+.lotusTable .lotusType{margin-left:5px;padding:0 0 6px 20px;font-weight:normal;font-size:.75em;background-position:left top;background-repeat:no-repeat;}/*allows you to add an image and text inside a header to indicate the type of entry - requires an additional class to define the type (in defaultThemes.css)*/
+/*h4 tags are used for entry titles*/
+.lotusTable h4.lotusComplete, .lotusTable h4.lotusComplete a{text-decoration:line-through} /*for to do items*/
+/*h5 tags are used for subsections in entry details*/
+.lotusTable h5{margin:12px 0 2px 0;}
+/*when the h4 tag occurs in the details row (like in notifications), we need some bottom margin*/
+.lotusTable .lotusDetails h4{margin-bottom:2px}
+.lotusTable .lotusDivider{padding:0 5px}
+.lotusTable .lotusFirstCell input{margin:3px 0 0 0}
+/*this table also shows up at the top of the UI, for announcements.*/
+.lotusInfoTable{margin:0 0 12px 0;border-width:1px;border-style:solid;-moz-border-radius:2px;-webkit-border-radius:2px;overflow:hidden;background-position:top left;background-repeat:repeat-x;}
+.lotusInfoTable h2{position:relative;zoom:1}
+.lotusInfoTable th, .lotusInfoTable td{padding:5px 10px}
+.lotusInfoTable .lotusClose{position:absolute;right:-5px;top:0;border-width:1px;border-style:solid;display:block;width:15px;height:15px;}
+.lotusui_ie6 .lotusInfoTable .lotusClose{font-size:12px}/*preserves the height of the close button when the font size is made larger*/
+.lotusTable .lotusMeta{font-size:.9em}
+.lotusTable .lotusActions{white-space:nowrap}/*fix for Safari*/
+/****************************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for tabs*/
+/*companion file is tabsTheme.css*/
+/*** T A B S ***/
+/*tabs are used in content area and titlebar.  The style adjustments needed for the titlebar are grouped with the titleBar styles*/
+.lotusTabContainer{height:3em;position:relative;border-bottom-width:1px;border-bottom-style:solid;z-index:1;margin-bottom:10px;}
+ul.lotusTabs, .portlet-tab{margin:0;padding:0;position:absolute;left:10px;bottom:-1px;overflow:hidden;list-style:none;}
+.lotusTabs li, .portlet-tab li{margin-right:2px;padding-left:3px;float:left;border-width:1px;border-style:solid;}
+.lotusTabs a, .lotusTabs a:visited, .portlet-tab a, .portlet-tab:visited{padding:6px 8px 6px 5px;display:block;text-decoration:none;line-height:1em;}/*line-height is for IE, to keep the selected tab sitting on top of the border when there is a drop-down image in the tab*/
+.lotusTabs a:hover, .lotusTabs a:focus, .portlet-tab a:hover, .portlet-tab a:focus{text-decoration:none}
+/****************************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for tag cloud*/
+/*companion file is tagCloudTheme.css*/
+/*** T A G   C L O U D ***/
+/*a tag cloud is a visual way of displaying the relative importance of tags, with lotusF1 being of least importance and lotusF5 being most important*/
+.lotusTagCloud ul{margin:0;padding:0}
+.lotusTagCloud li{display:inline;zoom:1}
+.lotusui_ie .lotusTagCloud li{margin-right:3px}
+.lotusTagCloud a{text-decoration:none;font-weight:bold}
+.lotusTagCloud a:hover, .lotusTagCloud a:focus{text-decoration:underline;}
+a.lotusF5, a.lotusF5:visited{font-size:115%;}
+a.lotusF4, a.lotusF4:visited{font-size:108%;}
+a.lotusF3, a.lotusF3:visited{font-size:100%;}
+a.lotusF2, a.lotusF2:visited{font-size:95%;}
+a.lotusF1, a.lotusF1:visited{font-size:90%;}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for tree*/
+/*companion file is treeTheme.css*/
+/*** T R E E ***/ /*needs review - need additional tree visuals from Jason*/
+ul.lotusTree, ul.portlet-tree{margin:0;padding:0;list-style-type:none;line-height:1.5em;}
+.lotusTree ul, .portlet-tree ul{margin:0 0 0 14px;padding:0;list-style-type:none;}
+.lotusTree ul *, .portlet-tree ul *{list-style-type:none} /*makes sure all nested lists don't have bullets*/
+.lotusTree li, .portlet-tree li{margin:0;padding:0;}
+.lotusTree a, .portlet-tree a{text-decoration:none;}
+.lotusTree a:hover, .lotusTree a:focus, .portlet-tree a:hover, .portlet-tree a:focus{text-decoration:underline}
+.lotusTree .lotusIcon{margin-right:3px}
+.lotusTree input{margin:0 4px 0 2px;padding:0}
+/*this is a specific type of tree*/
+.lotusOrgChart ul{margin-left:11px}
+.lotusOrgChart li{padding:2px 0}
+.lotusOrgChart li a{margin:0;padding:0 0 5px 20px;background-position:left top;background-repeat:no-repeat;}
+.lotusOrgChart .lotusBottom{padding:2px 0 5px 20px;background-position:left 5px;background-repeat:no-repeat;}
+.lotusOrgChartTop, .lotusOrgChartMiddle, .lotusOrgChartBottom{padding-left:20px;background-position:left center;background-repeat:no-repeat;}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*styles for the person card, a component sometimes used in a non-One UI application*/
+
+/*** V C A R D (P E R S O N   C A R D)***/
+/*this is the popup person card that shows up when you click on a person link (via a hover link)*/
+.lotusVCard{display:table;position:absolute;left:0;top:-9999px;width:400px;margin:4px 0 0 4px;-moz-border-radius:4px;-webkit-border-radius:4px;}
+.lotusVCard .lotusContainer{display:table;width:400px;position:relative;top:-4px;left:-4px;border-width:1px;border-style:solid;}
+/*lotusAppLinks are the application links at the top of the card*/
+.lotusVCard .lotusAppLinks td{background-position:left center;background-repeat:repeat-x;border-width:0 0 1px 1px;border-style:solid;text-align:center}
+.lotusVCard .lotusAppLinks td.lotusFirst{border-left-width:0}
+.lotusVCard .lotusAppLinks a{display:block;padding:3px 9px;}
+/*the more arrow, for when there is a second row of application links*/
+.lotusVCard .lotusMore{width:16px;margin-right:10px;background-position:right center;background-repeat:no-repeat;}
+.lotusVCard .lotusMore:hover, .lotusVCard .lotusMore:focus{text-decoration:none}
+/*lotusPersonDetails is the detail area of the card that contains all info for the person*/
+.lotusVCard .lotusDetails{padding:10px;border-top-width:1px;border-top-style:solid;}
+.lotusVCard .lotusPhoto{padding:3px;border-width:1px;border-style:solid;float:left;position:relative/*IE fix for floated elements within a relative container not showing*/}
+.lotusVCard .lotusPersonInfo{margin-left:86px}
+/*lotusPersonActions are actions you can perform on this person, from the person card*/
+.lotusVCard .lotusPersonActions{padding:5px;border-top-width:1px;border-top-style:solid}
+/*action menu within person card*/
+.lotusVCard .lotusActionMenu{position:static;left:auto;top:auto;border-width:0;display:none;width:auto;margin-top:-10px}
+/*lotusComments in the person card contains status information for the person*/
+.lotusVCard .lotusComment{clear:both}
+.lotusVCard .lotusDetails .lotusComment{position:relative;margin:-10px 0 2px -10px;padding:0 0 0 10px;zoom:1}
+.lotusVCard .lotusDetails .lotusCommentHeader{padding-left:15px;padding-bottom:3px;position:absolute;top:0;left:16px;z-index:1;height:1.6em;background-position:left bottom;background-repeat:no-repeat;}
+.lotusVCard .lotusDetails .lotusCommentBody{position:relative;top:1.7em;margin:-1px 0 2.2em 0;padding:5px 10px;border-width:1px;border-style:solid;z-index:0;-moz-border-radius:4px 4px 6px 6px;-webkit-border-top-left-radius:4px;-webkit-border-top-right-radius:4px;-webkit-border-bottom-left-radius:6px;-webkit-border-bottom-right-radius:6px}
+/*adjustments for an inline version of the card*/
+.lotusInlineVCard{position:static;left:auto;margin:0 0 10px 0}
+.lotusInlineVCard, .lotusInlineVCard .lotusContainer{width:175px;position:static;top:auto;left:auto}
+.lotusInlineVCard .lotusPhoto{padding:0;border-width:0;margin-top:5px}
+.lotusInlineVCard .lotusPersonInfo{margin-left:60px;margin-top:4px}
+.lotusInlineVCard .lotusEmail{clear:both;border-width:1px 0;border-style:solid;padding:5px 10px}
+.lotusInlineVCard .lotusAppLinks{list-style-type:none;margin:0;padding:0}
+.lotusInlineVCard .lotusPivotNav{float:left;padding:2px 5px 1px 2px}
+.lotusInlineVCard .lotusPivotNavToggle{margin:0 5px 0 0;padding:0;float:left;height:45px;width:10px;}
+.lotusPivotNavToggle a{display:block;height:45px;background-position:3px center;background-repeat:no-repeat;text-decoration:none;}
+.lotusPivotNavToggle a:hover, .lotusPivotNavToggle a:focus, .lotusPivotNavToggle a:active{text-decoration:none;}
+.lotusPivotNavOpen .lotusPivotNavToggle a{background-position:left center}
+.lotusInlineVCard .lotusInlineVCardDetails{display:none}
+/***********************************************************/
+
+/*** V C A R D   H O V E R ***/
+/*this is the hover link that shows when you hover over a person's name and allows you to open their profile card*/
+.lotusVCardHover{padding:5px 5px 5px 25px;position:absolute;left:0;top:-9999px;border-width:1px;border-style:solid;-moz-border-radius:2px;-webkit-border-radius:2px;background-position:5px center;background-repeat:no-repeat;white-space:nowrap}
+.lotusVCardHover:hover, .lotusVCardHover:focus{text-decoration:none}
+/***********************************************************/
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for widget*/
+/*companion file is widgetTheme.css*/
+/*** W I D G E T ***/
+.lotusWidget{border-width:0 1px 1px 1px;border-style:solid;margin:0 10px 10px 5px;}
+.lotusWidgetPlain{border-width:0}/*the title bar shows up on hover*/
+.lotusWidgetPlain:hover h2, .lotusWidgetPlain:focus h2{display:block}
+.lotusWidget h2, .lotusWidget h3{zoom:1}/*sets hasLayout in IE*/
+.lotusWidget h2{background-position:left bottom;background-repeat:repeat-x;padding:4px 3px 4px 10px;overflow:hidden;cursor:move;border-width:1px 0;border-style:solid}
+.lotusWidgetPlain h2{display:none;border-width:1px 1px 0 1px;border-style:solid}
+.lotusWidget .lotusWidgetBody h2{border-width:0;}
+.lotusWidget h2 img{margin-left:3px}
+.lotusWidget h2 a.lotusIcon{float:right;width:18px;height:18px;background-position:center center;background-repeat:no-repeat}/*this is the action menu icon*/
+.lotusWidget h2 .lotusDivider{float:right}
+.lotusWidget h3{padding:4px 10px;overflow:hidden;border-bottom:1px solid;line-height:1em;height:1.3em;font-size:1em;font-weight:normal}
+/*.lotusWidget h3 a{padding:4px 0 5px 0}*/
+.lotusWidget h3 a.lotusAction{font-size:.9em;padding:4px 0 5px 0}
+.lotusWidgetBody{clear:both;padding:3px 0}
+.lotusWidgetBody .lotusSection {margin-top:0px;}
+.lotusWidgetBody div.lotusChunk{margin-top:5px;clear:both;zoom:1}
+.lotusWidget .lotusWidgetFooter{padding:4px 10px;border-top-width:1px;border-top-style:solid;height:1.3em;clear:both}
+.lotusWidgetFooter ul.lotusVCard {margin-left:95px;margin-top:5px}
+.lotusWidgetFooter img{vertical-align:top}
+.lotusWidget .lotusWidgetSearch{padding:5px 10px 0 10px}
+.lotusWidgetSearch img {padding-right:10px}
+/*paging controls within a widget*/
+.lotusWidget .lotusPaging{padding:2px 0;font-size:1em;line-height:1em;}
+.lotusWidget .lotusPaging div{padding-left:0}
+/*scrolling*/
+.lotusWidget .lotusWidgetScroll{overflow:hidden;clear:both;}
+.lotusWidget .lotusWidgetScroll a{margin:0 auto}
+/***********************************************************/
+
+
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/* this file contains layout elements and style overrides for base components */
+/* these styles need to be applied after the component styles */
+/*companion file - layoutTheme.css*/
+/*******************************************/
+/*** P A G E   L A Y O U T   S T Y L E S ***/
+/*******************************************/
+.lotusFrame{margin:0 auto;padding:0;min-width:990px;}
+.lotusui_ie6 .lotusFrame{width:expression( documentElement.clientWidth < 990 ? (documentElement.clientWidth == 0 ? (body.clientWidth < 990 ? "990px" : "auto") : "990px") : "auto" );}/*for IE6*/
+.lotusTitleBar, .lotusPlaceBar{margin:0 10px}
+.lotusMain, .lotusFooter{border-style:solid;clear:both;margin:0 10px 10px 10px;overflow:hidden;}
+.lotusMain{padding:0 0 5px 0;min-height:400px;border-width:0 1px 1px 1px;-moz-border-radius:0 0 4px 4px;-webkit-border-bottom-left-radius:4px;-webkit-border-bottom-right-radius:4px;zoom:1}
+.lotusContent{padding:15px 20px 20px 20px;overflow:hidden; /*this sets a new block formatting context, which keeps the center content separate from the floated divs.  This allows us to clear floats in the center.*/margin-right:auto;margin-left:auto;/*bidi bug fixes for Firefox*/min-height:400px;-moz-border-radius:0 0 4px 4px;-webkit-border-bottom-left-radius:4px;-webkit-border-bottom-right-radius:4px;margin-bottom:-4px/*need the min-height and the rounded corners and the negative bottom margin, to get rid of the left column background image (matches lotusMain)*/}
+.lotusui_ie .lotusContent{display:inline-block;}/*layout fix for IE*/
+.lotusui_ie6 .lotusContent{padding-left:15px}/*IE6 adjustment*/
+.lotusContentColOne{float:left;margin:10px;width:47%;}
+.lotusContentColTwo{float:left;margin:10px 10px 10px 0;text-align:left;width:47%;}
+/*to make sure these columns fit in a two column layout - only IE6 has issues*/
+.lotusui_ie6 .lotusContentColOne{width:45%;}
+.lotusui_ie6 .lotusContentColTwo{width:45%;}
+/***********************************************************/
+
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for the banner (layout)*/
+/*companion file is bannerTheme.css*/
+/*** B A N N E R **/
+/*this is the very top of the UI, that contains the logo, application links, user name, login/logout*/
+.lotusBanner{padding:5px 10px 5px 20px;text-align:left;overflow:hidden;zoom:1}
+.lotusBanner .lotusLogo{float:left;margin-right:20px;}
+.lotusBanner ul{padding:0;float:right;white-space:nowrap}
+.lotusui_ie6 .lotusBanner ul{margin-top:0;margin-bottom:2px;}	
+.lotusBanner ul.lotusInlinelist li.lotusFirst{padding-left:7px}	
+.lotusBanner ul.lotusLinks{float:left;}
+.lotusBanner ul.lotusLinks li{border-left-width:0;padding:2px 7px}
+.lotusui_ie7 .lotusBanner ul.lotusLinks li{padding:0 7px}
+.lotusBanner ul li a, .lotusBanner ul li span.lotusUser{padding:2px 5px;}
+.lotusBanner ul.lotusLinks li.lotusSelected{margin:0;}
+.lotusBanner ul.lotusLinks li.lotusSelected a{text-decoration:none;font-weight:bold;}
+.lotusBanner ul.lotusUtility{margin-top:.35em;}
+.lotusBanner ul.lotusUtility li{font-size:.9em;line-height:1em;}
+/***********************************************************/
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for the footer (layout)*/
+/*companion file is footerTheme.css*/
+/*** F O O T E R ***/
+/*this sits at the bottom of the UI and contains a lot of support links, like help and about*/
+.lotusFooter{padding:10px 10px 10px 0;border-width:1px;-moz-border-radius:4px;-webkit-border-radius:4px;font-size:.9em}
+.lotusFooter p{margin:0;line-height:1.3em}
+.lotusFooter ul{margin:0;padding:0;list-style-type:none}
+.lotusFooter li{line-height:1.2em;padding:.3em 0}
+.lotusFooter th, .lotusFooter td{border-right-width:1px;border-style:solid}
+.lotusFooter th.lotusLast, .lotusFooter td.lotusLast{border-width:0}
+.lotusFooter th{padding:5px 10px 3px 25px;width:20%;font-weight:bold;font-size:1.1em}
+.lotusFooter td{padding:0 50px 10px 25px;}
+/***********************************************************/
+
+
+
+
+/*** N A V I G A T I O N ***/
+/*left column - menu and filters*/
+.lotusColLeft{float:left;width:180px;padding:15px 10px;}
+.lotusui_ie6 .lotusColLeft{position:relative;}
+.lotusColLeft .lotusFormTable{margin-left:-10px;}
+.lotusColLeft .lotusFormTable td{padding-left:10px;padding-top:5px}
+.lotusColLeft .lotusFormFooter{padding-left:10px !important;}
+/*section adjustments for the left column*/
+.lotusColLeft .lotusSection .lotusBtn{width:99%}
+.lotusColLeft .lotusSection .lotusBtn a{padding:4px 0}
+.lotusColLeft .lotusInlinelist li{padding:0 4px}
+.lotusColLeft .lotusInlinelist li.lotusFirst{padding-left:0}
+.lotusColLeft .lotusSection .lotusSearch .lotusText{margin:0 2px 0 0;padding:1px 3px 2px 6px;line-height:1.3em;width:80%;}
+/***********************************************************/
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for the place bar (layout)*/
+/*companion file is placebarTheme.css*/
+/*** P L A C E   B A R ***/
+/*this place bar shows up right below the title bar and tells user what place or community they are in*/
+.lotusPlaceBar{position:relative;border-width:0 1px 1px 1px;border-style:solid;overflow:hidden;background-position:center left;background-repeat:repeat-x;zoom:1}
+.lotusPlaceBar h2{padding:2px 0 0 20px;float:left;font-size:1.4em;line-height:2em;font-weight:normal}
+.lotusPlaceBar .lotusBtnContainer{float:right;padding:.5em 5px .5em 10px;}/*buttons show up on the right side of the place bar*/
+/***********************************************************/
+
+
+
+/*** S I D E B A R ***/
+/*right column - lists*/
+.lotusColRight{float:right;width:190px;padding:15px 10px;}
+.lotusui_ie6 .lotusColRight{position:relative;}
+.lotusColRight .lotusFormTable{margin-left:-10px;}
+.lotusColRight .lotusFormTable td{padding-left:10px;padding-top:5px}
+.lotusColRight .lotusFormFooter{padding-left:10px !important;}
+.lotusForm .lotusColRight input.lotusText{padding:1px !important}
+/*section adjustments for the right column*/
+.lotusColRight .lotusSection .lotusBtn{width:99%}
+.lotusColRight .lotusSection .lotusBtn a{padding:4px 0}
+.lotusColRight .lotusInlinelist li{padding:0 4px}
+.lotusColRight .lotusInlinelist li.lotusFirst{padding-left:0}
+.lotusColRight .lotusSection .lotusSearch .lotusText{margin:0 2px 0 0;padding:1px 3px 2px 6px;line-height:1.3em;width:80%;}
+/***********************************************************/
+
+/* Copyright IBM Corp. 2001, 2008 */
+/*This CSS was built on April 9 2009. (version: OneUI-2.0_beta2_20090409-1018)*/
+/*these are the styles for the title bar (layout)*/
+/*companion file is titlebarTheme.css*/
+/*** T I T L E   B A R 	***/
+/*the blue bar under the banner, that contains tabs and search UI*/
+.lotusTitleBar{height:3em;position:relative;border-bottom-width:1px;border-bottom-style:solid;background-position:top left;background-repeat:repeat-x;clear:both/*fix for IE6*/}
+.lotusTitleBar .lotusRightCorner{background-position:top right;background-repeat:no-repeat;height:3em;padding-right:6px}
+.lotusTitleBar .lotusInner{background-position:top left;background-repeat:no-repeat;height:3em;}
+.lotusTitleBar h2{padding:3px 0 0 10px;float:left;font-size:1.5em;line-height:2em;letter-spacing:0;width:200px;font-weight:normal} /*this is used in place of tabs, if desired*/
+.lotusTitleBar .lotusTabs, .lotusTitleBar .portlet-tab{left:10px}
+.lotusTitleBar .lotusTabs li{padding-left:5px;}
+.lotusTitleBar .lotusSearch{position:absolute;top:.7em;right:10px}  
+.lotusTitleBar .lotusTabs a, .lotusTitleBar .lotusTabs a:visited{display:block;padding:7px 10px 7px 7px;text-decoration:none;line-height:1em;background-position:top right;background-repeat:no-repeat;font-weight:bold;line-height:1em}/*line-height is for IE, to keep the selected tab sitting on top of the border when there is a drop-down image in the tab*/
+/***********************************************************/
+
+
+
+/*************************************/
+/*** S P E C I A L   S C R E E N S ***/
+/*************************************/
+
+/*** A B O U T ***/
+.lotusAbout .lotusContent h1{margin:0;padding:0;font-size:3em;font-weight:normal;line-height:normal;}
+.lotusAbout .lotusContent h2{margin:15px 0 10px 0;padding:0;font-size:1.5em;font-weight:normal;line-height:1em;}
+.lotusAbout .lotusContent h3{margin:3px 0 15px;font-size:1.5em;font-weight:normal;}
+.lotusAbout .lotusAboutBox{padding-right:25px;padding-bottom:15px;position:relative;background-position:left top;background-repeat:repeat-x;overflow:hidden;min-height:200px}
+.lotusui_ie .lotusAbout .lotusAboutBox{display:inline-block}
+.lotusAboutBox img{position:absolute;left:30px;top:22px;}
+.lotusAbout .lotusAboutText{margin:22px 20px 20px 225px;}
+.lotusAbout p{margin:5px 0}
+.lotusAbout .lotusColRight{font-size:1.0em}
+/*legal statement adjustments*/
+.lotusAbout table.lotusLegal{margin-top:15px}
+/***********************************************************/
+
+/*** E R R O R ***/
+.lotusErrorBox{width:619px;margin:20px auto;padding:0;border-width:1px;border-style:solid;-moz-border-radius:4px;-webkit-border-radius:4px;}
+.lotusErrorContent{position:relative;padding:20px;zoom:1}/*sets hasLayout for IE6*/
+.lotusErrorContent img{position:absolute;top:20px;left:30px;}
+.lotusErrorForm{margin:0px 0 0 85px;}
+.lotusError h1{margin:0 0 10px 0;padding:0;font-size:2.3em;font-weight:normal;}
+.lotusErrorForm .lotusBtnContainer{margin-top:15px}
+.lotusErrorForm .lotusBtn{margin-right:15px;text-align:center;}
+.lotusErrorForm .lotusBtnContainer .lotusAction{display:block;padding-top:3px}
+.lotusErrorForm div{width:auto;clear:none;margin:0;padding:0;}
+/***********************************************************/
+
+/*** H O M E ***/
+/*a.k.a. dashboard*/
+.lotusDashboard .lotusMain{background-position:top right;background-repeat:repeat-y}
+.lotusDashboard .lotusColRight{width:160px;}
+.lotusDashboard .lotusColRight h2{text-transform:uppercase;font-size:.9em}
+.lotusContent .lotusColOne, .lotusContent .lotusColTwo{width:50%;float:left;}
+/***********************************************************/
+
+/*** L O G I N ***/
+/*this can appear on a plain connections page (gradient background only), or launched in a separate window*/
+.lotusLogin .lotusLoginBox{width:619px;margin:20px auto;padding:0;background-position:left top;background-repeat:no-repeat;border-width:1px;border-style:solid}
+.lotusLoginLogo{position:absolute;}/*positioning and size values are in the theme file*/
+.lotusLogin .lotusLoginContent{position:relative;padding:20px;zoom:1}
+.lotusLoginContent img{position:absolute;top:130px;left:40px}
+.lotusLoginContent img.lotusIcon{position:static;padding-bottom:1px}
+.lotusLogin .lotusLoginForm{margin:100px 0 0 220px;}
+.lotusLogin h1{margin:0;padding:0;font-size:2.3em;font-weight:normal;}
+.lotusLogin h2{margin:5px 0 15px 0;font-size:1.4em;font-weight:normal;line-height:1.3em;}
+.lotusLoginForm input{margin-bottom:5px;}
+.lotusLoginForm .lotusText{width:15em}
+.lotusLoginForm .lotusBtnContainer{margin-top:10px}
+.lotusLoginForm .lotusBtn{margin-right:15px;font-size:inherit}
+.lotusLoginForm .lotusBtnContainer .lotusAction{display:block;padding-top:3px}
+.lotusLoginForm div{width:auto;clear:none;margin:0;padding:0;}
+.lotusLoginForm label{margin-left:0;padding-top:0;display:block;float:none;text-align:left;font-weight:normal;}
+.lotusLogin .lotusDescription{margin-top:30px;clear:left;}
+.lotusDescription h2{margin-bottom:3px;}
+/*legal statement adjustments*/
+.lotusLogin div.lotusLegal .lotusLicense{background-position:left top}
+.lotusLogin .lotusLegal{margin-left:10px}
+.lotusLogin table.lotusLegal{margin-top:15px}
+/***********************************************************/
+
+/*** M E T R I C S ***/
+/*metrics*/
+.lotusMetrics .lotusContent{margin-right:30%}
+.lotusMetrics dt{margin-top:20px}
+/***********************************************************/
+
+/*** W E L C O M E ***/
+.lotusWelcome .lotusContent .lotusSection{margin-left:20px}
+.lotusWelcome .lotusForm{margin:15px 0}
+.lotusWelcome input.lotusBtnSpecial{padding:1px 2px;background-position:center left;background-repeat:repeat-x;border-width:1px;border-style:solid;font-size:.9em;font-weight:bold}
+.lotusWelcome .lotusContent input.lotusText{width:225px}/*don't want global search box to stretch!*/
+.lotusWelcomeBox{margin-bottom:20px;padding:15px 20px;position:relative;border-width:1px;border-style:solid;overflow:hidden;zoom:1}
+.lotusWelcomeBox h2{margin:0 180px 10px 0;font-size:2.4em;font-weight:normal;line-height:1em;}
+.lotusWelcomeBox .lotusBtnContainer{margin:15px 0 0 0}
+.lotusWelcomeBox .lotusBtnContainer .lotusBtn{float:left;}
+.lotusWelcomeBox p, .lotusWelcomeBox ul{margin:0 170px 0 0}
+.lotusWelcomeBox ul{padding-left:2em;list-style-position:outside;}
+.lotusWelcomeBox ul.lotusInlinelist{padding-left:0;}
+.lotusWelcomeBox ul.lotusInlinelist li{border-left-width:0;}
+.lotusWelcomeBox img{position:absolute;top:16px;right:50px;}
+.lotusWelcomeBox .lotusClose{position:absolute;top:10px;right:12px;border-width:1px;border-style:solid}
+.lotusWelcomeBox .lotusClose img{position:static}
+/***********************************************************/
+

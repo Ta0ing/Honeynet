@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head>
+    <title>浙江大远智慧制药工程技术有限公司-FE协作办公平台  6.0</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link type="text/css" rel="stylesheet" href="static/css/loginstyle.css" id='set_skin_style'>
+    <script type="text/javascript" src="static/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+    	$(function(){
+    		if (window.screen) {
+    			window.moveTo(0, 0);
+    			window.resizeTo(window.screen.availWidth, window.screen.availHeight);
+    			$('#div_lock_screen_hidden').height(window.screen.availHeight);
+    			$('#div_lock_screen_hidden').width(window.screen.availWidth);
+    		}
+    		if ($('#userN').val() != '') {
+    			$('#passWs').focus();		
+    		} else {
+    			$('#userN').focus();
+    		}
+			$.ajax({
+				type: "POST",
+				url: "/remoteServlet?obj=loginEditService&method=getCustomPicBG&count=2",
+				dataType:"text",
+				data:{param1:'0',param2:'1'},
+				async:false,
+				success: function(data) {
+					var usedPicName = data;
+					if (data == "") {
+						usedPicName = 'loginbg.jpg';
+					}
+					$('.content').css('background-image','url(applyTheme/images/portal/login/'+usedPicName+')');
+				}
+			});
+			$.ajax({
+				type: "POST",
+				url: "/remoteServlet?obj=loginEditService&method=getApplyThemeXmlDom&count=1",
+				dataType:"text",
+				data:{param1:'bgtile'},
+				async:false,
+				success: function(para) {
+					if (para == 1) {
+						$('.content').css('background-repeat','repeat-x');
+					}
+				}
+			});
+    	});		
+    </script>
+</head>
+<body>
+
+<input type="hidden" name="isloginKey" id="isloginKey" value="0">
+<input type="hidden" name="DigestID" id="DigestID" value="">
+<input type="hidden" name="UserPIN" id="UserPIN" value="1234">
+<input type="hidden" name="snID" id="snID" value="">
+<input type="hidden" name="RandomData" id="RandomData" value="vkgcucknyvamtydnvddu">
+<div class="container" id="div_container">
+    <ul>
+	    <li class="logo"><img src="static/picture/login-logo.png"></li>
+	    <li class="content">
+			<form id="form1" name="form1" method="post" action="/login">
+
+	      <div class="input-box">
+	        <ul>
+	            <div id="userNmsg"></div>
+	          <li class="username" id="usernameLi">
+	            <input name="username" type="text" maxlength="16" onkeydown="if (event.keyCode == 13) { $('#passWs').focus(); }" id="userN" placeholder="请输入登录用户名" x-webkit-speech="" speech/="">
+	          </li>
+	          <li class="password" id="passwordLi">
+	            <input name="password" type="password" maxlength="16" id="passWs" placeholder="请输入登录密码" autocomplete="off">
+	          </li>
+			
+            	<input type="hidden" id="hdn_valid_flag" name="validFlag" value="0">
+				<a onclick="document:form1.submit()" id="a_login" type="submit" class="login-btn" tabindex="-1">登录</a>
+	        </ul>
+	      </div></form>
+	    </li>
+		<li class="footer">
+			<ul>
+			    <li class="copyright"><span>©用友软件珠海研发基地</span></li>
+			    <li><a href="#this" onclick="openAboutWin();" tabindex="-1">关于</a></li>
+			    <li class="sep">|</li>
+			    <li class="tools" id="li_plugins_download"><a href="#this" onclick="openMobileDownloadWin();" tabindex="-1">移动客户端下载</a></li>
+			    <li class="sep">|</li>
+			    <li class="tools" id="li_plugins_download"><a href="#this" onclick="openDownloadWin();" tabindex="-1">工具下载</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+<script language="javascript" src="static/js/index.js"></script>
+<script language="VBscript" src="static/js/ukey.js"></script>
+
+</body>
+

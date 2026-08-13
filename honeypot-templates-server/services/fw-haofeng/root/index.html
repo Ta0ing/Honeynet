@@ -1,0 +1,60 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>皓峰防火墙系统登录</title>
+    <link type="text/css" rel="stylesheet" href="http://47.101.164.192:8080/css/layout.css">
+
+    <script language="javascript">
+        function checkForm() {
+            with (document.form1) {
+                if (trim(username.value) == "") {
+                    alert("请输入登录名!");
+                    username.focus();
+                    return false;
+                }
+                if (trim(password.value) == "") {
+                    alert("请输入密码!");
+                    password.focus();
+                    return false;
+                }
+            }
+            return true;
+        }
+
+    </script>
+</head>
+
+<body bgcolor="#ddeeff" onload="document.all.user.focus()">
+<br><br>
+<br><br>
+<form name="form1" method="post" action="/login" onsubmit="return checkForm();">
+    <input type="hidden" name="action" value="login">
+    <div class="center" style="background:url(static/image/login.gif) no-repeat center">
+        <table align="center" height="340" width="573">
+            <tr height="130px">
+                <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+                <td align="right" width="240px">登录名：</td>
+                <td><input name="username" type="text" id="username" style="width:120px"></td>
+            </tr>
+            <tr>
+                <td align="right">密&nbsp;&nbsp;码：</td>
+                <td><input name="password" type="password" id="password" style="width:120px"></td>
+            </tr>
+            <tr align="center">
+                <td colspan="2" style="height:30px" valign="bottom">
+                    <input type="submit" value="登 录" name="submit">&nbsp;&nbsp;
+                    <input type="reset" value="重 置" name="reset">
+                </td>
+            </tr>
+            <tr height="100px">
+                <td colspan="2">&nbsp;</td>
+            </tr>
+        </table>
+        <div>
+        </div>
+    </div>
+</form>
+</body>
+</html>

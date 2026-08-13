@@ -1,0 +1,642 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+
+
+	<script type="text/javascript">
+		var bidiSupport = new Object();
+		bidiSupport.bidiAlignRight = "right";
+		bidiSupport.bidiAlignLeft = "left";
+		bidiSupport.bidiDirAttr = "";
+		bidiSupport.bidiImageRTL = null;
+		bidiSupport.isRTL = false;
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<title>IBM WebSphere Portal - Login</title>
+
+
+
+
+
+	<link rel="bookmark" href="/wps/poc/!ut/p/digest!N_5daMHgbyRiOPvt7gua6g/nm/oid:6_CGAH47L00O2V002N5SQ0US30M1"
+		title="Login" hreflang="en">
+
+	<link rel="icon" href="data:;base64,=">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<link rel="styleSheet" href="/wps/themes/html/css/core.css" type="text/css">
+	<link rel="styleSheet" href="/wps/themes/html/css/defaultTheme.css" type="text/css">
+	<link rel="styleSheet" href="/wps/themes/html/css/dojo.css" type="text/css">
+	<link rel="styleSheet" href="/wps/themes/html/css/dojoTheme.css" type="text/css">
+
+
+	<link id="portalStyles"
+		href="/wps/themes/html/Portal/./styles.css?themeContextInfo=policyPath:theme%2FSingleTopNavMinimal:policyVersion:1:colorPalette:default:browserVendor:unknown:browserName:Default+HTML+Client:browserVersion:unknown:locale:en:themeOid:J_CGAH47L00O2V002N5SQ0US3010:protectedUrl:false&userLocale=en"
+		rel="styleSheet" type="text/css">
+
+	<link rel="stylesheet" type="text/css" href="/portal_dojo/dijit/themes/tundra/tundra.css">
+
+
+
+
+
+
+
+	<script type="text/javascript">var menuService_AppletCodebase = "/wps/menu";</script>
+
+
+
+	<script type="text/javascript">
+		var djConfig = { parseOnLoad: false, locale: 'en'.replace(/_/, '-').replace(/iw/, 'he').toLowerCase(), baseUrl: "/portal_dojo/dojo/" }; //fix locale compatibility issues in Dojo 
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script type="text/javascript">
+		var javascriptEventController = new ElementJavascriptEventController();
+
+
+
+
+
+
+
+		(function () {
+			var pageMenuURL = '/wps/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hnd0cPE3MfAwN_ozADAyM_0-BAg9BgYwNfQ6B8pFm8AQ7gaEBAdzjIPrz6_Tzyc1P1C3IjDHQdFRUB0U0Pww!!/dl3/d3/L0lKQSEvUUt3RS9ZUHchL3BhZ2VDb250ZXh0TWVudQ!!/';
+			wptheme_ContextMenuUtils.moreMenu.init("/wps/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hnd0cPE3MfAwN_ozADAyM_0-BAg9BgYwNfQ6B8pFm8AQ7gaEBAdzjIPrz6_Tzyc1P1C3IjDHQdFRUB0U0Pww!!/dl3/d3/L0lKQSEvUUt3RS9ZUHchL21vcmVNZW51/", false, "No actions currently available.", "/wps/themes/html/Portal/images/more_menu_loading.gif", null, true);
+
+			var topNavAffordance = new wptheme_AsyncMenuAffordance("wptheme_selected_page_menu", "wptheme_selected_page_menu_img", "/wps/themes/html/Portal/colors/default/menu_selected.gif", "/wps/themes/html/Portal/colors/default/menu_selected_disabled.gif");
+			var sideNavAffordance = new wptheme_AsyncMenuAffordance("wptheme_selected_page_menu", "wptheme_selected_page_menu_img", "/wps/themes/html/Portal/colors/default/menu_selected_black.gif", "/wps/themes/html/Portal/colors/default/menu_selected_disabled.gif");
+
+			wptheme_ContextMenuUtils.topNavPageMenu.init(pageMenuURL, false, "No actions currently available.", "/wps/themes/html/Portal/colors/default/context_loading.gif", topNavAffordance);
+			wptheme_ContextMenuUtils.sideNavPageMenu.init(pageMenuURL, false, "No actions currently available.", "/wps/themes/html/Portal/colors/default/context_loading_side.gif", sideNavAffordance);
+		})();
+
+		wptheme_QuickLinksShelf.cookieName = "nullQLS";
+
+	</script>
+
+
+	<script type="text/javascript">
+		// Delete the cookie that stores the client-side state from themes in CSA mode
+		(function () {
+			if (typeof dojo != "undefined" && dojo.cookie) {
+				try {
+					var sessionID = dojo.cookie("JSESSIONID");
+					var token = dojo.cookie("LtpaToken");
+					if (token && token.length > 20) token = token.substr(0, 20);
+					var key = window.location.host + sessionID + token;
+					//Encode this as if it will be in a url because certain characters are unsafe.
+					key = encodeURIComponent(key);
+					// Delete the cookie
+					var exp = dojo.isFF ? "Thu, 01-Jan-70 00:00:01 GMT" : -1;
+					dojo.cookie(key, null, { expires: exp, path: "/" });
+				}
+				catch (e) {
+					// just a precaution so we don't break the overall theme in case something odd happens
+				}
+			}
+		})();
+	</script>
+</head>
+
+<body onload="if (javascriptEventController) { javascriptEventController.enableAll(); }"
+	class="wptheme-mainbody tundra">
+	<div id="FLYParent" class="wptheme-FLYParent">
+		<table id="wptheme-pageWrapper" class="wptheme-pageWrapper" border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td>
+					<div class="wptheme-access"><a href="#wpsMainContent">Skip to main content</a></div>
+					<div class="wptheme-themeHeader">
+						<div class="wptheme-banner" id="banner">
+
+
+
+
+							<div class="wptheme-topLevelLinks" id="topLevelLinks">
+
+
+								<ul class="wptheme-topLevelLinks-list">
+
+
+
+
+
+
+
+
+
+
+
+								</ul>
+
+
+							</div>
+
+
+
+							<div class="wptheme-toolbar">
+								<ul>
+
+
+
+
+
+
+
+
+
+
+									<li class="wptheme-toolbar-last"><a
+											href="!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hnd0cPE3MfAwN_ozADAyM_0-BAg9BgYwNfQ6B8pFm8AQ7gaEBAdzjIPrz6_Tzyc1P1C3IjDHQdFRUB0U0Pww!!/dl3/d3/L2dJQSEvUUt3QS9ZQnZ3LzZfQ0dBSDQ3TDAwTzJWMDAyTjVTUTBVUzMwTTE!/index.html">Log
+											In</a></li>
+
+
+
+
+
+
+
+
+								</ul>
+							</div>
+							<script type="text/javascript">
+								function wptheme_showHelpWindow() {
+									var newWindow = window.open('/wps/doc/en/help/index.html', 'PortalHelpWindow', 'resizable=yes,scrollbars=yes,menubar=no,toolbar=yes,status=no,width=800px,height=600px,screenX=10px,screenY=10px,top=10px,left=10px');
+									newWindow.focus();
+									return false;
+								}
+							</script>
+							<div class="wptheme-clearing">
+								<!-- -->
+							</div>
+
+						</div>
+						<!-- end banner -->
+					</div>
+					<div class="wptheme-pageHeader">
+						<div class="wptheme-pageHeaderLeftCorner">
+							<div class="wptheme-pageHeaderRightCorner">
+								<h2 id="wptheme-applicationName" class="wptheme-applicationName">
+
+
+
+									Login
+
+
+								</h2>
+
+
+								<div class="wptheme-pageHeaderNavigation">
+									<div id="wptheme-topnav">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+									</div>
+								</div>
+								<div class="wptheme-pageHeaderTools"><span class="wptheme-lightboxLinks">
+									</span></div>
+								<div class="wptheme-clearing">
+									<!-- -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="pageArea" class="wptheme-pageArea">
+						<div id="wpsInlineShelf" class="wpsInlineShelf" style="display: none;">
+							<script type="text/javascript">
+								wpsInlineShelf_loadingMsg = new wpsInlineShelf_LoadingImage( /*String - cssClassName*/"wpsInlineShelf_LoadingMsg",
+										   						 /*String - imageURL*/"/wps/themes/html/Portal/./colors/default/launch_loading.gif",
+										   						 /*String - imageText*/"Loading...");
+							</script>
+							<iframe id="wpsInlineShelf_shelfIFrame" title="wpsInlineShelf_shelfIFrame"
+								name="wpsInlineShelf_shelfIFrame" class="wpsInlineShelfIframe"
+								style="display: none; overflow: visible; width: 100%" frameborder="0" width="100%" height="100%"
+								hspace="0" vspace="0" marginwidth="0" marginheight="0" scrolling="auto"></iframe>
+						</div>
+
+
+						<table id="wptheme_pageArea" width="100%" height="100%" cellpadding="0" cellspacing="0">
+							<tr>
+								<td id="sideNav" class="wptheme-sideNavArea" width="1" valign="top">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+								</td>
+								<td width="100%" valign="top">
+									<div id="wptheme-pageAreaToolbar" class="wptheme-pageAreaToolbar">
+										<div class="wptheme-clearing">
+											<!-- -->
+										</div>
+									</div><a name="wpsMainContent"></a>
+									<div id="mainContent" class="wptheme-mainContent">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+										<table class="layoutRow" cellpadding="0" cellspacing="0">
+											<tr>
+												<td width="10px" valign="top">
+													<script type="text/javascript">document._DNDBroker.isBidi = false;</script>
+													<div id="wp_dt0" style="display:block;">
+														<table>
+															<tr valign="top">
+																<td>&nbsp;</td>
+															</tr>
+															<tr style="height:100%;">
+																<td>&nbsp;</td>
+															</tr>
+															<tr valign="bottom">
+																<td>&nbsp;</td>
+															</tr>
+														</table>
+													</div>
+													<script type="text/javascript">document._DNDB.pART("<dndTgt id='wp_dt0'></dndTgt>");</script>
+												</td>
+												<td valign="top" width="700">
+
+
+
+
+
+													<table class="layoutColumn" cellpadding="0" cellspacing="0">
+														<tr>
+															<td>
+																<div id="wp_dt1" style="display:block;">&nbsp;
+																</div>
+																<script
+																	type="text/javascript">document._DNDB.pART("<dndTgt id='wp_dt1'></dndTgt>");</script>
+															</td>
+														</tr>
+														<tr>
+															<td style="width:100%;" valign="top">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																<script type="text/javascript">var menuNoActionsText_7_CGAH47L00O2V002N5SQ0US30E4 = "No actions currently available.";
+																	var menuPortletURL_7_CGAH47L00O2V002N5SQ0US30E4 = '/wps/portal/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3hnd0cPE3MfAwN_ozADAyM_0-BAg9BgYwNfQ6B8pFm8AQ7gaEBAdzjIPrz6_Tzyc1P1C3IjDHQdFRUB0U0Pww!!/dl3/d3/L0lKQSEvUUt3RS9ZUHchL3BvcnRsZXRDb250ZXh0TWVudQ!!/?windowID=7_CGAH47L00O2V002N5SQ0US30E4';
+																</script><a name="7_CGAH47L00O2V002N5SQ0US30E4"></a>
+																<div
+																	onmouseover="menuMouseOverThinSkin('7_CGAH47L00O2V002N5SQ0US30E4','/wps/themes/html/Portal/images/topNav/menu_selected.gif')"
+																	onmouseout="menuMouseOutThinSkin('7_CGAH47L00O2V002N5SQ0US30E4', '/wps/themes/html/Portal/images/topNav/menu_selected_disabled.gif')">
+																	<div id="wp_ds0" style="display:inline">
+																		<table style="width: 100%;" cellpadding="0" cellspacing="0">
+																			<tr>
+																				<td>
+																					<div id="portletTitleBar_7_CGAH47L00O2V002N5SQ0US30E4"
+																						class="wpsThinSkinContainerBar ">
+																						<div onmouseover="javascript:setDNDNoCursor();"
+																							onmouseout="javascript:setDNDNormalCursor();">
+																							<div id="title_7_CGAH47L00O2V002N5SQ0US30E4"
+																								class="wpsThinSkinDragZoneContainer wpsThinSkinInvisible"><img alt
+																									style="border: 0px; width: 1px; height: 12px;"></div>
+																						</div>
+																						<div class="wpsThinSkinMenuContainer">
+																						</div>
+																					</div>
+																				</td>
+																			</tr>
+																		</table>
+																		<div class="wpsPortletBody">
+
+																			<!-- LGV in Login -->
+
+
+
+
+
+
+
+
+
+
+
+
+																			<script>if (top.location.href != self.location.href) {
+																					document.cookie = 'WASReqURL=' + top.location.href + ';' + "" + "path=/;";
+																					top.location.href = self.location.href;
+																				}
+																			</script>
+
+																			<!-- bdi in Login -->
+
+
+
+
+
+
+
+																			<!-- SMI in Login -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																			<p>
+
+
+																			<form method="POST" action="/login" name="LoginForm">
+																				<table width="70%" cellspacing="2" cellpadding="0" align="left" border="0">
+																					<tr>
+																						<td class="wpsEditText" align="left"><label for="userID">User ID:</label>
+																						</td>
+																					</tr>
+																					<tr>
+																						<td class="wpsFieldText" align="left"><input dir="ltr" type="text"
+																								style="width:112px;" id="userID" name="username" value></td>
+																					</tr>
+																					<tr>
+																						<td class="wpsEditText" align="left"><label for="password">Password:</label>
+																						</td>
+																					</tr>
+																					<tr>
+																						<td class="wpsFieldText" align="left"><input dir="ltr" type="password"
+																								style="width:112px;" id="password" name="password"></td>
+																					</tr>
+
+
+
+
+
+																					<tr>
+																						<td>&nbsp;</td>
+																					</tr>
+
+																					<tr>
+																						<td></td>
+																					</tr>
+
+																					<tr>
+																						<td>&nbsp;</td>
+																					</tr>
+																					<tr>
+																						<td>
+																							<table border="0" cellpadding="0" cellspacing="4">
+																								<tr>
+																									<td nowrap><input class="wpsButtonText" style="cursor:pointer;"
+																											type="submit" border="0" align="absmiddle"></td>
+																									<td nowrap><input class="wpsButtonText" style="cursor:pointer;"
+																											type="submit" onclick="javascript:setCancelURL();return;"
+																											border="0" align="absmiddle"
+																											name="ns_7_CGAH47L00O2V002N5SQ0US30E4__cancel" value="Cancel">
+																									</td>
+																								</tr>
+																							</table>
+																						</td>
+																					</tr>
+																				</table>
+																			</form>
+																			<script language="JavaScript">function setCancelURL() {
+																					document.LoginForm["wps.portlets.userid"].value = "";
+																					document.LoginForm["password"].value = "";
+																					var ie = document.all ? 1 : 0;
+																					if (ie) {
+																						document.LoginForm.action = cancelURL.href;
+																					}
+																					else {
+																						cancelAnchor = document.anchors["cancelURL"];
+																						document.LoginForm.action = cancelAnchor.href;
+																					}
+																				}
+																				function setFocus() {
+																					document.LoginForm.userID.focus();
+																				}
+																				setTimeout(setFocus, 400);
+																			</script>
+																			</p>
+																		</div>
+																	</div>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<div id="wp_dt2" style="display:block;">&nbsp;
+																</div>
+																<script
+																	type="text/javascript">document._DNDB.pART("<dndTgt id='wp_dt2'></dndTgt>");</script>
+															</td>
+														</tr>
+													</table>
+												</td>
+												<td style="width:10px;" valign="top">
+													<div id="wp_dt3" style="display:block;">
+														<table>
+															<tr valign="top">
+																<td>&nbsp;</td>
+															</tr>
+															<tr style="height:100%;">
+																<td>&nbsp;</td>
+															</tr>
+															<tr valign="bottom">
+																<td>&nbsp;</td>
+															</tr>
+														</table>
+													</div>
+													<script type="text/javascript">document._DNDB.pART("<dndTgt id='wp_dt3'></dndTgt>");</script>
+												</td>
+											</tr>
+										</table>
+									</div>
+								</td>
+								<td width="1" valign="top" class="wptheme-flyoutContainer" id="wptheme-flyoutContainer">
+									<div id="wptheme-flyout" class="wptheme-flyout" style="display: none;">
+
+
+										<ul>
+
+
+
+
+
+
+
+
+										</ul>
+
+
+
+										<iframe allowTransparency="true" style="height: 100%" class="wptheme-flyoutIframe"
+											id="wpsFLY_flyoutIFrame" frameborder="0" width="380px" title="IBM WebSphere Portal Flyout"
+											name="wpsFLY_flyoutIFrame" scrolling="auto"
+											onload="wptheme_InlinePalettes._doPostShow();"></iframe>
+
+									</div>
+								</td>
+								<td width="1" height="100%" valign="top" id="wptheme-flyoutToggle" class="wptheme-flyoutToggle"
+									style="visibility: hidden" onclick="wptheme_InlinePalettesContainer.toggle(this); return false;"><a
+										href="#"><img class="collapsedImage" alt="Expand Palette" title="Expand Palette"><img
+											class="expandedImage" alt="Collapse Palette" title="Collapse Palette"></a></td>
+							</tr>
+						</table>
+					</div>
+
+
+
+
+
+
+
+					<!--  footer -->
+
+				</td>
+			</tr>
+		</table>
+	</div>
+
+
+	<script type="text/javascript">wptheme_InlinePalettesContainer.unpersist();
+		wpsInlineShelf_clearStateCookie();
+	</script>
+
+</body>
+
+</html>

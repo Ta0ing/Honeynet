@@ -1,0 +1,94 @@
+
+/* 
+ * Project: FE6.0
+ * Page: login.html
+ * author: yww (2013-04-25)
+ * update: 
+ */ 
+
+html{ width:100%; height:100%; overflow:hidden;}
+body{ width:100%; height:100%; background-color:#fff; overflow:hidden; }
+input::-ms-clear{display:none;}
+input::-ms-reveal{display:none;}
+.container{ width:100%; height:570px; position:absolute; top:50%;}
+.newcontainer{ width:100%; height:570px; position:absolute;top:30px;}
+.container ul{ width:100%; height:470px; position:relative; top:-50%;}
+.logo{ width:980px; height:50px; margin:0 auto; text-align:left;}
+.logo img{ height:40px;}  
+.content{ position:relative; height:470px; background:url(../image/loginbg.jpg) no-repeat top center; background-color:#fff;}/*自定义登录图片请替换这里的background图片路径*/
+.input-box{ width:950px; margin:0 auto; padding:0 15px;}
+.input-box ul{ width:200px; height:294px; background:url(../image/input-box-bg.png) no-repeat; margin-top:57px; *margin-top:315px; padding:36px 31px 0; float:right;}
+.input-box ul li{ width:200px; height:38px; margin-bottom:11px;}
+.input-box ul li input{ font-family:"tahoma"; width:163px; height:38px; border:0; border-style:none; background:none transparent scroll repeat 0% 0%; color:#666; letter-spacing:1px; line-height:38px; float:right; margin-right:9px;}
+.input-box ul li.lock-username{ font-size:14px; font-weight:bold; color:#444; text-align:center; height:30px;}
+#userNmsg{width:200px; height:22px; color:#ff0000; margin-top:-10px;}
+.username{ background:url(../image/input-bg.png) no-repeat 0 0;}
+.username input{ font-weight:bold;}
+.username-focus{ background:url(../image/input-bg.png) no-repeat -220px 0;}/*输入光标在用户名框里面时的高亮样式*/
+.password{ background:url(../image/input-bg.png) no-repeat 0 -58px;}
+.password-focus{ background:url(../image/input-bg.png) no-repeat -220px -58px;}/*输入光标在密码框里面时的高亮样式*/
+.input-box ul li.validcode{ height:31px; background:url(../image/input-bg.png) no-repeat 0 -116px;}
+.input-box ul li.validcode-focus{ background:url(../image/input-bg.png) no-repeat -220px -116px;}/*输入光标在验证码框里面时的高亮样式*/
+.input-box ul li.validcode input{ width:77px; height:31px; line-height:31px; float:left; margin-left:8px;}
+.validcode div{ width:95px; height:29px; float:right;}
+.validcode img{ width:70px; float:right;}
+.validcode a{ display:inline-block; width:25px; height:29px; text-indent:-99999px; background:url(../image/refresh.png) no-repeat; float:right;}
+.login-btn{ display:block; width:200px; height:50px; background:url(../image/login-btn.png) no-repeat 0 0; text-indent:-99999px; margin-top:25px; *margin-top:14px;}
+.login-btn-wating{ display:block; width:200px; height:50px; background:url(../image/login-btn-loading.gif) no-repeat 0 0; text-indent:-99999px; margin-top:25px; *margin-top:14px;}
+.login-btn:hover{ background-position:0 -60px;}
+.login-btn:active{ background-position:0 -120px;}
+.unlock-btn{display:block; width:200px; height:50px; background:url(../image/unlock-btn.png) no-repeat 0 0; text-indent:-99999px; margin-top:15px; *margin-top:4px;}
+.unlock-btn:hover{ background-position:0 -60px;}
+.unlock-btn:active{ background-position:0 -120px;}
+.footer{ width:100%; height:50px; overflow:hidden; position:relative; top:0;}
+.footer ul{ width:950px; top:0; margin:0 auto;}
+.footer ul li{ float:right; height:50px; line-height:33px; padding-top:10px; margin:0 10px;}
+.footer ul li a{height:36px; display:inline-block; float:left; color:#777; line-height:36px;}
+.footer ul li a:hover{color:#2777a7; text-decoration:none;}
+.footer ul li.sep{ color:#bbb; margin:0;}
+.footer ul li.copyright{ color:#999; width:140px; text-align:right; margin-right:8px;}
+
+body{ width:100%; height:100%; padding:0; margin:0 auto; background:#ffffff; overflow:auto; }
+body.mainbg{ background: url(http://122.224.157.214:9090/login/applyTheme/images/portal/main_bg.jpg) center top no-repeat #bee1f5; }
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,form,fieldset,button,input,textarea,th,td{margin:0;padding:0; color:#444444; font-family:tahoma,宋体,arial,sans-serif; }
+ul,li{ list-style:none; }
+div,ul,li,dl,dt,dd,tr,td,th{ margin:0; padding:0; font-size:12px; color:#444444; }
+img{ border:none; }
+ul,ol,li{list-style:none; margin:0; padding:0; }
+em{font-style:normal;}
+input,select{vertical-align:middle;} 
+button,input,select,textarea{font-size:12px;}
+table{border-collapse:collapse;border-spacing:0; border:0; }
+table td{ vertical-align:top;}
+form{ height:100%; overflow:hidden; }
+a{ cursor:pointer; text-decoration:none; outline:none; } /* tml/20130422新增 */
+a:active {star:expression(this.onFocus=this.blur());}/* tml/20130422新增 */
+
+a:link{ color:#2777a7; text-decoration:none;blr:expression(this.onFocus=this.blur());} /* 未访问的链接 */
+a:visited{ color:#444444; }/* 已访问的链接 */
+a:hover{ text-decoration:underline; }  /* 当有鼠标悬停在链接上 */
+a:active{ color:#2777a7; }/* 被选择的链接 */
+
+a.cat{ color:#aaaaaa; font-weight:bold; margin-right:3px;}/* 新闻列表类别 */
+a.cat:hover{ color:#2777a7; }
+a.n-cat{ color:#ffa200; font-weight:bold; margin-right:3px;}/* 新闻列表类别*未读 */
+a.n-cat:hover{ color:#2777a7; }
+.ddn-gray{ width:12px; height:12px; background: url(http://122.224.157.214:9090/login/applyTheme/images/portal/fe-icon.png) -15px -169px no-repeat; float:left; margin-top:5px; cursor:pointer; }/* 下拉按钮-灰色 12*12 */
+.ddn-white{ width:12px; height:12px; background: url(http://122.224.157.214:9090/login/applyTheme/images/portal/fe-icon.png) -15px -159px no-repeat; float:left; margin-top:5px; cursor:pointer; }/* 下拉按钮-白色 12*12 */
+.searchbut{width:12px; height:12px; border:none; background: url(http://122.224.157.214:9090/login/applyTheme/images/portal/fe-icon.png) 0 -162px no-repeat; float:left; margin:4px 0 0 3px; cursor:pointer; }/* 搜索图标 12*12 */
+
+
+/**add by ltt***/
+#input_upload_bgimageUploader{position:relative;top:1px;color:#266696;}
+#input_upload_bgimageUploader:hover{background-color:#deeef6;}
+
+
+#sele_client{ vertical-align:middle; margin-right:0px;}
+
+.selectbg{border:#dedede 1px solid;background:#fff;display:block;}
+.selectbgli{padding:0px; height:22px;line-height:22px;padding:0px 10px;  float:none;border-bottom:#dedede 1px solid;width:65px;  display:block;background:#fff;margin:0px;clear:both;}
+.selectbgbg{padding:0px; height:22px;line-height:22px;padding:0px 10px;width:65px;  float:none;border:#dedede 1px solid;display:block;background:#fff;margin:0px;clear:both;}
+.selectbglibg{padding:0px; height:22px;line-height:22px;padding:0px 10px;  float:none;border-bottom:#dedede 1px solid;width:65px;  display:block;background:#dbe5e9;margin:0px;clear:both;}
+a:hover {
+ text-decoration:none;
+}

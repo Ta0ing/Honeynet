@@ -1,0 +1,76 @@
+# Honeynet Server 原生部署配置。生产环境请替换全部 change-me 值。
+server:
+  # [::] 在支持双栈的系统上同时接受 IPv6 和 IPv4；仅 IPv4 可继续使用 :8080 或 0.0.0.0:8080。
+  addr: "[::]:8080"
+  # 控制台 8080 默认使用 HTTP；需要 HTTPS 时可显式启用原生 TLS 或在可信反向代理上终止 TLS。
+  public_url: "http://192.0.2.10:8080"
+  tls_enabled: false
+  # 可选：成对填写外部可信证书链和私钥。配置后 Console 不再复用 agent.pki_dir 的私有证书，8443 Agent mTLS 不受影响。
+  # tls_cert_file: "/etc/honeynet/console/fullchain.pem"
+  # tls_key_file: "/etc/honeynet/console/privkey.pem"
+  web_dist: "/opt/honeynet/web/dist"
+  downloads_dir: "/opt/honeynet/downloads"
+
+database:
+  dsn: "honeynet:change-me@tcp(127.0.0.1:3306)/honeynet?charset=utf8mb4&parseTime=True&loc=Local"
+
+auth:
+  jwt_secret: "change-me-to-a-long-random-secret"
+  jwt_expires: "8h"
+  admin_username: "admin"
+  admin_password: "change-me-to-a-strong-password"
+
+# 设置后，Server 会创建管理端同机的内置节点；同一 token 供本机 Agent 使用。
+builtin_agent:
+  token: "change-me-to-an-independent-random-token"
+
+# Agent 独立使用 TLS 1.3/mTLS 网关；即使控制台启用 TLS，也只有此端口校验节点客户端证书。
+agent:
+  addr: "[::]:8443"
+  public_url: "https://192.0.2.10:8443"
+  pki_dir: "/var/lib/honeynet/pki"
+  tls_names:
+    - "192.0.2.10"
+    - "localhost"
+    - "127.0.0.1"
+    - "::1"
+  certificate_validity: "9600h"
+  renew_before: "720h"
+
+# IPIP.net 免费版城市库。留空则关闭 Server 端 IP 归属地补全。
+geoip:
+  ipip_db_path: "/var/lib/honeynet/ipip.ipdb"
+  language: "CN"
+
+# 免费社区威胁情报库。数据库只保存在 Server 文件系统，不写入业务库。
+# ZIP 解压密码不要写入 YAML；请通过仅 root 可读的
+# HONEYPOT_THREAT_INTEL_ARCHIVE_PASSWORD 环境变量提供。
+threat_intelligence:
+  enabled: false
+  database_path: "/var/lib/honeynet/threat-intelligence/intelligence.db"
+  download_url: ""
+  update_interval: "24h"
+
+# Yara 文件会被转换为受限的跨端规则格式；响应模板目录不会执行。
+detection:
+  rules_dir: "/opt/honeynet/rules/builtin"
+
+# 攻击事件响应默认返回原始请求包、正文与凭据，不需要配置此项。需要在
+# 控制台默认隐藏这些数据时取消注释；启用后 admin/operator 可按事件查看原文并留下 READ 审计。
+# security:
+#   redact_sensitive_events: true
+
+# DeepSeek、GLM 等可填写各自的 OpenAI Chat Completions 兼容地址。
+ai:
+  enabled: false
+  provider: "openai-compatible"
+  base_url: ""
+  api_key: ""
+  model: ""
+  timeout: "45s"
+  # 默认不把原始请求包发送给外部模型，只发送归一化证据与检测结论。
+  send_raw_packet: false
+
+cors:
+  origins:
+    - "http://192.0.2.10:8080"

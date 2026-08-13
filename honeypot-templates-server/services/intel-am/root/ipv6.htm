@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" >
+<html><head><link rel="stylesheet" href="styles.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Intel&reg; Active Management Technology</title></head>
+<body>
+<table class="header">
+<tr>
+         <td valign="top" nowrap="nowrap">
+<p class="top1">Intel<font class="r"><sup>&reg;</sup></font> Active Management Technology</p>
+<p class="top2"><b>Computer:</b> BK014089</p>
+         </td>
+<td valign="top"><img src="logo.gif" align="right" alt="Intel">
+         </td>
+</tr>
+   </table>
+
+<table class="spread" cellspacing="0">
+<tr>
+<td class="navbar">
+<br>
+<p class="nav1"><a href="index.htm">System Status</a></p>
+ 
+<p class="nav1">Hardware Information</p>
+<p class="nav2">
+<a href="hw-sys.htm">System</a>
+<br><a href="hw-proc.htm">Processor</a>
+<br><a href="hw-mem.htm">Memory</a>
+<br><a href="hw-disk.htm">Disk</a>
+</p><p class="nav1"><a href="events.htm">Event Log</a></p>
+<p class="nav1"><a href="remote.htm">Remote Control</a></p>
+<p class="nav1"><a href="power.htm">Power Policies</a></p>
+<p class="nav1"><a href="ip.htm">Network Settings</a></p>
+</td>
+<td class="maincell">
+
+<p></p>
+<form name="Ipv6Form" METHOD="POST" ACTION="/ipv6form">
+<input TYPE="hidden" NAME="t" value="NqCeOBwcAAABAAAAAAAAAAAAAAAAAP//3LWrWKtYC5jacBFZvOj/qvJR6NTdWzPt75hy8EZ+iS3ppIepV4/aDOdzmWA=">
+<table class="log" border="0" cellpadding="0" cellspacing="0" width="480">
+<tr class="r1">
+<td class="nw" width="38%"></td>
+<td class="ne">&nbsp;</td>
+</tr>
+<tr class="r1">
+<td colspan="2"><p> Configure the managed device network settings for this computer.</p></td>
+</tr>
+<tr class="r1"><td colspan="2" height="6"></td></tr>
+<tr><td></td></tr>
+<tr class="r1">
+<td colspan="2">
+<p>TCP/IPV6 settings for wired connection</p>
+<p>TCP/IPV6 alternate static configuration</p>
+</td>
+</tr>
+<tr class="r1">
+<td height="28">
+<p class="in">IPV6 address:</p>
+</td>
+<td><input type="text" NAME="Ipv6Address" size="25" maxlength="40" VALUE></td>
+</tr>
+<tr class="r1">
+<td height="28">
+<p class="in">Gateway address:</p>
+</td>
+<td><input type="text" NAME="DefaultGatway" size="25" maxlength="40" VALUE></td>
+</tr>
+<tr class="r1">
+<td height="28"><p class="in">Preferred DNS address:</p></td>
+<td><input type="text" NAME="DNSServer" size="25" maxlength="40" VALUE></td>
+</tr>
+<tr class="r1">
+<td height="28"><p class="in">Alternate DNS address:</p></td>
+<td><input type="text" NAME="AlternativeDns" size="25" maxlength="40" VALUE>
+</td></tr>
+<tr class="r1"><td colspan="2" height="6"></td></tr>
+<tr><td></td></tr>
+<tr class="r1">
+<td valign="bottom">
+<h2><input type="submit" value="   Submit   "></h2>
+</td>
+<td></td>
+</tr>
+<tr class="r1">
+<td class="sw"></td>
+<td class="se"></td>
+</tr>
+</table>
+</form>
+<script LANGUAGE="JavaScript" type="text/javascript">
+function dis(Active)
+{
+  var tcolor;
+ 
+ if(!Ipv6Form.Ipv6Enabled.checked) 
+ {
+    Active==false;
+ }
+ if (Active==true) 
+ { 
+    tcolor = "#C0C0C0";
+ }
+ else {
+  tcolor = "#ffffff";
+ }
+
+ Ipv6Form.Ipv6Address.disabled=Active
+ Ipv6Form.Ipv6Address.style.backgroundColor = tcolor
+ Ipv6Form.DefaultGatway.disabled=Active
+ Ipv6Form.DefaultGatway.style.backgroundColor = tcolor
+ Ipv6Form.DNSServer.disabled=Active
+ Ipv6Form.DNSServer.style.backgroundColor = tcolor 
+ Ipv6Form.AlternativeDns.disabled=Active
+ Ipv6Form.AlternativeDns.style.backgroundColor = tcolor
+}
+
+function disable_enable_all(ipv6_form)
+{
+  var tcolor;
+  var Active;
+ 
+ if (ipv6_form.Ipv6Enabled.checked) 
+ { 
+  Active = false;
+  tcolor = "#ffffff";
+ }
+ else {
+    Active = true;
+    tcolor = "#C0C0C0";
+ }
+}
+
+</script>
+</td>
+		</tr>
+	</table>
+</body></html>

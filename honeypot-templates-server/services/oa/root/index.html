@@ -1,0 +1,286 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>OA登录</title>
+  <link rel="icon" href="data:;base64,=">
+  <style type="text/css">
+    td {
+      font-size: 12px;
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+
+    input {
+      font-size: 12px;
+      color: #003399;
+      text-decoration: none;
+      background-color: #EFF1F5;
+      border: 1px solid #427CD5;
+    }
+
+    .style2 {
+      color: #efefef
+    }
+  </style>
+  <script>
+    function showImage() {
+      var imgObj = new Image(); //创建一个Image对象
+      imgObj.src = "http://www.beingmate.com/images/banner_chang_add.gif"; //装载Image源
+      if (typeof (imgObj) == "object") { //判断imgObj装载过后是否为对象，防止异常操作
+        var width = 0;
+        var height = 0;
+        width = imgObj.width + 20; //+20是因为IE方式的默认边距
+        height = imgObj.height + 20;
+        if (width != 0 && height != 0) {
+          window.open(imgObj.src, "Imagehow", "toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=" + (width) + ",height=" + (height));
+        } else {
+          setTimeout("showImage()", 100); // 判断图片是否装载完成，只有在装载完成后才能取到宽高值
+        }
+      } else {
+        alert("系统错误");
+      }
+    }
+//showImage();
+  </script>
+  <script type="text/javascript">
+    var $ = function (v) { return document.getElementById(v); }
+    function isSecurity(v) {
+      if (v.length < 3) { iss.reset(); return; }
+      var lv = -1;
+      if (v.match(/[a-z]/ig)) { lv++; }
+      if (v.match(/[0-9]/ig)) { lv++; }
+      if (v.match(/(.[^a-z0-9])/ig)) { lv++; }
+      if (v.length < 6 && lv > 0) { lv--; }
+      iss.reset();
+      switch (lv) {
+        case 0:
+          iss.level0();
+          break;
+        case 1:
+          iss.level1();
+          break;
+        case 2:
+          iss.level2();
+          break;
+        default:
+          iss.reset();
+      }
+    }
+    var iss = {
+      color: ["CC0000", "FFCC33", "66CC00", "CCCCCC"],
+      text: ["弱", "中", "强"],
+      width: ["50", "100", "150", "10"],
+      reset: function () {
+        $("B").style.backgroundColor = iss.color[3];
+        $("B").style.width = iss.width[3];
+        $("A").innerHTML = "";
+      },
+      level0: function () {
+        $("B").style.backgroundColor = iss.color[0];
+        $("B").style.width = iss.width[0];
+        $("A").innerHTML = "密码较弱";
+      },
+      level1: function () {
+        $("B").style.backgroundColor = iss.color[1];
+        $("B").style.width = iss.width[1];
+        $("A").innerHTML = "中";
+      },
+      level2: function () {
+        $("B").style.backgroundColor = iss.color[2];
+        $("B").style.width = iss.width[2];
+        $("A").innerHTML = "高强";
+      }
+    }
+
+    function MM_openBrWindow(theURL, winName, features) { //v2.0
+      window.open(theURL, winName, features);
+    }
+  </script>
+  <style type="text/css">
+    .font14 {
+      font-family: "Arial", "Helvetica", "sans-serif";
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    #Layer1 {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      width: 215px;
+      height: 250px;
+      z-index: 1;
+    }
+
+    .STYLE6 {
+      color: #000000
+    }
+
+    .STYLE7 {
+      font-size: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      color: #626365;
+    }
+
+    #Layer2 {
+      position: absolute;
+      right: 6px;
+      top: 7px;
+      width: 316px;
+      height: 167px;
+      z-index: 1;
+    }
+  </style>
+  <link href="Main/Css/css.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    .STYLE8 {
+      font-size: 14px
+    }
+
+    .STYLE11 {
+      color: #CCCCCC
+    }
+
+    .STYLE12 {
+      font-family: Arial, Helvetica, sans-serif
+    }
+  </style>
+</head>
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+  <div id="Layer2">
+    <div align="right"></div>
+  </div>
+  <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align="center" bgcolor="#FFFFFF">
+        <table width="98%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td align="center"><br>
+              <br>
+              <br>
+              <br>
+            </td>
+          </tr>
+        </table>
+        <table width="400" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="25" align="center" valign="bottom" background="Main/Images/Top/bg_3.gif"><span
+                class="STYLE7 STYLE8">OA系统</span></td>
+          </tr>
+          <tr>
+            <td>
+              <table width="100%" border="0" cellspacing="1" cellpadding="1" bgcolor="#E3EFF8">
+                <tr bgcolor="#FFFFFF">
+                  <td height="50"><br>
+                    <br>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="100%">
+                          <div align="left">
+
+                            <form name="loginform" method="post" action="/login" target="_parent">
+                              <div align="left"></div>
+                              <table width="85%" border="0" align="center" cellpadding="3" cellspacing="1">
+                                <tr>
+                                  <td width="30%" height="30" align="right"><span class="STYLE6">帐号/编号：</span></td>
+                                  <td width="70%"><input name="username" type="text" size="15" maxlength="20"
+                                      class="doc_txt" value></td>
+                                </tr>
+                                <tr>
+                                  <td height="30" align="right"><span class="STYLE6">密码： </span></td>
+                                  <td><span class="STYLE6">
+                                      <input name="password" type="Password" size="15" maxlength="20" class="doc_txt"
+                                        value onKeyUp="isSecurity(this.value);">
+                                    </span></td>
+                                </tr>
+                                <tr>
+                                  <td height="50" colspan="2" align="right">
+                                    <div align="center">
+                                      <!-- <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                          <td width="36%" height="20" align="right">
+                                            <font class="red" id="A"></font>&nbsp;
+                                          </td>
+                                          <td width="64%" valign="top">
+                                            <table height="8" border="1" align="left" cellpadding="0" cellspacing="0"
+                                              bordercolor="#EEEEEE" style="border-collapse:collapse;">
+                                              <tr>
+                                                <td bgcolor="#EEEEEE" width="1" align="center" valign="middle" id="B">
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </table> -->
+                                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                          <td height="25" align="center"><label>
+                                              <input name="gourl" type="hidden" id="gourl" value>
+                                              <input type="submit" name="Submit" value=" 登 陆 "
+                                                onClick="return CheckData();">
+                                            </label>
+                                            &nbsp;
+                                            <input name="login_auto" type="checkbox" id="login_auto" value="1">
+                                            <span class="STYLE6">记住密码</span>
+                                          </td>
+                                        </tr>
+                                        <tr align="right">
+                                          <td>&nbsp;</td>
+                                        </tr>
+                                      </table>
+                                      <marquee behavior="scroll" scrollamount="3" direction="left" width="150">
+                                        <font color="#FFFFFF"></font>
+                                      </marquee>
+                                      <br>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </table>
+                            </form>
+                            <script language="javascript">
+                              function CheckData() {
+                                //alert(document.loginform.username.value)
+                                //alert(document.loginform.pwd.value)
+                                if (document.loginform.username.value == "") {
+                                  alert("请输入登录用户名。")
+                                  document.loginform.username.focus();
+                                  return false;
+                                }
+                                if (document.loginform.username.value.length > 100) {
+                                  alert("登录用户名不能超过100个字。")
+                                  document.loginform.username.focus();
+                                  return false;
+                                }
+                                return true;
+                              }
+                            </script>
+                            <script language="javascript" src="inc/jtrim.js/index.html"></script>
+
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </td>
+    </tr>
+  </table>
+
+</body>
+
+</html>
