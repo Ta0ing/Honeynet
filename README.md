@@ -32,6 +32,61 @@ Server、Agent 与蜜罐运行链不依赖 Docker。默认且受支持的交付�
 - IPIP.net 免费版城市库离线定位，Server 统一将攻击源 IP 补全到国家/省/市并回填历史事件
 - SMTP、Syslog、通用 Webhook、企业微信、钉钉、飞书真实告警外发，支持持久化重试和投递审计
 
+## 控制台界面预览
+
+以下截图展示 Honeynet 控制台的登录、运行总览、攻击分析、扫描感知、威胁情报、AI Agent、服务管理和蜜罐实例界面。
+
+> 部分截图会显示运行时 IP、端口和统计数据；这些内容来自截图当时的演示环境。
+
+<table>
+  <tr>
+    <td width="50%">
+      <img src="docs/screenshots/login.png" alt="Honeynet 登录页" width="100%">
+      <p align="center"><sub>登录页</sub></p>
+    </td>
+    <td width="50%">
+      <img src="docs/screenshots/dashboard.png" alt="Honeynet 运行总览" width="100%">
+      <p align="center"><sub>运行总览</sub></p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="docs/screenshots/big-screen.png" alt="Honeynet 企业蜜网攻击态势大屏" width="100%">
+      <p align="center"><sub>攻击态势大屏</sub></p>
+    </td>
+    <td>
+      <img src="docs/screenshots/attack-list.png" alt="Honeynet 攻击列表" width="100%">
+      <p align="center"><sub>攻击列表</sub></p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="docs/screenshots/scan-awareness.png" alt="Honeynet 扫描感知" width="100%">
+      <p align="center"><sub>扫描感知</sub></p>
+    </td>
+    <td>
+      <img src="docs/screenshots/ai-agent.png" alt="Honeynet AI Agent" width="100%">
+      <p align="center"><sub>AI Agent</sub></p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="docs/screenshots/threat-intel.png" alt="Honeynet 威胁情报" width="100%">
+      <p align="center"><sub>威胁情报</sub></p>
+    </td>
+    <td>
+      <img src="docs/screenshots/service-management.png" alt="Honeynet 服务管理" width="100%">
+      <p align="center"><sub>服务管理</sub></p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <img src="docs/screenshots/honeypot-instances.png" alt="Honeynet 蜜罐实例" width="100%">
+      <p align="center"><sub>蜜罐实例</sub></p>
+    </td>
+  </tr>
+</table>
+
 Agent 的本地事件队列满载时会明确拒绝新写入并记录错误，不会静默删除尚未收到 Server ACK 的旧取证事件。启用 ClickHouse 后，Server 只有在安全事件已持久化且 MySQL 告警/IOC 等业务副作用完成后才确认事件；临时故障会由 Agent 保留并自动重传。Server 明确标记为永久无效的事件会先将完整原始事件、拒绝原因和时间追加并 `fsync` 到 Agent 状态目录下权限为 `0600` 的 `dead-letter-events.jsonl`，确认落盘后才移出主队列，便于人工修复和审计。
 
 ## 节点服务能力与协议蜜罐
